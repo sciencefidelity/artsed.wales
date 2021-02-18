@@ -1,0 +1,197 @@
+*
+*::after
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: "Apercu";
+  src: url('./fonts/apercu.woff2') format('woff2'),
+       url('./fonts/apercu.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Germalt";
+  src: url('./fonts/germalt-bold-aen.woff2') format('woff2'),
+       url('./fonts/germalt-bold-aen.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Germalt";
+  src: url('./fonts/germalt-regular-amp.woff2') format('woff2'),
+       url('./fonts/germalt-regular-amp.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GT Pressura Mono";
+  src: url('./fonts/gt-pressura-mono-regular-caps.woff2') format('woff2'),
+       url('./fonts/gt-pressura-mono-regular-caps.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GT Pressura Mono";
+  src: url('./fonts/gt-pressura-mono-bold-caps.woff2') format('woff2'),
+       url('./fonts/gt-pressura-mono-bold-caps.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roc Grotesk Condensed";
+  src: url('./fonts/roc-grotesk-condensed-bold-caps.woff2') format('woff2'),
+       url('./fonts/roc-grotesk-condensed-bold-caps.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roc Grotesk Compressed";
+  src: url('./fonts/roc-grotesk-compressed-bold-caps.woff2') format('woff2'),
+       url('./fonts/roc-grotesk-compressed-bold-caps.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+html {
+  font-family: "Apercu",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 400;
+}
+body {
+  padding: 0;
+  margin: 0;
+  /* background: #2B3331; */
+  background: rgba(44, 45, 72, 1);
+  color: #f6ece3;
+}
+.container {
+  width: 40.375rem;
+  margin: auto;
+}
+.title {
+  font-family: "Roc Grotesk Condensed";
+  /* color: rgba(255,255,255,0.9); */
+  color: #f6ece3;
+  font-weight: 600;
+  font-size: 3rem;
+  padding: 1.5rem 0;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.venn-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  transform: rotate(0deg);
+}
+.venn-diagram {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32.5rem;
+  margin: auto;
+}
+.circle, .white-c {
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+.circle {
+  mix-blend-mode: difference;
+  opacity: 0.65;
+}
+.circle-1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #33CC66;
+  z-index: 11;
+}
+.circle-2 {
+  bottom: 10.02%;
+  left: 2.41%;
+  background: #0099FF;
+  z-index: 13;
+}
+.circle-3 {
+  bottom: 10.02%;
+  right: 2.41%;
+  background: #FF3333;
+  z-index: 12;
+}
+.white-c {
+  background: #fff;
+  z-index: 0;
+}
+.content {
+  position: absolute;
+  color: rgba(9,19,28,0.9);
+  font-size: 1.75rem;
+  font-weight: 500;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.content-1 {
+  top: 31%;
+  left: 50%;
+}
+.content-2 {
+  bottom: 33%;
+  left: 30%;
+}
+.content-3 {
+  bottom: 26%;
+  left: 70%;
+  line-height: 1.1;
+  font-size: 1.5rem;
+}
+.venn-center {
+  /* font-family: "TT Commons"; */
+  position: absolute;
+  color: #f6ece3;
+  line-height: 0.9;
+  font-size: 1.8rem;
+  font-weight: 500;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* text-transform: uppercase; */
+}
+.ampersand {
+  display: block;
+  font-family: "Germalt";
+  font-size: 4rem;
+  line-height: 1.2;
+}
+.venn-diagram::after, .circle::after, .white-c::after {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+.intro-text {
+  /* color: rgba(255,255,255,0.8); */
+  color: #f6ece3;
+  font-size: 1.25rem;
+  font-weight: 400;
+  vertical-align: bottom;
+  margin: 31.5rem auto;
+  line-height: 1.375;
+  opacity: 0.7;
+}
+#site-main::after {
+  background: url(./images/noise.jpg);
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0.05;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 201;
+}
