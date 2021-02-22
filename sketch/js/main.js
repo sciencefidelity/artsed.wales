@@ -1,5 +1,5 @@
 "use strict";
 
-let a = "Hello world!";
+let a = "National Arts and Education Network";
 
 console.log(a);
