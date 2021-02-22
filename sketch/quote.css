@@ -1,0 +1,100 @@
+*
+*::after
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  font-family: "ALS Hauss",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 400;
+}
+b {
+  font-weight: 500;
+  color: rgba(44, 45, 72, 1);
+}
+body {
+  padding: 0;
+  margin: 0;
+  /* background: rgba(44, 45, 72, 1); */
+  background: #223332;
+}
+p {
+  font-size: 1.125rem;
+  color: rgba(44, 45, 72, 0.8);
+  line-height: 1.5;
+  letter-spacing: 0.01rem;
+  padding: 0.75rem 1.7rem 0.125rem;
+}
+.cite {
+  font-size: 0.75rem;
+  color: rgba(44, 45, 72, .5);
+  line-height: 1.5;
+  letter-spacing: 0.01rem;
+  padding: 0 1.7rem 0.5rem;
+  text-transform: uppercase;
+}
+.container {
+  /* width: 40.375rem; */
+  margin: auto;
+}
+.blockquote {
+  width: 28.5rem;
+  /* height: 20%; */
+  margin: 6rem auto;
+  background: white;
+  border: 8px solid #7c7c88;
+  position: relative;
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
+  background: #f6ece3;
+}
+.blockquote-image {
+  width: 456px;
+  height: 303.88px;
+  overflow: hidden;
+}
+img{
+  height: 100%;
+  transform: scaleX(-1);
+}
+.blockquote::before, .blockquote::after {
+  position: absolute;
+  font-size: 10rem;
+  color: white;
+  font-family: "Cutive";
+  /* color: rgba(55, 56, 76, 1); */
+  color: #7c7c88;
+}
+.blockquote::before {
+  content: "\201C";
+  /* top: -1.4rem; */
+  /* left: -0.6rem; */
+  /* top: -2.5rem; */
+  /* left: -0rem; */
+  top: 18.1rem;
+  left: -0.3rem;
+  z-index: 100;
+}
+.blockquote::after {
+  content: "\201D";
+  /* bottom: -7.3rem; */
+  /* right: -0.5rem; */
+  /* bottom: -9rem; */
+  /* right: 0rem; */
+  bottom: -8.1rem;
+  right: -0.3rem;
+}
+#site-main::after {
+  background: url(./images/noise.jpg);
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0.03;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 201;
+}
