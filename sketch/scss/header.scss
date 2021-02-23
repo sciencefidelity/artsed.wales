@@ -24,7 +24,7 @@
   font-style: normal;
 }
 html {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
   color: #FFF;
 }
 body {
@@ -32,23 +32,13 @@ body {
   margin: 0;
 }
 .h1 {
-  // font-family: "Circular Std";
-  // font-family: "Formular";
   font-family: "Germalt";
-  font-size: 4.4rem;
+  font-size: 3.7rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-}
-.h2 {
-  // font-family: "TT Commons";
-  font-family: "Germalt";
-  font-size: 4rem;
-  font-weight: 700;
-  // letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 .language-switch {
-  // font-family: "TT Commons";
-  font-family: "Germalt";
   position: absolute;
   top: 0%;
   right: 5%;
@@ -80,11 +70,10 @@ div .h1 {
 }
 .hero-text {
   position: absolute;
-  // height: 18rem;
   bottom: 0;
   left: 7%;
   border-left: 7px solid white;
-  // background: #1A1B1C;
+  padding-bottom: 1.5rem;
 }
 .logo-container {
   position: absolute;
@@ -92,9 +81,8 @@ div .h1 {
   left: 6.6%;
 }
 .logo {
-  // font-family: "Typold";
   font-family: "Germalt";
-  line-height: 6rem;
+  line-height: 7rem;
   font-size: 5rem;
   font-weight: 400;
   padding-right: 1.25rem;
