@@ -200,7 +200,7 @@ template {
   font-style: normal;
 }
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   color: #FFF;
 }
 
@@ -211,19 +211,13 @@ body {
 
 .h1 {
   font-family: "Germalt";
-  font-size: 4.4rem;
+  font-size: 3.7rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-}
-
-.h2 {
-  font-family: "Germalt";
-  font-size: 4rem;
-  font-weight: 700;
+  line-height: 1.1;
 }
 
 .language-switch {
-  font-family: "Germalt";
   position: absolute;
   top: 0%;
   right: 5%;
@@ -262,6 +256,7 @@ div .h1 {
   bottom: 0;
   left: 7%;
   border-left: 7px solid white;
+  padding-bottom: 1.5rem;
 }
 
 .logo-container {
@@ -272,7 +267,7 @@ div .h1 {
 
 .logo {
   font-family: "Germalt";
-  line-height: 6rem;
+  line-height: 7rem;
   font-size: 5rem;
   font-weight: 400;
   padding-right: 1.25rem;

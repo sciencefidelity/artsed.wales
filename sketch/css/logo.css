@@ -179,13 +179,7 @@ template {
   display: none;
 }
 
-/**** Declare all fonts *****************************************/
-@font-face {
-  font-family: "Apercu";
-  src: url("../fonts/apercu.woff2") format("woff2"), url("../fonts/apercu.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
+/**** Declare fonts ********************************************/
 @font-face {
   font-family: "Germalt";
   src: url("../fonts/germalt-bold-aen.woff2") format("woff2"), url("../fonts/germalt-bold-aen.woff") format("woff");
@@ -196,30 +190,6 @@ template {
   font-family: "Germalt";
   src: url("../fonts/germalt-regular-amp.woff2") format("woff2"), url("../fonts/germalt-regular-amp.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "GT Pressura Mono";
-  src: url("../fonts/gt-pressura-mono-regular-caps.woff2") format("woff2"), url("../fonts/gt-pressura-mono-regular-caps.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "GT Pressura Mono";
-  src: url("../fonts/gt-pressura-mono-bold-caps.woff2") format("woff2"), url("../fonts/gt-pressura-mono-bold-caps.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roc Grotesk Condensed";
-  src: url("../fonts/roc-grotesk-condensed-bold-caps.woff2") format("woff2"), url("../fonts/roc-grotesk-condensed-bold-caps.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roc Grotesk Compressed";
-  src: url("../fonts/roc-grotesk-compressed-bold-caps.woff2") format("woff2"), url("../fonts/roc-grotesk-compressed-bold-caps.woff") format("woff");
-  font-weight: 600;
   font-style: normal;
 }
 /**** Variables ************************************************/
@@ -265,17 +235,13 @@ h1 {
   line-height: 1.1;
 }
 
-h2 {
-  font: 600 3rem "Germalt", sans-serif;
-}
-
 #header-container, #subheading, #main-container, #footer-container {
   position: relative;
   width: 88%;
   margin: auto;
 }
 
-/**** Header ****************************************************/
+/**** Header ***************************************************/
 #header-container {
   height: 20rem;
   margin-bottom: 3rem;
@@ -304,7 +270,8 @@ h2 {
 }
 
 #subheading {
-  font: 400 2.5rem "Apercu", sans-serif;
+  font: 400 2.2rem sans-serif;
+  line-height: 1.5;
 }
 
 /*# sourceMappingURL=logo.css.map */
