@@ -1,0 +1,1 @@
+> Cafodd 72 o'n 76 o'n chwech oed rieni rieni yn ymweld â'n harddangosfa yn Sefydliad Blackwood Miners ’, mae hynny'n fwy yr ydym erioed wedi'i gael mewn digwyddiadau rhieni yn yr ysgol.<br /><cite>(Ysgol Gynradd y Coed Duon)
