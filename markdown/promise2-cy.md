@@ -1,0 +1,1 @@
+Mae Cymru yn wlad amrywiol. Rydym yn addo darparu rhaglen gadarn o ddatblygiad proffesiynol wedi'i safoni'n genedlaethol o ran ansawdd, wrth ymateb i hunaniaeth unigryw ac amrywiaeth ddiwylliannol Cymru.
