@@ -1,0 +1,1 @@
+The contemporary arts in Wales are exciting. We promise to be responsive to current cultural developments and inspire teachers to enrich their teaching with to cutting-edge art practices and techniques.
