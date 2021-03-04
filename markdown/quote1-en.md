@@ -1,0 +1,1 @@
+> Mae'r prosiect gair llafar anhygoel hwn wedi ysbrydoli ein dysgwyr i danio eu dychymyg a mynegi eu hunain. Mae Spoken Word wedi cryfhau perthynas yr ysgol ag asiantaethau allanol yn ein cymuned i gefnogi prosiectau llythrennedd yn y dyfodol yn y fframwaith cwricwlwm newydd.<br /><cite>(Nicola Williams, Ysgol Gynradd Parc Tredegar)
