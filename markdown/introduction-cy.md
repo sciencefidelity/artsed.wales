@@ -1,0 +1,3 @@
+Rydym yn eirioli rhaglen genedlaethol sy'n partneru ysgolion â sefydliadau diwylliannol; Dysgu Celfyddydau Mynegiadol mewn partneriaeth â sector y celfyddydau. Ein nod tymor hir yw adeiladu polisi cenedlaethol ar gyfer cydweithredu rhwng ein sector ysgolion a chelfyddydau a fydd y cyntaf o'i fath unrhyw le yn y byd.
+
+Mae profiadau celfyddydol o safon yn ystod plentyndod yn newid bywyd, gan adeiladu'r sylfaen ar gyfer gwerthfawrogiad a chyfranogiad celf gydol oes. Mae profiadau diwylliannol ystyrlon y tu allan i'r ystafell ddosbarth yn hanfodol i gyflawni MDaP y Celfyddydau Mynegiadol a Phedwar Pwrpas Cwricwlwm Cymru.
