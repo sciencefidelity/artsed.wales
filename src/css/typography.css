@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Neue Haas Unica";
+  src: url("../fonts/neuehaasunica-bold-sub.woff2");
+  font-weight: bold;
+  font-size: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Haas Unica";
+  src: url("../fonts/neuehaasunica-regular-sub.woff2");
+  font-weight: normal;
+  font-size: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Domaine Text";
+  src: url("../fonts/domaine-text-sub.woff2");
+  font-weight: normal;
+  font-size: normal;
+  font-display: swap;
+}
