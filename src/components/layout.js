@@ -9,6 +9,7 @@ import Casestudies from "./casestudies"
 import Legacy from "./legacy"
 import Blackwood from "./blackwood"
 import Artists from "./artists"
+import Model from "./model"
 
 import "./layout.css"
 
@@ -38,6 +39,7 @@ const Layout = ({ children }) => {
           <Legacy />
           <Blackwood />
           <Artists />
+          <Model />
 
         </div>
       </main>
