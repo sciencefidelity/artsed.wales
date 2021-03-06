@@ -1,0 +1,125 @@
+:root {
+  --vennOpacity: 0.65;
+  --vennBlend: difference;
+  --vennFont: "Neue Haas Unica",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+}
+.vennDiagram {
+  position: relative;
+  width: 66.66%;
+  margin-left: auto;
+}
+.content1 {
+  position: absolute;
+  color: #ffffff;
+  font-family: var(--vennFont);
+  font-size: 1.75rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 18%;
+  left: 50%;
+}
+.content2 {
+  position: absolute;
+  color: #ffffff;
+  font-family: var(--vennFont);
+  font-size: 1.75rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 67%;
+  left: 21%;
+}
+.content3 {
+  position: absolute;
+  color: #ffffff;
+  font-family: var(--vennFont);
+  font-size: 1.7rem;
+  text-align: center;
+  line-height: 1.2;
+  transform: translate(-50%, -50%);
+  top: 67%;
+  left: 78%;
+}
+.content4 {
+  position: absolute;
+  color: #ffffff;
+  font-family: var(--vennFont);
+  font-size: 2.05rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: 50%;
+}
+.ampersand {
+  position: absolute;
+  margin: 0;
+  transform: translate(-46%, -45%);
+  top: 45%;
+  left: 50%;
+}
+.circle1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #33CC66;
+  mix-blend-mode: var(--vennBlend);
+  opacity: var(--vennOpacity);
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+.circle2 {
+  bottom: 10.02%;
+  left: 2.41%;
+  background: #0099FF;
+  mix-blend-mode: var(--vennBlend);
+  opacity: var(--vennOpacity);
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+.circle3 {
+  bottom: 10.02%;
+  right: 2.41%;
+  background: #FF3333;
+  mix-blend-mode: var(--vennBlend);
+  opacity: var(--vennOpacity);
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+.circle4 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+.circle5 {
+  bottom: 10.02%;
+  left: 2.41%;
+  background: white;
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+.circle6 {
+  bottom: 10.02%;
+  right: 2.41%;
+  background: white;
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+.vennDiagram::after, 
+.circle1::after,
+.circle2::after,
+.circle3::after,
+.circle4::after,
+.circle5::after,
+.circle6::after {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
