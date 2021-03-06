@@ -25,3 +25,5 @@ A static page to advertise the services that the network can offer. Drawing on t
 
 - dynamically switch between English and Welsh
 - dynamically switch between light and dark mode
+
+Built with [Gatsby](https://www.gatsbyjs.com/)
