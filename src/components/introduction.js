@@ -7,11 +7,11 @@ const Introduction = () => (
       marginBottom: `6rem`,
     }}
   >
-  <div 
-  style={{
-    display: `flex`,
-  }}
->
+    <div 
+      style={{
+        display: `flex`,
+      }}
+    >
     <div 
       style={{
         width: `50%`,
