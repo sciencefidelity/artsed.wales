@@ -1,1 +1,0 @@
-## Exploring, Responding, Creating
