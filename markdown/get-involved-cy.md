@@ -1,3 +1,0 @@
-## Cymryd rhan
-
-Archebwch nawr ar gyfer ein digwyddiadau...
