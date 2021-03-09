@@ -1,3 +1,0 @@
-## Get involved
-
-Book now for our upcoming events...
