@@ -1,9 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 
-const brandEn = "National Arts and Education Network Wales"
-const brandCy = "Rhwydwaith Cenedlaethol Celf ac Addysg"
-
 const Footer = () => (
   <footer
     style={{
@@ -15,32 +12,62 @@ const Footer = () => (
         width: `88%`,
         maxWidth: 1000,
         margin: `0 auto`,
+        padding: `2rem 0 1rem`,
         display: `flex`,
+        color: `#e7dbd8`,
+        fontFamily: `"Neue Haas Unica",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
       }}
     >
+      <div
+        style={{
+          display: `flex`,
+          flexDirection: `column`,
+          width: `50%`
+        }}
+      >
+        <h2
+          style={{
+            color: `#e7dbd8`,
+            marginBottom: `-0.1rem`
+          }}
+        >
+          Get in touch
+        </h2>
+        <p
+          style={{
+            fontSize: `1.5rem`,
+            textDecoration: `underline`,
+            color: `#e7dbd8`,
+            marginBottom: `2.65rem`
+          }}
+        >
+          info@artsed.wales
+        </p>
+        <p
+          style={{
+            fontSize: `1rem`,
+            color: `#e7dbd8`,
+          }}
+        >
+          © {new Date().getFullYear()} National Arts and Education Network
+        </p>
+      </div>
+      
+      
+      
       <div
         style={{
           display: `flex`,
           alignItems: `center`,
         }}
       >
-          <div 
-            style={{
-              fontFamily: `"Neue Haas Unica",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-              Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
-              color: `#e7dbd8`,
-              textAlign: `left`,
-            }}
-          >
-            <p>{brandEn}</p>
-          </div>
       </div>
+      
+      
       <div 
         style={{
           display: `flex`,
-          color: `#e7dbd8`,
-          fontFamily: `"Neue Haas Unica",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
           fontSize: `1.1rem`,
           marginLeft: `auto`,
         }}
