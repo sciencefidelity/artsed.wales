@@ -10,6 +10,11 @@ import Legacy from "./legacy"
 import Blackwood from "./blackwood"
 import Artists from "./artists"
 import Model from "./model"
+import Network from "./network"
+import Promise from "./promise"
+import SignUp from "./signUp"
+import Courses from "./courses"
+import Footer from "./footer"
 
 import "./layout.css"
 
@@ -40,13 +45,16 @@ const Layout = ({ children }) => {
           <Blackwood />
           <Artists />
           <Model />
+          <Network />
+          <Promise />
+          <SignUp />
+          <Courses />
+          
 
         </div>
       </main>
         
-      <footer>
-      
-      </footer>
+        <Footer />
       
     </>
   )
