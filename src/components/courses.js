@@ -14,7 +14,7 @@ const briteLink = {
   fontWeight: `bold`,
   padding: `0.2rem 1.5rem 0.2rem`,
   borderRadius: `0.5rem`,
-  boxShadow: `0 0.2rem 0px rgb(156, 158, 158)`,
+  boxShadow: `0 0.3rem 0px rgb(156, 158, 158)`,
 }
 
 const Courses = () => (

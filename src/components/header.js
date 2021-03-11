@@ -19,6 +19,7 @@ const Header = () => (
       style={{
         margin: `0 auto`,
         display: `flex`,
+        //maxWidth: `95%`
       }}
     >
       <div
