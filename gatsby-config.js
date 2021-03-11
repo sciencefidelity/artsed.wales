@@ -4,8 +4,8 @@ module.exports = {
     titleTemplate: "National Arts and Education Network",
     description:
       "We bring together schools, artists and cultural organisations to succeed in the Expressive Arts.",
-    url: "https://naen.artsed.wales", // No trailing slash allowed!
-    image: "/images/aen_network.jpg", // Path to your image you placed in the 'static' folder
+    url: "https://nat.artsed.wales",
+    image: "/images/aen_network.jpg",
     twitterUsername: "@artsed_wales",
   },
   plugins: [
@@ -35,13 +35,6 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `./src/markdown`,
-      },
     },
   ],
 };
