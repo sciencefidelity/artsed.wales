@@ -30,8 +30,9 @@ const Introduction = () => (
       <StaticImage
         src="../images/aen_blackwood_1.jpg"
         width={700}
-        height={600}
+        height={650}
         quality={80}
+        objectPosition={"100% 50%"}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="War and Peace Exhibition at Blackwood Miners Institute"
         style={{

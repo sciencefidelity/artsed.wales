@@ -10,7 +10,7 @@ const Blackwood = () => (
     <div
       style={{
         display: `flex`,
-        border: `8px solid white`,
+        border: `0.48rem solid white`,
         width: `85%`,
         marginRight: `auto`,
         boxShadow: `2px 2px 10px rgba(0, 0, 0, 0.2)`,
@@ -28,7 +28,7 @@ const Blackwood = () => (
       <div
         style={{
           width: `38%`,
-          padding: `35px 30px 10px 40px`,
+          padding: `26px 30px 10px 40px`,
           position: `relative`,
         }}
       > 
@@ -54,7 +54,7 @@ const Blackwood = () => (
             zIndex: `-12`,
           }}
         />
-        <blockquote>72 our of 76 of our year sixes had parents visit our exhibition at Blackwood Miners’ Institute, that’s more that we’ve ever had at parents events in the school.<div style={{height: 10}}></div><cite>(Rachel Phillips, <br />Blackwood Primary School)</cite></blockquote>
+        <blockquote>72 our of 76 of our year sixes had parents visit our exhibition at Blackwood Miners’ Institute, that’s more that we’ve ever had at parents events in the school.<div style={{height: `1rem`}}></div><cite>(Rachel Phillips, <br />Blackwood Primary School)</cite></blockquote>
       </div>
     </div>
   </section>
