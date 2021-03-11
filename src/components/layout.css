@@ -453,6 +453,8 @@ cite {
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-style: normal;
   font-size: 0.9rem;
+  line-height: 1.4;
+  display: inline-block;
 }
 form {
   margin-left: 0;

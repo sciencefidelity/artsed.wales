@@ -6,10 +6,6 @@ const artformLayout = {
   paddingRight: 30,
 }
 
-const shadow = {
-  boxShadow: `10px 5px 5px rgba(0,0,0,0,3);`
-}
-
 const Casestudies = () => (
   <section
     style={{
