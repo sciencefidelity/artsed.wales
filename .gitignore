@@ -1,11 +1,10 @@
-# All node modules #
-####################
-
+# All node modules
 node_modules/
 
-# Cache and build #
-###################
-
+# Cache and build
 .cache/
 public/
+
+# Mac stuff
+.DS_Store
 
