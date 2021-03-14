@@ -7,6 +7,10 @@
 [artsed.wales](https://artsed.wales/)<br />
 [celfadd.cymru](https://celfadd.cymru/)
 
+Staging site
+
+[nat.artsed.wales](https://nat.artsed.wales/)
+
 ### Intention
 
 A static page to advertise the services that the network can offer. Drawing on the work of the defunct regional networks and advertising proposed courses.
@@ -25,5 +29,11 @@ A static page to advertise the services that the network can offer. Drawing on t
 
 - dynamically switch between English and Welsh
 - dynamically switch between light and dark mode
+
+### Changelog
+
+14.03.21
+
+- Setup internationalisation with Gatsby International Plugin
 
 Built with [Gatsby](https://www.gatsbyjs.com/)
