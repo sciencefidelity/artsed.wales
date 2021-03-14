@@ -1,4 +1,5 @@
 import * as React from "react"
+import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -16,26 +17,34 @@ import OurPromise from "../components/ourpromise"
 import SignUp from "../components/signUp"
 import Courses from "../components/courses"
 
-const IndexPage = () => (
-  <Layout>
-    <Headline />
-    <Introduction />
-    <h2
-      style={{
-        marginBottom: `6rem`
-      }}
-    >Exploring, Responding, Creating</h2>
-    <Tredegar />
-    <Casestudies />
-    <Legacy />
-    <Blackwood />
-    <Artists />
-    <Model />
-    <Network />
-    <OurPromise />
-    <SignUp />
-    <Courses />
-  </Layout>
-)
+const IndexPage = () => {
+  const intl = useIntl()
+  return (
+    <Layout>
+      <SEO
+        lang={intl.locale}
+        title={intl.formatMessage({ id: "title" })}
+        keywords={[`gatsby`, `application`, `react`]}
+      />
+      <Headline />
+      <Introduction />
+      <h2
+        style={{
+          marginBottom: `6rem`
+        }}
+      >Exploring, Responding, Creating</h2>
+      <Tredegar />
+      <Casestudies />
+      <Legacy />
+      <Blackwood />
+      <Artists />
+      <Model />
+      <Network />
+      <OurPromise />
+      <SignUp />
+      <Courses />
+    </Layout>
+  )
+}
 
 export default IndexPage
