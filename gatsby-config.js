@@ -11,15 +11,20 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        icon: "src/images/icon.png",
-      },
-    },
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        short_name: `naen`,
+        start_url: `/`,
+        background_color: `#e7dbd8`,
+        theme_color: `#e7dbd8`,
+        display: `minimal-ui`,
+        icon: "src/images/icon.png",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -34,7 +39,17 @@ module.exports = {
         name: "pages",
         path: "./src/pages/",
       },
+    },
       __key: "pages",
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `cy`],
+        defaultLanguage: `en`,
+        redirect: true,
+        redirectComponent: require.resolve(`./src/components/redirect.js`),
+      },
     },
   ],
 };

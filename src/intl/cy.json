@@ -1,0 +1,19 @@
+{
+  "title": "Rhwydwaith Cenedlaethol Celf ac Addysg",
+  "description": "Rydym yn dod ag ysgolion, artistiaid a sefydliadau diwylliannol ynghyd i lwyddo yn y Celfyddydau Mynegiadol.",
+  
+  "author": "@artsed_wales",
+  "hello": "Helo bobl",
+  "welcome": "Croeso i'ch gwefan Gatsby newydd.",
+  "title_page2": "Tudalen dau",
+  "hello_page2": "Helo o'r ail dudalen",
+  "go_page2": "Ewch i dudalen 2",
+  "build": "Nawr ewch i adeiladu rhywbeth gwych.",
+  "welcome_page2": "Croeso i dudalen 2",
+  "go_back": "Ewch yn ôl i'r hafan",
+  "footer": "Adeiladwyd gyda",
+  "notfound": {
+    "header": "NID SYLFAEN",
+    "description": "Rydych chi newydd daro llwybr nad yw'n bodoli ... y tristwch."
+  }
+}

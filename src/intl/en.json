@@ -1,0 +1,19 @@
+{
+  "title": "National Arts and Education Network",
+  "description": "We bring together schools, artists and cultural organisations to succeed in the Expressive Arts.",
+  "author": "@artsed_wales",
+  
+  "hello": "Hi people",
+  "welcome": "Welcome to your new Gatsby site.",
+  "title_page2": "Page two",
+  "hello_page2": "Hi from the second page",
+  "go_page2": "Go to page 2",
+  "build": "Now go build something great.",
+  "welcome_page2": "Welcome to page 2",
+  "go_back": "Go back to the homepage",
+  "footer": "Built with",
+  "notfound": {
+    "header": "NOT FOUND",
+    "description": "You just hit a route that doesn't exist... the sadness."
+  }
+}
