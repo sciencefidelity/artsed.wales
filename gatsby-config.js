@@ -39,8 +39,8 @@ module.exports = {
         name: "pages",
         path: "./src/pages/",
       },
-    },
       __key: "pages",
+    },
     {
       resolve: `gatsby-plugin-intl`,
       options: {
