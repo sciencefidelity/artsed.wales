@@ -6,7 +6,7 @@ const promiseLayout = {
   paddingRight: 30,
 }
 
-const Promise = () => (
+const OurPromise = () => (
   <section
     style={{
       marginBottom: `8rem`,
@@ -62,4 +62,4 @@ const Promise = () => (
   </section>
 )
 
-export default Promise
+export default OurPromise
