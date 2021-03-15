@@ -28,6 +28,7 @@ A static page to advertise the services that the network can offer. Drawing on t
 - Make the 404 page beautiful
 - Get a welsh email address
 - Add links to Eventbrite
+- Add small animation to Eventbrite buttons
 
 ### Issues
 
