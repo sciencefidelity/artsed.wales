@@ -29,6 +29,7 @@ A static page to advertise the services that the network can offer. Drawing on t
 - Get a welsh email address
 - Add links to Eventbrite
 - Add small animation to Eventbrite buttons
+- fill in course information from JSON, display with single component
 
 ### Issues
 
