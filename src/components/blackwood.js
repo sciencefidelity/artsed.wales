@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Blackwood = () => (
+const Blackwood = ({ quote2, cite2 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -54,7 +54,7 @@ const Blackwood = () => (
             zIndex: `-12`,
           }}
         />
-        <blockquote>72 our of 76 of our year sixes had parents visit our exhibition at Blackwood Miners’ Institute, that’s more that we’ve ever had at parents events in the school.<div style={{height: `1rem`}}></div><cite>(Rachel Phillips, <br />Blackwood Primary School)</cite></blockquote>
+        <blockquote>{quote2}<div style={{height: `1rem`}}></div><cite>{cite2}</cite></blockquote>
       </div>
     </div>
   </section>

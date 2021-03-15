@@ -1,7 +1,9 @@
 import React from "react"
 import * as vennStyles from "../css/model.module.css"
 
-const Model = () => (
+const Model = ({ 
+  model1, model2, model3, model4, model5, model6, model7, model8, model9 
+}) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -15,10 +17,10 @@ const Model = () => (
       <div style={{
         width: `33.33%`,
       }}>
-        <h2>Our Model</h2>
-        <p>Transform how schools work with their local arts and cultural organisations to facilitate the new Expressive Arts Curriculum.</p>
-        <p>Operate strategically, and in partnership with arts and cultural organisations.</p>
-        <p>Support of the new Expressive Arts AoLE.</p>
+        <h2>{model1}</h2>
+        <p>{model2}</p>
+        <p>{model3}</p>
+        <p>{model4}</p>
       </div>
       <div className={vennStyles.vennDiagram}>
 
@@ -29,10 +31,11 @@ const Model = () => (
           <div className={vennStyles.circle3}></div>
           <div className={vennStyles.circle2}></div>
           
-          <div className={vennStyles.content1}>Artists</div>
-          <div className={vennStyles.content2}>Schools</div>
-          <div className={vennStyles.content3}>Cultural<br />Organisations</div>
-          <div className={vennStyles.content4}>Network</div>
+          <div className={vennStyles.content1}>{model7}</div>
+          <div className={vennStyles.content2}>{model6}</div>
+          <div className={vennStyles.content3}>{model8}<br />{model9}</div>
+          <div className={vennStyles.content4}>{model5}</div>
+          
           <div>
             <img
               alt="Ampersand Logo"

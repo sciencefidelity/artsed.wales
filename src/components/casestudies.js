@@ -6,7 +6,7 @@ const artformLayout = {
   paddingRight: 30,
 }
 
-const Casestudies = () => (
+const Casestudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -22,24 +22,24 @@ const Casestudies = () => (
           artformLayout
         }
       >
-        <h2>Art</h2>
-        <p>Artist Sarah Brigland introduced printmaking in response to Cwmbran's built environment. Jubilee Park Primary used the techniques to respond to Newport’s built environment. Finding out that Newport once had a network of trams, the class went to see the play Vehicles.</p>
+        <h2>{art1}</h2>
+        <p>{art2}</p>
       </div>
         <div
         style={
           artformLayout
         }
       >
-        <h2>Music</h2>
-        <p>Over a three-day project, a year-six class created spoken word performances in response to their visit to National Trust Tredegar House with bilingual poet and musician Rufus Mufasa. The class were invited back to the historic house to perform their poems for parents and teachers.</p>
+        <h2>{music1}</h2>
+        <p>{music2}</p>
       </div>
       <div
         style={
           artformLayout
         }
       >
-        <h2>Theatre</h2>
-        <p>Educators from Theatr Iolo developed a workshop about devising theatre in the classroom in response to their play Muckers. Having attended the workshop, several teachers appleed for and received Go and See grants to take their learners to the theatre and experience the play.</p>
+        <h2>{theatre1}</h2>
+        <p>{theatre2}</p>
       </div>
     </div>
     <div>

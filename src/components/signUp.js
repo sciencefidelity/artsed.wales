@@ -1,6 +1,6 @@
 import React from "react"
 
-const SignUp = () => (
+const SignUp = ({ signup1, signup2, signup3 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -12,14 +12,14 @@ const SignUp = () => (
         textAlign: `center`,
         marginBottom: `0.4rem`,
       }}
-    >Sign up</h2>
+    >{signup1}</h2>
     <div>
       <form>
       <label>
         <input
           type="text"
-          name="Email address..."
-          placeholder="Email address..."
+          name={signup2}
+          placeholder={signup2}
           style={{
             background: `white`,
             border: `0`,
@@ -36,7 +36,7 @@ const SignUp = () => (
         name="subscribe"
         id="mc-embedded-subscribe"
         class="button"
-        alt="subscribe to our newsletter"
+        alt={signup2}
         style={{
           cursor: `pointer`,
           background: `rgba(13, 13, 13, 0.7)`,
@@ -57,7 +57,7 @@ const SignUp = () => (
       }}
     >
       <p>
-        Leave us your email address for news, updates and upcoming opportunities from the National Arts and Education Network.
+        {signup3}
       </p>
     </div>
   </section>

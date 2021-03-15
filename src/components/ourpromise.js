@@ -6,13 +6,13 @@ const promiseLayout = {
   paddingRight: 30,
 }
 
-const OurPromise = () => (
+const OurPromise = ({ promise1, promise2, promise3, promise4 }) => (
   <section
     style={{
       marginBottom: `8rem`,
     }}
   >
-    <h2>Our Promise</h2>
+    <h2>{promise1}</h2>
     <div
       style={{
         display: `flex`,
@@ -23,21 +23,21 @@ const OurPromise = () => (
           promiseLayout
         }
       >
-        <p>Wales has two languages. We promise to provide high quality training and resources in both of Wales’s national languages, and always be responsive to the individual language requirements of every part of Wales.</p>
+        <p>{promise2}</p>
       </div>
         <div
         style={
           promiseLayout
         }
       >
-        <p>Wales is a varied country. We promise to provide a robust programme of professional development nationally standardised in quality, while responding to the Wales's unique identity and cultural diversity.</p>
+        <p>{promise3}</p>
       </div>
       <div
         style={
           promiseLayout
         }
       >
-        <p>The contemporary arts in Wales are exciting. We promise to be responsive to current cultural developments and inspire teachers to enrich their teaching with to cutting-edge art practices and techniques.</p>
+        <p>{promise4}</p>
       </div>
     </div>
     <div>

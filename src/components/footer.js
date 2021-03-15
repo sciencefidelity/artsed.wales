@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 
-const Footer = () => (
+const Footer = ({ contact, email, brand, site }) => (
   <footer
     style={{
       background: `#0D0D0D`,
@@ -32,7 +32,7 @@ const Footer = () => (
             marginBottom: `-0.1rem`
           }}
         >
-          Get in touch
+          {contact}
         </h2>
         <p
           style={{
@@ -42,15 +42,15 @@ const Footer = () => (
             marginBottom: `2.9rem`
           }}
         >
-          info@artsed.wales
+          {email}
         </p>
         <p
           style={{
             fontSize: `1rem`,
-            color: `#e7dbd8`,
+            color: `#e7dbd8`
           }}
         >
-          © {new Date().getFullYear()} National Arts and Education Network
+          © {new Date().getFullYear()} {brand}
         </p>
       </div> 
       
@@ -58,7 +58,7 @@ const Footer = () => (
         style={{
           display: `flex`,
           flexDirection: `column`,
-          width: `50%`,
+          width: `50%`
         }}
       >
         <div
@@ -92,7 +92,7 @@ const Footer = () => (
             marginTop: `-0.7rem`,
           }}
         >
-          <p>Site by <span style={{textDecoration: `underline`,}}>Matt Cook</span></p>
+          <p>{site} <span style={{textDecoration: `underline`}}>Matt Cook</span></p>
         </div>
       </div>
     </div>

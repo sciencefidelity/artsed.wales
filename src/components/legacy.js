@@ -4,7 +4,7 @@ const numbersLayout = {
   width: `25%`,
 }
 
-const Legacy = () => (
+const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -16,7 +16,7 @@ const Legacy = () => (
         textAlign: `center`,
       }}
     >
-      <p><small>Legacy of the regional Arts and Education Networks.</small></p>
+      <p><small>{legacy1}</small></p>
     </div>
     <div
       style={{
@@ -29,7 +29,7 @@ const Legacy = () => (
         }
       >
         <h3>782</h3>
-        <h4>School Engagement</h4>
+        <h4>{legacy2}</h4>
       </div>
         <div
         style={
@@ -37,7 +37,7 @@ const Legacy = () => (
         }
       >
         <h3>2351</h3>
-        <h4>Teacher Participation</h4>
+        <h4>{legacy3}</h4>
       </div>
       <div
         style={
@@ -45,7 +45,7 @@ const Legacy = () => (
         }
       >
         <h3>302</h3>
-        <h4>Sessions Delivered</h4>
+        <h4>{legacy4}</h4>
       </div>
       <div
       style={
@@ -53,7 +53,7 @@ const Legacy = () => (
         }
       >
         <h3>10895</h3>
-        <h4>Digital Community</h4>
+        <h4>{legacy5}</h4>
       </div>
     </div>
 

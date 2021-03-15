@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Tredegar = () => (
+const Tredegar = ({ quote1, cite1 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -54,7 +54,7 @@ const Tredegar = () => (
             zIndex: `-12`,
           }}
         />
-        <blockquote>This amazing spoken-word project has inspired our learners to fire their imagination and express themselves. Spoken Word has strengthened the school’s relationship with outside agencies in our community to support future literacy projects in the new curriculum framework.<div style={{height: 10}}></div><cite>(Nicola Williams, Tredegar Park Primary School)</cite></blockquote>
+        <blockquote>{quote1}<div style={{height: 10}}></div><cite>{(cite1)}</cite></blockquote>
       </div>
     </div>
   </section>

@@ -17,7 +17,9 @@ const briteLink = {
   boxShadow: `0 0.3rem 0px rgb(156, 158, 158)`,
 }
 
-const Courses = () => (
+const Courses = ({
+  site1, site2, site3, site4, digital1, digital2, digital3, digital4, book
+}) => (
   <section
     style={{
       marginBottom: `9rem`,
@@ -50,14 +52,14 @@ const Courses = () => (
           position: `relative`,
         }}
       >
-        <h2>Site-Specific Arts</h2>
+        <h2>{site1}</h2>
         <h3
           style={{
             margin: `-0.5rem 0 0.8rem`,
             fontSize: `1.5rem`,
             fontWeight: 400
           }}
-        >Tuesday 26<sup>th</sup> April 2021</h3>
+        >{site2}</h3>
         <h4
           style={{
             margin: `0.1rem 0`,
@@ -65,7 +67,7 @@ const Courses = () => (
             fontWeight: 400
           }}
         >
-          Bedwellty House
+          {site3}
         </h4>
         <h4
           style={{
@@ -74,10 +76,10 @@ const Courses = () => (
             fontWeight: 400
           }}
         >
-          £50
+          £65
         </h4>
-        <p>Places, like people, are unique in character and personality, and like people, they change over time. Exploring the meaning of a specific place, whether this be within the here and now, or by looking deeper into history or science, can enable children and young people to really engage with and take deeper enjoyment from their surroundings.</p>
-        <button style={briteLink}>Book Now</button>
+        <p>{site4}</p>
+        <button style={briteLink}>{book}</button>
       </div>
     </div>
     <div
@@ -106,14 +108,14 @@ const Courses = () => (
           position: `relative`,
         }}
       >
-        <h2>Make it Digital!</h2>
+        <h2>{digital1}</h2>
         <h3
           style={{
             margin: `-0.5rem 0 0.8rem`,
             fontSize: `1.5rem`,
             fontWeight: 400
           }}
-        >Friday 2<sup>nd</sup> May 2021</h3>
+        >{digital2}</h3>
         <h4
           style={{
             margin: `0.1rem 0`,
@@ -121,7 +123,7 @@ const Courses = () => (
             fontWeight: 400
           }}
         >
-          Digital Delivery
+          {digital3}
         </h4>
         <h4
           style={{
@@ -130,10 +132,10 @@ const Courses = () => (
             fontWeight: 400
           }}
         >
-          £50
+          £65
         </h4>
-        <p>Museums, heritage and cultural venues are really passionate about working with contemporary content they have a role to represent and collect the current world, not only the past. Exploring digital process for learning enables learners to engage with collections, exhibitions and sites through an engaging and relevant discipline.</p>
-        <button style={briteLink}>Book Now</button>
+        <p>{digital4}</p>
+        <button style={briteLink}>{book}</button>
       </div>
     </div>
   </section>

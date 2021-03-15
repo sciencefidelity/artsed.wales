@@ -5,7 +5,7 @@ const artistsLayout = {
   paddingRight: 30,
 }
 
-const Artists = () => (
+const Artists = ({ artists1, artists2, artists3, artists4 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -21,16 +21,16 @@ const Artists = () => (
           artistsLayout
         }
       >
-        <h2>Artists are Key</h2>
-        <p>Practicing contemporary artists and creative people provide an essential connection to the contemporary arts. The degree of honesty and openness with which artists share their practice offers invaluable, memorable insights into the artistic process.</p>
+        <h2>{artists1}</h2>
+        <p>{artists2}</p>
       </div>
         <div
         style={
           artistsLayout
         }
       >
-        <h2>Lifelong Creators</h2>
-        <p>Museums, galleries and theatres need a new generation of visitors if they are to survive. Opportunities for children is take part in their culture gives them ownership of it. Lifelong creators pass that love of culture on to their children, laying the foundations of cultural democracy.</p>
+        <h2>{artists3}</h2>
+        <p>{artists4}</p>
       </div>
     </div>
   </section>

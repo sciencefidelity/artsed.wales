@@ -1,6 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { injectIntl } from "gatsby-plugin-intl"
+import { FormattedMessage, Link, useIntl, injectIntl } from "gatsby-plugin-intl"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -8,8 +8,10 @@ import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const intl = useIntl()
   return (
     <>
+    
       <Header />
       <main
         style={{
@@ -26,7 +28,13 @@ const Layout = ({ children }) => {
           {children}
         </div>
       </main>
-      <Footer />
+      <Footer 
+        contact={intl.formatMessage({ id: "contact" })}
+        email={intl.formatMessage({ id: "email" })}
+        brand={intl.formatMessage({ id: "brand" })}
+        site={intl.formatMessage({ id: "site" })}
+      />
+      
     </>
   )
 }

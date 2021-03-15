@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Network = () => (
+const Network = ({ network1, network2 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -37,8 +37,8 @@ const Network = () => (
         marginLeft: 20,
       }}
     >  
-      <h2>A National Network</h2>
-      <p>We are a national network of teachers, artists and cultural organisations providing assistance to Welsh schools to meet their aims for the Expressive Arts Area of Learning Experience by providing them with partnerships to the Welsh cultural sector. We champion networking, colaboration, and actively build proffessional supportive networks between schools and the arts sector throughout Wales. Together we can build amazing things!</p>
+      <h2>{network1}</h2>
+      <p>{network2}</p>
     </div>
   </div>
   </section>
