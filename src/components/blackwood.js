@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Blackwood = ({ quote2, cite2 }) => (
+const Blackwood = ({ quote2, cite2, cite3 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -39,8 +39,7 @@ const Blackwood = ({ quote2, cite2 }) => (
             width: `4.5rem`,
             position: `absolute`,
             left: `18px`,
-            top: `9px`,
-            zIndex: `-11`,
+            top: `9px`
           }}
         />
         <img
@@ -50,11 +49,14 @@ const Blackwood = ({ quote2, cite2 }) => (
             width: `4.5rem`,
             position: `absolute`,
             right: `14px`,
-            bottom: `-15px`,
-            zIndex: `-12`,
+            bottom: `-15px`
           }}
         />
-        <blockquote>{quote2}<div style={{height: `1rem`}}></div><cite>{cite2}</cite></blockquote>
+        <blockquote
+          style={{
+            letterSpacing: `-0.02rem`
+          }}
+        >{quote2}<div style={{height: `1rem`}}></div><cite>{cite2}<br />{cite3}</cite></blockquote>
       </div>
     </div>
   </section>

@@ -16,7 +16,11 @@ const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
         textAlign: `center`,
       }}
     >
-      <p><small>{legacy1}</small></p>
+      <p
+        style={{
+          fontSize: `1rem`
+        }}
+      ><small>{legacy1}</small></p>
     </div>
     <div
       style={{

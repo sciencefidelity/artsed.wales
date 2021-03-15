@@ -47,7 +47,7 @@ const IndexPage = () => {
       
       <Tredegar 
         quote1={intl.formatMessage({ id: "quote-1" })}
-        cite1={intl.formatMessage({ id: "cite-2" })}
+        cite1={intl.formatMessage({ id: "cite-1" })}
       />
       
       <Casestudies
@@ -69,7 +69,8 @@ const IndexPage = () => {
       
       <Blackwood
         quote2={intl.formatMessage({ id: "quote-2" })}
-        cite2={intl.formatMessage({ id: "cite-2" })}
+        cite2={intl.formatMessage({ id: "cite-2-p1" })}
+        cite3={intl.formatMessage({ id: "cite-2-p2" })}
       />
       
       <Artists
@@ -111,11 +112,16 @@ const IndexPage = () => {
       
       <Courses
         site1={intl.formatMessage({ id: "site-1" })}
+        site2a={intl.formatMessage({ id: "site-2-d1" })}
+        site2b={intl.formatMessage({ id: "site-2-d2" })}
+        site2c={intl.formatMessage({ id: "site-2-d3" })}
         site2={intl.formatMessage({ id: "site-2" })}
         site3={intl.formatMessage({ id: "site-3" })}
         site4={intl.formatMessage({ id: "site-4" })}
         digital1={intl.formatMessage({ id: "digital-1" })}
-        digital2={intl.formatMessage({ id: "digital-2" })}
+        digital2a={intl.formatMessage({ id: "digital-2-d1" })}
+        digital2b={intl.formatMessage({ id: "digital-2-d2" })}
+        digital2c={intl.formatMessage({ id: "digital-2-d3" })}
         digital3={intl.formatMessage({ id: "digital-3" })}
         digital4={intl.formatMessage({ id: "digital-4" })}
         book={intl.formatMessage({ id: "book" })}

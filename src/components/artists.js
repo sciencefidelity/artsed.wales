@@ -30,7 +30,11 @@ const Artists = ({ artists1, artists2, artists3, artists4 }) => (
         }
       >
         <h2>{artists3}</h2>
-        <p>{artists4}</p>
+        <p
+          style={{
+            letterSpacing: `-0.02rem`
+          }}
+        >{artists4}</p>
       </div>
     </div>
   </section>

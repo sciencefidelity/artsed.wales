@@ -16,9 +16,19 @@ const Model = ({
     >
       <div style={{
         width: `33.33%`,
+        marginRight: `-10%`
       }}>
-        <h2>{model1}</h2>
-        <p>{model2}</p>
+        <h2
+          style={{
+            lineHeight: `0.6`,
+            paddingBottom: `1rem`
+          }}
+        >{model1}</h2>
+        <p
+          style={{
+            marginRight: `-15%`
+          }}
+        >{model2}</p>
         <p>{model3}</p>
         <p>{model4}</p>
       </div>

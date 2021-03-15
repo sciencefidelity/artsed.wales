@@ -5,7 +5,7 @@
 }
 .vennDiagram {
   position: relative;
-  width: 66.66%;
+  width: 72.66%;
   margin-left: auto;
 }
 .content1 {
@@ -43,7 +43,7 @@
   position: absolute;
   color: #ffffff;
   font-family: var(--vennFont);
-  font-size: 2.05rem;
+  font-size: 1.7rem;
   text-align: center;
   transform: translate(-50%, -50%);
   top: 55%;

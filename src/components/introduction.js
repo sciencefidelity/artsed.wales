@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 
 const Introduction = ({ introText1, introText2 }) => (
   <section
@@ -18,8 +19,16 @@ const Introduction = ({ introText1, introText2 }) => (
         marginRight: 20,
       }}
     >
-      <p>{introText1}</p>
-      <p>{introText2}</p>
+      <p
+        style={{
+          letterSpacing: `-0.02rem`
+        }}
+      >{introText1}</p>
+      <p
+        style={{
+          letterSpacing: `-0.01rem`
+        }}
+      >{introText2}</p>
     </div>
     <div
       style={{

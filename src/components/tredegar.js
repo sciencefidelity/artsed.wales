@@ -39,8 +39,7 @@ const Tredegar = ({ quote1, cite1 }) => (
             width: `4.5rem`,
             position: `absolute`,
             left: `15px`,
-            top: `13px`,
-            zIndex: `-11`,
+            top: `13px`
           }}
         />
         <img
@@ -50,8 +49,7 @@ const Tredegar = ({ quote1, cite1 }) => (
             width: `4.5rem`,
             position: `absolute`,
             right: `-4px`,
-            bottom: `-12px`,
-            zIndex: `-12`,
+            bottom: `-12px`
           }}
         />
         <blockquote>{quote1}<div style={{height: 10}}></div><cite>{(cite1)}</cite></blockquote>

@@ -18,7 +18,8 @@ const briteLink = {
 }
 
 const Courses = ({
-  site1, site2, site3, site4, digital1, digital2, digital3, digital4, book
+  site1, site2a, site2b, site2c, site3, site4, book,
+  digital1, digital2a, digital2b, digital2c, digital3, digital4
 }) => (
   <section
     style={{
@@ -52,14 +53,18 @@ const Courses = ({
           position: `relative`,
         }}
       >
-        <h2>{site1}</h2>
+        <h2
+          style={{
+            letterSpacing: `-0.01rem`
+          }}
+        >{site1}</h2>
         <h3
           style={{
             margin: `-0.5rem 0 0.8rem`,
             fontSize: `1.5rem`,
             fontWeight: 400
           }}
-        >{site2}</h3>
+        >{site2a}<sup>{site2b}</sup> {site2c}</h3>
         <h4
           style={{
             margin: `0.1rem 0`,
@@ -115,7 +120,7 @@ const Courses = ({
             fontSize: `1.5rem`,
             fontWeight: 400
           }}
-        >{digital2}</h3>
+        >{digital2a}<sup>{digital2b}</sup> {digital2c}</h3>
         <h4
           style={{
             margin: `0.1rem 0`,
@@ -134,7 +139,11 @@ const Courses = ({
         >
           £65
         </h4>
-        <p>{digital4}</p>
+        <p
+          style={{
+            letterSpacing: `-0.01rem`
+          }}
+        >{digital4}</p>
         <button style={briteLink}>{book}</button>
       </div>
     </div>
