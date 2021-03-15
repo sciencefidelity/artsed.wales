@@ -26,6 +26,7 @@ const IndexPage = () => {
         title={intl.formatMessage({ id: "title" })}
         keywords={[`gatsby`, `application`, `react`]}
       />
+      <FormattedMessage id="welcome" />
       <Headline />
       <Introduction />
       <h2
