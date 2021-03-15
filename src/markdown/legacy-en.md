@@ -1,6 +1,6 @@
-Etifeddiaeth y Rhwydweithiau Celfyddydau ac Addysg rhanbarthol.
+Legacy of the regional Arts and Education Networks
 
-- 782 <br /> Ymgysylltu â'r Ysgol
-- 2351 <br /> Cyfranogiad Athrawon
-- 302 <br /> Sesiynau wedi'u Cyflwyno
-- 10895 <br /> Cymuned Ddigidol
+- 782 <br /> School Engagement
+- 2351 <br /> Teacher Participation
+- 302 <br /> Sessions Delivered
+- 10895 <br /> Digital Community

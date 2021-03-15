@@ -1,3 +1,3 @@
-## Cerddoriaeth
+## Music
 
-Creodd dosbarth blwyddyn chwech berfformiadau geiriau llafar mewn ymateb i'w hymweliad â Thŷ Tredegar yr Ymddiriedolaeth Genedlaethol gyda'r bardd a cherddor dwyieithog Rufus Mufasa. Gwahoddwyd y dosbarth yn ôl i'r tŷ hanesyddol i berfformio eu cerddi i rieni ac athrawon.
+Over a three-day project, a year-six class created spoken word performances in response to their visit to National Trust Tredegar House with bilingual poet and musician Rufus Mufasa. The class were invited back to the historic house to perform their poems for parents and teachers.

@@ -14,7 +14,7 @@ Archebwch nawr
 
 Cysylltwch
 
-info@artsed.wales
+helo@celfadd.cymru
 
 © 2021 Rhwydwaith Cenedlaethol y Celfyddydau ac Addysg
 
