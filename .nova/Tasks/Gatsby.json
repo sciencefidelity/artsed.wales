@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "clean" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/zsh\ngatsby clean"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/zsh\ngatsby develop -H 0.0.0.0"
+    }
+  },
+  "identifier" : "F3909344-6E0F-4CE2-9DCB-1189FCFB1244",
+  "persistent" : true
+}

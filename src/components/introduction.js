@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Introduction = () => (
+const Introduction = ({ introText1, introText2 }) => (
   <section
     style={{
       marginBottom: `6rem`,
@@ -18,8 +18,8 @@ const Introduction = () => (
         marginRight: 20,
       }}
     >
-      <p>We advocate a national programme that partners schools with cultural organisations; Expressive Arts learning led by and in partnership with the arts sector. Our long term goal is to build national policy for collaboration between our schools and arts sector that will be the first of its kind anywhere in the world.</p>
-      <p>Quality arts experiences in childhood are life changing, building the foundation for lifelong arts appreciation and participation. Meaningful cultural experiences outside the classroom are essential in the delivery of the statements of what matters in the Expressive Arts AoLE and the Four Purposes of the Curriculum for Wales.</p>
+      <p>{introText1}</p>
+      <p>{introText2}</p>
     </div>
     <div
       style={{
@@ -34,7 +34,7 @@ const Introduction = () => (
         quality={80}
         objectPosition={"100% 50%"}
         formats={["AUTO", "WEBP", "AVIF"]}
-        alt="War and Peace Exhibition at Blackwood Miners Institute"
+        alt=""
         style={{
           border: `8px solid white`,
           boxShadow: `2px 2px 10px rgba(0, 0, 0, 0.2)`,

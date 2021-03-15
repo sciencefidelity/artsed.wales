@@ -1,10 +1,12 @@
 {
   "title": "Rhwydwaith Cenedlaethol Celf ac Addysg",
   "description": "Rydym yn dod ag ysgolion, artistiaid a sefydliadau diwylliannol ynghyd i lwyddo yn y Celfyddydau Mynegiadol.",
-  
   "author": "@artsed_wales",
-  "hello": "Helo bobl",
-  "welcome": "Croeso i'ch gwefan Gatsby newydd.",
+  "headline": "Rydym yn dod ag ysgolion, artistiaid a sefydliadau diwylliannol ynghyd i lwyddo yng nghwricwlwm y Celfyddydau Mynegiannol ac adeiladu dyfodol cynaliadwy i'r celfyddydau.",
+  "introduction-1": "Rydym yn eirioli rhaglen genedlaethol sy'n partneru ysgolion â sefydliadau diwylliannol; Dysgu Celfyddydau Mynegiadol mewn partneriaeth â sector y celfyddydau. Ein nod tymor hir yw adeiladu polisi cenedlaethol ar gyfer cydweithredu rhwng ein sector ysgolion a chelfyddydau a fydd y cyntaf o'i fath unrhyw le yn y byd.",
+  "introduction-2": "Mae profiadau celfyddydol o safon yn ystod plentyndod yn newid bywyd, gan adeiladu'r sylfaen ar gyfer gwerthfawrogiad a chyfranogiad celf gydol oes. Mae profiadau diwylliannol ystyrlon y tu allan i'r ystafell ddosbarth yn hanfodol i gyflawni MDaP y Celfyddydau Mynegiadol a Phedwar Pwrpas Cwricwlwm Cymru.",
+  "heading-1" : "Archwilio, Ymateb, Creu",
+  
   "title_page2": "Tudalen dau",
   "hello_page2": "Helo o'r ail dudalen",
   "go_page2": "Ewch i dudalen 2",

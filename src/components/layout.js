@@ -1,5 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+import { injectIntl } from "gatsby-plugin-intl"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -14,17 +15,17 @@ const Layout = ({ children }) => {
         style={{
           minHeight: `calc(100vh - 471px)`
         }}
+      >
+        <div
+          style={{
+            width: `88%`,
+            maxWidth: 1000,
+            margin: `auto`,
+          }}
         >
-          <div
-            style={{
-              width: `88%`,
-              maxWidth: 1000,
-              margin: `auto`,
-            }}
-          >
-        {children}
-          </div>
-        </main>
+          {children}
+        </div>
+      </main>
       <Footer />
     </>
   )

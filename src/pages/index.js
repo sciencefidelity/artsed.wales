@@ -4,7 +4,6 @@ import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import Headline from "../components/headline"
 import Introduction from "../components/introduction"
 import Tredegar from "../components/tredegar"
 import Casestudies from "../components/casestudies"
@@ -26,14 +25,22 @@ const IndexPage = () => {
         title={intl.formatMessage({ id: "title" })}
         keywords={[`gatsby`, `application`, `react`]}
       />
-      <FormattedMessage id="welcome" />
-      <Headline />
-      <Introduction />
+      <section
+        style={{
+          marginBottom: `6rem`,
+        }}
+      >
+        <h2><FormattedMessage id="headline" /></h2>
+      </section>
+      
+      <Introduction introText1={intl.formatMessage({ id: "introduction-1" })} introText2={intl.formatMessage({ id: "introduction-2" })} />
+      
       <h2
         style={{
           marginBottom: `6rem`
         }}
-      >Exploring, Responding, Creating</h2>
+      ><FormattedMessage id="heading-1" /></h2>
+      
       <Tredegar />
       <Casestudies />
       <Legacy />

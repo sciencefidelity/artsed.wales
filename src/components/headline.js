@@ -1,12 +1,12 @@
 import React from "react"
 
-const Headline = () => (
+const Headline = ({ headline }) => (
   <section
     style={{
       marginBottom: `6rem`,
     }}
   >
-    <h2>We bring together schools, artists and cultural organisations to succeed in the Expressive Arts curriculum and build a sustainable future for the arts in Wales.</h2>
+    <h2>{headline}</h2>
   </section>
 )
 

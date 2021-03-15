@@ -21,7 +21,7 @@ A static page to advertise the services that the network can offer. Drawing on t
 - Reposition cropped images in container
 - Add background illustrations
 - Make it respondsive
-- Add Welsh and English translations to lang/*.js
+- Add Welsh and English translations to lang/*.json
 - Get the language switch working
 - Add an internal page navigation
 - Fix language switch and menu to top right corner
