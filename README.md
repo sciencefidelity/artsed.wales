@@ -21,16 +21,17 @@ A static page to advertise the services that the network can offer. Drawing on t
 - Reposition cropped images in container
 - Add background illustrations
 - Make it respondsive
-- Add Welsh and English translations to lang/*.json
-- Get the language switch working
 - Add an internal page navigation
 - Fix language switch and menu to top right corner
 - Animate numbers
 - Connect sign up to Mailchimp
-- Links to Plwg / Arts Active
 - Make the 404 page beautiful
 - Get a welsh email address
 - Add links to Eventbrite
+
+### Issues
+
+- Can i use different styling depending on the current language?
 
 ### Wishlist
 
@@ -41,5 +42,10 @@ A static page to advertise the services that the network can offer. Drawing on t
 14.03.21
 
 - Setup internationalisation with Gatsby International Plugin
+
+15.03.21
+
+- Complete all translation for Welsh language
+- Add external links
 
 Built with [Gatsby](https://www.gatsbyjs.com/)
