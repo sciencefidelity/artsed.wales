@@ -55,12 +55,12 @@ const Courses = ({
       >
         <h2
           style={{
-            letterSpacing: `-0.01rem`
+            letterSpacing: `-0.01rem`,
           }}
         >{site1}</h2>
         <h3
           style={{
-            margin: `-0.5rem 0 0.8rem`,
+            margin: `0 0 0.8rem`,
             fontSize: `1.5rem`,
             fontWeight: 400
           }}
@@ -76,7 +76,7 @@ const Courses = ({
         </h4>
         <h4
           style={{
-            margin: `0rem 0 2rem`,
+            margin: `0.4rem 0 2rem`,
             fontSize: `1.2rem`,
             fontWeight: 400
           }}
@@ -116,7 +116,7 @@ const Courses = ({
         <h2>{digital1}</h2>
         <h3
           style={{
-            margin: `-0.5rem 0 0.8rem`,
+            margin: `0 0 0.8rem`,
             fontSize: `1.5rem`,
             fontWeight: 400
           }}
@@ -132,7 +132,7 @@ const Courses = ({
         </h4>
         <h4
           style={{
-            margin: `0rem 0 2rem`,
+            margin: `0.4rem 0 2rem`,
             fontSize: `1.2rem`,
             fontWeight: 400
           }}
