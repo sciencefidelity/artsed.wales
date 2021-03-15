@@ -15,19 +15,25 @@ Staging site
 
 A static page to advertise the services that the network can offer. Drawing on the work of the defunct regional networks and advertising proposed courses.
 
-### To include
+### To do
 
-- details of courses developed showing the impact to teachers and learners.
-- good images of the process
-- new logo
-- planned coures with booking information
-- stats of the regional networks
-- quotes of teachers
-- illustrations
+- Convert styles to Sass
+- Reposition cropped images in container
+- Add background illustrations
+- Make it respondsive
+- Add Welsh and English translations to lang/*.js
+- Get the language switch working
+- Add an internal page navigation
+- Fix language switch and menu to top right corner
+- Animate numbers
+- Connect sign up to Mailchimp
+- Links to Plwg / Arts Active
+- Make the 404 page beautiful
+- Get a welsh email address
+- Add links to Eventbrite
 
 ### Wishlist
 
-- dynamically switch between English and Welsh
 - dynamically switch between light and dark mode
 
 ### Changelog
