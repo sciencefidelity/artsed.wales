@@ -1,6 +1,5 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 
 const Introduction = ({ introText1, introText2 }) => (
   <section

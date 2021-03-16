@@ -86,7 +86,7 @@ const Courses = ({
         </h4>
         <p>{site4}</p>
         <a 
-          href="#"
+          href="https://eventbrite.com/"
           target="_blank"
           rel="noreferrer"
         >
@@ -152,7 +152,7 @@ const Courses = ({
           }}
         >{digital4}</p>
         <a 
-          href="#"
+          href="https://eventbrite.com/"
           target="_blank"
           rel="noreferrer"
         >
