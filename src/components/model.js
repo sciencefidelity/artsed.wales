@@ -6,7 +6,7 @@ const Model = ({
 }) => (
   <section
     style={{
-      marginBottom: `6rem`,
+      marginBottom: `3.5rem`,
     }}
   >
     <div

@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Network = ({ network1, network2 }) => (
   <section
     style={{
-      marginBottom: `6rem`,
+      marginBottom: `6.2rem`,
     }}
   >
     <div 

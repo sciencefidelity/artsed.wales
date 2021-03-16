@@ -7,7 +7,7 @@ const numbersLayout = {
 const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
   <section
     style={{
-      marginBottom: `6rem`,
+      marginBottom: `4.8rem`,
     }}
   >
     <div

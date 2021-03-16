@@ -11,14 +11,13 @@ const Header = () => (
   <header
     style={{
       background: `#0D0D0D`,
-      marginBottom: `5.5rem`,
+      marginBottom: `5.2rem`,
     }}
   >
     <div
       style={{
         margin: `0 auto`,
         display: `flex`,
-        //maxWidth: `95%`
       }}
     >
       <div

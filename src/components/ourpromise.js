@@ -9,7 +9,7 @@ const promiseLayout = {
 const OurPromise = ({ promise1, promise2, promise3, promise4 }) => (
   <section
     style={{
-      marginBottom: `8rem`,
+      marginBottom: `7.8rem`,
     }}
   >
     <h2>{promise1}</h2>
@@ -52,7 +52,7 @@ const OurPromise = ({ promise1, promise2, promise3, promise4 }) => (
         display: `flex`,
         width: `65%`,
         border: `8px solid white`,
-        marginTop: `4rem`,
+        marginTop: `3.7rem`,
         marginLeft: `auto`,
         marginRight: `auto`,
         boxShadow: `2px 2px 10px rgba(0, 0, 0, 0.2)`,

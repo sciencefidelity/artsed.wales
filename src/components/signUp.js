@@ -3,7 +3,7 @@ import React from "react"
 const SignUp = ({ signup1, signup2, signup3 }) => (
   <section
     style={{
-      marginBottom: `6rem`,
+      marginBottom: `6.2rem`,
       textAlign: `center`
     }}
   >
@@ -53,7 +53,8 @@ const SignUp = ({ signup1, signup2, signup3 }) => (
       style={{
         textAlign: `left`,
         width: `50%`,
-        margin: `auto`,
+        paddingTop: `0.2rem`,
+        margin: `auto`
       }}
     >
       <p>

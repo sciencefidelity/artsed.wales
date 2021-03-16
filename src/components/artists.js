@@ -8,7 +8,7 @@ const artistsLayout = {
 const Artists = ({ artists1, artists2, artists3, artists4 }) => (
   <section
     style={{
-      marginBottom: `6rem`,
+      marginBottom: `7.8rem`,
     }}
   >
     <div

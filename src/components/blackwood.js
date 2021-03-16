@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Blackwood = ({ quote2, cite2, cite3 }) => (
   <section
     style={{
-      marginBottom: `6rem`,
+      marginBottom: `7rem`,
     }}
   >
     <div

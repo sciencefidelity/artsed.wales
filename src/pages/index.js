@@ -28,7 +28,7 @@ const IndexPage = () => {
       
       <section
         style={{
-          marginBottom: `6rem`,
+          marginBottom: `5.1rem`,
         }}
       >
         <h2><FormattedMessage id="headline" /></h2>
@@ -41,7 +41,7 @@ const IndexPage = () => {
       
       <h2
         style={{
-          marginBottom: `6rem`
+          marginBottom: `5.7rem`
         }}
       ><FormattedMessage id="heading-1" /></h2>
       
@@ -109,6 +109,15 @@ const IndexPage = () => {
         signup2={intl.formatMessage({ id: "signup-2" })}
         signup3={intl.formatMessage({ id: "signup-3" })}
       />
+      
+      <section
+        style={{
+          marginBottom: `4.7rem`,
+        }}
+      >
+        <h2><FormattedMessage id="involved-1" /></h2>
+        <p><FormattedMessage id="involved-2" /></p>
+      </section>
       
       <Courses
         site1={intl.formatMessage({ id: "site-1" })}

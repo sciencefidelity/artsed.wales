@@ -5,7 +5,7 @@ import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 const Introduction = ({ introText1, introText2 }) => (
   <section
     style={{
-      marginBottom: `6rem`,
+      marginBottom: `3.6rem`,
     }}
   >
     <div 

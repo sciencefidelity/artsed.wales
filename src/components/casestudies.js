@@ -54,7 +54,7 @@ const Casestudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
         display: `flex`,
         width: `65%`,
         border: `8px solid white`,
-        marginTop: `6rem`,
+        marginTop: `6.4rem`,
         marginLeft: `auto`,
         marginRight: `auto`,
         boxShadow: `2px 2px 10px rgba(0, 0, 0, 0.2)`,

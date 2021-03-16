@@ -15,6 +15,7 @@ const briteLink = {
   padding: `0.2rem 1.5rem 0.2rem`,
   borderRadius: `0.5rem`,
   boxShadow: `0 0.3rem 0px rgb(156, 158, 158)`,
+  cursor: `pointer`
 }
 
 const Courses = ({
@@ -84,7 +85,13 @@ const Courses = ({
           £65
         </h4>
         <p>{site4}</p>
-        <button style={briteLink}>{book}</button>
+        <a 
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button style={briteLink}>{book}</button>
+        </a>
       </div>
     </div>
     <div
@@ -144,7 +151,13 @@ const Courses = ({
             letterSpacing: `-0.01rem`
           }}
         >{digital4}</p>
-        <button style={briteLink}>{book}</button>
+        <a 
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button style={briteLink}>{book}</button>
+        </a>
       </div>
     </div>
   </section>
