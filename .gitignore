@@ -3,6 +3,7 @@ node_modules/
 
 # Cache and build
 .cache/
+.nova/
 public/
 
 # Mac stuff
