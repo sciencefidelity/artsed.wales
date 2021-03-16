@@ -22,13 +22,7 @@ const Layout = ({ children }) => {
           minHeight: `calc(100vh - 471px)`
         }}
       >
-        <div
-          style={{
-            width: `88%`,
-            maxWidth: 1000,
-            margin: `auto`,
-          }}
-        >
+        <div className="containerFluid">
           {children}
         </div>
       </main>

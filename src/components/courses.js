@@ -6,13 +6,13 @@ const Courses = ({
   site1, site2a, site2b, site2c, site3, site4, book,
   digital1, digital2a, digital2b, digital2c, digital3, digital4
 }) => (
-  <section
-    style={{
-      marginBottom: `9rem`,
-      display: `flex`
-    }}
-  >
-    <div className={courseStyles.cardContainer}>
+  <section className={courseStyles.coursesContainer}>
+    <div 
+      className={courseStyles.cardContainer}
+      style={{
+        marginRight: `8%`,
+      }}
+    >
       <StaticImage
         src="../images/aen_outdoor_2.jpg"
         width={400}
@@ -46,7 +46,12 @@ const Courses = ({
         </a>
       </div>
     </div>
-    <div className={courseStyles.cardContainer}>
+    <div 
+      className={courseStyles.cardContainer}
+      style={{
+        marginLeft: `8%`,
+      }}
+    >
       <StaticImage
         src="../images/aen_printing.jpg"
         width={400}
