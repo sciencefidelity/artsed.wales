@@ -30,6 +30,7 @@ const Blackwood = ({ quote2, cite2, cite3 }) => (
           width: `38%`,
           padding: `26px 30px 10px 40px`,
           position: `relative`,
+          background: `#e7dbd8`
         }}
       > 
         <img

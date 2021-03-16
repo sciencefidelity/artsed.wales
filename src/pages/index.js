@@ -31,7 +31,11 @@ const IndexPage = () => {
           marginBottom: `5.1rem`,
         }}
       >
-        <h2><FormattedMessage id="headline" /></h2>
+        <h2
+          style={{
+            letterSpacing: `0rem`
+          }}
+        ><FormattedMessage id="headline" /></h2>
       </section>
       
       <Introduction 

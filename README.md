@@ -19,7 +19,6 @@ A static page to advertise the services that the network can offer. Drawing on t
 
 - Convert styles to Sass
 - Reposition cropped images in container
-- Add background illustrations
 - Make it respondsive
 - Add an internal page navigation
 - Fix language switch and menu to top right corner
@@ -41,13 +40,17 @@ A static page to advertise the services that the network can offer. Drawing on t
 
 ### Changelog
 
-14.03.21
+16.03.21
 
-- Setup internationalisation with Gatsby International Plugin
+- Added background illustrations
 
 15.03.21
 
 - Complete all translation for Welsh language
 - Add external links
+
+14.03.21
+
+- Setup internationalisation with Gatsby International Plugin
 
 Built with [Gatsby](https://www.gatsbyjs.com/)

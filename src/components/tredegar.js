@@ -30,6 +30,7 @@ const Tredegar = ({ quote1, cite1 }) => (
           width: `50%`,
           padding: `25px 30px 10px 40px`,
           position: `relative`,
+          background: `#e7dbd8`
         }}
       >
         <img
