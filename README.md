@@ -17,6 +17,10 @@ A static page to advertise the services that the network can offer. Drawing on t
 
 ### To do
 
+- Give the logo link an invisible name
+- html element does not have a lang attribute
+- Set up browser caching
+- Defer js components
 - Convert styles to Sass
 - Reposition cropped images in container
 - Make it respondsive
@@ -28,7 +32,9 @@ A static page to advertise the services that the network can offer. Drawing on t
 - Get a welsh email address
 - Add links to Eventbrite
 - Add small animation to Eventbrite buttons
-- fill in course information from JSON, display with single component
+- Fill in course information from JSON, display with single component
+- Make a twitter card image
+- Meta does not get translated
 
 ### Issues
 

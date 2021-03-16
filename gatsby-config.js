@@ -5,7 +5,7 @@ module.exports = {
     description:
       "We bring together schools, artists and cultural organisations to succeed in the Expressive Arts.",
     url: "https://nat.artsed.wales",
-    image: "/images/aen_network.jpg",
+    image: "/static/images/aen_network.jpg",
     twitterUsername: "@artsed_wales",
   },
   plugins: [

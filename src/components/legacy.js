@@ -32,7 +32,9 @@ const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
           numbersLayout
         }
       >
-        <h3>782</h3>
+        <h3
+          data-target="782"
+        >782</h3>
         <h4>{legacy2}</h4>
       </div>
         <div
@@ -40,7 +42,9 @@ const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
           numbersLayout
         }
       >
-        <h3>2351</h3>
+        <h3
+          data-target="2351"
+        >2351</h3>
         <h4>{legacy3}</h4>
       </div>
       <div
@@ -48,7 +52,9 @@ const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
           numbersLayout
         }
       >
-        <h3>302</h3>
+        <h3
+          data-target="302"
+        >302</h3>
         <h4>{legacy4}</h4>
       </div>
       <div
@@ -56,7 +62,9 @@ const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
         numbersLayout
         }
       >
-        <h3>10895</h3>
+        <h3
+          data-target="10895"
+        >10895</h3>
         <h4>{legacy5}</h4>
       </div>
     </div>
