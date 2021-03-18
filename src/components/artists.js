@@ -1,7 +1,5 @@
 import React from "react"
 
-
-
 const Artists = ({ artists1, artists2, artists3, artists4 }) => (
   <section
     style={{
