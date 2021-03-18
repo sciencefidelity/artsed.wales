@@ -1,0 +1,134 @@
+header {
+  background: #0D0D0D;
+  margin-bottom: 5.2rem;
+}
+.headerContainer {
+  margin: 0 auto;
+  display: flex;
+}
+.brandContainer {
+  align-items: center;
+  padding: 0.6em;
+  margin: 0 0.5em -0.28em 0.5em;
+}
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.nameEn {
+  letter-spacing: 0;
+  padding-bottom: 0.4rem;
+  margin: 0;
+}
+.nameCy {
+  letter-spacing: 0.041rem;
+  margin: 0;
+}
+
+// ********** Language Switcher *********
+
+.languageSwitcher {
+  display: flex;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  align-items: center;
+  font-size: 3.5rem;
+  letter-spacing: 0.07rem;
+  margin: 0 2.5rem 0 auto;
+}
+.languageLink {
+  color: #e7dbd8;
+  cursor: pointer;
+  userSelect: none;
+}
+
+// ********** Media Queries *************
+
+@media only screen and (max-width: 856px) {
+  .nameContainer {
+    margin-bottom: 0.2rem;
+  }
+  .nameEn,
+  .nameCy {
+    font-size: 0.98em;
+  }
+  .nameCy {
+    letter-spacing: 0.03rem;
+  }
+  .brandContainer {
+    padding: 0em;
+    margin: 0.6em 0.7em 0 0.7em;
+    img {
+      width: 65px;
+      height: 65px;
+    }
+  }
+  .languageSwitcher {
+    margin: -0.2rem 1.2rem 0.2rem auto;
+    font-size: 3.5rem;
+  }
+}
+@media only screen and (max-width: 656px) {
+  .nameContainer {
+    margin-top: 0.3rem;
+  }
+  .nameEn,
+  .nameCy {
+    font-size: 0.85em;
+  }
+  .nameCy {
+    letter-spacing: 0.025rem;
+    margin-bottom: 0.5em;
+  }
+  .brandContainer {
+    padding: 0em;
+    margin: 0.6em 0.5em 0 0.5em;
+    img {
+      width: 55px;
+      height: 55px;
+    }
+  }
+  .languageSwitcher {
+    margin: -0.2rem 0.8rem 0.2rem auto;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .nameContainer {
+    display: none;
+  }
+  .languageSwitcher {
+    margin: -0.2rem 1.2rem 0.2rem auto;
+  }
+  .brandContainer {
+    padding: 0.2em;
+    margin: 0.4em 0.5em 0 0.5em;
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .nameContainer {
+    display: none;
+  }
+  .brandContainer {
+    padding: 0.4em;
+    margin: 0.3em 0.5em 0 0.5em;
+    img {
+      width: 60px;
+      height: 60px;
+      margin: 5;
+    }
+  }
+  .languageSwitcher {
+    margin: -0.2rem 1.2rem 0.2rem auto;
+  }
+}
+@media only screen and (max-width: 325px) {
+
+}
