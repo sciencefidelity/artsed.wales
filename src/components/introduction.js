@@ -9,12 +9,12 @@ const Introduction = ({ introText1, introText2 }) => (
   >
     <div 
       style={{
-        display: `flex`,
+        display: `grid`,
+        gridTemplateColumns: `1fr 1fr`
       }}
     >
     <div 
       style={{
-        width: `50%`,
         marginRight: 20,
       }}
     >
@@ -29,26 +29,20 @@ const Introduction = ({ introText1, introText2 }) => (
         }}
       >{introText2}</p>
     </div>
-    <div
+    <StaticImage
+      src="../images/aen_blackwood_1.jpg"
+      width={600}
+      height={400}
+      quality={80}
+      objectPosition={"50% 50%"}
+      formats={["AUTO", "WEBP", "AVIF"]}
+      alt=""
       style={{
-        width: `50%`,
+        border: `8px solid white`,
+        boxShadow: `2px 2px 10px rgba(0, 0, 0, 0.2)`,
         marginLeft: 20,
       }}
-    >  
-      <StaticImage
-        src="../images/aen_blackwood_1.jpg"
-        width={700}
-        height={650}
-        quality={80}
-        objectPosition={"100% 50%"}
-        formats={["AUTO", "WEBP", "AVIF"]}
-        alt=""
-        style={{
-          border: `8px solid white`,
-          boxShadow: `2px 2px 10px rgba(0, 0, 0, 0.2)`,
-        }}
-      />   
-    </div>
+    />   
   </div>
   </section>
 )

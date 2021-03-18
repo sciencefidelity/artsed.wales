@@ -114,11 +114,7 @@ const IndexPage = () => {
         signup3={intl.formatMessage({ id: "signup-3" })}
       />
       
-      <section
-        style={{
-          marginBottom: `4.7rem`,
-        }}
-      >
+      <section className="getInvolved">
         <h2><FormattedMessage id="involved-1" /></h2>
         <p><FormattedMessage id="involved-2" /></p>
       </section>

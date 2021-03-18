@@ -49,7 +49,7 @@ const Casestudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
       height={400}
       quality={80}
       formats={["AUTO", "WEBP", "AVIF"]}
-      alt="War and Peace Exhibition at Blackwood Miners Institute"
+      alt=""
       style={{
         display: `flex`,
         width: `65%`,

@@ -9,31 +9,26 @@ const Network = ({ network1, network2 }) => (
   >
     <div 
       style={{
-        display: `flex`,
-      }}
-    >
-    <div 
-      style={{
-        width: `50%`,
-        marginRight: 20,
+        display: `grid`,
+        gridTemplateColumns: `1fr 1fr`
       }}
     >
       <StaticImage
         src="../images/aen_network.jpg"
-        width={700}
-        height={600}
+        width={600}
+        height={400}
         quality={80}
         formats={["AUTO", "WEBP", "AVIF"]}
-        alt="Networking event at the Riverfront"
+        objectPosition={"50% 50%"}
+        alt=""
         style={{
           border: `8px solid white`,
           boxShadow: `2px 2px 10px rgba(0, 0, 0, 0.2)`,
+          marginRight: 20,
         }}
       />
-    </div>
     <div
       style={{
-        width: `50%`,
         marginLeft: 20,
       }}
     >  

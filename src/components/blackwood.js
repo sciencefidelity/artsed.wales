@@ -21,8 +21,9 @@ const Blackwood = ({ quote2, cite2, cite3 }) => (
         width={600}
         height={400}
         quality={80}
+        objectPosition={"50% 0%"}
         formats={["AUTO", "WEBP", "AVIF"]}
-        alt="War and Peace Exhibition at Blackwood Miners Institute"
+        alt=""
 
       />
       <div

@@ -18,16 +18,17 @@ const Tredegar = ({ quote1, cite1 }) => (
     >
       <StaticImage
         src="../images/aen_tredegar.jpg"
-        width={400}
-        height={300}
+        width={600}
+        height={380}
         quality={80}
+        objectPosition={"30% 50%"}
         formats={["AUTO", "WEBP", "AVIF"]}
-        alt="Spoken word perfrmance at Tredegar House"
+        alt=""
 
       />
       <div
         style={{
-          width: `50%`,
+          width: `70%`,
           padding: `25px 30px 10px 40px`,
           position: `relative`,
           background: `#e7dbd8`

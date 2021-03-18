@@ -18,8 +18,10 @@ const Courses = ({
         width={400}
         height={600}
         quality={80}
+        objectPosition={`50% 10%`}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt=""
+        className={courseStyles.cardImage}
       />
       <div className={courseStyles.cardText}>
         <h2
@@ -58,7 +60,9 @@ const Courses = ({
         height={600}
         quality={80}
         formats={["AUTO", "WEBP", "AVIF"]}
+        objectPosition={`50% 10%`}
         alt=""
+        className={courseStyles.cardImage}
       />
       <div className={courseStyles.cardText}>
         <h2>{digital1}</h2>

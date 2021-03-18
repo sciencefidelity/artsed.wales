@@ -47,7 +47,7 @@ const OurPromise = ({ promise1, promise2, promise3, promise4 }) => (
       height={400}
       quality={80}
       formats={["AUTO", "WEBP", "AVIF"]}
-      alt="Site-Specific Arts at Bedwellty House"
+      alt=""
       style={{
         display: `flex`,
         width: `65%`,

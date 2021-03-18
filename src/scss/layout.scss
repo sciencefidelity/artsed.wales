@@ -10,6 +10,10 @@
   margin: auto;
 }
 
+.getInvolved {
+  marginBottom: 4.7rem;
+}
+
 /* ********** Media Queries ************ */
 
 @media only screen and (max-width: 1114px) {
@@ -35,6 +39,18 @@
     font-size: 100%;
   }
   .containerFluid {
-    width: 97%;
+    width: 100%;
+  }
+  h2 {
+    font-size: 1.9rem;
+  }
+  .getInvolved {
+    width: 85%;
+    margin: 0 auto 2.7rem;
+  }
+}
+@media only screen and (max-width: 325px) {
+  p {
+    font-size: 0.95rem;
   }
 }
