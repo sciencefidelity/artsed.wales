@@ -1,20 +1,123 @@
+// ********** Partials ******************
+
 @use "reset";
 @use "typography";
-@use "colors";
+@use "variables";
 
-/* ********** Global styles ************ */
+// ********** Global styles *************
 
 .containerFluid {
   width: 88%;
   max-width: 1000px;
   margin: auto;
 }
+.centeredImage {
+  display: block;
+  width: 65%;
+  min-width: 600px;
+  margin: 4.7rem auto;
+  border: var(--border);
+  box-shadow: var(--shadow);
+}
+
+// ********** Grid Layouts **************
+
+.splitContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+}
+.sideImage {
+  display: block;
+  border: var(--border);
+  box-shadow: var(--shadow);
+}
+.halfLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+}
+.thirdsLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.4rem;
+}
+
+// ********** Blockquotes ***************
+
+.quoteContainer {
+  display: flex;
+  width: 85%;
+  min-width: 850px;
+  margin-left: auto;
+  border: var(--border);
+  box-shadow: var(--shadow);
+}
+%quote {
+  padding: 25px 30px 10px 40px;
+  position: relative;
+  background: var(--background);
+}
+.firstQuote {
+  @extend %quote;
+  width: 70%;
+}
+.secondQuote {
+  @extend %quote;
+  width: 38%;
+}
+.quoteLeft {
+  width: 4.5rem;
+  position: absolute;
+  left: 15px;
+  top: 13px;
+}
+.quoteRight {
+  width: 4.5rem;
+  position: absolute;
+  right: 11px;
+  bottom: -12px;
+}
+
+// ********** Case Studies **************
+
+// ********** Legacy (figures) **********
+.legacySmall {
+  margin-bottom: 15px;
+  text-align: center;
+}
+small {
+  font-size: 0.85rem;
+}
+.figuresLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.figure, .figureCap {
+  font-weight: bold;
+}
+.figure {
+  font-size: 4.4rem;
+}
+.figureCap {
+  font-size: 1.3rem;
+}
+
+// ********** Artists / Creators ********
+
+// ********** National network **********
+
+// ********** Our promise ***************
+
+// ********** Sign up *******************
+
+// ********** Courses *******************
 
 .getInvolved {
   marginBottom: 4.7rem;
 }
 
-/* ********** Media Queries ************ */
+// ********** Media Queries *************
 
 @media only screen and (max-width: 1114px) {
   p {
@@ -26,14 +129,63 @@
   h3 {
     font-size: 1rem;
   }
+  .figure {
+    font-size: 4rem;
+  }
+  .figureCap {
+    font-size: 1.1rem;
+  }
 }
 
 @media only screen and (max-width: 978px) {
   p {
     font-size: 1rem;
   }
+  .figuresLayout {
+    grid-template-columns: 1fr 1fr;
+    width: 77%;
+    margin: auto;
+  }
 }
-
+@media only screen and (max-width: 856px) {
+  .centeredImage {
+    width: 88%;
+    min-width: 0px;
+  }
+  .thirdsLayout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 88%;
+    margin: auto;
+  }
+  .splitContainer {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 88%;
+    margin: auto;
+  }
+  .splitText {
+    margin: 3rem auto;
+    width: 80%;
+  }
+  .promiseTitle {
+    width: 88%;
+    margin: 0.8rem auto;
+  }
+}
+@media only screen and (max-width: 656px) {
+  .figuresLayout {
+    width: 88%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .figure {
+    font-size: 3.5rem;
+  }
+  .figureCap {
+    font-size: 1rem;
+  }
+} 
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
@@ -48,9 +200,39 @@
     width: 85%;
     margin: 0 auto 2.7rem;
   }
+  .centeredImage {
+    width: 100%;
+  }
+  .figuresLayout {
+    grid-template-columns: 1fr;
+    margin: auto;
+    text-align: center;
+  }
+  .figure {
+    font-size: 4rem;
+  }
+  .figureCap {
+    font-size: 1.3rem;
+  }
 }
 @media only screen and (max-width: 325px) {
   p {
     font-size: 0.95rem;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  .splitText {
+    width: 88%;
+    margin: auto;
+  }
+  .splitContainer {
+    width: 100%;
+    gap: 2rem;
+  }
+  .halfLayout {
+    grid-template-columns: 1fr;
+    width: 88%;
+    margin: auto;
   }
 }

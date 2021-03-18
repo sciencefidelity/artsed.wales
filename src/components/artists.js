@@ -1,9 +1,6 @@
 import React from "react"
 
-const artistsLayout = {
-  width: `50%`,
-  paddingRight: 30,
-}
+
 
 const Artists = ({ artists1, artists2, artists3, artists4 }) => (
   <section
@@ -11,28 +8,16 @@ const Artists = ({ artists1, artists2, artists3, artists4 }) => (
       marginBottom: `7.8rem`,
     }}
   >
-    <div
-      style={{
-        display: `flex`,
-      }}
-    >
-      <div
-        style={
-          artistsLayout
-        }
-      >
+    <div className="halfLayout">
+      <div>
         <h2>{artists1}</h2>
         <p>{artists2}</p>
       </div>
-        <div
-        style={
-          artistsLayout
-        }
-      >
+        <div>
         <h2>{artists3}</h2>
         <p
           style={{
-            letterSpacing: `-0.02rem`
+            letterSpacing: `-0.02rem` // remove for English
           }}
         >{artists4}</p>
       </div>

@@ -7,12 +7,7 @@ const Courses = ({
   digital1, digital2a, digital2b, digital2c, digital3, digital4
 }) => (
   <section className={courseStyles.coursesContainer}>
-    <div 
-      className={courseStyles.cardContainer}
-      style={{
-        marginRight: `8%`,
-      }}
-    >
+    <div className={courseStyles.cardContainer}>
       <StaticImage
         src="../images/aen_outdoor_2.jpg"
         width={400}
@@ -49,11 +44,7 @@ const Courses = ({
       </div>
     </div>
     <div 
-      className={courseStyles.cardContainer}
-      style={{
-        marginLeft: `8%`,
-      }}
-    >
+      className={courseStyles.cardContainer}>
       <StaticImage
         src="../images/aen_printing.jpg"
         width={400}

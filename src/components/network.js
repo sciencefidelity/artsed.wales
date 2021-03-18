@@ -7,12 +7,7 @@ const Network = ({ network1, network2 }) => (
       marginBottom: `6.2rem`,
     }}
   >
-    <div 
-      style={{
-        display: `grid`,
-        gridTemplateColumns: `1fr 1fr`
-      }}
-    >
+    <div className="splitContainer">
       <StaticImage
         src="../images/aen_network.jpg"
         width={600}
@@ -21,21 +16,13 @@ const Network = ({ network1, network2 }) => (
         formats={["AUTO", "WEBP", "AVIF"]}
         objectPosition={"50% 50%"}
         alt=""
-        style={{
-          border: `8px solid white`,
-          boxShadow: `2px 2px 10px rgba(0, 0, 0, 0.2)`,
-          marginRight: 20,
-        }}
+        className="sideImage"
       />
-    <div
-      style={{
-        marginLeft: 20,
-      }}
-    >  
-      <h2>{network1}</h2>
-      <p>{network2}</p>
+      <div className="splitText">
+        <h2>{network1}</h2>
+        <p>{network2}</p>
+      </div>
     </div>
-  </div>
   </section>
 )
 
