@@ -1,0 +1,231 @@
+footer {
+  background: var(--black);
+}
+.footerContainer {
+  position: relative;
+  width: 88%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0 1rem;
+  display: flex;
+  color: var(--background);
+  font-family: var(--sans);
+}
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.footerContact {
+  color: var(--background);
+  margin-bottom: -0.1rem;
+}
+.footerEmail {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  color: var(--background);
+  margin-bottom: 2.9rem;
+}
+.footerCopy {
+  font-size: 1rem;
+  color: var(--background);
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+}
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.logoWraper {
+  display: flex;
+}
+.plwgLogo {
+  width: 285px;
+  margin-left: 1rem;
+}
+.aaLogo {
+  width: 100px;
+}
+.aaLink {
+  margin-left: auto;
+}
+.madeBy {
+  display: flex;
+  font-size: 1.1rem;
+  margin-left: auto;
+  align-items: flex-end;
+  margin-top: -0.7rem;
+}
+.madeByLink {
+  color: var(--background);
+}
+
+// ********** Media Queries *************
+
+@media only screen and (max-width: 1021px) {
+  .footerLeft {
+    width: 45%;
+  }
+  .footerRight {
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 904px) {
+  .footerLeft {
+    width: 40%;
+  }
+  .footerRight {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 807px) {
+  .footerLeft {
+    width: 37.5%;
+  }
+  .footerRight {
+    width: 62.5%;
+  }
+}
+@media only screen and (max-width: 754px) {
+  .plwgLogo {
+    width: 213px;
+    margin-left: 1rem;
+  }
+  .aaLogo {
+    width: 75px;
+  }
+  .footerLeft {
+    width: 45%;
+  }
+  .footerRight {
+    width: 55%;
+  }
+  .footerEmail {
+    font-size: 1.1em;
+    margin-top: 0.3em;
+  }
+}
+@media only screen and (max-width: 691px) {
+  .footerLeft {
+    width: 40%;
+  }
+  .footerRight {
+    width: 60%;
+  }
+  .footerContact {
+    font-size: 1.6em;
+  }
+}
+@media only screen and (max-width: 691px) {
+  .logoWraper {
+    flex-direction: column;
+  }
+  .plwgLink {
+    margin-left: auto;
+  }
+  .plwgLogo {
+    width: 257px;
+    height: auto;
+    margin: 0;
+  }
+  .aaLogo {
+    width: 90px;
+    height: auto;
+    margin: 0;
+  }
+  .madeBy {
+    position: absolute;
+    bottom: 3em;
+    left: 0;
+  }
+  .footerLeft {
+    width: 57%;
+  }
+  .footerRight {
+    width: 43%;
+  }
+}
+@media only screen and (max-width: 579px) {
+  .plwgLogo {
+    width: 213px;
+    height: auto;
+    margin: 0;
+  }
+  .aaLogo {
+    width: 75px;
+    height: auto;
+    margin: 0;
+  }
+  .footerLeft {
+    width: 55%;
+  }
+  .footerRight {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .madeBy,
+  .footerCopy {
+    font-size: 0.8em;
+  }
+  .footerContact {
+    fontSize: 1.2em;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .footerCopy {
+    font-size: 0.75em;
+  }
+}
+@media only screen and (max-width: 436px) {
+  .footerContainer {
+    flex-direction: column;
+  }
+  .logoWraper {
+    flex-direction: row;
+  }
+  .footerLeft {
+    width: 100%;
+  }
+  .footerRight {
+    width: 100%;
+  }
+  .plwgLink {
+    margin: -1rem auto 5.3rem 0;
+  }
+  .aaLink {
+    margin: -1rem auto 5.3rem 0;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .madeBy {
+    font-size: 1em;
+    bottom: 2.3em;
+  }
+  .footerCopy {
+    font-size: 0.7em;
+  }
+  .plwgLogo {
+    width: 170px;
+    height: auto;
+  }
+  .aaLogo {
+    width: 60px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 325px) {
+  .footerCopy {
+    font-size: 0.65em;
+  }
+  .plwgLogo {
+    width: 142px;
+    height: auto;
+  }
+  .aaLogo {
+    width: 50px;
+    height: auto;
+  }
+}
