@@ -2,11 +2,7 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Tredegar = ({ quote1, cite1 }) => (
-  <section
-    style={{
-      marginBottom: `6.7rem`
-    }}
-  >
+  <section className="quoteSection1">
     <div className="quoteContainer">
       <StaticImage
         src="../images/aen_tredegar.jpg"

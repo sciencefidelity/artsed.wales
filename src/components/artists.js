@@ -2,11 +2,7 @@ import React from "react"
 
 const Artists = ({ artists1, artists2, artists3, artists4 }) => (
   <>
-    <section
-      style={{
-        marginBottom: `3.5rem`,
-      }}
-    >
+    <section className="artistsSection">
       <div className="halfLayout">
         <div>
           <h2>{artists1}</h2>

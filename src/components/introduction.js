@@ -2,11 +2,7 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Introduction = ({ introText1, introText2 }) => (
-  <section
-    style={{
-      marginBottom: `3.6rem`,
-    }}
-  >
+  <section className="introSection">
     <div className="splitContainer">
       <div className="splitText">
         <p

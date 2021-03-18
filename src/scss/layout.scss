@@ -21,8 +21,7 @@
 }
 .headline {
   margin-top: 5.1rem;
-  //word-break: break-all;
-  letter-spacing: -0rem;
+  letter-spacing: 0rem;
 }
 .headingContainer {
   margin-bottom: 5.7rem;
@@ -30,6 +29,22 @@
 .heading {
   display: inline;
 }
+
+// ********** Spacing *******************
+
+.introSection {
+  margin-bottom: 3.6rem;
+}
+.quoteSection1 {
+  margin-bottom: 6.7rem;
+}
+.quoteSection2 {
+  margin-bottom: 7rem;
+}
+.artistsSection {
+  margin-bottom: 3.5rem;
+}
+
 // ********** Grid Layouts **************
 
 .splitContainer {
@@ -157,11 +172,22 @@ small {
 
 // ********** Decoration *******************
 
+.headingContainer {
+  position: relative;
+}
 .divider {
   width: 4em;
   display: block;
   margin: auto;
 }
+
+// .ornament1 {
+//   width: 2.5rem;
+//   position: absolute;
+//   right: 12%;
+//   top: -25%;
+//   transform: rotate(-15deg)
+// }
 
 // ********** Media Queries *************
 
@@ -265,14 +291,16 @@ small {
 @media only screen and (max-width: 325px) {
   p {
     font-size: 0.9em;
+    margin-bottom: 1.4rem;
   }
   small {
     font-size: 0.8rem;
   }
   .headline {
     font-size: 1.65rem;
+    line-height: 1.3;
     width: 88%;
-    margin: 5.1rem auto 3rem;
+    margin: 5.1rem auto 3.8rem;
   }
   .headingContainer{
     margin-bottom: 4rem;
@@ -282,9 +310,15 @@ small {
     width: 70%;
     margin: 0 auto 0.7rem;
   }
+  .quoteSection1 {
+    margin-bottom: 4.7rem;
+  }
+  .quoteSection2 {
+    margin-bottom: 4.7rem;
+  }
   .splitText {
     width: 88%;
-    margin: auto;
+    margin: 0 auto 2rem auto;
   }
   .splitContainer {
     width: 100%;
