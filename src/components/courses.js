@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import * as courseStyles from "../css/course.module.css"
+import * as courseStyles from "../scss/course.module.scss"
 
 const Courses = ({
   site1, site2a, site2b, site2c, site3, site4, book,

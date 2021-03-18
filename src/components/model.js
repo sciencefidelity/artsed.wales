@@ -1,5 +1,5 @@
 import React from "react"
-import * as vennStyles from "../css/model.module.css"
+import * as vennStyles from "../scss/model.module.scss"
 
 const Model = ({ 
   model1, model2, model3, model4, model5, model6, model7, model8, model9 

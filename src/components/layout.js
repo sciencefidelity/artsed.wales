@@ -6,7 +6,7 @@ import Header from "./header"
 import Background from "./background"
 import Footer from "./footer"
 
-import "./layout.css"
+import "../scss/layout.scss"
 
 const Layout = ({ children }) => {
   const intl = useIntl()
