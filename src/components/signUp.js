@@ -7,12 +7,7 @@ const SignUp = ({ signup1, signup2, signup3 }) => (
       textAlign: `center`
     }}
   >
-    <h2
-      style={{
-        textAlign: `center`,
-        marginBottom: `0.4rem`,
-      }}
-    >{signup1}</h2>
+    <h2 className="signupHeading">{signup1}</h2>
     <div>
       <form>
       <label>
@@ -20,14 +15,7 @@ const SignUp = ({ signup1, signup2, signup3 }) => (
           type="text"
           name={signup2}
           placeholder={signup2}
-          style={{
-            background: `white`,
-            border: `0`,
-            width: `57%`,
-            padding: `0.85rem 1.5rem`,
-            fontFamily: `"Neue Haas Unica", sans-serif`,
-            fontSize: `1.55rem`
-          }}
+          className="signupInput"
         />
       </label>
       <input 
@@ -36,30 +24,13 @@ const SignUp = ({ signup1, signup2, signup3 }) => (
         name="subscribe"
         id="mc-embedded-subscribe"
         class="button"
-        alt={signup2}
-        style={{
-          cursor: `pointer`,
-          background: `rgba(13, 13, 13, 0.7)`,
-          border: `0`,
-          height: `4rem`,
-          width: `4rem`,
-          padding: `1.2rem`,
-          transform: `translateY(1.4rem)`
-        }}
+        alt=""
+        className="submitBtn"
       />
     </form>
     </div>
-    <div
-      style={{
-        textAlign: `left`,
-        width: `50%`,
-        paddingTop: `0.2rem`,
-        margin: `auto`
-      }}
-    >
-      <p>
-        {signup3}
-      </p>
+    <div className="signupText">
+      <p>{signup3}</p>
     </div>
   </section>
 )

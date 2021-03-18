@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Tredegar = ({ quote1, cite1 }) => (
   <section
     style={{
-      marginBottom: `6.7rem`,
+      marginBottom: `6.7rem`
     }}
   >
     <div className="quoteContainer">
@@ -16,7 +16,6 @@ const Tredegar = ({ quote1, cite1 }) => (
         objectPosition={"30% 50%"}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt=""
-
       />
       <div className="firstQuote">
         <img

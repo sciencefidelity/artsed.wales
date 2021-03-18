@@ -19,7 +19,15 @@
   border: var(--border);
   box-shadow: var(--shadow);
 }
-
+.headline {
+  margin-top: 5.1rem;
+}
+.headingContainer {
+  margin-bottom: 5.7rem;
+}
+.heading {
+  display: inline;
+}
 // ********** Grid Layouts **************
 
 .splitContainer {
@@ -111,10 +119,46 @@ small {
 
 // ********** Sign up *******************
 
+.signupHeadinig {
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+.signupInput {
+  background: white;
+  border: 0;
+  width: 57%;
+  padding: 0.85rem 1.5rem;
+  font-family: "Neue Haas Unica", sans-serif;
+  font-size: 1.55rem;
+}
+.submitBtn {
+  cursor: pointer;
+  background: rgba(77, 73, 73);
+  border: 0;
+  height: 4rem;
+  width: 4rem;
+  padding: 1.2rem;
+  transform: translateY(1.4rem);
+}
+.signupText {
+  text-align: left;
+  width: 50%;
+  padding-top: 0.2rem;
+  margin: auto;
+}
+
 // ********** Courses *******************
 
 .getInvolved {
   marginBottom: 4.7rem;
+}
+
+// ********** Decoration *******************
+
+.divider {
+  width: 4em;
+  display: block;
+  margin: auto;
 }
 
 // ********** Media Queries *************
@@ -205,8 +249,9 @@ small {
   }
   .figuresLayout {
     grid-template-columns: 1fr;
+    width: 70%;
     margin: auto;
-    text-align: center;
+    text-align: left;
   }
   .figure {
     font-size: 4rem;
@@ -222,6 +267,19 @@ small {
   small {
     font-size: 0.8rem;
   }
+  .headline {
+    font-size: 1.65rem;
+    width: 88%;
+    margin: 5.1rem auto 3rem;
+  }
+  .headingContainer{
+    margin-bottom: 4rem;
+  }
+  .heading {
+    display: block;
+    width: 70%;
+    margin: 0 auto 0.7rem;
+  }
   .splitText {
     width: 88%;
     margin: auto;
@@ -233,6 +291,42 @@ small {
   .halfLayout {
     grid-template-columns: 1fr;
     width: 88%;
+    margin: auto;
+  }
+  .quoteContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 0;
+    width: 100%;
+  }
+  .firstQuote,
+  .secondQuote {
+    width: 100%;
+    padding: 25px 15px 10px 20px;
+    blockquote {
+      font-size: 1rem;
+    }
+  }
+  .quoteLeft,
+  .quoteRight {
+    width: 4rem;
+  }
+  .signupInput {
+    border: 0;
+    width: calc(100% - 3.4rem);
+    padding: 0.85rem 1.5rem;
+    font-size: 1.1rem;
+  }
+  .submitBtn {
+    height: 3.4rem;
+    width: 3.4rem;
+    padding: 0.7rem;
+    transform: translateY(1.3rem);
+  }
+  .signupText {
+    text-align: left;
+    width: 88%;
+    padding-top: 0.2rem;
     margin: auto;
   }
 }

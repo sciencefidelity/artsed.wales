@@ -3,114 +3,110 @@
   --vennBlend: difference;
   --vennFont: "Neue Haas Unica",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
 }
+.vennContainer {
+  display: flex;
+}
+.vennText {
+  width: 33.33%;
+  margin-right: -10%;
+}
+.vennP1 {
+  margin-right: -15%;
+}
+.vennHeading {
+  line-height: 0.6;
+  padding-bottom: 1rem;
+}
 .vennDiagram {
   position: relative;
   width: 72.66%;
   margin-left: auto;
 }
-.content1 {
+%allContent {
   position: absolute;
   color: #ffffff;
   font-family: var(--vennFont);
   font-size: 1.75rem;
   text-align: center;
   transform: translate(-50%, -50%);
+}
+.content1 {
+  @extend %allContent;
   top: 18%;
   left: 50%;
 }
 .content2 {
-  position: absolute;
-  color: #ffffff;
-  font-family: var(--vennFont);
-  font-size: 1.75rem;
-  text-align: center;
-  transform: translate(-50%, -50%);
+  @extend %allContent;
   top: 67%;
   left: 21%;
 }
 .content3 {
-  position: absolute;
-  color: #ffffff;
-  font-family: var(--vennFont);
-  font-size: 1.7rem;
-  text-align: center;
+  @extend %allContent;
   line-height: 1.2;
-  transform: translate(-50%, -50%);
   top: 67%;
   left: 78%;
 }
 .content4 {
-  position: absolute;
-  color: #ffffff;
-  font-family: var(--vennFont);
-  font-size: 1.7rem;
-  text-align: center;
-  transform: translate(-50%, -50%);
+  @extend %allContent;
   top: 55%;
   left: 50%;
 }
 .ampersand {
   position: absolute;
+  width: 3.78em;
   margin: 0;
   transform: translate(-46%, -45%);
   top: 45%;
   left: 50%;
 }
+
+%topCircles {
+  mix-blend-mode: var(--vennBlend);
+  opacity: var(--vennOpacity);
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
 .circle1 {
+  @extend %topCircles;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   background: #33CC66;
-  mix-blend-mode: var(--vennBlend);
-  opacity: var(--vennOpacity);
-  position: absolute;
-  width: 60.59%;
-  border-radius: 50%;
 }
 .circle2 {
+  @extend %topCircles;
   bottom: 10.02%;
   left: 2.41%;
   background: #0099FF;
-  mix-blend-mode: var(--vennBlend);
-  opacity: var(--vennOpacity);
-  position: absolute;
-  width: 60.59%;
-  border-radius: 50%;
 }
 .circle3 {
+  @extend %topCircles;
   bottom: 10.02%;
   right: 2.41%;
   background: #FF3333;
-  mix-blend-mode: var(--vennBlend);
-  opacity: var(--vennOpacity);
+}
+%whiteCircles {
+  background: white;
   position: absolute;
   width: 60.59%;
   border-radius: 50%;
 }
 .circle4 {
+  @extend %whiteCircles;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: white;
-  position: absolute;
-  width: 60.59%;
-  border-radius: 50%;
 }
 .circle5 {
+  @extend %whiteCircles;
   bottom: 10.02%;
   left: 2.41%;
-  background: white;
-  position: absolute;
-  width: 60.59%;
-  border-radius: 50%;
 }
 .circle6 {
+  @extend %whiteCircles;
   bottom: 10.02%;
   right: 2.41%;
-  background: white;
-  position: absolute;
-  width: 60.59%;
-  border-radius: 50%;
 }
 .vennDiagram::after, 
 .circle1::after,
@@ -122,4 +118,41 @@
   content: "";
   padding-bottom: 100%;
   display: block;
+}
+
+// ********** Media Queries *************
+
+@media only screen and (max-width: 325px) {
+  .vennContainer {
+    flex-direction: column;
+  }
+  .vennText {
+    width: 88%;
+    margin: auto;
+  }
+  .vennP1 {
+    margin-right: 0;
+  }
+  .vennDiagram {
+    width: 120%;
+    margin: 0 -10% 0 -10%;
+  }
+  .ampersand {
+    width: 2.4em;
+    padding-bottom: 0.3rem;
+  }
+  %allContent {
+    font-size: 0.95em;
+  }
+  .content4 {
+    font-size: 1.1em;
+  }
+  .content2 {
+    top: 70%;
+    left: 24%;
+  }
+  .content3 {
+    top: 70%;
+    left: 76%;
+  }
 }

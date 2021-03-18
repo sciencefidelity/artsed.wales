@@ -26,29 +26,19 @@ const IndexPage = () => {
         keywords={[`gatsby`, `application`, `react`]}
       />
       
-      <section
-        style={{
-          marginBottom: `5.1rem`,
-        }}
-      >
-        <h2
-          style={{
-            letterSpacing: `0rem`
-          }}
-        ><FormattedMessage id="headline" /></h2>
+      <section>
+        <h2 className="headline"><FormattedMessage id="headline" /></h2>
       </section>
       
       <Introduction 
         introText1={intl.formatMessage({ id: "introduction-1" })}
         introText2={intl.formatMessage({ id: "introduction-2" })}
       />
-      
-      <h2
-        style={{
-          marginBottom: `5.7rem`
-        }}
-      ><FormattedMessage id="heading-1" /></h2>
-      
+      <div className="headingContainer">
+        <h2 className="heading"><FormattedMessage id="heading-1" />, </h2>
+        <h2 className="heading"><FormattedMessage id="heading-2" />, </h2>
+        <h2 className="heading"><FormattedMessage id="heading-3" /></h2>
+      </div>
       <Tredegar 
         quote1={intl.formatMessage({ id: "quote-1" })}
         cite1={intl.formatMessage({ id: "cite-1" })}
