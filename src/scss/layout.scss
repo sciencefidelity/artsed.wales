@@ -15,12 +15,13 @@
   display: block;
   width: 65%;
   min-width: 600px;
-  margin: 4.7rem auto;
+  margin: 6.7rem auto;
   border: var(--border);
   box-shadow: var(--shadow);
 }
 .headline {
   margin-top: 5.1rem;
+  margin-bottom: 5rem;
   letter-spacing: 0rem;
 }
 .headingContainer {
@@ -42,7 +43,20 @@
   margin-bottom: 7rem;
 }
 .artistsSection {
-  margin-bottom: 3.5rem;
+  margin-bottom: 6rem;
+}
+.networkSection {
+  margin-bottom: 6.2rem;
+}
+.promiseSection {
+  margin-bottom: 7.8rem;
+}
+.legacySection {
+  margin-bottom: 6.8rem;
+}
+.signupSection {
+  margin-bottom: 7.2rem;
+  text-align: center;
 }
 
 // ********** Grid Layouts **************
@@ -74,7 +88,7 @@
   display: flex;
   width: 85%;
   min-width: 850px;
-  margin-left: auto;
+  margin-right: auto;
   border: var(--border);
   box-shadow: var(--shadow);
 }
@@ -167,7 +181,7 @@ small {
 // ********** Courses *******************
 
 .getInvolved {
-  marginBottom: 4.7rem;
+  margin-bottom: 4.7rem;
 }
 
 // ********** Decoration *******************
@@ -175,19 +189,6 @@ small {
 .headingContainer {
   position: relative;
 }
-.divider {
-  width: 4em;
-  display: block;
-  margin: auto;
-}
-
-// .ornament1 {
-//   width: 2.5rem;
-//   position: absolute;
-//   right: 12%;
-//   top: -25%;
-//   transform: rotate(-15deg)
-// }
 
 // ********** Media Queries *************
 
@@ -218,6 +219,9 @@ small {
     width: 77%;
     margin: auto;
   }
+  .headline {
+    margin: 5.1rem auto 1.8rem;
+  }
 }
 @media only screen and (max-width: 856px) {
   .centeredImage {
@@ -243,6 +247,26 @@ small {
   .promiseTitle {
     width: 88%;
     margin: 0.8rem auto;
+  }
+}
+@media only screen and (max-width: 809px) {
+  .halfLayout {
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: auto;
+  }
+  .splitText {
+    width: 100%;
+  }
+  .signupInput {
+    border: 0;
+    width: calc(88% - 4rem);
+  }
+  .signupText {
+    width: 65%;
+  }
+  .getInvolved {
+    margin-bottom: 3rem;
   }
 }
 @media only screen and (max-width: 656px) {
@@ -287,6 +311,25 @@ small {
   .figureCap {
     font-size: 1.3rem;
   }
+  .quoteContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 0;
+    width: 88%;
+    margin: auto;
+  }
+  .firstQuote,
+  .secondQuote {
+    width: 100%;
+    padding: 25px 15px 10px 20px;
+    blockquote {
+      font-size: 1rem;
+    }
+  }
+  .quoteLeft,
+  .quoteRight {
+    width: 4rem;
+  }
 }
 @media only screen and (max-width: 325px) {
   p {
@@ -295,6 +338,9 @@ small {
   }
   small {
     font-size: 0.8rem;
+  }
+  .quoteContainer {
+    width: 100%;
   }
   .headline {
     font-size: 1.65rem;
@@ -325,27 +371,7 @@ small {
     gap: 2rem;
   }
   .halfLayout {
-    grid-template-columns: 1fr;
     width: 88%;
-    margin: auto;
-  }
-  .quoteContainer {
-    display: grid;
-    grid-template-columns: 1fr;
-    min-width: 0;
-    width: 100%;
-  }
-  .firstQuote,
-  .secondQuote {
-    width: 100%;
-    padding: 25px 15px 10px 20px;
-    blockquote {
-      font-size: 1rem;
-    }
-  }
-  .quoteLeft,
-  .quoteRight {
-    width: 4rem;
   }
   .signupInput {
     border: 0;

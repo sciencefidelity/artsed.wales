@@ -1,11 +1,7 @@
 import React from "react"
 
 const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
-  <section
-    style={{
-      marginBottom: `4.8rem`,
-    }}
-  >
+  <section className="legacySection">
     <div className="legacySmall"><small>{legacy1}</small></div>
     <div className="figuresLayout">
       <div>

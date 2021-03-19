@@ -1,12 +1,7 @@
 import React from "react"
 
 const SignUp = ({ signup1, signup2, signup3 }) => (
-  <section
-    style={{
-      marginBottom: `6.2rem`,
-      textAlign: `center`
-    }}
-  >
+  <section className="signupSection">
     <h2 className="signupHeading">{signup1}</h2>
     <div>
       <form>

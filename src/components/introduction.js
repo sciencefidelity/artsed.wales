@@ -7,7 +7,7 @@ const Introduction = ({ introText1, introText2 }) => (
       <div className="splitText">
         <p
           style={{
-            letterSpacing: `-0.02rem`
+            letterSpacing: `-0.02rem` // remove for English
           }}
         >{introText1}</p>
         <p

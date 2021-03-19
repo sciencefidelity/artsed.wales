@@ -2,11 +2,7 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 const OurPromise = ({ promise1, promise2, promise3, promise4 }) => (
-  <section
-    style={{
-      marginBottom: `7.8rem`,
-    }}
-  >
+  <section className="promiseSection">
     <h2 className="promiseTitle">{promise1}</h2>
     <div className="thirdsLayout">
       <p>{promise2}</p>
