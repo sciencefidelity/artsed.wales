@@ -97,7 +97,6 @@ const IndexPage = () => {
         promise3={intl.formatMessage({ id: "promise-p2" })}
         promise4={intl.formatMessage({ id: "promise-p3" })}
       />
-      
       <SignUp
         signup1={intl.formatMessage({ id: "signup-1" })}
         signup2={intl.formatMessage({ id: "signup-2" })}

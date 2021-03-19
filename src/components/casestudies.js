@@ -29,6 +29,7 @@ const Casestudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
       formats={["AUTO", "WEBP", "AVIF"]}
       alt=""
       className="centeredImage"
+      style={{display: `block`}}
     />
   </section>
 )

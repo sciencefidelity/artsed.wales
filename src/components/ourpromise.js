@@ -17,6 +17,7 @@ const OurPromise = ({ promise1, promise2, promise3, promise4 }) => (
       formats={["AUTO", "WEBP", "AVIF"]}
       alt=""
       className="centeredImage"
+      style={{display: `block`}}
     />   
   </section>
 )

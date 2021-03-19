@@ -12,7 +12,6 @@
   margin: auto;
 }
 .centeredImage {
-  display: block;
   width: 65%;
   min-width: 600px;
   margin: 6.7rem auto;
@@ -161,15 +160,6 @@ small {
   padding: 0.85rem 1.5rem;
   font-family: "Neue Haas Unica", sans-serif;
   font-size: 1.55rem;
-}
-.submitBtn {
-  cursor: pointer;
-  background: rgba(77, 73, 73);
-  border: 0;
-  height: 4rem;
-  width: 4rem;
-  padding: 1.2rem;
-  transform: translateY(1.4rem);
 }
 .signupText {
   text-align: left;
@@ -375,15 +365,9 @@ small {
   }
   .signupInput {
     border: 0;
-    width: calc(100% - 3.4rem);
+    width: calc(100% - 4rem);
     padding: 0.85rem 1.5rem;
-    font-size: 1.1rem;
-  }
-  .submitBtn {
-    height: 3.4rem;
-    width: 3.4rem;
-    padding: 0.7rem;
-    transform: translateY(1.3rem);
+    font-size: 1.5rem;
   }
   .signupText {
     text-align: left;
