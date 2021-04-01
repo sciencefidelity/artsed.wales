@@ -55,11 +55,17 @@ h2 {
   line-height: 1.2;
   letter-spacing: 0.03rem;
   color: var(--black);
+  @include mq(xl) {
+    font-size: 2.1rem;
+  }
 }
 h3 {
   font-family: "Neue Haas Unica";
   font-size: 4.4rem;
   line-height: 0.7;
+  @include mq(xl) {
+    font-size: 1rem;
+  }
 }
 h4 {
   font-family: "Neue Haas Unica";
@@ -113,17 +119,30 @@ cite {
   margin: 6.7rem auto;
   border: var(--border);
   box-shadow: var(--shadow);
+  @include mq(ml) {
+    width: 88%;
+    min-width: 0px;
+  }
 }
 .headline {
   margin-top: 5.1rem;
   margin-bottom: 5rem;
   letter-spacing: 0rem;
+  @include mq(l) {
+    margin: 5.1rem auto 1.8rem;
+  }
 }
 .headingContainer {
   margin-bottom: 5.7rem;
 }
 .heading {
   display: inline;
+}
+.splitText {
+  @include mq(ml) {
+    margin: 3rem auto;
+    width: 80%;
+  }
 }
 
 // ********** Spacing *******************
@@ -160,6 +179,12 @@ cite {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.2rem;
+  @include mq(ml) {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 88%;
+    margin: auto;
+  }
 }
 .sideImage {
   display: block;
@@ -175,6 +200,12 @@ cite {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.4rem;
+  @include mq(ml) {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    width: 88%;
+    margin: auto;
+  }
 }
 
 // ********** Blockquotes ***************
@@ -226,15 +257,15 @@ small {
 .figuresLayout {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  @media only screen and (max-width: 978px) {
+  @include mq(l) {
     grid-template-columns: 1fr 1fr;
     width: 77%;
     margin: auto;
   }
-  @media only screen and (max-width: 656px) {
+  @include mq(ms) {
     width: 88%;
   }
-  @media only screen and (max-width: 480px) {
+  @include mq(s) {
     grid-template-columns: 1fr;
     width: 70%;
     margin: auto;
@@ -247,9 +278,15 @@ small {
 }
 .figure {
   font-size: 4.4rem;
+  @include mq(xl) {
+    font-size: 4rem;
+  }
 }
 .figureCap {
   font-size: 1.3rem;
+  @include mq(xl) {
+    font-size: 1.1rem;
+  }
 }
 
 // ********** Artists / Creators ********
@@ -257,6 +294,13 @@ small {
 // ********** National network **********
 
 // ********** Our promise ***************
+
+.promiseTitle {
+  @include mq(ml) {
+    width: 88%;
+    margin: 0.8rem auto;
+  }
+}
 
 // ********** Sign up *******************
 
@@ -293,52 +337,6 @@ small {
 
 // ********** Media Queries *************
 
-@media only screen and (max-width: 1114px) {
-  h2 {
-    font-size: 2.1rem;
-  }
-  h3 {
-    font-size: 1rem;
-  }
-  .figure {
-    font-size: 4rem;
-  }
-  .figureCap {
-    font-size: 1.1rem;
-  }
-}
-
-@media only screen and (max-width: 978px) {
-  .headline {
-    margin: 5.1rem auto 1.8rem;
-  }
-}
-@media only screen and (max-width: 856px) {
-  .centeredImage {
-    width: 88%;
-    min-width: 0px;
-  }
-  .thirdsLayout {
-    grid-template-columns: 1fr;
-    gap: 2em;
-    width: 88%;
-    margin: auto;
-  }
-  .splitContainer {
-    grid-template-columns: 1fr;
-    gap: 0;
-    width: 88%;
-    margin: auto;
-  }
-  .splitText {
-    margin: 3rem auto;
-    width: 80%;
-  }
-  .promiseTitle {
-    width: 88%;
-    margin: 0.8rem auto;
-  }
-}
 @media only screen and (max-width: 809px) {
   .halfLayout {
     grid-template-columns: 1fr;
@@ -410,6 +408,9 @@ small {
     width: 4rem;
   }
 }
+
+
+
 @media only screen and (max-width: 325px) {
   small {
     font-size: 0.8rem;
