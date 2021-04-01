@@ -19,12 +19,12 @@ const Model = ({
       </div>
       <div className={vennStyles.vennDiagram}>
 
+        <div className={vennStyles.circle1}></div>
+        <div className={vennStyles.circle2}></div>
+        <div className={vennStyles.circle3}></div>
+        <div className={vennStyles.circle4}></div>
         <div className={vennStyles.circle5}></div>
         <div className={vennStyles.circle6}></div>
-        <div className={vennStyles.circle4}></div>
-        <div className={vennStyles.circle1}></div>
-        <div className={vennStyles.circle3}></div>
-        <div className={vennStyles.circle2}></div>
         
         <div className={vennStyles.content1}>{model7}</div>
         <div className={vennStyles.content2}>{model6}</div>

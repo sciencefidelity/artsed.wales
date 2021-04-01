@@ -60,6 +60,28 @@
   left: 50%;
 }
 
+%whiteCircles {
+  background: white;
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+.circle1 {
+  @extend %whiteCircles;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.circle2 {
+  @extend %whiteCircles;
+  bottom: 10.02%;
+  left: 2.41%;
+}
+.circle3 {
+  @extend %whiteCircles;
+  bottom: 10.02%;
+  right: 2.41%;
+}
 %topCircles {
   mix-blend-mode: var(--vennBlend);
   opacity: var(--vennOpacity);
@@ -67,46 +89,24 @@
   width: 60.59%;
   border-radius: 50%;
 }
-.circle1 {
+.circle4 {
   @extend %topCircles;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   background: #33CC66;
 }
-.circle2 {
-  @extend %topCircles;
-  bottom: 10.02%;
-  left: 2.41%;
-  background: #0099FF;
-}
-.circle3 {
+.circle5 {
   @extend %topCircles;
   bottom: 10.02%;
   right: 2.41%;
   background: #FF3333;
 }
-%whiteCircles {
-  background: white;
-  position: absolute;
-  width: 60.59%;
-  border-radius: 50%;
-}
-.circle4 {
-  @extend %whiteCircles;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.circle5 {
-  @extend %whiteCircles;
+.circle6 {
+  @extend %topCircles;
   bottom: 10.02%;
   left: 2.41%;
-}
-.circle6 {
-  @extend %whiteCircles;
-  bottom: 10.02%;
-  right: 2.41%;
+  background: #0099FF;
 }
 .vennDiagram::after, 
 .circle1::after,
