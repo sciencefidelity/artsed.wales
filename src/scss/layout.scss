@@ -1,8 +1,29 @@
 // ********** Partials ******************
 
+@use "sass:map";
 @use "reset";
 @use "typography";
 @use "variables";
+
+// ********** Mixins ********************
+
+$breakpoints: (
+  xs: 325px,
+  s: 480px,
+  sm: 540px,
+  ms: 656px,
+  m: 809px,
+  ml: 856px,
+  l: 978px,
+  xl: 1114px,
+);
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
 
 // ********** Global styles *************
 
@@ -46,6 +67,16 @@ h4 {
 }
 p {
   margin-bottom: 1rem;
+  @include mq(xl) {
+    font-size: 1.1rem;
+  }
+  @include mq(l) {
+    font-size: 1rem;
+  }
+  @include mq(xs) {
+    font-size: 0.9em;
+    margin-bottom: 1.4rem;
+  }
 }
 small {
   font-size: 85%;
@@ -68,6 +99,8 @@ cite {
   line-height: 1.4;
   display: inline-block;
 }
+
+// ********** Layout ********************
 
 .containerFluid {
   width: 88%;
@@ -193,8 +226,23 @@ small {
 .figuresLayout {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media only screen and (max-width: 978px) {
+    grid-template-columns: 1fr 1fr;
+    width: 77%;
+    margin: auto;
+  }
+  @media only screen and (max-width: 656px) {
+    width: 88%;
+  }
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: 1fr;
+    width: 70%;
+    margin: auto;
+    text-align: left;
+  }
 }
-.figure, .figureCap {
+.figure,
+.figureCap {
   font-weight: bold;
 }
 .figure {
@@ -246,9 +294,6 @@ small {
 // ********** Media Queries *************
 
 @media only screen and (max-width: 1114px) {
-  p {
-    font-size: 1.1rem;
-  }
   h2 {
     font-size: 2.1rem;
   }
@@ -264,14 +309,6 @@ small {
 }
 
 @media only screen and (max-width: 978px) {
-  p {
-    font-size: 1rem;
-  }
-  .figuresLayout {
-    grid-template-columns: 1fr 1fr;
-    width: 77%;
-    margin: auto;
-  }
   .headline {
     margin: 5.1rem auto 1.8rem;
   }
@@ -322,11 +359,6 @@ small {
     margin-bottom: 3rem;
   }
 }
-@media only screen and (max-width: 656px) {
-  .figuresLayout {
-    width: 88%;
-  }
-}
 @media only screen and (max-width: 540px) {
   .figure {
     font-size: 3.5rem;
@@ -351,12 +383,6 @@ small {
   }
   .centeredImage {
     width: 100%;
-  }
-  .figuresLayout {
-    grid-template-columns: 1fr;
-    width: 70%;
-    margin: auto;
-    text-align: left;
   }
   .figure {
     font-size: 4rem;
@@ -385,10 +411,6 @@ small {
   }
 }
 @media only screen and (max-width: 325px) {
-  p {
-    font-size: 0.9em;
-    margin-bottom: 1.4rem;
-  }
   small {
     font-size: 0.8rem;
   }
