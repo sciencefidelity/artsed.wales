@@ -30,6 +30,9 @@ $breakpoints: (
 html {
   background: #0D0D0D;
   font-family: "Domaine Text";
+  @include mq(s) {
+    font-size: 100%;
+  }
 }
 body {
   background: var(--background);
@@ -57,6 +60,9 @@ h2 {
   color: var(--black);
   @include mq(xl) {
     font-size: 2.1rem;
+  }
+  @include mq(s) {
+    font-size: 1.9rem;
   }
 }
 h3 {
@@ -89,6 +95,9 @@ small {
   font-family: "Neue Haas Unica",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: var(--black);
+  @include mq(xs) {
+    font-size: 0.8rem;
+  }
 }
 sup {
   font-size: 60%;
@@ -96,6 +105,9 @@ sup {
 blockquote {
   font-size: 1.15rem;
   position: relative;
+  @include mq(s) {
+    font-size: 1rem;
+  }
 }
 cite {
   font-family: "Neue Haas Unica",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -112,6 +124,9 @@ cite {
   width: 88%;
   max-width: 1000px;
   margin: auto;
+  @include mq(s) {
+    width: 100%;
+  }
 }
 .centeredImage {
   width: 65%;
@@ -123,6 +138,9 @@ cite {
     width: 88%;
     min-width: 0px;
   }
+  @include mq(s) {
+    width: 100%;
+  }
 }
 .headline {
   margin-top: 5.1rem;
@@ -131,17 +149,38 @@ cite {
   @include mq(l) {
     margin: 5.1rem auto 1.8rem;
   }
+  @include mq(xs) {
+    font-size: 1.65rem;
+    line-height: 1.3;
+    width: 88%;
+    margin: 5.1rem auto 3.8rem;
+  }
 }
 .headingContainer {
   margin-bottom: 5.7rem;
+  @include mq(xs) {
+    margin-bottom: 4rem;
+  }
 }
 .heading {
   display: inline;
+  @include mq(xs) {
+    display: block;
+    width: 70%;
+    margin: 0 auto 0.7rem;
+  }
 }
 .splitText {
   @include mq(ml) {
     margin: 3rem auto;
     width: 80%;
+  }
+  @include mq(xs) {
+    width: 88%;
+    margin: 0 auto 2rem auto;
+  }
+  @include mq(m) {
+    width: 100%;
   }
 }
 
@@ -152,9 +191,15 @@ cite {
 }
 .quoteSection1 {
   margin-bottom: 6.7rem;
+  @include mq(xs) {
+    margin-bottom: 4.7rem;
+  }
 }
 .quoteSection2 {
   margin-bottom: 7rem;
+  @include mq(xs) {
+    margin-bottom: 4.7rem;
+  }
 }
 .artistsSection {
   margin-bottom: 6rem;
@@ -185,6 +230,10 @@ cite {
     width: 88%;
     margin: auto;
   }
+  @include mq(xs) {
+    width: 100%;
+    gap: 2rem;
+  }
 }
 .sideImage {
   display: block;
@@ -195,6 +244,14 @@ cite {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.2rem;
+  @include mq(m) {
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: auto;
+  }
+  @include mq(xs) {
+    width: 88%;
+  }
 }
 .thirdsLayout {
   display: grid;
@@ -217,11 +274,25 @@ cite {
   margin-right: auto;
   border: var(--border);
   box-shadow: var(--shadow);
+  @include mq(s) {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 0;
+    width: 88%;
+    margin: auto;
+  }
+  @include mq(xs) {
+    width: 100%;
+  }
 }
 %quote {
   padding: 25px 30px 10px 40px;
   position: relative;
   background: var(--background);
+  @include mq(s) {
+    width: 100%;
+    padding: 25px 15px 10px 20px;
+  }
 }
 .firstQuote {
   @extend %quote;
@@ -231,15 +302,19 @@ cite {
   @extend %quote;
   width: 38%;
 }
-.quoteLeft {
+.quoteLeft,
+.quoteRight {
   width: 4.5rem;
   position: absolute;
+  @include mq(s) {
+    width: 4rem;
+  }
+}
+.quoteLeft {
   left: 15px;
   top: 13px;
 }
 .quoteRight {
-  width: 4.5rem;
-  position: absolute;
   right: 11px;
   bottom: -12px;
 }
@@ -281,11 +356,20 @@ small {
   @include mq(xl) {
     font-size: 4rem;
   }
+  @include mq(sm) {
+    font-size: 3.5rem;
+  }
+  @include mq(s) {
+    font-size: 4rem;
+  }
 }
 .figureCap {
   font-size: 1.3rem;
   @include mq(xl) {
     font-size: 1.1rem;
+  }
+  @include mq(sm) {
+    font-size: 1rem;
   }
 }
 
@@ -305,8 +389,8 @@ small {
 // ********** Sign up *******************
 
 .signupHeadinig {
-    text-align: center;
-    margin-bottom: 0.4rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
 }
 .signupInput {
   background: white;
@@ -315,150 +399,48 @@ small {
   padding: 0.85rem 1.5rem;
   font-family: "Neue Haas Unica", sans-serif;
   font-size: 1.55rem;
+  @include mq(m) {
+    border: 0;
+    width: calc(88% - 4rem);
+  }
+  @include mq(xs) {
+    border: 0;
+    width: calc(100% - 4rem);
+    padding: 0.85rem 1.5rem;
+    font-size: 1.5rem;
+  }
 }
 .signupText {
   text-align: left;
   width: 50%;
   padding-top: 0.2rem;
   margin: auto;
+  @include mq(m) {
+    width: 65%;
+  }
+  @include mq(xs) {
+    text-align: left;
+    width: 88%;
+    padding-top: 0.2rem;
+    margin: auto;
+  }
 }
 
 // ********** Courses *******************
 
 .getInvolved {
   margin-bottom: 4.7rem;
+  @include mq(m) {
+    margin-bottom: 3rem;
+  }
+  @include mq(s) {
+    width: 85%;
+    margin: 0 auto 2.7rem;
+  }
 }
 
 // ********** Decoration *******************
 
 .headingContainer {
   position: relative;
-}
-
-// ********** Media Queries *************
-
-@media only screen and (max-width: 809px) {
-  .halfLayout {
-    grid-template-columns: 1fr;
-    width: 80%;
-    margin: auto;
-  }
-  .splitText {
-    width: 100%;
-  }
-  .signupInput {
-    border: 0;
-    width: calc(88% - 4rem);
-  }
-  .signupText {
-    width: 65%;
-  }
-  .getInvolved {
-    margin-bottom: 3rem;
-  }
-}
-@media only screen and (max-width: 540px) {
-  .figure {
-    font-size: 3.5rem;
-  }
-  .figureCap {
-    font-size: 1rem;
-  }
-} 
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
-  .containerFluid {
-    width: 100%;
-  }
-  h2 {
-    font-size: 1.9rem;
-  }
-  .getInvolved {
-    width: 85%;
-    margin: 0 auto 2.7rem;
-  }
-  .centeredImage {
-    width: 100%;
-  }
-  .figure {
-    font-size: 4rem;
-  }
-  .figureCap {
-    font-size: 1.3rem;
-  }
-  .quoteContainer {
-    display: grid;
-    grid-template-columns: 1fr;
-    min-width: 0;
-    width: 88%;
-    margin: auto;
-  }
-  .firstQuote,
-  .secondQuote {
-    width: 100%;
-    padding: 25px 15px 10px 20px;
-    blockquote {
-      font-size: 1rem;
-    }
-  }
-  .quoteLeft,
-  .quoteRight {
-    width: 4rem;
-  }
-}
-
-
-
-@media only screen and (max-width: 325px) {
-  small {
-    font-size: 0.8rem;
-  }
-  .quoteContainer {
-    width: 100%;
-  }
-  .headline {
-    font-size: 1.65rem;
-    line-height: 1.3;
-    width: 88%;
-    margin: 5.1rem auto 3.8rem;
-  }
-  .headingContainer{
-    margin-bottom: 4rem;
-  }
-  .heading {
-    display: block;
-    width: 70%;
-    margin: 0 auto 0.7rem;
-  }
-  .quoteSection1 {
-    margin-bottom: 4.7rem;
-  }
-  .quoteSection2 {
-    margin-bottom: 4.7rem;
-  }
-  .splitText {
-    width: 88%;
-    margin: 0 auto 2rem auto;
-  }
-  .splitContainer {
-    width: 100%;
-    gap: 2rem;
-  }
-  .halfLayout {
-    width: 88%;
-  }
-  .signupInput {
-    border: 0;
-    width: calc(100% - 4rem);
-    padding: 0.85rem 1.5rem;
-    font-size: 1.5rem;
-  }
-  .signupText {
-    text-align: left;
-    width: 88%;
-    padding-top: 0.2rem;
-    margin: auto;
-  }
 }
