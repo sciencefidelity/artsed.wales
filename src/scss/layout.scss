@@ -430,7 +430,37 @@ small {
 
 .getInvolved {
   margin-bottom: 4.7rem;
+<<<<<<< HEAD
   @include mq(m) {
+=======
+}
+
+// ********** Decoration ****************
+
+.headingContainer {
+  position: relative;
+}
+
+// ********** Media Queries *************
+
+@media only screen and (max-width: 809px) {
+  .halfLayout {
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: auto;
+  }
+  .splitText {
+    width: 100%;
+  }
+  .signupInput {
+    border: 0;
+    width: calc(88% - 4rem);
+  }
+  .signupText {
+    width: 65%;
+  }
+  .getInvolved {
+>>>>>>> 8b4118d0ecfc2532586fbc9e8b338ca0dffc008c
     margin-bottom: 3rem;
   }
   @include mq(s) {
