@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { useIntl } from "gatsby-plugin-intl"
 
 import Header from "./header"
-import Background from "./background"
 import Footer from "./footer"
 
 import "../scss/layout.scss"
@@ -14,8 +13,6 @@ const Layout = ({ children }) => {
     <>
       
       <Header />
-      
-      <Background />
       
       <main
         style={{
