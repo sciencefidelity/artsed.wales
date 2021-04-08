@@ -1,6 +1,8 @@
 import React from "react"
 import * as vennStyles from "../scss/model.module.scss"
 
+import IllustrationF from "./illustrations/illustrationF"
+
 const Model = ({ 
   model1, model2, model3, model4, model5, model6, model7, model8, model9 
 }) => (
@@ -10,6 +12,7 @@ const Model = ({
       marginBottom: `3.5rem`,
     }}
   >
+    <IllustrationF />
     <div className={vennStyles.vennContainer}>
       <div className={vennStyles.vennText}>
         <h2 className={vennStyles.vennHeading}>{model1}</h2>
