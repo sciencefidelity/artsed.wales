@@ -8,8 +8,9 @@ const IllustrationA = () => (
     style={{
       width: `25rem`,
       position: `absolute`,
-      top: `1%`,
-      left: `64.5%`,
+      //top: `-60%`,
+      bottom: `-47%`,
+      left: `71%`,
       zIndex: `-1`
     }}
   />

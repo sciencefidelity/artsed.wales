@@ -5,8 +5,8 @@ import IllustrationB from "./illustrations/illustrationB"
 
 const Tredegar = ({ quote1, cite1 }) => (
   <>
-    <IllustrationB />
     <section className="quoteSection1">
+    <IllustrationB />
       <div className="quoteContainer">
         <StaticImage
           src="../images/aen_tredegar.jpg"

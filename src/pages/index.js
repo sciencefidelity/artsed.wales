@@ -16,6 +16,8 @@ import OurPromise from "../components/ourpromise"
 import SignUp from "../components/signup"
 import Courses from "../components/courses"
 
+import IllustrationA from "../components/illustrations/illustrationA"
+
 const IndexPage = () => {
   const intl = useIntl()
   return (
@@ -27,6 +29,7 @@ const IndexPage = () => {
       />
       
       <section>
+        <IllustrationA />
         <h2 className="headline"><FormattedMessage id="headline" /></h2>
       </section>
       

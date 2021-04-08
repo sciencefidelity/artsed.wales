@@ -1,12 +1,9 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-import IllustrationA from "./illustrations/illustrationA"
-
 const Introduction = ({ introText1, introText2 }) => (
-  <>
-    <IllustrationA />
     <section className="introSection">
+    
       <div className="splitContainer">
         <div className="splitText">
           <p
@@ -32,7 +29,6 @@ const Introduction = ({ introText1, introText2 }) => (
         />   
       </div>
     </section>
-  </>
 )
 
 export default Introduction
