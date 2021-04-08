@@ -9,7 +9,7 @@ const IllustrationA = () => (
       width: `25rem`,
       position: `absolute`,
       top: `1%`,
-      right: `4.3%`,
+      left: `64.5%`,
       zIndex: `-1`
     }}
   />
