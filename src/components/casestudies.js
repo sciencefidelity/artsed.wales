@@ -1,9 +1,11 @@
+// Three row section with headings Art, Music, Theatre
+
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import IllustrationC from "./illustrations/illustrationC"
 
-const Casestudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
+const CaseStudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
   <>
     <section
       style={{
@@ -39,4 +41,4 @@ const Casestudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
   </>
 )
 
-export default Casestudies
+export default CaseStudies

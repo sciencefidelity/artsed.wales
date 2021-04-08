@@ -1,9 +1,11 @@
+// Second blockquote
+
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import IllustrationE from "./illustrations/illustrationE"
 
-const Blackwood = ({ quote2, cite2, cite3 }) => (
+const QuoteB = ({ quote2, cite2, cite3 }) => (
   <section className="quoteSection2">
     <IllustrationE />
     <div className="quoteContainer">
@@ -37,4 +39,4 @@ const Blackwood = ({ quote2, cite2, cite3 }) => (
   </section>
 )
 
-export default Blackwood
+export default QuoteB

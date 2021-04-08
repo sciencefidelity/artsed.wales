@@ -1,8 +1,10 @@
+// Figures section with auto countup
+
 import React from "react"
 
 import IllustrationD from "./illustrations/illustrationD"
 
-const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
+const Figures = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
   <section className="legacySection">
     <IllustrationD />
     <div className="legacySmall"><small>{legacy1}</small></div>
@@ -28,4 +30,4 @@ const Legacy = ({ legacy1, legacy2, legacy3, legacy4, legacy5 }) => (
   </section>
 )
 
-export default Legacy
+export default Figures

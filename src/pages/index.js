@@ -4,11 +4,11 @@ import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import Introduction from "../components/introduction"
-import Tredegar from "../components/tredegar"
-import Casestudies from "../components/casestudies"
-import Legacy from "../components/legacy"
-import Blackwood from "../components/blackwood"
+import Introduction from "../components/Introduction"
+import QuoteA from "../components/QuoteA"
+import CaseStudies from "../components/CaseStudies"
+import Figures from "../components/Figures"
+import QuoteB from "../components/QuoteB"
 import Artists from "../components/artists"
 import Model from "../components/model"
 import Network from "../components/network"
@@ -28,26 +28,33 @@ const IndexPage = () => {
         keywords={[`gatsby`, `application`, `react`]}
       />
       
+      // Main headline
       <section>
         <IllustrationA />
         <h2 className="headline"><FormattedMessage id="headline" /></h2>
       </section>
       
+      //introduction section
       <Introduction 
         introText1={intl.formatMessage({ id: "introduction-1" })}
         introText2={intl.formatMessage({ id: "introduction-2" })}
       />
+      
+      // Second headline (Exploring, Responding, Creating)
       <div className="headingContainer">
         <h2 className="heading"><FormattedMessage id="heading-1" />, </h2>
         <h2 className="heading"><FormattedMessage id="heading-2" />, </h2>
         <h2 className="heading"><FormattedMessage id="heading-3" /></h2>
       </div>
-      <Tredegar 
+      
+      // First blockquote (Tredegar Park Primary)
+      <QuoteA 
         quote1={intl.formatMessage({ id: "quote-1" })}
         cite1={intl.formatMessage({ id: "cite-1" })}
       />
       
-      <Casestudies
+      // Three rows (Art, Music, Theatre)
+      <CaseStudies
         art1={intl.formatMessage({ id: "art-heading" })}
         art2={intl.formatMessage({ id: "art-text" })}
         music1={intl.formatMessage({ id: "music-heading" })}
@@ -56,7 +63,8 @@ const IndexPage = () => {
         theatre2={intl.formatMessage({ id: "theatre-text" })}
       />
       
-      <Legacy
+      // Figures with auto countup
+      <Figures
         legacy1={intl.formatMessage({ id: "legacy" })}
         legacy2={intl.formatMessage({ id: "engagement" })}
         legacy3={intl.formatMessage({ id: "participation" })}
@@ -64,7 +72,8 @@ const IndexPage = () => {
         legacy5={intl.formatMessage({ id: "community" })}
       />
       
-      <Blackwood
+      // Secoond blockquote (Blackwood Primary)
+      <QuoteB
         quote2={intl.formatMessage({ id: "quote-2" })}
         cite2={intl.formatMessage({ id: "cite-2-p1" })}
         cite3={intl.formatMessage({ id: "cite-2-p2" })}

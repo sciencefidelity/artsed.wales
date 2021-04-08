@@ -1,9 +1,11 @@
+// First blockquote
+
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import IllustrationB from "./illustrations/illustrationB"
 
-const Tredegar = ({ quote1, cite1 }) => (
+const QuoteA = ({ quote1, cite1 }) => (
   <>
     <section className="quoteSection1">
     <IllustrationB />
@@ -35,4 +37,4 @@ const Tredegar = ({ quote1, cite1 }) => (
   </>
 )
 
-export default Tredegar
+export default QuoteA
