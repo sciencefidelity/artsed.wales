@@ -28,32 +28,32 @@ const IndexPage = () => {
         keywords={[`gatsby`, `application`, `react`]}
       />
       
-      // Main headline
+      {/* Main headline */}
       <section>
         <IllustrationA />
         <h2 className="headline"><FormattedMessage id="headline" /></h2>
       </section>
       
-      //introduction section
+      {/* Introduction section */}
       <Introduction 
         introText1={intl.formatMessage({ id: "introduction-1" })}
         introText2={intl.formatMessage({ id: "introduction-2" })}
       />
       
-      // Second headline (Exploring, Responding, Creating)
+      {/* Second headline (Exploring, Responding, Creating) */}
       <div className="headingContainer">
         <h2 className="heading"><FormattedMessage id="heading-1" />, </h2>
         <h2 className="heading"><FormattedMessage id="heading-2" />, </h2>
         <h2 className="heading"><FormattedMessage id="heading-3" /></h2>
       </div>
       
-      // First blockquote (Tredegar Park Primary)
+      {/* First blockquote (Tredegar Park Primary) */}
       <QuoteA 
         quote1={intl.formatMessage({ id: "quote-1" })}
         cite1={intl.formatMessage({ id: "cite-1" })}
       />
       
-      // Three rows (Art, Music, Theatre)
+      {/* Three rows (Art, Music, Theatre) */}
       <CaseStudies
         art1={intl.formatMessage({ id: "art-heading" })}
         art2={intl.formatMessage({ id: "art-text" })}
@@ -63,7 +63,7 @@ const IndexPage = () => {
         theatre2={intl.formatMessage({ id: "theatre-text" })}
       />
       
-      // Figures with auto countup
+      {/* Figures with auto countup */}
       <Figures
         legacy1={intl.formatMessage({ id: "legacy" })}
         legacy2={intl.formatMessage({ id: "engagement" })}
@@ -72,7 +72,7 @@ const IndexPage = () => {
         legacy5={intl.formatMessage({ id: "community" })}
       />
       
-      // Secoond blockquote (Blackwood Primary)
+      {/* Secoond blockquote (Blackwood Primary) */}
       <QuoteB
         quote2={intl.formatMessage({ id: "quote-2" })}
         cite2={intl.formatMessage({ id: "cite-2-p1" })}
@@ -109,12 +109,15 @@ const IndexPage = () => {
         promise3={intl.formatMessage({ id: "promise-p2" })}
         promise4={intl.formatMessage({ id: "promise-p3" })}
       />
+      
       <SignUp
         signup1={intl.formatMessage({ id: "signup-1" })}
         signup2={intl.formatMessage({ id: "signup-2" })}
         signup3={intl.formatMessage({ id: "signup-3" })}
       />
       
+      
+      {/* Heading before course cards (Get Involved) */}
       <section className="getInvolved">
         <h2><FormattedMessage id="involved-1" /></h2>
         <p><FormattedMessage id="involved-2" /></p>

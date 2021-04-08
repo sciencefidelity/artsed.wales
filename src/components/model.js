@@ -6,12 +6,7 @@ import IllustrationF from "./illustrations/illustrationF"
 const Model = ({ 
   model1, model2, model3, model4, model5, model6, model7, model8, model9 
 }) => (
-  <section
-    style={{
-      marginTop: `3.7rem`,
-      marginBottom: `3.5rem`,
-    }}
-  >
+  <section className="modelSection">
     <IllustrationF />
     <div className={vennStyles.vennContainer}>
       <div className={vennStyles.vennText}>

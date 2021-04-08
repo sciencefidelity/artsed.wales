@@ -144,6 +144,10 @@ cite {
   @include mq(s) {
     width: 100%;
   }
+  @include mq(xs) {
+    width: 100%;
+    margin: 2.5em auto;
+  }
 }
 .headline {
   margin-top: 5.1rem;
@@ -152,11 +156,14 @@ cite {
   @include mq(l) {
     margin: 5.1rem auto 1.8rem;
   }
+  @include mq(s) {
+    font-size: 1.85rem;
+    width: 88%;
+  }
   @include mq(xs) {
     font-size: 1.65rem;
     line-height: 1.3;
-    width: 88%;
-    margin: 5.1rem auto 3.8rem;
+    margin: 4rem auto 3.8rem;
   }
 }
 .headingContainer {
@@ -192,33 +199,41 @@ cite {
 .introSection {
   margin-bottom: 3.6rem;
 }
-.quoteSection1 {
-  margin-bottom: 6.7rem;
-  @include mq(xs) {
-    margin-bottom: 4.7rem;
-  }
-}
-.quoteSection2 {
-  margin-bottom: 7rem;
-  @include mq(xs) {
-    margin-bottom: 4.7rem;
-  }
-}
 .artistsSection {
   margin-bottom: 6rem;
-}
-.networkSection {
-  margin-bottom: 6.2rem;
-}
-.promiseSection {
-  margin-bottom: 7.8rem;
+  @include mq(xs) {
+    margin-bottom: 2rem;
+  }
 }
 .legacySection {
   margin-bottom: 6.8rem;
 }
+.modelSection {
+  margin-top: 3.7rem;
+  margin-bottom: 3.5rem;
+  @include mq(xs) {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
+}
+.networkSection {
+  margin-bottom: 6.2rem;
+  @include mq(xs) {
+    margin-bottom: 1rem;
+  }
+}
+.promiseSection {
+  margin-bottom: 7.8rem;
+  @include mq(xs) {
+    margin-bottom: 5rem;
+  }
+}
 .signupSection {
   margin-bottom: 7.2rem;
   text-align: center;
+  @include mq(xs) {
+    margin-bottom: 5rem;
+  }
 }
 
 // ********** Grid Layouts **************
@@ -235,7 +250,12 @@ cite {
   }
   @include mq(xs) {
     width: 100%;
-    gap: 2rem;
+    gap: 1em;
+  }
+  .sideImage {
+    @include mq(xs) {
+      margin-bottom: 2rem;
+    }
   }
 }
 .sideImage {
@@ -266,10 +286,25 @@ cite {
     width: 88%;
     margin: auto;
   }
+  @include mq(xs) {
+    gap: 1rem;
+  }
 }
 
 // ********** Blockquotes ***************
 
+.quoteSection1 {
+  margin-bottom: 6.7rem;
+  @include mq(xs) {
+    margin-bottom: 4.7rem;
+  }
+}
+.quoteSection2 {
+  margin-bottom: 7rem;
+  @include mq(xs) {
+    margin-bottom: 4.7rem;
+  }
+}
 .quoteContainer {
   display: flex;
   width: 85%;
@@ -288,6 +323,14 @@ cite {
     width: 100%;
   }
 }
+.firstQuote {
+  @extend %quote;
+  width: 70%;
+}
+.secondQuote {
+  @extend %quote;
+  width: 38%;
+}
 %quote {
   padding: 25px 30px 10px 40px;
   position: relative;
@@ -296,14 +339,6 @@ cite {
     width: 100%;
     padding: 25px 15px 10px 20px;
   }
-}
-.firstQuote {
-  @extend %quote;
-  width: 70%;
-}
-.secondQuote {
-  @extend %quote;
-  width: 38%;
 }
 .quoteLeft,
 .quoteRight {
@@ -328,6 +363,9 @@ cite {
 .legacySmall {
   margin-bottom: 15px;
   text-align: center;
+  @include mq(xs) {
+    display: none;
+  }
 }
 small {
   font-size: 0.85rem;
@@ -379,6 +417,12 @@ small {
 // ********** Artists / Creators ********
 
 // ********** National network **********
+
+.splitText {
+  @include mq(s) {
+    width: 88%;
+  }
+}
 
 // ********** Our promise ***************
 
