@@ -1,8 +1,11 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
+import IllustrationG from "./illustrations/illustrationG"
+
 const Network = ({ network1, network2 }) => (
   <section className="networkSection">
+    <IllustrationG />
     <div className="splitContainer">
       <StaticImage
         src="../images/aen_network.jpg"
