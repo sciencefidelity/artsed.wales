@@ -1,7 +1,10 @@
 import React from "react"
 
+import IllustrationI from "./illustrations/illustrationI"
+
 const SignUp = ({ signup1, signup2, signup3 }) => (
   <section className="signupSection">
+    <IllustrationI />
     <h2 className="signupHeading">{signup1}</h2>
     <div>
       <form>
