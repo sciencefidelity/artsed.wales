@@ -14,7 +14,7 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sass",
+    `gatsby-plugin-sass`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -23,7 +23,7 @@ module.exports = {
         background_color: `#e7dbd8`,
         theme_color: `#e7dbd8`,
         display: `minimal-ui`,
-        icon: "src/icons/icon.png",
+        icon: "src/images/icon.png",
       },
     },
     {
@@ -43,7 +43,7 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: "gatsby-plugin-intl",
+      resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `cy`],

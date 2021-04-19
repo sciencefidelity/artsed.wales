@@ -1,8 +1,9 @@
 import * as React from "react"
+// import { PageProps } from "gatsby"
 import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 
 import Introduction from "../components/Introduction"
 import QuoteA from "../components/QuoteA"
@@ -22,11 +23,11 @@ const IndexPage = () => {
   const intl = useIntl()
   return (
     <Layout>
-      <SEO
+      {/* <SEO
         lang={intl.locale}
         title={intl.formatMessage({ id: "title" })}
         keywords={[`gatsby`, `application`, `react`]}
-      />
+      /> */}
       
       {/* Main headline */}
       <section>
@@ -128,7 +129,6 @@ const IndexPage = () => {
         site2a={intl.formatMessage({ id: "site-2-d1" })}
         site2b={intl.formatMessage({ id: "site-2-d2" })}
         site2c={intl.formatMessage({ id: "site-2-d3" })}
-        site2={intl.formatMessage({ id: "site-2" })}
         site3={intl.formatMessage({ id: "site-3" })}
         site4={intl.formatMessage({ id: "site-4" })}
         digital1={intl.formatMessage({ id: "digital-1" })}
