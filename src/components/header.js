@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby-plugin-intl"
+import { Link } from "gatsby-plugin-react-intl"
 import PropTypes from "prop-types"
 
 import Language from "./language"

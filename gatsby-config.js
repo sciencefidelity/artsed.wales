@@ -23,7 +23,7 @@ module.exports = {
         background_color: `#e7dbd8`,
         theme_color: `#e7dbd8`,
         display: `minimal-ui`,
-        icon: "src/images/icon.png",
+        icon: "src/icons/icon.png",
       },
     },
     {
@@ -43,7 +43,7 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-react-intl`,
       options: {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `cy`],
