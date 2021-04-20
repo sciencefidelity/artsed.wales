@@ -1,5 +1,5 @@
 import React from "react"
-import * as vennStyles from "../scss/model.module.scss"
+import * as vennStyles from "../scss/modules/model.module.scss"
 
 import IllustrationF from "./illustrations/illustrationF"
 

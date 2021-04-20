@@ -1,9 +1,9 @@
 // ********** Partials ******************
 
 @use "sass:map";
-@use "reset";
-@use "typography";
-@use "variables";
+@use "partials/typography";
+@use "partials/variables";
+@use "partials/reset";
 
 // ********** Mixins ********************
 
