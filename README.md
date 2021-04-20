@@ -21,8 +21,6 @@ A static page to advertise the services that the network can offer. Drawing on t
 - html element does not have a lang attribute
 - Set up browser caching
 - Defer js components
-- Convert styles to Sass
-- Reposition cropped images in container
 - Make it respondsive
 - Add an internal page navigation
 - Fix language switch and menu to top right corner
@@ -45,6 +43,12 @@ A static page to advertise the services that the network can offer. Drawing on t
 - dynamically switch between light and dark mode
 
 ### Changelog
+
+20.04.21
+
+- Update to gatsby-plugin-react-intl
+- Use Sass
+- Use typescript
 
 16.03.21
 
