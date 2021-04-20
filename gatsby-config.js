@@ -49,7 +49,7 @@ module.exports = {
         languages: [`en`, `cy`],
         defaultLanguage: `en`,
         redirect: true,
-        redirectComponent: require.resolve(`./src/components/redirect.js`),
+        redirectComponent: require.resolve(`./src/components/redirect.tsx`),
       },
     },
   ],
