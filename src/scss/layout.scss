@@ -127,7 +127,7 @@ blockquote {
   font-size: 1.15rem;
   position: relative;
   margin-bottom: 1em;
-  @include mq(s) {
+  @include mq(ml) {
     font-size: 1rem;
   }
 }
@@ -176,7 +176,7 @@ form {
   margin-bottom: 5rem;
   letter-spacing: 0rem;
   @include mq(l) {
-    margin: 5.1rem auto 1.8rem;
+    margin: 5.1rem auto 5rem;
   }
   @include mq(s) {
     font-size: 1.85rem;
@@ -189,9 +189,15 @@ form {
   }
 }
 .headingContainer {
+  position: relative;
   margin-bottom: 5.7rem;
+  @include mq(s) {
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @include mq(xs) {
-    margin-bottom: 4rem;
+    margin-bottom: 4.5rem;
   }
 }
 .heading {
@@ -220,6 +226,9 @@ form {
 
 .introSection {
   margin-bottom: 3.6rem;
+  @include mq(xs) {
+    margin-bottom: 1.8rem;
+  }
 }
 .artistsSection {
   margin-bottom: 6rem;
@@ -229,6 +238,13 @@ form {
 }
 .legacySection {
   margin-bottom: 6.8rem;
+  display: flex;
+  flex-direction: column;
+  @include mq(sm) {
+    flex-direction: column-reverse;
+    gap: 3rem;
+    margin: -2.5rem 0 5.5rem 0;
+  }
 }
 .modelSection {
   margin-top: 3.7rem;
@@ -270,20 +286,21 @@ form {
     width: 88%;
     margin: auto;
   }
-  @include mq(xs) {
+  @include mq(sm) {
     width: 100%;
-    gap: 1em;
   }
-  .sideImage {
-    @include mq(xs) {
-      margin-bottom: 2rem;
-    }
+  @include mq(xs) {
+    gap: 1em;
   }
 }
 .sideImage {
   display: block;
   border: var(--border);
   box-shadow: var(--shadow);
+  @include mq(sm) {
+    width: 88%;
+    margin: 0 auto 1.7rem;
+  }
 }
 .halfLayout {
   display: grid;
@@ -334,10 +351,30 @@ form {
   margin-right: auto;
   border: var(--border);
   box-shadow: var(--shadow);
-  @include mq(s) {
+  @include mq(l) {
+    min-width: 0;
+    width: 100%;
     display: grid;
+    grid-template-columns: auto auto;
+  }
+  @include mq(ml) {
+    min-width: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  @include mq(m) {
+    min-width: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+  }
+  @include mq(ms) {
     grid-template-columns: 1fr;
     min-width: 0;
+    width: 100%;
+  }
+  @include mq(s) {
     width: 88%;
     margin: auto;
   }
@@ -357,7 +394,15 @@ form {
   padding: 25px 30px 10px 40px;
   position: relative;
   background: var(--background);
-  @include mq(s) {
+  @include mq(l) {
+    width: 100%;
+    padding: 25px 15px 10px 35px;
+  }
+  @include mq(ml) {
+    width: 100%;
+    padding: 25px 15px 10px 20px;
+  }
+  @include mq(ms) {
     width: 100%;
     padding: 25px 15px 10px 20px;
   }
@@ -406,7 +451,7 @@ small {
   }
   @include mq(s) {
     grid-template-columns: 1fr;
-    width: 70%;
+    width: 40%;
     margin: auto;
     text-align: left;
   }
@@ -420,11 +465,13 @@ small {
   @include mq(xl) {
     font-size: 4rem;
   }
+  @include mq(ms) {
+    font-size: 3.5rem;
+    margin: 2rem 0 1rem 0;
+  }
   @include mq(sm) {
     font-size: 3.5rem;
-  }
-  @include mq(s) {
-    font-size: 4rem;
+    margin: 2rem 0 1rem 0;
   }
 }
 .figureCap {
@@ -507,10 +554,4 @@ small {
     width: 85%;
     margin: 0 auto 2.7rem;
   }
-}
-
-// ********** Decoration *******************
-
-.headingContainer {
-  position: relative;
 }
