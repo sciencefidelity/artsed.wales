@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import * as courseStyles from "../scss/modules/course.module.scss"
+import * as courseStyles from "../scss/course.module.scss"
 
 const Courses = ({
   site1, site2a, site2b, site2c, site3, site4, book,
@@ -24,7 +24,7 @@ const Courses = ({
             letterSpacing: `-0.01rem`, // remove for English text
           }}
         >{site1}</h2>
-        <h3 
+        <h3
           className={courseStyles.courseDate}
         >{site2a}<sup>{site2b}</sup> {site2c}</h3>
         <h4
@@ -34,7 +34,7 @@ const Courses = ({
           className={courseStyles.coursePrice}
         >£65</h4>
         <p>{site4}</p>
-        <a 
+        <a
           href="https://eventbrite.com/"
           target="_blank"
           rel="noreferrer"
@@ -43,7 +43,7 @@ const Courses = ({
         </a>
       </div>
     </div>
-    <div 
+    <div
       className={courseStyles.cardContainer}>
       <StaticImage
         src="../images/aen_printing.jpg"
@@ -57,7 +57,7 @@ const Courses = ({
       />
       <div className={courseStyles.cardText}>
         <h2>{digital1}</h2>
-        <h3 
+        <h3
           className={courseStyles.courseDate}
         >{digital2a}<sup>{digital2b}</sup> {digital2c}</h3>
         <h4
@@ -71,12 +71,12 @@ const Courses = ({
             letterSpacing: `-0.01rem` // remove for English text
           }}
         >{digital4}</p>
-        <a 
+        <a
           href="https://eventbrite.com/"
           target="_blank"
           rel="noreferrer"
         >
-          <button 
+          <button
             className={courseStyles.britelink}
           >{book}</button>
         </a>

@@ -1,10 +1,10 @@
 import React from "react"
-import * as vennStyles from "../scss/modules/model.module.scss"
+import * as vennStyles from "../scss/model.module.scss"
 
 import IllustrationF from "./illustrations/illustrationF"
 
-const Model = ({ 
-  model1, model2, model3, model4, model5, model6, model7, model8, model9 
+const Model = ({
+  model1, model2, model3, model4, model5, model6, model7, model8, model9
 }) => (
   <section className="modelSection">
     <IllustrationF />
@@ -23,12 +23,12 @@ const Model = ({
         <div className={vennStyles.circle4}></div>
         <div className={vennStyles.circle5}></div>
         <div className={vennStyles.circle6}></div>
-        
+
         <div className={vennStyles.content1}>{model7}</div>
         <div className={vennStyles.content2}>{model6}</div>
         <div className={vennStyles.content3}>{model8}<br />{model9}</div>
         <div className={vennStyles.content4}>{model5}</div>
-        
+
         <div>
           <img
             alt="Ampersand Logo"
