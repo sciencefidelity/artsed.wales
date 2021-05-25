@@ -24,7 +24,7 @@ const Header = () => (
           />
         </Link>
       </div>
-      
+
       <div className="nameContainer">
         <h1 className="nameEn">{brandEn}</h1>
         <h1 className="nameCy">{brandCy}</h1>
