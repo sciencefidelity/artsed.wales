@@ -1,6 +1,11 @@
+
+@use "foundation/colors" as c;
+@use "foundation/typography" as t;
+@use "foundation/breakpoints" as b;
+
 header {
-  background: #0D0D0D;
-  margin-bottom: 5.2rem;
+  background: c.$grey-950;
+  margin-bottom: 9.4rem;
 }
 .headerContainer {
   margin: 0 auto;
@@ -18,11 +23,11 @@ header {
 }
 .nameEn {
   letter-spacing: 0;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.72rem;
   margin: 0;
 }
 .nameCy {
-  letter-spacing: 0.041rem;
+  letter-spacing: 0.074rem;
   margin: 0;
 }
 
@@ -30,17 +35,17 @@ header {
 
 .languageSwitcher {
   display: flex;
-  font-family: var(--sans);
+  font-family: t.$sans;
   text-transform: uppercase;
   align-items: center;
-  font-size: 3.5rem;
-  letter-spacing: 0.07rem;
-  margin: 0 2.5rem 0 auto;
+  font-size: 6.3rem;
+  letter-spacing: 0.02rem;
+  margin: 0 4.5rem 0 auto;
 }
 .languageLink {
-  color: #e7dbd8;
+  color: c.$beige-150;
   cursor: pointer;
-  userSelect: none;
+  user-select: none;
 }
 
 // ********** Media Queries *************
