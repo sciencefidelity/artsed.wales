@@ -1,29 +1,10 @@
+
 // ********** Partials ******************
 
-@use "sass:map";
 @use "foundation/normalize";
-@use "foundation/variables";
-@use "foundation/typography";
-
-// ********** Mixins ********************
-
-$breakpoints: (
-  xs: 325px,
-  s: 480px,
-  sm: 540px,
-  ms: 656px,
-  m: 809px,
-  ml: 856px,
-  l: 978px,
-  xl: 1114px,
-);
-
-@mixin mq($key) {
-  $size: map.get($breakpoints, $key);
-  @media only screen and (max-width: $size) {
-    @content;
-  }
-}
+@use "foundation/colors" as c;
+@use "foundation/typography" as t;
+@use "foundation/breakpoints" as b;
 
 // ********** Global styles *************
 
@@ -39,108 +20,119 @@ $breakpoints: (
 html {
   box-sizing: border-box;
   overflow-y: scroll;
-  background: #0D0D0D;
-  font-family: "Domaine Text";
-  font-size: 112.5%;
+  background: c.$grey-950;
+  font-family: t.$serif;
+  font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @include mq(s) {
+  @include b.mq(sm) {
     font-size: 100%;
   }
 }
+
 body {
-  background: var(--background);
-  color: var(--black);
-  font-family: "Domaine Text";
-  font-size: 1.16rem;
+  background: c.$beige-050;
+  color: c.$grey-950;
+  font-family: t.$serif;
+  font-size: 2rem;
   line-height: 1.5;
   position: relative;
-  z-index: -100;
+  z-index: -100; // ************************************************************
   overflow: hidden;
 }
+
 section {
   position: relative;
 }
+
 a {
-  color: var(--black);
+  color: c.$grey-950;
 }
+
 h1 {
-  font-family: "Neue Haas Unica", sans-serif;
-  font-size: 1.55rem;
+  font-family: t.$sans;
+  font-size: 2.8rem;
   font-weight: 400;
   line-height: 1.1;
-  color: var(--background);
+  color: c.$beige-050;
 }
+
 h2 {
-  font-family: "Neue Haas Unica";
-  font-size: 2.5rem;
+  font-family: t.$sans;
+  font-size: 4.5rem;
   line-height: 1.2;
-  letter-spacing: 0.03rem;
+  letter-spacing: 0.012em;
   margin-bottom: 0.3em;
   color: var(--black);
-  @include mq(xl) {
-    font-size: 2.1rem;
+  @include b.mq(xl) {
+    font-size: 3.8rem;
   }
-  @include mq(s) {
-    font-size: 1.9rem;
+  @include b.mq(sm) {
+    font-size: 3.4rem;
   }
 }
+
 h3 {
-  font-family: "Neue Haas Unica";
-  font-size: 4.4rem;
+  font-family: t.$sans;
+  font-size: 7.9rem;
   line-height: 0.7;
   margin-bottom: 0.25em;
-  @include mq(xl) {
-    font-size: 1rem;
+  @include b.mq(xl) {
+    font-size: 1.8rem;
   }
 }
+
 h4 {
-  font-family: "Neue Haas Unica";
-  font-size: 1.2rem;
+  font-family: t.$sans;
+  font-size: 2.2rem;
 }
+
 p {
-  margin-bottom: 1rem;
-  @include mq(xl) {
-    font-size: 1.1rem;
+  margin-bottom: 1.8rem;
+  @include b.mq(xl) {
+    font-size: 2rem;
   }
-  @include mq(l) {
-    font-size: 1rem;
+  @include b.mq(lg) {
+    font-size: 1.8rem;
   }
-  @include mq(xs) {
-    font-size: 0.9em;
-    margin-bottom: 1.4rem;
+  @include b.mq(sm) {
+    font-size: 1.6em;
+    margin-bottom: 2.5rem;
   }
 }
+
 small {
   font-size: 85%;
-  font-family: "Neue Haas Unica",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: var(--black);
-  @include mq(xs) {
-    font-size: 0.8rem;
+  font-family: t.$sans;
+  color: c.$grey-950;
+  @include b.mq(sm) {
+    font-size: 1.44rem;
   }
 }
+
 sup {
   font-size: 60%;
 }
+
 blockquote {
-  font-size: 1.15rem;
+  font-size: 2rem;
   position: relative;
   margin-bottom: 1em;
-  @include mq(ml) {
-    font-size: 1rem;
+  @include b.mq(md) {
+    font-size: 1.8rem;
   }
 }
+
 cite {
-  font-family: "Neue Haas Unica",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: t.$sans;
   font-style: normal;
-  font-size: 0.9rem;
+  font-size: 1.6rem;
   line-height: 1.4;
   display: inline-block;
 }
+
 form {
-  margin-bottom: 1em;
+  margin-bottom: 1.8em;
 }
 
 // ********** Layout ********************
@@ -149,128 +141,127 @@ form {
   width: 88%;
   max-width: 1000px;
   margin: auto;
-  @include mq(s) {
+  @include b.mq(sm) {
     width: 100%;
   }
 }
+
 .centeredImage {
   width: 65%;
   min-width: 600px;
   margin: 6.7rem auto;
-  border: var(--border);
-  box-shadow: var(--shadow);
-  @include mq(ml) {
+  border: c.$border;
+  box-shadow: c.$shadow;
+  @include b.mq(md) {
     width: 88%;
-    min-width: 0px;
+    min-width: 0;
   }
-  @include mq(s) {
-    width: 100%;
-  }
-  @include mq(xs) {
+  @include b.mq(sm) {
     width: 100%;
     margin: 2.5em auto;
   }
 }
+
 .headline {
-  margin-top: 5.1rem;
-  margin-bottom: 5rem;
-  letter-spacing: 0rem;
-  @include mq(l) {
-    margin: 5.1rem auto 5rem;
+  margin-top: 9.2rem;
+  margin-bottom: 9rem;
+  letter-spacing: 0;
+  @include b.mq(lg) {
+    margin: 9.2rem auto 9rem;
   }
-  @include mq(s) {
-    font-size: 1.85rem;
+  @include b.mq(sm) {
     width: 88%;
-  }
-  @include mq(xs) {
-    font-size: 1.65rem;
-    line-height: 1.3;
-    margin: 4rem auto 3.8rem;
+    font-size: 3rem;
+    margin: 7.2rem auto 6.8rem;
   }
 }
+
 .headingContainer {
   position: relative;
-  margin-bottom: 5.7rem;
-  @include mq(s) {
+  margin-bottom: 10rem;
+  @include b.mq(sm) {
     width: 88%;
     margin-left: auto;
     margin-right: auto;
-  }
-  @include mq(xs) {
-    margin-bottom: 4.5rem;
+    margin-bottom: 8rem;
   }
 }
+
 .heading {
   display: inline;
-  @include mq(xs) {
+  @include b.mq(sm) {
     display: block;
     width: 70%;
-    margin: 0 auto 0.7rem;
+    margin: 0 auto 1.3rem;
   }
 }
+
 .splitText {
-  @include mq(ml) {
-    margin: 3rem auto;
+  @include b.mq(md) {
+    margin: 5.4rem auto;
     width: 80%;
   }
-  @include mq(xs) {
+  @include b.mq(sm) {
     width: 88%;
-    margin: 0 auto 2rem auto;
-  }
-  @include mq(m) {
-    width: 100%;
+    margin: 0 auto 3.6rem auto;
   }
 }
 
 // ********** Spacing *******************
 
 .introSection {
-  margin-bottom: 3.6rem;
-  @include mq(xs) {
+  margin-bottom: 6.5rem;
+  @include b.mq(sm) {
+    margin-bottom: 3.2rem;
+  }
+}
+
+.artistsSection {
+  margin-bottom: 10.8rem;
+  @include b.mq(sm) {
+    margin-bottom: 6.5rem;
+  }
+}
+
+.legacySection {
+  margin-bottom: 12.2rem;
+  display: flex;
+  flex-direction: column;
+  @include b.mq(sm) {
+    flex-direction: column-reverse;
+    gap: 5.4rem;
+    margin: -4.5rem 0 9.9rem 0;
+  }
+}
+
+.modelSection {
+  margin-top: 6.7rem;
+  margin-bottom: 6.3rem;
+  @include b.mq(sm) {
+    margin-top: 5.4rem;
+    margin-bottom: 9rem;
+  }
+}
+
+.networkSection {
+  margin-bottom: 11.2rem;
+  @include b.mq(sm) {
     margin-bottom: 1.8rem;
   }
 }
-.artistsSection {
-  margin-bottom: 6rem;
-  @include mq(xs) {
-    margin-bottom: 2rem;
-  }
-}
-.legacySection {
-  margin-bottom: 6.8rem;
-  display: flex;
-  flex-direction: column;
-  @include mq(sm) {
-    flex-direction: column-reverse;
-    gap: 3rem;
-    margin: -2.5rem 0 5.5rem 0;
-  }
-}
-.modelSection {
-  margin-top: 3.7rem;
-  margin-bottom: 3.5rem;
-  @include mq(xs) {
-    margin-top: 3rem;
-    margin-bottom: 5rem;
-  }
-}
-.networkSection {
-  margin-bottom: 6.2rem;
-  @include mq(xs) {
-    margin-bottom: 1rem;
-  }
-}
+
 .promiseSection {
-  margin-bottom: 7.8rem;
-  @include mq(xs) {
-    margin-bottom: 5rem;
+  margin-bottom: 14rem;
+  @include b.mq(sm) {
+    margin-bottom: 9rem;
   }
 }
+
 .signupSection {
-  margin-bottom: 7.2rem;
+  margin-bottom: 13rem;
   text-align: center;
-  @include mq(xs) {
-    margin-bottom: 5rem;
+  @include b.mq(sm) {
+    margin-bottom: 9rem;
   }
 }
 
@@ -279,208 +270,198 @@ form {
 .splitContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.2rem;
-  @include mq(ml) {
+  gap: 4rem;
+  @include b.mq(md) {
     grid-template-columns: 1fr;
     gap: 0;
     width: 88%;
     margin: auto;
   }
-  @include mq(sm) {
+  @include b.mq(sm) {
     width: 100%;
   }
-  @include mq(xs) {
+  @include b.mq(sm) {
     gap: 1em;
   }
 }
+
 .sideImage {
   display: block;
-  border: var(--border);
-  box-shadow: var(--shadow);
-  @include mq(sm) {
+  border: c.$border;
+  box-shadow: c.$shadow;
+  @include b.mq(sm) {
     width: 88%;
-    margin: 0 auto 1.7rem;
+    margin: 0 auto 3rem;
   }
 }
 .halfLayout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.2rem;
-  @include mq(m) {
+  gap: 4rem;
+  @include b.mq(md) {
     grid-template-columns: 1fr;
     width: 80%;
     margin: auto;
   }
-  @include mq(xs) {
+  @include b.mq(sm) {
     width: 88%;
   }
 }
 .thirdsLayout {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.4rem;
-  @include mq(ml) {
+  gap: 2.5rem;
+  @include b.mq(md) {
     grid-template-columns: 1fr;
     gap: 2em;
     width: 88%;
     margin: auto;
   }
-  @include mq(xs) {
-    gap: 1rem;
+  @include b.mq(sm) {
+    gap: 1.8rem;
   }
 }
 
 // ********** Blockquotes ***************
 
 .quoteSection1 {
-  margin-bottom: 6.7rem;
-  @include mq(xs) {
-    margin-bottom: 4.7rem;
+  margin-bottom: 12rem;
+  @include b.mq(sm) {
+    margin-bottom: 8.5rem;
   }
 }
+
 .quoteSection2 {
-  margin-bottom: 7rem;
-  @include mq(xs) {
-    margin-bottom: 4.7rem;
+  margin-bottom: 12.6rem;
+  @include b.mq(sm) {
+    margin-bottom: 8.5rem;
   }
 }
+
 .quoteContainer {
   display: flex;
   width: 85%;
-  min-width: 850px;
+  min-width: 8.5rem;
   margin-right: auto;
-  border: var(--border);
-  box-shadow: var(--shadow);
-  @include mq(l) {
+  border: c.$border;
+  box-shadow: c.$shadow;
+  @include b.mq(lg) {
     min-width: 0;
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
   }
-  @include mq(ml) {
+  @include b.mq(md) {
     min-width: 0;
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
   }
-  @include mq(m) {
-    min-width: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-  }
-  @include mq(ms) {
+  @include b.mq(sm) {
     grid-template-columns: 1fr;
     min-width: 0;
     width: 100%;
   }
-  @include mq(s) {
-    width: 88%;
-    margin: auto;
-  }
-  @include mq(xs) {
-    width: 100%;
-  }
 }
+
 .firstQuote {
   @extend %quote;
   width: 70%;
 }
+
 .secondQuote {
   @extend %quote;
   width: 38%;
 }
+
 %quote {
   padding: 25px 30px 10px 40px;
   position: relative;
   background: var(--background);
-  @include mq(l) {
+  @include b.mq(lg) {
     width: 100%;
-    padding: 25px 15px 10px 35px;
+    padding: 2.5rem 1.5rem 1rem 3.5rem;
   }
-  @include mq(ml) {
+  @include b.mq(md) {
     width: 100%;
-    padding: 25px 15px 10px 20px;
-  }
-  @include mq(ms) {
-    width: 100%;
-    padding: 25px 15px 10px 20px;
+    padding: 2.5rem 1.5rem 1rem 2rem;
   }
 }
+
 .quoteLeft,
 .quoteRight {
-  width: 4.5rem;
+  width: 8.1rem;
   margin-bottom: 1.25em;
   position: absolute;
-  @include mq(s) {
-    width: 4rem;
+  @include b.mq(sm) {
+    width: 7.2rem;
   }
 }
+
 .quoteLeft {
-  left: 15px;
-  top: 13px;
+  left: 1.5rem;
+  top: 1.3rem;
 }
+
 .quoteRight {
-  right: 11px;
-  bottom: -12px;
+  right: 1.1rem;
+  bottom: -1.2rem;
 }
 
 // ********** Case Studies **************
 
 // ********** Legacy (figures) **********
+
 .legacySmall {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   text-align: center;
-  @include mq(xs) {
+  @include b.mq(sm) {
     display: none;
   }
 }
-small {
-  font-size: 0.85rem;
-}
+
 .figuresLayout {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  @include mq(l) {
+  @include b.mq(lg) {
     grid-template-columns: 1fr 1fr;
     width: 77%;
     margin: auto;
   }
-  @include mq(ms) {
+  @include b.mq(md) {
     width: 88%;
   }
-  @include mq(s) {
+  @include b.mq(sm) {
     grid-template-columns: 1fr;
     width: 40%;
     margin: auto;
     text-align: left;
   }
 }
+
 .figure,
 .figureCap {
   font-weight: bold;
 }
+
 .figure {
-  font-size: 4.4rem;
-  @include mq(xl) {
-    font-size: 4rem;
+  font-size: 7.9rem;
+  @include b.mq(xl) {
+    font-size: 7.2rem;
   }
-  @include mq(ms) {
-    font-size: 3.5rem;
-    margin: 2rem 0 1rem 0;
-  }
-  @include mq(sm) {
-    font-size: 3.5rem;
-    margin: 2rem 0 1rem 0;
+  @include b.mq(md) {
+    font-size: 6.3rem;
+    margin: 3.6rem 0 1.8rem 0;
   }
 }
+
 .figureCap {
-  font-size: 1.3rem;
-  @include mq(xl) {
-    font-size: 1.1rem;
+  font-size: 2.3rem;
+  @include b.mq(xl) {
+    font-size: 2rem;
   }
-  @include mq(sm) {
-    font-size: 1rem;
+  @include b.mq(sm) {
+    font-size: 1.8rem;
   }
 }
 
@@ -489,7 +470,7 @@ small {
 // ********** National network **********
 
 .splitText {
-  @include mq(s) {
+  @include b.mq(sm) {
     width: 88%;
   }
 }
@@ -497,9 +478,9 @@ small {
 // ********** Our promise ***************
 
 .promiseTitle {
-  @include mq(ml) {
+  @include b.mq(md) {
     width: 88%;
-    margin: 0.8rem auto;
+    margin: 1.4rem auto;
   }
 }
 
@@ -507,38 +488,40 @@ small {
 
 .signupHeadinig {
   text-align: center;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.7rem;
 }
+
 .signupInput {
   background: white;
   border: 0;
   width: 57%;
-  padding: 0.85rem 1.5rem;
-  font-family: "Neue Haas Unica", sans-serif;
-  font-size: 1.55rem;
-  @include mq(m) {
+  padding: 1.5rem 2.7rem;
+  font-family: t.$sans;
+  font-size: 2.8rem;
+  @include b.mq(md) {
     border: 0;
-    width: calc(88% - 4rem);
+    width: calc(88% - 7.2rem);
   }
-  @include mq(xs) {
+  @include b.mq(sm) {
     border: 0;
-    width: calc(100% - 4rem);
-    padding: 0.85rem 1.5rem;
-    font-size: 1.5rem;
+    width: calc(100% - 7.2rem);
+    padding: 1.5rem 2.7rem;
+    font-size: 2.7rem;
   }
 }
+
 .signupText {
   text-align: left;
   width: 50%;
-  padding-top: 0.2rem;
+  padding-top: 0.4rem;
   margin: auto;
-  @include mq(m) {
+  @include b.mq(md) {
     width: 65%;
   }
-  @include mq(xs) {
+  @include b.mq(sm) {
     text-align: left;
     width: 88%;
-    padding-top: 0.2rem;
+    padding-top: 0.4rem;
     margin: auto;
   }
 }
@@ -546,12 +529,12 @@ small {
 // ********** Courses *******************
 
 .getInvolved {
-  margin-bottom: 4.7rem;
-  @include mq(m) {
-    margin-bottom: 3rem;
+  margin-bottom: 8.5rem;
+  @include b.mq(md) {
+    margin-bottom: 5.4rem;
   }
-  @include mq(s) {
+  @include b.mq(sm) {
     width: 85%;
-    margin: 0 auto 2.7rem;
+    margin: 0 auto 4.9rem;
   }
 }
