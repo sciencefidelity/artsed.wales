@@ -1,57 +1,71 @@
 
+@use "foundation/colors" as c;
+@use "foundation/typography" as t;
+@use "foundation/breakpoints" as b;
+
 :root {
   --vennOpacity: 0.65;
   --vennBlend: difference;
-  --vennFont: "Neue Haas Unica",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
 }
+
 .vennContainer {
   display: flex;
 }
+
 .vennText {
   width: 33.33%;
   margin-right: -10%;
 }
+
 .vennP1 {
   margin-right: -15%;
 }
+
 .vennHeading {
   line-height: 0.6;
-  padding-bottom: 1rem;
+  padding-bottom: 1.8rem;
 }
+
 .vennDiagram {
   position: relative;
   width: 72.66%;
   margin-left: auto;
 }
+
 %allContent {
   position: absolute;
-  color: #ffffff;
-  font-family: var(--vennFont);
-  font-size: 1.75rem;
+  color: c.$grey-000;
+  font-family: t.$sans;
+  font-size: 3.2rem;
   text-align: center;
   transform: translate(-50%, -50%);
 }
+
 .content1 {
   @extend %allContent;
   top: 18%;
   left: 50%;
 }
+
 .content2 {
   @extend %allContent;
   top: 67%;
   left: 21%;
 }
+
 .content3 {
   @extend %allContent;
   line-height: 1.2;
   top: 67%;
   left: 78%;
 }
+
 .content4 {
   @extend %allContent;
   top: 55%;
   left: 50%;
 }
+
 .ampersand {
   position: absolute;
   width: 3.78em;
@@ -67,22 +81,26 @@
   width: 60.59%;
   border-radius: 50%;
 }
+
 .circle1 {
   @extend %whiteCircles;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
+
 .circle2 {
   @extend %whiteCircles;
   bottom: 10.02%;
   left: 2.41%;
 }
+
 .circle3 {
   @extend %whiteCircles;
   bottom: 10.02%;
   right: 2.41%;
 }
+
 %topCircles {
   mix-blend-mode: var(--vennBlend);
   opacity: var(--vennOpacity);
@@ -90,6 +108,7 @@
   width: 60.59%;
   border-radius: 50%;
 }
+
 .circle4 {
   @extend %topCircles;
   top: 0;
@@ -97,18 +116,21 @@
   transform: translateX(-50%);
   background: #33CC66;
 }
+
 .circle5 {
   @extend %topCircles;
   bottom: 10.02%;
   right: 2.41%;
   background: #FF3333;
 }
+
 .circle6 {
   @extend %topCircles;
   bottom: 10.02%;
   left: 2.41%;
   background: #0099FF;
 }
+
 .vennDiagram::after,
 .circle1::after,
 .circle2::after,
@@ -140,7 +162,7 @@
   }
   .ampersand {
     width: 2.4em;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.5rem;
   }
   %allContent {
     font-size: 0.95em;
