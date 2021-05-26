@@ -17,6 +17,10 @@
   }
 }
 
+::selection {
+  background: rgba(c.$grey-400, 0.5);
+}
+
 html {
   box-sizing: border-box;
   overflow-y: scroll;
@@ -377,7 +381,7 @@ form {
 %quote {
   padding: 25px 30px 10px 40px;
   position: relative;
-  background: var(--background);
+  background: c.$beige-150;
   @include b.mq(lg) {
     width: 100%;
     padding: 2.5rem 1.5rem 1rem 3.5rem;
@@ -524,6 +528,16 @@ form {
     padding-top: 0.4rem;
     margin: auto;
   }
+}
+
+.signup__send {
+  cursor: pointer;
+  background: rgba(77, 73, 73);
+  border: 0;
+  height: 7rem;
+  width: 7rem;
+  padding: 2.1rem;
+  transform: translateY(2.4rem);
 }
 
 // ********** Courses *******************
