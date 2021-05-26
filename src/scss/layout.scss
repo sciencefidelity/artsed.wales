@@ -100,7 +100,7 @@ p {
     font-size: 1.8rem;
   }
   @include b.mq(sm) {
-    font-size: 1.6em;
+    font-size: 1.6rem;
     margin-bottom: 2.5rem;
   }
 }
@@ -449,6 +449,7 @@ form {
 }
 
 .figure {
+  font-family: t.$sans;
   font-size: 7.9rem;
   @include b.mq(xl) {
     font-size: 7.2rem;
