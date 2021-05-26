@@ -42,25 +42,4 @@ A static page to advertise the services that the network can offer. Drawing on t
 
 - dynamically switch between light and dark mode
 
-### Changelog
-
-20.04.21
-
-- Update to gatsby-plugin-react-intl
-- Use Sass
-- Use typescript
-
-16.03.21
-
-- Added background illustrations
-
-15.03.21
-
-- Complete all translation for Welsh language
-- Add external links
-
-14.03.21
-
-- Setup internationalisation with Gatsby International Plugin
-
-Built with [Gatsby](https://www.gatsbyjs.com/)
+Built with [Gatsby](https://www.gatsbyjs.com/) and [Sanity](https://sanity.io/)
