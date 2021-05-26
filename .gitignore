@@ -1,12 +1,15 @@
-# All node modules
-node_modules/
-
-# Cache and build
-.cache/
-.nova/
-public/
-
-# Mac stuff
+# mac
 .DS_Store
 *.bak
+.nova
 
+# node
+node_modules
+*.log
+
+# gatsby
+.cache
+public
+
+# sanity
+dist
