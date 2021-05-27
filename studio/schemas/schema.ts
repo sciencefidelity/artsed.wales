@@ -1,29 +1,46 @@
-// First, we must import the schema creator
 import createSchema from 'part:@sanity/base/schema-creator'
-
-// Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-// We import object and document schemas
-import blockContent from './blockContent'
-import category from './category'
-import post from './post'
-import author from './author'
+// objects
+import blockContent from './objects/blockContent'
+import captionImage from './objects/captionImage'
 
-// Then we give our schema to the builder and provide the result to Sanity
+// localization
+// import { baseLanguage, supportedLanguages } from './languages'
+import localeRichText from './objects/localeRichText'
+import localeSlug from './objects/localeSlug'
+import localeString from './objects/localeString'
+
+// documements
+import event from './documents/event'
+import post from './documents/post'
+
+//taxonomy
+import artform from './taxonomy/artform'
+import author from './taxonomy/author'
+import category from './taxonomy/category'
+import keystage from './taxonomy/keystage'
+
 export default createSchema({
-  // We name our schema
   name: 'default',
-  // Then proceed to concatenate our document type
-  // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    // The following are document types which will appear
-    // in the studio.
+
+    // objects
+    blockContent,
+    captionImage,
+    localeRichText,
+    localeSlug,
+    localeString,
+
+    // documents
+    event,
     post,
+
+    // taxonomy
+    artform,
+    keystage,
     author,
     category,
-    // When added to this list, object types can be used as
-    // { type: 'typename' } in other document schemas
-    blockContent,
+
   ]),
 })
