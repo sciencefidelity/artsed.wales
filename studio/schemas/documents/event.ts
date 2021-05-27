@@ -11,6 +11,11 @@ export default {
       type: 'localeString',
     },
     {
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'localeString',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -34,6 +39,11 @@ export default {
       name: 'location',
       title: 'Location',
       type: 'string',
+    },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'number',
     },
     {
       name: 'britelink',
@@ -84,7 +94,7 @@ export default {
   preview: {
     select: {
       title: 'title.en',
-      subtitle: 'date',
+      subtitle: 'subtitle.en',
       media: 'mainImage',
     },
   },
