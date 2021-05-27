@@ -1,12 +1,12 @@
 export default {
-  name: 'category',
-  title: 'Category',
+  name: 'keystage',
+  title: 'Key Stage',
   type: 'document',
   fields: [
     {
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'description',
