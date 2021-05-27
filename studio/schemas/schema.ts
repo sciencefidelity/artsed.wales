@@ -10,6 +10,7 @@ import captionImage from './objects/captionImage'
 import localeRichText from './objects/localeRichText'
 import localeSlug from './objects/localeSlug'
 import localeString from './objects/localeString'
+import localeText from './objects/localeText'
 
 // documements
 import event from './documents/event'
@@ -31,6 +32,7 @@ export default createSchema({
     localeRichText,
     localeSlug,
     localeString,
+    localeText,
 
     // documents
     event,
@@ -38,9 +40,9 @@ export default createSchema({
 
     // taxonomy
     artform,
-    keystage,
     author,
     category,
+    keystage,
 
   ]),
 })

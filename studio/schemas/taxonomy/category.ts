@@ -14,4 +14,11 @@ export default {
       type: 'text',
     },
   ],
+
+  preview: {
+    select: {
+      title: 'title.en',
+      subtitle: 'title.cy',
+    },
+  },
 }

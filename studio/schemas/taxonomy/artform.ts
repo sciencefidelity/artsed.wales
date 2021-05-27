@@ -11,7 +11,14 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'localeText',
     },
   ],
+
+  preview: {
+    select: {
+      title: 'title.en',
+      subtitle: 'title.cy',
+    },
+  },
 }
