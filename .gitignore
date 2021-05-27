@@ -1,7 +1,9 @@
-# mac
+# local
 .DS_Store
 *.bak
 .nova
+.env
+.env.*
 
 # node
 node_modules

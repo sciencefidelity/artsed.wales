@@ -3,10 +3,6 @@
   "project": {
     "name": "National Arts and Education Network"
   },
-  "api": {
-    "projectId": "2l9k48uy",
-    "dataset": "production"
-  },
   "plugins": [
     "@sanity/base",
     "@sanity/components",
