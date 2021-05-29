@@ -1,3 +1,7 @@
+require('dotenv').config()
+
+const clientConfig = require('./client-config')
+
 module.exports = {
   siteMetadata: {
     title: "National Arts and Education Network",
@@ -41,6 +45,12 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        ...clientConfig.sanity
+      },
     },
     {
       resolve: `gatsby-plugin-react-intl`,
