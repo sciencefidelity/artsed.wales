@@ -42,7 +42,7 @@ const IndexPage = () => {
       />
 
       {/* Second headline (Exploring, Responding, Creating) */}
-      <div className="headingContainer">
+      <div className="heading__container">
         <h2 className="heading"><FormattedMessage id="heading-1" />, </h2>
         <h2 className="heading"><FormattedMessage id="heading-2" />, </h2>
         <h2 className="heading"><FormattedMessage id="heading-3" /></h2>

@@ -141,7 +141,7 @@ form {
 
 // ********** Layout ********************
 
-.containerFluid {
+.container {
   width: 88%;
   max-width: 1000px;
   margin: auto;
@@ -180,7 +180,7 @@ form {
   }
 }
 
-.headingContainer {
+.heading__container {
   position: relative;
   margin-bottom: 10rem;
   @include b.mq(sm) {
