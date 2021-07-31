@@ -1,0 +1,18 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/sh\ncd web\ngatsby build"
+    },
+    "clean" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/sh\ncd web\ngatsby clean"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/sh\ncd web\ngatsby develop --host 0.0.0.0"
+    }
+  },
+  "identifier" : "1183034E-67E8-405E-B041-B396C789FC30",
+  "openLogOnRun" : "start"
+}

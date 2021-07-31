@@ -1,7 +1,6 @@
 # local
 .DS_Store
 *.bak
-.nova
 .env
 .env.*
 
