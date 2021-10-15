@@ -5878,7 +5878,7 @@ fs-extra@^8.1.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.0.1, fs-extra@^9.1.0:
+fs-extra@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
   integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
@@ -6229,10 +6229,10 @@ gatsby-source-filesystem@^3.3.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-source-sanity@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-7.0.4.tgz#03ad8e60cc8a3dfd7f72851dc901dc92ede391d8"
-  integrity sha512-xsbc2fHeiERXvIgbvXWKLVzB5fidqRAWhR6wkjICoW592eLALpOUPWlxFQ5z1iEUBkEBhOMPDzQ6rXsEM/AjZw==
+gatsby-source-sanity@^7.0.7:
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-7.0.7.tgz#23c2fd30c51f22661e0d72a44fd1f665a1ef1fa2"
+  integrity sha512-TOF+qhkwiFaxCBj7gIl3t+gxLQ7INi96jDgyViWm5PEnMgsTbJZhJmKEoLDPYD/aA5D8YIclLW+Tqutk5Py5uw==
   dependencies:
     "@sanity/client" "^2.7.1"
     "@sanity/image-url" "^0.140.19"
@@ -6240,7 +6240,6 @@ gatsby-source-sanity@^7.0.4:
     "@types/url-parse" "^1.4.3"
     axios "^0.21.0"
     debug "^4.2.0"
-    fs-extra "^9.0.1"
     get-stream "^5.1.0"
     lodash "^4.17.20"
     oneline "^1.0.2"
