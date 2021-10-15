@@ -2,11 +2,11 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "#!\/bin\/sh\nyarn build"
+      "script" : "npm run build"
     },
     "run" : {
       "enabled" : true,
-      "script" : "#!\/bin\/sh\nyarn dev"
+      "script" : "npm run dev"
     }
   },
   "identifier" : "A6C3C1E1-A0FB-45AD-8B34-3DFD1FFAF705",

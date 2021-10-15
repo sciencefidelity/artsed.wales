@@ -2,11 +2,11 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "#!\/bin\/sh\ncd studio\nsanity deploy"
+      "script" : "cd studio\nnpm run sanity deploy"
     },
     "run" : {
       "enabled" : true,
-      "script" : "#!\/bin\/sh\ncd studio\nsanity start"
+      "script" : "cd studio\nnpm run dev"
     }
   },
   "identifier" : "50501D39-E518-436D-AD6E-AC4CDF1B4EE8",
