@@ -23,7 +23,7 @@
     "gatsby-plugin-sass": "^4.3.0",
     "gatsby-plugin-sharp": "^3.3.0",
     "gatsby-source-filesystem": "^3.3.0",
-    "gatsby-source-sanity": "^7.0.4",
+    "gatsby-source-sanity": "^7.0.7",
     "gatsby-transformer-remark": "^4.0.0",
     "gatsby-transformer-sharp": "^3.3.0",
     "i18n": "^0.13.2",
