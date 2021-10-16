@@ -1,4 +1,5 @@
 {
+  "apexskier.eslint.config.fixOnSave" : "Enable",
   "workspace.art_style" : 1,
   "workspace.color" : 8
 }
