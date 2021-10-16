@@ -1309,12 +1309,12 @@
     rxjs "^6.5.3"
     styled-components "^5.2.1"
 
-"@sanity/default-login@^2.17.2":
-  version "2.17.2"
-  resolved "https://registry.npmjs.org/@sanity/default-login/-/default-login-2.17.2.tgz#5efd7182dbcded0241d9e49b180f2ad20abc50eb"
-  integrity sha512-vwdrKfRkce9k/NLmHP8tJKzVk1jFo//zpm9aq5rliVodLIp6oSAiFHX9nICtiYcjyiB6+Ke7PGqv1dgVllE/DA==
+"@sanity/default-login@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@sanity/default-login/-/default-login-2.18.0.tgz#9c521701d1c67626e6154c76efe03856bfcc46dc"
+  integrity sha512-hNBcMiiagReyEC0YxkudyX/VAyqWl2sMuTo1R2pES/Sg3WLJVsUlhkLFlXIx7TgnkDztGi5uBfSbLVm4L2FHsA==
   dependencies:
-    "@sanity/generate-help-url" "2.15.0"
+    "@sanity/generate-help-url" "2.18.0"
     "@sanity/logos" "^1.1.4"
     "@sanity/ui" "^0.36.3"
     prop-types "^15.6.0"
@@ -1451,11 +1451,6 @@
     shallow-equals "^1.0.0"
     speakingurl "^13.0.0"
     styled-components "^5.2.1"
-
-"@sanity/generate-help-url@2.15.0":
-  version "2.15.0"
-  resolved "https://registry.npmjs.org/@sanity/generate-help-url/-/generate-help-url-2.15.0.tgz#63e0c49979aeb7bea7ed22242609f2c4578ccc3b"
-  integrity sha512-a28hvBov4t52a96gsRAv12ifhAjAu20KE+HHq2+bWAtbFXIwVI+Y0alDlkVsx7/5GfJPte8xuFaxFYQz2Zquaw==
 
 "@sanity/generate-help-url@2.18.0":
   version "2.18.0"
