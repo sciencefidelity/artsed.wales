@@ -1,18 +1,17 @@
 {
   "name": "artsed-studio",
+  "description": "National Arts and Education Wales",
+  "version": "0.1.0",
+  "author": "Matt Cook <matt@sciencefidelity.co.uk>",
+  "license": "UNLICENCED",
   "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "package.json",
-  "author": "Matt Cook <sciencefidelity@hotmail.com>",
-  "license": "UNLICENSED",
+  "keywords": [
+    "sanity"
+  ],
   "scripts": {
     "dev": "sanity start",
     "build": "sanity build"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
     "@sanity/base": "^2.18.0",
     "@sanity/components": "^2.14.0",

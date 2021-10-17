@@ -1,8 +1,10 @@
 {
   "name": "artsed-web",
-  "version": "1.0.0",
+  "description": "National Arts and Education Wales",
+  "version": "0.1.0",
+  "author": "Matt Cook <matt@sciencefidelity.co.uk>",
+  "license": "UNLICENCED",
   "private": true,
-  "description": "artsed",
   "keywords": [
     "gatsby"
   ],

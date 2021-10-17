@@ -1,7 +1,14 @@
 {
-  "private": true,
   "name": "artsed.wales",
-  "version": "0.0.1",
+  "description": "National Arts and Education Wales",
+  "version": "0.1.0",
+  "author": "Matt Cook <matt@sciencefidelity.co.uk>",
+  "license": "UNLICENCED",
+  "private": true,
+  "keywords": [
+    "gatsby",
+    "sanity"
+  ],
   "scripts": {
     "build": "pnpm run build --parallel",
     "dev": "pnpm run dev --parallel",
