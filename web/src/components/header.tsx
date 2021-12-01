@@ -5,8 +5,8 @@ import PropTypes from "prop-types"
 import Language from "./language"
 import "../scss/header.scss"
 
-const brandEn = "National Arts and Education Network Wales"
-const brandCy = "Rhwydwaith Cenedlaethol Celf ac Addysg"
+const brandEn = "National Arts and Education Network"
+const brandCy = "Rhwydwaith Genedlaethol Addysg a’r Celfyddydau"
 
 const Header = () => (
   <header>
@@ -39,7 +39,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: "",
 }
 
 export default Header
