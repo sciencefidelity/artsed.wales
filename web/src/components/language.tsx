@@ -17,7 +17,7 @@ const Language = () => {
               onClick={() => changeLocale(language)}
               className="languageLink"
               style={{
-                display: currentLocale === language ? `none` : `flex`
+                display: currentLocale === language ? "none" : "flex"
               }}
             >
               {languageName[language]}

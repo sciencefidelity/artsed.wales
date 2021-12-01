@@ -9,10 +9,10 @@ const CaseStudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
   <>
     <section
       style={{
-        marginBottom: `6rem`,
+        marginBottom: "6rem"
       }}
     >
-    <IllustrationC />
+      <IllustrationC />
       <div className="thirdsLayout">
         <div>
           <h2>{art1}</h2>
@@ -35,7 +35,7 @@ const CaseStudies = ({ art1, art2, music1, music2, theatre1, theatre2 }) => (
         formats={["AUTO", "WEBP", "AVIF"]}
         alt=""
         className="centeredImage"
-        style={{display: `block`}}
+        style={{ display: "block" }}
       />
     </section>
   </>

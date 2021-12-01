@@ -7,13 +7,9 @@ const Footer = ({ contact, email, brand, site }) => (
   <footer>
     <div className="footerContainer">
       <div className="footerLeft">
-        <h2 className="footerContact">
-          {contact}
-        </h2>
+        <h2 className="footerContact">{contact}</h2>
         <a href="mailto:info@arted.wales">
-          <p className="footerEmail">
-            {email}
-          </p>
+          <p className="footerEmail">{email}</p>
         </a>
         <p className="footerCopy">
           © {new Date().getFullYear()} {brand}
@@ -54,10 +50,17 @@ const Footer = ({ contact, email, brand, site }) => (
           </a>
         </div>
         <div className="madeBy">
-          <p>{site} <a href="https://mattcook.dev/"
-            target="_blank"
-            rel="noreferrer"
-            className="madeByLink">Matt Cook</a></p>
+          <p>
+            {site}{" "}
+            <a
+              href="https://mattcook.dev/"
+              target="_blank"
+              rel="noreferrer"
+              className="madeByLink"
+            >
+              Matt Cook
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -65,11 +68,11 @@ const Footer = ({ contact, email, brand, site }) => (
 )
 
 Footer.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string
 }
 
 Footer.defaultProps = {
-  siteTitle: "",
+  siteTitle: ""
 }
 
 export default Footer

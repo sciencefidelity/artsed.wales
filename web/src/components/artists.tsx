@@ -8,13 +8,15 @@ const Artists = ({ artists1, artists2, artists3, artists4 }) => (
           <h2>{artists1}</h2>
           <p>{artists2}</p>
         </div>
-          <div>
+        <div>
           <h2>{artists3}</h2>
           <p
             style={{
-              letterSpacing: `-0.02rem` // remove for English
+              letterSpacing: "-0.02rem" // remove for English
             }}
-          >{artists4}</p>
+          >
+            {artists4}
+          </p>
         </div>
       </div>
     </section>
