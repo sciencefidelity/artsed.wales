@@ -1,9 +1,8 @@
 import * as React from "react"
-// import { PageProps } from "gatsby"
 import { FormattedMessage, useIntl } from "gatsby-plugin-react-intl"
 
 import Layout from "../components/layout"
-// import SEO from "../components/seo"
+import SEO from "../components/seo"
 
 import Introduction from "../components/introduction"
 import QuoteA from "../components/quoteA"
@@ -15,7 +14,6 @@ import Model from "../components/model"
 import Network from "../components/network"
 import OurPromise from "../components/ourPromise"
 import SignUp from "../components/signup"
-import Courses from "../components/courses"
 
 import IllustrationA from "../components/illustrations/illustrationA"
 
@@ -23,11 +21,11 @@ const IndexPage = () => {
   const intl = useIntl()
   return (
     <Layout>
-      {/* <SEO
+      <SEO
         lang={intl.locale}
         title={intl.formatMessage({ id: "title" })}
-        keywords={[`gatsby`, `application`, `react`]}
-      /> */}
+        keywords={["gatsby", "application", "react"]}
+      />
 
       <section>
         <IllustrationA />
@@ -114,22 +112,6 @@ const IndexPage = () => {
         <h2><FormattedMessage id="involved-1" /></h2>
         <p><FormattedMessage id="involved-2" /></p>
       </section>
-
-      {/* <Courses
-        site1={intl.formatMessage({ id: "site-1" })}
-        site2a={intl.formatMessage({ id: "site-2-d1" })}
-        site2b={intl.formatMessage({ id: "site-2-d2" })}
-        site2c={intl.formatMessage({ id: "site-2-d3" })}
-        site3={intl.formatMessage({ id: "site-3" })}
-        site4={intl.formatMessage({ id: "site-4" })}
-        digital1={intl.formatMessage({ id: "digital-1" })}
-        digital2a={intl.formatMessage({ id: "digital-2-d1" })}
-        digital2b={intl.formatMessage({ id: "digital-2-d2" })}
-        digital2c={intl.formatMessage({ id: "digital-2-d3" })}
-        digital3={intl.formatMessage({ id: "digital-3" })}
-        digital4={intl.formatMessage({ id: "digital-4" })}
-        book={intl.formatMessage({ id: "book" })}
-      /> */}
 
     </Layout>
   )
