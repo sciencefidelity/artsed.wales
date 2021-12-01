@@ -1,5 +1,5 @@
 {
-  "title": "Rhwydwaith Cenedlaethol Celf ac Addysg",
+  "title": "Rhwydwaith Genedlaethol Addysg a’r Celfyddydau",
   "description": "Rydym yn dod ag ysgolion, artistiaid a sefydliadau diwylliannol ynghyd i lwyddo yn y Celfyddydau Mynegiadol.",
   "author": "@artsed_wales",
   "headline": "Dod ag ysgolion, artistiaid a sefydliadau diwylliannol ynghyd i lwyddo yn y Celfyddydau Mynegiadol ac adeiladu dyfodol cynaliadwy i'r celfyddydau yng Nghymru.",
@@ -65,7 +65,7 @@
   "email": "helo@celfadd.cymru",
   "brand": "Rhwydwaith Cenedlaethol Celf ac Addysg",
   "site": "Safle gan",
-  
+
   "notfound": {
     "header": "NID SYLFAEN",
     "description": "Rydych chi newydd daro llwybr nad yw'n bodoli ... y tristwch."
