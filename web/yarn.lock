@@ -5687,10 +5687,10 @@ gatsby-plugin-react-helmet@^4.14.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-plugin-react-intl@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-intl/-/gatsby-plugin-react-intl-3.0.0.tgz#6874ba4688d4ce4f8eeaf09efc48723c60261b51"
-  integrity sha512-u1FHXklfJDPPv8oAghLbPCi+u8qscg8ET97egnu0QHCbj8fCSAf5v867DdkuGuj0kGv45CJw640hnkxQNgPr+w==
+gatsby-plugin-react-intl@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-intl/-/gatsby-plugin-react-intl-3.0.2.tgz#219f3ce8894f8b0a8b11ac291978fafe290d200a"
+  integrity sha512-2vBPIUYsAmCykwenGLLNhPSaYxvWYiIMOOosCH99Ji0ThT92isPjucScfGhaQUaW7m9bGeLX1V1SA4EMfz+g0w==
   dependencies:
     "@babel/runtime" "^7.13.9"
     "@formatjs/intl-pluralrules" "^4.0.11"
