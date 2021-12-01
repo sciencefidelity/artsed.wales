@@ -1,0 +1,13 @@
+package.json
+package-lock.json
+yarn.lock
+
+.nuxt
+node_modules
+.nova
+.output
+dist
+
+*.scss
+*.css
+*.css.map
