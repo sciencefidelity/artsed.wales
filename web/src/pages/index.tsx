@@ -29,7 +29,9 @@ const IndexPage = () => {
 
       <section>
         <IllustrationA />
-        <h2 className="headline"><FormattedMessage id="headline" /></h2>
+        <h2 className="headline">
+          <FormattedMessage id="headline" />
+        </h2>
       </section>
 
       <Introduction
@@ -38,9 +40,15 @@ const IndexPage = () => {
       />
 
       <div className="heading__container">
-        <h2 className="heading"><FormattedMessage id="heading-1" />, </h2>
-        <h2 className="heading"><FormattedMessage id="heading-2" />, </h2>
-        <h2 className="heading"><FormattedMessage id="heading-3" /></h2>
+        <h2 className="heading">
+          <FormattedMessage id="heading-1" />,{" "}
+        </h2>
+        <h2 className="heading">
+          <FormattedMessage id="heading-2" />,{" "}
+        </h2>
+        <h2 className="heading">
+          <FormattedMessage id="heading-3" />
+        </h2>
       </div>
 
       <QuoteA
@@ -109,10 +117,13 @@ const IndexPage = () => {
       />
 
       <section className="getInvolved">
-        <h2><FormattedMessage id="involved-1" /></h2>
-        <p><FormattedMessage id="involved-2" /></p>
+        <h2>
+          <FormattedMessage id="involved-1" />
+        </h2>
+        <p>
+          <FormattedMessage id="involved-2" />
+        </p>
       </section>
-
     </Layout>
   )
 }
