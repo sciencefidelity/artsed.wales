@@ -115,7 +115,7 @@ const IndexPage = () => {
         <p><FormattedMessage id="involved-2" /></p>
       </section>
 
-      <Courses
+      {/* <Courses
         site1={intl.formatMessage({ id: "site-1" })}
         site2a={intl.formatMessage({ id: "site-2-d1" })}
         site2b={intl.formatMessage({ id: "site-2-d2" })}
@@ -129,7 +129,7 @@ const IndexPage = () => {
         digital3={intl.formatMessage({ id: "digital-3" })}
         digital4={intl.formatMessage({ id: "digital-4" })}
         book={intl.formatMessage({ id: "book" })}
-      />
+      /> */}
 
     </Layout>
   )
