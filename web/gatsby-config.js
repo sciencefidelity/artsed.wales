@@ -24,8 +24,8 @@ module.exports = {
       options: {
         short_name: "naen",
         start_url: "/",
-        background_color: "#e7dbd8",
-        theme_color: "#e7dbd8",
+        background_color: "#ffffff",
+        theme_color: "#ffffff",
         display: "minimal-ui",
         icon: "src/icons/icon.png",
       },
@@ -45,12 +45,6 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
-    },
-    {
-      resolve: "gatsby-source-sanity",
-      options: {
-        ...clientConfig.sanity
-      },
     },
     {
       resolve: "gatsby-plugin-react-intl",
