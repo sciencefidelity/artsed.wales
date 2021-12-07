@@ -118,10 +118,10 @@ const IndexPage = () => {
 
       <section className="getInvolved">
         <h2>
-          <FormattedMessage id="involved-1" />
+          <FormattedMessage id="who-title" />
         </h2>
         <p>
-          <FormattedMessage id="involved-2" />
+          <FormattedMessage id="who-text" />
         </p>
       </section>
     </Layout>
