@@ -76,7 +76,7 @@
 }
 
 %whiteCircles {
-  background: white;
+  background-color: white;
   position: absolute;
   width: 60.59%;
   border-radius: 50%;
@@ -114,21 +114,21 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: #33CC66;
+  background-color: #33CC66;
 }
 
 .circle5 {
   @extend %topCircles;
   bottom: 10.02%;
   right: 2.41%;
-  background: #FF3333;
+  background-color: #FF3333;
 }
 
 .circle6 {
   @extend %topCircles;
   bottom: 10.02%;
   left: 2.41%;
-  background: #0099FF;
+  background-color: #0099FF;
 }
 
 .vennDiagram::after,

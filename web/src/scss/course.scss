@@ -17,7 +17,7 @@
   grid-template-columns: 1fr;
   border: c.$border;
   margin-right: auto;
-  background: c.$beige-150;
+  background-color: c.$beige-150;
   box-shadow: c.$shadow;
 }
 .cardText {
@@ -48,7 +48,7 @@
 
 .britelink {
   display: flex;
-  background: c.$grey-950;
+  background-color: c.$grey-950;
   height: 6.3rem;
   border: 0;
   margin: 5.2rem auto 3rem;
