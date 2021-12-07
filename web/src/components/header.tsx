@@ -6,7 +6,7 @@ import Language from "./language"
 import "../scss/header.scss"
 
 const brandEn = "National Arts and Education Network"
-const brandCy = "Rhwydwaith Genedlaethol Addysg a’r Celfyddydau"
+const brandCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
 
 const Header = () => (
   <header>
