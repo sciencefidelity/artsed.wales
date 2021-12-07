@@ -1,4 +1,4 @@
-# NAEN
+# NAEN • RCCA
 
 **National Arts and Education Network Wales**
 
@@ -6,12 +6,6 @@
 
 [artsed.wales](https://artsed.wales/)<br />
 [celfadd.cymru](https://celfadd.cymru/)
-
-Staging site
-
-[nat.artsed.wales](https://nat.artsed.wales/)
-
-### Intention
 
 A static page to advertise the services that the network can offer. Drawing on the work of the defunct regional networks and advertising proposed courses.
 
