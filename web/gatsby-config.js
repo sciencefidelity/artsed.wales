@@ -1,7 +1,3 @@
-require("dotenv").config()
-
-const clientConfig = require("./client-config")
-
 module.exports = {
   siteMetadata: {
     title: "National Arts and Education Network",
