@@ -1,6 +1,6 @@
 import React from "react"
 import { injectIntl } from "gatsby-plugin-react-intl"
-import SEO from "../components/seo"
+import SEO from "./seo"
 
 const Redirect = ({ intl }) => {
   return <SEO title={`${intl.formatMessage({ id: "title" })}`} />

@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import * as courseStyles from "../scss/course.module.scss"
+import "../scss/course.scss"
 
 const Courses = ({
   site1,
@@ -17,8 +17,8 @@ const Courses = ({
   digital3,
   digital4
 }) => (
-  <section className={courseStyles.coursesContainer}>
-    <div className={courseStyles.cardContainer}>
+  <section className="coursesContainer">
+    <div className="cardContainer">
       <StaticImage
         src="../images/aen_outdoor_2.jpg"
         width={400}
@@ -27,9 +27,9 @@ const Courses = ({
         objectPosition={"50% 10%"}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt=""
-        className={courseStyles.cardImage}
+        className="cardImage"
       />
-      <div className={courseStyles.cardText}>
+      <div className="cardText">
         <h2
           style={{
             letterSpacing: "-0.01rem" // remove for English text
@@ -37,19 +37,19 @@ const Courses = ({
         >
           {site1}
         </h2>
-        <h3 className={courseStyles.courseDate}>
+        <h3 className="courseDate">
           {site2a}
           <sup>{site2b}</sup> {site2c}
         </h3>
-        <h4 className={courseStyles.courseLocation}>{site3}</h4>
-        <h4 className={courseStyles.coursePrice}>£65</h4>
+        <h4 className="courseLocation">{site3}</h4>
+        <h4 className="coursePrice">£65</h4>
         <p>{site4}</p>
         <a href="https://eventbrite.com/" target="_blank" rel="noreferrer">
-          <button className={courseStyles.britelink}>{book}</button>
+          <button className="britelink">{book}</button>
         </a>
       </div>
     </div>
-    <div className={courseStyles.cardContainer}>
+    <div className="cardContainer">
       <StaticImage
         src="../images/aen_printing.jpg"
         width={400}
@@ -58,16 +58,16 @@ const Courses = ({
         formats={["AUTO", "WEBP", "AVIF"]}
         objectPosition={"50% 10%"}
         alt=""
-        className={courseStyles.cardImage}
+        className="cardImage"
       />
-      <div className={courseStyles.cardText}>
+      <div className="cardText">
         <h2>{digital1}</h2>
-        <h3 className={courseStyles.courseDate}>
+        <h3 className="courseDate">
           {digital2a}
           <sup>{digital2b}</sup> {digital2c}
         </h3>
-        <h4 className={courseStyles.courseLocation}>{digital3}</h4>
-        <h4 className={courseStyles.coursePrice}>£65</h4>
+        <h4 className="courseLocation">{digital3}</h4>
+        <h4 className="coursePrice">£65</h4>
         <p
           style={{
             letterSpacing: "-0.01rem" // remove for English text
@@ -76,7 +76,7 @@ const Courses = ({
           {digital4}
         </p>
         <a href="https://eventbrite.com/" target="_blank" rel="noreferrer">
-          <button className={courseStyles.britelink}>{book}</button>
+          <button className="britelink">{book}</button>
         </a>
       </div>
     </div>
