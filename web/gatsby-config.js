@@ -20,8 +20,8 @@ module.exports = {
       options: {
         short_name: "naen",
         start_url: "/",
-        background_color: "#ffffff",
-        theme_color: "#ffffff",
+        background_color: "#0C0C0C",
+        theme_color: "#0C0C0C",
         display: "minimal-ui",
         icon: "src/icons/icon.png",
       },
