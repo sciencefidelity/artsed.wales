@@ -8,7 +8,7 @@ const Footer = ({ contact, email, brand, site }) => (
     <div className="footerContainer">
       <div className="footerLeft">
         <h2 className="footerContact">{contact}</h2>
-        <a href="mailto:info@arted.wales">
+        <a href="mailto:hello@arted.wales">
           <p className="footerEmail">{email}</p>
         </a>
         <p className="footerCopy">
