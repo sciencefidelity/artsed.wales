@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-transformer-remark": "^4.0.0",
     "gatsby-transformer-sharp": "^3.3.0",
-    "i18n": "^0.13.2",
+    "i18n": "^0.13.4",
     "react": "^17.0.1",
     "react-countup": "^6.1.0",
     "react-dom": "^17.0.1",
