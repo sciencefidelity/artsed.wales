@@ -13,7 +13,7 @@
     "build": "sanity build"
   },
   "dependencies": {
-    "@sanity/base": "^2.21.7",
+    "@sanity/base": "^2.23.2",
     "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.22.3",
     "@sanity/default-layout": "^2.22.3",
