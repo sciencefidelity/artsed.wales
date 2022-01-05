@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
+  <title>National Arts and Education Network</title>
 </svelte:head>
 
 <section class="home">
