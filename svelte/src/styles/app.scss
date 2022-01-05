@@ -1,12 +1,12 @@
-@use "foundation/colors";
-@use "foundation/typography";
-@use "foundation/breakpoints" as b;
+@use 'foundation/colors';
+@use 'foundation/typography';
+@use 'foundation/breakpoints' as b;
 
 // ********** Global styles *************
 
 * {
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
   &::before,
   &::after {
     box-sizing: border-box;
@@ -20,9 +20,9 @@
 html {
   box-sizing: border-box;
   overflow-y: scroll;
-  background-color: var(grey-950);
   font-family: var(serif);
   font-size: 62.5%;
+  background-color: var(grey-950);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @include b.mq(sm) {
@@ -31,14 +31,14 @@ html {
 }
 
 body {
-  background-color: var(--beige-150);
-  color: var(--grey-950);
-  font-family: var(--serif);
-  font-size: 2rem;
-  line-height: 1.5;
   position: relative;
   z-index: -100; // ************************************************************
   overflow: hidden;
+  font-family: var(--serif);
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--grey-950);
+  background-color: var(--beige-150);
 }
 
 section {
@@ -58,12 +58,12 @@ h1 {
 }
 
 h2 {
+  margin-bottom: 0.3em;
   font-family: var(--sans);
   font-size: 4.5rem;
   line-height: 1.2;
-  letter-spacing: 0.012em;
-  margin-bottom: 0.3em;
   color: var(--grey-950);
+  letter-spacing: 0.012em;
   @include b.mq(xl) {
     font-size: 3.8rem;
   }
@@ -73,10 +73,10 @@ h2 {
 }
 
 h3 {
+  margin-bottom: 0.25em;
   font-family: var(--sans);
   font-size: 7.9rem;
   line-height: 0.7;
-  margin-bottom: 0.25em;
   @include b.mq(xl) {
     font-size: 1.8rem;
   }
@@ -96,14 +96,14 @@ p {
     font-size: 1.8rem;
   }
   @include b.mq(sm) {
-    font-size: 1.6rem;
     margin-bottom: 2.5rem;
+    font-size: 1.6rem;
   }
 }
 
 small {
-  font-size: 85%;
   font-family: var(--sans);
+  font-size: 85%;
   color: var(--grey-950);
   @include b.mq(sm) {
     font-size: 1.44rem;
@@ -115,20 +115,20 @@ sup {
 }
 
 blockquote {
-  font-size: 2rem;
   position: relative;
   margin-bottom: 1em;
+  font-size: 2rem;
   @include b.mq(md) {
     font-size: 1.8rem;
   }
 }
 
 cite {
-  font-family: var(--sans);
-  font-style: normal;
-  font-size: 1.6rem;
-  line-height: 1.4;
   display: inline-block;
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  font-style: normal;
+  line-height: 1.4;
 }
 
 form {
@@ -171,8 +171,8 @@ form {
   }
   @include b.mq(sm) {
     width: 88%;
-    font-size: 3rem;
     margin: 7.2rem auto 6.8rem;
+    font-size: 3rem;
   }
 }
 
@@ -181,9 +181,9 @@ form {
   margin-bottom: 10rem;
   @include b.mq(sm) {
     width: 88%;
-    margin-left: auto;
     margin-right: auto;
     margin-bottom: 8rem;
+    margin-left: auto;
   }
 }
 
@@ -198,12 +198,12 @@ form {
 
 .splitText {
   @include b.mq(md) {
-    margin: 5.4rem auto;
     width: 80%;
+    margin: 5.4rem auto;
   }
   @include b.mq(sm) {
     width: 88%;
-    margin: 0 auto 3.6rem auto;
+    margin: 0 auto 3.6rem;
   }
 }
 
@@ -224,13 +224,13 @@ form {
 }
 
 .legacySection {
-  margin-bottom: 12.2rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 12.2rem;
   @include b.mq(sm) {
     flex-direction: column-reverse;
     gap: 5.4rem;
-    margin: -4.5rem 0 9.9rem 0;
+    margin: -4.5rem 0 9.9rem;
   }
 }
 
@@ -294,6 +294,7 @@ form {
     margin: 0 auto 3rem;
   }
 }
+
 .halfLayout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -307,6 +308,7 @@ form {
     width: 88%;
   }
 }
+
 .thirdsLayout {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -346,37 +348,39 @@ form {
   border: var(--border);
   box-shadow: var(--shadow);
   @include b.mq(lg) {
-    min-width: 0;
-    width: 100%;
     display: grid;
     grid-template-columns: auto auto;
+    width: 100%;
+    min-width: 0;
   }
   @include b.mq(md) {
-    min-width: 0;
-    width: 100%;
     display: grid;
     grid-template-columns: auto auto;
+    width: 100%;
+    min-width: 0;
   }
   @include b.mq(sm) {
     grid-template-columns: 1fr;
-    min-width: 0;
     width: 100%;
+    min-width: 0;
   }
 }
 
 .firstQuote {
   @extend %quote;
+
   width: 70%;
 }
 
 .secondQuote {
   @extend %quote;
+
   width: 38%;
 }
 
 %quote {
-  padding: 25px 30px 10px 40px;
   position: relative;
+  padding: 25px 30px 10px 40px;
   background-color: var(--beige-150);
   @include b.mq(lg) {
     width: 100%;
@@ -390,17 +394,17 @@ form {
 
 .quoteLeft,
 .quoteRight {
+  position: absolute;
   width: 8.1rem;
   margin-bottom: 1.25em;
-  position: absolute;
   @include b.mq(sm) {
     width: 7.2rem;
   }
 }
 
 .quoteLeft {
-  left: 1.5rem;
   top: 1.3rem;
+  left: 1.5rem;
 }
 
 .quoteRight {
@@ -451,8 +455,8 @@ form {
     font-size: 7.2rem;
   }
   @include b.mq(md) {
+    margin: 3.6rem 0 1.8rem;
     font-size: 6.3rem;
-    margin: 3.6rem 0 1.8rem 0;
   }
 }
 
@@ -488,52 +492,52 @@ form {
 // ********** Sign up *******************
 
 .signupHeadinig {
-  text-align: center;
   margin-bottom: 0.7rem;
+  text-align: center;
 }
 
 .signupInput {
-  background-color: white;
-  border: 0;
   width: 57%;
   padding: 1.5rem 2.7rem;
   font-family: var(--sans);
   font-size: 2.8rem;
+  background-color: white;
+  border: 0;
   @include b.mq(md) {
-    border: 0;
     width: calc(88% - 7.2rem);
+    border: 0;
   }
   @include b.mq(sm) {
-    border: 0;
     width: calc(100% - 7.2rem);
     padding: 1.5rem 2.7rem;
     font-size: 2.7rem;
+    border: 0;
   }
 }
 
 .signupText {
-  text-align: left;
   width: 50%;
   padding-top: 0.4rem;
   margin: auto;
+  text-align: left;
   @include b.mq(md) {
     width: 65%;
   }
   @include b.mq(sm) {
-    text-align: left;
     width: 88%;
     padding-top: 0.4rem;
     margin: auto;
+    text-align: left;
   }
 }
 
 .signup__send {
+  width: 7rem;
+  height: 7rem;
+  padding: 2.1rem;
   cursor: pointer;
   background-color: rgba(77, 73, 73);
   border: 0;
-  height: 7rem;
-  width: 7rem;
-  padding: 2.1rem;
   transform: translateY(2.4rem);
 }
 
