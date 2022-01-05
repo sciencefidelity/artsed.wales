@@ -1,0 +1,12 @@
+package.json
+package-lock.json
+yarn.lock
+build
+generated
+.svelte-kit
+node_modules
+.nova
+.vscode
+*.scss
+*.css
+*.css.map
