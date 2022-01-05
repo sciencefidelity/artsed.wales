@@ -25,7 +25,8 @@
     "test": "echo \"This template does not include a test runner.\" && exit 1"
   },
   "dependencies": {
-    "sanitize.css": "^13.0.0"
+    "sanitize.css": "^13.0.0",
+    "svelte-i18n": "^3.3.13"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
