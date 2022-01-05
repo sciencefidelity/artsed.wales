@@ -1,75 +1,551 @@
-@use 'sass:map';
+@use "foundation/colors";
+@use "foundation/typography";
+@use "foundation/breakpoints" as b;
 
-:root {
-  --red: hsl(15, 100%, 50%);
-  --background: hsl(360, 20%, 97%);
-  --grey-000: hsl(0, 0%, 100%);
-  --grey-050: hsl(0, 0%, 95%);
-  --grey-100: hsl(0, 0%, 90%);
-  --grey-150: hsl(0, 0%, 85%);
-  --grey-200: hsl(0, 0%, 80%);
-  --grey-250: hsl(0, 0%, 75%);
-  --grey-300: hsl(0, 0%, 70%);
-  --grey-350: hsl(0, 0%, 65%);
-  --grey-400: hsl(0, 0%, 60%);
-  --grey-450: hsl(0, 0%, 55%);
-  --grey-500: hsl(0, 0%, 50%);
-  --grey-550: hsl(0, 0%, 45%);
-  --grey-600: hsl(0, 0%, 40%);
-  --grey-650: hsl(0, 0%, 35%);
-  --grey-700: hsl(0, 0%, 30%);
-  --grey-750: hsl(0, 0%, 25%);
-  --grey-800: hsl(0, 0%, 20%);
-  --grey-850: hsl(0, 0%, 15%);
-  --grey-900: hsl(0, 0%, 10%);
-  --grey-950: hsl(0, 0%, 05%);
-}
+// ********** Global styles *************
 
-$breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
-
-@mixin mq($key) {
-  $size: map.get($breakpoints, $key);
-  @media only screen and (max-width: $size) {
-    @content;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
   }
 }
 
-* + * {
-  margin-top: 1rem;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
+::selection {
+  background-color: rgba(var(grey-400), 0.5);
 }
 
 html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  background-color: var(grey-950);
+  font-family: var(serif);
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include b.mq(sm) {
+    font-size: 100%;
+  }
 }
 
 body {
-  margin: auto;
-  font-size: calc(10px + 2vmin);
-  color: var(--grey-800);
+  background-color: var(--beige-150);
+  color: var(--grey-950);
+  font-family: var(--serif);
+  font-size: 2rem;
+  line-height: 1.5;
+  position: relative;
+  z-index: -100; // ************************************************************
+  overflow: hidden;
 }
 
-#svelte {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  place-items: center;
-  height: 100vh;
-  background-color: var(--background);
+section {
+  position: relative;
 }
 
 a {
-  color: var(--red);
+  color: var(--grey-950);
+}
+
+h1 {
+  font-family: var(--sans);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--beige-150);
+}
+
+h2 {
+  font-family: var(--sans);
+  font-size: 4.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.012em;
+  margin-bottom: 0.3em;
+  color: var(--grey-950);
+  @include b.mq(xl) {
+    font-size: 3.8rem;
+  }
+  @include b.mq(sm) {
+    font-size: 3.4rem;
+  }
+}
+
+h3 {
+  font-family: var(--sans);
+  font-size: 7.9rem;
+  line-height: 0.7;
+  margin-bottom: 0.25em;
+  @include b.mq(xl) {
+    font-size: 1.8rem;
+  }
+}
+
+h4 {
+  font-family: var(--sans);
+  font-size: 2.2rem;
+}
+
+p {
+  margin-bottom: 1.8rem;
+  @include b.mq(xl) {
+    font-size: 2rem;
+  }
+  @include b.mq(lg) {
+    font-size: 1.8rem;
+  }
+  @include b.mq(sm) {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+small {
+  font-size: 85%;
+  font-family: var(--sans);
+  color: var(--grey-950);
+  @include b.mq(sm) {
+    font-size: 1.44rem;
+  }
+}
+
+sup {
+  font-size: 60%;
+}
+
+blockquote {
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 1em;
+  @include b.mq(md) {
+    font-size: 1.8rem;
+  }
+}
+
+cite {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  display: inline-block;
+}
+
+form {
+  margin-bottom: 1.8em;
+}
+
+// ********** Layout ********************
+
+.container {
+  width: 88%;
+  max-width: 1000px;
+  margin: auto;
+  @include b.mq(sm) {
+    width: 100%;
+  }
+}
+
+.centeredImage {
+  width: 65%;
+  min-width: 600px;
+  margin: 6.7rem auto;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  @include b.mq(md) {
+    width: 88%;
+    min-width: 0;
+  }
+  @include b.mq(sm) {
+    width: 100%;
+    margin: 2.5em auto;
+  }
+}
+
+.headline {
+  margin-top: 9.2rem;
+  margin-bottom: 9rem;
+  letter-spacing: 0;
+  @include b.mq(lg) {
+    margin: 9.2rem auto 9rem;
+  }
+  @include b.mq(sm) {
+    width: 88%;
+    font-size: 3rem;
+    margin: 7.2rem auto 6.8rem;
+  }
+}
+
+.heading__container {
+  position: relative;
+  margin-bottom: 10rem;
+  @include b.mq(sm) {
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8rem;
+  }
+}
+
+.heading {
+  display: inline;
+  @include b.mq(sm) {
+    display: block;
+    width: 70%;
+    margin: 0 auto 1.3rem;
+  }
+}
+
+.splitText {
+  @include b.mq(md) {
+    margin: 5.4rem auto;
+    width: 80%;
+  }
+  @include b.mq(sm) {
+    width: 88%;
+    margin: 0 auto 3.6rem auto;
+  }
+}
+
+// ********** Spacing *******************
+
+.introSection {
+  margin-bottom: 6.5rem;
+  @include b.mq(sm) {
+    margin-bottom: 3.2rem;
+  }
+}
+
+.artistsSection {
+  margin-bottom: 10.8rem;
+  @include b.mq(sm) {
+    margin-bottom: 6.5rem;
+  }
+}
+
+.legacySection {
+  margin-bottom: 12.2rem;
+  display: flex;
+  flex-direction: column;
+  @include b.mq(sm) {
+    flex-direction: column-reverse;
+    gap: 5.4rem;
+    margin: -4.5rem 0 9.9rem 0;
+  }
+}
+
+.modelSection {
+  margin-top: 6.7rem;
+  margin-bottom: 6.3rem;
+  @include b.mq(sm) {
+    margin-top: 5.4rem;
+    margin-bottom: 9rem;
+  }
+}
+
+.networkSection {
+  margin-bottom: 11.2rem;
+  @include b.mq(sm) {
+    margin-bottom: 1.8rem;
+  }
+}
+
+.promiseSection {
+  margin-bottom: 14rem;
+  @include b.mq(sm) {
+    margin-bottom: 9rem;
+  }
+}
+
+.signupSection {
+  margin-bottom: 13rem;
+  text-align: center;
+  @include b.mq(sm) {
+    margin-bottom: 9rem;
+  }
+}
+
+// ********** Grid Layouts **************
+
+.splitContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  @include b.mq(md) {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 88%;
+    margin: auto;
+  }
+  @include b.mq(sm) {
+    width: 100%;
+  }
+  @include b.mq(sm) {
+    gap: 1em;
+  }
+}
+
+.sideImage {
+  display: block;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  @include b.mq(sm) {
+    width: 88%;
+    margin: 0 auto 3rem;
+  }
+}
+.halfLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  @include b.mq(md) {
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: auto;
+  }
+  @include b.mq(sm) {
+    width: 88%;
+  }
+}
+.thirdsLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  @include b.mq(md) {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    width: 88%;
+    margin: auto;
+  }
+  @include b.mq(sm) {
+    gap: 1.8rem;
+  }
+}
+
+// ********** Blockquotes ***************
+
+.quoteSection1 {
+  margin-bottom: 12rem;
+  @include b.mq(sm) {
+    margin-bottom: 8.5rem;
+  }
+}
+
+.quoteSection2 {
+  margin-bottom: 12.6rem;
+  @include b.mq(sm) {
+    margin-bottom: 8.5rem;
+  }
+}
+
+.quoteContainer {
+  display: flex;
+  width: 85%;
+  min-width: 8.5rem;
+  margin-right: auto;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  @include b.mq(lg) {
+    min-width: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  @include b.mq(md) {
+    min-width: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  @include b.mq(sm) {
+    grid-template-columns: 1fr;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+.firstQuote {
+  @extend %quote;
+  width: 70%;
+}
+
+.secondQuote {
+  @extend %quote;
+  width: 38%;
+}
+
+%quote {
+  padding: 25px 30px 10px 40px;
+  position: relative;
+  background-color: var(--beige-150);
+  @include b.mq(lg) {
+    width: 100%;
+    padding: 2.5rem 1.5rem 1rem 3.5rem;
+  }
+  @include b.mq(md) {
+    width: 100%;
+    padding: 2.5rem 1.5rem 1rem 2rem;
+  }
+}
+
+.quoteLeft,
+.quoteRight {
+  width: 8.1rem;
+  margin-bottom: 1.25em;
+  position: absolute;
+  @include b.mq(sm) {
+    width: 7.2rem;
+  }
+}
+
+.quoteLeft {
+  left: 1.5rem;
+  top: 1.3rem;
+}
+
+.quoteRight {
+  right: 1.1rem;
+  bottom: -1.2rem;
+}
+
+// ********** Case Studies **************
+
+// ********** Legacy (figures) **********
+
+.legacySmall {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  @include b.mq(sm) {
+    display: none;
+  }
+}
+
+.figuresLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @include b.mq(lg) {
+    grid-template-columns: 1fr 1fr;
+    width: 77%;
+    margin: auto;
+  }
+  @include b.mq(md) {
+    width: 88%;
+  }
+  @include b.mq(sm) {
+    grid-template-columns: 1fr;
+    width: 40%;
+    margin: auto;
+    text-align: left;
+  }
+}
+
+.figure,
+.figureCap {
+  font-weight: bold;
+}
+
+.figure {
+  font-family: var(--sans);
+  font-size: 7.9rem;
+  @include b.mq(xl) {
+    font-size: 7.2rem;
+  }
+  @include b.mq(md) {
+    font-size: 6.3rem;
+    margin: 3.6rem 0 1.8rem 0;
+  }
+}
+
+.figureCap {
+  font-size: 2.3rem;
+  @include b.mq(xl) {
+    font-size: 2rem;
+  }
+  @include b.mq(sm) {
+    font-size: 1.8rem;
+  }
+}
+
+// ********** Artists / Creators ********
+
+// ********** National network **********
+
+.splitText {
+  @include b.mq(sm) {
+    width: 88%;
+  }
+}
+
+// ********** Our promise ***************
+
+.promiseTitle {
+  @include b.mq(md) {
+    width: 88%;
+    margin: 1.4rem auto;
+  }
+}
+
+// ********** Sign up *******************
+
+.signupHeadinig {
+  text-align: center;
+  margin-bottom: 0.7rem;
+}
+
+.signupInput {
+  background-color: white;
+  border: 0;
+  width: 57%;
+  padding: 1.5rem 2.7rem;
+  font-family: var(--sans);
+  font-size: 2.8rem;
+  @include b.mq(md) {
+    border: 0;
+    width: calc(88% - 7.2rem);
+  }
+  @include b.mq(sm) {
+    border: 0;
+    width: calc(100% - 7.2rem);
+    padding: 1.5rem 2.7rem;
+    font-size: 2.7rem;
+  }
+}
+
+.signupText {
+  text-align: left;
+  width: 50%;
+  padding-top: 0.4rem;
+  margin: auto;
+  @include b.mq(md) {
+    width: 65%;
+  }
+  @include b.mq(sm) {
+    text-align: left;
+    width: 88%;
+    padding-top: 0.4rem;
+    margin: auto;
+  }
+}
+
+.signup__send {
+  cursor: pointer;
+  background-color: rgba(77, 73, 73);
+  border: 0;
+  height: 7rem;
+  width: 7rem;
+  padding: 2.1rem;
+  transform: translateY(2.4rem);
+}
+
+// ********** Courses *******************
+
+.getInvolved {
+  margin-bottom: 8.5rem;
+  @include b.mq(md) {
+    margin-bottom: 5.4rem;
+  }
+  @include b.mq(sm) {
+    width: 85%;
+    margin: 0 auto 4.9rem;
+  }
 }

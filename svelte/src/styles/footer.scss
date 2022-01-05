@@ -1,0 +1,236 @@
+
+@use "foundation/colors" as c;
+@use "foundation/typography" as t;
+@use "foundation/breakpoints" as b;
+
+footer {
+  background-color: c.$grey-950;
+}
+.footerContainer {
+  position: relative;
+  width: 88%;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 3.6rem 0 1.8rem;
+  display: flex;
+  color: c.$beige-100;
+  font-family: t.$sans;
+}
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.footerContact {
+  color: c.$beige-100;
+  margin-bottom: -0.18rem;
+}
+.footerEmail {
+  font-size: 2.7rem;
+  text-decoration: underline;
+  color: c.$beige-150;
+  margin-bottom: 5.2rem;
+}
+.footerCopy {
+  font-size: 1.8rem;
+  color: c.$beige-150;
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+}
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.logoWraper {
+  display: flex;
+}
+.plwgLogo {
+  width: 28.5rem;
+  margin-left: 1.8rem;
+}
+.aaLogo {
+  width: 100px;
+}
+.aaLink {
+  margin-left: auto;
+}
+.madeBy {
+  display: flex;
+  font-size: 2rem;
+  margin-left: auto;
+  align-items: flex-end;
+  margin-top: -1.3rem;
+}
+.madeByLink {
+  color: c.$beige-150;
+}
+
+// ********** Media Queries *************
+
+@media only screen and (max-width: 1021px) {
+  .footerLeft {
+    width: 45%;
+  }
+  .footerRight {
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 904px) {
+  .footerLeft {
+    width: 40%;
+  }
+  .footerRight {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 807px) {
+  .footerLeft {
+    width: 37.5%;
+  }
+  .footerRight {
+    width: 62.5%;
+  }
+}
+@media only screen and (max-width: 754px) {
+  .plwgLogo {
+    width: 213px;
+    margin-left: 1rem;
+  }
+  .aaLogo {
+    width: 75px;
+  }
+  .footerLeft {
+    width: 45%;
+  }
+  .footerRight {
+    width: 55%;
+  }
+  .footerEmail {
+    font-size: 1.1em;
+    margin-top: 0.3em;
+  }
+}
+@media only screen and (max-width: 691px) {
+  .footerLeft {
+    width: 40%;
+  }
+  .footerRight {
+    width: 60%;
+  }
+  .footerContact {
+    font-size: 1.6em;
+  }
+}
+@media only screen and (max-width: 691px) {
+  .logoWraper {
+    flex-direction: column;
+  }
+  .plwgLink {
+    margin-left: auto;
+  }
+  .plwgLogo {
+    width: 257px;
+    height: auto;
+    margin: 0;
+  }
+  .aaLogo {
+    width: 90px;
+    height: auto;
+    margin: 0;
+  }
+  .madeBy {
+    position: absolute;
+    bottom: 3em;
+    left: 0;
+  }
+  .footerLeft {
+    width: 57%;
+  }
+  .footerRight {
+    width: 43%;
+  }
+}
+@media only screen and (max-width: 579px) {
+  .plwgLogo {
+    width: 213px;
+    height: auto;
+    margin: 0;
+  }
+  .aaLogo {
+    width: 75px;
+    height: auto;
+    margin: 0;
+  }
+  .footerLeft {
+    width: 55%;
+  }
+  .footerRight {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .madeBy,
+  .footerCopy {
+    font-size: 0.8em;
+  }
+  .footerContact {
+    fontSize: 1.2em;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .footerCopy {
+    font-size: 0.75em;
+  }
+}
+@media only screen and (max-width: 436px) {
+  .footerContainer {
+    flex-direction: column;
+  }
+  .logoWraper {
+    flex-direction: row;
+  }
+  .footerLeft {
+    width: 100%;
+  }
+  .footerRight {
+    width: 100%;
+  }
+  .plwgLink {
+    margin: -1rem auto 5.3rem 0;
+  }
+  .aaLink {
+    margin: -1rem auto 5.3rem 0;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .madeBy {
+    font-size: 1em;
+    bottom: 2.3em;
+  }
+  .footerCopy {
+    font-size: 0.7em;
+  }
+  .plwgLogo {
+    width: 170px;
+    height: auto;
+  }
+  .aaLogo {
+    width: 60px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 325px) {
+  .footerCopy {
+    font-size: 0.65em;
+  }
+  .plwgLogo {
+    width: 142px;
+    height: auto;
+  }
+  .aaLogo {
+    width: 50px;
+    height: auto;
+  }
+}
