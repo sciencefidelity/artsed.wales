@@ -24,6 +24,8 @@ import logo from "../icons/logo.svg"
 
 <!-- prettier-ignore -->
 <style lang="scss">
+  @use '../styles/foundation/breakpoints' as b;
+
   .header {
     margin-bottom: 9.4rem;
     background-color: var(--grey-950);
