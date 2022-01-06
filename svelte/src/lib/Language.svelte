@@ -6,22 +6,7 @@
 </script>
 
 <div class="language--switcher">
-<!--   <IntlContextConsumer>
-    {({ languages, language: currentLocale }) =>
-      languages.map(language => (
-        <a
-          key={language}
-          onClick={() => changeLocale(language)}
-          class="language--link"
-          style={{
-            display: currentLocale === language ? "none" : "flex"
-          }}
-        >
-          {languageName[language]}
-        </a>
-      ))
-    }
-  </IntlContextConsumer> -->
+  <a href="/" class="language--link">CY</a>
 </div>
 
 <!-- prettier-ignore -->
