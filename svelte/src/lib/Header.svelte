@@ -6,17 +6,17 @@ import logo from "../icons/logo.svg"
 // const brandCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
 </script>
 
-<header>
-  <div class="headerContainer">
-    <div class="brandContainer">
+<header class="header">
+  <div class="header--container">
+    <div class="brand">
       <a sveltekit:prefetch href="/">
         <img alt="" src={logo} width="94" height="94" style="margin: 0;" />
       </a>
     </div>
 
-    <div class="nameContainer">
-      <h1 class="nameEn">National Arts and Education Network</h1>
-      <h1 class="nameCy">Rhwydwaith Cenedlaethol Celfyddydau ac Addysg</h1>
+    <div class="name">
+      <h1 class="name--en">National Arts and Education Network</h1>
+      <h1 class="name--cy">Rhwydwaith Cenedlaethol Celfyddydau ac Addysg</h1>
     </div>
     <Language />
   </div>
@@ -24,31 +24,29 @@ import logo from "../icons/logo.svg"
 
 <!-- prettier-ignore -->
 <style lang="scss">
-  header {
+  .header {
     margin-bottom: 9.4rem;
     background-color: var(--grey-950);
+    &--container {
+      display: flex;
+      margin: 0 auto;
+    }
   }
 
-  .headerContainer {
-    display: flex;
-    margin: 0 auto;
-  }
-
-  .brandContainer {
+  .brand {
     align-items: center;
     padding: 0.6em;
     margin: 0 0.5em -0.28em;
   }
 
-  .nameContainer {
+  .name {
     display: flex;
     flex-direction: column;
     align-self: center;
-  }
-
-  .nameEn {
-    padding-bottom: 0.72rem;
-    margin: 0;
-    letter-spacing: 0;
+    &--en {
+      padding-bottom: 0.72rem;
+      margin: 0;
+      letter-spacing: 0;
+    }
   }
 </style>
