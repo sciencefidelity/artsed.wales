@@ -1,8 +1,7 @@
 @use 'foundation/colors';
 @use 'foundation/typography';
 @use 'foundation/breakpoints' as b;
-
-// ********** Global styles *************
+@use 'foundation/utils';
 
 * {
   box-sizing: border-box;

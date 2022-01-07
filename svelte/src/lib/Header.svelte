@@ -6,11 +6,11 @@ const brandEn = "National Arts and Education Network"
 const brandCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
 </script>
 
-<header class="header">
-  <div class="header--container">
+<header class="header bg-dark">
+  <div class="header--container flex">
     <div class="brand">
       <a sveltekit:prefetch href="/">
-        <img alt="" src={logo} width="94" height="94" style="margin: 0;" />
+        <img alt="NAEN logo" src={logo} width="94" height="94" class="logo" />
       </a>
     </div>
 
@@ -28,38 +28,33 @@ const brandCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
 
   .header {
     margin-bottom: 9.4rem;
-    background-color: var(--grey-950);
-    &--container {
-      display: flex;
-      margin: 0 auto;
-    }
     @include b.mq(xl) {
       margin-bottom: 0.2rem;
     }
   }
 
   .brand {
-    align-items: center;
     padding: 0.6em;
     margin: 0 0.5em 0.06em;
+    // place-items: center;
     @include b.mq(xl) {
-      padding: 0;
       margin: 0.6em 0.7em 0;
-      img {
-        width: 65px;
-        height: 65px;
-      }
+    }
+  }
+
+  .logo {
+    width: 94;
+    height: 94;
+    @include b.mq(xl) {
+      width: 65px;
+      height: 65px;
     }
   }
 
   .name {
-    display: flex;
-    flex-direction: column;
     align-self: center;
     &--en {
       padding-bottom: 0.72rem;
-      margin: 0;
-      letter-spacing: 0;
     }
     &--en,
     &--cy {

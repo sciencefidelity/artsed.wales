@@ -5,16 +5,15 @@
   }
 </script>
 
-<div class="language--switcher">
-  <a href="/" class="language--link">{languageName.cy}</a>
+<div class="lang--switch flex">
+  <a href="/" class="lang--link">{languageName.cy}</a>
 </div>
 
 <!-- prettier-ignore -->
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
 
-  .language--switcher {
-    display: flex;
+  .lang--switch {
     font-family: var(--sans);
     text-transform: uppercase;
     align-items: center;
@@ -27,13 +26,14 @@
     }
   }
 
-  .language--link {
+  .lang--link {
     color: var(--beige-150);
     cursor: pointer;
     user-select: none;
     text-decoration: none;
-    // @include b.mq(lg) {
-    //   margin-bottom: 0.2rem;
-    // }
+    line-height: 1;
+    @include b.mq(lg) {
+      margin-bottom: 0.2rem;
+    }
   }
 </style>
