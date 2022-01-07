@@ -1,5 +1,5 @@
 <script context="module">
-  import { loadTranslations } from "$lib/translations"
+  import { loadTranslations } from "$lib/translations/index.js"
 
   export const load = async ({ url }) => {
     const { pathname } = url
