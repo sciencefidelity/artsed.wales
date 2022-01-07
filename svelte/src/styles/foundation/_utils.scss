@@ -36,6 +36,15 @@
   font-family: var(--serif);
 }
 
+.container {
+  width: 88%;
+  max-width: 1000px;
+  margin: auto;
+  // @include b.mq(sm) {
+  //   width: 100%;
+  // }
+}
+
 .split-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -58,4 +67,14 @@
   @include b.mq(sm) {
     width: 88%;
   }
+}
+
+.side-image {
+  display: block;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  // @include b.mq(sm) {
+  //   width: 88%;
+  //   margin: 0 auto 3rem;
+  // }
 }

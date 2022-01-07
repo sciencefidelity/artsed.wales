@@ -23,7 +23,9 @@
 
 <Header />
 <main class="site-main">
-  <slot />
+  <div class="container">
+    <slot />
+  </div>
 </main>
 <Footer />
 

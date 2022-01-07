@@ -27,4 +27,14 @@
     //   margin-bottom: 3.2rem;
     // }
   }
+
+  .side-image {
+    display: block;
+    border: var(--border);
+    box-shadow: var(--shadow);
+    // @include b.mq(sm) {
+    //   width: 88%;
+    //   margin: 0 auto 3rem;
+    // }
+  }
 </style>

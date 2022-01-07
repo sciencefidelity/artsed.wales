@@ -39,6 +39,6 @@
   --beige-850: hsl(11, 20%, 15%);
   --beige-900: hsl(11, 20%, 10%);
   --beige-950: hsl(11, 20%, 05%);
-  --border: 8px solid $grey-050;
-  --shadow: 2px 2px 10px rgba($grey-950, 0.2);
+  --border: 8px solid hsl(0, 0%, 95%);
+  --shadow: 2px 2px 10px hsla(0, 0%, 5%, 0.2);
 }
