@@ -6,16 +6,20 @@
 </script>
 
 <script lang="ts">
-
+  import { t } from "$lib/translations/index.js"
+  import Introduction from "$lib/Introduction.svelte"
 </script>
 
 <svelte:head>
   <title>National Arts and Education Network</title>
 </svelte:head>
 
-<section class="home">
-
-</section>
+<main>
+  <section>
+    <h2 class="headline">{$t('content.headline')}</h2>
+  </section>
+  <Introduction />
+</main>
 
 <!-- prettier-ignore -->
 <style lang="scss">

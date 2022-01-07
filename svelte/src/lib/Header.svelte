@@ -1,11 +1,11 @@
-<script>
-import Language from "$lib/Language.svelte"
-import logo from "../icons/logo.svg"
+<script lang="ts">
+  import Language from "$lib/Language.svelte"
+  import logo from "../icons/logo.svg"
 
-const nameEn = "National Arts and Education Network"
-const nameCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
-const acronEn = "NAEN"
-const acronCy = "RCCA"
+  const nameEn = "National Arts and Education Network"
+  const nameCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
+  const acronEn = "NAEN"
+  const acronCy = "RCCA"
 </script>
 
 <header class="header bg-dark">
