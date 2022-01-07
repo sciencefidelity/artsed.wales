@@ -2,8 +2,8 @@
 import Language from "$lib/Language.svelte"
 import logo from "../icons/logo.svg"
 
-// const brandEn = "National Arts and Education Network"
-// const brandCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
+const brandEn = "National Arts and Education Network"
+const brandCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
 </script>
 
 <header class="header">
@@ -15,8 +15,8 @@ import logo from "../icons/logo.svg"
     </div>
 
     <div class="name">
-      <h1 class="name--en">National Arts and Education Network</h1>
-      <h1 class="name--cy">Rhwydwaith Cenedlaethol Celfyddydau ac Addysg</h1>
+      <h1 class="name--en">{brandEn}</h1>
+      <h1 class="name--cy">{brandCy}</h1>
     </div>
     <Language />
   </div>
@@ -33,12 +33,23 @@ import logo from "../icons/logo.svg"
       display: flex;
       margin: 0 auto;
     }
+    @include b.mq(xl) {
+      margin-bottom: 0.2rem;
+    }
   }
 
   .brand {
     align-items: center;
     padding: 0.6em;
-    margin: 0 0.5em -0.28em;
+    margin: 0 0.5em 0.06em;
+    @include b.mq(xl) {
+      padding: 0;
+      margin: 0.6em 0.7em 0;
+      img {
+        width: 65px;
+        height: 65px;
+      }
+    }
   }
 
   .name {
@@ -49,6 +60,12 @@ import logo from "../icons/logo.svg"
       padding-bottom: 0.72rem;
       margin: 0;
       letter-spacing: 0;
+    }
+    &--en,
+    &--cy {
+      @include b.mq(xl) {
+        font-size: 0.98em;
+      }
     }
   }
 </style>

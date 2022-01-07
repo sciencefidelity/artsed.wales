@@ -11,6 +11,8 @@
 
 <!-- prettier-ignore -->
 <style lang="scss">
+  @use '../styles/foundation/breakpoints' as b;
+
   .language--switcher {
     display: flex;
     font-family: var(--sans);
@@ -19,6 +21,10 @@
     font-size: 6.3rem;
     letter-spacing: 0.02rem;
     margin: 0 4.5rem 0 auto;
+    @include b.mq(lg) {
+      margin: -0.2rem 1.2rem 0.2rem auto;
+      font-size: 3.5rem;
+    }
   }
 
   .language--link {
@@ -26,5 +32,8 @@
     cursor: pointer;
     user-select: none;
     text-decoration: none;
+    // @include b.mq(lg) {
+    //   margin-bottom: 0.2rem;
+    // }
   }
 </style>
