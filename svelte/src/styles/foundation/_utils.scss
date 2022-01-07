@@ -10,10 +10,26 @@
   background-color: var(--beige-150);
 }
 
+.fg-dark {
+  color: var(--grey-950);
+}
+
+.fg-light {
+  color: var(--beige-150);
+}
+
 .ml-auto {
   margin-left: auto;
 }
 
 .mr-auto {
   margin-right: auto;
+}
+
+.sans {
+  font-family: var(--sans);
+}
+
+.serif {
+  font-family: var(--serif);
 }
