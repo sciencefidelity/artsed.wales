@@ -1,3 +1,5 @@
+@use 'breakpoints' as b;
+
 .flex {
   display: flex;
 }
@@ -32,4 +34,28 @@
 
 .serif {
   font-family: var(--serif);
+}
+
+.split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  // @include b.mq(md) {
+  //   grid-template-columns: 1fr;
+  //   gap: 0;
+  //   width: 88%;
+  //   margin: auto;
+  // }
+  // @include b.mq(sm) {
+  //   width: 100%;
+  // }
+  // @include b.mq(sm) {
+  //   gap: 1em;
+  // }
+}
+
+.split-text {
+  @include b.mq(sm) {
+    width: 88%;
+  }
 }

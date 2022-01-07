@@ -13,13 +13,13 @@
 }
 
 ::selection {
-  background-color: rgba(var(grey-400), 0.5);
+  background-color: rgba(var(--grey-400), 0.5);
 }
 
 html {
-  // overflow-y: scroll;
+  overflow-y: scroll;
   font-size: 62.5%;
-  background-color: var(grey-950);
+  background-color: var(--grey-950);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,4 +1,4 @@
-<script context="module">
+<script lang="ts" context="module">
   import { loadTranslations } from "$lib/translations/index.js"
 
   export const load = async ({ url }) => {
@@ -22,7 +22,13 @@
 </script>
 
 <Header />
-<main>
+<main class="site-main">
   <slot />
 </main>
 <Footer />
+
+<style lang="scss">
+  .site-main {
+    min-height: calc(100vh - 471px);
+  }
+</style>
