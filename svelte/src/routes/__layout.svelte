@@ -1,3 +1,16 @@
+<script context="module">
+  import { loadTranslations } from "$lib/translations"
+
+  export const load = async ({ url }) => {
+    const { pathname } = url
+
+    const locale = "en"
+    await loadTranslations(locale, pathname)
+
+    return {}
+  }
+</script>
+
 <script lang="ts">
   import "sanitize.css/sanitize.css"
   import "sanitize.css/assets.css"
