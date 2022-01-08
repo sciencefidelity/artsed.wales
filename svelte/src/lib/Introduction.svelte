@@ -8,13 +8,16 @@
       <p>{$t('content.introduction-1')}</p>
       <p>{$t('content.introduction-2')}</p>
     </div>
-    <img
-      src="/img/aen_blackwood_1.jpg"
-      width="600"
-      height="400"
-      alt=""
-      class="side-image"
-    />
+    <div class="side-image">
+      <img
+        src="/img/aen_blackwood_1.jpg"
+        sizes="(min-width: 600px) 600px, 100vw"
+        alt=""
+        class="cover h-100"
+        decoding="async"
+        loading="lazy"
+      />
+    </div>
   </div>
 </section>
 
@@ -32,6 +35,9 @@
     display: block;
     border: var(--border);
     box-shadow: var(--shadow);
+    img {
+      object-position: 30% 50%;
+    }
     // @include b.mq(sm) {
     //   width: 88%;
     //   margin: 0 auto 3rem;
