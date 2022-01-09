@@ -1,6 +1,7 @@
 <script lang="ts">
   import { t } from "$lib/translations/index.js"
-  import Image from "svelte-image"
+  import Image from "$lib/Image.svelte"
+  import Blackwood1 from "$img/aen_blackwood_1.jpg?w=400&h=300&webp"
 </script>
 
 <section class="introduction">
@@ -11,13 +12,8 @@
     </div>
     <div class="side-image">
       <Image
-        src="/img/aen_blackwood_1.jpg"
-        width="600"
-        height="400"
+        data={Blackwood1}
         alt=""
-        class="img cover h-100"
-        decoding="async"
-        loading="lazy"
       />
     </div>
   </div>
