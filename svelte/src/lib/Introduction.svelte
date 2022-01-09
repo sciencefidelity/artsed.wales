@@ -20,6 +20,9 @@
         src={Blackwood1}
         alt=""
         class="img cover w-100"
+        sizes="(min-width: 600px) 600px, 100vw"
+        decoding="async"
+        loading="lazy"
       />
     </div>
   </div>
