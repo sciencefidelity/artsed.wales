@@ -1,14 +1,13 @@
 import adapter from "@sveltejs/adapter-auto"
+import * as path from "path"
 import preprocess from "svelte-preprocess"
-import image from "svelte-image"
+import { imagetools } from "vite-imagetools"
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: preprocess({
-    ...image()
-  }),
+  preprocess: preprocess(),
 
   kit: {
     adapter: adapter(),
@@ -17,12 +16,25 @@ const config = {
     target: "#svelte",
 
     vite: {
-      optimizeDeps: {
-        include: ["blurhash"],
+      // https://github.com/sveltejs/kit/issues/1632#issuecomment-854056053
+      build: {
+        rollupOptions: {
+          output: {
+            manualChunks: undefined
+          }
+        }
       },
-      // ssr: {
-      //   noExternal: ["svelte-image"],
-      // }
+      plugins: [imagetools()],
+      resolve: {
+        alias: {
+          $img: path.resolve("src/images")
+        }
+      },
+      server: {
+        fs: {
+          strict: false
+        }
+      }
     }
   }
 }
