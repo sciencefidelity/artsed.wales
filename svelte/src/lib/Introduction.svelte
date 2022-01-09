@@ -1,7 +1,8 @@
 <script lang="ts">
   import { t } from "$lib/translations/index.js"
-  import Image from "$lib/Image.svelte"
-  import Blackwood1 from "$img/aen_blackwood_1.jpg?w=400&h=300&webp"
+  // import Image from "$lib/Image.svelte"
+  import Blackwood1 from "$img/aen_blackwood_1.jpg"
+  // import Blackwood1 from "$img/aen_blackwood_1.jpg?w=400&h=300&webp"
 </script>
 
 <section class="introduction">
@@ -11,9 +12,14 @@
       <p>{$t('content.introduction-2')}</p>
     </div>
     <div class="side-image">
-      <Image
+      <!-- <Image
         data={Blackwood1}
         alt=""
+      /> -->
+      <img
+        src={Blackwood1}
+        alt=""
+        class="img cover w-100"
       />
     </div>
   </div>
@@ -37,5 +43,9 @@
     //   width: 88%;
     //   margin: 0 auto 3rem;
     // }
+  }
+
+  .img {
+    object-position: 25% 50%;
   }
 </style>
