@@ -4,6 +4,22 @@
   display: flex;
 }
 
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
 .cover {
   object-fit: cover;
 }
@@ -32,12 +48,28 @@
   color: var(--beige-150);
 }
 
+.border {
+  border: var(--border);
+}
+
+.shadow {
+  box-shadow: var(--shadow);
+}
+
 .ml-auto {
   margin-left: auto;
 }
 
 .mr-auto {
   margin-right: auto;
+}
+
+.mt-large {
+  margin-top: 9.4rem;
+}
+
+.mb-large {
+  margin-bottom: 10rem;
 }
 
 .sans {

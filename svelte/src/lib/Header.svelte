@@ -8,7 +8,7 @@
   const acronCy = "RCCA"
 </script>
 
-<header class="header bg-dark">
+<header class="bg-dark">
   <div class="header--container flex">
     <div class="brand">
       <a sveltekit:prefetch href="/">
@@ -29,10 +29,6 @@
 <!-- prettier-ignore -->
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
-
-  .header {
-    margin-bottom: 9.4rem;
-  }
 
   .brand {
     padding: 1.2rem;

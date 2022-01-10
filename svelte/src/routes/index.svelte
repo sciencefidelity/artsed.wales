@@ -15,17 +15,26 @@
 </svelte:head>
 
 <section>
-  <h2 class="headline">{$t('content.headline')}</h2>
+  <h2 class="headline mt-large mb-large">{$t('content.headline')}</h2>
 </section>
 <Introduction />
+<div class="heading__container mb-large relative">
+  <h2 class="inline">
+    {$t('content.heading-1')},{" "}
+  </h2>
+  <h2 class="inline">
+    {$t('content.heading-2')},{" "}
+  </h2>
+  <h2 class="inline">
+    {$t('content.heading-3')}
+  </h2>
+</div>
 
 <!-- prettier-ignore -->
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
 
   .headline {
-    margin-top: 9.2rem;
-    margin-bottom: 9rem;
     letter-spacing: 0;
     // @include b.mq(lg) {
     //   margin: 9.2rem auto 9rem;
@@ -34,6 +43,25 @@
     //   width: 88%;
     //   font-size: 3rem;
     //   margin: 7.2rem auto 6.8rem;
+    // }
+  }
+
+  .heading__container {
+    position: relative;
+    // @include b.mq(sm) {
+    //   width: 88%;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    //   margin-bottom: 8rem;
+    // }
+  }
+
+  .heading {
+    display: inline;
+    // @include b.mq(sm) {
+    //   display: block;
+    //   width: 70%;
+    //   margin: 0 auto 1.3rem;
     // }
   }
 </style>
