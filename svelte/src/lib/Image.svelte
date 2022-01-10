@@ -10,28 +10,32 @@
   $: {
     sources = {}
 
-    data.forEach(img => {
-      if (!sources[img.format]) {
-        sources[img.format] = {
-          type: `image/${img.format}`,
-          srcset: []
-        };
+    if (!sources[img.format]) {
+      sources[img.format] = {
+        type: `image/${img.format}`,
+        srcset: []
       }
 
       sources[img.format].srcset.push(
         `${img.src} ${img.width}w`
       )
-    })
+    }
   }
 
-  $: fallback = data.filter(img => img.format === 'png' || img.format === 'jpg').sort((a, b) => a.width - b.width).pop()
+  $: fallback = data.filter(img => img.format === 'png' || img.format === 'jpg')
+    .sort((a, b) => a.width - b.width)
+    .pop()
 </script>
 
 <picture>
   {#each Object.values(sources) as source}
     <source type={source.type} srcset={source.srcset.join(', ')} />
   {/each}
-  <img src={fallback.src} {alt} width={fallback.width} height={fallback.height} />
+  <img
+    src={fallback.src}
+    {alt}
+    width={fallback.width}
+    height={fallback.height} />
 </picture>
 
 <style>
