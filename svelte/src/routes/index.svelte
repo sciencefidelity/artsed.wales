@@ -14,7 +14,7 @@
   import QuoteB from "$lib/QuoteB.svelte"
   import Artists from "$lib/Artists.svelte"
   import Model from "$lib/Model.svelte"
-  // import Network from "$lib/Network.svelte"
+  import Network from "$lib/Network.svelte"
   // import OurPromise from "$lib/OurPromise.svelte"
   // import SignUp from "$lib/SignUp.svelte"
 </script>
@@ -44,7 +44,7 @@
 <QuoteB />
 <Artists />
 <Model />
-<!-- <Network /> -->
+<Network />
 <!-- <OurPromise /> -->
 <!-- <SignUp /> -->
 <!-- <section class="get-involved mb-large">

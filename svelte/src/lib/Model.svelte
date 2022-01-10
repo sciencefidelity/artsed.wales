@@ -3,9 +3,9 @@
   import ampersand from "../icons/ampersand.svg"
 </script>
 
-<section class="modelSection">
-  <div class="vennContainer">
-    <div class="vennText">
+<section class="model__section">
+  <div class="flex">
+    <div class="venn__text">
       <h2 class="vennHeading">{$t('content.model')}</h2>
       <p class="vennP1">{$t('content.model-p1')}</p>
       <p>{$t('content.model-p2')}</p>
@@ -47,11 +47,7 @@
     --vennBlend: difference;
   }
 
-  .vennContainer {
-    display: flex;
-  }
-
-  .vennText {
+  .venn__text {
     width: 33.33%;
     margin-right: -4%;
   }

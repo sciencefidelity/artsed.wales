@@ -9,7 +9,7 @@
 </script>
 
 <header class="bg-dark">
-  <div class="flex">
+  <div class="header--container flex">
     <div class="brand">
       <a sveltekit:prefetch href="/">
         <img alt="NAEN logo" src={logo} width="94" height="94" class="logo" />
@@ -29,6 +29,11 @@
 <!-- prettier-ignore -->
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
+
+  .header--container {
+    max-width: 140rem;
+    margin: auto;
+  }
 
   .brand {
     padding: 1.2rem;
