@@ -10,8 +10,8 @@
   import Introduction from "$lib/Introduction.svelte"
   import QuoteA from "$lib/QuoteA.svelte"
   import CaseStudies from "$lib/CaseStudies.svelte"
-  // import Figures from "$lib/Figures.svelte"
-  // import QuoteB from "$lib/QuoteB.svelte"
+  import Figures from "$lib/Figures.svelte"
+  import QuoteB from "$lib/QuoteB.svelte"
   // import Artists from "$lib/Artists.svelte"
   // import Model from "$lib/Model.svelte"
   // import Network from "$lib/Network.svelte"
@@ -41,7 +41,7 @@
 <QuoteA />
 <CaseStudies />
 <Figures />
-<!-- <QuoteB /> -->
+<QuoteB />
 <!-- <Artists /> -->
 <!-- <Model /> -->
 <!-- <Network /> -->

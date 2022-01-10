@@ -136,6 +136,10 @@
   font-family: var(--serif);
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .container {
   width: 88%;
   max-width: 1000px;
@@ -160,6 +164,24 @@
 .split-text {
   @include b.mq(sm) {
     width: 88%;
+  }
+}
+
+.quote__container {
+  max-width: 85rem;
+  min-width: 8.5rem;
+  margin-right: auto;
+  @include b.mq(lg) {
+    min-width: 0;
+    width: 100%;
+  }
+  @include b.mq(md) {
+    flex-direction: column;
+    width: 88%;
+    margin: auto;
+  }
+  @include b.mq(sm) {
+    width: 100%;
   }
 }
 

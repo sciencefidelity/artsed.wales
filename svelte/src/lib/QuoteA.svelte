@@ -12,7 +12,7 @@
       src={Tredegar}
       width="600"
       height="380"
-      alt=""
+      alt="Spoken Word at Tredegar House"
       class="img cover of-hidden"
       decoding="async"
       loading="lazy"
@@ -39,24 +39,6 @@
 
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
-
-  .quote__container {
-    max-width: 85rem;
-    min-width: 8.5rem;
-    margin-right: auto;
-    @include b.mq(lg) {
-      min-width: 0;
-      width: 100%;
-    }
-    @include b.mq(md) {
-      flex-direction: column;
-      width: 88%;
-      margin: auto;
-    }
-    @include b.mq(sm) {
-      width: 100%;
-    }
-  }
 
   .quote__text {
     width: 70%;
