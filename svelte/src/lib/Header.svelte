@@ -31,7 +31,7 @@
   @use '../styles/foundation/breakpoints' as b;
 
   .header--container {
-    max-width: 140rem;
+    max-width: 110rem;
     margin: auto;
   }
 

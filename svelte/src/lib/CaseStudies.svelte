@@ -20,10 +20,10 @@
   </div>
   <img
     src={Theatre}
-    width="600"
-    height="400"
     alt="Theatre and Performance at Blackwood Miners Institute with Theatr Iolo"
     class="img block border shadow center mb-large"
+    width="600"
+    height="400"
     decoding="async"
     loading="lazy"
   />

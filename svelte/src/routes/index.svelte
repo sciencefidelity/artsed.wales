@@ -15,7 +15,7 @@
   import Artists from "$lib/Artists.svelte"
   import Model from "$lib/Model.svelte"
   import Network from "$lib/Network.svelte"
-  // import OurPromise from "$lib/OurPromise.svelte"
+  import OurPromise from "$lib/OurPromise.svelte"
   // import SignUp from "$lib/SignUp.svelte"
 </script>
 
@@ -45,7 +45,7 @@
 <Artists />
 <Model />
 <Network />
-<!-- <OurPromise /> -->
+<OurPromise />
 <!-- <SignUp /> -->
 <!-- <section class="get-involved mb-large">
   <h2>
