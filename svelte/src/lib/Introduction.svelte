@@ -5,7 +5,7 @@
   // import imgData from "$img/aen_blackwood_1.jpg?w=400&h=300&webp"
 </script>
 
-<section class="introduction">
+<section class="introduction mb-large">
   <div class="split-container">
     <div class="split-text">
       <p>{$t('content.introduction-1')}</p>
@@ -32,19 +32,18 @@
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
 
-  .introduction {
-    margin-bottom: 6.5rem;
-    // @include b.mq(sm) {
-    //   margin-bottom: 3.2rem;
-    // }
-  }
+  // .introduction {
+  //   @include b.mq(sm) {
+  //     margin-bottom: 3.2rem;
+  //   }
+  // }
 
-  .side-image {
-    // @include b.mq(sm) {
-    //   width: 88%;
-    //   margin: 0 auto 3rem;
-    // }
-  }
+  // .side-image {
+  //   @include b.mq(sm) {
+  //     width: 88%;
+  //     margin: 0 auto 3rem;
+  //   }
+  // }
 
   .img {
     object-position: 25% 50%;

@@ -24,6 +24,10 @@
   object-fit: cover;
 }
 
+.of-hidden {
+  overflow: hidden;
+}
+
 .h-100 {
   height: 100%;
 }
@@ -48,6 +52,14 @@
   color: var(--beige-150);
 }
 
+// .fill-light {
+//   fill: var(--beige-150);
+// }
+//
+// .fill-dark {
+//   fill: var(--grey-950);
+// }
+
 .border {
   border: var(--border);
 }
@@ -70,6 +82,14 @@
 
 .mb-large {
   margin-bottom: 10rem;
+}
+
+.line-spacer {
+  height: 1rem;
+}
+
+.card-padding {
+  padding: 2.5rem 3rem 1rem 4rem;
 }
 
 .sans {
@@ -113,3 +133,21 @@
   }
 }
 
+.quote-left,
+.quote-right {
+  width: 8.1rem;
+  margin-bottom: 1.25em;
+  // @include b.mq(sm) {
+  //   width: 7.2rem;
+  // }
+}
+
+.quote-left {
+  left: 1.5rem;
+  top: 1.3rem;
+}
+
+.quote-right {
+  right: 1.1rem;
+  bottom: -1.2rem;
+}

@@ -8,6 +8,7 @@
 <script lang="ts">
   import { t } from "$lib/translations/index.js"
   import Introduction from "$lib/Introduction.svelte"
+  import QuoteA from "$lib/QuoteA.svelte"
 </script>
 
 <svelte:head>
@@ -19,16 +20,17 @@
 </section>
 <Introduction />
 <div class="heading__container mb-large relative">
-  <h2 class="inline">
+  <h2 class="heading inline">
     {$t('content.heading-1')},{" "}
   </h2>
-  <h2 class="inline">
+  <h2 class="heading inline">
     {$t('content.heading-2')},{" "}
   </h2>
-  <h2 class="inline">
+  <h2 class="heading inline">
     {$t('content.heading-3')}
   </h2>
 </div>
+<QuoteA />
 
 <!-- prettier-ignore -->
 <style lang="scss">
@@ -46,22 +48,20 @@
     // }
   }
 
-  .heading__container {
-    position: relative;
-    // @include b.mq(sm) {
-    //   width: 88%;
-    //   margin-left: auto;
-    //   margin-right: auto;
-    //   margin-bottom: 8rem;
-    // }
-  }
+  // .heading__container {
+  //   @include b.mq(sm) {
+  //     width: 88%;
+  //     margin-left: auto;
+  //     margin-right: auto;
+  //     margin-bottom: 8rem;
+  //   }
+  // }
 
-  .heading {
-    display: inline;
-    // @include b.mq(sm) {
-    //   display: block;
-    //   width: 70%;
-    //   margin: 0 auto 1.3rem;
-    // }
-  }
+  // .heading {
+  //   @include b.mq(sm) {
+  //     display: block;
+  //     width: 70%;
+  //     margin: 0 auto 1.3rem;
+  //   }
+  // }
 </style>
