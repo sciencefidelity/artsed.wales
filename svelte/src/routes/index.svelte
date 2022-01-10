@@ -12,8 +12,8 @@
   import CaseStudies from "$lib/CaseStudies.svelte"
   import Figures from "$lib/Figures.svelte"
   import QuoteB from "$lib/QuoteB.svelte"
-  // import Artists from "$lib/Artists.svelte"
-  // import Model from "$lib/Model.svelte"
+  import Artists from "$lib/Artists.svelte"
+  import Model from "$lib/Model.svelte"
   // import Network from "$lib/Network.svelte"
   // import OurPromise from "$lib/OurPromise.svelte"
   // import SignUp from "$lib/SignUp.svelte"
@@ -42,8 +42,8 @@
 <CaseStudies />
 <Figures />
 <QuoteB />
-<!-- <Artists /> -->
-<!-- <Model /> -->
+<Artists />
+<Model />
 <!-- <Network /> -->
 <!-- <OurPromise /> -->
 <!-- <SignUp /> -->
