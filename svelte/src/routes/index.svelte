@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-  <title>National Arts and Education Network</title>
+  <title>{$t('content.title')}</title>
 </svelte:head>
 
 <section>

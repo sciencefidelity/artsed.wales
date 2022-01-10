@@ -77,11 +77,23 @@
 }
 
 .mt-large {
-  margin-top: 9.4rem;
+  margin-top: 10rem;
+  @include b.mq(xl) {
+    margin-top: 7rem;
+  }
+  @include b.mq(sm) {
+    margin-top: 6rem;
+  }
 }
 
 .mb-large {
   margin-bottom: 10rem;
+  @include b.mq(xl) {
+    margin-bottom: 7rem;
+  }
+  @include b.mq(sm) {
+    margin-bottom: 6rem;
+  }
 }
 
 .line-spacer {
@@ -90,6 +102,9 @@
 
 .card-padding {
   padding: 2.5rem 3rem 1rem 4rem;
+  @include b.mq(sm) {
+    padding: 1.5rem 1.5rem 1rem 2rem;
+  }
 }
 
 .sans {
@@ -113,15 +128,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  // @include b.mq(md) {
-  //   grid-template-columns: 1fr;
-  //   gap: 0;
-  //   width: 88%;
-  //   margin: auto;
-  // }
-  // @include b.mq(sm) {
-  //   width: 100%;
-  // }
+  @include b.mq(md) {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    width: 88%;
+    margin: auto;
+  }
+  @include b.mq(sm) {
+    width: 100%;
+  }
   // @include b.mq(sm) {
   //   gap: 1em;
   // }

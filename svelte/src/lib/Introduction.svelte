@@ -46,6 +46,9 @@
   // }
 
   .img {
-    object-position: 25% 50%;
+    object-position: 30% 50%;
+    @include b.mq(lg) {
+      object-position: 40% 50%;
+    }
   }
 </style>

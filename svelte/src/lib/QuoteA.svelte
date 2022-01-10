@@ -6,7 +6,7 @@
   import quoteRight from "../icons/quote-right.svg"
 </script>
 
-<section class="quote__section mb-large">
+<section class="mb-large">
   <div class="quote__container flex border shadow">
     <img
       src={Tredegar}
@@ -40,52 +40,32 @@
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
 
-  // .quote {
-  //   @include b.mq(sm) {
-  //     margin-bottom: 8.5rem;
-  //   }
-  // }
-
   .quote__container {
-    width: 85%;
+    max-width: 85rem;
     min-width: 8.5rem;
     margin-right: auto;
-    // @include b.mq(lg) {
-    //   min-width: 0;
-    //   width: 100%;
-    //   display: grid;
-    //   grid-template-columns: auto auto;
-    // }
-    // @include b.mq(md) {
-    //   min-width: 0;
-    //   width: 100%;
-    //   display: grid;
-    //   grid-template-columns: auto auto;
-    // }
-    // @include b.mq(sm) {
-    //   grid-template-columns: 1fr;
-    //   min-width: 0;
-    //   width: 100%;
-    // }
+    @include b.mq(lg) {
+      min-width: 0;
+      width: 100%;
+    }
+    @include b.mq(md) {
+      flex-direction: column;
+      width: 88%;
+      margin: auto;
+    }
+    @include b.mq(sm) {
+      width: 100%;
+    }
   }
 
   .quote__text {
-    // @extend %quote;
     width: 70%;
+    @include b.mq(md) {
+      width: 100%;
+    }
   }
 
-  // %quote {
-  //   @include b.mq(lg) {
-  //     width: 100%;
-  //     padding: 2.5rem 1.5rem 1rem 3.5rem;
-  //   }
-  //   @include b.mq(md) {
-  //     width: 100%;
-  //     padding: 2.5rem 1.5rem 1rem 2rem;
-  //   }
-  // }
-
   .img {
-    object-position: 25% 50%;
+    object-position: 35% 50%;
   }
 </style>
