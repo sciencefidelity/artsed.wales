@@ -49,15 +49,22 @@ h1 {
   font-weight: 400;
   line-height: 1.1;
   color: var(--beige-150);
+  @include b.mq(lg) {
+    font-size: 2.2rem;
+  }
+  @include b.mq(md) {
+    font-size: 1.7rem;
+  }
+  @include b.mq(sm) {
+    font-size: 2.2rem;
+  }
 }
 
 h2 {
-  margin-bottom: 0.3em;
   font-family: var(--sans);
   font-size: 4.5rem;
   line-height: 1.2;
   color: var(--grey-950);
-  letter-spacing: 0.012em;
   @include b.mq(xl) {
     font-size: 3.6rem;
   }

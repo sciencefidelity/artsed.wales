@@ -1,5 +1,9 @@
 @use 'breakpoints' as b;
 
+.hide {
+  display: none;
+}
+
 .flex {
   display: flex;
 }
@@ -119,9 +123,6 @@
   width: 88%;
   max-width: 1000px;
   margin: auto;
-  // @include b.mq(sm) {
-  //   width: 100%;
-  // }
 }
 
 .split-container {
@@ -137,9 +138,6 @@
   @include b.mq(sm) {
     width: 100%;
   }
-  // @include b.mq(sm) {
-  //   gap: 1em;
-  // }
 }
 
 .split-text {
@@ -152,9 +150,6 @@
 .quote-right {
   width: 8.1rem;
   margin-bottom: 1.25em;
-  // @include b.mq(sm) {
-  //   width: 7.2rem;
-  // }
 }
 
 .quote-left {
