@@ -65,6 +65,7 @@ h2 {
   font-size: 4.5rem;
   line-height: 1.2;
   color: var(--grey-950);
+  margin-bottom: 0.3em;
   @include b.mq(xl) {
     font-size: 3.6rem;
   }

@@ -8,6 +8,18 @@
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
+.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gap-small {
+  gap: 2.5rem;
+}
+
 .inline {
   display: inline;
 }
@@ -70,6 +82,11 @@
 
 .shadow {
   box-shadow: var(--shadow);
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ml-auto {
