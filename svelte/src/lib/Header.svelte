@@ -1,6 +1,7 @@
 <script lang="ts">
   import Language from "$lib/Language.svelte"
-  import logo from "../icons/logo.svg"
+  import Icon from "$lib/Icon.svelte"
+  // import logo from "../icons/logo.svg"
 
   const nameEn = "National Arts and Education Network"
   const nameCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
@@ -12,7 +13,8 @@
   <div class="header--container flex">
     <div class="brand">
       <a sveltekit:prefetch href="/">
-        <img alt="NAEN logo" src={logo} width="94" height="94" class="logo" />
+<!--         <img alt="NAEN logo" src={logo} width="94px" height="94px" class="logo fg-light fill-light" /> -->
+        <Icon name="logo" width="94" height="94" class="logo fg-light" />
       </a>
     </div>
 
@@ -52,22 +54,22 @@
     }
   }
 
-  .logo {
-    width: 94px;
-    height: 94px;
-    @include b.mq(lg) {
-      width: 73px;
-      height: 73px;
-    }
-    @include b.mq(md) {
-      width: 60px;
-      height: 60px;
-    }
-    @include b.mq(sm) {
-      width: 73px;
-      height: 73px;
-    }
-  }
+  // .logo {
+  //   width: 94px;
+  //   height: 94px;
+  //   @include b.mq(lg) {
+  //     width: 73px;
+  //     height: 73px;
+  //   }
+  //   @include b.mq(md) {
+  //     width: 60px;
+  //     height: 60px;
+  //   }
+  //   @include b.mq(sm) {
+  //     width: 73px;
+  //     height: 73px;
+  //   }
+  // }
 
   .name {
     align-self: center;

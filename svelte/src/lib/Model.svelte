@@ -1,6 +1,7 @@
 <script lang="ts">
   import { t } from "$lib/translations/index.js"
-  import ampersand from "../icons/ampersand.svg"
+  import Icon from "$lib/Icon.svelte"
+  // import ampersand from "../icons/ampersand.svg"
 </script>
 
 <section class="mb-large">
@@ -29,11 +30,13 @@
       <div class="content-4">{$t('content.model-5')}</div>
 
       <div>
-        <img
+<!--         <img
           alt="Ampersand Logo"
           src={ampersand}
           class="ampersand"
-        />
+        /> -->
+        <Icon name="ampersand" width="89"
+        height="100" class="ampersand fg-white" />
       </div>
     </div>
   </div>
@@ -102,14 +105,14 @@
     left: 50%;
   }
 
-  .ampersand {
-    position: absolute;
-    width: 3.78em;
-    margin: 0;
-    transform: translate(-46%, -45%);
-    top: 45%;
-    left: 50%;
-  }
+  // .ampersand {
+  //   position: absolute;
+  //   width: 3.78em;
+  //   margin: 0;
+  //   transform: translate(-46%, -45%);
+  //   top: 45%;
+  //   left: 50%;
+  // }
 
   %white-circles {
     background-color: white;

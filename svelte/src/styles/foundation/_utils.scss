@@ -68,25 +68,24 @@
   background-color: var(--beige-150);
 }
 
-.fg-dark {
-  color: var(--grey-950);
-}
-
-.fg-light {
-  color: var(--beige-150);
-}
-
 .bg-white {
   background-color: var(--grey-000);
 }
 
-// .fill-light {
-//   fill: var(--beige-150);
-// }
-//
-// .fill-dark {
-//   fill: var(--grey-950);
-// }
+.fg-dark {
+  color: var(--grey-950);
+  fill: var(--grey-950);
+}
+
+.fg-light {
+  color: var(--beige-150);
+  fill: var(--beige-150);
+}
+
+.fg-white {
+  color: var(--grey-000);
+  fill: var(--grey-000);
+}
 
 .border {
   border: var(--border);
