@@ -8,6 +8,10 @@
   display: flex;
 }
 
+.column {
+  flex-direction: column;
+}
+
 .grid {
   display: grid;
 }
@@ -50,6 +54,10 @@
 
 .w-100 {
   width: 100%;
+}
+
+.w-50 {
+  width: 50%;
 }
 
 .bg-dark {
@@ -150,6 +158,10 @@
 
 .bold {
   font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .container {
