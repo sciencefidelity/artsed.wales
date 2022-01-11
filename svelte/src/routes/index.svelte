@@ -16,7 +16,7 @@
   import Model from "$lib/Model.svelte"
   import Network from "$lib/Network.svelte"
   import OurPromise from "$lib/OurPromise.svelte"
-  // import SignUp from "$lib/SignUp.svelte"
+  import SignUp from "$lib/SignUp.svelte"
 </script>
 
 <svelte:head>
@@ -46,15 +46,15 @@
 <Model />
 <Network />
 <OurPromise />
-<!-- <SignUp /> -->
-<!-- <section class="get-involved mb-large">
+<SignUp />
+<section class="mb-large">
   <h2>
-    {$t('who-title')}
+    {$t('content.who-title')}
   </h2>
   <p>
-    {$t('who-text')}
+    {$t('content.who-text')}
   </p>
-</section> -->
+</section>
 
 <!-- prettier-ignore -->
 <style lang="scss">
@@ -69,16 +69,5 @@
     @include b.mq(sm) {
       width: 100%;
     }
-  }
-
-  .get-involved {
-    margin-bottom: 8.5rem;
-    // @include b.mq(md) {
-    //   margin-bottom: 5.4rem;
-    // }
-    // @include b.mq(sm) {
-    //   width: 85%;
-    //   margin: 0 auto 4.9rem;
-    // }
   }
 </style>

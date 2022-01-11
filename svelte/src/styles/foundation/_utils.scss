@@ -68,6 +68,10 @@
   color: var(--beige-150);
 }
 
+.bg-white {
+  background-color: var(--grey-000);
+}
+
 // .fill-light {
 //   fill: var(--beige-150);
 // }
@@ -134,6 +138,14 @@
 
 .serif {
   font-family: var(--serif);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .bold {
