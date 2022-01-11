@@ -1,30 +1,35 @@
 <script lang="ts">
-  import { t } from "$lib/translations/index.js"
+  // import { t } from "$lib/translations/index.js"
   // import Image from "$lib/Image.svelte"
   import Icon from "$lib/Icon.svelte"
-  import Tredegar from "$img/aen_tredegar.jpg"
+  // import Tredegar from "$img/aen_tredegar.jpg"
   // import quoteLeft from "../icons/quote-left.svg"
   // import quoteRight from "../icons/quote-right.svg"
+  export let image: string
+  export let width: string
+  export let height: string
+  export let quote: string
+  export let cite: string
 </script>
 
 <section class="mb-large">
   <div class="quote__container flex border shadow">
     <img
-      src={Tredegar}
-      width="600"
-      height="380"
+      src={image}
+      width={width}
+      height={height}
       alt="Spoken Word at Tredegar House"
       class="img cover of-hidden"
       decoding="async"
       loading="lazy"
     />
     <div class="quote__text relative card-padding bg-light">
-<!--       <img
+      <!-- <img
         alt="Quote Left"
         src={quoteLeft}
         class="quote-left absolute"
       /> -->
-<!--       <img
+      <!-- <img
         alt="Quote Right"
         src={quoteRight}
         class="quote-right absolute"
@@ -32,9 +37,9 @@
       <Icon name="quoteLeft" width="100" height="73" class="quote-left absolute fg-white" />
       <Icon name="quoteRight" width="100" height="73" class="quote-right absolute fg-white" />
       <blockquote>
-        {$t('content.quote-1')}
+        {quote}
         <div class="line-spacer"></div>
-        <cite>{$t('content.cite-1')}</cite>
+        <cite>{cite}</cite>
       </blockquote>
     </div>
   </div>
@@ -44,13 +49,13 @@
   @use '../styles/foundation/breakpoints' as b;
 
   .quote__text {
-    width: 70%;
+    width: var(--textWidth);
     @include b.mq(md) {
       width: 100%;
     }
   }
 
   .img {
-    object-position: 35% 50%;
+    object-position: var(--xPosition) 50%;
   }
 </style>

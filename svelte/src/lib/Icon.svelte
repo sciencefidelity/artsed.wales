@@ -33,7 +33,7 @@
           height: 512,
           name: "chevronRight",
           svg: `<path d="M285 273L91 467c-9 10-24 10-34 0l-22-22c-10-10-10-25-1-34l155-155L34 101c-9-9-9-24 1-34l22-22c10-10 25-10 34 0l194 194c10 9 10 25 0 34z" fill="#fff"/>`
-        },
+        }
     ];
     let displayIcon = icons.find((e) => e.name === name)
 </script>
@@ -45,7 +45,7 @@
   {height}
   viewBox="0 0 {displayIcon.width} {displayIcon.height}"
 >
-    {@html displayIcon.svg}
+  {@html displayIcon.svg}
 </svg>
 
 <style lang="scss">
