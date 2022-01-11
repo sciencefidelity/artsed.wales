@@ -36,7 +36,7 @@
           class="ampersand"
         /> -->
         <Icon name="ampersand" width="89"
-        height="100" class="ampersand fg-white" />
+        height="100" class="ampersand absolute fg-white" />
       </div>
     </div>
   </div>
