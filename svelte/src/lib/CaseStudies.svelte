@@ -3,7 +3,7 @@
   import Theatre from "$img/aen_theatre.jpg"
 </script>
 
-<section>
+<section class="mb-large">
   <div class="flex three-col gap-small mb-large">
     <div>
       <h2>{$t('content.art-heading')}</h2>
@@ -21,24 +21,10 @@
   <img
     src={Theatre}
     alt="Theatre and Performance at Blackwood Miners Institute with Theatr Iolo"
-    class="img block border shadow center mb-large"
+    class="fw-img block border shadow center"
     width="600"
     height="400"
     decoding="async"
     loading="lazy"
   />
 </section>
-
-<style lang="scss">
-  @use '../styles/foundation/breakpoints' as b;
-
-  .img {
-    width: 65%;
-    @include b.mq(md) {
-      width: 88%;
-    }
-    @include b.mq(sm) {
-      width: 100%;
-    }
-  }
-</style>

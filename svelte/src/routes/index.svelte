@@ -67,13 +67,9 @@
 <Network />
 <OurPromise />
 <SignUp />
-<section class="mb-large">
-  <h2>
-    {$t("content.who-title")}
-  </h2>
-  <p>
-    {$t("content.who-text")}
-  </p>
+<section class="mb-large responsive-container">
+  <h2 class="pb-small">{$t("content.who-title")}</h2>
+  <p>{$t("content.who-text")}</p>
 </section>
 
 <!-- prettier-ignore -->
