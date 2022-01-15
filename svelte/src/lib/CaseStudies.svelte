@@ -4,7 +4,7 @@
 </script>
 
 <section>
-  <div class="grid three-col gap-small mb-large">
+  <div class="flex three-col gap-small mb-large">
     <div>
       <h2>{$t('content.art-heading')}</h2>
       <p>{$t('content.art-text')}</p>
@@ -30,29 +30,15 @@
 </section>
 
 <style lang="scss">
-  // .thirds-layout {
-  //   @include b.mq(md) {
-  //     grid-template-columns: 1fr;
-  //     gap: 2em;
-  //     width: 88%;
-  //     margin: auto;
-  //   }
-  //   @include b.mq(sm) {
-  //     gap: 1.8rem;
-  //   }
-  // }
+  @use '../styles/foundation/breakpoints' as b;
 
   .img {
     width: 65%;
-    min-width: 600px;
-    // margin: 6.7rem auto;
-    // @include b.mq(md) {
-    //   width: 88%;
-    //   min-width: 0;
-    // }
-    // @include b.mq(sm) {
-    //   width: 100%;
-    //   margin: 2.5em auto;
-    // }
+    @include b.mq(md) {
+      width: 88%;
+    }
+    @include b.mq(sm) {
+      width: 100%;
+    }
   }
 </style>

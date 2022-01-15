@@ -62,7 +62,6 @@
   --textWidth="38%"
   --xPosition="50%"
 />
-<!-- <QuoteB /> -->
 <Artists />
 <Model />
 <Network />
