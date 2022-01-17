@@ -1,17 +1,16 @@
-# local
 .DS_Store
 *.bak
-.env
-.env.*
-
-# node
 node_modules
 *.log
-
-# gatsby
 .cache
 web/public
-
-# sanity
 dist
 .snowpack
+build
+.svelte-kit
+package
+.env
+.env.*
+!.env.template
+.vercel
+.output
