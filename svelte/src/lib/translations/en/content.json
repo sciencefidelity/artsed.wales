@@ -65,9 +65,5 @@
   "contact": "Get in touch",
   "email": "hello@artsed.wales",
   "brand": "National Arts and Education Network",
-  "site": "Site by",
-  "notfound": {
-    "header": "NOT FOUND",
-    "description": "You just hit a route that doesn't exist... the sadness."
-  }
+  "site": "Site by"
 }
