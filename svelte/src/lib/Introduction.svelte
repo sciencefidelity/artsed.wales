@@ -7,7 +7,7 @@
 
 <section class="mb-large">
   <div class="split-container">
-    <div class="split-text">
+    <div>
       <p>{$t("content.introduction-1")}</p>
       <p>{$t("content.introduction-2")}</p>
     </div>

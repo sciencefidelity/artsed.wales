@@ -232,12 +232,6 @@
   }
 }
 
-.split-text {
-  @include b.mq(sm) {
-    width: 88%;
-  }
-}
-
 .quote__container {
   max-width: 85rem;
   min-width: 8.5rem;

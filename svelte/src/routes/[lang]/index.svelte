@@ -8,11 +8,9 @@
 <script lang="ts">
   import { t } from "$lib/translations/index.js"
   import Introduction from "$lib/Introduction.svelte"
-  // import QuoteA from "$lib/QuoteA.svelte"
   import QuoteCard from "$lib/QuoteCard.svelte"
   import CaseStudies from "$lib/CaseStudies.svelte"
   import Figures from "$lib/Figures.svelte"
-  // import QuoteB from "$lib/QuoteB.svelte"
   import Artists from "$lib/Artists.svelte"
   import Model from "$lib/Model.svelte"
   import Network from "$lib/Network.svelte"
@@ -28,7 +26,9 @@
 </svelte:head>
 
 <section>
-  <h2 class="mt-large mb-large">{$t("content.headline")}</h2>
+  <h2 class="responsive-container mt-large mb-large">
+    {$t("content.headline")}
+  </h2>
 </section>
 <Introduction />
 <div class="heading grid mb-large relative">
