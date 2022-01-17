@@ -83,4 +83,20 @@
       width: 10vw;
     }
   }
+
+  .quote-left,
+  .quote-right {
+    width: 8.1rem;
+    margin-bottom: 1.25em;
+  }
+
+  .quote-left {
+    left: 1.5rem;
+    top: 1.3rem;
+  }
+
+  .quote-right {
+    right: 1.1rem;
+    bottom: -1.2rem;
+  }
 </style>

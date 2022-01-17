@@ -1,8 +1,6 @@
 <script lang="ts">
-  // import { t } from "$lib/translations/index.js"
   // import Image from "$lib/Image.svelte"
   import Icon from "$lib/Icon.svelte"
-  // import Tredegar from "$img/aen_tredegar.jpg"
   // import quoteLeft from "../icons/quote-left.svg"
   // import quoteRight from "../icons/quote-right.svg"
   export let image: string
