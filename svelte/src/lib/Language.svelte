@@ -1,12 +1,11 @@
 <script lang="ts">
-  const languageName = {
-    en: "EN",
-    cy: "CY"
-  }
+  import { t } from "$lib/translations"
 </script>
 
-<div class="lang--switch flex ml-auto sans">
-  <a href="/" class="lang--link fg-light">{languageName.cy}</a>
+<div sveltekit:prefetch class="lang--switch flex ml-auto sans">
+  <a href={$t("content.locale-2")} class="lang--link fg-light">
+    {$t("content.locale-2")}
+  </a>
 </div>
 
 <!-- prettier-ignore -->
