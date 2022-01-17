@@ -8,8 +8,8 @@
 <section class="mb-large">
   <div class="split-container">
     <div class="split-text">
-      <p>{$t('content.introduction-1')}</p>
-      <p>{$t('content.introduction-2')}</p>
+      <p>{$t("content.introduction-1")}</p>
+      <p>{$t("content.introduction-2")}</p>
     </div>
     <div class="side-image block border shadow">
       <!-- <Image

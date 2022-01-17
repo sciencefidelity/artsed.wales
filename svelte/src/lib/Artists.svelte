@@ -6,13 +6,13 @@
 <section class="mb-large">
   <div class="grid two-col gap-small">
     <div>
-      <h2>{$t('content.artists-heading')}</h2>
-      <p>{$t('content.artists-text')}</p>
+      <h2>{$t("content.artists-heading")}</h2>
+      <p>{$t("content.artists-text")}</p>
     </div>
     <div>
-      <h2>{$t('content.creators-heading')}</h2>
+      <h2>{$t("content.creators-heading")}</h2>
       <p>
-        {$t('content.creators-text')}
+        {$t("content.creators-text")}
       </p>
     </div>
   </div>

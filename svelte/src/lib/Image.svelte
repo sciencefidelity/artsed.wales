@@ -22,14 +22,14 @@
     }
   }
 
-  $: fallback = data.filter(img => img.format === 'png' || img.format === 'jpg')
+  $: fallback = data.filter(img => img.format === "png" || img.format === "jpg")
     .sort((a, b) => a.width - b.width)
     .pop()
 </script>
 
 <picture>
   {#each Object.values(sources) as source}
-    <source type={source.type} srcset={source.srcset.join(', ')} />
+    <source type={source.type} srcset={source.srcset.join(", ")} />
   {/each}
   <img
     src={fallback.src}

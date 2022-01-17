@@ -8,13 +8,13 @@
   <div class="footer__container container relative flex fg-light">
     <div class="footer__left flex column w-50">
       <h2 class="footer__contact fg-light">
-        {$t('content.contact')}
+        {$t("content.contact")}
       </h2>
       <a href="mailto:{$t('content.email')}">
-        <p class="footer__email fg-light underline">{$t('content.email')}</p>
+        <p class="footer__email fg-light underline">{$t("content.email")}</p>
       </a>
       <p class="footer__copy absolute">
-        © {new Date().getFullYear()} {$t('content.title')}
+        © {new Date().getFullYear()} {$t("content.title")}
       </p>
     </div>
 
@@ -53,7 +53,7 @@
       </div>
       <div class="made-by flex">
         <p>
-          {$t('content.site')}{" "}
+          {$t("content.site")}{" "}
           <a
             href="https://mattcook.dev/"
             target="_blank"

@@ -7,10 +7,10 @@
 <section class="mb-large">
   <div class="flex">
     <div class="venn__text">
-      <h2 class="venn__heading">{$t('content.model')}</h2>
-      <p class="venn-p1">{$t('content.model-p1')}</p>
-      <p>{$t('content.model-p2')}</p>
-      <p>{$t('content.model-p3')}</p>
+      <h2 class="venn__heading">{$t("content.model")}</h2>
+      <p class="venn-p1">{$t("content.model-p1")}</p>
+      <p>{$t("content.model-p2")}</p>
+      <p>{$t("content.model-p3")}</p>
     </div>
     <div class="venn__diagram">
       <div class="circle-1"></div>
@@ -20,14 +20,14 @@
       <div class="circle-5"></div>
       <div class="circle-6"></div>
 
-      <div class="content-1">{$t('content.model-1')}</div>
-      <div class="content-2">{$t('content.model-2')}</div>
+      <div class="content-1">{$t("content.model-1")}</div>
+      <div class="content-2">{$t("content.model-2")}</div>
       <div class="content-3">
-        {$t('content.model-3')}
+        {$t("content.model-3")}
         <br />
-        {$t('content.model-4')}
+        {$t("content.model-4")}
       </div>
-      <div class="content-4">{$t('content.model-5')}</div>
+      <div class="content-4">{$t("content.model-5")}</div>
 
       <div>
 <!--         <img

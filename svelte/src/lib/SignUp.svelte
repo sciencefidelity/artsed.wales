@@ -4,14 +4,14 @@
 </script>
 
 <section class="mb-large text-center">
-  <h2>{$t('content.signup-1')}</h2>
+  <h2>{$t("content.signup-1")}</h2>
   <div>
     <form>
       <label>
         <input
           type="text"
-          name={$t('content.signup-2')}
-          placeholder={$t('content.signup-2')}
+          name={$t("content.signup-2")}
+          placeholder={$t("content.signup-2")}
           class="signup__input sans bg-white"
         />
       </label>
@@ -24,7 +24,7 @@
     </form>
   </div>
   <div class="signup__text center text-left">
-    <p>{$t('content.signup-3')}</p>
+    <p>{$t("content.signup-3")}</p>
   </div>
 </section>
 

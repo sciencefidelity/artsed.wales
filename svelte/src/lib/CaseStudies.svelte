@@ -6,16 +6,16 @@
 <section class="mb-large">
   <div class="flex three-col gap-small mb-large">
     <div>
-      <h2>{$t('content.art-heading')}</h2>
-      <p>{$t('content.art-text')}</p>
+      <h2>{$t("content.art-heading")}</h2>
+      <p>{$t("content.art-text")}</p>
     </div>
     <div>
-      <h2>{$t('content.music-heading')}</h2>
-      <p>{$t('content.music-text')}</p>
+      <h2>{$t("content.music-heading")}</h2>
+      <p>{$t("content.music-text")}</p>
     </div>
     <div>
-      <h2>{$t('content.theatre-heading')}</h2>
-      <p>{$t('content.theatre-text')}</p>
+      <h2>{$t("content.theatre-heading")}</h2>
+      <p>{$t("content.theatre-text")}</p>
     </div>
   </div>
   <img

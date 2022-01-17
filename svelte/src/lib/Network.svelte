@@ -17,8 +17,8 @@
       />
     </div>
     <div class="split-text">
-      <h2>{$t('content.network-heading')}</h2>
-      <p>{$t('content.network-text')}</p>
+      <h2>{$t("content.network-heading")}</h2>
+      <p>{$t("content.network-text")}</p>
     </div>
   </div>
 </section>

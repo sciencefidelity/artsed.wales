@@ -4,11 +4,11 @@
 </script>
 
 <section class="mb-large">
-  <h2 class="responsive-container pb-small">{$t('content.promise')}</h2>
+  <h2 class="responsive-container pb-small">{$t("content.promise")}</h2>
   <div class="flex three-col gap-small mb-large">
-    <div><p>{$t('content.promise-p1')}</p></div>
-    <div><p>{$t('content.promise-p2')}</p></div>
-    <div><p>{$t('content.promise-p3')}</p></div>
+    <div><p>{$t("content.promise-p1")}</p></div>
+    <div><p>{$t("content.promise-p2")}</p></div>
+    <div><p>{$t("content.promise-p3")}</p></div>
   </div>
   <img
     src={SiteSpecific}
