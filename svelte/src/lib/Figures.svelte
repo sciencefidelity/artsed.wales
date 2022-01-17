@@ -4,24 +4,24 @@
 
 <section class="legacy__section flex mb-large">
   <div class="legacy__small">
-    <small>{$t('content.legacy')}</small>
+    <small>{$t("content.legacy")}</small>
   </div>
   <div class="figures__layout">
     <div>
       <div class="figure sans bold">782</div>
-      <h4 class="figure__cap bold">{$t('content.engagement')}</h4>
+      <h4 class="figure__cap bold">{$t("content.engagement")}</h4>
     </div>
     <div>
       <div class="figure sans bold">2351</div>
-      <h4 class="figure__cap bold">{$t('content.participation')}</h4>
+      <h4 class="figure__cap bold">{$t("content.participation")}</h4>
     </div>
     <div>
       <div class="figure sans bold">302</div>
-      <h4 class="figure__cap bold">{$t('content.delivered')}</h4>
+      <h4 class="figure__cap bold">{$t("content.delivered")}</h4>
     </div>
     <div>
       <div class="figure sans bold">10895</div>
-      <h4 class="figure__cap bold">{$t('content.community')}</h4>
+      <h4 class="figure__cap bold">{$t("content.community")}</h4>
     </div>
   </div>
 </section>
