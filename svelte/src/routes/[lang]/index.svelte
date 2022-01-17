@@ -74,7 +74,7 @@
 
 <!-- prettier-ignore -->
 <style lang="scss">
-  @use '../styles/foundation/breakpoints' as b;
+  @use '../../styles/foundation/breakpoints' as b;
 
   .heading {
     @include b.mq(md) {

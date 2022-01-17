@@ -1,36 +1,18 @@
 <script lang="ts" context="module">
   import { loadTranslations } from "$lib/translations/index.js"
 
+  /** @type {import('@sveltejs/kit').Load} */
   export const load = async ({ url }) => {
     const { pathname } = url
 
-    const locale = "en"
-    await loadTranslations(locale, pathname)
+    const lang = `${pathname.match(/\w+?(?=\/|$)/) || ""}`
 
-    return {}
+    const route = pathname.replace(new RegExp(`^/${lang}`), "")
+
+    await loadTranslations(lang, route)
+
+    return { stuff: { route, lang } }
   }
 </script>
 
-<script lang="ts">
-  import "sanitize.css/sanitize.css"
-  import "sanitize.css/assets.css"
-  import "sanitize.css/reduce-motion.css"
-  import "sanitize.css/typography.css"
-  import "../styles/app.scss"
-  import Footer from "$lib/Footer.svelte"
-  import Header from "$lib/Header.svelte"
-</script>
-
-<Header />
-<main class="site-main">
-  <div class="container">
-    <slot />
-  </div>
-</main>
-<Footer />
-
-<style lang="scss">
-  .site-main {
-    min-height: calc(100vh - 471px);
-  }
-</style>
+<slot />
