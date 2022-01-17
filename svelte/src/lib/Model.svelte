@@ -1,16 +1,15 @@
 <script lang="ts">
   import { t } from "$lib/translations/index.js"
   import Icon from "$lib/Icon.svelte"
-  // import ampersand from "../icons/ampersand.svg"
 </script>
 
 <section class="mb-large">
-  <div class="flex">
+  <div class="venn flex">
     <div class="venn__text">
-      <h2 class="venn__heading">{$t("content.model")}</h2>
+      <h2 class="venn__heading pb-small">{$t("content.model")}</h2>
       <p class="venn-p1">{$t("content.model-p1")}</p>
-      <p>{$t("content.model-p2")}</p>
-      <p>{$t("content.model-p3")}</p>
+      <p class="venn-p2">{$t("content.model-p2")}</p>
+      <p class="venn-p3">{$t("content.model-p3")}</p>
     </div>
     <div class="venn__diagram">
       <div class="circle-1"></div>
@@ -30,11 +29,6 @@
       <div class="content-4">{$t("content.model-5")}</div>
 
       <div>
-<!--         <img
-          alt="Ampersand Logo"
-          src={ampersand}
-          class="ampersand"
-        /> -->
         <Icon name="ampersand" width="89"
         height="100" class="ampersand absolute fg-white" />
       </div>
@@ -50,18 +44,49 @@
     --vennBlend: difference;
   }
 
+  .venn {
+    @include b.mq(md) {
+      flex-direction: column;
+    }
+  }
+
   .venn__text {
     width: 33.33%;
     margin-right: -4%;
+    @include b.mq(md) {
+      margin: auto;
+      width: 88%;
+      margin-bottom: 3rem;
+    }
+    @include b.mq(sm) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
   }
 
   .venn-p1 {
     margin-right: -15%;
+    @include b.mq(md) {
+      margin-right: 0;
+    }
+  }
+
+  .venn-p2 {
+    margin-right: 6%;
+    @include b.mq(md) {
+      margin-right: 0;
+    }
+  }
+
+  .venn-p3 {
+    margin-right: 14%;
+    @include b.mq(md) {
+      margin-right: 0;
+    }
   }
 
   .venn__heading {
     line-height: 0.6;
-    padding-bottom: 1.8rem;
   }
 
   .venn__diagram {
@@ -69,6 +94,15 @@
     width: 72.66%;
     margin-left: auto;
     margin-bottom: -7rem;
+    @include b.mq(md) {
+      width: 94%;
+      margin-bottom: -2.5rem;
+      right: 3%;
+    }
+    @include b.mq(sm) {
+      width: 106%;
+      margin-bottom: -1.5rem;
+    }
   }
 
   %all-content {
@@ -78,6 +112,15 @@
     font-size: 3.2rem;
     text-align: center;
     transform: translate(-50%, -50%);
+    @include b.mq(lg) {
+      font-size: 3vw;
+    }
+    @include b.mq(md) {
+      font-size: 4vw;
+    }
+    @include b.mq(sm) {
+      font-size: 4.5vw;
+    }
   }
 
   .content-1 {
@@ -104,15 +147,6 @@
     top: 55%;
     left: 50%;
   }
-
-  // .ampersand {
-  //   position: absolute;
-  //   width: 3.78em;
-  //   margin: 0;
-  //   transform: translate(-46%, -45%);
-  //   top: 45%;
-  //   left: 50%;
-  // }
 
   %white-circles {
     background-color: white;

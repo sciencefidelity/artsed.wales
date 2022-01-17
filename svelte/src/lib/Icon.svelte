@@ -73,5 +73,14 @@
     transform: translate(-46%, -45%);
     top: 45%;
     left: 50%;
+    @include b.mq(lg) {
+      width: 7vw;
+    }
+    @include b.mq(md) {
+      width: 9.5vw;
+    }
+    @include b.mq(sm) {
+      width: 10vw;
+    }
   }
 </style>

@@ -17,14 +17,20 @@
       />
     </div>
     <div class="split-text">
-      <h2>{$t("content.network-heading")}</h2>
+      <h2 class="pb-small">{$t("content.network-heading")}</h2>
       <p>{$t("content.network-text")}</p>
     </div>
   </div>
 </section>
 
 <style lang="scss">
+  @use '../styles/foundation/breakpoints' as b;
+
   .img {
     object-position: 50% 50%;
+  }
+
+  .side-image {
+    margin-bottom: 1rem;
   }
 </style>

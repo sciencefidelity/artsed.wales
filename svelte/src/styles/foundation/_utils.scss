@@ -50,6 +50,9 @@
 
 .gap-small {
   gap: 2.5rem;
+  @include b.mq(sm) {
+    gap: 0.5rem;
+  }
 }
 
 .responsive-container {
