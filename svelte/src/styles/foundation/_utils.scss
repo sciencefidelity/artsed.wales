@@ -169,6 +169,16 @@
   }
 }
 
+.mb-xl {
+  margin-bottom: 15rem;
+  @include b.mq(xl) {
+    margin-bottom: 10rem;
+  }
+  @include b.mq(sm) {
+    margin-bottom: 9rem;
+  }
+}
+
 .mb-large {
   margin-bottom: 10rem;
   @include b.mq(xl) {

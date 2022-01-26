@@ -78,7 +78,7 @@
 <img
   src={SiteSpecific}
   alt="Site Specific Arts at Llanchaiach Fawr"
-  class="fw-img block border shadow center mb-large"
+  class="fw-img block border shadow center mb-xl"
   width="600"
   height="400"
   decoding="async"

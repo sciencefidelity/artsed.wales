@@ -35,7 +35,7 @@
 
   .brand {
     padding: 1.2rem;
-    margin: 0 1rem 0.1rem;
+    margin: 0 3.9rem 0.1rem;
     @include b.mq(lg) {
       padding: 0.93rem;
       margin: 0 0.77rem 0.077rem;

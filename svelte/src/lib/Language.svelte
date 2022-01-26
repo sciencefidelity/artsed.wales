@@ -2,19 +2,19 @@
   import { t } from "$lib/translations"
 </script>
 
-<nav class="lang flex ml-auto h1">
-  <div class="lang--switch sans">
+<nav class="nav flex column ml-auto">
+  <div class="nav--item h1 sans">
     <a href={$t("content.locale-2")}
       sveltekit:prefetch
-      class="lang--link fg-light">
+      class="nav--link fg-light">
       {$t("content.lang-2")}
     </a>
   </div>
-  <div class="lang--switch flex column ml-auto sans">
-    <a href={$t("content.locale-2")}
+  <div class="nav--item h1 sans">
+    <a href="/courses"
       sveltekit:prefetch
-      class="lang--link fg-light">
-      Courses
+      class="nav--link fg-light">
+      {$t("content.lang-2")}
     </a>
   </div>
 </nav>
@@ -22,14 +22,16 @@
 <!-- prettier-ignore -->
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
-  .lang {
-    align-items: center;
+  .nav {
+    align-items: right;
+    justify-content: center;
   }
-  .lang--switch {
-    align-items: center;
+  .nav--item {
+    // align-items: center;
     // font-size: 6.3rem;
-    letter-spacing: 0.02rem;
     margin-right: 4.5rem;
+    line-height: 1.3;
+    text-align: right;
     // @include b.mq(lg) {
     //   margin-right: 3.5rem;
     //   font-size: 4.9rem;
@@ -44,10 +46,7 @@
     // }
   }
 
-  .lang--link {
-    cursor: pointer;
-    user-select: none;
+  .nav--link {
     text-decoration: none;
-    line-height: 1;
   }
 </style>
