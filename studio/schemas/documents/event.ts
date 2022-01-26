@@ -8,12 +8,12 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'localeString',
+      type: 'localeString'
     },
     {
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'localeString',
+      type: 'localeString'
     },
     {
       name: 'slug',
@@ -21,7 +21,7 @@ export default {
       type: 'slug',
       options: {
         source: `title.${supportedLanguages[0].name}`,
-        maxLength: 96,
+        maxLength: 96
       },
     },
     {
@@ -38,64 +38,64 @@ export default {
     {
       name: 'location',
       title: 'Location',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'price',
       title: 'Price',
-      type: 'number',
+      type: 'number'
     },
     {
       name: 'britelink',
       title: 'Eventbrite link',
-      type: 'url',
+      type: 'url'
     },
     {
       name: 'artform',
       title: 'Artforms',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'artform'}}],
+      of: [{type: 'reference', to: {type: 'artform'}}]
     },
     {
       name: 'keystage',
       title: 'Key Stage',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'keystage'}}],
+      of: [{type: 'reference', to: {type: 'keystage'}}]
     },
     {
       name: 'ogTitle',
       title: 'Social title',
       description: 'Displayed on Facebook and Twitter shares (max 60 characters)',
       type: 'string',
-      validation: Rule => Rule.max(60).warning(`Only 60 characters will be visible.`),
+      validation: (Rule: any) => Rule.max(60).warning(`Only 60 characters will be visible.`)
     },
     {
       name: 'ogDescription',
       title: 'Social description',
       description: 'Displayed on Facebook and Twitter shares (max 65 characters)',
       type: 'string',
-      validation: Rule => Rule.max(65).warning(`Only 65 characters will be visible.`),
+      validation: (Rule: any) => Rule.max(65).warning(`Only 65 characters will be visible.`)
     },
     {
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: 'localeMarkdown'
     },
     {
       name: 'mainImage',
       title: 'Main image',
       type: 'captionImage',
       options: {
-        hotspot: true,
-      },
-    },
+        hotspot: true
+      }
+    }
   ],
 
   preview: {
     select: {
       title: 'title.en',
-      subtitle: 'subtitle.en',
-      media: 'mainImage',
-    },
-  },
+      subtitle: 'date',
+      media: 'mainImage'
+    }
+  }
 }

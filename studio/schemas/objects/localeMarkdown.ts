@@ -1,6 +1,6 @@
 export default {
-  name: 'localeString',
-  title: 'Localized string',
+  name: 'localeMarkdown',
+  title: 'Localized Markdown',
   type: 'object',
   fieldsets: [
     {
@@ -13,12 +13,12 @@ export default {
     {
       title: 'English',
       name: 'en',
-      type: 'string'
+      type: 'markdown'
     },
     {
       title: 'Welsh',
       name: 'cy',
-      type: 'string'
+      type: 'markdown'
     }
   ]
 }

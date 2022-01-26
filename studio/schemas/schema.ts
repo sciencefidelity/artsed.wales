@@ -7,6 +7,7 @@ import captionImage from './objects/captionImage'
 
 // localization
 // import { baseLanguage, supportedLanguages } from './languages'
+import localeMarkdown from './objects/localeMarkdown'
 import localeRichText from './objects/localeRichText'
 import localeSlug from './objects/localeSlug'
 import localeString from './objects/localeString'
@@ -14,7 +15,11 @@ import localeText from './objects/localeText'
 
 // documements
 import event from './documents/event'
+import photograpghy from './documents/photograpghy'
+import people from './documents/people'
 import post from './documents/post'
+import quote from './documents/quote'
+import statement from './documents/statement'
 
 //taxonomy
 import artform from './taxonomy/artform'
@@ -29,6 +34,7 @@ export default createSchema({
     // objects
     blockContent,
     captionImage,
+    localeMarkdown,
     localeRichText,
     localeSlug,
     localeString,
@@ -36,7 +42,11 @@ export default createSchema({
 
     // documents
     event,
+    people,
+    photograpghy,
     post,
+    quote,
+    statement,
 
     // taxonomy
     artform,
