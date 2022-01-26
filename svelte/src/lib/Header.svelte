@@ -9,7 +9,6 @@
   <div class="header--container flex">
     <div class="brand">
       <a sveltekit:prefetch href="/">
-<!--         <img alt="NAEN logo" src={logo} width="94px" height="94px" class="logo fg-light fill-light" /> -->
         <Icon name="logo" width="94" height="94" class="logo fg-light" />
       </a>
     </div>

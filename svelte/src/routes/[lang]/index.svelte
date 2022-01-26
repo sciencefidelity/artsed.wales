@@ -32,7 +32,7 @@
 </section>
 <Introduction />
 <Model />
-<!-- <div class="heading grid mb-large relative">
+<div class="heading grid mb-large relative text-right">
   <h2 class="inline">
     {$t("content.heading-1")},{" "}
   </h2>
@@ -42,7 +42,7 @@
   <h2 class="inline">
     {$t("content.heading-3")}
   </h2>
-</div> -->
+</div>
 <QuoteCard
   image={Tredegar}
   width="600"
@@ -87,16 +87,5 @@
 
 <!-- prettier-ignore -->
 <style lang="scss">
-//   @use '../../styles/foundation/breakpoints' as b;
-//
-//   .heading {
-//     @include b.mq(md) {
-//       width: 88%;
-//       margin-right: auto;
-//       margin-left: auto;
-//     }
-//     @include b.mq(sm) {
-//       width: 100%;
-//     }
-//   }
+
 </style>
