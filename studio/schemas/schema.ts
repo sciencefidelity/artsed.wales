@@ -20,6 +20,7 @@ import people from './documents/people'
 import post from './documents/post'
 import quote from './documents/quote'
 import statement from './documents/statement'
+import video from './documents/video'
 
 //taxonomy
 import artform from './taxonomy/artform'
@@ -47,6 +48,7 @@ export default createSchema({
     post,
     quote,
     statement,
+    video,
 
     // taxonomy
     artform,

@@ -45,7 +45,7 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      type: 'localeRichText',
+      type: 'localeMarkdown',
     },
     {
       name: 'ogTitle',

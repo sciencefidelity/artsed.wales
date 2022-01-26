@@ -1,4 +1,4 @@
-import { languages, baseLanguage } from './languages'
+import { supportedLanguages, baseLanguage } from './languages'
 
 // This is the basis for all fields that should have translations.
 // Its used to fill out more complete field definitions in
@@ -19,7 +19,7 @@ const languageField = {
 // to point to the base language properties. This does not
 // support custom previews, only the build in 'title', 'subtitle'
 // and 'media' properties.
-const localizePreview = (preview) => {
+const localizePreview = (preview: any) => {
   if (!preview) return null
   const { select } = preview
   if (!select) return null
@@ -35,11 +35,11 @@ const localizePreview = (preview) => {
   }
 }
 
-export const translateFields = (docs) => {
-  const documents = docs.map((doc) => {
+export const translateFields = (docs: any) => {
+  const documents = docs.map((doc: any) => {
     // Change all the fields to object versions with properties for each
     // language, if either the document has localize: true or individual fields
-    const fields = doc.fields.map(field => {
+    const fields = doc.fields.map((field: any) => {
       const shouldLocalize = field.type !== 'reference' && (doc.localize || field.localize)
       // Use the field defined as-is if its not to be translated
       if (!shouldLocalize || field.localize === false) return field
@@ -47,7 +47,7 @@ export const translateFields = (docs) => {
       return {
         ...languageField,
         name: field.name,
-        fields: languages.map((language, i) => ({
+        fields: supportedLanguages.map((language: any, i: any) => ({
           ...field,
           title: language.title,
           name: language.name,
