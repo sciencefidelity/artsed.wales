@@ -15,6 +15,12 @@ export const config = {
     },
     {
       locale: "en",
+      key: "courses",
+      routes: ["", "/courses"],
+      loader: async () => (await import("./en/courses.json")).default
+    },
+    {
+      locale: "en",
       key: "error",
       routes: ["error"],
       loader: async () => (await import("./en/error.json")).default
@@ -24,6 +30,12 @@ export const config = {
       key: "content",
       routes: ["", "/"],
       loader: async () => (await import("./cy/content.json")).default
+    },
+    {
+      locale: "cy",
+      key: "courses",
+      routes: ["", "/courses"],
+      loader: async () => (await import("./cy/courses.json")).default
     },
     {
       locale: "cy",
