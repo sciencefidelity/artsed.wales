@@ -13,13 +13,13 @@
     "build": "sanity build"
   },
   "dependencies": {
-    "@sanity/base": "^2.21.7",
+    "@sanity/base": "^2.25.1",
     "@sanity/components": "^2.14.0",
-    "@sanity/core": "^2.23.2",
-    "@sanity/default-layout": "^2.23.2",
-    "@sanity/default-login": "^2.22.3",
-    "@sanity/desk-tool": "^2.22.3",
-    "@sanity/vision": "^2.23.2",
+    "@sanity/core": "^2.25.0",
+    "@sanity/default-layout": "^2.25.1",
+    "@sanity/default-login": "^2.24.1",
+    "@sanity/desk-tool": "^2.25.2",
+    "@sanity/vision": "^2.25.1",
     "prop-types": "^15.8",
     "react": "^17.0",
     "react-dom": "^17.0"
