@@ -1,6 +1,6 @@
 export default {
-  name: 'photograpghy',
-  title: 'Photogaraphy',
+  name: 'photography',
+  title: 'Photography',
   type: 'document',
   fields: [
     {
