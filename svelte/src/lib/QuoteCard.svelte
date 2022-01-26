@@ -10,7 +10,7 @@
   export let cite: string
 </script>
 
-<section class="mb-large">
+<section class="quote mb-large">
   <div class="quote__container flex border shadow">
     <img
       src={image}
@@ -32,8 +32,18 @@
         src={quoteRight}
         class="quote-right absolute"
       /> -->
-      <Icon name="quoteLeft" width="100" height="73" class="quote-left absolute fg-white" />
-      <Icon name="quoteRight" width="100" height="73" class="quote-right absolute fg-white" />
+      <Icon
+        name="quoteLeft"
+        width="100"
+        height="73"
+        class="quote-left absolute fg-white"
+      />
+      <Icon
+       name="quoteRight"
+       width="100"
+       height="73"
+       class="quote-right absolute fg-white"
+      />
       <blockquote>
         {quote}
         <div class="line-spacer"></div>
@@ -45,6 +55,26 @@
 
 <style lang="scss">
   @use '../styles/foundation/breakpoints' as b;
+
+  .quote__container {
+    max-width: 85rem;
+    min-width: 8.5rem;
+    // margin-right: auto;
+    margin: var(--alignCard);
+    flex-direction: var(--direction);
+    @include b.mq(lg) {
+      min-width: 0;
+      width: 100%;
+    }
+    @include b.mq(md) {
+      flex-direction: column;
+      width: 88%;
+      margin: auto;
+    }
+    @include b.mq(sm) {
+      width: 100%;
+    }
+  }
 
   .quote__text {
     width: var(--textWidth);

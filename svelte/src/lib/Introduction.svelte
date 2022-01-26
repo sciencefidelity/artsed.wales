@@ -6,7 +6,7 @@
 </script>
 
 <section class="mb-large">
-  <div class="split-container">
+  <div class="split-container gap-small">
     <div>
       <p>{$t("content.introduction-1")}</p>
       <p>{$t("content.introduction-2")}</p>

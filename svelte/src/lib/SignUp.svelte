@@ -1,6 +1,7 @@
 <script lang="ts">
   import { t } from "$lib/translations/index.js"
   import chevron from "../icons/chevron-right-solid.svg"
+  import Theatre from "$img/aen_theatre.jpg"
 </script>
 
 <section class="mb-large text-center">
@@ -26,6 +27,15 @@
   <div class="signup__text center text-left">
     <p>{$t("content.signup-3")}</p>
   </div>
+  <img
+    src={Theatre}
+    alt="Theatre and Performance at Blackwood Miners Institute with Theatr Iolo"
+    class="fw-img block border shadow center mt-large"
+    width="600"
+    height="400"
+    decoding="async"
+    loading="lazy"
+  />
 </section>
 
 <style lang="scss">

@@ -3,7 +3,7 @@
 </script>
 
 
-<section class="mb-large">
+<section class="mb-small">
   <div class="grid two-col gap-small">
     <div>
       <h2>{$t("content.artists-heading")}</h2>

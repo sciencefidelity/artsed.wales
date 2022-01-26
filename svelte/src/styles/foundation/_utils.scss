@@ -49,7 +49,7 @@
 }
 
 .gap-small {
-  gap: 2.5rem;
+  gap: 4rem;
   @include b.mq(sm) {
     gap: 0.5rem;
   }
@@ -159,8 +159,28 @@
   }
 }
 
+.mt-small {
+  margin-top: 10rem;
+  @include b.mq(xl) {
+    margin-top: 7rem;
+  }
+  @include b.mq(sm) {
+    margin-top: 6rem;
+  }
+}
+
 .mb-large {
   margin-bottom: 10rem;
+  @include b.mq(xl) {
+    margin-bottom: 7rem;
+  }
+  @include b.mq(sm) {
+    margin-bottom: 6rem;
+  }
+}
+
+.mb-small {
+  margin-bottom: 2rem;
   @include b.mq(xl) {
     margin-bottom: 7rem;
   }
@@ -223,28 +243,10 @@
 .split-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  // gap: 4rem;
   @include b.mq(md) {
     grid-template-columns: 1fr;
     gap: 5rem;
-    width: 88%;
-    margin: auto;
-  }
-  @include b.mq(sm) {
-    width: 100%;
-  }
-}
-
-.quote__container {
-  max-width: 85rem;
-  min-width: 8.5rem;
-  margin-right: auto;
-  @include b.mq(lg) {
-    min-width: 0;
-    width: 100%;
-  }
-  @include b.mq(md) {
-    flex-direction: column;
     width: 88%;
     margin: auto;
   }

@@ -4,7 +4,7 @@
 </script>
 
 <section class="mb-large">
-  <div class="split-container">
+  <div class="split-container gap-small">
     <div class="side-image block border shadow">
       <img
         src={Networking}

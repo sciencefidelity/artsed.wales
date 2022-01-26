@@ -1,12 +1,8 @@
 <script lang="ts">
   import Language from "$lib/Language.svelte"
   import Icon from "$lib/Icon.svelte"
+  import { t } from "$lib/translations"
   // import logo from "../icons/logo.svg"
-
-  const nameEn = "National Arts and Education Network"
-  const nameCy = "Rhwydwaith Cenedlaethol Celfyddydau ac Addysg"
-  const acronEn = "NAEN"
-  const acronCy = "RCCA"
 </script>
 
 <header class="bg-dark">
@@ -19,10 +15,10 @@
     </div>
 
     <div class="name">
-      <h1 class="name--en">{nameEn}</h1>
-      <h1 class="name--cy">{nameCy}</h1>
-      <h1 class="acron--en hide">{acronEn}</h1>
-      <h1 class="acron--cy hide">{acronCy}</h1>
+      <h1 class="name--en">{$t("content.title-en")}</h1>
+      <h1 class="name--cy">{$t("content.title-cy")}</h1>
+      <h1 class="acron--en hide">{$t("content.acron-en")}</h1>
+      <h1 class="acron--cy hide">{$t("content.acron-cy")}</h1>
     </div>
     <Language />
   </div>
