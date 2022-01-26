@@ -15,7 +15,7 @@ import localeText from './objects/localeText'
 
 // documements
 import event from './documents/event'
-import photograpghy from './documents/photograpghy'
+import photography from './documents/photography'
 import people from './documents/people'
 import post from './documents/post'
 import quote from './documents/quote'
@@ -43,7 +43,7 @@ export default createSchema({
     // documents
     event,
     people,
-    photograpghy,
+    photography,
     post,
     quote,
     statement,
@@ -52,7 +52,6 @@ export default createSchema({
     artform,
     author,
     category,
-    keystage,
-
-  ]),
+    keystage
+  ])
 })
