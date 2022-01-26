@@ -34,10 +34,10 @@
 <Model />
 <div class="heading grid mb-large relative text-right">
   <h2 class="inline">
-    {$t("content.heading-1")},{" "}
+    {$t("content.heading-1")}
   </h2>
   <h2 class="inline">
-    {$t("content.heading-2")},{" "}
+    {$t("content.heading-2")}
   </h2>
   <h2 class="inline">
     {$t("content.heading-3")}

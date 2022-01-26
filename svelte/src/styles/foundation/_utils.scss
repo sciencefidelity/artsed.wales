@@ -73,6 +73,10 @@
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .relative {
   position: relative;
 }
@@ -276,5 +280,29 @@
   }
   @include b.mq(sm) {
     width: 100%;
+  }
+}
+
+.arrow-right {
+  &::after {
+    display: inline-block;
+    content: "→";
+    transition: transform 0.25s ease-in-out;
+  }
+  &:hover::after{
+    transform: translateX(0.75rem);
+    transition: transform 0.25s ease-in-out;
+  }
+}
+
+.arrow-left {
+  &::before {
+    display: inline-block;
+    content: "←";
+    transition: transform 0.25s ease-in-out;
+  }
+  &:hover::before{
+    transform: translateX(-0.75rem);
+    transition: transform 0.25s ease-in-out;
   }
 }

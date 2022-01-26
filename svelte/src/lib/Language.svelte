@@ -7,14 +7,18 @@
     <a href={$t("content.locale-2")}
       sveltekit:prefetch
       class="nav--link fg-light">
-      {$t("content.lang-2")}
+      <div class="inline-block arrow-left">
+        {" "}{$t("content.lang-2")}
+      </div>
     </a>
   </div>
   <div class="nav--item h1 sans">
     <a href="/courses"
       sveltekit:prefetch
       class="nav--link fg-light">
-      {$t("content.nav-item")}
+        <div class="inline-block arrow-right">
+          {$t("content.nav-item")}{" "}
+        </div>
     </a>
   </div>
 </nav>

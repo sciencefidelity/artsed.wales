@@ -2,7 +2,6 @@
   import Language from "$lib/Language.svelte"
   import Icon from "$lib/Icon.svelte"
   import { t } from "$lib/translations"
-  // import logo from "../icons/logo.svg"
 </script>
 
 <header class="bg-dark">
@@ -14,10 +13,10 @@
     </div>
 
     <div class="name">
-      <h1 class="name--en">{$t("content.title-en")}</h1>
-      <h1 class="name--cy">{$t("content.title-cy")}</h1>
-      <h1 class="acron--en hide">{$t("content.acron-en")}</h1>
-      <h1 class="acron--cy hide">{$t("content.acron-cy")}</h1>
+      <h1 class="name--en">{$t("content.title-1")}</h1>
+      <h1 class="name--cy">{$t("content.title-2")}</h1>
+      <h1 class="acron--en hide">{$t("content.acron-1")}</h1>
+      <h1 class="acron--cy hide">{$t("content.acron-2")}</h1>
     </div>
     <Language />
   </div>
@@ -34,7 +33,7 @@
 
   .brand {
     padding: 1.2rem;
-    margin: 0 3.9rem 0.1rem;
+    margin: 0 1rem 0.1rem;
     @include b.mq(lg) {
       padding: 0.93rem;
       margin: 0 0.77rem 0.077rem;
@@ -48,23 +47,6 @@
       margin: 0 0.77rem 0.077rem;
     }
   }
-
-  // .logo {
-  //   width: 94px;
-  //   height: 94px;
-  //   @include b.mq(lg) {
-  //     width: 73px;
-  //     height: 73px;
-  //   }
-  //   @include b.mq(md) {
-  //     width: 60px;
-  //     height: 60px;
-  //   }
-  //   @include b.mq(sm) {
-  //     width: 73px;
-  //     height: 73px;
-  //   }
-  // }
 
   .name {
     align-self: center;

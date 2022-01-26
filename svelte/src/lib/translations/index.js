@@ -16,7 +16,7 @@ export const config = {
     {
       locale: "en",
       key: "courses",
-      routes: ["", "/courses"],
+      routes: ["courses"],
       loader: async () => (await import("./en/courses.json")).default
     },
     {
@@ -34,7 +34,7 @@ export const config = {
     {
       locale: "cy",
       key: "courses",
-      routes: ["", "/courses"],
+      routes: ["courses"],
       loader: async () => (await import("./cy/courses.json")).default
     },
     {
