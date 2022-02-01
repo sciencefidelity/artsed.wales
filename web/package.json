@@ -38,6 +38,6 @@
     "sass": "^1.49.4"
   },
   "devDependencies": {
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   }
 }
