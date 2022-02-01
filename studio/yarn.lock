@@ -1357,7 +1357,7 @@
     shallow-equals "^1.0.0"
     use-device-pixel-ratio "^1.1.0"
 
-"@sanity/base@^2.26.0":
+"@sanity/base@2.26.0", "@sanity/base@^2.26.0":
   version "2.26.0"
   resolved "https://registry.yarnpkg.com/@sanity/base/-/base-2.26.0.tgz#3b8a7cb1710bb9f3e48f520844fa5faa23bd1b96"
   integrity sha512-uwzuhosfYpv19Cc+O9e/rBZGTZ/Hu149V4+3GpZax6TXCYewcBcgcccW7w2yYC9EU1GEcJy/vu28m2Xp41Ebew==
@@ -1548,18 +1548,19 @@
     "@sanity/generate-help-url" "2.18.0"
     lodash "^4.17.15"
 
-"@sanity/default-layout@^2.25.4":
-  version "2.25.4"
-  resolved "https://registry.npmjs.org/@sanity/default-layout/-/default-layout-2.25.4.tgz#cced5c7faa498e4856d201dad0dd825796f58618"
-  integrity sha512-1/JIk7YYcJ69wXlF5DbkiFZ9bFCTTna2QD8QE/btvpdrwjChUsp7bfVq24AKhFziGzS6fZ5eWMix6txdaCfQ4g==
+"@sanity/default-layout@^2.26.0":
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/@sanity/default-layout/-/default-layout-2.26.0.tgz#39b6206cea87ac3f7bd441fbcb9ac95ea61b2e29"
+  integrity sha512-boyM/A+5xtvg3KXTaQ3NlrixHr3/A34aGwojRomprAhJ5kQYkvVELvqMqDWoEdIsSAVY5Ii6k9acubDBWHSpRw==
   dependencies:
     "@reach/auto-id" "^0.13.2"
-    "@sanity/base" "2.25.4"
-    "@sanity/client" "2.23.2"
+    "@sanity/base" "2.26.0"
+    "@sanity/client" "^3.0.1"
     "@sanity/generate-help-url" "2.18.0"
     "@sanity/icons" "^1.2.1"
+    "@sanity/logos" "^1.1.6"
     "@sanity/ui" "^0.37.2"
-    "@sanity/util" "2.24.0"
+    "@sanity/util" "2.26.0"
     lodash "^4.17.15"
     react-rx "^1.0.0-beta.6"
     rxjs "^6.5.3"
