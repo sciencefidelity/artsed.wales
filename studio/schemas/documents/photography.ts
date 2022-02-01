@@ -9,8 +9,8 @@ export default {
       type: 'localeString'
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
+      name: 'image',
+      title: 'Image',
       type: 'image',
       options: {
         hotspot: true

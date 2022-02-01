@@ -19,6 +19,8 @@ import photography from './documents/photography'
 import people from './documents/people'
 import post from './documents/post'
 import quote from './documents/quote'
+import site from './documents/site'
+import social from './documents/social'
 import statement from './documents/statement'
 import video from './documents/video'
 
@@ -47,6 +49,8 @@ export default createSchema({
     photography,
     post,
     quote,
+    site,
+    social,
     statement,
     video,
 
