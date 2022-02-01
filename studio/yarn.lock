@@ -1357,7 +1357,7 @@
     shallow-equals "^1.0.0"
     use-device-pixel-ratio "^1.1.0"
 
-"@sanity/base@^2.26.0":
+"@sanity/base@2.26.0", "@sanity/base@^2.26.0":
   version "2.26.0"
   resolved "https://registry.yarnpkg.com/@sanity/base/-/base-2.26.0.tgz#3b8a7cb1710bb9f3e48f520844fa5faa23bd1b96"
   integrity sha512-uwzuhosfYpv19Cc+O9e/rBZGTZ/Hu149V4+3GpZax6TXCYewcBcgcccW7w2yYC9EU1GEcJy/vu28m2Xp41Ebew==
@@ -1575,24 +1575,24 @@
     prop-types "^15.6.0"
     rxjs "^6.5.3"
 
-"@sanity/desk-tool@^2.25.4":
-  version "2.25.4"
-  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-2.25.4.tgz#f405bf720fa2277f6a3b2de1d044fafb6928d64c"
-  integrity sha512-61pwPoPX3zaw5oqZgao57biRMRgk8wIYn13mAtyIG5zk0l3eVKcDwdqCVSxAp645ZeFOdVnUqZAYC8hEIhNFMA==
+"@sanity/desk-tool@^2.26.0":
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/@sanity/desk-tool/-/desk-tool-2.26.0.tgz#7fc8308b668dbeaf219cab1c0f7832e33dcdd398"
+  integrity sha512-JjWMteLmtNQuY9QUL4gSpi+yIDtEgQbdJ9/fKi6eAy+EgHDaP/J72kko9FuyO8qUHYO9MFMIaHO8uGrPeQDMTg==
   dependencies:
     "@reach/auto-id" "^0.13.2"
-    "@sanity/client" "2.23.2"
+    "@sanity/client" "^3.0.1"
     "@sanity/data-aspects" "2.18.0"
     "@sanity/diff" "2.20.0"
-    "@sanity/field" "2.25.4"
-    "@sanity/form-builder" "2.25.4"
+    "@sanity/field" "2.26.0"
+    "@sanity/form-builder" "2.26.0"
     "@sanity/generate-help-url" "2.18.0"
     "@sanity/icons" "^1.2.1"
-    "@sanity/react-hooks" "2.25.4"
-    "@sanity/structure" "2.24.0"
-    "@sanity/types" "2.24.0"
+    "@sanity/react-hooks" "2.26.0"
+    "@sanity/structure" "2.26.0"
+    "@sanity/types" "2.26.0"
     "@sanity/ui" "^0.37.2"
-    "@sanity/util" "2.24.0"
+    "@sanity/util" "2.26.0"
     "@sanity/uuid" "^3.0.1"
     framer-motion "^5.3.3"
     hashlru "^2.1.0"
@@ -1636,46 +1636,47 @@
     p-queue "^2.3.0"
     split2 "^3.2.2"
 
-"@sanity/field@2.25.4":
-  version "2.25.4"
-  resolved "https://registry.npmjs.org/@sanity/field/-/field-2.25.4.tgz#caa70575b6b0898a3e3f4f1398130883c54a4f63"
-  integrity sha512-2ZaGThAQc+Ewa9aZcsOe1q5944yejB3FSKysqZWQEb1HezPZeJj2cvB6bNUyp8bnZ9ZssVQjyfNiAupGBDCIag==
+"@sanity/field@2.26.0":
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/@sanity/field/-/field-2.26.0.tgz#c7fadfcce89b310867da3d42a70253db56af820a"
+  integrity sha512-RcRTYAFjhW5CIm8HUu37V9s30tyN36eugJ9TA2g2HkTdoM/MDIPdbC7Io08JIp6Nvhze2I1AUrTk3wEky45OJQ==
   dependencies:
     "@sanity/asset-utils" "^1.2.0"
-    "@sanity/base" "2.25.4"
-    "@sanity/client" "2.23.2"
+    "@sanity/base" "2.26.0"
+    "@sanity/client" "^3.0.1"
     "@sanity/color" "^2.1.5"
     "@sanity/diff" "2.20.0"
     "@sanity/icons" "^1.2.1"
     "@sanity/image-url" "^1.0.1"
-    "@sanity/react-hooks" "2.25.4"
-    "@sanity/types" "2.24.0"
+    "@sanity/react-hooks" "2.26.0"
+    "@sanity/types" "2.26.0"
     "@sanity/ui" "^0.37.2"
-    "@sanity/util" "2.24.0"
+    "@sanity/util" "2.26.0"
     diff-match-patch "^1.0.4"
     lodash "^4.17.15"
     sanity-diff-patch "^1.0.9"
 
-"@sanity/form-builder@2.25.4":
-  version "2.25.4"
-  resolved "https://registry.npmjs.org/@sanity/form-builder/-/form-builder-2.25.4.tgz#ab5ab63dc70699956ebc73b397507b4022acdf2d"
-  integrity sha512-J2ib8vfTULtVZ2Kw/lxFashIntmGiU0rLQqrEa3cYJKh7lxqnPkTY5hC4vKG25qdcDI2e3OqJhGQkNRoc7sO3g==
+"@sanity/form-builder@2.26.0":
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/@sanity/form-builder/-/form-builder-2.26.0.tgz#0bdff746e2460465cf4c0ef8ebf22f652458dd6f"
+  integrity sha512-WQw92pPDIHUWILoNsQbxT0IhQgvWzg4k++pO4SuFdpcbfXRcWzxwqEOVsbn2IRyZaxv513jq7V9eMvlmiDFOmg==
   dependencies:
     "@reach/auto-id" "^0.13.2"
-    "@sanity/base" "2.25.4"
+    "@sanity/base" "2.26.0"
     "@sanity/block-tools" "2.24.0"
-    "@sanity/client" "2.23.2"
+    "@sanity/client" "^3.0.1"
     "@sanity/color" "^2.1.5"
     "@sanity/generate-help-url" "2.18.0"
     "@sanity/icons" "^1.2.1"
+    "@sanity/image-url" "^1.0.1"
     "@sanity/imagetool" "2.23.3"
-    "@sanity/initial-value-templates" "2.24.0"
+    "@sanity/initial-value-templates" "2.26.0"
     "@sanity/mutator" "2.21.0"
-    "@sanity/portable-text-editor" "2.25.3"
+    "@sanity/portable-text-editor" "2.26.0"
     "@sanity/schema" "2.24.0"
-    "@sanity/types" "2.24.0"
+    "@sanity/types" "2.26.0"
     "@sanity/ui" "^0.37.2"
-    "@sanity/util" "2.24.0"
+    "@sanity/util" "2.26.0"
     "@sanity/uuid" "^3.0.1"
     attr-accept "^1.1.0"
     date-fns "^2.16.1"
@@ -1686,7 +1687,6 @@
     lodash "^4.17.15"
     nano-pubsub "^2.0.1"
     pretty-bytes "^4.0.2"
-    pretty-ms "^7.0.1"
     react-fast-compare "^3.2.0"
     react-focus-lock "^2.5.0"
     react-is "^17.0.2"
@@ -1802,27 +1802,27 @@
     css-modules-require-hook "4.1.0"
     interop-require "^1.0.0"
 
-"@sanity/portable-text-editor@2.25.3":
-  version "2.25.3"
-  resolved "https://registry.npmjs.org/@sanity/portable-text-editor/-/portable-text-editor-2.25.3.tgz#98bd93fe289db0ff0706558dfb66806b126d1555"
-  integrity sha512-SqExDrgjOM+CSiXX7k59y3Dfz1H03A4nJyptCqN4v6oUDtK0UmaYjmMecKCMpX56LYYoS7Bfn4abQH3i/yV4qA==
+"@sanity/portable-text-editor@2.26.0":
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/@sanity/portable-text-editor/-/portable-text-editor-2.26.0.tgz#21e275014d6da34a3d427ee9bd9a065d54886803"
+  integrity sha512-z0W4wZx6W2Ri8ymmWDnSYTEI0q4L7kqlgrHaJJJnJDiGc+32SHPERMkOMRs7gsOVVfq7F33e7gfUnjGtHdvsKg==
   dependencies:
     "@sanity/block-tools" "2.24.0"
     "@sanity/schema" "2.24.0"
     "@sanity/slate-react" "2.24.3"
-    "@sanity/types" "2.24.0"
-    "@sanity/util" "2.24.0"
+    "@sanity/types" "2.26.0"
+    "@sanity/util" "2.26.0"
     debug "^3.2.7"
     is-hotkey "^0.1.6"
     lodash "^4.17.15"
     slate "^0.72.3"
 
-"@sanity/react-hooks@2.25.4":
-  version "2.25.4"
-  resolved "https://registry.npmjs.org/@sanity/react-hooks/-/react-hooks-2.25.4.tgz#411184c5e876c9f9152dc3a07d62cdd32a1964a6"
-  integrity sha512-OBYE6L7qIu1V2ZHjiMVhw3QxMBK+Dkhi0VzYvpE83OsoJg016cPkRcIMwtorB7JpI08HlDG7lgt2wsUnE8O3dw==
+"@sanity/react-hooks@2.26.0":
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/@sanity/react-hooks/-/react-hooks-2.26.0.tgz#34268edf5ecf414c80ee1c59feb81f4889976442"
+  integrity sha512-NgTuiyRH+H/sAhFu5LfOoIcwmyK8P7GsIL8z+Li681e8SZHTGeXNhyJFFqNVZHVrT+LsVkHu6kEAUjkiKebftw==
   dependencies:
-    "@sanity/types" "2.24.0"
+    "@sanity/types" "2.26.0"
     react-rx "^1.0.0-beta.6"
     rxjs "^6.5.3"
 
