@@ -35,7 +35,7 @@
     "react-helmet": "^6.1.0",
     "react-scrollspy": "^3.4.3",
     "react-visibility-sensor": "^5.1.1",
-    "sass": "^1.45.2"
+    "sass": "^1.49.4"
   },
   "devDependencies": {
     "typescript": "^4.5.4"
