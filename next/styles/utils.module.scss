@@ -17,7 +17,7 @@
   display: grid;
 }
 
-.three-col {
+.threeCol {
   @include b.mq(lg) {
     flex-wrap: wrap;
     div {
@@ -37,7 +37,7 @@
   }
 }
 
-.two-col {
+.twoCol {
   margin: auto;
   grid-template-columns: 1fr 1fr;
   @include b.mq(md) {
@@ -49,14 +49,14 @@
   }
 }
 
-.gap-small {
+.gapSmall {
   gap: 4rem;
   @include b.mq(sm) {
     gap: 0.5rem;
   }
 }
 
-.responsive-container {
+.responsiveContainer {
   margin: auto;
   @include b.mq(md) {
     width: 88%;
@@ -74,7 +74,7 @@
   display: block;
 }
 
-.inline-block {
+.inlineBlock {
   display: inline-block;
 }
 
@@ -90,45 +90,45 @@
   object-fit: cover;
 }
 
-.of-hidden {
+.ofHidden {
   overflow: hidden;
 }
 
-.h-100 {
+.h100 {
   height: 100%;
 }
 
-.w-100 {
+.w100 {
   width: 100%;
 }
 
-.w-50 {
+.w50 {
   width: 50%;
 }
 
-.bg-dark {
+.bgDark {
   background-color: var(--grey-950);
 }
 
-.bg-light {
+.bgLight {
   background-color: var(--beige-150);
 }
 
-.bg-white {
+.bgWhite {
   background-color: var(--grey-000);
 }
 
-.fg-dark {
+.fgDark {
   color: var(--grey-950);
   fill: var(--grey-950);
 }
 
-.fg-light {
+.fgLight {
   color: var(--beige-150);
   fill: var(--beige-150);
 }
 
-.fg-white {
+.fgWhite {
   color: var(--grey-000);
   fill: var(--grey-000);
 }
@@ -146,15 +146,15 @@
   margin-right: auto;
 }
 
-.ml-auto {
+.mlAuto {
   margin-left: auto;
 }
 
-.mr-auto {
+.mrAuto {
   margin-right: auto;
 }
 
-.mt-large {
+.mtLarge {
   margin-top: 10rem;
   @include b.mq(xl) {
     margin-top: 7rem;
@@ -164,7 +164,7 @@
   }
 }
 
-.mt-small {
+.mtSmall {
   margin-top: 10rem;
   @include b.mq(xl) {
     margin-top: 7rem;
@@ -174,7 +174,7 @@
   }
 }
 
-.mb-xl {
+.mbXl {
   margin-bottom: 15rem;
   @include b.mq(xl) {
     margin-bottom: 10rem;
@@ -184,7 +184,7 @@
   }
 }
 
-.mb-large {
+.mbLarge {
   margin-bottom: 10rem;
   @include b.mq(xl) {
     margin-bottom: 7rem;
@@ -194,7 +194,7 @@
   }
 }
 
-.mb-small {
+.mbSmall {
   margin-bottom: 2rem;
   @include b.mq(xl) {
     margin-bottom: 7rem;
@@ -204,7 +204,7 @@
   }
 }
 
-.pb-small {
+.pbSmall {
   padding-bottom: 1.5rem;
   @include b.mq(md) {
     padding-bottom: 1rem;
@@ -214,11 +214,11 @@
   }
 }
 
-.line-spacer {
+.lineSpacer {
   height: 1rem;
 }
 
-.card-padding {
+.cardPadding {
   padding: 2.5rem 3rem 1rem 4rem;
   @include b.mq(sm) {
     padding: 1.5rem 1.5rem 1rem 2rem;
@@ -233,7 +233,7 @@
   font-family: var(--serif);
 }
 
-.text-center {
+.textCenter {
   text-align: center;
 }
 
@@ -259,7 +259,7 @@
   margin: auto;
 }
 
-.split-container {
+.splitContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   // gap: 4rem;
@@ -274,7 +274,7 @@
   }
 }
 
-.fw-img {
+.fwImg {
   width: 65%;
   @include b.mq(md) {
     width: 88%;
@@ -284,7 +284,7 @@
   }
 }
 
-.arrow-right {
+.arrowRight {
   &::after {
     display: inline-block;
     content: "→";
@@ -296,7 +296,7 @@
   }
 }
 
-.arrow-left {
+.arrowLeft {
   &::before {
     display: inline-block;
     content: "←";
@@ -306,4 +306,41 @@
     transform: translateX(-0.75rem);
     transition: transform 0.25s ease-in-out;
   }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.screenReaderText {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screenReaderText:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
 }

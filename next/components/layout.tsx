@@ -13,7 +13,7 @@ const Layout: FC<LayoutProps> = ({
   const router = useRouter()
   const { locale } = router
   return (
-    <div className={s.container}>
+    <div className={s.siteMain}>
       <Head>
         <title>{locale === "cy" ? site.siteName.cy : site.siteName.en}</title>
       </Head>

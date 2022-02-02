@@ -1,6 +1,6 @@
 @use 'styles/foundation/breakpoints' as b;
 
-.header--container {
+.headerContainer {
   max-width: 110rem;
   margin: auto;
 }
@@ -24,7 +24,7 @@
 
 .name {
   align-self: center;
-  &--en {
+  &En {
     padding-bottom: 0.72rem;
     @include b.mq(lg) {
       padding-bottom: 0.56rem;
@@ -33,8 +33,8 @@
       padding-bottom: 0.42rem;
     }
   }
-  &--en,
-  &--cy {
+  &En,
+  &Cy {
     @include b.mq(sm) {
       display: none;
     }
@@ -42,13 +42,13 @@
 }
 
 .acron {
-  &--en,
-  &--cy {
+  &En,
+  &Cy {
     @include b.mq(sm) {
       display: block;
     }
   }
-  &--en {
+  &En {
     padding-bottom: 0.56rem;
   }
 }
