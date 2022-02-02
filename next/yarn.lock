@@ -1069,6 +1069,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bem-react/classname@^1.5.12":
+  version "1.5.12"
+  resolved "https://registry.yarnpkg.com/@bem-react/classname/-/classname-1.5.12.tgz#cd7e8fe68abd5d0ab79d8dc27fb40b12c8fb7715"
+  integrity sha512-7wc2zfHwGplXh1izmVfM8cHWOHx9eQEl4b2KiVp4Wa6Va/MEhnz+eFwEK+5A8o1tVKvHX0wiXkwDQLfFDl2wYw==
+
 "@eslint/eslintrc@^1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.0.5.tgz#33f1b838dbf1f923bfa517e008362b78ddbbf318"
