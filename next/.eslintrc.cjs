@@ -7,7 +7,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "prettier"
+    "prettier",
+    "react-app"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -22,7 +23,16 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "never"],
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { extensions: [".tsx"] }]
+    "react/jsx-filename-extension": [1, { extensions: [".tsx"] }],
+    "react/prop-types": 0,
+    "no-unused-vars": [
+      "warn",
+      { "varsIgnorePattern": "[iI]gnored", "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "varsIgnorePattern": "[iI]gnored", "argsIgnorePattern": "^_" }
+    ]
   },
   settings: {
     react: {
