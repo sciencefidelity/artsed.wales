@@ -2,6 +2,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import Header from "components/header"
 import styles from "@/components/layout.module.scss"
 import utilStyles from "@/styles/utils.module.scss"
 
@@ -35,51 +36,7 @@ const Layout = ({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        <p>
-          {locale === "en" ?
-            <span className="link" onClick={() => {
-              router.push({ pathname, query }, asPath, { locale: "cy" })
-            }}>Cymreag</span> :
-            <span className="link" onClick={() => {
-              router.push({ pathname, query }, asPath, { locale: "en" })
-            }}>English</span>
-          }
-        </p>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
+      <Header />
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>

@@ -1,0 +1,54 @@
+@use 'styles/foundation/breakpoints' as b;
+
+.header--container {
+  max-width: 110rem;
+  margin: auto;
+}
+
+.brand {
+  padding: 1.2rem;
+  margin: 0 1rem 0.1rem;
+  @include b.mq(lg) {
+    padding: 0.93rem;
+    margin: 0 0.77rem 0.077rem;
+  }
+  @include b.mq(md) {
+    padding: 0.7rem;
+    margin: 0 0.58rem 0.058rem;
+  }
+  @include b.mq(sm) {
+    padding: 0.93rem;
+    margin: 0 0.77rem 0.077rem;
+  }
+}
+
+.name {
+  align-self: center;
+  &--en {
+    padding-bottom: 0.72rem;
+    @include b.mq(lg) {
+      padding-bottom: 0.56rem;
+    }
+    @include b.mq(md) {
+      padding-bottom: 0.42rem;
+    }
+  }
+  &--en,
+  &--cy {
+    @include b.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+.acron {
+  &--en,
+  &--cy {
+    @include b.mq(sm) {
+      display: block;
+    }
+  }
+  &--en {
+    padding-bottom: 0.56rem;
+  }
+}
