@@ -1472,10 +1472,10 @@
     react-rx "^1.0.0-beta.6"
     rxjs "^6.5.3"
 
-"@sanity/default-login@^2.24.1":
-  version "2.24.1"
-  resolved "https://registry.npmjs.org/@sanity/default-login/-/default-login-2.24.1.tgz#9094839f367c95ee69278bf29e3c2048757b8fb1"
-  integrity sha512-53lMcDtjk3YwgBhHXCux7ek7t37o1hq74+w8TGi2pzIL5NBHot3Lp7YvKUJiBKNb4zBtOlc5t0sSvU/ISbezJQ==
+"@sanity/default-login@^2.26.0":
+  version "2.26.0"
+  resolved "https://registry.npmjs.org/@sanity/default-login/-/default-login-2.26.0.tgz#a0e794ce0142e08c7b1e49ef341797641483efbc"
+  integrity sha512-VGkB8E7PwPDWQihtFgZElbBCd6O0uOMQ3pphzRZlDTBLwvXKzIer9SXYAguoeQCbnWcNXwjbo1Mp8C0nhNCgDQ==
   dependencies:
     "@sanity/generate-help-url" "2.18.0"
     "@sanity/logos" "^1.1.6"
@@ -1884,10 +1884,10 @@
     date-fns "^2.16.1"
     lodash "^4.17.15"
 
-"@sanity/vision@^2.25.4":
-  version "2.25.4"
-  resolved "https://registry.npmjs.org/@sanity/vision/-/vision-2.25.4.tgz#837ac1d46a8cf0a279f7bc4f970fbd43e89fbed5"
-  integrity sha512-+5/UVeh2SBAT2LfVCfGHb6VKFo/49tUK+vytC9yXvf7K75h/hktKiXfFKcE6J5ImysPUBuEvrKqKtBy+lrnlWA==
+"@sanity/vision@^2.26.0":
+  version "2.26.0"
+  resolved "https://registry.npmjs.org/@sanity/vision/-/vision-2.26.0.tgz#8fb59ee523ce55bfee5e8c9cdee00c863d6200b7"
+  integrity sha512-I4+FwoTVLJFbyPwL/dWBBnKVUs0ro7abRGdFqGEOYRb7CQwq8IN212EJTX/yausAvonkQi1JC2KNtoK9N7qAgQ==
   dependencies:
     "@juggle/resize-observer" "^3.3.1"
     "@sanity/icons" "^1.2.1"
