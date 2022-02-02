@@ -2,7 +2,6 @@ import { FC } from "react"
 import { acronym } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
-// import Localize from "components/localize"
 import { HeaderProps } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "components/header.module.scss"
@@ -13,7 +12,7 @@ const Header: FC<HeaderProps> = ({ site }) => {
       <div className={`${s.headerContainer} ${u.flex}`}>
         <div className={s.brand}>
           <Link href="/">
-
+{/*             <Logo /> */}
           </Link>
         </div>
         <div className={s.name}>

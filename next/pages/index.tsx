@@ -6,9 +6,10 @@ import { AllPagesData } from "lib/interfaces"
 // import u from "styles/utils.module.scss"
 
 const Home = ({ data }: { data: AllPagesData }) => {
+  const { site } = data
   return (
     <Layout
-      site={data.site}
+      site={site}
     >
       <section>
 
