@@ -201,11 +201,11 @@ export interface Photography extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Main image — `image`
+   * Image — `image`
    *
    *
    */
-  mainImage?: {
+  image?: {
     _type: "image";
     asset: SanityReference<SanityImageAsset>;
     crop?: SanityImageCrop;
@@ -264,11 +264,11 @@ export interface Post extends SanityDocument {
   publishedAt?: string;
 
   /**
-   * Body — `localeRichText`
+   * Body — `localeMarkdown`
    *
    *
    */
-  body?: LocaleRichText;
+  body?: LocaleMarkdown;
 
   /**
    * Social title — `string`
@@ -316,6 +316,155 @@ export interface Quote extends SanityDocument {
 }
 
 /**
+ * Site
+ *
+ *
+ */
+export interface Site extends SanityDocument {
+  _type: "site";
+
+  /**
+   * Site Name — `localeString`
+   *
+   *
+   */
+  siteName?: LocaleString;
+
+  /**
+   * Site Description — `localeString`
+   *
+   *
+   */
+  siteDescription?: LocaleString;
+
+  /**
+   * Keywords — `localeString`
+   *
+   * A list of keywords seperated by commas.
+   */
+  keywords?: LocaleString;
+
+  /**
+   * SEO title — `localeString`
+   *
+   * Displayed on Facebook and Twitter shares (max 60 characters).
+   */
+  seoTitle?: LocaleString;
+
+  /**
+   * SEO description — `localeString`
+   *
+   * Displayed on Facebook and Twitter shares (max 65 characters).
+   */
+  seoDescription?: LocaleString;
+
+  /**
+   * Twitter Handle — `string`
+   *
+   *
+   */
+  twitterHandle?: string;
+
+  /**
+   * SEO Image — `image`
+   *
+   * Ideal size 1200 x 630px.
+   */
+  seoImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * Address Line 1 — `localeString`
+   *
+   *
+   */
+  addressLine1?: LocaleString;
+
+  /**
+   * Address Line 2 — `localeString`
+   *
+   *
+   */
+  addressLine2?: LocaleString;
+
+  /**
+   * Telephone — `string`
+   *
+   *
+   */
+  telephone?: string;
+
+  /**
+   * Email — `localeString`
+   *
+   *
+   */
+  email?: LocaleString;
+
+  /**
+   * Sign Up Heading — `localeString`
+   *
+   *
+   */
+  signUp?: LocaleString;
+
+  /**
+   * Sign Up Text — `localeString`
+   *
+   *
+   */
+  signUpText?: LocaleString;
+
+  /**
+   * Sign Up Placeholder — `localeString`
+   *
+   * One line only (ie Email address...)
+   */
+  signUpPlaceholder?: LocaleString;
+
+  /**
+   * Social Links — `array`
+   *
+   *
+   */
+  socialLinks?: Array<SanityKeyedReference<Social>>;
+}
+
+/**
+ * Social Links
+ *
+ *
+ */
+export interface Social extends SanityDocument {
+  _type: "social";
+
+  /**
+   * site — `string`
+   *
+   *
+   */
+  site?: string;
+
+  /**
+   * Username — `string`
+   *
+   *
+   */
+  username?: string;
+
+  /**
+   * Link — `url`
+   *
+   *
+   */
+  link?: string;
+}
+
+/**
  * Statement
  *
  *
@@ -339,6 +488,62 @@ export interface Statement extends SanityDocument {
 }
 
 /**
+ * Video
+ *
+ *
+ */
+export interface Video extends SanityDocument {
+  _type: "video";
+
+  /**
+   * Title — `localeString`
+   *
+   *
+   */
+  title?: LocaleString;
+
+  /**
+   * Body — `localeMarkdown`
+   *
+   *
+   */
+  body?: LocaleMarkdown;
+
+  /**
+   * Video Link — `url`
+   *
+   *
+   */
+  videoLink?: string;
+
+  /**
+   * Publish date — `date`
+   *
+   *
+   */
+  publishDate?: string;
+
+  /**
+   * Slug — `localeSlug`
+   *
+   *
+   */
+  slug?: LocaleSlug;
+
+  /**
+   * Main image — `image`
+   *
+   *
+   */
+  mainImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
  * Artform
  *
  *
@@ -354,11 +559,11 @@ export interface Artform extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `localeText`
+   * Description — `localeMarkdown`
    *
    *
    */
-  description?: LocaleText;
+  description?: LocaleMarkdown;
 }
 
 /**
@@ -396,11 +601,11 @@ export interface Author extends SanityDocument {
   };
 
   /**
-   * Bio — `array`
+   * Bio — `localeMarkdown`
    *
    *
    */
-  bio?: Array<SanityKeyed<SanityBlock>>;
+  bio?: LocaleMarkdown;
 }
 
 /**
@@ -419,11 +624,11 @@ export interface Category extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `text`
+   * Description — `localeMarkdown`
    *
    *
    */
-  description?: string;
+  description?: LocaleMarkdown;
 }
 
 /**
@@ -442,11 +647,11 @@ export interface Keystage extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `localeText`
+   * Description — `localeMarkdown`
    *
    *
    */
-  description?: LocaleText;
+  description?: LocaleMarkdown;
 }
 
 export type BlockContent = Array<
@@ -571,7 +776,10 @@ export type Documents =
   | Photography
   | Post
   | Quote
+  | Site
+  | Social
   | Statement
+  | Video
   | Artform
   | Author
   | Category
