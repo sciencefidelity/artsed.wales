@@ -2,6 +2,10 @@ import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "@/lib/sanityClient"
 import { Image } from "@/lib/interfaces"
 
+export const acronym = (title: string): string => {
+  return title.match(/[A-Z]/g).join("")
+}
+
 export const capitalize = (word: string): string =>
   word[0].toUpperCase() + word.slice(1, word.length)
 

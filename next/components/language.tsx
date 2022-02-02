@@ -1,8 +1,10 @@
+import { useRouter } from "next/router"
 import Link from "components/link"
 import u from "styles/utils.module.scss"
 import s from "components/language.module.scss"
 
 const Language = () => {
+  const { pathname, asPath, query, locale } = useRouter()
   return (
     <nav className={`${u.nav} ${u.flex} ${u.column} ${u.mlAuto}`}>
       <div className={`${u.navItem} ${u.h1} ${u.sans}`}>
