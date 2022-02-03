@@ -1,0 +1,16 @@
+@use '../styles/foundation/breakpoints' as b;
+
+.nav {
+  align-items: right;
+  justify-content: center;
+}
+
+.navItem {
+  margin-right: 4.5rem;
+  line-height: 1.3;
+  text-align: right;
+}
+
+.navLink {
+  text-decoration: none;
+}

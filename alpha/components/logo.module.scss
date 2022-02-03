@@ -1,0 +1,19 @@
+@use '../styles/foundation/breakpoints' as b;
+
+.logo {
+  fill: var(--beige-150);
+  width: 94px;
+  height: 94px;
+  @include b.mq(lg) {
+    width: 73px;
+    height: 73px;
+  }
+  @include b.mq(md) {
+    width: 60px;
+    height: 60px;
+  }
+  @include b.mq(sm) {
+    width: 73px;
+    height: 73px;
+  }
+}
