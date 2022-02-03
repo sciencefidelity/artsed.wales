@@ -1,3 +1,7 @@
+interface Selection {
+  author: string
+}
+
 export default {
   name: 'post',
   title: 'Post',
@@ -51,14 +55,14 @@ export default {
       name: 'ogTitle',
       title: 'Social title',
       description: 'Displayed on Facebook and Twitter shares (max 60 characters)',
-      type: 'string',
+      type: 'localeString',
       validation: Rule => Rule.max(60).warning(`Only 60 characters will be visible.`),
     },
     {
       name: 'ogDescription',
       title: 'Social description',
       description: 'Displayed on Facebook and Twitter shares (max 65 characters)',
-      type: 'string',
+      type: 'localeString',
       validation: Rule => Rule.max(65).warning(`Only 65 characters will be visible.`),
     },
   ],
@@ -69,7 +73,7 @@ export default {
       author: 'author.name',
       media: 'mainImage',
     },
-    prepare(selection) {
+    prepare(selection: Selection) {
       const {author} = selection
       return Object.assign({}, selection, {
         subtitle: author && `by ${author}`,
