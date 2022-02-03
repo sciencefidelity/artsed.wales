@@ -4,8 +4,6 @@ const SvgNaenLogo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2134 2134"
-    width="9.4rem"
-    height="9.4rem"
     className={s.logo}
   >
     <path

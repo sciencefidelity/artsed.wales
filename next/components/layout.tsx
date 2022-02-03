@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import Header from "components/header"
 import { LayoutProps } from "lib/interfaces"
 import s from "@/components/layout.module.scss"
-// import u from "@/styles/utils.module.scss"
+import u from "@/styles/utils.module.scss"
 
 const Layout: FC<LayoutProps> = ({
   children,
@@ -20,7 +20,9 @@ const Layout: FC<LayoutProps> = ({
       <Header
         site={site}
       />
-      <main>{children}</main>
+      <main>
+        <div className={u.container}>{children}</div>
+      </main>
     </div>
   )
 }

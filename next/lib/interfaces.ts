@@ -4,6 +4,7 @@ import type {
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
+  Statement,
   Site
 } from "@/generated/schema"
 
@@ -16,6 +17,10 @@ export interface Image {
 
 export interface AllPagesData {
   site: Site
+}
+
+export interface IndexData extends AllPagesData {
+  statements: Statement[]
 }
 
 export interface LayoutProps {

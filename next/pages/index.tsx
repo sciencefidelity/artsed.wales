@@ -2,17 +2,21 @@ import { GetStaticProps } from "next"
 import sanityClient from "lib/sanityClient"
 import { indexQuery } from "lib/queries"
 import Layout from "components/layout"
-import { AllPagesData } from "lib/interfaces"
-// import u from "styles/utils.module.scss"
+import Localize from "components/localize"
+import { IndexData } from "lib/interfaces"
+// import s from "pages/index.module.scss"
+import u from "styles/utils.module.scss"
 
-const Home = ({ data }: { data: AllPagesData }) => {
+const Home = ({ data }: { data: IndexData }) => {
   const { site } = data
   return (
     <Layout
       site={site}
     >
       <section>
-
+        <h2 className={`${u.responsiveContainer} ${u.mtLarge} ${u.mbLarge}`}>
+          <Localize data={data.statements[0].statement} />
+        </h2>
       </section>
     </Layout>
   )
