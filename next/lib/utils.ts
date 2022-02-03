@@ -16,7 +16,7 @@ export const kebabCase = (word: string) => {
 }
 
 export const urlFor = (source: Image) => {
-  imageUrlBuilder(sanityClient).image(source)
+  return imageUrlBuilder(sanityClient).image(source)
 }
 
 // https://stackoverflow.com/questions/5845238/javascript-generate-transparent-1x1-pixel-in-dataurl-format/33919020#33919020

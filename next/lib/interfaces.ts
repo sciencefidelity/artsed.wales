@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import type {
+  Event,
   SanityReference,
   SanityImageAsset,
   SanityImageCrop,
@@ -23,6 +24,10 @@ export interface IndexData extends AllPagesData {
   statements: Statement[]
 }
 
+export interface EventsData extends AllPagesData {
+  events: Event[]
+}
+
 export interface LayoutProps {
   children: ReactNode
   site: Site
@@ -30,4 +35,8 @@ export interface LayoutProps {
 
 export interface HeaderProps {
   site: Site
+}
+
+export interface EventProps {
+  event: Event
 }
