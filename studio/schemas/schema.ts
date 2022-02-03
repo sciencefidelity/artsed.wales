@@ -28,6 +28,7 @@ import video from './documents/video'
 import artform from './taxonomy/artform'
 import author from './taxonomy/author'
 import category from './taxonomy/category'
+import facilitator from './taxonomy/facilitator'
 import keystage from './taxonomy/keystage'
 
 export default createSchema({
@@ -58,6 +59,7 @@ export default createSchema({
     artform,
     author,
     category,
+    facilitator,
     keystage
   ])
 })

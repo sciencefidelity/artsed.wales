@@ -13,7 +13,7 @@ export default {
     },
     {
       name: 'Caption',
-      type: 'string',
+      type: 'localeString',
       title: 'Attribution',
     }
   ],
