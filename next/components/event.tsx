@@ -7,7 +7,6 @@ import s from "components/event.module.scss"
 // import u from "styles/utils.module.scss"
 
 const Event: FC<EventProps> = ({ event }) => {
-  console.log(event.britelink)
   return (
     <>
 {/*       <div className={s.cardImageContainer}>
