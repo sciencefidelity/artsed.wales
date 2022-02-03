@@ -9,7 +9,7 @@ import s from "components/event.module.scss"
 const Event: FC<EventProps> = ({ event }) => {
   return (
     <>
-{/*       <div className={s.cardImageContainer}>
+      <div className={s.cardImageContainer}>
         <img
           src={urlFor(event.mainImage)
             .auto("format")
@@ -22,7 +22,7 @@ const Event: FC<EventProps> = ({ event }) => {
           alt={event.title.en}
           className={s.cardImage}
         />
-      </div> */}
+      </div>
       <div className={s.cardText}>
         <h2>{event.title.en}</h2>
         <h3 className={s.courseDate}><PostDate date={event.date} /></h3>

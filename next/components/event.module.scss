@@ -1,23 +1,17 @@
 @use "../styles/foundation/breakpoints" as b;
 
-.cardImageContainer {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  // overflow: hidden;
-  // object-position: 0% 0%;
-  // aspect-ratio: 1 / 1;
-  // object-fit: cover;
-}
+// .cardImageContainer {
+//   position: relative;
+//   width: 100%;
+//   height: 300px;
+// }
 
-.cardImage {
-  width: 100%;
-}
+// .cardImage {
+//   width: 100%;
+// }
 
 .cardText {
   padding: 1.8rem 2.1rem 1.8rem 2.1rem;
-  // position: relative;
-  margin-top: -25%;
   h2 {
     font-size: 3.4rem;
   }
@@ -73,62 +67,3 @@
 .britelink:focus {
   outline: grey dashed 0.44rem;
 }
-
-// @media (max-width: 1114px) {
-//   .courseDate {
-//     font-size: 1.4rem;
-//   }
-//   .britelink {
-//     font-size: 1.6rem;
-//     height: 3.2rem;
-//   }
-// }
-// @media only screen and (max-width: 978px) {
-//   .coursesContainer {
-//     grid-template-columns: 1fr;
-//     gap: 4rem;
-//   }
-//   .cardContainer {
-//     grid-template-columns: 1fr 1fr;
-//     margin-bottom: 0rem;
-//     margin-right: 0 !important;
-//     margin-left: 0 !important;
-//   }
-//   .cardText {
-//     padding: 1rem 1.3rem 1rem 2rem;
-//     margin-top: 0;
-//   }
-//   .cardImage {
-//     height: 100%;
-//   }
-// }
-// @media only screen and (max-width: 848px) {
-//   .cardContainer {
-//     grid-template-columns: 1fr 1.5fr;
-//   }
-// }
-// @media only screen and (max-width: 740px) {
-//   .cardContainer {
-//     grid-template-columns: 1fr;
-//     max-width: 25rem;
-//     margin-right: auto !important;
-//     margin-left: auto !important;
-//   }
-//   .cardText {
-//     width: 100%;
-//     padding: 1rem 1.3rem 1rem 1.3rem;
-//     margin-top: -25%;
-//   }
-//   .cardImage {
-//     height: 80%;
-//   }
-// }
-// @media only screen and (max-width: 480px) {
-//   .cardContainer {
-//     width: 100%;
-//   }
-//   .cardText {
-//     width: 100%;
-//     padding: 1rem 1.3rem 1rem 1.3rem;
-//   }
-// }

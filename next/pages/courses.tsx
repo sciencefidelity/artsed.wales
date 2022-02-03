@@ -14,14 +14,14 @@ const Courses = ({ data }: { data: EventsData }) => {
     <Layout
       site={site}
     >
-{/*         <h2>Courses</h2> */}
-        <section className={`${s.coursesContainer} ${u.mtLarge}`}>
+        <h2>Professional Development Events</h2>
+        <article className={`${s.coursesContainer} ${u.mtLarge}`}>
           {events.map(event =>
             <div className={s.cardContainer} key={event._id}>
               <Event event={event} />
             </div>
           )}
-        </section>
+        </article>
     </Layout>
   )
 }
