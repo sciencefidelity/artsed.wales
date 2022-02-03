@@ -1,1 +1,11 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# NAEN • RCCA
+
+Landing page for the National Arts and Education Network
+
+### Notes
+
+Turn SVGs into React components:
+
+```shell
+npx @svgr/cli --icon -- icon.svg
+```
