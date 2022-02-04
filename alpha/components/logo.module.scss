@@ -1,9 +1,13 @@
 @use '../styles/foundation/breakpoints' as b;
 
 .logo {
-  fill: var(--beige-150);
-  width: 94px;
-  height: 94px;
+  fill: white;
+  width: 47rem;
+  height: 47rem;
+  position: absolute;
+  // transform: rotate(-10deg);
+  // left: -4rem;
+  // top: -4rem;
   @include b.mq(lg) {
     width: 73px;
     height: 73px;

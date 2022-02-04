@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
-import Localize from "components/localize"
+import Ampersand from "components/ampersand"
+// import Localize from "components/localize"
 import u from "styles/utils.module.scss"
 import s from "components/model.module.scss"
 
@@ -38,8 +39,7 @@ const Model = ({ statement }) => {
             {locale === "cy" ? "Rhwydwaith" : "Network"}
           </div>
           <div>
-{/*             <Ampersand name="ampersand" width="89"
-            height="100" className="ampersand absolute fg-white" /> */}
+            <Ampersand />
           </div>
         </div>
       </div>

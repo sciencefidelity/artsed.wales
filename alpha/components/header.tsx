@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = ({ site }) => {
   const router = useRouter()
   const { pathname, asPath, query, locale, locales } = router
   return (
-    <header className={`${s.header} ${u.bgLight}`}>
+    <header className={`${s.header} `}>
       <div className={`${s.container} ${u.flex} ${u.sans} ${u.uppercase} ${u.w100} ${u.gapSmall}`}>
 {/*         <div>{acronym(site.siteName.en)}</div> */}
         <div className={s.siteName}>
