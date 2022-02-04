@@ -1,6 +1,7 @@
 import imageUrlBuilder from "@sanity/image-url"
-import sanityClient from "@/lib/sanityClient"
-import { Image } from "@/lib/interfaces"
+import sanityClient from "lib/sanityClient"
+import { Image } from "lib/interfaces"
+import { Markdown } from "generated/schema"
 
 export const acronym = (title: string) => {
   return title.match(/[A-Z]/g).join("")

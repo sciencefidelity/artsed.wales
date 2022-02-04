@@ -1,6 +1,8 @@
 import { FC } from "react"
 // import Image from "next/image"
 import { urlFor } from "lib/utils"
+import Localize from "components/localize"
+import Markdown from "components/markdown"
 import PostDate from "components/postDate"
 import { EventProps } from "lib/interfaces"
 import s from "components/event.module.scss"
@@ -24,11 +26,11 @@ const Event: FC<EventProps> = ({ event }) => {
         />
       </div>
       <div className={s.cardText}>
-        <h2>{event.title.en}</h2>
+        <h2><Localize data={event.title} /></h2>
         <h3 className={s.courseDate}><PostDate date={event.date} /></h3>
         <h4 className={s.courseLocation}>{event.location}</h4>
         <h4 className={s.coursePrice}>£{event.price}</h4>
-        <p>{event.body.en}</p>
+        <Markdown content={event.body} />
         <a href={event.britelink} target="_blank" rel="noreferrer">
           <button className={s.britelink}>Book now!</button>
         </a>

@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import type {
   Event,
+  LocaleMarkdown,
   SanityReference,
   SanityImageAsset,
   SanityImageCrop,
@@ -39,4 +40,8 @@ export interface HeaderProps {
 
 export interface EventProps {
   event: Event
+}
+
+export interface MarkdownProps {
+  content: LocaleMarkdown
 }

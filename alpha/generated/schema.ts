@@ -864,4 +864,4 @@ export type Documents =
  * the definition was not actually found. Future versions of
  * sanity-codegen will let you type this explicity.
  */
-type Markdown = any;
+export type Markdown = any;
