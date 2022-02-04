@@ -41,6 +41,10 @@ section {
 a {
   color: var(--grey-950);
   text-decoration: none;
+  padding: 0 0.5rem;
+  // &:hover {
+  //   background: white;
+  // }
 }
 
 h1,

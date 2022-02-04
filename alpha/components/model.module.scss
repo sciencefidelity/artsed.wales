@@ -1,0 +1,179 @@
+@use "../styles/foundation/breakpoints" as b;
+
+// :root {
+//   --vennOpacity: 0.65;
+//   --vennBlend: difference;
+// }
+
+.venn {
+  @include b.mq(md) {
+    flex-direction: column;
+  }
+}
+
+.vennText {
+  width: 33.33%;
+  margin-right: -4%;
+  @include b.mq(md) {
+    margin: auto;
+    width: 88%;
+    margin-bottom: 3rem;
+  }
+  @include b.mq(sm) {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
+
+.vennP1 {
+  margin-right: -15%;
+  @include b.mq(md) {
+    margin-right: 0;
+  }
+}
+
+.vennP2 {
+  margin-right: 6%;
+  @include b.mq(md) {
+    margin-right: 0;
+  }
+}
+
+.vennP3 {
+  margin-right: 14%;
+  @include b.mq(md) {
+    margin-right: 0;
+  }
+}
+
+.vennHeading {
+  line-height: 0.6;
+}
+
+.vennDiagram {
+  position: relative;
+  width: 56vw;
+  margin-left: auto;
+  // margin-bottom: -7rem;
+  margin-top: 6rem;
+  @include b.mq(md) {
+    width: 94%;
+    margin-bottom: -2.5rem;
+    right: 3%;
+  }
+  @include b.mq(sm) {
+    width: 106%;
+    margin-bottom: -1.5rem;
+  }
+}
+
+%all-content {
+  position: absolute;
+  color: var(--grey-000);
+  font-family: var(--sans);
+  font-size: 3.2rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  @include b.mq(lg) {
+    font-size: 3vw;
+  }
+  @include b.mq(md) {
+    font-size: 4vw;
+  }
+  @include b.mq(sm) {
+    font-size: 4.5vw;
+  }
+}
+
+.content1 {
+  @extend %all-content;
+  top: 18%;
+  left: 50%;
+}
+
+.content2 {
+  @extend %all-content;
+  top: 67%;
+  left: 21%;
+}
+
+.content3 {
+  @extend %all-content;
+  line-height: 1.2;
+  top: 67%;
+  left: 78%;
+}
+
+.content4 {
+  @extend %all-content;
+  top: 55%;
+  left: 50%;
+}
+
+%white-circles {
+  background-color: white;
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+
+.circle1 {
+  @extend %white-circles;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.circle2 {
+  @extend %white-circles;
+  bottom: 10.02%;
+  left: 2.41%;
+}
+
+.circle3 {
+  @extend %white-circles;
+  bottom: 10.02%;
+  right: 2.41%;
+}
+
+%top-circles {
+  mix-blend-mode: difference;
+  opacity: 0.65;
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+}
+
+.circle4 {
+  @extend %top-circles;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #33CC66;
+}
+
+.circle5 {
+  @extend %top-circles;
+  bottom: 10.02%;
+  right: 2.41%;
+  background-color: #FF3333;
+}
+
+.circle6 {
+  @extend %top-circles;
+  bottom: 10.02%;
+  left: 2.41%;
+  background-color: #0099FF;
+}
+
+.vennDiagram::after,
+.circle1::after,
+.circle2::after,
+.circle3::after,
+.circle4::after,
+.circle5::after,
+.circle6::after {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}

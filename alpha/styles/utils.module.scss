@@ -12,8 +12,12 @@
   flex: auto;
 }
 
-// .f33 {
-//   flex: 10px;
+.w33 {
+  width: 33.33%;
+}
+
+// .f66 {
+//   flex: 66.66%;
 // }
 
 .fNone {
@@ -130,13 +134,13 @@
 }
 
 .fgDark {
-  color: var(--grey-950);
-  fill: var(--grey-950);
+  color: var(--foreground);
+  // fill: var(--foreground);
 }
 
 .fgLight {
-  color: var(--beige-150);
-  fill: var(--beige-150);
+  color: var(--background);
+  // fill: var(--background);
 }
 
 .fgWhite {
@@ -269,9 +273,7 @@
 }
 
 .container {
-  width: 88%;
-  max-width: 1000px;
-  margin: auto;
+  padding: 1rem 2rem;
 }
 
 .splitContainer {

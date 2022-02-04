@@ -3,6 +3,7 @@ import sanityClient from "lib/sanityClient"
 import { indexQuery } from "lib/queries"
 import Layout from "components/layout"
 import Localize from "components/localize"
+import Model from "components/model"
 import { IndexData } from "lib/interfaces"
 // import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
@@ -14,9 +15,7 @@ const Home = ({ data }: { data: IndexData }) => {
       site={site}
     >
       <section>
-        <h2 className={`${u.responsiveContainer} ${u.mtLarge} ${u.mbLarge}`}>
-{/*           <Localize data={data.statements[0].statement} /> */}
-        </h2>
+        <Model statement={data.statements[6]}/>
       </section>
     </Layout>
   )
