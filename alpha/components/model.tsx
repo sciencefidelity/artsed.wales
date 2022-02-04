@@ -1,13 +1,15 @@
+import { useRouter } from "next/router"
 import Localize from "components/localize"
 import u from "styles/utils.module.scss"
 import s from "components/model.module.scss"
 
 const Model = ({ statement }) => {
+  const { locale } = useRouter()
   return (
     <section className={u.mbLarge}>
       <div className={`${s.venn} ${u.flex} ${u.uppercase}`}>
         <p className={`${u.container} ${u.mtLarge} ${u.mbLarge} ${u.serif}`}>
-          <Localize data={statement.statement} />
+{/*           <Localize data={statement.statement} /> */}
         </p>
         <div className={s.vennDiagram}>
           <div className={s.circle1}></div>
@@ -19,21 +21,22 @@ const Model = ({ statement }) => {
           <div
             className={`${s.content1} ${u.fgDark}`}
             style={{ fontSize: "2.5rem" }}
-          >Schools</div>
+          >{locale === "cy" ? "Artistiaid" : "Artists"}</div>
           <div
             className={`${s.content2} ${u.fgDark}`}
             style={{ fontSize: "2.5rem" }}
-          >Artists</div>
+          >{locale === "cy" ? "Ysgolion" : "Schools"}</div>
           <div
             className={`${s.content3} ${u.fgDark}`}
             style={{ fontSize: "2.5rem" }}
           >
-            Cultural
+            {locale === "cy" ? "Celfyddydol" : "Cultural"}
             <br />
-            Organisations
+            {locale === "cy" ? "Sefydliadau" : "Organisations"}
           </div>
-          <div className={s.content4} style={{ fontSize: "2.5rem" }}>Network</div>
-
+          <div className={s.content4} style={{ fontSize: "2.5rem" }}>
+            {locale === "cy" ? "Rhwydwaith" : "Network"}
+          </div>
           <div>
 {/*             <Ampersand name="ampersand" width="89"
             height="100" className="ampersand absolute fg-white" /> */}

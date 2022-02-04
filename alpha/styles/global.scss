@@ -40,11 +40,13 @@ section {
 
 a {
   color: var(--grey-950);
-  text-decoration: none;
   padding: 0 0.5rem;
-  // &:hover {
-  //   background: white;
-  // }
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
 }
 
 h1,

@@ -12,14 +12,6 @@
   flex: auto;
 }
 
-.w33 {
-  width: 33.33%;
-}
-
-// .f66 {
-//   flex: 66.66%;
-// }
-
 .fNone {
   flex: none;
 }
@@ -65,7 +57,7 @@
 }
 
 .gapSmall {
-  gap: 4rem;
+  gap: 3rem;
   @include b.mq(sm) {
     gap: 0.5rem;
   }

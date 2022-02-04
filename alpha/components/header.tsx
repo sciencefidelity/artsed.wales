@@ -1,9 +1,9 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
-import { acronym } from "lib/utils"
+// import { acronym } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
-import Logo from "components/logo"
+// import Logo from "components/logo"
 import { HeaderProps } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "components/header.module.scss"
@@ -15,11 +15,11 @@ const Header: FC<HeaderProps> = ({ site }) => {
     <header className={`${s.header} ${u.bgLight}`}>
       <div className={`${s.container} ${u.flex} ${u.sans} ${u.uppercase} ${u.w100} ${u.gapSmall}`}>
 {/*         <div>{acronym(site.siteName.en)}</div> */}
-        <div className={u.w33}>
+        <div className={s.siteName}>
           <Link href="/">
-          {locale === "cy"
-            ? site.siteName.cy
-            : site.siteName.en.replace("and", "&")}
+            {locale === "cy"
+              ? site.siteName.cy
+              : site.siteName.en.replace("and", "&")}
           </Link>
         </div>
         <div className={`${u.fAuto}`}>
