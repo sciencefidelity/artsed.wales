@@ -31,31 +31,40 @@ body {
   line-height: 1.5;
   color: var(--foreground);
   background-color: var(--background);
-  height: 500vh;
+  // height: 500vh;
 }
 
 section {
   position: relative;
 }
 
-a {
+p a {
   color: var(--grey-950);
-  padding: 0 0.5rem;
+  // background: #f5f1f2;
   text-decoration: none;
+  border-bottom: 1px solid rgba(89, 222, 223, 0.5);
+  box-shadow: inset 0 -3px 0 rgba(89, 222, 223, 0.5);
+  transition: background 0.4s ease-out;
+  // text-decoration: underline;
+  // text-decoration-thickness: 1px;
+  // text-underline-offset: 2px;
   &:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
+    background: rgba(89, 222, 223, 0.5);
   }
 }
 
-h1,
-.h1 {
-  font-family: var(--sans);
-  font-size: 2.8rem;
-  font-weight: 400;
+h1 {
+  font-family: var(--serif);
+  font-size: 15rem;
+  font-weight: 800;
   line-height: 1.1;
-  color: var(--beige-150);
+  // color: var(--background);
+  // color: rgb(222, 122, 189);
+  color: rgb(255, 155, 89);
+  // color: rgb(89, 222, 223);
+  // -webkit-text-stroke: 2px var(--foreground);
+  margin-top: 4rem;
+  margin-bottom: 3rem;
   @include b.mq(lg) {
     font-size: 2.2rem;
   }
@@ -68,10 +77,11 @@ h1,
 }
 
 h2 {
-  font-family: var(--sans);
-  font-size: 4.5rem;
+  font-family: var(--serif);
+  font-size: 4.4rem;
   line-height: 1.2;
-  color: var(--grey-950);
+  color: var(--foreground);
+  font-weight: 600;
   margin-bottom: 0.3em;
   @include b.mq(xl) {
     font-size: 3.6rem;

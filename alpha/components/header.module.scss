@@ -12,10 +12,20 @@
   padding: 1rem 2rem;
 }
 
-.siteName {
-  a {
-    text-decoration: none;
+.navLinks {
+  color: var(--grey-950);
+  padding: 0 0.5rem;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
   }
+}
+
+.siteName {
+  color: var(--grey-950);
+  text-decoration: none;
 }
 
 .brand {

@@ -21,7 +21,7 @@ const Language = () => {
             ${s.navLink} ${u.fgDark} ${u.pointer}`
           }
           onClick={() => {
-            router.push({ pathname, query }, asPath, { locale: locales[0] })
+            router.push({ pathname, query }, asPath, { locale: locales[0], scroll: false })
           }}
         >
           {capitalize(languages[1])}
@@ -32,7 +32,7 @@ const Language = () => {
             `${s.navLink} ${u.fgDark} ${u.pointer}`
           }
           onClick={() => {
-            router.push({ pathname, query }, asPath, { locale: locales[1] })
+            router.push({ pathname, query }, asPath, { locale: locales[1], scroll: false })
           }}
         >
           {" "}{capitalize(languages[0])}

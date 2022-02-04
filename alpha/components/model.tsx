@@ -1,16 +1,14 @@
 import { useRouter } from "next/router"
 import Ampersand from "components/ampersand"
-// import Localize from "components/localize"
 import u from "styles/utils.module.scss"
 import s from "components/model.module.scss"
 
-const Model = ({ statement }) => {
+const Model = () => {
   const { locale } = useRouter()
   return (
     <section className={u.mbLarge}>
       <div className={`${s.venn} ${u.flex} ${u.uppercase}`}>
         <p className={`${u.container} ${u.mtLarge} ${u.mbLarge} ${u.serif}`}>
-{/*           <Localize data={statement.statement} /> */}
         </p>
         <div className={s.vennDiagram}>
           <div className={s.circle1}></div>
@@ -35,7 +33,7 @@ const Model = ({ statement }) => {
             <br />
             {locale === "cy" ? "Sefydliadau" : "Organisations"}
           </div>
-          <div className={s.content4} style={{ fontSize: "2.5rem" }}>
+          <div className={`${s.content4} ${u.fgWhite}`} style={{ fontSize: "2.5rem" }}>
             {locale === "cy" ? "Rhwydwaith" : "Network"}
           </div>
           <div>

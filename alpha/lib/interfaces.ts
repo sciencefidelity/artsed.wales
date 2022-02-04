@@ -1,6 +1,9 @@
 import { ReactNode } from "react"
 import type {
+  Artform,
   Event,
+  Facilitator,
+  Keystage,
   LocaleMarkdown,
   SanityReference,
   SanityImageAsset,
@@ -39,7 +42,13 @@ export interface HeaderProps {
 }
 
 export interface EventProps {
-  event: Event
+  event: EventRefs
+}
+
+export interface EventRefs extends Event {
+  artforms: Artform[]
+  facilitators: Facilitator[]
+  keystages: Keystage[]
 }
 
 export interface MarkdownProps {

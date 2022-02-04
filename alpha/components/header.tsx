@@ -15,8 +15,8 @@ const Header: FC<HeaderProps> = ({ site }) => {
     <header className={`${s.header} ${u.bgLight}`}>
       <div className={`${s.container} ${u.flex} ${u.sans} ${u.uppercase} ${u.w100} ${u.gapSmall}`}>
 {/*         <div>{acronym(site.siteName.en)}</div> */}
-        <div className={s.siteName}>
-          <Link href="/">
+        <div>
+          <Link href="/" className={s.siteName}>
             {locale === "cy"
               ? site.siteName.cy
               : site.siteName.en.replace("and", "&")}
@@ -24,12 +24,12 @@ const Header: FC<HeaderProps> = ({ site }) => {
         </div>
         <div className={`${u.fAuto}`}>
           <span style={{ paddingRight: 20 }}>
-            <Link href="/about">
+            <Link href="/about" className={s.navLinks}>
               {locale === "cy" ? "Amdan" : "About"}
             </Link>
           </span>
           <span>
-            <Link href="/courses">
+            <Link href="/courses" className={s.navLinks}>
               {locale === "cy" ? "Cyrsiau" : "Courses"}
             </Link>
           </span>

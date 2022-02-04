@@ -1,39 +1,63 @@
 import { FC } from "react"
 // import Image from "next/image"
+import { useRouter } from "next/router"
 import { urlFor } from "lib/utils"
 import Localize from "components/localize"
 import Markdown from "components/markdown"
 import PostDate from "components/postDate"
 import { EventProps } from "lib/interfaces"
 import s from "components/event.module.scss"
-// import u from "styles/utils.module.scss"
+import u from "styles/utils.module.scss"
 
 const Event: FC<EventProps> = ({ event }) => {
+  const { locale } = useRouter()
   return (
     <>
       <div className={s.cardImageContainer}>
         <img
           src={urlFor(event.mainImage)
             .auto("format")
-            .width(448)
-            .height(300)
-            .quality(75)
+            .width(896)
+            .height(600)
+            .quality(85)
             .url()}
           width={488}
           height={300}
           alt={event.title.en}
           className={s.cardImage}
+          loading="lazy"
         />
       </div>
       <div className={s.cardText}>
-        <h2><Localize data={event.title} /></h2>
-        <h3 className={s.courseDate}><PostDate date={event.date} /></h3>
-        <h4 className={s.courseLocation}>{event.location}</h4>
-        <h4 className={s.coursePrice}>£{event.price}</h4>
-        <Markdown content={event.body} />
-        <a href={event.britelink} target="_blank" rel="noreferrer">
-          <button className={s.britelink}>Book now!</button>
-        </a>
+        <h2 className={s.courseTitle}><Localize data={event.title} /></h2>
+        <h3 className={`${s.courseSubitle} ${u.serif}`}><Localize data={event.subtitle} /></h3>
+        <div><hr style={{ marginBottom: "3rem" }}/></div>
+        <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
+          <PostDate date={event.date} />{", "}
+          {event.location}{", "}
+          £{locale === "cy" ? " " : ""}{event.price}
+        </div>
+        <div className={u.fAuto}><Markdown content={event.body} /></div>
+        <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
+          {event.artforms.map(artform =>
+            <>{artform.title.en}</>
+          )}
+        </div>
+        <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
+          {event.keystages.map(keystage =>
+            <>{keystage.title.en}</>
+          )}
+        </div>
+        <div className={u.fNone}>
+          <a
+            href={event.britelink}
+            className={s.britelink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className={s.britelinkBtn}>Book now</button>
+          </a>
+        </div>
       </div>
     </>
   )
