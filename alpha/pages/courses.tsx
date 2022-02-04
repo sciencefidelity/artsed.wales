@@ -12,9 +12,14 @@ import s from "pages/courses.module.scss"
 const Courses = ({ data }: { data: EventsData }) => {
   const { locale } = useRouter()
   const { events, site } = data
+  const title = {
+    cy: "Cyrsiau",
+    en: "Courses"
+  }
   return (
     <Layout
       site={site}
+      title={title}
     >
         <h1>{locale === "cy" ? "Cyrsiau" : "Courses"}</h1>
         <article className={`${s.coursesContainer}`}>

@@ -1,8 +1,32 @@
 import groq from "groq"
 
+const siteFields = `
+  addressLine1,
+  addressLine2,
+  email,
+  keywords,
+  seoDescription,
+  seoImage,
+  seoTitle,
+  signUp,
+  signUpPlaceholder,
+  siteDescription,
+  siteName,
+  twitterHandle
+`
+
 export const indexQuery = groq`{
-  "site": *[_type == "site"][0]{
-    siteName
+  "site": *[_type == "site"] | order(date)[0]{
+    ${siteFields}
+  },
+  "statements": *[_type == "statement"] | order(heading){
+    statement
+  }
+}`
+
+export const aboutQuery = groq`{
+  "site": *[_type == "site"] | order(date)[0]{
+    ${siteFields}
   },
   "statements": *[_type == "statement"] | order(heading){
     statement
@@ -10,8 +34,8 @@ export const indexQuery = groq`{
 }`
 
 export const eventsQuery = groq`{
-  "site": *[_type == "site"][0]{
-    siteName
+  "site": *[_type == "site"] | order(date)[0]{
+    ${siteFields}
   },
   "events": *[_type == "event"] | order(date){
     _id,

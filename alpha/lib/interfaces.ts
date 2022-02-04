@@ -24,7 +24,7 @@ export interface AllPagesData {
   site: Site
 }
 
-export interface IndexData extends AllPagesData {
+export interface AboutData extends AllPagesData {
   statements: Statement[]
 }
 
@@ -35,6 +35,10 @@ export interface EventsData extends AllPagesData {
 export interface LayoutProps {
   children: ReactNode
   site: Site
+  title?: {
+    cy: string
+    en: string
+  }
 }
 
 export interface HeaderProps {
@@ -53,4 +57,9 @@ export interface EventRefs extends Event {
 
 export interface MarkdownProps {
   content: LocaleMarkdown
+}
+
+export interface SignUpProps {
+  site: Site
+  statements: Statement[]
 }

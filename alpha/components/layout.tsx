@@ -8,14 +8,19 @@ import u from "@/styles/utils.module.scss"
 
 const Layout: FC<LayoutProps> = ({
   children,
-  site
+  site,
+  title
 }) => {
   const router = useRouter()
   const { locale } = router
   return (
     <div className={s.siteMain}>
       <Head>
-        <title>{locale === "cy" ? site.siteName.cy : site.siteName.en}</title>
+        <title>
+          {title && (locale === "cy" && title.cy ? title.cy : site.siteName.en)}
+          {title && " | "}
+          {locale === "cy" && site.siteName.cy ? site.siteName.cy : site.siteName.en}
+        </title>
       </Head>
       <Header
         site={site}
