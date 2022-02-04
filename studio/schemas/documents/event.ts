@@ -63,7 +63,7 @@ export default {
     {
       name: 'location',
       title: 'Location',
-      type: 'string',
+      type: 'localeString',
       group: 'content'
     },
     {

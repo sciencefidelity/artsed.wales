@@ -73,11 +73,11 @@ export interface Event extends SanityDocument {
   date?: string;
 
   /**
-   * Location — `string`
+   * Location — `localeString`
    *
    *
    */
-  location?: string;
+  location?: LocaleString;
 
   /**
    * Price — `number`
