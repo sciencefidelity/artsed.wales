@@ -15,7 +15,7 @@ const Home = ({ data }: { data: IndexData }) => {
     <Layout
       site={site}
     >
-      <Logo />
+{/*       <Logo /> */}
       <section>
         <Model statement={data.statements[6]}/>
       </section>

@@ -30,9 +30,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Freight Text Pro";
+  src: url("/fonts/freighttextprobold-regular.woff2");
+  font-weight: bold;
+  font-size: normal;
+  font-display: swap;
+}
+
 :root {
   --sans: 'Apercu Pro', -apple-system, blinkmacsystemfont, 'Segoe UI',
           roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
           'Helvetica Neue',sans-serif;
-  --serif: 'Domaine Text', georgia, serif;
+  --serif: 'Freight Text Pro', georgia, serif;
 }

@@ -10,9 +10,9 @@ import s from "components/header.module.scss"
 
 const Header: FC<HeaderProps> = ({ site }) => {
   const router = useRouter()
-  const { pathname, asPath, query, locale, locales } = router
+  const { locale } = router
   return (
-    <header className={`${s.header} `}>
+    <header className={`${s.header} ${u.bgLight}`}>
       <div className={`${s.container} ${u.flex} ${u.sans} ${u.uppercase} ${u.w100} ${u.gapSmall}`}>
 {/*         <div>{acronym(site.siteName.en)}</div> */}
         <div className={s.siteName}>
