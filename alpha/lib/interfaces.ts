@@ -46,9 +46,9 @@ export interface EventProps {
 }
 
 export interface EventRefs extends Event {
-  artforms: Artform[]
-  facilitators: Facilitator[]
-  keystages: Keystage[]
+  artforms?: Artform[]
+  people?: Facilitator[]
+  keystages?: Keystage[]
 }
 
 export interface MarkdownProps {

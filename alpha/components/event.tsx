@@ -1,5 +1,4 @@
 import { FC } from "react"
-// import Image from "next/image"
 import { useRouter } from "next/router"
 import { urlFor } from "lib/utils"
 import Localize from "components/localize"
@@ -30,28 +29,56 @@ const Event: FC<EventProps> = ({ event }) => {
       </div>
       <div className={s.cardText}>
         <h2 className={s.courseTitle}><Localize data={event.title} /></h2>
-        <h3 className={`${s.courseSubitle} ${u.serif}`}><Localize data={event.subtitle} /></h3>
+        <h3 className={`${s.courseSubitle} ${u.serif}`}>
+          <Localize data={event.subtitle} />
+        </h3>
         <div><hr style={{ marginBottom: "3rem" }}/></div>
         <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-          <PostDate date={event.date} />{", "}
-          {event.location}{", "}
-          £{locale === "cy" ? " " : ""}{event.price}
+          {event.date && <PostDate date={event.date} />}{event.date && ", "}
+          <br />
+          {event.location && <Localize data={event.location} />}
+          {event.location && ", "}
+          {event.price && "£" + (locale === "cy" ? " " : "") + event.price}
         </div>
-        <div className={u.fAuto}><Markdown content={event.body} /></div>
-        <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-          <ul style={{ margin: 0, marginTop: "2rem", padding: 0 }}>
-            {"Artforms: "}{event.artforms.map(artform =>
-              <li className={s.horizontal}>{artform.title.en}</li>
-            )}
-          </ul>
-        </div>
-        <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-          <ul style={{ margin: 0, padding: 0 }}>
-            {"Key-Stage: "}{event.keystages.map(keystage =>
-              <li className={s.horizontal}>{keystage.title.en}</li>
-            )}
-          </ul>
-        </div>
+        {event.body && <div className={u.fAuto}>
+          <Markdown content={event.body} />
+        </div>}
+        {event.artforms &&
+          <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
+            <ul style={{ margin: 0, marginTop: "2rem", padding: 0 }}>
+              {locale === "cy" ? "Ffurfiau ar gelfyddyd: " : "Artforms: "}
+              {event.artforms.map(artform =>
+                <li className={s.horizontal} key={artform._id}>
+                  <Localize data={artform.title} />
+                </li>
+              )}
+            </ul>
+          </div>
+        }
+        {event.keystages &&
+          <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
+            <ul style={{ margin: 0, padding: 0 }}>
+              {locale === "cy" ? "Cyfnod Allweddol: " : "Key Stage: "}
+              {event.keystages.map(keystage =>
+                <li className={s.horizontal} key={keystage._id}>
+                  <Localize data={keystage.title} />
+                </li>
+              )}
+            </ul>
+          </div>
+        }
+        {event.people &&
+          <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
+            <ul style={{ margin: 0, padding: 0 }}>
+              {locale === "cy" ? "Arweinir gan: " : "Led by: "}
+              {event.people.map(person =>
+                <li className={s.horizontal} key={person._id}>
+                  {person.name}
+                </li>
+              )}
+            </ul>
+          </div>
+        }
         <div className={u.fNone}>
           <a
             href={event.britelink}
@@ -59,7 +86,9 @@ const Event: FC<EventProps> = ({ event }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <button className={s.britelinkBtn}>Book now</button>
+            <button className={s.britelinkBtn}>
+              {locale === "cy" ? "Archebwch nawr" : "Book now"}
+            </button>
           </a>
         </div>
       </div>
