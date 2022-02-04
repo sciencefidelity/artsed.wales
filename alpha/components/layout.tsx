@@ -3,8 +3,8 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import Header from "components/header"
 import { LayoutProps } from "lib/interfaces"
-import s from "@/components/layout.module.scss"
-import u from "@/styles/utils.module.scss"
+import s from "components/layout.module.scss"
+import u from "styles/utils.module.scss"
 
 const Layout: FC<LayoutProps> = ({
   children,
@@ -17,7 +17,7 @@ const Layout: FC<LayoutProps> = ({
     <div className={s.siteMain}>
       <Head>
         <title>
-          {title && (locale === "cy" && title.cy ? title.cy : site.siteName.en)}
+          {title && (locale === "cy" ? title.cy : title.en)}
           {title && " | "}
           {locale === "cy" && site.siteName.cy ? site.siteName.cy : site.siteName.en}
         </title>

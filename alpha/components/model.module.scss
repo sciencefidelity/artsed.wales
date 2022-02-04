@@ -54,6 +54,7 @@
   position: relative;
   width: 56vw;
   margin-left: auto;
+  margin-right: -2rem;
   // margin-bottom: -7rem;
   margin-top: 6rem;
   @include b.mq(md) {
@@ -107,7 +108,7 @@
 .content4 {
   @extend %all-content;
   // color: var(--grey-000);
-  top: 56%;
+  top: 55%;
   left: 50%;
 }
 

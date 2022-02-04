@@ -6,7 +6,7 @@ import Markdown from "components/markdown"
 import Model from "components/model"
 import SignUp from "components/signUp"
 import { AboutData } from "lib/interfaces"
-import s from "pages/index.module.scss"
+import s from "pages/about.module.scss"
 import u from "styles/utils.module.scss"
 
 const About = ({ data }: { data: AboutData }) => {
@@ -20,19 +20,19 @@ const About = ({ data }: { data: AboutData }) => {
       site={site}
       title={title}
     >
-      <div className={u.flex}>
-        <article>
+      <div className={u.flex} style={{ marginBottom: "-8rem" }}>
+        <article style={{ zIndex: 3 }}>
           <div
             className={`${s.intro} ${u.serif} ${u.fgDark}`}
             style={{ marginTop: "2rem" }}
           >
-            <Markdown content={statements[0].statement} />
-          </div>
-          <div style={{ marginRight: "-4rem", marginTop: "6rem" }}>
             <Markdown content={statements[2].statement} />
           </div>
+          <div style={{ marginRight: "-4rem", marginTop: "4rem" }}>
+            <Markdown content={statements[6].statement} />
+          </div>
           <div style={{ marginRight: "-4rem" }}>
-            <Markdown content={statements[3].statement} />
+            <Markdown content={statements[7].statement} />
           </div>
         </article>
         <section>

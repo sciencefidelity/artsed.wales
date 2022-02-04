@@ -16,6 +16,9 @@ const siteFields = `
 `
 
 export const indexQuery = groq`{
+  "photography": *[_type == "photography"]{
+    image, title
+  },
   "site": *[_type == "site"] | order(date)[0]{
     ${siteFields}
   },
@@ -34,9 +37,6 @@ export const aboutQuery = groq`{
 }`
 
 export const eventsQuery = groq`{
-  "site": *[_type == "site"] | order(date)[0]{
-    ${siteFields}
-  },
   "events": *[_type == "event"] | order(date){
     _id,
     "artforms": artform[]->{_id, title},
@@ -54,5 +54,11 @@ export const eventsQuery = groq`{
     slug,
     subtitle,
     title
+  },
+  "site": *[_type == "site"] | order(date)[0]{
+    ${siteFields}
+  },
+  "statements": *[_type == "statement"] | order(heading){
+    statement
   }
 }`

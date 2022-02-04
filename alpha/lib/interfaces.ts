@@ -4,6 +4,7 @@ import type {
   Event,
   Facilitator,
   Keystage,
+  Photography,
   LocaleMarkdown,
   SanityReference,
   SanityImageAsset,
@@ -22,10 +23,15 @@ export interface Image {
 
 export interface AllPagesData {
   site: Site
+  statements: Statement[]
 }
 
 export interface AboutData extends AllPagesData {
   statements: Statement[]
+}
+
+export interface IndexData extends AllPagesData {
+  photography: Photography[]
 }
 
 export interface EventsData extends AllPagesData {

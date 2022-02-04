@@ -78,7 +78,7 @@ h1 {
 
 h2 {
   font-family: var(--serif);
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 1.2;
   color: var(--foreground);
   font-weight: 600;
@@ -114,7 +114,7 @@ h4 {
 
 p {
   margin-bottom: 1.8rem;
-  font-size: 2rem;
+  font-size: 2.7rem;
   @include b.mq(lg) {
     font-size: 1.8rem;
   }
