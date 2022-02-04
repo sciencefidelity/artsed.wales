@@ -73,11 +73,11 @@ export interface Event extends SanityDocument {
   date?: string;
 
   /**
-   * Location — `string`
+   * Location — `localeString`
    *
    *
    */
-  location?: string;
+  location?: LocaleString;
 
   /**
    * Price — `number`
@@ -864,4 +864,4 @@ export type Documents =
  * the definition was not actually found. Future versions of
  * sanity-codegen will let you type this explicity.
  */
-export type Markdown = any;
+type Markdown = any;
