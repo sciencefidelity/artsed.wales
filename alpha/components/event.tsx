@@ -39,14 +39,18 @@ const Event: FC<EventProps> = ({ event }) => {
         </div>
         <div className={u.fAuto}><Markdown content={event.body} /></div>
         <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-          {event.artforms.map(artform =>
-            <>{artform.title.en}</>
-          )}
+          <ul style={{ margin: 0, marginTop: "2rem", padding: 0 }}>
+            {"Artforms: "}{event.artforms.map(artform =>
+              <li className={s.horizontal}>{artform.title.en}</li>
+            )}
+          </ul>
         </div>
         <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-          {event.keystages.map(keystage =>
-            <>{keystage.title.en}</>
-          )}
+          <ul style={{ margin: 0, padding: 0 }}>
+            {"Key-Stage: "}{event.keystages.map(keystage =>
+              <li className={s.horizontal}>{keystage.title.en}</li>
+            )}
+          </ul>
         </div>
         <div className={u.fNone}>
           <a

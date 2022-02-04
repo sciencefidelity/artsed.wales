@@ -52,6 +52,15 @@
 //   font-weight: 400;
 // }
 
+.horizontal {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  &:not(:last-child)::after {
+    content: ', ';
+  }
+}
+
 .britelink {
   text-decoration: none;
 }

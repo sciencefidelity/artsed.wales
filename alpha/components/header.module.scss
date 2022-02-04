@@ -4,7 +4,8 @@
   position: fixed;
   width: 100%;
   top: 0px;
-  border-bottom: 1px solid var(--foreground);
+  border-bottom: 2px solid var(--foreground);
+  // border-bottom: 2px solid var(--background);
   z-index: 10;
 }
 
