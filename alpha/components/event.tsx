@@ -35,7 +35,8 @@ const Event: FC<EventProps> = ({ event }) => {
         <div><hr style={{ marginBottom: "3rem" }}/></div>
         <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
           {event.date && <PostDate date={event.date} />}{event.date && ", "}
-          <br />
+        </div>
+        <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
           {event.location && <Localize data={event.location} />}
           {event.location && ", "}
           {event.price && "£" + (locale === "cy" ? " " : "") + event.price}
@@ -43,7 +44,7 @@ const Event: FC<EventProps> = ({ event }) => {
         {event.body && <div className={u.fAuto}>
           <Markdown content={event.body} />
         </div>}
-        {event.artforms &&
+        {event.artforms[0] &&
           <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
             <ul style={{ margin: 0, marginTop: "2rem", padding: 0 }}>
               {locale === "cy" ? "Ffurfiau ar gelfyddyd: " : "Artforms: "}
@@ -55,7 +56,7 @@ const Event: FC<EventProps> = ({ event }) => {
             </ul>
           </div>
         }
-        {event.keystages &&
+        {event.keystages[0] &&
           <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
             <ul style={{ margin: 0, padding: 0 }}>
               {locale === "cy" ? "Cyfnod Allweddol: " : "Key Stage: "}
