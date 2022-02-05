@@ -175,12 +175,12 @@ export interface Event extends SanityDocument {
 }
 
 /**
- * Figures
+ * Figure
  *
  *
  */
-export interface Figures extends SanityDocument {
-  _type: "figures";
+export interface Figure extends SanityDocument {
+  _type: "figure";
 
   /**
    * Heading — `localeString`
@@ -506,7 +506,7 @@ export interface Site extends SanityDocument {
    *
    *
    */
-  engagement?: Array<SanityKeyedReference<Figures>>;
+  engagement?: Array<SanityKeyedReference<Figure>>;
 }
 
 /**
@@ -889,7 +889,7 @@ export type LocaleText = {
 
 export type Documents =
   | Event
-  | Figures
+  | Figure
   | People
   | Photography
   | Post
