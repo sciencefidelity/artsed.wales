@@ -175,6 +175,29 @@ export interface Event extends SanityDocument {
 }
 
 /**
+ * Figures
+ *
+ *
+ */
+export interface Figures extends SanityDocument {
+  _type: "figures";
+
+  /**
+   * Heading — `localeString`
+   *
+   *
+   */
+  heading?: LocaleString;
+
+  /**
+   * Count — `number`
+   *
+   *
+   */
+  count?: number;
+}
+
+/**
  * People
  *
  *
@@ -249,6 +272,13 @@ export interface Photography extends SanityDocument {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
+
+  /**
+   * Hero Image — `boolean`
+   *
+   *
+   */
+  hero?: boolean;
 }
 
 /**
@@ -470,6 +500,13 @@ export interface Site extends SanityDocument {
    *
    */
   socialLinks?: Array<SanityKeyedReference<Social>>;
+
+  /**
+   * Engagement — `array`
+   *
+   *
+   */
+  engagement?: Array<SanityKeyedReference<Figures>>;
 }
 
 /**
@@ -852,6 +889,7 @@ export type LocaleText = {
 
 export type Documents =
   | Event
+  | Figures
   | People
   | Photography
   | Post
