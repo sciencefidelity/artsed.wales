@@ -64,8 +64,12 @@ const Home = ({ data }: { data: IndexData }) => {
           light={true}
           style={{
             border: "2px solid var(--foreground)",
+            aspectRatio: "16 / 9"
           }}
         />
+        <div className={`${s.heroCaption} ${u.sans} ${u.uppercase}`}>
+          {video.title.en}
+        </div>
       </div>
       <SignUp
         statements={statements}
