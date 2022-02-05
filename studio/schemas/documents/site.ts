@@ -121,7 +121,7 @@ export default {
       name: 'engagement',
       title: 'Engagement',
       type: 'array',
-      of: [{ type: 'reference', to: {type: 'figures' }}],
+      of: [{ type: 'reference', to: {type: 'figure' }}],
       sortable: true
     }
   ],
