@@ -33,9 +33,12 @@ const Event: FC<EventProps> = ({ event }) => {
           <Localize data={event.subtitle} />
         </h3>
         <div><hr style={{ marginBottom: "3rem" }}/></div>
-        <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-          {event.date && <PostDate date={event.date} />}{event.date && ", "}
-        </div>
+        {event.date && <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
+          <PostDate date={event.date} />
+        </div>}
+        {event.date2 && <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
+          <PostDate date={event.date2} />
+        </div>}
         <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
           {event.location && <Localize data={event.location} />}
           {event.location && ", "}

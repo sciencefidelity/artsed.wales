@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next"
-import { urlFor } from "lib/utils"
+import { useRouter } from "next/router"
+import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import Markdown from "components/markdown"
@@ -10,12 +11,35 @@ import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
 
 const Home = ({ data }: { data: IndexData }) => {
-  const { photography, site, statements } = data
+  const { locale } = useRouter()
+  const { hero, site, statements } = data
+  const heroTitle = localize(hero.title, locale)
   return (
     <Layout
       site={site}
     >
-      <div className={`${u.grid} ${u.mbLarge}`} style={{ gridTemplateColumns: "55% 43%", gap: "3rem" }}>
+      <div
+        className={`${u.grid} ${u.mbLarge}`}
+        style={{ gridTemplateColumns: "43% 55%", gap: "3rem" }}
+      >
+        <div className={s.heroContainer}>
+          <img
+            src={urlFor(hero.image)
+              .auto("format")
+              .width(900)
+              .height(900)
+              .quality(85)
+              .url()}
+            width={900}
+            height={1100}
+            alt={heroTitle}
+            className={s.hero}
+            loading="lazy"
+          />
+          <div className={`${s.heroCaption} ${u.sans} ${u.uppercase}`}>
+            {heroTitle}
+          </div>
+        </div>
         <div>
           <div
             className={`${s.intro} ${u.serif} ${u.fgDark}`}
@@ -29,21 +53,6 @@ const Home = ({ data }: { data: IndexData }) => {
           <div>
             <Markdown content={statements[3].statement} />
           </div>
-        </div>
-        <div className={s.heroContainer}>
-          <img
-            src={urlFor(photography[16].image)
-              .auto("format")
-              .width(900)
-              .height(900)
-              .quality(85)
-              .url()}
-            width={900}
-            height={1100}
-            alt={photography[0].title.en}
-            className={s.hero}
-            loading="lazy"
-          />
         </div>
       </div>
       <SignUp

@@ -1,6 +1,9 @@
 .intro {
-  padding-top: 2rem;
+  padding-top: 2.5rem;
   // margin-right: -19rem;
+  h2 {
+    margin: 0;
+  }
 }
 
 .heroContainer {
@@ -12,4 +15,10 @@
 .hero {
   height: 100%;
   // border: 2px solid var(--foreground);
+  object-fit: cover;
+}
+
+.heroCaption {
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
 }

@@ -1,5 +1,6 @@
 import groq from "groq"
 
+const omitDrafts = "!(_id in path('drafts.**'))"
 const siteFields = `
   addressLine1,
   addressLine2,
@@ -16,7 +17,11 @@ const siteFields = `
 `
 
 export const indexQuery = groq`{
-  "photography": *[_type == "photography"]{
+  "hero": *[_type == "photography" && hero == true]{
+    ...,
+    "random": (dateTime(now()) - dateTime(_createdAt)) % 199
+  } | order(random desc)[0],
+  "photography": *[_type == "photography"] | order(_createdAt){
     image, title
   },
   "site": *[_type == "site"] | order(date)[0]{
@@ -43,6 +48,7 @@ export const eventsQuery = groq`{
     body,
     britelink,
     date,
+    date2,
     "people": facilitators[]->{_id, name},
     imageCaption,
     "keystages": keystage[]->{_id, title},

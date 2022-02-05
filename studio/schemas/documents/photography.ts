@@ -15,6 +15,11 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      name: 'hero',
+      title: 'Hero Image',
+      type: 'boolean'
     }
   ],
 

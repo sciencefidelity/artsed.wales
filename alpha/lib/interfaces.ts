@@ -26,13 +26,15 @@ export interface AllPagesData {
   statements: Statement[]
 }
 
+export interface IndexData extends AllPagesData {
+  photography: Photography[]
+  hero: Photography
+}
+
 export interface AboutData extends AllPagesData {
   statements: Statement[]
 }
 
-export interface IndexData extends AllPagesData {
-  photography: Photography[]
-}
 
 export interface EventsData extends AllPagesData {
   events: Event[]
