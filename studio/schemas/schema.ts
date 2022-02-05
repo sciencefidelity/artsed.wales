@@ -15,6 +15,7 @@ import localeText from './objects/localeText'
 
 // documements
 import event from './documents/event'
+import figure from './documents/figure'
 import photography from './documents/photography'
 import people from './documents/people'
 import post from './documents/post'
@@ -46,6 +47,7 @@ export default createSchema({
 
     // documents
     event,
+    figure,
     people,
     photography,
     post,

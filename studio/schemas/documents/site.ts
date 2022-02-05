@@ -116,6 +116,13 @@ export default {
       type: 'array',
       of: [{ type: 'reference', to: {type: 'social' }}],
       sortable: true
+    },
+    {
+      name: 'engagement',
+      title: 'Engagement',
+      type: 'array',
+      of: [{ type: 'reference', to: {type: 'figure' }}],
+      sortable: true
     }
   ],
   preview: {
