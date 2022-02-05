@@ -1,0 +1,32 @@
+@use '../styles/foundation/breakpoints' as b;
+
+.quoteContainer {
+  max-width: 85rem;
+  min-width: 8.5rem;
+  // margin-right: auto;
+  margin: var(--alignCard);
+  flex-direction: var(--direction);
+  @include b.mq(lg) {
+    min-width: 0;
+    width: 100%;
+  }
+  @include b.mq(md) {
+    flex-direction: column;
+    width: 88%;
+    margin: auto;
+  }
+  @include b.mq(sm) {
+    width: 100%;
+  }
+}
+
+.quoteText {
+  width: var(--textWidth);
+  @include b.mq(md) {
+    width: 100%;
+  }
+}
+
+.img {
+  object-position: var(--xPosition) 50%;
+}
