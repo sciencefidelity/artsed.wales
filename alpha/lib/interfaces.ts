@@ -5,8 +5,9 @@ import type {
   Facilitator,
   Figure,
   Keystage,
-  Photography,
   LocaleMarkdown,
+  Photography,
+  Quote,
   Social,
   SanityReference,
   SanityImageAsset,
@@ -33,6 +34,7 @@ export interface IndexData extends AllPagesData {
   hero: Photography
   photography: Photography[]
   video: Video
+  quotes: Quote[]
 }
 
 export interface SiteRefs extends Site {
@@ -81,3 +83,7 @@ export interface SignUpProps {
   statements: Statement[]
 }
 
+export interface QuoteProps {
+  photograph: Photography
+  quote: Quote
+}

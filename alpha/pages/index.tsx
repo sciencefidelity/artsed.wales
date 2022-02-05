@@ -5,6 +5,7 @@ import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import Markdown from "components/markdown"
+import QuoteCard from "components/quoteCard"
 import SignUp from "components/signUp"
 import { indexQuery } from "lib/queries"
 import { IndexData } from "lib/interfaces"
@@ -13,7 +14,8 @@ import u from "styles/utils.module.scss"
 
 const Home = ({ data }: { data: IndexData }) => {
   const { locale } = useRouter()
-  const { hero, site, statements, video } = data
+  const { hero, photography, quotes, site, statements, video } = data
+  console.log(quotes)
   const heroTitle = localize(hero.title, locale)
   return (
     <Layout
@@ -71,6 +73,10 @@ const Home = ({ data }: { data: IndexData }) => {
           {video.title.en}
         </div>
       </div>
+      <QuoteCard
+        photograph={photography[0]}
+        quote={quotes[0]}
+      />
       <SignUp
         statements={statements}
         site={site}

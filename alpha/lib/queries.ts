@@ -23,6 +23,9 @@ export const indexQuery = groq`{
     ...,
     "random": (dateTime(now()) - dateTime(_createdAt)) % 199
   } | order(random desc)[0],
+  "quotes": *[_type == "quote"] | order(_createdAt){
+    _id, cite, organisation, quote
+  },
   "photography": *[_type == "photography"] | order(_createdAt){
     image, title
   },
