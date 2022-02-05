@@ -5,6 +5,7 @@ const siteFields = `
   addressLine1,
   addressLine2,
   email,
+  "engagement": engagement[]->{_id,count,heading},
   keywords,
   seoDescription,
   seoImage,
@@ -13,6 +14,7 @@ const siteFields = `
   signUpPlaceholder,
   siteDescription,
   siteName,
+  "socialLinks": socialLinks[]->{link,site,username},
   twitterHandle
 `
 

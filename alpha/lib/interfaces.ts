@@ -3,9 +3,11 @@ import type {
   Artform,
   Event,
   Facilitator,
+  Figure,
   Keystage,
   Photography,
   LocaleMarkdown,
+  Social,
   SanityReference,
   SanityImageAsset,
   SanityImageCrop,
@@ -23,7 +25,7 @@ export interface Image {
 }
 
 export interface AllPagesData {
-  site: Site
+  site: SiteRefs
   statements: Statement[]
 }
 
@@ -31,6 +33,11 @@ export interface IndexData extends AllPagesData {
   hero: Photography
   photography: Photography[]
   video: Video
+}
+
+export interface SiteRefs extends Site {
+  engagement?: Figure[]
+  socialLinks?: Social[]
 }
 
 export interface AboutData extends AllPagesData {
