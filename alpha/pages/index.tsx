@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
+import ReactPlayer from "react-player"
 import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
@@ -12,7 +13,7 @@ import u from "styles/utils.module.scss"
 
 const Home = ({ data }: { data: IndexData }) => {
   const { locale } = useRouter()
-  const { hero, site, statements } = data
+  const { hero, site, statements, video } = data
   const heroTitle = localize(hero.title, locale)
   return (
     <Layout
@@ -54,6 +55,17 @@ const Home = ({ data }: { data: IndexData }) => {
             <Markdown content={statements[3].statement} />
           </div>
         </div>
+      </div>
+      <div className={`${s.video} ${u.mbLarge} ${u.center}`}>
+        <ReactPlayer
+          url={video.videoLink}
+          width={"100%"}
+          height={"auto"}
+          light={true}
+          style={{
+            border: "2px solid var(--foreground)",
+          }}
+        />
       </div>
       <SignUp
         statements={statements}

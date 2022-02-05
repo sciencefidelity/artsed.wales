@@ -9,7 +9,7 @@ const PostDate = ({ date }: { date: string }) => {
     <>
       {locale === "cy"
         ? format(new Date(date),
-          "eeee, d MMMM yyyy",
+          "eeee, d MMMM yyyy, HH:mm",
           {locale: cy}
         )
         : format(new Date(date),

@@ -29,7 +29,8 @@ export const indexQuery = groq`{
   },
   "statements": *[_type == "statement"] | order(heading){
     statement
-  }
+  },
+  "video": *[_type == "video"][0]{videoLink}
 }`
 
 export const aboutQuery = groq`{

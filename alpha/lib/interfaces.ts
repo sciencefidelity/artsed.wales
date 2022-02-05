@@ -11,7 +11,8 @@ import type {
   SanityImageCrop,
   SanityImageHotspot,
   Statement,
-  Site
+  Site,
+  Video
 } from "@/generated/schema"
 
 export interface Image {
@@ -27,8 +28,9 @@ export interface AllPagesData {
 }
 
 export interface IndexData extends AllPagesData {
-  photography: Photography[]
   hero: Photography
+  photography: Photography[]
+  video: Video
 }
 
 export interface AboutData extends AllPagesData {
