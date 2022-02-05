@@ -69,3 +69,4 @@ export interface SignUpProps {
   site: Site
   statements: Statement[]
 }
+

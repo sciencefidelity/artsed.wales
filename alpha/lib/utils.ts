@@ -1,7 +1,7 @@
 import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "lib/sanityClient"
+import { LocaleString } from "generated/schema"
 import { Image } from "lib/interfaces"
-import { Markdown } from "generated/schema"
 
 export const acronym = (title: string) => {
   return title.match(/[A-Z]/g).join("")
@@ -9,6 +9,12 @@ export const acronym = (title: string) => {
 
 export const capitalize = (word: string) => {
   return word[0].toUpperCase() + word.slice(1, word.length)
+}
+
+export const localize = (content: LocaleString, locale: string) => {
+  return locale === "cy" && content.cy
+    ? content.cy
+    : content.en
 }
 
 export const kebabCase = (word: string) => {
