@@ -61,6 +61,18 @@ export default {
       group: 'content'
     },
     {
+      name: 'date2',
+      title: 'Second Date and Time',
+      type: 'datetime',
+      options: {
+        dateFormat: 'dddd, MMMM Do YYYY,',
+        timeFormat: 'h:mm a',
+        timeStep: 15,
+        calendarTodayLabel: 'Today'
+      },
+      group: 'content'
+    },
+    {
       name: 'location',
       title: 'Location',
       type: 'localeString',
