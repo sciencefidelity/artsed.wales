@@ -54,6 +54,7 @@ export interface EventsData extends AllPagesData {
 export interface LayoutProps {
   children: ReactNode
   site: Site
+  statements: Statement[]
   title?: {
     cy: string
     en: string

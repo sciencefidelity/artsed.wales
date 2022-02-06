@@ -5,6 +5,7 @@ import { localize, urlFor } from "lib/utils"
 import Footer from "components/footer"
 import Header from "components/header"
 import Logos from "components/logos"
+import SignUp from "components/signUp"
 import Scrollup from "components/scrollup"
 import { LayoutProps } from "lib/interfaces"
 import s from "components/layout.module.scss"
@@ -12,6 +13,7 @@ import u from "styles/utils.module.scss"
 
 const Layout: FC<LayoutProps> = ({
   children,
+  statements,
   site,
   title
 }) => {
@@ -87,8 +89,12 @@ const Layout: FC<LayoutProps> = ({
       <Header site={site} />
       <main className={s.content}>
         <div className={u.container}>{children}</div>
+        <SignUp
+          statements={statements}
+          site={site}
+        />
+        <Logos />
       </main>
-      <Logos />
       <Footer site={site} />
       <Scrollup />
     </div>

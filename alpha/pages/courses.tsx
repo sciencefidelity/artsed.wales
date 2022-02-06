@@ -1,9 +1,7 @@
 import { GetStaticProps } from "next"
-// import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import { eventsQuery } from "lib/queries"
 import Layout from "components/layout"
-// import Localize from "components/localize"
 import Event from "components/event"
 import SignUp from "components/signUp"
 import { EventsData } from "lib/interfaces"
@@ -21,6 +19,7 @@ const Courses = ({ data }: { data: EventsData }) => {
     <Layout
       site={site}
       title={title}
+      statements={statements}
     >
 {/*         <h1>{locale === "cy" ? title.cy : title.en}</h1> */}
         <section className={`${s.coursesContainer} ${u.mbLarge}`} style={{ marginTop: "7rem" }}>
@@ -30,10 +29,6 @@ const Courses = ({ data }: { data: EventsData }) => {
             </div>
           )}
         </section>
-        <SignUp
-          site={site}
-          statements={statements}
-        />
     </Layout>
   )
 }

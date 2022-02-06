@@ -11,8 +11,7 @@ const AcwLogo = props => (
       strokeLinejoin: "round",
       strokeMiterlimit: 2
     }}
-    width="1em"
-    height="1em"
+    width="18em"
     {...props}
   >
     <path

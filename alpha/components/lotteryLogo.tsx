@@ -9,8 +9,7 @@ const LotteryLogo = props => (
       strokeLinejoin: "round",
       strokeMiterlimit: 2
     }}
-    width="1em"
-    height="1em"
+    width="14em"
     {...props}
   >
     <path

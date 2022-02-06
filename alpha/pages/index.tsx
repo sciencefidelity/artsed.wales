@@ -6,7 +6,6 @@ import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import Markdown from "components/markdown"
 import QuoteCard from "components/quoteCard"
-import SignUp from "components/signUp"
 import { indexQuery } from "lib/queries"
 import { IndexData } from "lib/interfaces"
 import s from "pages/index.module.scss"
@@ -19,6 +18,7 @@ const Home = ({ data }: { data: IndexData }) => {
   return (
     <Layout
       site={site}
+      statements={statements}
     >
       <div
         className={`${u.grid} ${u.mbLarge}`}
@@ -88,10 +88,6 @@ const Home = ({ data }: { data: IndexData }) => {
           direction="column"
         />
       </section>
-      <SignUp
-        statements={statements}
-        site={site}
-      />
     </Layout>
   )
 }

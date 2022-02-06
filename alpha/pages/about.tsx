@@ -4,7 +4,6 @@ import { aboutQuery } from "lib/queries"
 import Layout from "components/layout"
 import Markdown from "components/markdown"
 import Model from "components/model"
-import SignUp from "components/signUp"
 import { AboutData } from "lib/interfaces"
 import s from "pages/about.module.scss"
 import u from "styles/utils.module.scss"
@@ -18,6 +17,7 @@ const About = ({ data }: { data: AboutData }) => {
   return (
     <Layout
       site={site}
+      statements={statements}
       title={title}
     >
       <div className={u.flex} style={{ marginBottom: "-8rem" }}>
@@ -39,10 +39,6 @@ const About = ({ data }: { data: AboutData }) => {
           <Model />
         </section>
       </div>
-      <SignUp
-        site={site}
-        statements={statements}
-      />
     </Layout>
   )
 }
