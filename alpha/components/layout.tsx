@@ -4,6 +4,8 @@ import { useRouter } from "next/router"
 import { localize, urlFor } from "lib/utils"
 import Footer from "components/footer"
 import Header from "components/header"
+import Logos from "components/logos"
+import Scrollup from "components/scrollup"
 import { LayoutProps } from "lib/interfaces"
 import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
@@ -83,10 +85,12 @@ const Layout: FC<LayoutProps> = ({
         <link rel="mask-icon" href="/mask-icon.svg" color="#FF9B59" />
       </Head>
       <Header site={site} />
-      <main>
+      <main className={s.content}>
         <div className={u.container}>{children}</div>
       </main>
+      <Logos />
       <Footer site={site} />
+      <Scrollup />
     </div>
   )
 }

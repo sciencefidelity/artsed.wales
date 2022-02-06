@@ -2,3 +2,8 @@
   // min-height: calc(100vh - 471px);
   position: relative;
 }
+
+.content {
+  position: relative;
+  z-index: 4;
+}
