@@ -2,6 +2,7 @@ import { FC } from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { localize, urlFor } from "lib/utils"
+import Footer from "components/footer"
 import Header from "components/header"
 import { LayoutProps } from "lib/interfaces"
 import s from "components/layout.module.scss"
@@ -85,6 +86,7 @@ const Layout: FC<LayoutProps> = ({
       <main>
         <div className={u.container}>{children}</div>
       </main>
+      <Footer site={site} />
     </div>
   )
 }

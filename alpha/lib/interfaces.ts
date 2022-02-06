@@ -88,3 +88,7 @@ export interface QuoteProps {
   quote: Quote
   direction?: Properties<string | number, string & {}>
 }
+
+export interface FooterProps {
+  site: SiteRefs
+}
