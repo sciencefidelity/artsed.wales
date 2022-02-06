@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import ReactPlayer from "react-player"
 import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
+import Engagement from "components/engagement"
 import Layout from "components/layout"
 import Markdown from "components/markdown"
 import QuoteCard from "components/quoteCard"
@@ -72,6 +73,7 @@ const Home = ({ data }: { data: IndexData }) => {
           {video.title.en}
         </div>
       </div>
+      <Engagement site={site} statement={statements[8]} />
       <section className={`${u.mbLarge} ${u.grid}`} style={{
         gridTemplateColumns: "auto auto",
         gridAutoRows: "1fr",

@@ -93,3 +93,8 @@ export interface QuoteProps {
 export interface FooterProps {
   site: SiteRefs
 }
+
+export interface EngagementProps {
+  site: SiteRefs
+  statement: Statement
+}

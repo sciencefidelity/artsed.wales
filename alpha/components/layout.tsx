@@ -96,7 +96,7 @@ const Layout: FC<LayoutProps> = ({
         <Logos />
       </main>
       <Footer site={site} />
-      <Scrollup />
+{/*       <Scrollup /> */}
     </div>
   )
 }
