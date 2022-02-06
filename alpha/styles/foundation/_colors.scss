@@ -2,6 +2,10 @@
   // --background: hsl(15, 14%, 89%);
   --background: hsl(43, 41%, 93%);
   --foreground: hsl(210, 3%, 12%);
+  --orange: hsl(24, 100%, 68%);
+  --orangeOpaque: hsla(24, 100%, 68%, 0.5);
+  --blue: hsl(180, 68%, 61%);
+  --pink: hsl(320, 60%, 68%);
   --grey-000: hsl(0, 0%, 100%);
   --grey-050: hsl(0, 0%, 95%);
   --grey-100: hsl(0, 0%, 90%);
@@ -42,6 +46,7 @@
   --beige-850: hsl(11, 20%, 15%);
   --beige-900: hsl(11, 20%, 10%);
   --beige-950: hsl(11, 20%, 05%);
-  --border: 8px solid hsl(0, 0%, 95%);
+  --border: 2px solid var(--foreground);
+  // --border: 8px solid hsl(0, 0%, 95%);
   --shadow: 2px 2px 10px hsla(0, 0%, 5%, 0.2);
 }

@@ -58,11 +58,7 @@ h1 {
   font-size: 12rem;
   font-weight: 800;
   line-height: 1.1;
-  // color: var(--background);
-  // color: rgb(222, 122, 189);
-  color: rgb(255, 155, 89);
-  // color: rgb(89, 222, 223);
-  // -webkit-text-stroke: 2px var(--foreground);
+  color: var(--orange);
   margin-top: 4rem;
   margin-bottom: 3rem;
   @include b.mq(lg) {
@@ -136,7 +132,7 @@ sup {
 blockquote {
   position: relative;
   margin-bottom: 1em;
-  font-size: 2rem;
+  font-size: 2.6rem;
   @include b.mq(lg) {
     font-size: 1.8rem;
   }

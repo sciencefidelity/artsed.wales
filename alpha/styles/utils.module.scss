@@ -229,12 +229,12 @@
   height: 1rem;
 }
 
-.cardPadding {
-  padding: 2.5rem 3rem 1rem 4rem;
-  @include b.mq(sm) {
-    padding: 1.5rem 1.5rem 1rem 2rem;
-  }
-}
+// .cardPadding {
+//   padding: 2.5rem 3rem 1rem 4rem;
+//   @include b.mq(sm) {
+//     padding: 1.5rem 1.5rem 1rem 2rem;
+//   }
+// }
 
 .sans {
   font-family: var(--sans);

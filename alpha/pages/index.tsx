@@ -15,7 +15,6 @@ import u from "styles/utils.module.scss"
 const Home = ({ data }: { data: IndexData }) => {
   const { locale } = useRouter()
   const { hero, photography, quotes, site, statements, video } = data
-  console.log(quotes)
   const heroTitle = localize(hero.title, locale)
   return (
     <Layout
@@ -73,10 +72,22 @@ const Home = ({ data }: { data: IndexData }) => {
           {video.title.en}
         </div>
       </div>
-      <QuoteCard
-        photograph={photography[0]}
-        quote={quotes[0]}
-      />
+      <section className={`${u.mbLarge} ${u.grid}`} style={{
+        gridTemplateColumns: "auto auto",
+        gridAutoRows: "1fr",
+        gap: "2rem"
+      }}>
+        <QuoteCard
+          photograph={photography[7]}
+          quote={quotes[0]}
+          direction="column-reverse"
+        />
+        <QuoteCard
+          photograph={photography[1]}
+          quote={quotes[1]}
+          direction="column"
+        />
+      </section>
       <SignUp
         statements={statements}
         site={site}
