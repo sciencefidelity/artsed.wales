@@ -21,7 +21,7 @@ const Footer: FC<FooterProps> = ({ site }) => {
   }
   return (
     <footer className={`${s.footer} ${u.sans} ${u.flex}`}>
-      <div>
+      <div style={{ marginLeft: "4.5rem" }}>
         <Localize data={contact} />{": "}
         <span className={u.lowercase} style={{ textDecoration: "none" }}>
           <a
@@ -35,7 +35,7 @@ const Footer: FC<FooterProps> = ({ site }) => {
           &copy;{" "}{year}{" "}<Localize data={siteName} />
         </span>
       </div>
-      <div>
+      <div style={{ marginRight: "4.5rem" }}>
         <br />
           Site by <a href="https://mattcook.dev" target="_blank">Matt</a>
       </div>
