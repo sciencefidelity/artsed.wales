@@ -1,4 +1,4 @@
-import { ReactNode, Properties } from "react"
+import { ReactNode } from "react"
 import type {
   Artform,
   Event,
