@@ -37,7 +37,6 @@ const Home = ({ data }: { data: IndexData }) => {
             height={1100}
             alt={heroTitle}
             className={s.hero}
-            loading="lazy"
           />
           <div className={`${s.heroCaption} ${u.sans} ${u.uppercase}`}>
             {heroTitle}

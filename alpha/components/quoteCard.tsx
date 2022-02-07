@@ -12,7 +12,6 @@ const QuoteCard: FC<QuoteProps> = ({ direction, quote, photograph }) => {
     >
       <img
         src={urlFor(photograph.image).url()}
-
         alt={photograph.title.en}
         className={`${s.img} ${u.cover} ${u.ofHidden}`}
         decoding="async"
