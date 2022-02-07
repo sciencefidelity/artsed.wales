@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from "react"
+import { ReactNode, Properties } from "react"
 import type {
   Artform,
   Event,
@@ -87,7 +87,7 @@ export interface SignUpProps {
 export interface QuoteProps {
   photograph: Photography
   quote: Quote
-  direction?: CSSProperties
+  direction?: string
 }
 
 export interface FooterProps {
