@@ -9,10 +9,11 @@ import type {
   Photography,
   Quote,
   Social,
-  SanityReference,
+  SanityKeyedReference,
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
+  SanityReference,
   Statement,
   Site,
   Video
@@ -97,4 +98,8 @@ export interface FooterProps {
 export interface EngagementProps {
   site: SiteRefs
   statement: Statement
+}
+
+export interface SocialLinksProps {
+  site: Site
 }

@@ -14,7 +14,7 @@ const siteFields = `
   signUpPlaceholder,
   siteDescription,
   siteName,
-  "socialLinks": socialLinks[]->{link,site,username},
+  "socialLinks": socialLinks[]->{_id, link, site, username},
   twitterHandle
 `
 

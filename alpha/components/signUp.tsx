@@ -5,7 +5,7 @@ import u from "styles/utils.module.scss"
 
 const SignUp: FC<SignUpProps> = ({ site, statements }) => {
   return (
-    <section className={`${u.mbLarge} ${u.textCenter}`}>
+    <section className={`${u.mbMedium} ${u.textCenter}`}>
       <h2>{statements[10].statement.en}</h2>
       <div>
         <form>

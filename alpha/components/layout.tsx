@@ -6,7 +6,8 @@ import Footer from "components/footer"
 import Header from "components/header"
 import Logos from "components/logos"
 import SignUp from "components/signUp"
-import Scrollup from "components/scrollup"
+import SocialLinks from "components/socialLinks"
+// import Scrollup from "components/scrollup"
 import { LayoutProps } from "lib/interfaces"
 import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
@@ -93,6 +94,7 @@ const Layout: FC<LayoutProps> = ({
           statements={statements}
           site={site}
         />
+        <SocialLinks site={site} />
         <Logos />
       </main>
       <Footer site={site} />
