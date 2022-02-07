@@ -1,1 +1,0 @@
-Mae'r celfyddydau cyfoes yng Nghymru yn gyffrous. Rydym yn addo bod yn ymatebol i ddatblygiadau diwylliannol cyfredol ac ysbrydoli athrawon i gyfoethogi eu haddysgu ag arferion a thechnegau celf arloesol.

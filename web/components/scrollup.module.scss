@@ -1,0 +1,11 @@
+.scrollupContainer {
+  width: 3rem;
+  position: fixed;
+  bottom: -0.1rem;
+  right: 2.3rem;
+  z-index: 4;
+}
+
+.corner {
+  fill: var(--foreground);
+}

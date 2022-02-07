@@ -1,1 +1,0 @@
-Mae gan Gymru ddwy iaith. Rydym yn addo darparu hyfforddiant ac adnoddau o ansawdd uchel yn nwy iaith genedlaethol Cymru, a bob amser yn ymatebol i ofynion iaith unigol pob rhan o Gymru.

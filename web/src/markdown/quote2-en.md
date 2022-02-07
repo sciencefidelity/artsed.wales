@@ -1,1 +1,0 @@
-> 72 our of 76 of our year sixes had parents visit our exhibition at Blackwood Miners’ Institute, that’s more that we’ve ever had at parents events in the school.<br /><cite>(Rachel Phillips, Blackwood Primary School)

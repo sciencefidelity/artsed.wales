@@ -1,3 +1,0 @@
-## Rhwydwaith Cenedlaethol
-
-Rydym yn rhwydwaith cenedlaethol o athrawon, artistiaid a sefydliadau diwylliannol sy'n darparu cymorth i ysgolion Cymru i gyflawni eu nodau ar gyfer Maes Profiad Dysgu'r Celfyddydau Mynegiadol trwy ddarparu partneriaethau iddynt i sector diwylliannol Cymru. Rydym yn hyrwyddo rhwydweithio, cydweithredu, ac yn mynd ati i adeiladu rhwydweithiau cefnogol proffesiynol rhwng ysgolion a sector y celfyddydau ledled Cymru. Gyda'n gilydd gallwn adeiladu pethau anhygoel!

@@ -1,1 +1,0 @@
-Wales is a varied country. We promise to provide a robust programme of professional development nationally standardised in quality, while responding to the Wales's unique identity and cultural diversity.

@@ -1,1 +1,0 @@
-> This amazing spoken-word project has inspired our learners to fire their imagination and express themselves. *Spoken Word* has strengthened the school’s relationship with outside agencies in our community to support future literacy projects in the new curriculum framework.<br /><cite>(Nicola Williams, Tredegar Park Primary School)

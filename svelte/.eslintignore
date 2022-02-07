@@ -1,9 +1,0 @@
-.svelte-kit
-build
-generated
-functions
-node_modules
-generated
-pnpm-lock.yaml
-.nova
-.vscode

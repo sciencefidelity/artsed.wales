@@ -1,0 +1,31 @@
+.intro {
+  padding-top: 2.5rem;
+  // margin-right: -19rem;
+  h2 {
+    margin: 0;
+  }
+}
+
+.heroContainer {
+  margin-top: 6.5rem;
+  height: 90%;
+  border: 2px solid var(--foreground);
+}
+
+.hero {
+  height: 100%;
+  // border: 2px solid var(--foreground);
+  object-fit: cover;
+}
+
+.heroCaption {
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
+}
+
+.video {
+  // border: 2px solid var(--foreground);
+  // display: inline-block;
+  width: 60%;
+
+}

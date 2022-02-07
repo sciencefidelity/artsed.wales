@@ -1,0 +1,78 @@
+@use 'styles/foundation/breakpoints' as b;
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  border-bottom: 2px solid var(--foreground);
+  // border-bottom: 2px solid var(--background);
+  z-index: 10;
+}
+
+.container {
+  padding: 1rem 2rem;
+}
+
+.navLinks {
+  color: var(--grey-950);
+  padding: 0 0.5rem;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+}
+
+.siteName {
+  color: var(--grey-950);
+  text-decoration: none;
+}
+
+.brand {
+  padding: 1.2rem;
+  margin: 0 1rem 0.1rem;
+  @include b.mq(lg) {
+    padding: 0.93rem;
+    margin: 0 0.77rem 0.077rem;
+  }
+  @include b.mq(md) {
+    padding: 0.7rem;
+    margin: 0 0.58rem 0.058rem;
+  }
+  @include b.mq(sm) {
+    padding: 0.93rem;
+    margin: 0 0.77rem 0.077rem;
+  }
+}
+
+.name {
+  align-self: center;
+  &En {
+    padding-bottom: 0.72rem;
+    @include b.mq(lg) {
+      padding-bottom: 0.56rem;
+    }
+    @include b.mq(md) {
+      padding-bottom: 0.42rem;
+    }
+  }
+  &En,
+  &Cy {
+    @include b.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+.acron {
+  &En,
+  &Cy {
+    @include b.mq(sm) {
+      display: block;
+    }
+  }
+  &En {
+    padding-bottom: 0.56rem;
+  }
+}

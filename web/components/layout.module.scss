@@ -1,0 +1,24 @@
+.siteMain {
+  // min-height: calc(100vh - 471px);
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 4;
+}
+
+.linksMenu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    color: var(--foreground);
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+    }
+  }
+}
