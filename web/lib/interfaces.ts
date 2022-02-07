@@ -1,4 +1,4 @@
-import { ReactNode, Properties } from "react"
+import { ReactNode } from "react"
 import type {
   Artform,
   Event,
@@ -87,7 +87,7 @@ export interface SignUpProps {
 export interface QuoteProps {
   photograph: Photography
   quote: Quote
-  direction?: string
+  direction?: any
 }
 
 export interface FooterProps {
