@@ -9,7 +9,6 @@ import type {
   Photography,
   Quote,
   Social,
-  SanityKeyedReference,
   SanityImageAsset,
   SanityImageCrop,
   SanityImageHotspot,
@@ -39,8 +38,8 @@ export interface IndexData extends AllPagesData {
 }
 
 export interface SiteRefs extends Site {
-  engagement?: Figure[]
-  socialLinks?: Social[]
+  engagementFigures?: Figure[]
+  socialMediaLinks?: Social[]
 }
 
 export interface AboutData extends AllPagesData {
@@ -88,7 +87,7 @@ export interface SignUpProps {
 export interface QuoteProps {
   photograph: Photography
   quote: Quote
-  direction?: Properties<string | number, string & {}>
+  direction?: string
 }
 
 export interface FooterProps {
@@ -101,5 +100,5 @@ export interface EngagementProps {
 }
 
 export interface SocialLinksProps {
-  site: Site
+  site: SiteRefs
 }

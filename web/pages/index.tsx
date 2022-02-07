@@ -82,12 +82,12 @@ const Home = ({ data }: { data: IndexData }) => {
         <QuoteCard
           photograph={photography[7]}
           quote={quotes[0]}
-          direction="column-reverse"
+          direction={"column-reverse"}
         />
         <QuoteCard
           photograph={photography[1]}
           quote={quotes[1]}
-          direction="column"
+          direction={"column"}
         />
       </section>
     </Layout>

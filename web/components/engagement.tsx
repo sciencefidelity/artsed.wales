@@ -17,7 +17,7 @@ const Engagement: FC<EngagementProps> = ({ site, statement }) => {
         className={`${u.grid} ${u.mbLarge}`}
         style={{ gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "2rem" }}
       >
-      {site.engagement.map(figure =>
+      {site.engagementFigures.map(figure =>
         <div
           className={`${u.center} ${u.w100} ${u.flex} ${u.column}`}
           style={{ placeItems: "center" }}
