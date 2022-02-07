@@ -87,7 +87,7 @@ export interface SignUpProps {
 export interface QuoteProps {
   photograph: Photography
   quote: Quote
-  direction?: string
+  direction?: any
 }
 
 export interface FooterProps {

@@ -1,10 +1,25 @@
+import { GetStaticProps } from "next"
 import Head from "next/head"
-import Layout from "@/components/layout"
-import utilStyles from "@/styles/utils.module.scss"
+import sanityClient from "lib/sanityClient"
+import { indexQuery } from "lib/queries"
+import { IndexData } from "lib/interfaces"
+import Layout from "components/layout"
+import utilStyles from "styles/utils.module.scss"
 
-const Custom404 = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await sanityClient.fetch(indexQuery)
+  return {
+    props: { data }
+  }
+}
+
+const Custom404 = ({ data }: {data: IndexData}) => {
+  const { site, statements } = data
   return (
-    <Layout>
+    <Layout
+      site={site}
+      statements={statements}
+    >
       <Head>
         <title>404 - Page Not Found</title>
       </Head>
@@ -14,5 +29,4 @@ const Custom404 = () => {
     </Layout>
   )
 }
-
 export default Custom404
