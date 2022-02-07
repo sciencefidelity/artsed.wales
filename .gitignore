@@ -3,7 +3,6 @@
 node_modules
 *.log
 .cache
-web/public
 dist
 .snowpack
 build
@@ -14,3 +13,6 @@ package
 !.env.template
 .vercel
 .output
+.next
+coverage
+out
