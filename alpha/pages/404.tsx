@@ -4,7 +4,8 @@ import sanityClient from "lib/sanityClient"
 import { indexQuery } from "lib/queries"
 import { IndexData } from "lib/interfaces"
 import Layout from "components/layout"
-import utilStyles from "styles/utils.module.scss"
+import Link from "components/link"
+import u from "styles/utils.module.scss"
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(indexQuery)
@@ -23,8 +24,10 @@ const Custom404 = ({ data }: {data: IndexData}) => {
       <Head>
         <title>404 - Page Not Found</title>
       </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>404 - Page Not Found</h1>
+      <article className={u.mtLarge}>
+        <h2 className={`${u.textCenter}`}>404 - Page Not Found</h2>
+        <p className={`${u.textCenter} ${u.serif}`}>You've hit a path that does not exist.</p>
+        <div className={`${u.textCenter} ${u.sans} ${u.uppercase}`}><Link href="/" className={u.textDark}>Home</Link></div>
       </article>
     </Layout>
   )

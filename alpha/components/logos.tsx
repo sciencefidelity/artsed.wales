@@ -7,7 +7,7 @@ import u from "styles/utils.module.scss"
 
 const Logos = () => {
   return (
-    <div className={`${s.logos} ${u.flex}`}>
+    <div className={`${s.logos} ${u.flex} ${u.mbMedium}`}>
       <WlgaLogo />
       <AcwLogo />
       <LotteryLogo />
