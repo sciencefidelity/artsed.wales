@@ -4,6 +4,7 @@ import ReactPlayer from "react-player"
 import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Engagement from "components/engagement"
+import Image from "components/image"
 import Layout from "components/layout"
 import Markdown from "components/markdown"
 import QuoteCard from "components/quoteCard"
@@ -26,18 +27,24 @@ const Home = ({ data }: { data: IndexData }) => {
         style={{ gridTemplateColumns: "43% 55%", gap: "3rem" }}
       >
         <div className={s.heroContainer}>
-          <img
+          <Image
+            caption={heroTitle}
+            image={hero.image}
+            width={900}
+            height={1100}
+            lazy={false}
+          />
+{/*           <img
             src={urlFor(hero.image)
               .auto("format")
               .width(900)
-              .height(900)
               .quality(85)
               .url()}
             width={900}
             height={1100}
             alt={heroTitle}
             className={s.hero}
-          />
+          /> */}
           <div className={`${s.heroCaption} ${u.sans} ${u.uppercase}`}>
             {heroTitle}
           </div>

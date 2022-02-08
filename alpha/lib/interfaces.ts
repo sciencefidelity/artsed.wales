@@ -102,3 +102,11 @@ export interface EngagementProps {
 export interface SocialLinksProps {
   site: SiteRefs
 }
+
+export interface ImageProps {
+  caption: string
+  image: Image
+  width?: number
+  height?: number
+  lazy?: boolean | true
+}
