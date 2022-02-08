@@ -1,4 +1,18 @@
-.intro {
+@use '/styles/foundation/breakpoints' as b;
+
+.heading {
   padding-top: 2rem;
-  margin-right: -20rem;
+  margin-right: -19rem;
+  margin-top: 2rem;
+  @include b.mq(lg) {
+    margin-right: 0;
+  }
+}
+
+.paragraph {
+  margin-top: 4rem;
+  margin-right: -4rem;
+  @include b.mq(lg) {
+    margin-right: 0;
+  }
 }

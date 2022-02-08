@@ -1,66 +1,15 @@
-@use "../styles/foundation/breakpoints" as b;
-
-// :root {
-//   --vennOpacity: 0.65;
-//   --vennBlend: difference;
-// }
-
-.venn {
-  @include b.mq(md) {
-    flex-direction: column;
-  }
-}
-
-.vennText {
-  width: 33.33%;
-  margin-right: -4%;
-  @include b.mq(md) {
-    margin: auto;
-    width: 88%;
-    margin-bottom: 3rem;
-  }
-  @include b.mq(sm) {
-    width: 100%;
-    margin-bottom: 3rem;
-  }
-}
-
-.vennP1 {
-  margin-right: -15%;
-  @include b.mq(md) {
-    margin-right: 0;
-  }
-}
-
-.vennP2 {
-  margin-right: 6%;
-  @include b.mq(md) {
-    margin-right: 0;
-  }
-}
-
-.vennP3 {
-  margin-right: 14%;
-  @include b.mq(md) {
-    margin-right: 0;
-  }
-}
-
-.vennHeading {
-  line-height: 0.6;
-}
+@use "/styles/foundation/breakpoints" as b;
 
 .vennDiagram {
   position: relative;
   width: 56vw;
   margin-left: auto;
   margin-right: -2rem;
-  // margin-bottom: -7rem;
   margin-top: 6rem;
-  @include b.mq(md) {
-    width: 94%;
-    margin-bottom: -2.5rem;
-    right: 3%;
+  @include b.mq(lg) {
+    width: 100%;
+    margin-bottom: -10rem;
+    right: 4%;
   }
   @include b.mq(sm) {
     width: 106%;
@@ -70,9 +19,9 @@
 
 %all-content {
   position: absolute;
-  // color: var(--grey-000);
   font-family: var(--sans);
-  font-size: 3.2rem;
+  // font-size: 2.5rem;
+  font-size: 1.8vw;
   text-align: center;
   transform: translate(-50%, -50%);
   @include b.mq(lg) {

@@ -60,6 +60,12 @@
   flex-direction: column;
 }
 
+.lgColumn {
+  @include b.mq(lg) {
+    flex-direction: column;
+  }
+}
+
 .grid {
   display: grid;
 }
