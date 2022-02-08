@@ -20,6 +20,7 @@ const Header: FC<HeaderProps> = ({ site }) => {
         ${u.uppercase}
         ${u.w100}
         ${u.gapSmall}
+        ${u.gapLgNone}
       `}>
         <div>
           <Link href="/" className={`${s.siteName} ${u.lgHide}`}>

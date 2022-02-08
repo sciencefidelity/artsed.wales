@@ -1,12 +1,16 @@
+@use '/styles/foundation/breakpoints' as b;
+
 .coursesContainer {
   margin-bottom: 9rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+  @include b.mq(lg) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cardContainer {
   border: 2px solid var(--foreground);
   background-color: var(--background);
-  // background-color: rgba(89, 222, 223, 0.5);
 }

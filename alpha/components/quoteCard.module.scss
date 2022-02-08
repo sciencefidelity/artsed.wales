@@ -1,11 +1,9 @@
-@use '../styles/foundation/breakpoints' as b;
+@use '/styles/foundation/breakpoints' as b;
 
 .quoteContainer {
   max-width: 85rem;
   min-width: 8.5rem;
-  // margin-right: auto;
   margin: auto;
-  // flex-direction: column;
   height: 100%;
   @include b.mq(lg) {
     min-width: 0;
@@ -22,21 +20,19 @@
 }
 
 .quoteText {
-  // width: var(--textWidth);
   @include b.mq(md) {
     width: 100%;
   }
 }
 
 .cardPadding {
-  padding: 1.5rem 1rem 1rem 1 rem;
+  padding: 1.5rem 1rem 1rem 1rem;
   @include b.mq(sm) {
-    padding: 1.5rem 1.5rem 1rem 2rem;
+    padding: 1.5rem 1.8rem 0.5rem 1.8rem;
   }
 }
 
 .img {
-  // object-position: var(--xPosition) 50%;
   flex: 1;
 }
 

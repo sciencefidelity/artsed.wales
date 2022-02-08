@@ -36,7 +36,7 @@ const Layout: FC<LayoutProps> = ({
     <div className={s.siteMain}>
       <Head>
         <title>
-          {title && (locale === "cy" ? title.cy : title.en)}
+          {title && localize(title, locale)}
           {title && " | "}
           {siteName}
         </title>

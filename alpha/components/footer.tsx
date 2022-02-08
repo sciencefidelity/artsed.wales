@@ -10,11 +10,6 @@ import u from "styles/utils.module.scss"
 const Footer: FC<FooterProps> = ({ site }) => {
   const { locale } = useRouter()
   const year = new Date().getFullYear()
-{/*   const siteName: LocaleString = {
-    _type: "localeString",
-    cy: site.siteName.cy,
-    en: site.siteName.en.replace("and", "&")
-  } */}
   const siteName = localize(site.siteName, locale).replace("and", "&")
   const contact: LocaleString = {
     _type: "localeString",

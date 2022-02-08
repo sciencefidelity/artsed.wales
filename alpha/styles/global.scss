@@ -19,6 +19,9 @@ body {
   overflow: hidden;
   font-family: var(--serif);
   font-size: 2rem;
+  @include b.mq(sm) {
+    font-size: 1.7rem;
+  }
   line-height: 1.5;
   color: var(--foreground);
   background-color: var(--background);
@@ -96,8 +99,10 @@ p {
   // font-size: 2.7rem;
   font-size: 1.79vw;
   @include b.mq(lg) {
-    // font-size: 1.8rem;
     font-size: 2.2vw;
+  }
+  @include b.mq(md) {
+    font-size: 2rem;
   }
   @include b.mq(sm) {
     font-size: 2rem;
@@ -116,13 +121,13 @@ sup {
 
 blockquote {
   position: relative;
-  margin-bottom: 1em;
   font-size: 2.6rem;
+  margin: 0 0 1em 0;
   @include b.mq(lg) {
     font-size: 1.8rem;
   }
   @include b.mq(sm) {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
 

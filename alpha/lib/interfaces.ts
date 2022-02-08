@@ -6,6 +6,7 @@ import type {
   Figure,
   Keystage,
   LocaleMarkdown,
+  LocaleString,
   Photography,
   Quote,
   Social,
@@ -55,10 +56,7 @@ export interface LayoutProps {
   children: ReactNode
   site: Site
   statements: Statement[]
-  title?: {
-    cy: string
-    en: string
-  }
+  title?: LocaleString
 }
 
 export interface HeaderProps {
