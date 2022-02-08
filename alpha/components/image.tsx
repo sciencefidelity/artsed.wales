@@ -12,6 +12,7 @@ const Image: FC<ImageProps> = ({ caption, height, image, width, lazy }) => {
       src={urlFor(image)
         .auto("format")
         .width(width)
+        .height(height)
         .quality(85)
         .url()}
       alt={caption}

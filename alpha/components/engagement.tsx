@@ -1,16 +1,14 @@
 import { FC } from "react"
 import Localize from "components/localize"
 import Markdown from "components/markdown"
-import u from "styles/utils.module.scss"
 import { EngagementProps } from "lib/interfaces"
+import s from "pages/index.module.scss"
+import u from "styles/utils.module.scss"
 
 const Engagement: FC<EngagementProps> = ({ site, statement }) => {
   return (
     <section>
-      <div
-        className={u.center}
-        style={{ width: "60%", marginBottom: "7rem" }}
-      >
+      <div className={`${u.center} ${s.engagementText}`}>
         <Markdown content={statement.statement} />
       </div>
       <div

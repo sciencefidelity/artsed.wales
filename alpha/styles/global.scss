@@ -58,7 +58,8 @@ h1 {
 h2 {
   font-family: var(--serif);
   // font-size: 5rem;
-  font-size: 3.31vw;
+  font-size: calc(3.3vw - 0.4rem);
+  font-size: 3.3vw;
   line-height: 1.2;
   color: var(--foreground);
   font-weight: 600;
@@ -66,15 +67,15 @@ h2 {
   @include b.mq(xl) {
     font-size: 3.6rem;
   }
-  // @include b.mq(md) {
-  //   font-size: 3.1rem;
-  // }
-  // @include b.mq(sm) {
-  //   font-size: 2.4rem;
-  // }
-  // @include b.mq(xs) {
-  //   font-size: 2.2rem;
-  // }
+  @include b.mq(md) {
+    font-size: 3.1rem;
+  }
+  @include b.mq(sm) {
+    font-size: 3rem;
+  }
+  @include b.mq(xs) {
+    font-size: 3rem;
+  }
 }
 
 h3 {

@@ -1,5 +1,6 @@
+@use '/styles/foundation/breakpoints' as b;
+
 .footer {
-  // border-top: var(--border);
   padding: 1rem 2rem;
   font-size: 1.6rem;
   color: var(--foreground);
@@ -7,6 +8,11 @@
   z-index: 2;
   position: relative;
   background-color: var(--background);
+  margin: 0 4.5rem;
+  @include b.mq(sm) {
+    margin: 0;
+    flex-direction: column;
+  }
   a {
     text-decoration: none;
     color: var(--foreground);

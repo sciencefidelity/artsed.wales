@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
-// import { acronym } from "lib/utils"
+import { acronym, localize } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
 import { HeaderProps } from "lib/interfaces"
@@ -10,6 +10,7 @@ import s from "components/header.module.scss"
 const Header: FC<HeaderProps> = ({ site }) => {
   const router = useRouter()
   const { locale } = router
+  const siteName = localize(site.siteName, locale).replace("and", "&")
   return (
     <header className={`${s.header} ${u.bgLight}`}>
       <div className={`
@@ -20,12 +21,14 @@ const Header: FC<HeaderProps> = ({ site }) => {
         ${u.w100}
         ${u.gapSmall}
       `}>
-{/*         <div>{acronym(site.siteName.en)}</div> */}
         <div>
           <Link href="/" className={s.siteName}>
-            {locale === "cy"
-              ? site.siteName.cy
-              : site.siteName.en.replace("and", "&")}
+            {siteName}
+          </Link>
+        </div>
+        <div>
+          <Link href="/" className={`${s.acron} ${u.hide}`}>
+            {acronym(siteName)}
           </Link>
         </div>
         <div className={`${u.fAuto}`}>

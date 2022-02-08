@@ -1,5 +1,10 @@
+@use '/styles/foundation/breakpoints' as b;
+
 .logos {
   justify-content: center;
   width: 100%;
   gap: 5rem;
+  @include b.mq(sm) {
+    gap: 2rem;
+  }
 }

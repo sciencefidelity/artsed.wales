@@ -1,25 +1,76 @@
+@use '/styles/foundation/breakpoints' as b;
+
 .intro {
-  padding-top: 2.5rem;
-  // margin-right: -19rem;
+  width: 100%;
+  grid-template-columns: 43% 55%;
+  grid-auto-rows: min-content;
+  margin-top: 6.4rem;
+  @include b.mq(md) {
+    grid-template-columns: auto;
+  }
+}
+
+.introImage {
+  height: 98%;
+  border: 2px solid var(--foreground);
+}
+
+.caption {
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include b.mq(lg) {
+    font-size: 1.4rem;
+  }
+}
+
+.introHeading {
+  margin: -0.9rem 0 0 0;
   h2 {
     margin: 0;
   }
 }
 
-.heroContainer {
-  margin-top: 6.5rem;
-  height: 90%;
-  border: 2px solid var(--foreground);
-}
-
-.heroCaption {
-  font-size: 1.6rem;
-  margin-top: 0.4rem;
+.introBody {
+  margin-top: 6rem;
+  @include b.mq(md) {
+    margin-top: 0;
+  }
 }
 
 .video {
-  // border: 2px solid var(--foreground);
-  // display: inline-block;
   width: 60%;
+  min-width: 800px;
+  @include b.mq(lg) {
+    width: 88%;
+    min-width: unset;
+  }
+  @include b.mq(md) {
+    width: 100%;
+    min-width: unset;
+  }
+}
 
+.engagementText {
+  width: 60%;
+  margin-bottom: 7rem;
+  @include b.mq(lg) {
+    width: 88%;
+    min-width: unset;
+  }
+  @include b.mq(md) {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+.quoteGrid {
+  grid-template-columns: auto auto;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+  @include b.mq(sm) {
+    grid-template-columns: auto;
+  }
 }

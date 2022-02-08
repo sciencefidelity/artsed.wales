@@ -89,7 +89,7 @@ const Layout: FC<LayoutProps> = ({
       </Head>
       <Header site={site} />
       <main className={s.content}>
-        <div className={u.container}>{children}</div>
+        <div className={`${u.container}`}>{children}</div>
         <SignUp
           statements={statements}
           site={site}

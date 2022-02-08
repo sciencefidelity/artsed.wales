@@ -21,9 +21,9 @@ const Footer: FC<FooterProps> = ({ site }) => {
   }
   return (
     <footer className={`${s.footer} ${u.sans} ${u.flex}`}>
-      <div style={{ marginLeft: "4.5rem" }}>
+      <div>
         <Localize data={contact} />{": "}
-        <span className={u.lowercase} style={{ textDecoration: "none" }}>
+        <span className={u.lowercase}>
           <a
             href={"mailto:" + (locale === "cy" ? site.email.cy : site.email.en)}
           >
@@ -35,7 +35,7 @@ const Footer: FC<FooterProps> = ({ site }) => {
           &copy;{" "}{year}{" "}<Localize data={siteName} />
         </span>
       </div>
-      <div style={{ marginRight: "4.5rem" }}>
+      <div>
         <br />
           Site by <a href="https://mattcook.dev" target="_blank">Matt</a>
       </div>

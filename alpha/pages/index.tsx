@@ -22,44 +22,28 @@ const Home = ({ data }: { data: IndexData }) => {
       site={site}
       statements={statements}
     >
-      <div
-        className={`${u.grid} ${u.mbLarge}`}
-        style={{ gridTemplateColumns: "43% 55%", gap: "3rem" }}
-      >
-        <div className={s.heroContainer}>
+      <div className={`${s.intro} ${u.grid} ${u.mbLarge} ${u.gapSmall}`}>
+        <div className={`${s.introHeading} ${u.serif}`}>
+          <Markdown content={statements[0].statement} />
+        </div>
+        <div className={s.introImage}>
           <Image
             caption={heroTitle}
             image={hero.image}
             width={900}
-            height={1100}
+            height={900}
             lazy={false}
           />
-{/*           <img
-            src={urlFor(hero.image)
-              .auto("format")
-              .width(900)
-              .quality(85)
-              .url()}
-            width={900}
-            height={1100}
-            alt={heroTitle}
-            className={s.hero}
-          /> */}
-          <div className={`${s.heroCaption} ${u.sans} ${u.uppercase}`}>
+          <div className={`${s.caption} ${u.sans} ${u.uppercase}`}>
             {heroTitle}
           </div>
         </div>
         <div>
-          <div
-            className={`${s.intro} ${u.serif} ${u.fgDark}`}
-            style={{ marginTop: "3rem" }}
-          >
+{/*           <div className={`${s.introHeading} ${u.serif}`}>
             <Markdown content={statements[0].statement} />
-          </div>
-          <div style={{ marginTop: "6rem" }}>
+          </div> */}
+          <div className={`${s.introBody}`}>
             <Markdown content={statements[12].statement} />
-          </div>
-          <div>
             <Markdown content={statements[3].statement} />
           </div>
         </div>
@@ -75,16 +59,12 @@ const Home = ({ data }: { data: IndexData }) => {
             aspectRatio: "16 / 9"
           }}
         />
-        <div className={`${s.heroCaption} ${u.sans} ${u.uppercase}`}>
+        <div className={`${s.caption} ${u.sans} ${u.uppercase}`}>
           {video.title.en}
         </div>
       </div>
       <Engagement site={site} statement={statements[8]} />
-      <section className={`${u.mbLarge} ${u.grid}`} style={{
-        gridTemplateColumns: "auto auto",
-        gridAutoRows: "1fr",
-        gap: "2rem"
-      }}>
+      <section className={`${s.quoteGrid} ${u.mbLarge} ${u.grid}`}>
         <QuoteCard
           photograph={photography[7]}
           quote={quotes[0]}

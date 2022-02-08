@@ -10,6 +10,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ site }) => {
         className={`
           ${s.linksMenu}
           ${u.flex}
+          ${u.wrap}
           ${u.sans}
           ${u.uppercase}
           ${u.gapSmall}

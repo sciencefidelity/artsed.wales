@@ -1,5 +1,6 @@
+@use '/styles/foundation/breakpoints' as b;
+
 .siteMain {
-  // min-height: calc(100vh - 471px);
   position: relative;
 }
 
@@ -21,4 +22,34 @@
       text-underline-offset: 6px;
     }
   }
+  @include b.mq(md) {
+    justify-content: unset;
+  }
+}
+
+.logos {
+  justify-content: center;
+  width: 100%;
+  gap: 5rem;
+  font-size: 1.3;
+  @include b.mq(sm) {
+    gap: 2rem;
+    font-size: 3vw;
+  }
+}
+
+.lotteryLogo {
+  width: 14em;
+}
+
+.acwLogo {
+  width: 18em;
+}
+
+.wgLogo {
+  width: 12em;
+}
+
+.wlgaLogo {
+  height: 5em;
 }
