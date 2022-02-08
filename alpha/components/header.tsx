@@ -3,7 +3,6 @@ import { useRouter } from "next/router"
 // import { acronym } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
-// import Logo from "components/logo"
 import { HeaderProps } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "components/header.module.scss"
@@ -13,7 +12,14 @@ const Header: FC<HeaderProps> = ({ site }) => {
   const { locale } = router
   return (
     <header className={`${s.header} ${u.bgLight}`}>
-      <div className={`${s.container} ${u.flex} ${u.sans} ${u.uppercase} ${u.w100} ${u.gapSmall}`}>
+      <div className={`
+        ${s.container}
+        ${u.flex}
+        ${u.sans}
+        ${u.uppercase}
+        ${u.w100}
+        ${u.gapSmall}
+      `}>
 {/*         <div>{acronym(site.siteName.en)}</div> */}
         <div>
           <Link href="/" className={s.siteName}>

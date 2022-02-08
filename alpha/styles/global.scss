@@ -2,17 +2,8 @@
 @use 'foundation/typography';
 @use 'foundation/breakpoints' as b;
 
-// * {
-//   box-sizing: border-box;
-//   margin: 0;
-//   &::before,
-//   &::after {
-//     box-sizing: border-box;
-//   }
-// }
-
 ::selection {
-  background-color: var(--grey-250);
+  background-color: var(--grey-200);
 }
 
 html {
@@ -31,7 +22,6 @@ body {
   line-height: 1.5;
   color: var(--foreground);
   background-color: var(--background);
-  // height: 500vh;
 }
 
 section {
@@ -41,9 +31,6 @@ section {
 p a {
   color: var(--grey-950);
   text-decoration: none;
-  // border-bottom: 1px solid rgba(255, 155, 89, 0.5);
-  // box-shadow: inset 0 -3px 0 rgba(255, 155, 89, 0.5);
-  transition: all 0.4s ease-out;
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 5px;
@@ -70,7 +57,8 @@ h1 {
 
 h2 {
   font-family: var(--serif);
-  font-size: 5rem;
+  // font-size: 5rem;
+  font-size: 3.31vw;
   line-height: 1.2;
   color: var(--foreground);
   font-weight: 600;
@@ -78,15 +66,15 @@ h2 {
   @include b.mq(xl) {
     font-size: 3.6rem;
   }
-  @include b.mq(md) {
-    font-size: 3.1rem;
-  }
-  @include b.mq(sm) {
-    font-size: 2.4rem;
-  }
-  @include b.mq(xs) {
-    font-size: 2.2rem;
-  }
+  // @include b.mq(md) {
+  //   font-size: 3.1rem;
+  // }
+  // @include b.mq(sm) {
+  //   font-size: 2.4rem;
+  // }
+  // @include b.mq(xs) {
+  //   font-size: 2.2rem;
+  // }
 }
 
 h3 {
@@ -106,7 +94,8 @@ h4 {
 
 p {
   margin-bottom: 1.8rem;
-  font-size: 2.7rem;
+  // font-size: 2.7rem;
+  font-size: 1.79vw;
   @include b.mq(lg) {
     font-size: 1.8rem;
   }
