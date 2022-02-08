@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import ReactPlayer from "react-player"
-import { localize, urlFor } from "lib/utils"
+import { localize } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Engagement from "components/engagement"
 import Image from "components/image"
@@ -23,7 +23,7 @@ const Home = ({ data }: { data: IndexData }) => {
       statements={statements}
     >
       <div className={`${s.intro} ${u.grid} ${u.mbLarge} ${u.gapSmall}`}>
-        <div className={`${s.introHeading} ${u.serif}`}>
+        <div className={`${s.introHeading} ${u.serif} ${u.hide} ${u.mdBlock}`}>
           <Markdown content={statements[0].statement} />
         </div>
         <div className={s.introImage}>
@@ -39,9 +39,9 @@ const Home = ({ data }: { data: IndexData }) => {
           </div>
         </div>
         <div>
-{/*           <div className={`${s.introHeading} ${u.serif}`}>
+          <div className={`${s.introHeading} ${u.serif} ${u.mdHide}`}>
             <Markdown content={statements[0].statement} />
-          </div> */}
+          </div>
           <div className={`${s.introBody}`}>
             <Markdown content={statements[12].statement} />
             <Markdown content={statements[3].statement} />

@@ -26,16 +26,10 @@
 .siteName {
   color: var(--grey-950);
   text-decoration: none;
-  @include b.mq(lg) {
-    display: none;
-  }
 }
 
 .acron {
   margin-right: 3rem;
   color: var(--grey-950);
   text-decoration: none;
-  @include b.mq(lg) {
-    display: block;
-  }
 }

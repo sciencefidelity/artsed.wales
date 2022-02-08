@@ -4,6 +4,42 @@
   display: none;
 }
 
+.smHide {
+  @include b.mq(sm) {
+    display: none;
+  }
+}
+
+.lgHide {
+  @include b.mq(lg) {
+    display: none;
+  }
+}
+
+.mdHide {
+  @include b.mq(md) {
+    display: none;
+  }
+}
+
+.smBlock {
+  @include b.mq(sm) {
+    display: block;
+  }
+}
+
+.mdBlock {
+  @include b.mq(md) {
+    display: block;
+  }
+}
+
+.lgBlock {
+  @include b.mq(lg) {
+    display: block;
+  }
+}
+
 .flex {
   display: flex;
 }
@@ -26,38 +62,6 @@
 
 .grid {
   display: grid;
-}
-
-.threeCol {
-  @include b.mq(lg) {
-    flex-wrap: wrap;
-    div {
-      width: calc(50% - 1.25rem);
-      margin: auto;
-    }
-  }
-  @include b.mq(md) {
-    width: 88%;
-    margin: auto;
-    div {
-      width: 100%;
-    }
-  }
-  @include b.mq(sm) {
-    width: 100%;
-  }
-}
-
-.twoCol {
-  margin: auto;
-  grid-template-columns: 1fr 1fr;
-  @include b.mq(md) {
-    grid-template-columns: 1fr;
-    width: 88%;
-  }
-  @include b.mq(sm) {
-    width: 100%;
-  }
 }
 
 .gapSmall {
@@ -131,17 +135,14 @@
 
 .fgDark {
   color: var(--foreground);
-  // fill: var(--foreground);
 }
 
 .fgLight {
   color: var(--background);
-  // fill: var(--background);
 }
 
 .fgWhite {
   color: var(--grey-000);
-  fill: var(--grey-000);
 }
 
 .textDark {
@@ -205,9 +206,6 @@
 
 .mbLarge {
   margin-bottom: 10rem;
-  @include b.mq(xl) {
-    margin-bottom: 7rem;
-  }
   @include b.mq(sm) {
     margin-bottom: 6rem;
   }
