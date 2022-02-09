@@ -95,6 +95,9 @@ h4 {
 p {
   // font-size: 2.7rem;
   font-size: 1.79vw;
+  @include b.mq(xl) {
+    font-size: 2vw;
+  }
   @include b.mq(lg) {
     font-size: 2.3vw;
   }

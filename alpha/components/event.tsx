@@ -5,7 +5,7 @@ import Localize from "components/localize"
 import Markdown from "components/markdown"
 import Date from "components/date"
 import { EventProps } from "lib/interfaces"
-import s from "components/event.module.scss"
+import s from "pages/courses.module.scss"
 import u from "styles/utils.module.scss"
 
 const Event: FC<EventProps> = ({ event }) => {
