@@ -25,7 +25,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ site }) => {
           ${u.uppercase}
         `}
       >
-        <span className={u.mdHide}><li>Follow us on:{" "}</li></span>
+        <li className={`${u.mdHide}`}>Follow us on:{" "}</li>
         {site.socialMediaLinks.map(link =>
           <li key={link._id}><a href={link.link}>{link.site}</a></li>
         )}
