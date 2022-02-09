@@ -1,15 +1,13 @@
 import { useRouter } from "next/router"
 import Ampersand from "components/ampersand"
 import u from "styles/utils.module.scss"
-import s from "components/model.module.scss"
+import s from "pages/about.module.scss"
 
 const Model = () => {
   const { locale } = useRouter()
   return (
-    <section className={u.mbLarge}>
-      <div className={`${s.venn} ${u.flex} ${u.uppercase}`}>
-        <p className={`${u.container} ${u.mtLarge} ${u.mbLarge} ${u.serif}`}>
-        </p>
+    <section className={`${s.venn} ${u.mbLarge}`}>
+      <div className={`${u.flex} ${u.uppercase}`}>
         <div className={s.vennDiagram}>
           <div className={s.circle1}></div>
           <div className={s.circle2}></div>

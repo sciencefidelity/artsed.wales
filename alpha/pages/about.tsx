@@ -34,12 +34,16 @@ const About = ({ data }: { data: AboutData }) => {
           <div className={`${s.heading} ${u.serif} ${u.fgDark}`}>
             <Markdown content={statements[2].statement} />
           </div>
-          <div className={s.paragraph}>
+          <div className={`${s.paragraph} ${u.mdHide}`}>
             <Markdown content={statements[6].statement} />
             <Markdown content={statements[7].statement} />
           </div>
         </article>
         <Model />
+        <div className={`${s.paragraph} ${u.mdBlock}`}>
+          <Markdown content={statements[6].statement} />
+          <Markdown content={statements[7].statement} />
+        </div>
       </div>
     </Layout>
   )

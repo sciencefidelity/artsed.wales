@@ -147,3 +147,10 @@ cite {
 form {
   margin-bottom: 1.8em;
 }
+
+svg {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+}
