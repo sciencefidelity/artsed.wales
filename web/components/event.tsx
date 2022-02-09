@@ -90,7 +90,7 @@ const Event: FC<EventProps> = ({ event }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <button className={s.britelinkBtn}>
+            <button className={`${s.britelinkBtn} ${u.fgDark}`}>
               {locale === "cy" ? "Archebwch nawr" : "Book now"}
             </button>
           </a>

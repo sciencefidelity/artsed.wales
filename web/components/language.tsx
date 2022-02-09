@@ -8,34 +8,34 @@ const Language = () => {
   const { pathname, asPath, query, locale, locales } = router
   const languages = ["cymreag", "english"]
   return (
-    <div className={s.languageSwitcher}>
+    <div className={`${s.langLink} ${u.fgDark} ${u.pointer}`}>
       <span className={u.screenReaderText}>
         {locale === "cy"
           ? "Switch language to English"
           : "Newid iaith i'r Gymraeg"}
       </span>
       {locale === "cy" ? (
-        <span
-          className={`
-            ${s.langLink} ${u.fgDark} ${u.pointer}`
-          }
+        <button
+          className={`${s.langLink} ${u.pointer} ${u.uppercase}`}
           onClick={() => {
-            router.push({ pathname, query }, asPath, { locale: locales[0], scroll: false })
+            router.push(
+              {pathname, query}, asPath, {locale: locales[0], scroll: false}
+            )
           }}
         >
           {capitalize(languages[1])}
-        </span>
+        </button>
       ) : (
-        <span
-          className={
-            `${s.langLink} ${u.fgDark} ${u.pointer}`
-          }
+        <button
+          className={`${s.langLink} ${u.pointer} ${u.uppercase} ${u.fgDark}`}
           onClick={() => {
-            router.push({ pathname, query }, asPath, { locale: locales[1], scroll: false })
+            router.push(
+              {pathname, query}, asPath, {locale: locales[1], scroll: false}
+            )
           }}
         >
           {" "}{capitalize(languages[0])}
-        </span>
+        </button>
       )}
     </div>
   )

@@ -118,7 +118,7 @@
   line-height: 1.5em;
   text-transform: uppercase;
   cursor: pointer;
-  user-select: none;
+  // user-select: none;
   background-color: var(--white);
   border: var(--border);
   @include b.mq(md) {
