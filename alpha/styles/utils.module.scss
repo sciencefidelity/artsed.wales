@@ -10,17 +10,18 @@
   }
 }
 
+.mdHide {
+  @include b.mq(md) {
+    display: none;
+  }
+}
+
 .lgHide {
   @include b.mq(lg) {
     display: none;
   }
 }
 
-.mdHide {
-  @include b.mq(md) {
-    display: none;
-  }
-}
 
 .smBlock {
   @include b.mq(sm) {

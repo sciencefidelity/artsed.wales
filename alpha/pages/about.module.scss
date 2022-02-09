@@ -3,7 +3,10 @@
 .heading {
   padding-top: 2rem;
   margin-top: 2rem;
-  margin-right: -19rem;
+  margin-right: -16rem;
+  @include b.mq(xl) {
+    margin-right: -15rem;
+  }
   @include b.mq(lg) {
     margin-right: 0;
   }
@@ -14,21 +17,7 @@
 
 .paragraph {
   margin-top: 4rem;
-  margin-right: -4rem;
-  @include b.mq(lg) {
-    margin-right: 0;
-  }
-}
-
-.venn {
-  @include b.mq(md) {
-    margin-top: 6rem;
-    margin-bottom: -3rem;
-  }
-  @include b.mq(sm) {
-    margin-top: 4rem;
-    margin-bottom: -2rem;
-  }
+  margin-right: 0rem;
 }
 
 .vennDiagram {
@@ -38,18 +27,16 @@
   margin-right: -2rem;
   margin-left: auto;
   @include b.mq(lg) {
+    margin: 6rem 0 -16rem;
     width: 100%;
-    margin-bottom: -10rem;
   }
   @include b.mq(md) {
-    margin: 0 -3rem 0;
+    margin: 6rem -3rem -14rem;
     width: 120%;
-    margin-bottom: -1.5rem;
   }
   @include b.mq(sm) {
-    margin: 0 -4rem 0;
+    margin: 6rem -4rem -12rem;
     width: 125%;
-    margin-bottom: -1.5rem;
   }
 }
 
@@ -61,6 +48,9 @@
   text-align: center;
   user-select: none;
   transform: translate(-50%, -50%);
+  @include b.mq(xl) {
+    font-size: 2vw;
+  }
   @include b.mq(lg) {
     font-size: 3vw;
   }
@@ -95,6 +85,12 @@
   @extend %all-content;
   top: 55%;
   left: 50%;
+  @include b.mq(xl) {
+    top: 56%;
+  }
+  @include b.mq(lg) {
+    top: 55%;
+  }
   @include b.mq(md) {
     top: 56%;
   }
@@ -173,8 +169,11 @@
   left: 50%;
   width: 3.7em;
   transform: translate(-46%, -45%);
+  @include b.mq(xl) {
+    width: 6vw;
+  }
   @include b.mq(lg) {
-    width: 7vw;
+    width: 9vw;
   }
   @include b.mq(md) {
     width: 10vw;
