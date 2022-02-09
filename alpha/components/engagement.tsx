@@ -17,7 +17,7 @@ const Engagement: FC<EngagementProps> = ({ site, statement }) => {
       {site.engagementFigures.map(figure =>
         <div
           key={figure._id}
-          className={`${u.center} ${u.w100} ${u.flex} ${u.column}`}
+          className={`${u.textCenter} ${u.w100} ${u.flex} ${u.column}`}
         >
           <div className={`${s.engagementFigure} ${u.sans} ${u.sans}`}>
             {figure.count}
@@ -32,3 +32,4 @@ const Engagement: FC<EngagementProps> = ({ site, statement }) => {
   )
 }
 export default Engagement
+
