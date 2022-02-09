@@ -30,7 +30,7 @@ export default {
       const {title, username, link} = selection
       return {
         title: title,
-        subtitle: `${username ? username : link}`
+        subtitle: `${username ? username : link.en}`
       }
     }
   }
