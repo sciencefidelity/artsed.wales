@@ -10,8 +10,18 @@ module.exports = {
     // should handle (these are only required when setting up domain routing)
     // Note: subdomains must be included in the domain value to be matched e.g. "fr.example.com".
   },
+  domains: [
+    {
+      domain: 'artsed.wales',
+      defaultLocale: 'en'
+    },
+    {
+      domain: 'celfadd.cymru',
+      defaultLocale: 'cy'
+    }
+  ],
   images: {
-    domains: ["cdn.sanity.io"],
+    domains: ["cdn.sanity.io"]
   },
   swcMinify: true
 }
