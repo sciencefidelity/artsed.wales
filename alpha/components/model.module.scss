@@ -57,38 +57,37 @@
 
 .content4 {
   @extend %all-content;
-  // color: var(--grey-000);
   top: 55%;
   left: 50%;
 }
 
-%white-circles {
-  background-color: white;
+%bg-circle {
+  background-color: var(--white);
   position: absolute;
   width: 60.59%;
   border-radius: 50%;
 }
 
 .circle1 {
-  @extend %white-circles;
+  @extend %bg-circle;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .circle2 {
-  @extend %white-circles;
+  @extend %bg-circle;
   bottom: 10.02%;
   left: 2.41%;
 }
 
 .circle3 {
-  @extend %white-circles;
+  @extend %bg-circle;
   bottom: 10.02%;
   right: 2.41%;
 }
 
-%top-circles {
+%fg-circle {
   mix-blend-mode: difference;
   opacity: 0.65;
   position: absolute;
@@ -97,25 +96,25 @@
 }
 
 .circle4 {
-  @extend %top-circles;
+  @extend %fg-circle;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #FF3333;
+  background-color: var(--red);
 }
 
 .circle5 {
-  @extend %top-circles;
+  @extend %fg-circle;
   bottom: 10.02%;
   right: 2.41%;
-  background-color: #33CC66;
+  background-color: var(--green);
 }
 
 .circle6 {
-  @extend %top-circles;
+  @extend %fg-circle;
   bottom: 10.02%;
   left: 2.41%;
-  background-color: #0099FF;
+  background-color: var(--blue);
 }
 
 .vennDiagram::after,
@@ -125,7 +124,7 @@
 .circle4::after,
 .circle5::after,
 .circle6::after {
-  content: "";
+  content: '';
   padding-bottom: 100%;
   display: block;
 }

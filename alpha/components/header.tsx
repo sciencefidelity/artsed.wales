@@ -22,13 +22,13 @@ const Header: FC<HeaderProps> = ({ site }) => {
         ${u.gapSmall}
         ${u.gapLgNone}
       `}>
-        <div>
-          <Link href="/" className={`${s.siteName} ${u.lgHide}`}>
+        <div className={`${u.lgHide}`}>
+          <Link href="/" className={`${s.siteName}`}>
             {siteName}
           </Link>
         </div>
-        <div>
-          <Link href="/" className={`${s.acron} ${u.hide} ${u.lgBlock}`}>
+        <div className={`${u.hide} ${u.lgBlock}`}>
+          <Link href="/" className={`${s.acron}`}>
             {acronym(siteName)}
           </Link>
         </div>

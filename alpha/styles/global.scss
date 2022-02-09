@@ -10,6 +10,7 @@ html {
   overflow-y: scroll;
   font-size: 62.5%;
   background-color: var(--background);
+  color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,12 +20,10 @@ body {
   overflow: hidden;
   font-family: var(--serif);
   font-size: 2rem;
+  line-height: 1.5;
   @include b.mq(sm) {
     font-size: 1.7rem;
   }
-  line-height: 1.5;
-  color: var(--foreground);
-  background-color: var(--background);
 }
 
 section {
@@ -40,7 +39,6 @@ p a {
 }
 
 h1 {
-  font-family: var(--serif);
   font-size: 12rem;
   font-weight: 800;
   line-height: 1.1;
@@ -59,7 +57,6 @@ h1 {
 }
 
 h2 {
-  font-family: var(--serif);
   // font-size: 5rem;
   font-size: 3.3vw;
   line-height: 1.2;
@@ -112,7 +109,6 @@ p {
 small {
   font-family: var(--sans);
   font-size: 85%;
-  color: var(--grey-950);
 }
 
 sup {
@@ -122,7 +118,7 @@ sup {
 blockquote {
   position: relative;
   font-size: 2.6rem;
-  margin: 0 0 1em 0;
+  margin: 0 0 2.5rem 0;
   @include b.mq(lg) {
     font-size: 1.8rem;
   }
