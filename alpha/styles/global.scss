@@ -96,7 +96,7 @@ p {
   // font-size: 2.7rem;
   font-size: 1.79vw;
   @include b.mq(lg) {
-    font-size: 2.2vw;
+    font-size: 2.3vw;
   }
   @include b.mq(md) {
     font-size: 2rem;
@@ -122,6 +122,9 @@ blockquote {
   @include b.mq(lg) {
     font-size: 1.8rem;
   }
+  @include b.mq(md) {
+    font-size: 2rem;
+  }
   @include b.mq(sm) {
     font-size: 2rem;
   }
@@ -132,7 +135,7 @@ cite {
   font-family: var(--sans);
   font-size: 1.6rem;
   font-style: normal;
-  line-height: 1.4;
+  line-height: 1.8;
   @include b.mq(lg) {
     font-size: 1.4rem;
   }
