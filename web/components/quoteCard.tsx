@@ -2,7 +2,7 @@ import { FC } from "react"
 import { urlFor } from "lib/utils"
 import { QuoteProps } from "lib/interfaces"
 import u from "styles/utils.module.scss"
-import s from "components/quoteCard.module.scss"
+import s from "pages/index.module.scss"
 
 const QuoteCard: FC<QuoteProps> = ({ direction, quote, photograph }) => {
   return (
@@ -12,7 +12,6 @@ const QuoteCard: FC<QuoteProps> = ({ direction, quote, photograph }) => {
     >
       <img
         src={urlFor(photograph.image).url()}
-
         alt={photograph.title.en}
         className={`${s.img} ${u.cover} ${u.ofHidden}`}
         decoding="async"

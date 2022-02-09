@@ -1,25 +1,35 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
-// import { acronym } from "lib/utils"
+import { acronym, localize } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
-// import Logo from "components/logo"
 import { HeaderProps } from "lib/interfaces"
+import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
-import s from "components/header.module.scss"
 
 const Header: FC<HeaderProps> = ({ site }) => {
   const router = useRouter()
   const { locale } = router
+  const siteName = localize(site.siteName, locale).replace("and", "&")
   return (
     <header className={`${s.header} ${u.bgLight}`}>
-      <div className={`${s.container} ${u.flex} ${u.sans} ${u.uppercase} ${u.w100} ${u.gapSmall}`}>
-{/*         <div>{acronym(site.siteName.en)}</div> */}
-        <div>
-          <Link href="/" className={s.siteName}>
-            {locale === "cy"
-              ? site.siteName.cy
-              : site.siteName.en.replace("and", "&")}
+      <div className={`
+        ${u.container}
+        ${u.flex}
+        ${u.sans}
+        ${u.uppercase}
+        ${u.w100}
+        ${u.gapSmall}
+        ${u.gapLgNone}
+      `}>
+        <div className={`${u.lgHide}`}>
+          <Link href="/" className={`${s.siteName}`}>
+            {siteName}
+          </Link>
+        </div>
+        <div className={`${u.hide} ${u.lgBlock}`}>
+          <Link href="/" className={`${s.acron}`}>
+            {acronym(siteName)}
           </Link>
         </div>
         <div className={`${u.fAuto}`}>

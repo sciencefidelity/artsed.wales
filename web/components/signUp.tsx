@@ -1,12 +1,12 @@
 import { FC } from "react"
 import { SignUpProps } from "lib/interfaces"
-import s from "components/signUp.module.scss"
+import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
 const SignUp: FC<SignUpProps> = ({ site, statements }) => {
   return (
-    <section className={`${u.mbMedium} ${u.textCenter}`}>
-      <h2>{statements[10].statement.en}</h2>
+    <section className={`${u.mbMedium}`}>
+      <h2 className={`${u.textCenter}`}>{statements[10].statement.en}</h2>
       <div>
         <form>
           <label>
@@ -28,15 +28,6 @@ const SignUp: FC<SignUpProps> = ({ site, statements }) => {
       <div className={`${s.signupText} ${u.center} ${u.textLeft}`}>
         <p>{statements[11].statement.en}</p>
       </div>
-{/*       <img
-        src={Theatre}
-        alt="Theatre and Performance at Blackwood Miners Institute with Theatr Iolo"
-        className="fw-img block border shadow center mt-large"
-        width="600"
-        height="400"
-        decoding="async"
-        loading="lazy"
-      /> */}
     </section>
   )
 }

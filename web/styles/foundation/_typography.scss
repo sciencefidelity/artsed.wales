@@ -1,116 +1,126 @@
 @font-face {
-  font-family: "Apercu Pro";
-  src: url("/fonts/ApercuPro.woff2");
+  font-family: 'Apercu Pro';
+  font-size: normal;
   font-weight: normal;
-  font-size: normal;
+  src: url('/fonts/ApercuPro.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextprolight-regular.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
   font-weight: 300;
-  font-size: normal;
+  src: url('/fonts/freighttextprolight-regular.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextprolight-italic.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
+  font-style: italic;
   font-weight: 300;
-  font-size: normal;
-  font-style: italic;
+  src: url('/fonts/freighttextprolight-italic.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextprobook-regular.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
   font-weight: 400;
-  font-size: normal;
+  src: url('/fonts/freighttextprobook-regular.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextprobook-italic.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
+  font-style: italic;
   font-weight: 400;
-  font-size: normal;
-  font-style: italic;
+  src: url('/fonts/freighttextprobook-italic.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextpromedium-regular.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
   font-weight: 500;
-  font-size: normal;
+  src: url('/fonts/freighttextpromedium-regular.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextpromedium-italic.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
+  font-style: italic;
   font-weight: 500;
-  font-size: normal;
-  font-style: italic;
+  src: url('/fonts/freighttextpromedium-italic.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextprosemibold-regular.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
   font-weight: 600;
-  font-size: normal;
+  src: url('/fonts/freighttextprosemibold-regular.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextprosemibold-italic.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
+  font-style: italic;
   font-weight: 600;
-  font-size: normal;
-  font-style: italic;
+  src: url('/fonts/freighttextprosemibold-italic.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextprobold-regular.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
   font-weight: 700;
-  font-size: normal;
+  src: url('/fonts/freighttextprobold-regular.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextprobold-italic.woff2");
+  font-family: 'Freight Text Pro';
+  font-size: normal;
+  font-style: italic;
   font-weight: 700;
-  font-size: normal;
-  font-style: italic;
+  src: url('/fonts/freighttextprobold-italic.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextproblack-regular.woff2");
-  font-weight: 800;
+  font-family: 'Freight Text Pro';
   font-size: normal;
+  font-weight: 800;
+  src: url('/fonts/freighttextproblack-regular.woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Freight Text Pro";
-  src: url("/fonts/freighttextproblack-italic.woff2");
-  font-weight: 800;
+  font-family: 'Freight Text Pro';
   font-size: normal;
   font-style: italic;
+  font-weight: 800;
+  src: url('/fonts/freighttextproblack-italic.woff2');
   font-display: swap;
 }
 
 :root {
-  --sans: 'Apercu Pro', -apple-system, blinkmacsystemfont, 'Segoe UI',
-          roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
-          'Helvetica Neue',sans-serif;
+  --sans:
+    'Apercu Pro',
+    -apple-system,
+    blinkmacsystemfont,
+    'Segoe UI',
+    roboto,
+    oxygen,
+    ubuntu,
+    cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
   --serif: 'Freight Text Pro', georgia, serif;
 }

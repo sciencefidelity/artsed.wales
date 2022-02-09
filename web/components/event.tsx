@@ -3,9 +3,9 @@ import { useRouter } from "next/router"
 import { urlFor } from "lib/utils"
 import Localize from "components/localize"
 import Markdown from "components/markdown"
-import PostDate from "components/postDate"
+import Date from "components/date"
 import { EventProps } from "lib/interfaces"
-import s from "components/event.module.scss"
+import s from "pages/courses.module.scss"
 import u from "styles/utils.module.scss"
 
 const Event: FC<EventProps> = ({ event }) => {
@@ -34,10 +34,10 @@ const Event: FC<EventProps> = ({ event }) => {
         </h3>
         <div><hr style={{ marginBottom: "3rem" }}/></div>
         {event.date && <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-          <PostDate date={event.date} />
+          <Date date={event.date} />
         </div>}
         {event.date2 && <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-          <PostDate date={event.date2} />
+          <Date date={event.date2} />
         </div>}
         <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
           {event.location && <Localize data={event.location} />}

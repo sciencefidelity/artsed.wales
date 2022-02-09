@@ -1,29 +1,31 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
+import { acronym, localize } from "lib/utils"
 import Localize from "components/localize"
 import { FooterProps } from "lib/interfaces"
 import { LocaleString } from "generated/schema"
-import s from "components/footer.module.scss"
+import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
 const Footer: FC<FooterProps> = ({ site }) => {
   const { locale } = useRouter()
   const year = new Date().getFullYear()
-  const siteName: LocaleString = {
-    _type: "localeString",
-    cy: site.siteName.cy,
-    en: site.siteName.en.replace("and", "&")
-  }
+  const siteName = localize(site.siteName, locale).replace("and", "&")
   const contact: LocaleString = {
     _type: "localeString",
-    cy: "",
+    cy: "Cysylltwch",
     en: "Contact"
+  }
+  const siteBy: LocaleString = {
+    _type: "localeString",
+    cy: "Site gan",
+    en: "Site by"
   }
   return (
     <footer className={`${s.footer} ${u.sans} ${u.flex}`}>
-      <div style={{ marginLeft: "4.5rem" }}>
+      <div>
         <Localize data={contact} />{": "}
-        <span className={u.lowercase} style={{ textDecoration: "none" }}>
+        <span className={u.lowercase}>
           <a
             href={"mailto:" + (locale === "cy" ? site.email.cy : site.email.en)}
           >
@@ -31,13 +33,16 @@ const Footer: FC<FooterProps> = ({ site }) => {
           </a>
         </span>
         <br />
-        <span>
-          &copy;{" "}{year}{" "}<Localize data={siteName} />
+        <span className={`${u.hide} ${u.smBlock}`}>
+          &copy;{" "}{year}{" "}{acronym(siteName)}
+        </span>
+        <span className={u.smHide}>
+          &copy;{" "}{year}{" "}{siteName}
         </span>
       </div>
-      <div style={{ marginRight: "4.5rem" }}>
+      <div>
         <br />
-          Site by <a href="https://mattcook.dev" target="_blank">Matt</a>
+          <Localize data={siteBy} />{" "}<a href="https://mattcook.dev" target="_blank">Matt</a>
       </div>
     </footer>
   )

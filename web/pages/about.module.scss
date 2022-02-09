@@ -1,4 +1,194 @@
-.intro {
+@use '/styles/foundation/breakpoints' as b;
+
+.heading {
   padding-top: 2rem;
-  margin-right: -20rem;
+  margin-top: 2rem;
+  margin-right: -16rem;
+  @include b.mq(xl) {
+    margin-right: -15rem;
+  }
+  @include b.mq(lg) {
+    margin-right: 0;
+  }
+  @include b.mq(md) {
+    margin-top: 4rem;
+  }
+}
+
+.paragraph {
+  margin-top: 4rem;
+  margin-right: 0;
+}
+
+.vennDiagram {
+  position: relative;
+  width: 56vw;
+  margin-top: 6rem;
+  margin-right: -2rem;
+  margin-left: auto;
+  @include b.mq(lg) {
+    width: 100%;
+    margin: 6rem 0 -16rem;
+  }
+  @include b.mq(md) {
+    width: 120%;
+    margin: 6rem -3rem -14rem;
+  }
+  @include b.mq(sm) {
+    width: 125%;
+    margin: 6rem -4rem -12rem;
+  }
+}
+
+%all-content {
+  position: absolute;
+  font-family: var(--sans);
+  // font-size: 2.5rem;
+  font-size: 1.8vw;
+  text-align: center;
+  user-select: none;
+  transform: translate(-50%, -50%);
+  @include b.mq(xl) {
+    font-size: 2vw;
+  }
+  @include b.mq(lg) {
+    font-size: 3vw;
+  }
+  @include b.mq(md) {
+    font-size: 3.7vw;
+  }
+  @include b.mq(sm) {
+    font-size: 4vw;
+  }
+}
+
+.content1 {
+  @extend %all-content;
+
+  top: 18%;
+  left: 50%;
+}
+
+.content2 {
+  @extend %all-content;
+
+  top: 67%;
+  left: 21%;
+}
+
+.content3 {
+  @extend %all-content;
+
+  top: 67%;
+  left: 78%;
+  line-height: 1.2;
+}
+
+.content4 {
+  @extend %all-content;
+
+  top: 55%;
+  left: 50%;
+  @include b.mq(xl) {
+    top: 56%;
+  }
+  @include b.mq(lg) {
+    top: 55%;
+  }
+  @include b.mq(md) {
+    top: 56%;
+  }
+}
+
+%bg-circle {
+  position: absolute;
+  width: 60.59%;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+.circle1 {
+  @extend %bg-circle;
+
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.circle2 {
+  @extend %bg-circle;
+
+  bottom: 10.02%;
+  left: 2.41%;
+}
+
+.circle3 {
+  @extend %bg-circle;
+
+  right: 2.41%;
+  bottom: 10.02%;
+}
+
+%fg-circle {
+  position: absolute;
+  width: 60.59%;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  opacity: 0.65;
+}
+
+.circle4 {
+  @extend %fg-circle;
+
+  top: 0;
+  left: 50%;
+  background-color: var(--red);
+  transform: translateX(-50%);
+}
+
+.circle5 {
+  @extend %fg-circle;
+
+  right: 2.41%;
+  bottom: 10.02%;
+  background-color: var(--green);
+}
+
+.circle6 {
+  @extend %fg-circle;
+
+  bottom: 10.02%;
+  left: 2.41%;
+  background-color: var(--blue);
+}
+
+.vennDiagram::after,
+.circle1::after,
+.circle2::after,
+.circle3::after,
+.circle4::after,
+.circle5::after,
+.circle6::after {
+  display: block;
+  padding-bottom: 100%;
+  content: '';
+}
+
+.ampersand {
+  top: 45%;
+  left: 50%;
+  width: 3.7em;
+  transform: translate(-46%, -45%);
+  @include b.mq(xl) {
+    width: 6vw;
+  }
+  @include b.mq(lg) {
+    width: 9vw;
+  }
+  @include b.mq(md) {
+    width: 10vw;
+  }
+  @include b.mq(md) {
+    width: 11vw;
+  }
 }

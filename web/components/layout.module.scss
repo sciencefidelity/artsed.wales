@@ -1,6 +1,35 @@
-.siteMain {
-  // min-height: calc(100vh - 471px);
-  position: relative;
+@use '/styles/foundation/breakpoints' as b;
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  border-bottom: 2px solid var(--foreground);
+}
+
+.navLinks {
+  padding: 0 0.5rem;
+  color: var(--grey-950);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+}
+
+.langLink {
+  text-decoration: none;
+}
+
+.siteName {
+  text-decoration: none;
+}
+
+.acron {
+  margin-right: 3rem;
+  text-decoration: none;
 }
 
 .content {
@@ -8,13 +37,149 @@
   z-index: 4;
 }
 
-.linksMenu {
-  list-style: none;
-  display: flex;
+.signupInput {
+  display: inline-block;
+  width: 57%;
+  width: calc(60% - 6.1rem);
+  padding: 1.5rem 2.7rem;
+  margin-left: 20%;
+  font-size: 2rem;
+  border: 0;
+  @include b.mq(lg) {
+    width: calc(70% - 6.1rem);
+    margin-left: 15%;
+    font-size: 2.4rem;
+  }
+  @include b.mq(md) {
+    width: calc(100% - 5.8rem);
+    margin-left: 0;
+    font-size: 2.2rem;
+  }
+  @include b.mq(sm) {
+    width: calc(100% - 5.6rem);
+    font-size: 1.8rem;
+  }
+}
+
+.signupSend {
+  width: 5.5rem;
+  height: 5.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  background-color: rgba(77, 73, 73);
+  border: 0;
+  transform: translate(-0.4rem, 2rem);
+  @include b.mq(lg) {
+    width: 6.1rem;
+    height: 6.1rem;
+    padding: 1.8rem;
+    margin-right: 15%;
+    transform: translate(-0.4rem, 2.25rem);
+  }
+  @include b.mq(md) {
+    width: 5.8rem;
+    height: 5.8rem;
+    padding: 1.8rem;
+    margin-right: 0;
+    transform: translate(-0.4rem, 2.15rem);
+  }
+  @include b.mq(sm) {
+    width: 5.3rem;
+    height: 5.3rem;
+    padding: 1.6rem;
+    transform: translate(-0.4rem, 2.05rem);
+  }
+}
+
+.signupText {
+  width: 60%;
+  @include b.mq(lg) {
+    width: 70%;
+  }
+  @include b.mq(md) {
+    width: 88%;
+  }
+  @include b.mq(sm) {
+    width: 100%;
+  }
+}
+
+.logos {
+  gap: 5rem;
   justify-content: center;
+  width: 100%;
+  font-size: 1.3vw;
+  @include b.mq(xl) {
+    gap: 4rem;
+    font-size: 1.6vw;
+  }
+  @include b.mq(md) {
+    gap: 4rem;
+    font-size: 2.5vw;
+  }
+  @include b.mq(sm) {
+    gap: 3rem;
+    justify-content: unset;
+    font-size: 3vw;
+  }
+}
+
+.lotteryLogo {
+  width: 14em;
+}
+
+.acwLogo {
+  width: 18em;
+}
+
+.wgLogo {
+  width: 12em;
+}
+
+.wlgaLogo {
+  width: 5em;
+}
+
+.footer {
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  color: var(--foreground);
+  background-color: var(--background);
+  @include b.mq(sm) {
+    line-height: 2;
+  }
   a {
-    text-decoration: none;
     color: var(--foreground);
+    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+}
+
+.linksMenu {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  padding: 0;
+  @include b.mq(md) {
+    gap: 0 2rem;
+    line-height: 0;
+  }
+  @include b.mq(sm) {
+    display: unset;
+    gap: 0;
+  }
+  li {
+    display: block;
+    line-height: 2;
+  }
+  a {
+    color: var(--foreground);
+    text-decoration: none;
     &:hover {
       text-decoration: underline;
       text-decoration-thickness: 2px;
@@ -22,3 +187,15 @@
     }
   }
 }
+
+// .scrollupContainer {
+//   position: fixed;
+//   right: 2.3rem;
+//   bottom: -0.1rem;
+//   z-index: 4;
+//   width: 3rem;
+// }
+//
+// .corner {
+//   fill: var(--foreground);
+// }

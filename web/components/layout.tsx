@@ -7,7 +7,6 @@ import Header from "components/header"
 import Logos from "components/logos"
 import SignUp from "components/signUp"
 import SocialLinks from "components/socialLinks"
-// import Scrollup from "components/scrollup"
 import { LayoutProps } from "lib/interfaces"
 import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
@@ -33,10 +32,10 @@ const Layout: FC<LayoutProps> = ({
     .quality(85)
     .url()
   return (
-    <div className={s.siteMain}>
+    <>
       <Head>
         <title>
-          {title && (locale === "cy" ? title.cy : title.en)}
+          {title && localize(title, locale)}
           {title && " | "}
           {siteName}
         </title>
@@ -88,8 +87,8 @@ const Layout: FC<LayoutProps> = ({
         <link rel="mask-icon" href="/mask-icon.svg" color="#FF9B59" />
       </Head>
       <Header site={site} />
-      <main className={s.content}>
-        <div className={u.container}>{children}</div>
+      <main className={`${s.content} ${u.container}`}>
+        {children}
         <SignUp
           statements={statements}
           site={site}
@@ -98,8 +97,7 @@ const Layout: FC<LayoutProps> = ({
         <Logos />
       </main>
       <Footer site={site} />
-{/*       <Scrollup /> */}
-    </div>
+    </>
   )
 }
 export default Layout
