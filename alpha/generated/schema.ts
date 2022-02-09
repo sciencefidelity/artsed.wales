@@ -94,11 +94,11 @@ export interface Event extends SanityDocument {
   price?: number;
 
   /**
-   * Eventbrite link — `url`
+   * Eventbrite link — `localeURL`
    *
    *
    */
-  britelink?: string;
+  britelink?: LocaleURL;
 
   /**
    * Body — `localeMarkdown`
@@ -532,11 +532,11 @@ export interface Social extends SanityDocument {
   username?: string;
 
   /**
-   * Link — `url`
+   * Link — `localeURL`
    *
    *
    */
-  link?: string;
+  link?: LocaleURL;
 }
 
 /**
@@ -853,17 +853,17 @@ export type LocaleSlug = {
   cy?: { _type: "cy"; current: string };
 };
 
-export type LocaleString = {
-  _type: "localeString";
+export type LocaleURL = {
+  _type: "localeURL";
   /**
-   * English — `string`
+   * English — `url`
    *
    *
    */
   en?: string;
 
   /**
-   * Welsh — `string`
+   * Welsh — `url`
    *
    *
    */
@@ -881,6 +881,23 @@ export type LocaleText = {
 
   /**
    * Welsh — `text`
+   *
+   *
+   */
+  cy?: string;
+};
+
+export type LocaleString = {
+  _type: "localeString";
+  /**
+   * English — `string`
+   *
+   *
+   */
+  en?: string;
+
+  /**
+   * Welsh — `string`
    *
    *
    */
