@@ -17,7 +17,7 @@
 
 .paragraph {
   margin-top: 4rem;
-  margin-right: 0rem;
+  margin-right: 0;
 }
 
 .vennDiagram {
@@ -27,16 +27,16 @@
   margin-right: -2rem;
   margin-left: auto;
   @include b.mq(lg) {
-    margin: 6rem 0 -16rem;
     width: 100%;
+    margin: 6rem 0 -16rem;
   }
   @include b.mq(md) {
-    margin: 6rem -3rem -14rem;
     width: 120%;
+    margin: 6rem -3rem -14rem;
   }
   @include b.mq(sm) {
-    margin: 6rem -4rem -12rem;
     width: 125%;
+    margin: 6rem -4rem -12rem;
   }
 }
 
@@ -64,18 +64,21 @@
 
 .content1 {
   @extend %all-content;
+
   top: 18%;
   left: 50%;
 }
 
 .content2 {
   @extend %all-content;
+
   top: 67%;
   left: 21%;
 }
 
 .content3 {
   @extend %all-content;
+
   top: 67%;
   left: 78%;
   line-height: 1.2;
@@ -83,6 +86,7 @@
 
 .content4 {
   @extend %all-content;
+
   top: 55%;
   left: 50%;
   @include b.mq(xl) {
@@ -105,6 +109,7 @@
 
 .circle1 {
   @extend %bg-circle;
+
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -112,12 +117,14 @@
 
 .circle2 {
   @extend %bg-circle;
+
   bottom: 10.02%;
   left: 2.41%;
 }
 
 .circle3 {
   @extend %bg-circle;
+
   right: 2.41%;
   bottom: 10.02%;
 }
@@ -132,6 +139,7 @@
 
 .circle4 {
   @extend %fg-circle;
+
   top: 0;
   left: 50%;
   background-color: var(--red);
@@ -140,6 +148,7 @@
 
 .circle5 {
   @extend %fg-circle;
+
   right: 2.41%;
   bottom: 10.02%;
   background-color: var(--green);
@@ -147,6 +156,7 @@
 
 .circle6 {
   @extend %fg-circle;
+
   bottom: 10.02%;
   left: 2.41%;
   background-color: var(--blue);

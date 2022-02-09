@@ -50,8 +50,6 @@
     width: 100%;
     margin-top: 0;
   }
-  @include b.mq(sm) {
-  }
 }
 
 .video {
@@ -81,8 +79,8 @@
 }
 
 .engagement {
-  gap: 2rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
   @include b.mq(lg) {
     grid-template-columns: 1fr 1fr;
     width: 88%;
@@ -94,8 +92,8 @@
 }
 
 .engagementFigure {
-  font-size: 8rem;
   place-items: center;
+  font-size: 8rem;
   @include b.mq(sm) {
     font-size: 6rem;
   }
@@ -145,7 +143,7 @@
 .cardPadding {
   padding: 2.6rem 4rem 0.5rem;
   @include b.mq(lg) {
-    padding: 2rem 3rem 0rem;
+    padding: 2rem 3rem 0;
   }
   @include b.mq(sm) {
     padding: 1.5rem 1.8rem 0.5rem;
