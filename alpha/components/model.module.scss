@@ -24,6 +24,7 @@
   font-size: 1.8vw;
   text-align: center;
   transform: translate(-50%, -50%);
+  user-select: none;
   @include b.mq(lg) {
     font-size: 3vw;
   }
