@@ -1,6 +1,6 @@
 # NAEN • RCCA
 
-Landing page for the National Arts and Education Network
+Landing page for the National Arts and Education Network.
 
 ### Notes
 
