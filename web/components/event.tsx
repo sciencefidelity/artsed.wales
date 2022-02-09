@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
-import { urlFor } from "lib/utils"
+import { localize, urlFor } from "lib/utils"
 import Localize from "components/localize"
 import Markdown from "components/markdown"
 import Date from "components/date"
@@ -85,7 +85,7 @@ const Event: FC<EventProps> = ({ event }) => {
         }
         <div className={u.fNone}>
           <a
-            href={event.britelink}
+            href={localize(event.britelink, locale)}
             className={s.britelink}
             target="_blank"
             rel="noreferrer"
