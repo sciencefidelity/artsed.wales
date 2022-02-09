@@ -13,29 +13,29 @@
   height: 98%;
   border: 2px solid var(--foreground);
   @include b.mq(md) {
-    font-size: 1.4rem;
     width: calc(100% - 6rem);
+    font-size: 1.4rem;
   }
 }
 
 .caption {
-  font-size: 1.6rem;
   margin-top: 0.4rem;
-  white-space: nowrap;
   overflow: hidden;
+  font-size: 1.6rem;
   text-overflow: ellipsis;
+  white-space: nowrap;
   @include b.mq(lg) {
     font-size: 1.4rem;
   }
 }
 
 .introHeading {
-  margin: -0.9rem 0 0 0;
-  h2 {
-    margin: 0;
-  }
+  margin: -0.9rem 0 0;
   @include b.mq(md) {
     width: calc(100% - 6rem);
+  }
+  h2 {
+    margin: 0;
   }
 }
 
@@ -45,8 +45,8 @@
     margin-top: 2rem;
   }
   @include b.mq(md) {
-    margin-top: 0;
     width: calc(100% - 6rem);
+    margin-top: 0;
   }
 }
 

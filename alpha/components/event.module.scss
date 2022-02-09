@@ -1,4 +1,4 @@
-@use "/styles/foundation/breakpoints" as b;
+@use '/styles/foundation/breakpoints' as b;
 
 .cardImageContainer {
   position: relative;
@@ -8,7 +8,7 @@
     padding: 2rem;
   }
   @include b.mq(sm) {
-    padding: 0 0 2rem 0;
+    padding: 0 0 2rem;
   }
 }
 
@@ -22,18 +22,18 @@
 }
 
 .cardText {
-  padding: 0 3rem 1.8rem;
   display: flex;
   flex-direction: column;
+  padding: 0 3rem 1.8rem;
   @include b.mq(sm) {
-    padding: 0 2rem 0;
+    padding: 0 2rem;
   }
 }
 
 .courseTitle {
+  margin: 0 0 2rem;
   font-size: 5.1rem;
   font-size: 3.5vw;
-  margin: 0 0 2rem 0;
   @include b.mq(xl) {
     font-size: 3.8vw;
   }
@@ -49,11 +49,11 @@
 }
 
 .courseSubitle {
+  margin: 0 0 4rem;
+  margin: 0 0 6rem;
   font-size: 3rem;
   font-size: 1.8vw;
-  margin: 0 0 4rem 0;
   font-weight: 400;
-  margin: 0 0 6rem 0;
   @include b.mq(lg) {
     font-size: 3.5vw;
   }
@@ -67,10 +67,10 @@
 }
 
 .courseInfo {
-  text-transform: uppercase;
   margin: 0 0 1.4rem;
   font-size: 2rem;
   font-weight: 400;
+  text-transform: uppercase;
   @include b.mq(md) {
     font-size: 1.8rem;
   }
@@ -80,9 +80,9 @@
 }
 
 .horizontal {
+  display: inline;
   padding: 0;
   margin: 0;
-  display: inline;
   &:not(:last-child)::after {
     content: ', ';
   }
@@ -93,18 +93,17 @@
 }
 
 .britelinkBtn {
-  text-transform: uppercase;
   display: flex;
-  background-color: var(--grey-000);
-  border: 2px solid var(--foreground);
+  padding: 1.5rem 5rem;
   margin: 5.2rem auto 3rem;
-  color: var(--foreground);
-  font-size: 2.4rem;
   font-family: var(--sans);
+  font-size: 2.4rem;
   line-height: 1.5em;
-  user-select: none;
-  padding: 1.5rem 5rem 1.5rem;
+  text-transform: uppercase;
   cursor: pointer;
+  user-select: none;
+  background-color: var(--white);
+  border: var(--border);
   @include b.mq(md) {
     font-size: 2rem;
   }
@@ -112,21 +111,6 @@
     font-size: 1.8rem;
   }
   a {
-    text-decoration: none !important;
+    text-decoration: none;
   }
-}
-
-.britelink:hover {
-  transform: translateY(0.15rem);
-  box-shadow: 0 0.4rem 0 var(--grey-400);
-}
-
-.britelink:active,
-.britelink:focus {
-  transform: translateY(0.5rem);
-  box-shadow: 0 0 0 rgb(156, 158, 158);
-}
-
-.britelink:focus {
-  outline: grey dashed 0.44rem;
 }

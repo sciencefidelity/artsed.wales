@@ -1,10 +1,10 @@
 @use '../styles/foundation/breakpoints' as b;
 
 .signupInput {
-  border: 0;
   width: 57%;
   padding: 1.5rem 2.7rem;
   font-size: 2rem;
+  border: 0;
   @include b.mq(lg) {
     width: 56%;
     font-size: 2.4rem;
@@ -25,35 +25,35 @@
     width: 70%;
   }
   @include b.mq(sm) {
-    text-align: left;
     width: 88%;
     margin: auto;
+    text-align: left;
   }
 }
 
 .signupSend {
+  width: 5.5rem;
+  height: 5.5rem;
+  padding: 1.5rem;
   cursor: pointer;
   background-color: rgba(77, 73, 73);
   border: 0;
-  height: 5.5rem;
-  width: 5.5rem;
-  padding: 1.5rem;
   transform: translate(-0.4rem, 2rem);
   @include b.mq(lg) {
-    height: 6.4rem;
     width: 6.4rem;
+    height: 6.4rem;
     padding: 1.8rem;
     transform: translate(-0.4rem, 2.25rem);
   }
   @include b.mq(md) {
-    height: 6.1rem;
     width: 6.1rem;
+    height: 6.1rem;
     padding: 1.8rem;
     transform: translate(-0.4rem, 2.15rem);
   }
   @include b.mq(sm) {
-    height: 5.55rem;
     width: 5.55rem;
+    height: 5.55rem;
     padding: 1.5rem;
     transform: translate(-0.4rem, 2.05rem);
   }

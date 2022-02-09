@@ -10,27 +10,27 @@
 }
 
 .linksMenu {
-  list-style: none;
   display: flex;
   justify-content: center;
+  list-style: none;
+  @include b.mq(md) {
+    justify-content: unset;
+  }
   a {
-    text-decoration: none;
     color: var(--foreground);
+    text-decoration: none;
     &:hover {
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-underline-offset: 6px;
     }
   }
-  @include b.mq(md) {
-    justify-content: unset;
-  }
 }
 
 .logos {
+  gap: 5rem;
   justify-content: center;
   width: 100%;
-  gap: 5rem;
   font-size: 1.3;
   @include b.mq(sm) {
     gap: 2rem;

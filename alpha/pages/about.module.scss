@@ -2,8 +2,8 @@
 
 .heading {
   padding-top: 2rem;
-  margin-right: -19rem;
   margin-top: 2rem;
+  margin-right: -19rem;
   @include b.mq(lg) {
     margin-right: 0;
   }

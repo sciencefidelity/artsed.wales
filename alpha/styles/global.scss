@@ -9,8 +9,8 @@
 html {
   overflow-y: scroll;
   font-size: 62.5%;
-  background-color: var(--background);
   color: var(--foreground);
+  background-color: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,12 +39,12 @@ p a {
 }
 
 h1 {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
   font-size: 12rem;
   font-weight: 800;
   line-height: 1.1;
   color: var(--orange);
-  margin-top: 4rem;
-  margin-bottom: 3rem;
   @include b.mq(lg) {
     font-size: 2.2rem;
   }
@@ -57,12 +57,12 @@ h1 {
 }
 
 h2 {
+  margin-bottom: 0.3em;
   // font-size: 5rem;
   font-size: 3.3vw;
+  font-weight: 600;
   line-height: 1.2;
   color: var(--foreground);
-  font-weight: 600;
-  margin-bottom: 0.3em;
   @include b.mq(lg) {
     font-size: 4vw;
   }
@@ -117,8 +117,8 @@ sup {
 
 blockquote {
   position: relative;
+  margin: 0 0 2.5rem;
   font-size: 2.6rem;
-  margin: 0 0 2.5rem 0;
   @include b.mq(lg) {
     font-size: 1.8rem;
   }

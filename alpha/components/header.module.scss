@@ -2,10 +2,10 @@
 
 .header {
   position: fixed;
-  width: 100%;
-  top: 0px;
-  border-bottom: 2px solid var(--foreground);
+  top: 0;
   z-index: 10;
+  width: 100%;
+  border-bottom: 2px solid var(--foreground);
 }
 
 .container {
@@ -13,8 +13,8 @@
 }
 
 .navLinks {
-  color: var(--grey-950);
   padding: 0 0.5rem;
+  color: var(--grey-950);
   text-decoration: none;
   &:hover {
     text-decoration: underline;

@@ -1,13 +1,13 @@
 @use '/styles/foundation/breakpoints' as b;
 
 .quoteContainer {
-  max-width: 85rem;
   min-width: 8.5rem;
-  margin: auto;
+  max-width: 85rem;
   height: 100%;
+  margin: auto;
   @include b.mq(lg) {
-    min-width: 0;
     width: 100%;
+    min-width: 0;
   }
   @include b.mq(md) {
     flex-direction: column;
@@ -26,9 +26,9 @@
 }
 
 .cardPadding {
-  padding: 2.6rem 4rem 0.5rem 4rem;
+  padding: 2.6rem 4rem 0.5rem;
   @include b.mq(sm) {
-    padding: 1.5rem 1.8rem 0.5rem 1.8rem;
+    padding: 1.5rem 1.8rem 0.5rem;
   }
 }
 
@@ -43,8 +43,8 @@
 }
 
 .quoteLeft {
-  left: 1.5rem;
   top: 1.3rem;
+  left: 1.5rem;
 }
 
 .quoteRight {

@@ -1,15 +1,15 @@
-@use "/styles/foundation/breakpoints" as b;
+@use '/styles/foundation/breakpoints' as b;
 
 .vennDiagram {
   position: relative;
   width: 56vw;
-  margin-left: auto;
-  margin-right: -2rem;
   margin-top: 6rem;
+  margin-right: -2rem;
+  margin-left: auto;
   @include b.mq(lg) {
+    right: 4%;
     width: 100%;
     margin-bottom: -10rem;
-    right: 4%;
   }
   @include b.mq(sm) {
     width: 106%;
@@ -23,8 +23,8 @@
   // font-size: 2.5rem;
   font-size: 1.8vw;
   text-align: center;
-  transform: translate(-50%, -50%);
   user-select: none;
+  transform: translate(-50%, -50%);
   @include b.mq(lg) {
     font-size: 3vw;
   }
@@ -38,38 +38,43 @@
 
 .content1 {
   @extend %all-content;
+
   top: 18%;
   left: 50%;
 }
 
 .content2 {
   @extend %all-content;
+
   top: 67%;
   left: 21%;
 }
 
 .content3 {
   @extend %all-content;
-  line-height: 1.2;
+
   top: 67%;
   left: 78%;
+  line-height: 1.2;
 }
 
 .content4 {
   @extend %all-content;
+
   top: 55%;
   left: 50%;
 }
 
 %bg-circle {
-  background-color: var(--white);
   position: absolute;
   width: 60.59%;
+  background-color: var(--white);
   border-radius: 50%;
 }
 
 .circle1 {
   @extend %bg-circle;
+
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -77,41 +82,46 @@
 
 .circle2 {
   @extend %bg-circle;
+
   bottom: 10.02%;
   left: 2.41%;
 }
 
 .circle3 {
   @extend %bg-circle;
-  bottom: 10.02%;
+
   right: 2.41%;
+  bottom: 10.02%;
 }
 
 %fg-circle {
-  mix-blend-mode: difference;
-  opacity: 0.65;
   position: absolute;
   width: 60.59%;
   border-radius: 50%;
+  mix-blend-mode: difference;
+  opacity: 0.65;
 }
 
 .circle4 {
   @extend %fg-circle;
+
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
   background-color: var(--red);
+  transform: translateX(-50%);
 }
 
 .circle5 {
   @extend %fg-circle;
-  bottom: 10.02%;
+
   right: 2.41%;
+  bottom: 10.02%;
   background-color: var(--green);
 }
 
 .circle6 {
   @extend %fg-circle;
+
   bottom: 10.02%;
   left: 2.41%;
   background-color: var(--blue);
@@ -124,7 +134,7 @@
 .circle4::after,
 .circle5::after,
 .circle6::after {
-  content: '';
-  padding-bottom: 100%;
   display: block;
+  padding-bottom: 100%;
+  content: '';
 }
