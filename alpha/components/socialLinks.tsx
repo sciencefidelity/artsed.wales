@@ -6,17 +6,26 @@ import u from "styles/utils.module.scss"
 const SocialLinks: FC<SocialLinksProps> = ({ site }) => {
   return (
     <section className={`${u.center} ${u.w100} ${u.mbMedium}`}>
+      <div className={`
+        ${u.hide}
+        ${u.mdBlock}
+        ${u.sans}
+        ${u.uppercase}
+        ${u.lh2}
+        ${u.textCenter}
+        ${u.smTextLeft}
+      `}>
+        Follow us on:{" "}
+      </div>
       <ul
         className={`
           ${s.linksMenu}
-          ${u.flex}
           ${u.wrap}
           ${u.sans}
           ${u.uppercase}
-          ${u.gapSmall}
         `}
       >
-        <li>Follow us on:{" "}</li>
+        <span className={u.mdHide}><li>Follow us on:{" "}</li></span>
         {site.socialMediaLinks.map(link =>
           <li key={link._id}><a href={link.link}>{link.site}</a></li>
         )}

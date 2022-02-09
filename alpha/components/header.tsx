@@ -14,7 +14,7 @@ const Header: FC<HeaderProps> = ({ site }) => {
   return (
     <header className={`${s.header} ${u.bgLight}`}>
       <div className={`
-        ${s.container}
+        ${u.container}
         ${u.flex}
         ${u.sans}
         ${u.uppercase}

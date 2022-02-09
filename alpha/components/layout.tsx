@@ -87,8 +87,8 @@ const Layout: FC<LayoutProps> = ({
         <link rel="mask-icon" href="/mask-icon.svg" color="#FF9B59" />
       </Head>
       <Header site={site} />
-      <main className={s.content}>
-        <div className={`${u.container}`}>{children}</div>
+      <main className={`${s.content} ${u.container}`}>
+        {children}
         <SignUp
           statements={statements}
           site={site}

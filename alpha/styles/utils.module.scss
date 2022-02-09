@@ -1,5 +1,9 @@
 @use 'foundation/breakpoints' as b;
 
+.container {
+  padding: 1rem 2rem;
+}
+
 .hide {
   display: none;
 }
@@ -81,16 +85,6 @@
 .gapLgNone {
   @include b.mq(lg) {
     gap: 0;
-  }
-}
-
-.responsiveContainer {
-  margin: auto;
-  @include b.mq(md) {
-    width: 88%;
-  }
-  @include b.mq(sm) {
-    width: 100%;
   }
 }
 
@@ -226,21 +220,21 @@
 
 .mbMedium {
   margin-bottom: 5rem;
-  @include b.mq(xl) {
-    margin-bottom: 3.5rem;
+  @include b.mq(lg) {
+    margin-bottom: 7rem;
+  }
+  @include b.mq(md) {
+    margin-bottom: 7rem;
   }
   @include b.mq(sm) {
-    margin-bottom: 3rem;
+    margin-bottom: 7rem;
   }
 }
 
 .mbSmall {
-  margin-bottom: 2rem;
-  @include b.mq(xl) {
-    margin-bottom: 7rem;
-  }
-  @include b.mq(sm) {
-    margin-bottom: 6rem;
+  margin-bottom: 6rem;
+  @include b.mq(md) {
+    margin-bottom: 4rem;
   }
 }
 
@@ -278,6 +272,12 @@
   text-align: center;
 }
 
+.smTextLeft {
+  @include b.mq(sm) {
+    text-align: left;
+  }
+}
+
 .textLeft {
   text-align: left;
 }
@@ -294,8 +294,8 @@
   text-decoration: underline;
 }
 
-.container {
-  padding: 1rem 2rem;
+.lh2 {
+  line-height: 2;
 }
 
 .pointer {
