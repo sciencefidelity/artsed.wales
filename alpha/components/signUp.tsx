@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { SignUpProps } from "lib/interfaces"
-import s from "components/signUp.module.scss"
+import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
 const SignUp: FC<SignUpProps> = ({ site, statements }) => {

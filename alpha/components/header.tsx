@@ -4,8 +4,8 @@ import { acronym, localize } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
 import { HeaderProps } from "lib/interfaces"
+import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
-import s from "components/header.module.scss"
 
 const Header: FC<HeaderProps> = ({ site }) => {
   const router = useRouter()

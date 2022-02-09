@@ -4,7 +4,7 @@ import { acronym, localize } from "lib/utils"
 import Localize from "components/localize"
 import { FooterProps } from "lib/interfaces"
 import { LocaleString } from "generated/schema"
-import s from "components/footer.module.scss"
+import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
 const Footer: FC<FooterProps> = ({ site }) => {

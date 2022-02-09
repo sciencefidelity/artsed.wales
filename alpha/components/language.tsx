@@ -1,8 +1,7 @@
 import { useRouter } from "next/router"
 import { capitalize } from "lib/utils"
-// import Link from "components/link"
 import u from "styles/utils.module.scss"
-import s from "components/language.module.scss"
+import s from "components/layout.module.scss"
 
 const Language = () => {
   const router = useRouter()
@@ -18,7 +17,7 @@ const Language = () => {
       {locale === "cy" ? (
         <span
           className={`
-            ${s.navLink} ${u.fgDark} ${u.pointer}`
+            ${s.langLink} ${u.fgDark} ${u.pointer}`
           }
           onClick={() => {
             router.push({ pathname, query }, asPath, { locale: locales[0], scroll: false })
@@ -29,7 +28,7 @@ const Language = () => {
       ) : (
         <span
           className={
-            `${s.navLink} ${u.fgDark} ${u.pointer}`
+            `${s.langLink} ${u.fgDark} ${u.pointer}`
           }
           onClick={() => {
             router.push({ pathname, query }, asPath, { locale: locales[1], scroll: false })

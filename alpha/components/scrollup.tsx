@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 // import CornerAmpersand from "components/cornerAmpersand"
  import CornerAmpStroke from "components/cornerAmpStroke"
 import Link from "components/link"
-import s from "components/scrollup.module.scss"
+import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 // TODO: screen reader text hard coded
 const Scrollup = () => {

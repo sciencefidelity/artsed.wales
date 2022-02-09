@@ -7,7 +7,6 @@ import Header from "components/header"
 import Logos from "components/logos"
 import SignUp from "components/signUp"
 import SocialLinks from "components/socialLinks"
-// import Scrollup from "components/scrollup"
 import { LayoutProps } from "lib/interfaces"
 import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
@@ -33,7 +32,7 @@ const Layout: FC<LayoutProps> = ({
     .quality(85)
     .url()
   return (
-    <div className={s.siteMain}>
+    <>
       <Head>
         <title>
           {title && localize(title, locale)}
@@ -98,8 +97,7 @@ const Layout: FC<LayoutProps> = ({
         <Logos />
       </main>
       <Footer site={site} />
-{/*       <Scrollup /> */}
-    </div>
+    </>
   )
 }
 export default Layout
