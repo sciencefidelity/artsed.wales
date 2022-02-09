@@ -12,6 +12,7 @@ import localeRichText from './objects/localeRichText'
 import localeSlug from './objects/localeSlug'
 import localeString from './objects/localeString'
 import localeText from './objects/localeText'
+import localeURL from './objects/localeURL'
 
 // documements
 import event from './documents/event'
@@ -44,6 +45,7 @@ export default createSchema({
     localeSlug,
     localeString,
     localeText,
+    localeURL,
 
     // documents
     event,

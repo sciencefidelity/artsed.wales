@@ -1,6 +1,6 @@
 export default {
-  name: 'localeURL',
-  title: 'Localized URL',
+  name: 'localeString',
+  title: 'Localized string',
   type: 'object',
   fieldsets: [
     {
@@ -13,12 +13,12 @@ export default {
     {
       title: 'English',
       name: 'en',
-      type: 'url'
+      type: 'string'
     },
     {
       title: 'Welsh',
       name: 'cy',
-      type: 'url'
+      type: 'string'
     }
   ]
 }

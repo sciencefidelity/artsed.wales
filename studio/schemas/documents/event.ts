@@ -87,7 +87,7 @@ export default {
     {
       name: 'britelink',
       title: 'Eventbrite link',
-      type: 'url',
+      type: 'localeURL',
       group: 'content'
     },
     {
