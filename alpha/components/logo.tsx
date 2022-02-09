@@ -1,4 +1,4 @@
-import s from "components/logo.module.scss"
+import s from "components/layout.module.scss"
 
 const Logo = () => (
   <svg

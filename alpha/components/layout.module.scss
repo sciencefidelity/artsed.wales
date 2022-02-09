@@ -10,7 +10,6 @@
 
 .navLinks {
   padding: 0 0.5rem;
-  color: var(--grey-950);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -20,7 +19,12 @@
 }
 
 .langLink {
-  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  @include b.mq(sm) {
+    font-size: 1.7rem;
+  }
 }
 
 .siteName {
@@ -45,6 +49,7 @@
   margin-left: 20%;
   font-size: 2rem;
   border: 0;
+  border-radius: 0;
   @include b.mq(lg) {
     width: calc(70% - 6.1rem);
     margin-left: 15%;
@@ -68,6 +73,7 @@
   cursor: pointer;
   background-color: rgba(77, 73, 73);
   border: 0;
+  border-radius: 0;
   transform: translate(-0.4rem, 2rem);
   @include b.mq(lg) {
     width: 6.1rem;
@@ -126,6 +132,7 @@
 
 .lotteryLogo {
   width: 14em;
+  fill: var(--foreground);
 }
 
 .acwLogo {
