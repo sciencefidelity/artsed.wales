@@ -5,12 +5,6 @@ const WlgaLogo = () => (
     viewBox="0 0 467 498"
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    style={{
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      strokeLinejoin: "round",
-      strokeMiterlimit: 2
-    }}
     width="10em"
     className={s.wlgaLogo}
   >
