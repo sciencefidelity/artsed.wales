@@ -9,7 +9,7 @@ const SignUp: FC<SignUpProps> = ({ site, statements }) => {
       <h2 className={`${u.textCenter}`}>{statements[10].statement.en}</h2>
       <div>
         <form
-          action="https://midwalesarts.us8.list-manage.com/subscribe/post?u=886d00d2217d67cd8145db87b&amp;id=625e7cefb6"
+          action="https://wales.us13.list-manage.com/subscribe/post?u=56ba9559a01451645f1910eda&amp;id=dc2f9bfec3"
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
