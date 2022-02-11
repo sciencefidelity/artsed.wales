@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "dev": "sanity start",
-    "build": "sanity build"
+    "build": "sanity build",
+    "format": "prettier --write '**/*.{ts,js,tsx,jsx,json,md,yml}'"
   },
   "dependencies": {
     "@sanity/base": "^2.27.0",

@@ -36,7 +36,6 @@ import keystage from './taxonomy/keystage'
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-
     // objects
     blockContent,
     captionImage,

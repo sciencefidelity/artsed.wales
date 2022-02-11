@@ -9,18 +9,18 @@ export default {
       options: { collapsible: true }
     }
   ],
-  
+
   fields: [
     {
       title: 'English',
       name: 'en',
-      type: 'blockContent',
+      type: 'blockContent'
     },
     {
       title: 'Welsh',
       name: 'cy',
       type: 'blockContent',
-      fieldset: 'translations',
-    },
-  ],
+      fieldset: 'translations'
+    }
+  ]
 }

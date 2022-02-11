@@ -6,7 +6,7 @@ export default {
     {
       name: 'quote',
       title: 'Quote',
-      type: 'localeMarkdown',
+      type: 'localeMarkdown'
     },
     {
       name: 'cite',
@@ -25,7 +25,7 @@ export default {
   preview: {
     select: {
       title: 'cite',
-      subtitle: 'organisation.en',
+      subtitle: 'organisation.en'
     }
   }
 }

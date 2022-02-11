@@ -14,13 +14,13 @@ export default {
     {
       title: 'English',
       name: 'en',
-      type: 'text',
+      type: 'text'
     },
     {
       title: 'Welsh',
       name: 'cy',
       type: 'text',
-      fieldset: 'translations',
-    },
-  ],
+      fieldset: 'translations'
+    }
+  ]
 }

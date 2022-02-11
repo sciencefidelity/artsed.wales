@@ -11,15 +11,15 @@ export default {
       options: { collapsible: true }
     }
   ],
-  
+
   fields: [
     {
       title: 'English',
       name: 'en',
       type: 'slug',
       options: {
-        source: `title.${supportedLanguages[0].name}`,
-      },
+        source: `title.${supportedLanguages[0].name}`
+      }
     },
     {
       title: 'Welsh',
@@ -27,8 +27,8 @@ export default {
       type: 'slug',
       fieldset: 'translations',
       options: {
-        source: `title.${supportedLanguages[1].name}`,
-      },
-    },
-  ],
+        source: `title.${supportedLanguages[1].name}`
+      }
+    }
+  ]
 }

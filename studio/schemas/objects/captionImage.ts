@@ -14,7 +14,7 @@ export default {
     {
       name: 'Caption',
       type: 'localeString',
-      title: 'Attribution',
+      title: 'Attribution'
     }
   ],
   liveEdit: false

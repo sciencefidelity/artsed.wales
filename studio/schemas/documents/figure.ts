@@ -6,12 +6,12 @@ export default {
     {
       name: 'heading',
       title: 'Heading',
-      type: 'localeString',
+      type: 'localeString'
     },
     {
       name: 'count',
       title: 'Count',
-      type: 'number',
+      type: 'number'
     }
   ],
 

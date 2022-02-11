@@ -32,7 +32,7 @@ export default {
     {
       name: 'bio',
       title: 'Bio',
-      type: 'localeMarkdown',
+      type: 'localeMarkdown'
     },
     {
       name: 'avatar',

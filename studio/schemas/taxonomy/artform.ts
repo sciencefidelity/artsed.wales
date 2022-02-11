@@ -11,7 +11,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'localeMarkdown',
+      type: 'localeMarkdown'
     }
   ],
 

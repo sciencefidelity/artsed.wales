@@ -2,7 +2,7 @@ export default {
   name: 'site',
   title: 'Site',
   type: 'document',
-  __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
+  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   groups: [
     {
       name: 'meta',
@@ -41,14 +41,16 @@ export default {
       name: 'seoTitle',
       title: 'SEO title',
       type: 'localeString',
-      description: 'Displayed on Facebook and Twitter shares (max 60 characters).',
+      description:
+        'Displayed on Facebook and Twitter shares (max 60 characters).',
       group: 'seo'
     },
     {
       name: 'seoDescription',
       title: 'SEO description',
       type: 'localeString',
-      description: 'Displayed on Facebook and Twitter shares (max 65 characters).',
+      description:
+        'Displayed on Facebook and Twitter shares (max 65 characters).',
       group: 'seo'
     },
     {
@@ -63,7 +65,7 @@ export default {
       type: 'image',
       description: 'Ideal size 1200 x 630px.',
       options: {
-        hotspot: true,
+        hotspot: true
       },
       group: 'seo'
     },
@@ -114,14 +116,14 @@ export default {
       name: 'socialLinks',
       title: 'Social Links',
       type: 'array',
-      of: [{ type: 'reference', to: {type: 'social' }}],
+      of: [{ type: 'reference', to: { type: 'social' } }],
       sortable: true
     },
     {
       name: 'engagement',
       title: 'Engagement',
       type: 'array',
-      of: [{ type: 'reference', to: {type: 'figure' }}],
+      of: [{ type: 'reference', to: { type: 'figure' } }],
       sortable: true
     }
   ],

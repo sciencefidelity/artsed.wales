@@ -115,34 +115,36 @@ export default {
       name: 'facilitators',
       title: 'Facilitators',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'facilitator'}}],
+      of: [{ type: 'reference', to: { type: 'facilitator' } }],
       group: 'taxonomy'
     },
     {
       name: 'artform',
       title: 'Artforms',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'artform'}}],
+      of: [{ type: 'reference', to: { type: 'artform' } }],
       group: 'taxonomy'
     },
     {
       name: 'keystage',
       title: 'Key Stage',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'keystage'}}],
+      of: [{ type: 'reference', to: { type: 'keystage' } }],
       group: 'taxonomy'
     },
     {
       name: 'ogTitle',
       title: 'Social title',
-      description: 'Displayed on Facebook and Twitter shares (max 60 characters)',
+      description:
+        'Displayed on Facebook and Twitter shares (max 60 characters)',
       type: 'localeString',
       group: 'seo'
     },
     {
       name: 'ogDescription',
       title: 'Social description',
-      description: 'Displayed on Facebook and Twitter shares (max 65 characters)',
+      description:
+        'Displayed on Facebook and Twitter shares (max 65 characters)',
       type: 'localeString',
       group: 'seo'
     },
@@ -154,7 +156,7 @@ export default {
         hotspot: true
       },
       group: 'content'
-    },
+    }
   ],
 
   preview: {
@@ -164,7 +166,7 @@ export default {
       media: 'mainImage'
     },
     prepare(selection: Selection) {
-      const {subtitle, title, media} = selection
+      const { subtitle, title, media } = selection
       return {
         title: title,
         subtitle: `${moment(subtitle).format('ddd Do MMM YYYY')}`,

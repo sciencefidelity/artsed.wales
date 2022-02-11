@@ -6,12 +6,12 @@ export default {
     {
       name: 'heading',
       title: 'Heading',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'statement',
       title: 'Statement',
-      type: 'localeMarkdown',
+      type: 'localeMarkdown'
     }
   ],
 

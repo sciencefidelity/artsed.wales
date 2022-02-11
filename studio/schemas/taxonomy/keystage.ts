@@ -6,19 +6,19 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'localeString',
+      type: 'localeString'
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'localeMarkdown',
-    },
+      type: 'localeMarkdown'
+    }
   ],
 
   preview: {
     select: {
       title: 'title.en',
-      subtitle: 'title.cy',
-    },
-  },
+      subtitle: 'title.cy'
+    }
+  }
 }

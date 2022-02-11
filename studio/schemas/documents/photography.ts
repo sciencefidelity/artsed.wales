@@ -26,7 +26,7 @@ export default {
   preview: {
     select: {
       title: 'title.en',
-      media: 'image',
-    },
-  },
+      media: 'image'
+    }
+  }
 }
