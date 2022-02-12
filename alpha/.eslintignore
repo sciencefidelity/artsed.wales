@@ -4,5 +4,6 @@ dist
 .next
 coverage
 tsconfig.json
+.eslintrc.json
 package.json
 
