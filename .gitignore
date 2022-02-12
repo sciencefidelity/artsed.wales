@@ -16,3 +16,4 @@ package
 .next
 coverage
 out
+sendgrid.env
