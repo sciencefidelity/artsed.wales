@@ -102,7 +102,7 @@ export interface SocialLinksProps {
 }
 
 export interface ImageProps {
-  caption: string
+  alt: string
   image: Image
   width?: number
   height?: number

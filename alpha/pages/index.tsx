@@ -28,7 +28,7 @@ const Home = ({ data }: { data: IndexData }) => {
         </div>
         <div className={s.introImage}>
           <Image
-            caption={heroTitle}
+            alt={heroTitle}
             image={hero.image}
             width={900}
             height={900}
