@@ -14,19 +14,19 @@ const Engagement: FC<EngagementProps> = ({ site, statement }) => {
       <div
         className={`${s.engagement} ${u.grid} ${u.mbLarge}`}
       >
-      {site.engagementFigures.map(figure =>
-        <div
-          key={figure._id}
-          className={`${u.textCenter} ${u.w100} ${u.flex} ${u.column}`}
-        >
-          <div className={`${s.engagementFigure} ${u.sans} ${u.sans}`}>
-            {figure.count}
+        {site.engagementFigures.map(figure =>
+          <div
+            key={figure._id}
+            className={`${u.textCenter} ${u.w100} ${u.flex} ${u.column}`}
+          >
+            <div className={`${s.engagementFigure} ${u.sans} ${u.sans}`}>
+              {figure.count}
+            </div>
+            <div className={`${s.engagementTitle} ${u.sans} ${u.uppercase}`}>
+              <Localize data={figure.heading} />
+            </div>
           </div>
-          <div className={`${s.engagementTitle} ${u.sans} ${u.uppercase}`}>
-            <Localize data={figure.heading} />
-          </div>
-        </div>
-      )}
+        )}
       </div>
     </section>
   )

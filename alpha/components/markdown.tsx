@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
-import { Remark } from 'react-remark';
+import { Remark } from "react-remark"
 import { MarkdownProps } from "lib/interfaces"
 
 const Markdown: FC<MarkdownProps> = ({ content }) => {

@@ -42,7 +42,10 @@ const Footer: FC<FooterProps> = ({ site }) => {
       </div>
       <div>
         <br />
-          <Localize data={siteBy} />{" "}<a href="https://mattcook.dev" target="_blank">Matt</a>
+        <Localize data={siteBy} />{" "}
+        <a href="https://mattcook.dev" target="_blank" rel="noreferrer">
+          Matt
+        </a>
       </div>
     </footer>
   )

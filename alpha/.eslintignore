@@ -3,3 +3,6 @@ dist
 .nova
 .next
 coverage
+tsconfig.json
+package.json
+
