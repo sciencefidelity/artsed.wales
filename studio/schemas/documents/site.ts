@@ -90,7 +90,7 @@ export default {
     {
       name: 'email',
       title: 'Email',
-      type: 'localeString',
+      type: 'localeEmail',
       group: 'footer'
     },
     {
