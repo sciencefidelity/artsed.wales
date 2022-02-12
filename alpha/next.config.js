@@ -6,7 +6,7 @@ module.exports = {
         source: "/api/sendgrid",
         headers: [
           { key: "Content-Type", value: "application/json" },
-          { key: "Access-Control-Allow-Credentials", value: "false" },
+          { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "http://sendgrid.com" },
           { key: "Access-Control-Allow-Methods", value: "POST, GET, OPTIONS" },
           { key: "Access-Control-Allow-Headers", value: "X-Requested-With" },
