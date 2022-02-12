@@ -1,7 +1,19 @@
+import { GetStaticProps } from "next"
+import sanityClient from "lib/sanityClient"
+import { aboutQuery } from "lib/queries"
 import { useState } from "react"
+import Layout from "components/layout"
+import { LocaleString } from "generated/schema"
+import { AboutData } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 
-export default function ContactUs() {
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await sanityClient.fetch(aboutQuery)
+  return {
+    props: { data }
+  }
+}
+const Contact = ({ data }: { data: AboutData }) => {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
@@ -14,7 +26,7 @@ export default function ContactUs() {
   const handleSubmit = async (e: any) => {
     e.preventDefault()
     setButtonText("Sending")
-    const res = await fetch("/api/sendgrid", {
+    const res = await fetch("api/sendgrid", {
       body: JSON.stringify({
         firstName: firstName,
         lastName: lastName,
@@ -44,8 +56,18 @@ export default function ContactUs() {
     setEmail("")
     setMessage("")
   }
+  const { site, statements } = data
+  const title: LocaleString = {
+    _type: "localeString",
+    en: "Contact",
+    cy: "Contact"
+  }
   return (
-    <main>
+    <Layout
+      site={site}
+      statements={statements}
+      title={title}
+    >
       <form className={u.container} onSubmit={handleSubmit}>
         <p>Send a message</p>
         <label htmlFor="firstName" style={{display:"block"}}>First Name</label>
@@ -92,6 +114,7 @@ export default function ContactUs() {
           )}
         </div>
       </form>
-    </main>
+    </Layout>
   )
 }
+export default Contact

@@ -10,6 +10,7 @@ async function sendEmail(req, res) {
     await sendgrid.send({
       to: "hello@artsed.wales",
       from: "hello@artsed.wales",
+      replyTo: `${req.body.email}`,
       subject: `${subject}`,
       html: `
         <!DOCTYPE html>
@@ -36,5 +37,4 @@ async function sendEmail(req, res) {
   }
   return res.status(200).json({ error: "" })
 }
-
 export default sendEmail
