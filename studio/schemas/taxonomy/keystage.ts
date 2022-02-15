@@ -12,6 +12,15 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'localeRichText'
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'localeSlug',
+      options: {
+        source: 'title',
+        maxLength: 96
+      }
     }
   ],
 

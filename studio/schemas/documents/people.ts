@@ -40,6 +40,15 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'localeSlugNames',
+      options: {
+        source: 'title',
+        maxLength: 96
+      }
     }
   ],
 

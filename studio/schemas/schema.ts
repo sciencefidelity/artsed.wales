@@ -9,6 +9,7 @@ import blockContent from './objects/blockContent'
 import localeEmail from './objects/localeEmail'
 import localeRichText from './objects/localeRichText'
 import localeSlug from './objects/localeSlug'
+import localeSlugNames from './objects/localeSlugNames'
 import localeString from './objects/localeString'
 import localeText from './objects/localeText'
 import localeURL from './objects/localeURL'
@@ -41,6 +42,7 @@ export default createSchema({
     localeEmail,
     localeRichText,
     localeSlug,
+    localeSlugNames,
     localeString,
     localeText,
     localeURL,
