@@ -17,6 +17,7 @@
   "dependencies": {
     "@babel/core": "^7.17.2",
     "@bem-react/classname": "^1.5.12",
+    "@portabletext/react": "^1.0.3",
     "@sanity/client": "^3.0.6",
     "@sanity/image-url": "^1.0.1",
     "@sendgrid/mail": "^7.6.1",

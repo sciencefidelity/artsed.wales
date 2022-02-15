@@ -1,4 +1,4 @@
-import { FC } from "react"
+import React, { FC } from "react"
 import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
@@ -9,14 +9,16 @@ import u from "styles/utils.module.scss"
 
 const Engagement: FC<EngagementProps> = ({ site, statement }) => {
   const { locale } = useRouter()
-  const blocks = locale === "cy" && statement.statement.cy
-    ? statement.statement.cy
-    : statement.statement.en
   return (
     <section className={u.mbLarge}>
       <div className={`${s.engagementText} ${u.center}`}>
-        {blocks &&
-          <PortableText value={blocks} components={components} />
+        {statement.statement &&
+          <PortableText
+            value={locale === "cy" && statement.statement.cy
+              ? statement.statement.cy
+              : statement.statement.en}
+            components={components}
+          />
         }
       </div>
       <div

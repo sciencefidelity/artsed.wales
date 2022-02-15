@@ -8,6 +8,7 @@ import { components } from "components/portableTextComponents"
 import Engagement from "components/engagement"
 import Image from "components/image"
 import Layout from "components/layout"
+import Localize from "components/localize"
 import QuoteCard from "components/quoteCard"
 import { indexQuery } from "lib/queries"
 import { IndexData } from "lib/interfaces"
@@ -81,7 +82,7 @@ const Home = ({ data }: { data: IndexData }) => {
           }}
         />
         <div className={`${s.caption} ${u.sans} ${u.uppercase}`}>
-          {video.title.en}
+          <Localize data={video.title} />
         </div>
       </div>
       <Engagement site={site} statement={statements[8]} />
