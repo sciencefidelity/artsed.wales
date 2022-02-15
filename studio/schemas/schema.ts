@@ -8,7 +8,6 @@ import captionImage from './objects/captionImage'
 // localization
 // import { baseLanguage, supportedLanguages } from './languages'
 import localeEmail from './objects/localeEmail'
-import localeMarkdown from './objects/localeMarkdown'
 import localeRichText from './objects/localeRichText'
 import localeSlug from './objects/localeSlug'
 import localeString from './objects/localeString'
@@ -41,7 +40,6 @@ export default createSchema({
     blockContent,
     captionImage,
     localeEmail,
-    localeMarkdown,
     localeRichText,
     localeSlug,
     localeString,

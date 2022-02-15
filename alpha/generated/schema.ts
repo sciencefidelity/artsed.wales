@@ -15,7 +15,7 @@ import type {
   SanityImageDimensions,
   SanityImagePalette,
   SanityImagePaletteSwatch,
-} from "sanity-codegen"
+} from "sanity-codegen";
 
 export type {
   SanityReference,
@@ -34,7 +34,7 @@ export type {
   SanityImageDimensions,
   SanityImagePalette,
   SanityImagePaletteSwatch,
-}
+};
 
 /**
  * Event
@@ -101,11 +101,11 @@ export interface Event extends SanityDocument {
   britelink?: LocaleURL;
 
   /**
-   * Body — `localeMarkdown`
+   * Body — `localeRichText`
    *
    *
    */
-  body?: LocaleMarkdown;
+  body?: LocaleRichText;
 
   /**
    * Main image — `image`
@@ -227,11 +227,11 @@ export interface People extends SanityDocument {
   job?: LocaleString;
 
   /**
-   * Bio — `localeMarkdown`
+   * Bio — `localeRichText`
    *
    *
    */
-  bio?: LocaleMarkdown;
+  bio?: LocaleRichText;
 
   /**
    * Avatar — `image`
@@ -332,11 +332,11 @@ export interface Post extends SanityDocument {
   publishedAt?: string;
 
   /**
-   * Body — `localeMarkdown`
+   * Body — `localeRichText`
    *
    *
    */
-  body?: LocaleMarkdown;
+  body?: LocaleRichText;
 
   /**
    * Social title — `localeString`
@@ -362,11 +362,11 @@ export interface Quote extends SanityDocument {
   _type: "quote";
 
   /**
-   * Quote — `localeMarkdown`
+   * Quote — `localeRichText`
    *
    *
    */
-  quote?: LocaleMarkdown;
+  quote?: LocaleRichText;
 
   /**
    * Citation — `string`
@@ -467,11 +467,11 @@ export interface Site extends SanityDocument {
   telephone?: string;
 
   /**
-   * Email — `localeString`
+   * Email — `localeEmail`
    *
    *
    */
-  email?: LocaleString;
+  email?: LocaleEmail;
 
   /**
    * Sign Up Heading — `localeString`
@@ -555,11 +555,11 @@ export interface Statement extends SanityDocument {
   heading?: string;
 
   /**
-   * Statement — `localeMarkdown`
+   * Statement — `localeRichText`
    *
    *
    */
-  statement?: LocaleMarkdown;
+  statement?: LocaleRichText;
 }
 
 /**
@@ -578,11 +578,11 @@ export interface Video extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Body — `localeMarkdown`
+   * Body — `localeRichText`
    *
    *
    */
-  body?: LocaleMarkdown;
+  body?: LocaleRichText;
 
   /**
    * Video Link — `url`
@@ -634,11 +634,11 @@ export interface Artform extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `localeMarkdown`
+   * Description — `localeRichText`
    *
    *
    */
-  description?: LocaleMarkdown;
+  description?: LocaleRichText;
 }
 
 /**
@@ -676,11 +676,11 @@ export interface Author extends SanityDocument {
   };
 
   /**
-   * Bio — `localeMarkdown`
+   * Bio — `localeRichText`
    *
    *
    */
-  bio?: LocaleMarkdown;
+  bio?: LocaleRichText;
 }
 
 /**
@@ -699,11 +699,11 @@ export interface Category extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `localeMarkdown`
+   * Description — `localeRichText`
    *
    *
    */
-  description?: LocaleMarkdown;
+  description?: LocaleRichText;
 }
 
 /**
@@ -741,11 +741,11 @@ export interface Facilitator extends SanityDocument {
   };
 
   /**
-   * Bio — `localeMarkdown`
+   * Bio — `localeRichText`
    *
    *
    */
-  bio?: LocaleMarkdown;
+  bio?: LocaleRichText;
 }
 
 /**
@@ -764,11 +764,11 @@ export interface Keystage extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `localeMarkdown`
+   * Description — `localeRichText`
    *
    *
    */
-  description?: LocaleMarkdown;
+  description?: LocaleRichText;
 }
 
 export type BlockContent = Array<
@@ -802,21 +802,21 @@ export type CaptionImage = {
   Caption?: LocaleString;
 };
 
-export type LocaleMarkdown = {
-  _type: "localeMarkdown";
+export type LocaleEmail = {
+  _type: "localeEmail";
   /**
-   * English — `markdown`
+   * English — `string`
    *
    *
    */
-  en?: Markdown;
+  en?: string;
 
   /**
-   * Welsh — `markdown`
+   * Welsh — `string`
    *
    *
    */
-  cy?: Markdown;
+  cy?: string;
 };
 
 export type LocaleRichText = {
@@ -853,17 +853,17 @@ export type LocaleSlug = {
   cy?: { _type: "cy"; current: string };
 };
 
-export type LocaleURL = {
-  _type: "localeURL";
+export type LocaleString = {
+  _type: "localeString";
   /**
-   * English — `url`
+   * English — `string`
    *
    *
    */
   en?: string;
 
   /**
-   * Welsh — `url`
+   * Welsh — `string`
    *
    *
    */
@@ -887,17 +887,17 @@ export type LocaleText = {
   cy?: string;
 };
 
-export type LocaleString = {
-  _type: "localeString";
+export type LocaleURL = {
+  _type: "localeURL";
   /**
-   * English — `string`
+   * English — `url`
    *
    *
    */
   en?: string;
 
   /**
-   * Welsh — `string`
+   * Welsh — `url`
    *
    *
    */
@@ -920,10 +920,3 @@ export type Documents =
   | Category
   | Facilitator
   | Keystage;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Markdown = any;
