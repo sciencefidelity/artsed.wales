@@ -198,6 +198,90 @@ export interface Figure extends SanityDocument {
 }
 
 /**
+ * Page
+ *
+ *
+ */
+export interface Page extends SanityDocument {
+  _type: "page";
+
+  /**
+   * Title — `localeString`
+   *
+   *
+   */
+  title?: LocaleString;
+
+  /**
+   * Menu Title — `localeString`
+   *
+   * The title shown in the main navigation
+   */
+  menuTitle?: LocaleString;
+
+  /**
+   * Subtitle — `localeString`
+   *
+   * Not available for 'Page' type
+   */
+  subtitle?: LocaleString;
+
+  /**
+   * Template — `array`
+   *
+   *
+   */
+  template?: Array<SanityKeyed<string>>;
+
+  /**
+   * Slug — `localeSlug`
+   *
+   *
+   */
+  slug?: LocaleSlug;
+
+  /**
+   * Body — `localeRichText`
+   *
+   * Only available for 'Page' type
+   */
+  body?: LocaleRichText;
+
+  /**
+   * Main image — `captionImage`
+   *
+   * Only available for 'Page' type
+   */
+  mainImage?: CaptionImage;
+
+  /**
+   * SEO title — `localeString`
+   *
+   * Displayed on Facebook and Twitter shares (max 60 characters).
+   */
+  seoTitle?: LocaleString;
+
+  /**
+   * SEO description — `localeString`
+   *
+   * Displayed on Facebook and Twitter shares (max 65 characters).
+   */
+  seoDescription?: LocaleString;
+
+  /**
+   * SEO Image — `image`
+   *
+   * Ideal size 1200 x 630px (if not added main image will be used).
+   */
+  seoImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
  * People
  *
  *
@@ -210,7 +294,7 @@ export interface People extends SanityDocument {
    *
    *
    */
-  fullName?: string;
+  name?: string;
 
   /**
    * Role — `array`
@@ -378,7 +462,7 @@ export interface Quote extends SanityDocument {
   /**
    * Organisation — `localeString`
    *
-   * Who is the quote by?
+   * Where do they work?
    */
   organisation?: LocaleString;
 }
@@ -907,6 +991,7 @@ export type LocaleURL = {
 export type Documents =
   | Event
   | Figure
+  | Page
   | People
   | Photography
   | Post
