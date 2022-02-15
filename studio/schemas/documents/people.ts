@@ -45,7 +45,7 @@ export default {
 
   preview: {
     select: {
-      title: 'fullName',
+      title: 'name',
       subtitle: 'job.en',
       media: 'avatar'
     }

@@ -5,8 +5,7 @@ export default {
   fieldsets: [
     {
       title: 'Translations',
-      name: 'translations',
-      options: { collapsible: true }
+      name: 'translations'
     }
   ],
 
