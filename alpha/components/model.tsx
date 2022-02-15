@@ -22,9 +22,9 @@ const Model = () => {
             {locale === "cy" ? "Ysgolion" : "Schools"}
           </div>
           <div className={`${s.content3} ${u.fgDark}`}>
-            {locale === "cy" ? "Celfyddydol" : "Cultural"}
+            {locale === "cy" ? "Cyrff " : "Cultural"}
             <br />
-            {locale === "cy" ? "Sefydliadau" : "Organisations"}
+            {locale === "cy" ? "Diwylliannol" : "Organisations"}
           </div>
           <div className={`${s.content4} ${u.fgWhite}`}>
             {locale === "cy" ? "Rhwydwaith" : "Network"}

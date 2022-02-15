@@ -24,7 +24,7 @@ const About = ({ data }: { data: AboutData }) => {
   const title: LocaleString = {
     _type: "localeString",
     en: "About",
-    cy: "Amdan"
+    cy: "Ynglŷn â"
   }
   return (
     <Layout

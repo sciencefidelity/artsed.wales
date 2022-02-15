@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
-import { localize, urlFor } from "lib/utils"
+import { keyStage, localize, urlFor } from "lib/utils"
 import { components } from "components/portableTextComponents"
 import Localize from "components/localize"
 import Date from "components/date"
@@ -44,7 +44,7 @@ const Event: FC<EventProps> = ({ event }) => {
         <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
           {event.location && <Localize data={event.location} />}
           {event.location && ", "}
-          {event.price && "£" + (locale === "cy" ? " " : "") + event.price}
+          {event.price && "£" + event.price}
         </div>
         {event.body && <div className={u.fAuto}>
           <PortableText value={blocks} components={components} />
@@ -52,7 +52,7 @@ const Event: FC<EventProps> = ({ event }) => {
         {event.artforms[0] &&
           <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
             <ul style={{ margin: 0, marginTop: "2rem", padding: 0 }}>
-              {locale === "cy" ? "Ffurfiau ar gelfyddyd: " : "Artforms: "}
+              {locale === "cy" ? "Ffurfiau celf: " : "Artforms: "}
               {event.artforms.map(artform =>
                 <li className={s.horizontal} key={artform._id}>
                   <Localize data={artform.title} />
@@ -67,7 +67,9 @@ const Event: FC<EventProps> = ({ event }) => {
               {locale === "cy" ? "Cyfnod Allweddol: " : "Key Stage: "}
               {event.keystages.map(keystage =>
                 <li className={s.horizontal} key={keystage._id}>
-                  <Localize data={keystage.title} />
+                  {locale === "cy" && keystage.title.cy
+                    ? keyStage(keystage.title.cy)
+                    : keyStage(keystage.title.en)}
                 </li>
               )}
             </ul>
@@ -76,7 +78,7 @@ const Event: FC<EventProps> = ({ event }) => {
         {event.people &&
           <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
             <ul style={{ margin: 0, padding: 0 }}>
-              {locale === "cy" ? "Arweinir gan: " : "Led by: "}
+              {locale === "cy" ? "Dan arweiniad: " : "Led by: "}
               {event.people.map(person =>
                 <li className={s.horizontal} key={person._id}>
                   {person.name}
@@ -93,7 +95,7 @@ const Event: FC<EventProps> = ({ event }) => {
             rel="noreferrer"
           >
             <button className={`${s.britelinkBtn} ${u.fgDark}`}>
-              {locale === "cy" ? "Archebwch nawr" : "Book now"}
+              {locale === "cy" ? "Bwciwch yn awr" : "Book now"}
             </button>
           </a>
         </div>

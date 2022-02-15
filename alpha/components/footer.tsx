@@ -13,12 +13,12 @@ const Footer: FC<FooterProps> = ({ site }) => {
   const siteName = localize(site.siteName, locale).replace("and", "&")
   const contact: LocaleString = {
     _type: "localeString",
-    cy: "Cysylltwch",
+    cy: "Cysylltwch â",
     en: "Contact"
   }
   const siteBy: LocaleString = {
     _type: "localeString",
-    cy: "Site gan",
+    cy: "Safle gan",
     en: "Site by"
   }
   return (

@@ -11,7 +11,7 @@ const Scrollup = () => {
     <div className={s.scrollupContainer}>
       <Link href="#">
         <span className={u.screenReaderText}>
-          {locale === "cy" ? "Yn ôl i'r brig" : "Back to top"}
+          {locale === "cy" ? "Yn ôl i’r brig" : "Back to top"}
         </span>
         <CornerAmpStroke />
         {/* <img
