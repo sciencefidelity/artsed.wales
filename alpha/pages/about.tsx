@@ -1,8 +1,10 @@
 import { GetStaticProps } from "next"
+import { useRouter } from "next/router"
+import { PortableText } from "@portabletext/react"
 import sanityClient from "lib/sanityClient"
 import { aboutQuery } from "lib/queries"
+import { components } from "components/portableTextComponents"
 import Layout from "components/layout"
-import Markdown from "components/markdown"
 import Model from "components/model"
 import { LocaleString } from "generated/schema"
 import { AboutData } from "lib/interfaces"
@@ -17,6 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const About = ({ data }: { data: AboutData }) => {
+  const { locale } = useRouter()
   const { site, statements } = data
   const title: LocaleString = {
     _type: "localeString",
@@ -32,17 +35,42 @@ const About = ({ data }: { data: AboutData }) => {
       <div className={`${u.flex} ${u.lgColumn}`}>
         <article style={{ zIndex: 3 }}>
           <div className={`${s.heading} ${u.serif} ${u.fgDark}`}>
-            <Markdown content={statements[2].statement} />
+            {statements[2].statement && <PortableText
+              value={locale === "cy" && statements[2].statement.cy
+                ? statements[2].statement.cy
+                : statements[2].statement.en}
+              components={components}
+            />}
           </div>
           <div className={`${s.paragraph} ${u.lgHide}`}>
-            <Markdown content={statements[6].statement} />
-            <Markdown content={statements[7].statement} />
+            {statements[6].statement && <PortableText
+              value={locale === "cy" && statements[6].statement.cy
+                ? statements[6].statement.cy
+                : statements[6].statement.en}
+              components={components}
+            />}
+            {statements[7].statement && <PortableText
+              value={locale === "cy" && statements[7].statement.cy
+                ? statements[7].statement.cy
+                : statements[7].statement.en}
+              components={components}
+            />}
           </div>
         </article>
         <Model />
         <div className={`${s.paragraph} ${u.hide} ${u.lgBlock}`}>
-          <Markdown content={statements[6].statement} />
-          <Markdown content={statements[7].statement} />
+          {statements[6].statement && <PortableText
+            value={locale === "cy" && statements[6].statement.cy
+              ? statements[6].statement.cy
+              : statements[6].statement.en}
+            components={components}
+          />}
+          {statements[7].statement && <PortableText
+            value={locale === "cy" && statements[7].statement.cy
+              ? statements[7].statement.cy
+              : statements[7].statement.en}
+            components={components}
+          />}
         </div>
       </div>
     </Layout>

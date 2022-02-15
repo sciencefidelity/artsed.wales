@@ -1,15 +1,23 @@
 import { FC } from "react"
+import { useRouter } from "next/router"
+import { PortableText } from "@portabletext/react"
+import { components } from "components/portableTextComponents"
 import Localize from "components/localize"
-import Markdown from "components/markdown"
 import { EngagementProps } from "lib/interfaces"
 import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
 
 const Engagement: FC<EngagementProps> = ({ site, statement }) => {
+  const { locale } = useRouter()
+  const blocks = locale === "cy" && statement.statement.cy
+    ? statement.statement.cy
+    : statement.statement.en
   return (
     <section className={u.mbLarge}>
       <div className={`${s.engagementText} ${u.center}`}>
-        <Markdown content={statement.statement} />
+        {blocks &&
+          <PortableText value={blocks} components={components} />
+        }
       </div>
       <div
         className={`${s.engagement} ${u.grid} ${u.mbLarge}`}

@@ -5,7 +5,6 @@ import type {
   Facilitator,
   Figure,
   Keystage,
-  LocaleMarkdown,
   LocaleString,
   Photography,
   Quote,
@@ -71,10 +70,6 @@ export interface EventRefs extends Event {
   artforms?: Artform[]
   people?: Facilitator[]
   keystages?: Keystage[]
-}
-
-export interface MarkdownProps {
-  content: LocaleMarkdown
 }
 
 export interface SignUpProps {
