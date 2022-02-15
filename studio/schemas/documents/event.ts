@@ -93,7 +93,7 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      type: 'localeMarkdown',
+      type: 'localeRichText',
       group: 'content'
     },
     {

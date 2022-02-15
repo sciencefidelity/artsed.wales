@@ -6,7 +6,7 @@ export default {
     {
       name: 'quote',
       title: 'Quote',
-      type: 'localeMarkdown'
+      type: 'localeRichText'
     },
     {
       name: 'cite',

@@ -11,7 +11,7 @@ export default {
     {
       name: 'statement',
       title: 'Statement',
-      type: 'localeMarkdown'
+      type: 'localeRichText'
     }
   ],
 

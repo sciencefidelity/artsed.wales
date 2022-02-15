@@ -28,7 +28,7 @@ export default {
     {
       name: 'bio',
       title: 'Bio',
-      type: 'localeMarkdown'
+      type: 'localeRichText'
     }
   ],
   preview: {
