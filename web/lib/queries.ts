@@ -1,6 +1,30 @@
 import groq from "groq"
 // const omitDrafts = "!(_id in path('drafts.**'))"
 
+const defs = `
+  ...,
+  cy[] {
+    ...,
+    markDefs[]{
+      ...,
+      item->{
+        _type,
+        "slug": slug
+      }
+    }
+  },
+  en[] {
+    ...,
+    markDefs[]{
+      ...,
+      item->{
+        _type,
+        "slug": slug
+      }
+    }
+  }
+`
+
 const siteFields = `
   addressLine1,
   addressLine2,
@@ -24,7 +48,7 @@ export const indexQuery = groq`{
     "random": (dateTime(now()) - dateTime(_createdAt)) % 199
   } | order(random desc)[0],
   "quotes": *[_type == "quote"] | order(_createdAt){
-    _id, cite, organisation, quote
+    _id, cite, organisation, quote{${defs}}
   },
   "photography": *[_type == "photography"] | order(_createdAt){
     image, title
@@ -33,7 +57,7 @@ export const indexQuery = groq`{
     ${siteFields}
   },
   "statements": *[_type == "statement"] | order(heading){
-    statement
+    statement{${defs}}
   },
   "video": *[_type == "video"][0]{title, videoLink}
 }`
@@ -43,15 +67,16 @@ export const aboutQuery = groq`{
     ${siteFields}
   },
   "statements": *[_type == "statement"] | order(heading){
-    statement
+    statement{${defs}}
   }
 }`
 
 export const eventsQuery = groq`{
   "events": *[_type == "event"] | order(date){
     _id,
+    _type,
     "artforms": artform[]->{_id, title},
-    body,
+    body{${defs}},
     britelink,
     date,
     date2,
@@ -71,6 +96,6 @@ export const eventsQuery = groq`{
     ${siteFields}
   },
   "statements": *[_type == "statement"] | order(heading){
-    statement
+    statement{${defs}}
   }
 }`

@@ -1,8 +1,8 @@
 import { useRouter } from "next/router"
-import type { LocaleString } from "generated/schema"
+import type { LocaleEmail, LocaleString } from "generated/schema"
 
 const Localize = ({ data }: {
-  data: LocaleString
+  data: LocaleString | LocaleEmail
 }) => {
   const { locale } = useRouter()
   return (

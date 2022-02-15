@@ -14,7 +14,7 @@ export const components: PortableTextComponents = {
       )
     },
     internalLink: ({value, children}) => {
-      const url = buildUrl(value?.item)
+      const url = buildUrl(value.item._type, value.item.slug.en.current)
       return (
         <Link href={url}>{children}</Link>
       )

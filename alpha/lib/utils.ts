@@ -7,6 +7,10 @@ export const acronym = (str: string): string => {
   return str.split(" ").map(e => /[A-Z]/.test(e) ? e[0] : "").join("")
 }
 
+export const buildUrl = (type: string, slug: string): string => {
+  return `${subdir(type)}/${slug}`
+}
+
 export const capitalize = (str: string): string => {
   return str
     .split(/[\s-]/g)
@@ -20,6 +24,23 @@ export const localize = (
   return locale === "cy" && content.cy
     ? content.cy
     : content.en
+}
+
+export const subdir = (type: string): string => {
+  switch (type) {
+  case "author":
+    return "/authors"
+  case "event":
+    return "/events"
+  case "facilitator":
+    return "/facilitators"
+  case "post":
+    return "/news"
+  case "video":
+    return "/videos"
+  default:
+    return ""
+  }
 }
 
 export const urlFor = (source: Image) => {
