@@ -17,8 +17,9 @@ import localeURL from './objects/localeURL'
 // documements
 import event from './documents/event'
 import figure from './documents/figure'
-import photography from './documents/photography'
+import page from './documents/page'
 import people from './documents/people'
+import photography from './documents/photography'
 import post from './documents/post'
 import quote from './documents/quote'
 import site from './documents/site'
@@ -49,6 +50,7 @@ export default createSchema({
     // documents
     event,
     figure,
+    page,
     people,
     photography,
     post,

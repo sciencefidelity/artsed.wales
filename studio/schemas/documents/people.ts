@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'fullName',
+      name: 'name',
       title: 'Name',
       type: 'string'
     },
@@ -26,8 +26,7 @@ export default {
     {
       name: 'job',
       title: 'Job',
-      type: 'localeString',
-      validation: (Rule: any) => Rule.required()
+      type: 'localeString'
     },
     {
       name: 'bio',

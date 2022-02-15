@@ -1,3 +1,5 @@
+import { Rule } from "@sanity/types"
+
 export default {
   name: 'page',
   title: 'Page',
@@ -21,7 +23,6 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'localeString',
-      validation: Rule => Rule.required(),
       group: 'info'
     },
     {
@@ -29,7 +30,6 @@ export default {
       title: 'Menu Title',
       type: 'localeString',
       description: 'The title shown in the main navigation',
-      validation: Rule => Rule.required(),
       group: 'info'
     },
     {
@@ -58,7 +58,7 @@ export default {
         title: 'Page',
         value: 'page'
       },
-      validation: Rule => Rule.required(),
+      validation: (Rule: Rule) => Rule.required(),
       group: 'info'
     },
     {
