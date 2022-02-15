@@ -15,7 +15,7 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'slug',
+      type: 'localeSlug',
       options: {
         source: 'title',
         maxLength: 96
@@ -30,10 +30,15 @@ export default {
     {
       name: 'mainImage',
       title: 'Main image',
-      type: 'captionImage',
+      type: 'image',
       options: {
         hotspot: true
       }
+    },
+    {
+      name: 'imageCaption',
+      title: 'Image Caption',
+      type: 'localeString'
     },
     {
       name: 'categories',

@@ -81,11 +81,17 @@ export default {
     {
       name: 'mainImage',
       title: 'Main image',
-      type: 'captionImage',
+      type: 'image',
       description: "Only available for 'Page' type",
       options: {
         hotspot: true
       },
+      group: 'content'
+    },
+    {
+      name: 'imageCaption',
+      title: 'Image Caption',
+      type: 'localeString',
       group: 'content'
     },
     {

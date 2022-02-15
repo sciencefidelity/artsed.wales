@@ -3,7 +3,6 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // objects
 import blockContent from './objects/blockContent'
-import captionImage from './objects/captionImage'
 
 // localization
 // import { baseLanguage, supportedLanguages } from './languages'
@@ -39,7 +38,6 @@ export default createSchema({
   types: schemaTypes.concat([
     // objects
     blockContent,
-    captionImage,
     localeEmail,
     localeRichText,
     localeSlug,

@@ -59,11 +59,11 @@ export interface Event extends SanityDocument {
   subtitle?: LocaleString;
 
   /**
-   * Slug — `slug`
+   * Slug — `localeSlug`
    *
    *
    */
-  slug?: { _type: "slug"; current: string };
+  slug?: LocaleSlug;
 
   /**
    * Date and Time — `datetime`
@@ -248,11 +248,23 @@ export interface Page extends SanityDocument {
   body?: LocaleRichText;
 
   /**
-   * Main image — `captionImage`
+   * Main image — `image`
    *
    * Only available for 'Page' type
    */
-  mainImage?: CaptionImage;
+  mainImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * Image Caption — `localeString`
+   *
+   *
+   */
+  imageCaption?: LocaleString;
 
   /**
    * SEO title — `localeString`
@@ -381,11 +393,11 @@ export interface Post extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Slug — `slug`
+   * Slug — `localeSlug`
    *
    *
    */
-  slug?: { _type: "slug"; current: string };
+  slug?: LocaleSlug;
 
   /**
    * Author — `reference`
@@ -395,11 +407,23 @@ export interface Post extends SanityDocument {
   author?: SanityReference<Author>;
 
   /**
-   * Main image — `captionImage`
+   * Main image — `image`
    *
    *
    */
-  mainImage?: CaptionImage;
+  mainImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * Image Caption — `localeString`
+   *
+   *
+   */
+  imageCaption?: LocaleString;
 
   /**
    * Categories — `array`
@@ -481,6 +505,13 @@ export interface Site extends SanityDocument {
    *
    */
   siteName?: LocaleString;
+
+  /**
+   * Site URL — `localeURL`
+   *
+   *
+   */
+  siteURL?: LocaleURL;
 
   /**
    * Site Description — `localeString`
@@ -864,27 +895,6 @@ export type BlockContent = Array<
       hotspot?: SanityImageHotspot;
     }>
 >;
-
-export type CaptionImage = {
-  _type: "captionImage";
-  asset: SanityReference<SanityImageAsset>;
-  crop?: SanityImageCrop;
-  hotspot?: SanityImageHotspot;
-
-  /**
-   * Caption — `string`
-   *
-   *
-   */
-  caption?: string;
-
-  /**
-   * Attribution — `localeString`
-   *
-   *
-   */
-  Caption?: LocaleString;
-};
 
 export type LocaleEmail = {
   _type: "localeEmail";

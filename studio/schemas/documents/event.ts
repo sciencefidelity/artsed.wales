@@ -41,7 +41,7 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'slug',
+      type: 'localeSlug',
       options: {
         source: `title.${supportedLanguages[0].name}`,
         maxLength: 96

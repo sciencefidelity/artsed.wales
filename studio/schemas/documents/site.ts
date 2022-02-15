@@ -25,6 +25,12 @@ export default {
       group: 'meta'
     },
     {
+      name: 'siteURL',
+      title: 'Site URL',
+      type: 'localeURL',
+      group: 'meta'
+    },
+    {
       name: 'siteDescription',
       title: 'Site Description',
       type: 'localeString',
