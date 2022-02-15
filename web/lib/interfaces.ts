@@ -7,6 +7,7 @@ import type {
   Keystage,
   LocaleString,
   Photography,
+  Post,
   Quote,
   Social,
   SanityImageAsset,
@@ -49,6 +50,10 @@ export interface AboutData extends AllPagesData {
 
 export interface EventsData extends AllPagesData {
   events: Event[]
+}
+
+export interface PostData extends AllPagesData {
+  post: Post
 }
 
 export interface LayoutProps {

@@ -12,7 +12,7 @@ const Language = () => {
       <span className={u.screenReaderText}>
         {locale === "cy"
           ? "Switch language to English"
-          : "Newid iaith i'r Gymraeg"}
+          : "Newid yr iaith i Gymraeg"}
       </span>
       {locale === "cy" ? (
         <button

@@ -18,7 +18,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ site }) => {
         ${u.textCenter}
         ${u.smTextLeft}
       `}>
-        Follow us on:{" "}
+        {locale === "cy" ? "Dilynwch ni ar" : "Follow us on"}{": "}
       </div>
       <ul
         className={`
@@ -28,7 +28,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ site }) => {
           ${u.uppercase}
         `}
       >
-        <li className={`${u.mdHide}`}>Follow us on:{" "}</li>
+        <li className={`${u.mdHide}`}>{locale === "cy" ? "Dilynwch ni ar" : "Follow us on"}{": "}</li>
         {site.socialMediaLinks.map(link =>
           <li key={link._id}><a href={localize(link.link, locale)}>{link.site}</a></li>
         )}

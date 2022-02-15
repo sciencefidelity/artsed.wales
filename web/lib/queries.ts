@@ -1,5 +1,5 @@
 import groq from "groq"
-// const omitDrafts = "!(_id in path('drafts.**'))"
+const omitDrafts = "!(_id in path('drafts.**'))"
 
 const defs = `
   ...,
@@ -99,3 +99,60 @@ export const eventsQuery = groq`{
     statement{${defs}}
   }
 }`
+
+export const postQuery = groq`{
+  "post": *[
+  _type == "post"
+  && slug.en.current == $slug
+  && ${omitDrafts}][0] {
+    _createdAt,
+    _id,
+    _type,
+    author->{_type, name, slug},
+    body,
+    categories[]->{_id, _type, title, slug},
+    mainImage,
+    ogDescription,
+    ogTitle,
+    publishedAt,
+    slug,
+    title
+  },
+  "site": *[_type == "site"] | order(date)[0]{
+    ${siteFields}
+  },
+  "statements": *[_type == "statement"] | order(heading){
+    statement{${defs}}
+  }
+}`
+
+export const postPathQuery = groq`
+  *[
+    _type == "post"
+    && defined(slug)
+    && ${omitDrafts}
+  ][].slug.en.current
+`
+
+// export const postQuery = groq`{
+//   "post": *[_type == "post"] | order(publishedAt desc) {
+//     _createdAt,
+//     _id,
+//     _type,
+//     author->{_type, name, slug},
+//     body{${defs}},
+//     categories[]->{_id, _type, title, slug},
+//     mainImage,
+//     ogDescription,
+//     ogTitle,
+//     publishedAt,
+//     slug,
+//     title
+//   },
+//   "site": *[_type == "site"] | order(date)[0]{
+//     ${siteFields}
+//   },
+//   "statements": *[_type == "statement"] | order(heading){
+//     statement{${defs}}
+//   }
+// }`

@@ -18,6 +18,10 @@ export const capitalize = (str: string): string => {
     .join(" ")
 }
 
+export const keyStage = (str: string): string => {
+  return str.split(" ").map(e => e.replace(e, e[0])).join("")
+}
+
 export const localize = (
   content: LocaleString | LocaleURL, locale: string
 ): string => {
