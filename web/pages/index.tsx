@@ -1,12 +1,14 @@
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
+import { PortableText } from "@portabletext/react"
 import ReactPlayer from "react-player"
 import { localize } from "lib/utils"
 import sanityClient from "lib/sanityClient"
+import { components } from "components/portableTextComponents"
 import Engagement from "components/engagement"
 import Image from "components/image"
 import Layout from "components/layout"
-import Markdown from "components/markdown"
+import Localize from "components/localize"
 import QuoteCard from "components/quoteCard"
 import { indexQuery } from "lib/queries"
 import { IndexData } from "lib/interfaces"
@@ -24,11 +26,16 @@ const Home = ({ data }: { data: IndexData }) => {
     >
       <div className={`${s.intro} ${u.grid} ${u.mbLarge} ${u.gapSmall}`}>
         <div className={`${s.introHeading} ${u.serif} ${u.hide} ${u.mdBlock}`}>
-          <Markdown content={statements[0].statement} />
+          {statements[0].statement && <PortableText
+            value={locale === "cy" && statements[0].statement.cy
+              ? statements[0].statement.cy
+              : statements[0].statement.en}
+            components={components}
+          />}
         </div>
         <div className={s.introImage}>
           <Image
-            caption={heroTitle}
+            alt={heroTitle}
             image={hero.image}
             width={900}
             height={900}
@@ -40,11 +47,26 @@ const Home = ({ data }: { data: IndexData }) => {
         </div>
         <div>
           <div className={`${s.introHeading} ${u.serif} ${u.mdHide}`}>
-            <Markdown content={statements[0].statement} />
+            {statements[0].statement && <PortableText
+              value={locale === "cy" && statements[0].statement.cy
+                ? statements[0].statement.cy
+                : statements[0].statement.en}
+              components={components}
+            />}
           </div>
           <div className={`${s.introBody}`}>
-            <Markdown content={statements[12].statement} />
-            <Markdown content={statements[3].statement} />
+            {statements[12].statement && <PortableText
+              value={locale === "cy" && statements[12].statement.cy
+                ? statements[12].statement.cy
+                : statements[12].statement.en}
+              components={components}
+            />}
+            {statements[3].statement && <PortableText
+              value={locale === "cy" && statements[3].statement.cy
+                ? statements[3].statement.cy
+                : statements[3].statement.en}
+              components={components}
+            />}
           </div>
         </div>
       </div>
@@ -60,7 +82,7 @@ const Home = ({ data }: { data: IndexData }) => {
           }}
         />
         <div className={`${s.caption} ${u.sans} ${u.uppercase}`}>
-          {video.title.en}
+          <Localize data={video.title} />
         </div>
       </div>
       <Engagement site={site} statement={statements[8]} />

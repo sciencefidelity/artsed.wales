@@ -101,11 +101,11 @@ export interface Event extends SanityDocument {
   britelink?: LocaleURL;
 
   /**
-   * Body — `localeMarkdown`
+   * Body — `localeRichText`
    *
    *
    */
-  body?: LocaleMarkdown;
+  body?: LocaleRichText;
 
   /**
    * Main image — `image`
@@ -198,6 +198,90 @@ export interface Figure extends SanityDocument {
 }
 
 /**
+ * Page
+ *
+ *
+ */
+export interface Page extends SanityDocument {
+  _type: "page";
+
+  /**
+   * Title — `localeString`
+   *
+   *
+   */
+  title?: LocaleString;
+
+  /**
+   * Menu Title — `localeString`
+   *
+   * The title shown in the main navigation
+   */
+  menuTitle?: LocaleString;
+
+  /**
+   * Subtitle — `localeString`
+   *
+   * Not available for 'Page' type
+   */
+  subtitle?: LocaleString;
+
+  /**
+   * Template — `array`
+   *
+   *
+   */
+  template?: Array<SanityKeyed<string>>;
+
+  /**
+   * Slug — `localeSlug`
+   *
+   *
+   */
+  slug?: LocaleSlug;
+
+  /**
+   * Body — `localeRichText`
+   *
+   * Only available for 'Page' type
+   */
+  body?: LocaleRichText;
+
+  /**
+   * Main image — `captionImage`
+   *
+   * Only available for 'Page' type
+   */
+  mainImage?: CaptionImage;
+
+  /**
+   * SEO title — `localeString`
+   *
+   * Displayed on Facebook and Twitter shares (max 60 characters).
+   */
+  seoTitle?: LocaleString;
+
+  /**
+   * SEO description — `localeString`
+   *
+   * Displayed on Facebook and Twitter shares (max 65 characters).
+   */
+  seoDescription?: LocaleString;
+
+  /**
+   * SEO Image — `image`
+   *
+   * Ideal size 1200 x 630px (if not added main image will be used).
+   */
+  seoImage?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+}
+
+/**
  * People
  *
  *
@@ -210,7 +294,7 @@ export interface People extends SanityDocument {
    *
    *
    */
-  fullName?: string;
+  name?: string;
 
   /**
    * Role — `array`
@@ -227,11 +311,11 @@ export interface People extends SanityDocument {
   job?: LocaleString;
 
   /**
-   * Bio — `localeMarkdown`
+   * Bio — `localeRichText`
    *
    *
    */
-  bio?: LocaleMarkdown;
+  bio?: LocaleRichText;
 
   /**
    * Avatar — `image`
@@ -332,11 +416,11 @@ export interface Post extends SanityDocument {
   publishedAt?: string;
 
   /**
-   * Body — `localeMarkdown`
+   * Body — `localeRichText`
    *
    *
    */
-  body?: LocaleMarkdown;
+  body?: LocaleRichText;
 
   /**
    * Social title — `localeString`
@@ -362,11 +446,11 @@ export interface Quote extends SanityDocument {
   _type: "quote";
 
   /**
-   * Quote — `localeMarkdown`
+   * Quote — `localeRichText`
    *
    *
    */
-  quote?: LocaleMarkdown;
+  quote?: LocaleRichText;
 
   /**
    * Citation — `string`
@@ -378,7 +462,7 @@ export interface Quote extends SanityDocument {
   /**
    * Organisation — `localeString`
    *
-   * Who is the quote by?
+   * Where do they work?
    */
   organisation?: LocaleString;
 }
@@ -467,11 +551,11 @@ export interface Site extends SanityDocument {
   telephone?: string;
 
   /**
-   * Email — `localeString`
+   * Email — `localeEmail`
    *
    *
    */
-  email?: LocaleString;
+  email?: LocaleEmail;
 
   /**
    * Sign Up Heading — `localeString`
@@ -555,11 +639,11 @@ export interface Statement extends SanityDocument {
   heading?: string;
 
   /**
-   * Statement — `localeMarkdown`
+   * Statement — `localeRichText`
    *
    *
    */
-  statement?: LocaleMarkdown;
+  statement?: LocaleRichText;
 }
 
 /**
@@ -578,11 +662,11 @@ export interface Video extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Body — `localeMarkdown`
+   * Body — `localeRichText`
    *
    *
    */
-  body?: LocaleMarkdown;
+  body?: LocaleRichText;
 
   /**
    * Video Link — `url`
@@ -634,11 +718,11 @@ export interface Artform extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `localeMarkdown`
+   * Description — `localeRichText`
    *
    *
    */
-  description?: LocaleMarkdown;
+  description?: LocaleRichText;
 }
 
 /**
@@ -676,11 +760,11 @@ export interface Author extends SanityDocument {
   };
 
   /**
-   * Bio — `localeMarkdown`
+   * Bio — `localeRichText`
    *
    *
    */
-  bio?: LocaleMarkdown;
+  bio?: LocaleRichText;
 }
 
 /**
@@ -699,11 +783,11 @@ export interface Category extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `localeMarkdown`
+   * Description — `localeRichText`
    *
    *
    */
-  description?: LocaleMarkdown;
+  description?: LocaleRichText;
 }
 
 /**
@@ -741,11 +825,11 @@ export interface Facilitator extends SanityDocument {
   };
 
   /**
-   * Bio — `localeMarkdown`
+   * Bio — `localeRichText`
    *
    *
    */
-  bio?: LocaleMarkdown;
+  bio?: LocaleRichText;
 }
 
 /**
@@ -764,11 +848,11 @@ export interface Keystage extends SanityDocument {
   title?: LocaleString;
 
   /**
-   * Description — `localeMarkdown`
+   * Description — `localeRichText`
    *
    *
    */
-  description?: LocaleMarkdown;
+  description?: LocaleRichText;
 }
 
 export type BlockContent = Array<
@@ -802,21 +886,21 @@ export type CaptionImage = {
   Caption?: LocaleString;
 };
 
-export type LocaleMarkdown = {
-  _type: "localeMarkdown";
+export type LocaleEmail = {
+  _type: "localeEmail";
   /**
-   * English — `markdown`
+   * English — `string`
    *
    *
    */
-  en?: Markdown;
+  en?: string;
 
   /**
-   * Welsh — `markdown`
+   * Welsh — `string`
    *
    *
    */
-  cy?: Markdown;
+  cy?: string;
 };
 
 export type LocaleRichText = {
@@ -853,17 +937,17 @@ export type LocaleSlug = {
   cy?: { _type: "cy"; current: string };
 };
 
-export type LocaleURL = {
-  _type: "localeURL";
+export type LocaleString = {
+  _type: "localeString";
   /**
-   * English — `url`
+   * English — `string`
    *
    *
    */
   en?: string;
 
   /**
-   * Welsh — `url`
+   * Welsh — `string`
    *
    *
    */
@@ -887,17 +971,17 @@ export type LocaleText = {
   cy?: string;
 };
 
-export type LocaleString = {
-  _type: "localeString";
+export type LocaleURL = {
+  _type: "localeURL";
   /**
-   * English — `string`
+   * English — `url`
    *
    *
    */
   en?: string;
 
   /**
-   * Welsh — `string`
+   * Welsh — `url`
    *
    *
    */
@@ -907,6 +991,7 @@ export type LocaleString = {
 export type Documents =
   | Event
   | Figure
+  | Page
   | People
   | Photography
   | Post
@@ -920,10 +1005,3 @@ export type Documents =
   | Category
   | Facilitator
   | Keystage;
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Markdown = any;

@@ -26,7 +26,7 @@ const Custom404 = ({ data }: {data: IndexData}) => {
       </Head>
       <article className={u.mtLarge}>
         <h2 className={`${u.textCenter}`}>404 - Page Not Found</h2>
-        <p className={`${u.textCenter} ${u.serif}`}>You've hit a path that does not exist.</p>
+        <p className={`${u.textCenter} ${u.serif}`}>You&apos;ve hit a path that does not exist.</p>
         <div className={`${u.textCenter} ${u.sans} ${u.uppercase}`}><Link href="/" className={u.textDark}>Home</Link></div>
       </article>
     </Layout>

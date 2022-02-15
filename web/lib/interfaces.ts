@@ -5,7 +5,6 @@ import type {
   Facilitator,
   Figure,
   Keystage,
-  LocaleMarkdown,
   LocaleString,
   Photography,
   Quote,
@@ -73,10 +72,6 @@ export interface EventRefs extends Event {
   keystages?: Keystage[]
 }
 
-export interface MarkdownProps {
-  content: LocaleMarkdown
-}
-
 export interface SignUpProps {
   site: Site
   statements: Statement[]
@@ -102,7 +97,7 @@ export interface SocialLinksProps {
 }
 
 export interface ImageProps {
-  caption: string
+  alt: string
   image: Image
   width?: number
   height?: number

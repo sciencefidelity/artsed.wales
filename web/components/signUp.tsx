@@ -1,12 +1,23 @@
 import { FC } from "react"
+import { useRouter } from "next/router"
+import { PortableText } from "@portabletext/react"
+import { components } from "components/portableTextComponents"
 import { SignUpProps } from "lib/interfaces"
 import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
 const SignUp: FC<SignUpProps> = ({ site, statements }) => {
+  const { locale } = useRouter()
   return (
     <section className={`${u.mbMedium}`}>
-      <h2 className={`${u.textCenter}`}>{statements[10].statement.en}</h2>
+      <div className={`${u.textCenter}`}>
+        {statements[10].statement && <PortableText
+          value={locale === "cy" && statements[10].statement.cy
+            ? statements[10].statement.cy
+            : statements[10].statement.en}
+          components={components}
+        />}
+      </div>
       <div>
         <form
           action="https://wales.us13.list-manage.com/subscribe/post?u=56ba9559a01451645f1910eda&amp;id=dc2f9bfec3"
@@ -50,7 +61,12 @@ const SignUp: FC<SignUpProps> = ({ site, statements }) => {
         </form>
       </div>
       <div className={`${s.signupText} ${u.center} ${u.textLeft}`}>
-        <p>{statements[11].statement.en}</p>
+        {statements[11].statement && <PortableText
+          value={locale === "cy" && statements[11].statement.cy
+            ? statements[11].statement.cy
+            : statements[11].statement.en}
+          components={components}
+        />}
       </div>
     </section>
   )

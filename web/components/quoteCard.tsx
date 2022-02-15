@@ -1,10 +1,15 @@
 import { FC } from "react"
+import { useRouter } from "next/router"
+import { PortableText } from "@portabletext/react"
+import { components } from "components/portableTextComponents"
 import { urlFor } from "lib/utils"
+import Localize from "components/localize"
 import { QuoteProps } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "pages/index.module.scss"
 
 const QuoteCard: FC<QuoteProps> = ({ direction, quote, photograph }) => {
+  const { locale } = useRouter()
   return (
     <div
       className={`${s.quoteContainer} ${u.flex} ${u.border}`}
@@ -37,9 +42,14 @@ const QuoteCard: FC<QuoteProps> = ({ direction, quote, photograph }) => {
           height="59"
         />
         <blockquote>
-          {quote.quote.en}
+          {quote.quote && <PortableText
+            value={locale === "cy" && quote.quote.cy
+              ? quote.quote.cy
+              : quote.quote.en}
+            components={components}
+          />}
           <div className={u.lineSpacer}></div>
-          <cite className={u.uppercase}>({quote.cite}{", "}{quote.organisation.en})</cite>
+          <cite className={u.uppercase}>({quote.cite}{", "}<Localize data={quote.organisation} />)</cite>
         </blockquote>
       </div>
     </div>

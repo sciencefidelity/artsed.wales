@@ -1,8 +1,9 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
+import { PortableText } from "@portabletext/react"
 import { localize, urlFor } from "lib/utils"
+import { components } from "components/portableTextComponents"
 import Localize from "components/localize"
-import Markdown from "components/markdown"
 import Date from "components/date"
 import { EventProps } from "lib/interfaces"
 import s from "pages/courses.module.scss"
@@ -10,6 +11,7 @@ import u from "styles/utils.module.scss"
 
 const Event: FC<EventProps> = ({ event }) => {
   const { locale } = useRouter()
+  const blocks = locale === "cy" && event.body.cy ? event.body.cy : event.body.en
   return (
     <>
       <div className={s.cardImageContainer}>
@@ -45,7 +47,7 @@ const Event: FC<EventProps> = ({ event }) => {
           {event.price && "£" + (locale === "cy" ? " " : "") + event.price}
         </div>
         {event.body && <div className={u.fAuto}>
-          <Markdown content={event.body} />
+          <PortableText value={blocks} components={components} />
         </div>}
         {event.artforms[0] &&
           <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
