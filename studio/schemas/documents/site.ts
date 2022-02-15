@@ -117,14 +117,16 @@ export default {
       title: 'Social Links',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'social' } }],
-      sortable: true
+      sortable: true,
+      group: 'footer'
     },
     {
       name: 'engagement',
       title: 'Engagement',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'figure' } }],
-      sortable: true
+      sortable: true,
+      group: 'footer'
     }
   ],
   preview: {

@@ -37,7 +37,7 @@ export default {
                   { type: 'facilitator' },
                   { type: 'page' },
                   { type: 'post' },
-                  { type: 'video' },
+                  { type: 'video' }
                 ]
               }
             ],
@@ -74,4 +74,3 @@ export default {
     }
   ]
 }
-

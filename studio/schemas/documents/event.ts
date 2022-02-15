@@ -155,7 +155,7 @@ export default {
       options: {
         hotspot: true
       },
-      group: 'content'
+      group: 'seo'
     }
   ],
 

@@ -18,7 +18,7 @@ export default {
       name: 'organisation',
       title: 'Organisation',
       type: 'localeString',
-      description: 'Who is the quote by?'
+      description: 'Where do they work?'
     }
   ],
 

@@ -1,5 +1,3 @@
-import { StringValidation } from '../interfaces'
-
 export default {
   name: 'page',
   title: 'Page',
@@ -23,7 +21,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'localeString',
-      validation: (Rule: StringValidation) => Rule.required(),
+      validation: Rule => Rule.required(),
       group: 'info'
     },
     {
@@ -31,7 +29,7 @@ export default {
       title: 'Menu Title',
       type: 'localeString',
       description: 'The title shown in the main navigation',
-      validation: (Rule: StringValidation) => Rule.required(),
+      validation: Rule => Rule.required(),
       group: 'info'
     },
     {
@@ -53,14 +51,14 @@ export default {
           { title: 'Home', value: 'index' },
           { title: 'News', value: 'news' },
           { title: 'Events', value: 'events' },
-          { title: 'Videos', value: 'videos' },
+          { title: 'Videos', value: 'videos' }
         ]
       },
       initialValue: {
         title: 'Page',
         value: 'page'
       },
-      validation: (Rule: StringValidation) => Rule.required(),
+      validation: Rule => Rule.required(),
       group: 'info'
     },
     {
