@@ -2,7 +2,7 @@ import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import ReactPlayer from "react-player"
-import { localize } from "lib/utils"
+import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import { components } from "components/portableTextComponents"
 import Engagement from "components/engagement"
@@ -12,6 +12,7 @@ import Localize from "components/localize"
 import QuoteCard from "components/quoteCard"
 import { indexQuery } from "lib/queries"
 import { IndexData } from "lib/interfaces"
+// import PlayButton from "components/playButton"
 import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
 
@@ -75,7 +76,30 @@ const Home = ({ data }: { data: IndexData }) => {
           url={video.videoLink}
           width={"100%"}
           height={"auto"}
-          light={true}
+          light={urlFor(video.mainImage)
+            .auto("format")
+            .width(960)
+            .height(540)
+            .quality(85)
+            .url()}
+          playIcon={<div style={{
+            width: "10%",
+            height: "11%",
+            backgroundColor: "#09ADEF",
+            borderRadius: "0.3em",
+            position: "relative",
+            transform: "translate(-430%, 380%)"
+          }}>
+            <svg
+              viewBox="0 0 20 20"
+              style={{
+                position: "absolute",
+                height: "50%",
+                top: "26%",
+                left: "37%"
+              }}
+            ><polygon fill="white" points="1,0 20,10 1,20"></polygon></svg>
+          </div>}
           style={{
             border: "2px solid var(--foreground)",
             aspectRatio: "16 / 9"
