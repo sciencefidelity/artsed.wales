@@ -16,13 +16,18 @@ const QuoteCard: FC<QuoteProps> = ({ direction, quote, photograph }) => {
       style={{ flexDirection: direction }}
     >
       <img
-        src={urlFor(photograph.image).url()}
+        src={urlFor(photograph.image)
+          .auto("format")
+          .width(716)
+          .height(454)
+          .quality(85)
+          .url()}
         alt={photograph.title.en}
         className={`${s.img} ${u.cover} ${u.ofHidden}`}
         decoding="async"
         loading="lazy"
-        width="716"
-        height="454"
+        width="1432"
+        height="908"
       />
       <div
         className={`${s.quoteText} ${u.relative} ${s.cardPadding} ${u.bgLight}`}
