@@ -59,7 +59,7 @@ export const indexQuery = groq`{
   "statements": *[_type == "statement"] | order(heading){
     statement{${defs}}
   },
-  "video": *[_type == "video"][0]{title, videoLink}
+  "video": *[_type == "video"][0]{mainImage, title, videoLink}
 }`
 
 export const aboutQuery = groq`{
