@@ -15,6 +15,7 @@ import localeText from './objects/localeText'
 import localeURL from './objects/localeURL'
 
 // documements
+import comment from './documents/comment'
 import event from './documents/event'
 import figure from './documents/figure'
 import page from './documents/page'
@@ -48,6 +49,7 @@ export default createSchema({
     localeURL,
 
     // documents
+    comment,
     event,
     figure,
     page,

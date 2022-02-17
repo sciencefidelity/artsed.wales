@@ -37,6 +37,50 @@ export type {
 };
 
 /**
+ * Comment
+ *
+ *
+ */
+export interface Comment extends SanityDocument {
+  _type: "comment";
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Email — `string`
+   *
+   *
+   */
+  email?: string;
+
+  /**
+   * Message — `text`
+   *
+   *
+   */
+  message?: string;
+
+  /**
+   * Twitter Handle — `string`
+   *
+   *
+   */
+  twitterHandle?: string;
+
+  /**
+   * Post — `reference`
+   *
+   *
+   */
+  post?: SanityReference<Post>;
+}
+
+/**
  * Event
  *
  *
@@ -340,6 +384,13 @@ export interface People extends SanityDocument {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
+
+  /**
+   * Slug — `localeSlugNames`
+   *
+   *
+   */
+  slug?: LocaleSlugNames;
 }
 
 /**
@@ -754,6 +805,13 @@ export interface Artform extends SanityDocument {
    *
    */
   description?: LocaleRichText;
+
+  /**
+   * Slug — `localeSlug`
+   *
+   *
+   */
+  slug?: LocaleSlug;
 }
 
 /**
@@ -772,11 +830,11 @@ export interface Author extends SanityDocument {
   name?: string;
 
   /**
-   * Slug — `slug`
+   * Slug — `localeSlugNames`
    *
    *
    */
-  slug?: { _type: "slug"; current: string };
+  slug?: LocaleSlugNames;
 
   /**
    * Image — `image`
@@ -819,6 +877,13 @@ export interface Category extends SanityDocument {
    *
    */
   description?: LocaleRichText;
+
+  /**
+   * Slug — `localeSlug`
+   *
+   *
+   */
+  slug?: LocaleSlug;
 }
 
 /**
@@ -837,11 +902,11 @@ export interface Facilitator extends SanityDocument {
   name?: string;
 
   /**
-   * Slug — `slug`
+   * Slug — `localeSlugNames`
    *
    *
    */
-  slug?: { _type: "slug"; current: string };
+  slug?: LocaleSlugNames;
 
   /**
    * Image — `image`
@@ -884,6 +949,13 @@ export interface Keystage extends SanityDocument {
    *
    */
   description?: LocaleRichText;
+
+  /**
+   * Slug — `localeSlug`
+   *
+   *
+   */
+  slug?: LocaleSlug;
 }
 
 export type BlockContent = Array<
@@ -932,6 +1004,23 @@ export type LocaleRichText = {
 
 export type LocaleSlug = {
   _type: "localeSlug";
+  /**
+   * English — `slug`
+   *
+   *
+   */
+  en?: { _type: "en"; current: string };
+
+  /**
+   * Welsh — `slug`
+   *
+   *
+   */
+  cy?: { _type: "cy"; current: string };
+};
+
+export type LocaleSlugNames = {
+  _type: "localeSlugNames";
   /**
    * English — `slug`
    *
@@ -999,6 +1088,7 @@ export type LocaleURL = {
 };
 
 export type Documents =
+  | Comment
   | Event
   | Figure
   | Page
