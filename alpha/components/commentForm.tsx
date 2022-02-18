@@ -45,7 +45,7 @@ const CommentForm = ({ id }: { id: string }) => {
   }
   return (
     <form className={u.container} onSubmit={handleSubmit}>
-      <p>Write a comment</p>
+      <p>Leave a comment</p>
       <label htmlFor="name" style={{display:"block"}}>Name</label>
       <input
         type="text"
