@@ -43,7 +43,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'post.title',
+      title: 'post.title.en',
       author: 'name'
     },
     prepare(selection: Selection) {
