@@ -16,6 +16,13 @@ import { IndexData } from "lib/interfaces"
 import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
 
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await sanityClient.fetch(indexQuery)
+  return {
+    props: { data }
+  }
+}
+
 const Home = ({ data }: { data: IndexData }) => {
   const { locale } = useRouter()
   const { hero, photography, quotes, site, statements, video } = data
@@ -126,10 +133,3 @@ const Home = ({ data }: { data: IndexData }) => {
   )
 }
 export default Home
-
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await sanityClient.fetch(indexQuery)
-  return {
-    props: { data }
-  }
-}

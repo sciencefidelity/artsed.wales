@@ -5,6 +5,6 @@ import "sanitize.css/reduce-motion.css"
 import "sanitize.css/typography.css"
 import "styles/global.scss"
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }: AppProps) =>
+  <Component {...pageProps} />
+export default App

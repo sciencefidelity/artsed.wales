@@ -22,5 +22,4 @@ const LinkTo = ({
     </Link>
   )
 }
-
 export default LinkTo

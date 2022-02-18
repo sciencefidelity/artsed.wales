@@ -13,12 +13,12 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { data }
   }
 }
+
 const Contact = ({ data }: { data: AboutData }) => {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
-
   const [buttonText, setButtonText] = useState("Send")
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const [showFailureMessage, setShowFailureMessage] = useState(false)
