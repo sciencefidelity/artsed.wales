@@ -15,6 +15,7 @@ import sanityClient from "lib/sanityClient"
 import { postQuery, postPathQuery } from "lib/queries"
 import Layout from "components/layout"
 import { components } from "components/portableTextComponents"
+import CommentForm from "components/commentForm"
 import ErrorTemplate from "components/errorTemplate"
 import Localize from "components/localize"
 import PostDate from "components/postDate"
@@ -81,6 +82,7 @@ const PostPage = ({ data }: { data: PostData }) => {
           {locale === "cy" ? "Wedi'i gyhoeddi ar" : "Published on"}{" "}
           {post.publishedAt && <PostDate date={post.publishedAt} />}
         </p>
+        <CommentForm id={post._id} />
       </section>
     </Layout>
   )
