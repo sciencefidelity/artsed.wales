@@ -3,7 +3,7 @@ import sanityClient from "lib/sanityClient"
 import { indexQuery } from "lib/queries"
 import { IndexData } from "lib/interfaces"
 import Layout from "components/layout"
-import Link from "components/link"
+// import Link from "components/link"
 import Localize from "components/localize"
 import { LocaleString } from "generated/schema"
 import u from "styles/utils.module.scss"
@@ -27,10 +27,15 @@ const Custom404 = ({ data }: {data: IndexData}) => {
     cy: "Rydych wedi dewis llwybr nad yw ar gael.",
     en: "You’ve hit a route that doesn’t exist."
   }
-  const link: LocaleString = {
+  // const link: LocaleString = {
+  //   _type: "localeString",
+  //   cy: "Cartref",
+  //   en: "Home"
+  // }
+  const former: LocaleString = {
     _type: "localeString",
-    cy: "Cartref",
-    en: "Home"
+    cy: "Chwilio am Rhwydwaith Celfyddydau ac Addysg: De Ddwyrain Cymru?",
+    en: "Looking for Arts & Education Network: South East Wales?"
   }
   return (
     <Layout
@@ -45,10 +50,15 @@ const Custom404 = ({ data }: {data: IndexData}) => {
         <p className={`${u.textCenter} ${u.serif}`}>
           <Localize data={message} />
         </p>
-        <div className={`${u.textCenter} ${u.sans} ${u.uppercase}`}>
+        {/* <div className={`${u.textCenter} ${u.sans} ${u.uppercase}`}>
           <Link href="/" className={u.textDark}>
             <Localize data={link} />
           </Link>
+        </div> */}
+        <div className={`${u.textCenter} ${u.sans} ${u.uppercase}`}>
+          <a href="https://se.artsed.wales">
+            <Localize data={former} />
+          </a>
         </div>
       </article>
     </Layout>

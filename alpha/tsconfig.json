@@ -16,7 +16,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "typeRoots": ["node_modules/@types", "types"],
-    "types": ["node", "react"],
+    "types": [
+      "@types/mailchimp__mailchimp_marketing",
+      "node",
+      "react",
+      "react-dom"
+    ],
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
