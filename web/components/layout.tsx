@@ -85,6 +85,11 @@ const Layout: FC<LayoutProps> = ({
         <meta name="twitter:creator" content={site.twitterHandle} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="mask-icon" href="/mask-icon.svg" color="#FF9B59" />
+
+        <script
+          defer data-domain="artsed.wales"
+          src="https://plausible.io/js/plausible.js"
+        ></script>
       </Head>
       <Header site={site} />
       <main className={`${s.content} ${u.container}`}>
