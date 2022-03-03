@@ -6,7 +6,7 @@ import s from "components/layout.module.scss"
 const Language = () => {
   const router = useRouter()
   const { pathname, asPath, query, locale, locales } = router
-  const languages = ["cymreag", "english"]
+  const languages = ["cymraeg", "english"]
   return (
     <div className={`${s.langLink} ${u.fgDark} ${u.pointer}`}>
       <span className={u.screenReaderText}>
