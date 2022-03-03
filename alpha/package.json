@@ -17,7 +17,6 @@
   "dependencies": {
     "@babel/core": "^7.17.5",
     "@bem-react/classname": "^1.5.12",
-    "@mailchimp/mailchimp_marketing": "^3.0.74",
     "@portabletext/react": "^1.0.3",
     "@sanity/client": "^3.1.0",
     "@sanity/image-url": "^1.0.1",
