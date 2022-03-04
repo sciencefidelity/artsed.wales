@@ -4,7 +4,7 @@ import { PortableText } from "@portabletext/react"
 import { localize } from "lib/utils"
 import { components } from "components/portableTextComponents"
 import { SignUpProps } from "lib/interfaces"
-import { LocaleString } from "generated/schema"
+// import { LocaleString } from "generated/schema"
 import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
@@ -28,11 +28,11 @@ const SignUp: FC<SignUpProps> = ({ site, statements }) => {
     }
     setEmail("")
   }
-  const label: LocaleString = {
-    _type: "localeString",
-    cy: "Anfonwch eich cyfeiriad ebost",
-    en: "Send your email address"
-  }
+  // const label: LocaleString = {
+  //   _type: "localeString",
+  //   cy: "Anfonwch eich cyfeiriad ebost",
+  //   en: "Send your email address"
+  // }
   return (
     <section className={`${u.mbMedium}`}>
       <div className={`${u.textCenter}`}>
