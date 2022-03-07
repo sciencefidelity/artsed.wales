@@ -131,3 +131,8 @@
     text-decoration: none;
   }
 }
+
+.disabled {
+  pointer-events: none;
+  background-color: hsl(0, 0%, 80%);
+}
