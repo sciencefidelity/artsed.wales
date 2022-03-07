@@ -19,7 +19,6 @@ export default {
       title: 'Welsh',
       name: 'cy',
       type: 'blockContent',
-      fieldset: 'translations'
     }
   ]
 }

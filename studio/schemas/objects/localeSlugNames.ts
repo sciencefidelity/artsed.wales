@@ -25,7 +25,6 @@ export default {
       title: 'Welsh',
       name: 'cy',
       type: 'slug',
-      fieldset: 'translations',
       options: {
         source: 'name'
       }
