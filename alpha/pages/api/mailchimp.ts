@@ -6,11 +6,9 @@ mailchimp.setConfig({
 })
 
 export default async function subscribe(req, res) {
-  const email = req.body.email
-  // const FNAME = req.body.firstName || ""
-  // const LNAME = req.body.lastName || ""
-  const response = await mailchimp.lists.addListMember("dc2f9bfec3", true, {
-    email_address: email
+  const response = await mailchimp.lists.addListMember("dc2f9bfec3", {
+    email_address: req.body.email,
+    status: "pending"
   })
   console.log(response)
   res.status(200).json({ response })

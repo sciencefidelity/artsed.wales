@@ -166,7 +166,6 @@ declare module '@mailchimp/mailchimp_marketing' {
 
         function addListMember(
           list_id: string,
-          skip_merge_validation?: boolean,
           body: AddListMemberBody,
           opts?: Options
         ): Promise<void>;
