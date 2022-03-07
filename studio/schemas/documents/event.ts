@@ -169,7 +169,9 @@ export default {
       const { subtitle, title, media } = selection
       return {
         title: title,
-        subtitle: `${moment(subtitle).format('ddd Do MMM YYYY')}`,
+        subtitle: `${subtitle
+          ? moment(subtitle).format('ddd Do MMM YYYY')
+          : "TBA"}`,
         media: media
       }
     }
