@@ -41,7 +41,7 @@ const Event: FC<EventProps> = ({ event }) => {
           </div>
         ) : (
           <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
-            Date TBA
+            {locale === "cy" ? "Dyddiad i'w gyhoeddi" : "Date TBA"}
           </div>
         )}
         {event.date2 && <div className={`${s.courseInfo} ${u.inline} ${u.sans}`}>
