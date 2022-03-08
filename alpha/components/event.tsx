@@ -14,7 +14,10 @@ const Event: FC<EventProps> = ({ event }) => {
   const blocks = locale === "cy" && event.body.cy ? event.body.cy : event.body.en
   return (
     <>
-      <div className={s.cardImageContainer}>
+      <div
+        className={s.cardImageContainer}
+        id={locale === "cy" ? event.slug.cy.current : event.slug.en.current}
+      >
         <img
           src={urlFor(event.mainImage)
             .auto("format")
@@ -95,7 +98,7 @@ const Event: FC<EventProps> = ({ event }) => {
         }
         <div>
           <form
-            action={localize(event.britelink, locale)}
+            action={event.britelink ? localize(event.britelink, locale) : undefined}
             className={s.britelink}
             rel="external noreferrer"
             target="_blank"

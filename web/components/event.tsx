@@ -14,7 +14,10 @@ const Event: FC<EventProps> = ({ event }) => {
   const blocks = locale === "cy" && event.body.cy ? event.body.cy : event.body.en
   return (
     <>
-      <div className={s.cardImageContainer}>
+      <div
+        className={s.cardImageContainer}
+        id={locale === "cy" ? event.slug.cy.current : event.slug.en.current}
+      >
         <img
           src={urlFor(event.mainImage)
             .auto("format")
