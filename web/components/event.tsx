@@ -94,23 +94,24 @@ const Event: FC<EventProps> = ({ event }) => {
           </div>
         }
         <div>
-        <form
-          action={localize(event.britelink, locale)}
-          className={s.britelink}
-          rel="external noreferrer"
-          target="_blank"
-        >
-          <button
-            type="submit"
-            value="Book on Eventbrite"
-            className={`${s.britelinkBtn}
-              ${u.fgDark}
-              ${event.date === null && s.disabled}`}
-            disabled={event.date === null}
+          <form
+            action={localize(event.britelink, locale)}
+            className={s.britelink}
+            rel="external noreferrer"
+            target="_blank"
           >
-            {locale === "cy" ? "Bwciwch yn awr" : "Book now"}
-          </button>
-        </form>
+            <button
+              type="submit"
+              value="Book on Eventbrite"
+              className={`${s.britelinkBtn}
+                ${u.fgDark}
+                ${event.date === null && s.disabled}`}
+              disabled={event.date === null}
+            >
+              {locale === "cy" ? "Bwciwch yn awr" : "Book now"}
+            </button>
+          </form>
+        </div>
       </div>
     </>
   )
