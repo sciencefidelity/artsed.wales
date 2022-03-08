@@ -9,6 +9,12 @@ import { EventProps } from "lib/interfaces"
 import s from "pages/courses.module.scss"
 import u from "styles/utils.module.scss"
 
+declare module "react" {
+  interface FormHTMLAttributes<T> extends HTMLAttributes<T> {
+    rel?: string
+  }
+}
+
 const Event: FC<EventProps> = ({ event }) => {
   const { locale } = useRouter()
   const blocks = locale === "cy" && event.body.cy ? event.body.cy : event.body.en
