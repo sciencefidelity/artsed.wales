@@ -104,7 +104,9 @@ const Event: FC<EventProps> = ({ event }) => {
         }
         <div>
           <form
-            action={event.britelink ? localize(event.britelink, locale) : undefined}
+            action={
+              event.britelink ? localize(event.britelink, locale) : undefined
+            }
             className={s.britelink}
             rel="external noreferrer"
             target="_blank"
