@@ -45,7 +45,7 @@ const SignUp: FC<SignUpProps> = ({ site, statements }) => {
       </div>
       <div>
         <form onSubmit={handleSubmit}>
-{/*           <label htmlFor="email" /> */}
+          <label htmlFor="email" />
           <input
             type="email"
             name="email"
@@ -56,7 +56,7 @@ const SignUp: FC<SignUpProps> = ({ site, statements }) => {
             }
             className={`${s.signupInput} ${u.sans} ${u.bgWhite}`}
           />
-{/*           <label htmlFor="submit" /> */}
+          <label htmlFor="submit" />
           <button
             type="submit"
             name="submit"
