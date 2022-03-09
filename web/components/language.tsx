@@ -19,7 +19,7 @@ const Language = () => {
           className={`${s.langLink} ${u.pointer} ${u.uppercase}`}
           onClick={() => {
             router.push(
-              {pathname, query}, null, {scroll: false, shallow: true, locale: locales[0]}
+              {pathname, query}, asPath, {scroll: false, shallow: true, locale: locales[0]}
             )
           }}
         >
