@@ -19,7 +19,9 @@ const Language = () => {
           className={`${s.langLink} ${u.pointer} ${u.uppercase}`}
           onClick={() => {
             router.push(
-              {pathname, query}, asPath, {locale: locales[0], scroll: false}
+              {pathname, query},
+              asPath,
+              {scroll: false, shallow: true, locale: locales[0]}
             )
           }}
         >
@@ -30,7 +32,9 @@ const Language = () => {
           className={`${s.langLink} ${u.pointer} ${u.uppercase} ${u.fgDark}`}
           onClick={() => {
             router.push(
-              {pathname, query}, asPath, {locale: locales[1], scroll: false}
+              {pathname, query},
+              asPath,
+              {scroll: false, shallow: true, locale: locales[1]}
             )
           }}
         >
