@@ -1,7 +1,7 @@
 @use '/styles/foundation/breakpoints' as b;
 
 .cardContainer {
-  width: 50%;
+  width: min(100%, 80rem);
   background-color: var(--background);
   border: 2px solid var(--foreground);
   margin-block: 7rem 15rem;
