@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { keyStage, localize, urlFor } from "lib/utils"
 import { components } from "components/portableTextComponents"
+import Link from "components/link"
 import Localize from "components/localize"
 import Date from "components/date"
 import { EventProps } from "lib/interfaces"
@@ -24,22 +25,29 @@ const Event: FC<EventProps> = ({ event }) => {
         className={s.cardImageContainer}
         id={locale === "cy" ? event.slug.cy.current : event.slug.en.current}
       >
-        <img
-          src={urlFor(event.mainImage)
-            .auto("format")
-            .width(896)
-            .height(600)
-            .quality(85)
-            .url()}
-          width={488}
-          height={300}
-          alt={event.title.en}
-          className={s.cardImage}
-          loading="lazy"
-        />
+        <Link href={`/courses/${event.slug.en.current}`}>
+          <img
+            src={urlFor(event.mainImage)
+              .auto("format")
+              .width(896)
+              .height(600)
+              .quality(85)
+              .url()}
+            width={488}
+            height={300}
+            alt={event.title.en}
+            className={s.cardImage}
+            loading="lazy"
+          />
+        </Link>
       </div>
       <div className={s.cardText}>
-        <h2 className={s.courseTitle}><Localize data={event.title} /></h2>
+        <Link
+          href={`/courses/${event.slug.en.current}`}
+          className={u.noUnderline}
+        >
+          <h2 className={s.courseTitle}><Localize data={event.title} /></h2>
+        </Link>
         <h3 className={`${s.courseSubitle} ${u.serif}`}>
           <Localize data={event.subtitle} />
         </h3>

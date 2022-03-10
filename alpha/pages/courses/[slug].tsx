@@ -11,7 +11,6 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
-import { localize } from "lib/utils"
 import Layout from "components/layout"
 import Event from "components/event"
 import ErrorTemplate from "components/errorTemplate"
@@ -53,7 +52,6 @@ const EventPage = ({ data }: { data: EventData }) => {
       </>
     )
   }
-  const { locale } = useRouter()
   const { event, site, statements } = data
   return (
     <Layout
