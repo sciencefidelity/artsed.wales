@@ -100,11 +100,53 @@ export const eventsQuery = groq`{
   }
 }`
 
+export const eventQuery = groq`{
+  "event": *[
+    _type == "event"
+    && slug.en.current == $slug
+    && ${omitDrafts}
+  ][0]{
+    _id,
+    _type,
+    "artforms": artform[]->{_id, title},
+    body{${defs}},
+    britelink,
+    date,
+    date2,
+    "people": facilitators[]->{_id, name},
+    imageCaption,
+    "keystages": keystage[]->{_id, title},
+    location,
+    mainImage,
+    ogDescription,
+    ogTitle,
+    price,
+    slug,
+    subtitle,
+    title
+  },
+  "site": *[_type == "site"] | order(date)[0]{
+    ${siteFields}
+  },
+  "statements": *[_type == "statement"] | order(heading){
+    statement{${defs}}
+  }
+}`
+
+export const eventPathQuery = groq`
+  *[
+    _type == "event"
+    && defined(slug)
+    && ${omitDrafts}
+  ][].slug.en.current
+`
+
 export const postQuery = groq`{
   "post": *[
-  _type == "post"
-  && slug.en.current == $slug
-  && ${omitDrafts}][0] {
+    _type == "post"
+    && slug.en.current == $slug
+    && ${omitDrafts}
+  ][0] {
     _createdAt,
     _id,
     _type,
