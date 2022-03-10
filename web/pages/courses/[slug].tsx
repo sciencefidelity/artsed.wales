@@ -35,7 +35,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 const EventPage = ({ data }: { data: EventData }) => {
-  console.log(data)
   const router = useRouter()
   if(router.isFallback) {
     return (

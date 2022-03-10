@@ -56,6 +56,10 @@ export interface PostData extends AllPagesData {
   post: Post
 }
 
+export interface EventData extends AllPagesData {
+  event: Event
+}
+
 export interface LayoutProps {
   children: ReactNode
   site: Site
