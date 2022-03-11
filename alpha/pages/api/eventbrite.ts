@@ -1,15 +1,16 @@
 import eventbrite from "eventbrite"
-require("dotenv").config()
+// require("dotenv").config()
 
 interface EventResponse {
   events: Event[]
 }
 interface TicketResponse {
-  ticket_classes: any
+  ticket_classes: TicketClass[]
 }
 interface Event {
   id: number
   name: Name
+  status: string
 }
 interface Name {
   text: string
@@ -22,28 +23,47 @@ interface TicketClass {
 
 const sdk = eventbrite({token: process.env.EVENTBRITE_TOKEN})
 const organizerEn = process.env.EVENTBRITE_ORGANIZER_EN
-// const organizerCy = process.env.EVENTBRITE_ORGANIZER_CY
+const organizerCy = process.env.EVENTBRITE_ORGANIZER_CY
 let data = []
 async function getSalesFigures(req, res) {
   try {
-    const response = await sdk.request(`/organizers/${organizerEn}/events/`)
-    const { events } = response as EventResponse
-    for (let i = 0; i < events.length; i++) {
-      const { id, name } = events[i]
+    const responseEn = await sdk
+      .request(`/organizers/${organizerEn}/events/`) as EventResponse
+    const responseCy = await sdk
+      .request(`/organizers/${organizerCy}/events/`) as EventResponse
+    const eventsEn = responseEn.events.filter(event => event.status === "live")
+    const eventsCy = responseCy.events.filter(event => event.status === "live")
+    for (let i = 0; i < eventsEn.length; i++) {
+      const name_en = eventsEn[i].name.text
+      const name_cy = eventsCy[i].name.text
+      const idEn = eventsEn[i].id
+      const idCy = eventsCy[i].id
       try {
-        const response = await sdk.request(`/events/${id}/ticket_classes/`)
-        const { ticket_classes } = response as TicketResponse
-        const title = name.text
-        const { capacity, quantity_sold } = ticket_classes[0] as TicketClass
-        data.push({ title, capacity, quantity_sold })
+        const responseEn = await sdk
+          .request(`/events/${idEn}/ticket_classes/`) as TicketResponse
+        const responseCy = await sdk
+          .request(`/events/${idCy}/ticket_classes/`) as TicketResponse
+        const ticketClassesEn = responseEn.ticket_classes
+        const ticketClassesCy = responseCy.ticket_classes
+        const { capacity } = ticketClassesEn[0] as TicketClass
+        const quantity_sold_en = ticketClassesEn[0].quantity_sold
+        const quantity_sold_cy = ticketClassesCy[0].quantity_sold
+        data.push({
+          name_en,
+          name_cy, capacity,
+          quantity_sold_en,
+          quantity_sold_cy
+        })
       } catch (error) {
-        return res.status(error.statusCode || 500).json({ error: error.message })
+        return res.status(error.statusCode || 500)
+          .json({ error: error.message })
       }
     }
     console.log(data)
     res.status(200).json({data})
   } catch (error) {
-    return res.status(error.statusCode || 500).json({ error: error.message })
+    return res.status(error.statusCode || 500)
+      .json({ error: error.message })
   }
 }
 export default getSalesFigures
