@@ -3,7 +3,7 @@ import * as d3 from "d3"
 
 function PieChart(props) {
   const { data, innerRadius, outerRadius, title } = props
-
+  console.log(data)
   const margin = {
     top: 50,
     right: 50,
@@ -14,10 +14,11 @@ function PieChart(props) {
   const width = 2 * outerRadius + margin.left + margin.right
   const height = 2 * outerRadius + margin.top + margin.bottom
 
-  const colorScale = d3
-    .scaleSequential()
-    .interpolator(d3.interpolateCool)
-    .domain([0, data.length])
+  const colors = [
+    "hsl(24, 100%, 68%)",
+    "hsl(180, 68%, 61%)",
+    "hsl(320, 60%, 68%)"
+  ]
 
   useEffect(() => {
     drawChart()
@@ -29,7 +30,7 @@ function PieChart(props) {
 
     // Create new svg
     const svg = d3
-      .select("#pie-container")
+      .select(".pie-container")
       .append("svg")
       .attr("width", width)
       .attr("height", height)
@@ -41,40 +42,27 @@ function PieChart(props) {
       .innerRadius(innerRadius)
       .outerRadius(outerRadius)
 
-    const pieGenerator = d3
-      .pie()
-      .padAngle(0)
-      .value(d => d.value)
-
-    const arc = svg.selectAll().data(pieGenerator(data)).enter()
+    const arc = svg
+      .selectAll()
+      .data(d3.pie()(data))
+      .enter()
 
     // Append arcs
     arc
       .append("path")
       .attr("d", arcGenerator)
-      .style("fill", (_, i) => colorScale(i))
-      .style("stroke", "#ffffff")
-      .style("stroke-width", 0)
-
-    // Append text labels
-    arc
-      .append("text")
-      .attr("text-anchor", "middle")
-      .attr("alignment-baseline", "middle")
-      // .text(d => d.data.label)
-      .style("fill", (_, i) => colorScale(data.length - i))
-      .attr("transform", d => {
-        const [x, y] = arcGenerator.centroid(d)
-        return `translate(${x}, ${y})`
-      })
+      .style("fill", (d, i) => colors[i % data.length])
+      .style("stroke", "black")
+      .style("stroke-width", "2px")
   }
 
   return (
     <>
-      <div id="pie-container" />
+      <div className="pie-container" />
       <p style={{
         fontFamily: "ui-serif",
-        fontSize: "1.6rem"
+        fontSize: "1.6rem",
+        textAlign: "center"
       }}>{title}</p>
     </>
   )
