@@ -9,6 +9,7 @@
     "sanity"
   ],
   "scripts": {
+    "start": "sanity start",
     "dev": "sanity start",
     "build": "sanity build",
     "format": "prettier --write '**/*.{ts,js,tsx,jsx,json,md,yml}'"
