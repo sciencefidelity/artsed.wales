@@ -19,8 +19,9 @@ import localeURL from './objects/localeURL'
 import comment from './documents/comment'
 import event from './documents/event'
 import figure from './documents/figure'
+import newsletter from './documents/newsletter'
 import page from './documents/page'
-import people from './documents/people'
+import staff from './documents/staff'
 import photography from './documents/photography'
 import post from './documents/post'
 import quote from './documents/quote'
@@ -54,8 +55,9 @@ export default createSchema({
     comment,
     event,
     figure,
+    newsletter,
     page,
-    people,
+    staff,
     photography,
     post,
     quote,
