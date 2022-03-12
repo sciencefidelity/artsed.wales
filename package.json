@@ -3,7 +3,7 @@
   "description": "National Arts and Education Network",
   "version": "0.1.0",
   "author": "Matt Cook <matt@sciencefidelity.co.uk>",
-  "license": "UNLICENCED",
+  "license": "UNLICENSED",
   "private": true,
   "keywords": [
     "gatsby",
