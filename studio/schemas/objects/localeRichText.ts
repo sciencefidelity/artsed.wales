@@ -13,12 +13,12 @@ export default {
     {
       title: 'English',
       name: 'en',
-      type: 'blockContent'
+      type: 'portableText'
     },
     {
       title: 'Welsh',
       name: 'cy',
-      type: 'blockContent',
+      type: 'portableText',
     }
   ]
 }

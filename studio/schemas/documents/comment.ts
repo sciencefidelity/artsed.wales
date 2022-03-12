@@ -1,5 +1,3 @@
-import { Rule } from "@sanity/types"
-
 interface Selection {
   title?: string
   author?: string
@@ -18,11 +16,7 @@ export default {
     {
       name: 'email',
       title: 'Email',
-      type: 'string',
-      validation: (Rule: Rule) =>
-      Rule.regex(
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      ).error('Not a valid email address')
+      type: 'email',
     },
     {
       name: 'message',
@@ -33,6 +27,11 @@ export default {
       name: 'twitterHandle',
       title: 'Twitter Handle',
       type: 'string'
+    },
+    {
+      name: 'approved',
+      title: 'Approve Comment',
+      type: 'boolean'
     },
     {
       name: 'post',

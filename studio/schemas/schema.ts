@@ -2,7 +2,8 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // objects
-import blockContent from './objects/blockContent'
+import blockContent from './objects/portableText'
+import youtube from './objects/youtube'
 
 // localization
 // import { baseLanguage, supportedLanguages } from './languages'
@@ -47,6 +48,7 @@ export default createSchema({
     localeString,
     localeText,
     localeURL,
+    youtube,
 
     // documents
     comment,
