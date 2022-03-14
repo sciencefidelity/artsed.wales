@@ -8,37 +8,320 @@ const year = new Date().getFullYear()
     <title>Astro</title>
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th colspan="2">The table header</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>The table body</td>
-          <td>with two columns</td>
-        </tr>
-      </tbody>
+    <table
+      class="container"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+    >
+      <tr>
+        <td
+          valign="top"
+        >
+          <table
+            class="preheader"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+          >
+            <tr class="preheader__row">
+              <td class="preheader__data">
+                <a href="#">View this email in your browser</a>
+              </td>
+              <td class="preheader__data">
+                <a href="#">Gweld yr e-bost hwn yn eich porwr</a>
+              </td>
+            </tr>
+          </table>
+          <table
+            class="header"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+          >
+            <tr class="header__row--brand">
+              <td class="header__data--brand">
+                <a href="#">
+                  <img
+                    src="/naen-logo.png"
+                    class="brand"
+                    alt="National Arts and Education Network logo"
+                    width="150"
+                    height="150"
+                  >
+                </a>
+              </td>
+            </tr>
+            <tr class="header__row">
+              <td class="header__data">National Arts & Education Network</td>
+            </tr>
+            <tr class="header__row">
+              <td class="divider"></td>
+            </tr>
+          </table>
+          <table
+            class="headline"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+          >
+            <tr class="headline__row">
+              <td class="headline__data">
+                <h1>
+                  Bringing together schools, artists and cultural organisations in support of the Expressive Arts Curriculum for Wales
+                </h1>
+              </td>
+            </tr>
+            <tr class="headline__row--image">
+              <th class="headline__data--image">
+                <a href="#">
+                  <img
+                    src="/wellbeing2.jpg"
+                    class="image__fullwidth"
+                    alt="Expressive arts for wellbeing (Key Stage 2)"
+                    width="600"
+                    height="400"
+                  >
+                </a>
+              </th>
+            </tr>
+          </table>
+          <table
+            class="body"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+          >
+            <tr class="body__row">
+              <td class="body__data">
+                <p>
+                  The newly formed <a href="https://artsed.wales">National Arts & Education Network</a> is excited to launch a new programme of online Expressive Arts training for teachers, artists and cultural educators to support the education and arts sector in facilitating the new Curriculum for Wales. With support from the Welsh Local Government Association and Arts Council of Wales, the programme aims to develop skills, build confidence and generate ideas for teachers across Wales to design engaging expressive arts projects that support the wellbeing of pupils and staff alike.
+                </p><p>
+                  With the pressures and impacts of the Covid-19 Pandemic continuing, the Network is focussed on supporting the enjoyment of learning, teaching and learning outdoors, using local sites and facilities for inspiration and creative strategies that positively impact on improved wellbeing, within the Expressive Arts Area of Learning and Experience.
+                </p><p>
+                  Training sessions will take place online and towards the end of the school day to help teachers join and schools manage cover arrangements.
+                </p>
+              </td>
+            </tr>
+            <tr class="header__row">
+              <td class="divider"></td>
+            </tr>
+          </table>
+          <table
+            class="events"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+          >
+            <tr class="events__row">
+              <td class="events__data">
+                <table
+                  class="event"
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                >
+                  <tr class="event__row">
+                    <th class="event__head">
+                      <a href="#">
+                        <img
+                          src="/wellbeing2.jpg"
+                          class="image__inset"
+                          alt="Expressive arts for wellbeing (Key Stage 2)"
+                          width="300"
+                          height="200"
+                        >
+                      </a>
+                    </th>
+<!--                     <td class="headline__data--image">
+                      <a href="#">
+                        <h2>Expressive Arts for Wellbeing</h2>
+                      </a>
+                    </td> -->
+                  </tr>
+                </table>
+                <table
+                  class="event"
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                >
+                  <tr class="event__row">
+                    <td class="event__data">
+                      <a href="#">
+                        <img
+                          src="/wellbeing1.jpg"
+                          class="image__inset"
+                          alt="Expressive arts for wellbeing (Key Stage 1)"
+                          width="300"
+                          height="200"
+                        >
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
     </table>
   </body>
 </html>
 
 <style lang="scss">
-  table {
-    margin: auto;
-    max-width: 1200px;
-    width: 800px;
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightgray: hsl(0, 0%, 98%);
+  --midgray: hsl(360, 1%, 80%);
+  --darkgray: hsl(0, 0%, 40%);
+  --black: hsl(0, 0%, 13%);
+  --blue: hsl(192, 100%, 42%);
+  --background: hsl(43, 39%, 93%);
+  --sans: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+  --serif: ui-serif,Georgia,'Times New Roman',Times,serif;
+  --mono: ui-monospace,Menlo,Courier,monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--sans);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--black);
+  margin: 0;
+}
+
+th,
+td {
+  // border: 1px dashed hsla(270, 38%, 35%, 0.6);
+}
+
+p {
+  font-weight: 200;
+  padding: 5px 0;
+  line-height: 1.45;
+  // font-family: var(--serif);
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  // font-weight: 400;
+  &:hover {
+    text-decoration: underline;
   }
-  thead {
-    widows: 1200px;
+}
+
+.image__fullwidth {
+  width: 100%;
+  height: auto;
+}
+
+.image__inset {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+.preheader {
+  // background-color: var(--lightgray);
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  &__row {
+    font-size: 12px;
   }
-  th {
-    widows: 100%;
-    widows: 1200px;
-    border: 1px dashed hsla(270, 38%, 35%, 0.6);
+  &__data {
+    width: 50%;
   }
-  td {
-    border: 1px dashed hsla(270, 38%, 35%, 0.6);
+  a {
+    color: var(--darkgray);
+    text-decoration: underline;
   }
+}
+
+.header {
+  background-color: var(--white);
+  text-transform: uppercase;
+  // font-family: var(--mono);
+  line-height: 1.5;
+  // font-family: var(--serif);
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding: 40px 0;
+  font-weight: 200;
+  letter-spacing: 0.6px;
+  &__data {
+    display: block;
+    margin: 30px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.brand {
+  border-radius: 100%;
+}
+
+.headline {
+  background-color: var(--white);
+  width: 100%;
+  text-align: center;
+  &__data {
+    margin: 0 0 40px 0;
+    display: block;
+  }
+}
+
+.body {
+  background-color: var(--white);
+  &__row {
+    display: block;
+    padding: 50px 20px;
+  }
+}
+
+.divider {
+  background-color: var(--background);
+  height: 2px;
+  // width: 94%;
+  display: block;
+  margin: auto;
+}
+
+.events {
+  padding: 40px 0;
+  background-color: var(--white);
+}
+
+.event {
+  display: block;
+  width: 50%;
+  &__head,
+  &__data {
+    padding: 20px;
+    width: 50%;
+  }
+}
 </style>
