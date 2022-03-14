@@ -1,0 +1,44 @@
+---
+const year = new Date().getFullYear()
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Astro</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">The table header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The table body</td>
+          <td>with two columns</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+<style lang="scss">
+  table {
+    margin: auto;
+    max-width: 1200px;
+    width: 800px;
+  }
+  thead {
+    widows: 1200px;
+  }
+  th {
+    widows: 100%;
+    widows: 1200px;
+    border: 1px dashed hsla(270, 38%, 35%, 0.6);
+  }
+  td {
+    border: 1px dashed hsla(270, 38%, 35%, 0.6);
+  }
+</style>
