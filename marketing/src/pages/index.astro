@@ -28,9 +28,9 @@ const year = new Date().getFullYear()
               <td class="preheader__data">
                 <a href="#">View this email in your browser</a>
               </td>
-              <td class="preheader__data">
+              <!-- <td class="preheader__data">
                 <a href="#">Gweld yr e-bost hwn yn eich porwr</a>
-              </td>
+              </td> -->
             </tr>
           </table>
           <table
@@ -133,7 +133,7 @@ const year = new Date().getFullYear()
                         >
                       </a>
                       <time datetime="2022-16-03">
-                        Wednesday, 16 March 2022 14:00
+                        16 March 2022 14:00
                       </time>
                       <h2>Expressive Arts for Wellbeing</h2>
                       <h3>Key Stage 2</h3>
@@ -162,7 +162,7 @@ const year = new Date().getFullYear()
                         >
                       </a>
                       <time datetime="2022-16-03">
-                        Wednesday, 16 March 2022 14:00
+                        16 March 2022 14:00
                       </time>
                       <h2>Expressive Arts for Wellbeing</h2>
                       <h3>Key Stage 2</h3>
@@ -191,7 +191,7 @@ const year = new Date().getFullYear()
                         >
                       </a>
                       <time datetime="2022-16-03">
-                        Wednesday, 16 March 2022 14:00
+                        16 March 2022 14:00
                       </time>
                       <h2>Expressive Arts for Wellbeing</h2>
                       <h3>Key Stage 2</h3>
@@ -220,7 +220,7 @@ const year = new Date().getFullYear()
                         >
                       </a>
                       <time datetime="2022-16-03">
-                        Wednesday, 16 March 2022 14:00
+                        16 March 2022 14:00
                       </time>
                       <h2>Expressive Arts for Wellbeing</h2>
                       <h3>Key Stage 2</h3>
@@ -284,11 +284,12 @@ const year = new Date().getFullYear()
               <td class="footer__data">
                 <p>&copy; {year} National Arts &amp; Education Network</p>
                 <p>
-                  Blackwood Miners Institute &bull; High Street &bull; Blackwood &bull; NP12 1BB
+                  Blackwood Miners Institute &bull; High Street &bull; Blackwood &bull; NP12&nbsp;1BB
                 </p>
                 <p>
-                  Want to change how you receive these emails?<br />
-                  You can <a href="#">update your preferences</a> or <a href="#">unsubscribe from this list</a>.
+                  Want to change how you receive these emails?<br />You can
+<!--                   <a href="#">update your preferences</a> or -->
+                  <a href="#">unsubscribe from this list</a>.
                 </p>
               </td>
             </tr>
@@ -423,7 +424,7 @@ a {
   width: 100%;
   text-align: center;
   font-size: 20px;
-  padding: 40px 0;
+  padding: 40px 20px;
   font-weight: 200;
   letter-spacing: 0.6px;
   &__data {
@@ -432,6 +433,9 @@ a {
   }
   a {
     text-decoration: none;
+  }
+  @media only screen and (max-width: 480px) {
+    font-size: 18px;
   }
 }
 
@@ -443,9 +447,16 @@ a {
   background-color: var(--white);
   width: 100%;
   text-align: center;
+  font-size: 16px;
   &__data {
     margin: 0 0 40px 0;
     display: block;
+    padding: 20px;
+  }
+  h1 {
+    @media only screen and (max-width: 480px) {
+      font-size: 22px;
+    }
   }
 }
 
@@ -479,15 +490,18 @@ a {
   &__head,
   &__data {
     padding: 20px;
-    width: 50%;
   }
   a {
     font-weight: 400;
   }
+  @media only screen and (max-width: 480px) {
+    float: none;
+    width: 100%;
+  }
 }
 
 .footer {
-  padding: 20px 0 40px 0;
+  padding: 20px 10px 40px 10px;
   width: 100%;
   text-align: center;
   color: var(--darkgray);
@@ -503,11 +517,12 @@ a {
     width: 100%;
     font-size: 13px;
     &--social {
-      padding: 10px;
+      padding: 20px;
       a {
         text-decoration: none;
       }
     }
   }
 }
+
 </style>
