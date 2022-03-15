@@ -41,6 +41,12 @@ export default {
       group: 'content'
     },
     {
+      name: 'summary',
+      title: 'Summary',
+      type: 'localeText',
+      group: 'content'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'localeSlug',
