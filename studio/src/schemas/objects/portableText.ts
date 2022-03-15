@@ -1,17 +1,10 @@
-import React from 'react'
+import {
+  codeRender,
+  emailRender,
+  linkRender
+} from '../components/textComponents'
 import { MdOutlineAddLink, MdOutlineAlternateEmail } from 'react-icons/md'
 import { RiExternalLinkLine } from 'react-icons/ri'
-
-const codeRender = ({ children }) => (
-  <code
-    style={{
-      color: '#ff79c6',
-      backgroundColor: '#151719'
-    }}
-  >
-    {children}
-  </code>
-)
 
 export default {
   title: 'Rich Text',
@@ -63,16 +56,7 @@ export default {
             ],
             blockEditor: {
               icon: MdOutlineAddLink,
-              render: ({ children }) => (
-                <span
-                  style={{
-                    color: '#7aa9f3',
-                    borderBottom: '1px solid #7aa9f3'
-                  }}
-                >
-                  {children}
-                </span>
-              )
+              render: linkRender
             }
           },
           {
@@ -107,16 +91,7 @@ export default {
             ],
             blockEditor: {
               icon: MdOutlineAlternateEmail,
-              render: ({ children }) => (
-                <span
-                  style={{
-                    color: '#7aa9f3',
-                    borderBottom: '1px solid #7aa9f3'
-                  }}
-                >
-                  {children}
-                </span>
-              )
+              render: emailRender
             }
           }
         ]
