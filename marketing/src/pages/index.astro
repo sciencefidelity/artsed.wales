@@ -1,11 +1,26 @@
 ---
+import groq from 'groq'
+import sanityClient from "../lib/sanityClient"
 const year = new Date().getFullYear()
+
+const newsletterQuery = groq`{
+  "newsletter": {
+    "en": *[_type == "newsletter" && __i18n_lang != "cy"][0]{
+      body, headline, logo, mainImage, title
+    },
+    "cy": *[_type == "newsletter" && __i18n_lang == "cy"][0]{
+      body, headline, logo, mainImage, title
+    }
+  }
+}`
+const response = await sanityClient.fetch(newsletterQuery)
+const data = response
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Expressive arts CPD programme for teachers and educators</title>
+    <title>{data.newsletter.en.title}</title>
   </head>
   <body>
     <table
@@ -67,9 +82,7 @@ const year = new Date().getFullYear()
           >
             <tr class="headline__row">
               <td class="headline__data">
-                <h1>
-                  Bringing together schools, artists and cultural organisations in support of the Expressive Arts Curriculum for Wales
-                </h1>
+                <h1>{data.newsletter.en.headline}</h1>
               </td>
             </tr>
             <tr class="headline__row--image">
@@ -310,7 +323,7 @@ const year = new Date().getFullYear()
   --blue: hsl(192, 100%, 42%);
   --background: hsl(43, 39%, 93%);
   --border: hsl(43, 39%, 83%);
-  --sans: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+  --sans: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
   --serif: ui-serif,Georgia,'Times New Roman',Times,serif;
   --mono: ui-monospace,Menlo,Courier,monospace;
 }
