@@ -1,38 +1,40 @@
 {
-  "name": "artsed-studio",
-  "description": "National Arts and Education Wales",
-  "version": "0.1.0",
-  "author": "Matt Cook <matt@sciencefidelity.co.uk>",
-  "license": "UNLICENCED",
+  "name": "naen-studio",
   "private": true,
-  "keywords": [
-    "sanity"
-  ],
+  "version": "0.1.0",
+  "description": "National Arts and Education Wales",
+  "main": "package.json",
+  "author": "Matt Cook <sciencefidelity@hotmail.com>",
+  "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
     "dev": "sanity start",
     "build": "sanity build",
     "format": "prettier --write '**/*.{ts,js,tsx,jsx,json,md,yml}'"
   },
+  "keywords": [
+    "sanity"
+  ],
   "dependencies": {
     "@sanity/base": "^2.28.2",
-    "@sanity/code-input": "^2.28.2",
-    "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.28.1",
     "@sanity/dashboard": "^2.28.2",
     "@sanity/default-layout": "^2.28.2",
     "@sanity/default-login": "^2.28.2",
     "@sanity/desk-tool": "^2.28.2",
+    "@sanity/document-internationalization": "^0.1.2",
+    "@sanity/eslint-config-studio": "^2.0.0",
     "@sanity/vision": "^2.28.2",
+    "eslint": "^8.11.0",
     "get-youtube-id": "^1.0.1",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "react-icons": "^4.3.1",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
-    "prettier": "^2.5.1",
-    "sanity-codegen": "^0.9.8"
+    "prettier": "^2.5.1"
   },
   "repository": {
     "type": "git",

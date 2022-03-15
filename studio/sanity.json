@@ -5,12 +5,11 @@
   },
   "plugins": [
     "@sanity/base",
-    "@sanity/components",
+    "@sanity/dashboard",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/dashboard",
-    "@sanity/code-input"
+    "@sanity/document-internationalization"
   ],
   "env": {
     "development": {
@@ -22,15 +21,19 @@
   "parts": [
     {
       "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema"
+      "path": "./src/schemas/schema"
     },
     {
       "implements": "part:@sanity/base/theme/variables/override-style",
-      "path": "./customizations/theme.css"
+      "path": "./src/styles/theme.css"
     },
     {
       "implements": "part:@sanity/dashboard/config",
-      "path": "./customizations/dashboard.ts"
+      "path": "./src/dashboard/index.ts"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./src/desk-structure/index.ts"
     }
   ]
 }
