@@ -2,7 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 
 export default () =>
 S.list()
-  .title('Base')
+  .title('Content')
   .items(
     S.documentTypeListItems()
   )
