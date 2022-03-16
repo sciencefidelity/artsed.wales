@@ -1,4 +1,3 @@
-import { Rule } from "@sanity/types"
 import { RiBook2Line } from 'react-icons/ri'
 
 export default {
@@ -77,7 +76,7 @@ export default {
         title: 'Page',
         value: 'page'
       },
-      validation: (Rule: Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
       group: 'info'
     },
     {

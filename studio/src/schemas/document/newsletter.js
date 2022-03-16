@@ -1,12 +1,6 @@
 import moment from 'moment'
 import { RiNewspaperLine } from 'react-icons/ri'
 
-interface Selection {
-  media: string
-  subtitle: string
-  title: string
-}
-
 export default {
   name: 'newsletter',
   title: 'Newsletter',
@@ -70,7 +64,7 @@ export default {
       subtitle: '_createdAt',
       media: 'mainImage'
     },
-    prepare(selection: Selection) {
+    prepare(selection) {
       const { media, subtitle, title } = selection
       return {
         title: title,

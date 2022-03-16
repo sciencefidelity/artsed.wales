@@ -1,4 +1,3 @@
-import { Rule } from '@sanity/types'
 import StringWithLimits from '../components/StringWithLimits'
 
 export default {
@@ -20,7 +19,7 @@ export default {
       title: 'Facebook title',
       type: 'string',
       inputComponent: StringWithLimits,
-      validation: (Rule: Rule) =>
+      validation: Rule =>
         Rule.max(70).warning("Some text won't be visible.")
     },
     {

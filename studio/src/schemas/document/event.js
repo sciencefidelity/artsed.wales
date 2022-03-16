@@ -1,12 +1,6 @@
 import moment from 'moment'
 import { RiCalendarEventLine } from 'react-icons/ri'
 
-interface Selection {
-  subtitle: string
-  title: string
-  media: string
-}
-
 export default {
   name: 'event',
   title: 'Event',
@@ -189,7 +183,7 @@ export default {
       subtitle: 'date',
       media: 'mainImage'
     },
-    prepare(selection: Selection) {
+    prepare(selection) {
       const { subtitle, title, media } = selection
       return {
         title: title,

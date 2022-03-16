@@ -1,10 +1,5 @@
 import { VscCommentDiscussion } from 'react-icons/vsc'
 
-interface Selection {
-  title?: string
-  author?: string
-}
-
 export default {
   name: 'comment',
   title: 'Comment',
@@ -55,7 +50,7 @@ export default {
       title: 'post.title.en',
       author: 'name'
     },
-    prepare(selection: Selection) {
+    prepare(selection) {
       const { title, author } = selection
       return Object.assign({}, selection, {
         title: title && `Comment in: ${title}`,

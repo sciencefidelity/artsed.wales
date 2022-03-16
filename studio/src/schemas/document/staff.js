@@ -43,7 +43,7 @@ export default {
           { title: 'Trustee', value: 'trustee' }
         ]
       },
-      validation: (Rule: any) => Rule.required()
+      validation: Rule => Rule.required()
     },
     {
       name: 'job',

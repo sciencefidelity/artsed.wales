@@ -1,9 +1,5 @@
 import { RiEdit2Line } from 'react-icons/ri'
 
-interface Selection {
-  author: string
-}
-
 export default {
   name: 'post',
   title: 'Post',
@@ -98,7 +94,7 @@ export default {
       author: 'staff.name',
       media: 'mainImage'
     },
-    prepare(selection: Selection) {
+    prepare(selection) {
       const { author } = selection
       return Object.assign({}, selection, {
         subtitle: author && `by ${author}`
