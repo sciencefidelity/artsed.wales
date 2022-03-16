@@ -10,6 +10,18 @@ export default {
   title: 'Comment',
   type: 'document',
   icon: VscCommentDiscussion,
+  i18n: {
+    languages: [
+      {
+        title: 'Multi-language',
+        id: 'ml'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: null,
+    __i18n_refs: []
+  },
   fields: [
     {
       name: 'name',

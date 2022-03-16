@@ -5,6 +5,18 @@ export default {
   title: 'Staff',
   type: 'document',
   icon: RiTeamLine,
+  i18n: {
+    languages: [
+      {
+        title: 'Multi-language',
+        id: 'ml'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: null,
+    __i18n_refs: []
+  },
   fields: [
     {
       name: 'name',
@@ -36,7 +48,7 @@ export default {
     {
       name: 'bio',
       title: 'Bio',
-      type: 'localeRichText'
+      type: 'text'
     },
     {
       name: 'avatar',
@@ -49,7 +61,7 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'localeSlugNames',
+      type: 'slug',
       options: {
         source: 'title',
         maxLength: 96

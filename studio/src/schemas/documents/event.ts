@@ -1,4 +1,4 @@
-import { supportedLanguages } from '../languages'
+import { supportedLanguages } from '../../languages'
 import moment from 'moment'
 import { RiCalendarEventLine } from 'react-icons/ri'
 
@@ -13,6 +13,23 @@ export default {
   title: 'Event',
   type: 'document',
   icon: RiCalendarEventLine,
+  i18n: {
+    base: 'en',
+    languages: [
+      {
+        title: 'English',
+        id: 'en'
+      },
+      {
+        title: 'Welsh',
+        id: 'cy'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: 'en',
+    __i18n_refs: []
+  },
   groups: [
     {
       name: 'content',
@@ -31,27 +48,27 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'localeString',
+      type: 'string',
       group: 'content'
     },
     {
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'localeString',
+      type: 'string',
       group: 'content'
     },
     {
       name: 'summary',
       title: 'Summary',
-      type: 'localeText',
+      type: 'text',
       group: 'content'
     },
     {
       name: 'slug',
       title: 'Slug',
-      type: 'localeSlug',
+      type: 'slug',
       options: {
-        source: `title.${supportedLanguages[0].name}`,
+        source: 'title',
         maxLength: 96
       },
       group: 'content'
@@ -83,7 +100,7 @@ export default {
     {
       name: 'location',
       title: 'Location',
-      type: 'localeString',
+      type: 'string',
       group: 'content'
     },
     {
@@ -101,7 +118,7 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      type: 'localeRichText',
+      type: 'portableText',
       group: 'content'
     },
     {
@@ -116,14 +133,14 @@ export default {
     {
       name: 'imageCaption',
       title: 'Image Caption',
-      type: 'localeString',
+      type: 'string',
       group: 'content'
     },
     {
       name: 'facilitators',
       title: 'Facilitators',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'facilitator' } }],
+      of: [{ type: 'reference', to: { type: 'staff' } }],
       group: 'taxonomy'
     },
     {
@@ -145,7 +162,7 @@ export default {
       title: 'Social title',
       description:
         'Displayed on Facebook and Twitter shares (max 60 characters)',
-      type: 'localeString',
+      type: 'string',
       group: 'seo'
     },
     {
@@ -153,7 +170,7 @@ export default {
       title: 'Social description',
       description:
         'Displayed on Facebook and Twitter shares (max 65 characters)',
-      type: 'localeString',
+      type: 'string',
       group: 'seo'
     },
     {
@@ -169,7 +186,7 @@ export default {
 
   preview: {
     select: {
-      title: 'title.en',
+      title: 'title',
       subtitle: 'date',
       media: 'mainImage'
     },

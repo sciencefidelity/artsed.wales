@@ -9,16 +9,33 @@ export default {
   title: 'Post',
   type: 'document',
   icon: RiEdit2Line,
+  i18n: {
+    base: 'en',
+    languages: [
+      {
+        title: 'English',
+        id: 'en'
+      },
+      {
+        title: 'Welsh',
+        id: 'cy'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: 'en',
+    __i18n_refs: []
+  },
   fields: [
     {
       name: 'title',
       title: 'Title',
-      type: 'localeString'
+      type: 'string'
     },
     {
       name: 'slug',
       title: 'Slug',
-      type: 'localeSlug',
+      type: 'slug',
       options: {
         source: 'title',
         maxLength: 96
@@ -28,7 +45,7 @@ export default {
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: { type: 'author' }
+      to: { type: 'staff' }
     },
     {
       name: 'mainImage',
@@ -41,13 +58,13 @@ export default {
     {
       name: 'imageCaption',
       title: 'Image Caption',
-      type: 'localeString'
+      type: 'string'
     },
     {
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }]
+      of: [{ type: 'reference', to: { type: 'tag' } }]
     },
     {
       name: 'publishedAt',
@@ -57,28 +74,28 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      type: 'localeRichText'
+      type: 'portableText'
     },
     {
       name: 'ogTitle',
       title: 'Social title',
       description:
         'Displayed on Facebook and Twitter shares (max 60 characters)',
-      type: 'localeString'
+      type: 'string'
     },
     {
       name: 'ogDescription',
       title: 'Social description',
       description:
         'Displayed on Facebook and Twitter shares (max 65 characters)',
-      type: 'localeString'
+      type: 'string'
     }
   ],
 
   preview: {
     select: {
-      title: 'title.en',
-      author: 'author.name',
+      title: 'title',
+      author: 'staff.name',
       media: 'mainImage'
     },
     prepare(selection: Selection) {

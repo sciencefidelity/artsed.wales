@@ -12,6 +12,23 @@ export default {
   title: 'Newsletter',
   type: 'document',
   icon: RiNewspaperLine,
+  i18n: {
+    base: 'en',
+    languages: [
+      {
+        title: 'English',
+        id: 'en'
+      },
+      {
+        title: 'Welsh',
+        id: 'cy'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: 'en',
+    __i18n_refs: []
+  },
   fields: [
     {
       name: 'title',

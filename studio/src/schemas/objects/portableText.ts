@@ -45,11 +45,10 @@ export default {
                 name: 'item',
                 type: 'reference',
                 to: [
-                  { type: 'author' },
                   { type: 'event' },
-                  { type: 'facilitator' },
                   { type: 'page' },
                   { type: 'post' },
+                  { type: 'staff' },
                   { type: 'video' }
                 ]
               }

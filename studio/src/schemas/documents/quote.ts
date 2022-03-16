@@ -5,11 +5,23 @@ export default {
   title: 'Quote',
   type: 'document',
   icon: MdOutlineFormatQuote,
+  i18n: {
+    languages: [
+      {
+        title: 'Multi-language',
+        id: 'ml'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: null,
+    __i18n_refs: []
+  },
   fields: [
     {
       name: 'quote',
       title: 'Quote',
-      type: 'localeRichText'
+      type: 'localeText'
     },
     {
       name: 'cite',

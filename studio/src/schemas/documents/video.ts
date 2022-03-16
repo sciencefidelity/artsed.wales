@@ -5,16 +5,33 @@ export default {
   title: 'Video',
   type: 'document',
   icon: HiOutlineFilm,
+  i18n: {
+    base: 'en',
+    languages: [
+      {
+        title: 'English',
+        id: 'en'
+      },
+      {
+        title: 'Welsh',
+        id: 'cy'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: 'en',
+    __i18n_refs: []
+  },
   fields: [
     {
       name: 'title',
       title: 'Title',
-      type: 'localeString'
+      type: 'string'
     },
     {
       name: 'body',
       title: 'Body',
-      type: 'localeRichText'
+      type: 'portableText'
     },
     {
       name: 'videoLink',
@@ -33,7 +50,7 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'localeSlug'
+      type: 'slug'
     },
     {
       name: 'mainImage',
@@ -47,7 +64,7 @@ export default {
 
   preview: {
     select: {
-      title: 'title.en',
+      title: 'title',
       media: 'mainImage'
     }
   }

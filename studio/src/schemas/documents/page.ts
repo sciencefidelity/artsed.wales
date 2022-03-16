@@ -6,6 +6,23 @@ export default {
   title: 'Page',
   type: 'document',
   icon: RiBook2Line,
+  i18n: {
+    base: 'en',
+    languages: [
+      {
+        title: 'English',
+        id: 'en'
+      },
+      {
+        title: 'Welsh',
+        id: 'cy'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: 'en',
+    __i18n_refs: []
+  },
   groups: [
     {
       name: 'info',
@@ -24,20 +41,20 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'localeString',
+      type: 'string',
       group: 'info'
     },
     {
       name: 'menuTitle',
       title: 'Menu Title',
-      type: 'localeString',
+      type: 'string',
       description: 'The title shown in the main navigation',
       group: 'info'
     },
     {
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'localeString',
+      type: 'string',
       description: "Not available for 'Page' type",
       group: 'info'
     },
@@ -66,7 +83,7 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'localeSlug',
+      type: 'slug',
       options: {
         source: 'title',
         maxLength: 96
@@ -76,7 +93,7 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      type: 'localeRichText',
+      type: 'portableText',
       description: "Only available for 'Page' type",
       group: 'content'
     },
@@ -93,13 +110,13 @@ export default {
     {
       name: 'imageCaption',
       title: 'Image Caption',
-      type: 'localeString',
+      type: 'string',
       group: 'content'
     },
     {
       name: 'seoTitle',
       title: 'SEO title',
-      type: 'localeString',
+      type: 'string',
       description:
         'Displayed on Facebook and Twitter shares (max 60 characters).',
       group: 'seo'
@@ -107,7 +124,7 @@ export default {
     {
       name: 'seoDescription',
       title: 'SEO description',
-      type: 'localeString',
+      type: 'string',
       description:
         'Displayed on Facebook and Twitter shares (max 65 characters).',
       group: 'seo'
@@ -124,7 +141,7 @@ export default {
 
   preview: {
     select: {
-      title: 'title.en',
+      title: 'title',
       media: 'mainImage'
     }
   }

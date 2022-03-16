@@ -34,6 +34,10 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./src/desk-structure/index.ts"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "./src/document-actions"
     }
   ]
 }
