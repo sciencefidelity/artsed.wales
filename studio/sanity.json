@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "National Arts and Education Network"
+    "name": "NAEN"
   },
   "plugins": [
     "@sanity/base",
@@ -9,7 +9,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/document-internationalization"
+    "@sanity/document-internationalization",
+    "@sanity/language-filter"
   ],
   "env": {
     "development": {
@@ -29,15 +30,23 @@
     },
     {
       "implements": "part:@sanity/dashboard/config",
-      "path": "./src/dashboard/index.ts"
+      "path": "./src/dashboard"
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./src/desk-structure/index.ts"
+      "path": "./src/desk-structure"
     },
     {
       "implements": "part:@sanity/base/document-actions/resolver",
       "path": "./src/document-actions"
+    },
+    {
+      "implements": "part:@sanity/document-internationalization/ui/flags",
+      "path": "./src/document-internationalization"
+    },
+    {
+      "name": "part:@sanity/language-filter/config",
+      "path": "./src/language-filter"
     }
   ]
 }

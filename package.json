@@ -6,7 +6,8 @@
   "license": "UNLICENSED",
   "private": true,
   "keywords": [
-    "gatsby",
+    "astro",
+    "nextjs",
     "sanity"
   ],
   "scripts": {
