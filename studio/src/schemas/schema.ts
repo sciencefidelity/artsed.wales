@@ -14,14 +14,14 @@ import localeURL from './objects/localeURL'
 // documements
 import comment from './documents/comment'
 import event from './documents/event'
-import figure from './documents/figure'
+import engagement from './documents/engagement'
 import newsletter from './documents/newsletter'
 import page from './documents/page'
 import staff from './documents/staff'
 import photography from './documents/photography'
 import post from './documents/post'
 import quote from './documents/quote'
-import social from './documents/social'
+import settings from './documents/settings'
 import video from './documents/video'
 
 //taxonomy
@@ -43,14 +43,14 @@ export default createSchema({
     // documents
     comment,
     event,
-    figure,
+    engagement,
     newsletter,
     page,
     staff,
     photography,
     post,
     quote,
-    social,
+    settings,
     video,
 
     // taxonomy

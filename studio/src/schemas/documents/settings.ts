@@ -1,6 +1,6 @@
 export default {
-  name: 'site',
-  title: 'Site',
+  name: 'settings',
+  title: 'Settings',
   type: 'document',
   // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   i18n: {
@@ -130,19 +130,19 @@ export default {
       type: 'localeString',
       group: 'footer'
     },
-    {
-      name: 'socialLinks',
-      title: 'Social Links',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'social' } }],
-      sortable: true,
-      group: 'footer'
-    },
+    // {
+    //   name: 'socialLinks',
+    //   title: 'Social Links',
+    //   type: 'array',
+    //   of: [{ type: 'reference', to: { type: 'social' } }],
+    //   sortable: true,
+    //   group: 'footer'
+    // },
     {
       name: 'engagement',
       title: 'Engagement',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'figure' } }],
+      of: [{ type: 'reference', to: { type: 'engagement' } }],
       sortable: true,
       group: 'footer'
     }
