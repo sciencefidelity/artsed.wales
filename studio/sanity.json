@@ -9,8 +9,7 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/document-internationalization",
-    "@sanity/language-filter"
+    "@sanity/document-internationalization"
   ],
   "env": {
     "development": {
@@ -43,10 +42,6 @@
     {
       "implements": "part:@sanity/document-internationalization/ui/flags",
       "path": "./src/document-internationalization"
-    },
-    {
-      "name": "part:@sanity/language-filter/config",
-      "path": "./src/language-filter"
     }
   ]
 }
