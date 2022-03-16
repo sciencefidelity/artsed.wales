@@ -13,14 +13,9 @@ export default {
   i18n: {
     languages: [
       {
-        title: 'Multi-language',
-        id: 'ml'
+        id: 'ft'
       }
     ]
-  },
-  initialValue: {
-    __i18n_lang: null,
-    __i18n_refs: []
   },
   fields: [
     {

@@ -1,20 +1,25 @@
-import { MdOutlineVpnKey } from 'react-icons/md'
+import { MdOutlinePalette } from 'react-icons/md'
 
 export default {
-  name: 'keystage',
-  title: 'Key Stage',
+  name: 'artform',
+  title: 'Artform',
   type: 'document',
-  icon: MdOutlineVpnKey,
+  icon: MdOutlinePalette,
   i18n: {
+    base: 'en',
     languages: [
       {
-        title: 'Multi-language',
-        id: 'ml'
+        title: 'English',
+        id: 'en'
+      },
+      {
+        title: 'Welsh',
+        id: 'cy'
       }
     ]
   },
   initialValue: {
-    __i18n_lang: null,
+    __i18n_lang: 'en',
     __i18n_refs: []
   },
   fields: [

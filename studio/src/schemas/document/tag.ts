@@ -1,20 +1,25 @@
-import { MdOutlinePalette } from 'react-icons/md'
+import { RiPriceTag3Line } from 'react-icons/ri'
 
 export default {
-  name: 'artform',
-  title: 'Artform',
+  name: 'tag',
+  title: 'Tag',
   type: 'document',
-  icon: MdOutlinePalette,
+  icon: RiPriceTag3Line,
   i18n: {
+    base: 'en',
     languages: [
       {
-        title: 'Multi-language',
-        id: 'ml'
+        title: 'English',
+        id: 'en'
+      },
+      {
+        title: 'Welsh',
+        id: 'cy'
       }
     ]
   },
   initialValue: {
-    __i18n_lang: null,
+    __i18n_lang: 'en',
     __i18n_refs: []
   },
   fields: [
@@ -26,7 +31,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'localeText'
+      type: 'localeString'
     },
     {
       name: 'slug',

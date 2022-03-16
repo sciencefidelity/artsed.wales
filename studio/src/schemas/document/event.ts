@@ -1,4 +1,3 @@
-import { supportedLanguages } from '../../languages'
 import moment from 'moment'
 import { RiCalendarEventLine } from 'react-icons/ri'
 

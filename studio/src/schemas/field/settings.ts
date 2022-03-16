@@ -1,19 +1,17 @@
+import { RiSettings2Line } from 'react-icons/ri'
+
 export default {
   name: 'settings',
   title: 'Settings',
   type: 'document',
   // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+  icon: RiSettings2Line,
   i18n: {
     languages: [
       {
-        title: 'Multi-language',
-        id: 'ml'
+        id: 'ft'
       }
     ]
-  },
-  initialValue: {
-    __i18n_lang: null,
-    __i18n_refs: []
   },
   groups: [
     {

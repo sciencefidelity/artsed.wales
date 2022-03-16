@@ -45,10 +45,14 @@ export default {
                 name: 'item',
                 type: 'reference',
                 to: [
+                  { type: 'artform' },
                   { type: 'event' },
+                  { type: 'keystage' },
+                  { type: 'newsletter' },
                   { type: 'page' },
                   { type: 'post' },
                   { type: 'staff' },
+                  { type: 'tag' },
                   { type: 'video' }
                 ]
               }
