@@ -27,19 +27,19 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'localeString'
+      type: 'string'
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'localeText'
+      type: 'text'
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title.en',
+        source: 'title',
         maxLength: 96
       }
     }
@@ -47,8 +47,8 @@ export default {
 
   preview: {
     select: {
-      title: 'title.en',
-      subtitle: 'title.cy'
+      title: 'title',
+      subtitle: 'description'
     }
   }
 }

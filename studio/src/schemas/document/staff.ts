@@ -25,7 +25,7 @@ export default {
   },
   fields: [
     {
-      name: 'name',
+      name: 'title',
       title: 'Name',
       type: 'string'
     },
@@ -35,7 +35,7 @@ export default {
       type: 'array',
       of: [{ type: 'string' }],
       options: {
-        layout: 'grid',
+        layout: 'tags',
         list: [
           { title: 'Author', value: 'author' },
           { title: 'Chair', value: 'chair' },
@@ -49,7 +49,7 @@ export default {
     {
       name: 'job',
       title: 'Job',
-      type: 'localeString'
+      type: 'string'
     },
     {
       name: 'bio',
@@ -77,8 +77,8 @@ export default {
 
   preview: {
     select: {
-      title: 'name',
-      subtitle: 'job.en',
+      title: 'title',
+      subtitle: 'job',
       media: 'avatar'
     }
   }
