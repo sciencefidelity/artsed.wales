@@ -1,3 +1,6 @@
+// https://www.sanity.io/schemas/delete-unused-assets-2ef651b5
+// removes orphaned documents
+// `sanity exec clean.js --with-user-token`
 import client from 'part:@sanity/base/client'
 
 const query = `
