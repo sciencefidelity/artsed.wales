@@ -5,14 +5,6 @@ export default {
   title: 'Label Group',
   type: 'document',
   icon: CardFileBox,
-  // i18n: {
-  //   languages: [
-  //     {
-  //       title: 'fields',
-  //       id: 'ft'
-  //     }
-  //   ]
-  // },
   fields: [
     {
       name: 'labels',

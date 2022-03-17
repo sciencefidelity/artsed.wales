@@ -5,14 +5,6 @@ export default {
   title: 'Comment',
   type: 'document',
   icon: SpeechBalloon,
-  // i18n: {
-  //   languages: [
-  //     {
-  //       title: 'fields',
-  //       id: 'ft'
-  //     }
-  //   ]
-  // },
   fields: [
     {
       name: 'name',

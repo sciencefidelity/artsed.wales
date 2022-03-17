@@ -6,14 +6,6 @@ export default {
   type: 'document',
   // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   icon: PostOffice,
-  // i18n: {
-  //   languages: [
-  //     {
-  //       title: 'fields',
-  //       id: 'ft'
-  //     }
-  //   ]
-  // },
   groups: [
     {
       name: 'meta',

@@ -5,14 +5,6 @@ export default {
   title: 'Engagement',
   type: 'document',
   icon: BarChart,
-  // i18n: {
-  //   languages: [
-  //     {
-  //       title: 'fields',
-  //       id: 'ft'
-  //     }
-  //   ]
-  // },
   fields: [
     {
       name: 'heading',
