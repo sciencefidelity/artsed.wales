@@ -26,16 +26,28 @@ export default {
   },
   groups: [
     {
+      name: 'basicInfo',
+      title: 'Basic'
+    },
+    {
       name: 'content',
       title: 'Content'
     },
     {
-      name: 'taxonomy',
-      title: 'Taxonomoy'
+      name: 'settings',
+      title: 'Settings'
     },
     {
-      name: 'seo',
-      title: 'SEO'
+      name: 'meta',
+      title: 'Meta data'
+    },
+    {
+      name: 'twitter',
+      title: 'Twitter'
+    },
+    {
+      name: 'facebook',
+      title: 'Facebook'
     }
   ],
   fields: [
@@ -43,18 +55,71 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      group: 'basicInfo'
+    },
+    {
+      name: 'location',
+      title: 'Location',
+      type: 'string',
+      group: 'basicInfo'
+    },
+    {
+      name: 'dateStart',
+      title: 'Event starts',
+      type: 'datetime',
+      options: {
+        dateFormat: 'dddd, MMMM Do YYYY,',
+        timeFormat: 'h:mm a',
+        timeStep: 30
+      },
+      group: 'basicInfo'
+    },
+    {
+      name: 'dateEnd',
+      title: 'Event ends',
+      type: 'datetime',
+      options: {
+        dateFormat: 'dddd, MMMM Do YYYY,',
+        timeFormat: 'h:mm a',
+        timeStep: 30
+      },
+      group: 'basicInfo'
+    },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'number',
+      group: 'basicInfo'
+    },
+    // Keywords / tags
+    {
+      name: 'mainImage',
+      title: 'Main event image',
+      type: 'image',
+      description: 'Ideal image size for Eventbrite – 2160 x 1080 / 2:1 ratio',
+      options: {
+        hotspot: true
+      },
       group: 'content'
     },
     {
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
+      name: 'imageData',
+      title: 'Image data',
+      type: 'imageData',
       group: 'content'
     },
     {
       name: 'summary',
       title: 'Summary',
       type: 'text',
+      rows: 3,
+      validation: Rule => Rule.max(140).warning("Max 140 characters."),
+      group: 'content'
+    },
+    {
+      name: 'body',
+      title: 'Body',
+      type: 'portableText',
       group: 'content'
     },
     {
@@ -65,123 +130,59 @@ export default {
         source: 'title',
         maxLength: 96
       },
-      group: 'content'
-    },
-    {
-      name: 'date',
-      title: 'Date and Time',
-      type: 'datetime',
-      options: {
-        dateFormat: 'dddd, MMMM Do YYYY,',
-        timeFormat: 'h:mm a',
-        timeStep: 15,
-        calendarTodayLabel: 'Today'
-      },
-      group: 'content'
-    },
-    {
-      name: 'date2',
-      title: 'Second Date and Time',
-      type: 'datetime',
-      options: {
-        dateFormat: 'dddd, MMMM Do YYYY,',
-        timeFormat: 'h:mm a',
-        timeStep: 15,
-        calendarTodayLabel: 'Today'
-      },
-      group: 'content'
-    },
-    {
-      name: 'location',
-      title: 'Location',
-      type: 'string',
-      group: 'content'
-    },
-    {
-      name: 'price',
-      title: 'Price',
-      type: 'number',
-      group: 'content'
+      group: 'settings'
     },
     {
       name: 'britelink',
       title: 'Eventbrite link',
-      type: 'localeURL',
-      group: 'content'
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'portableText',
-      group: 'content'
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true
-      },
-      group: 'content'
-    },
-    {
-      name: 'imageCaption',
-      title: 'Image Caption',
-      type: 'string',
-      group: 'content'
+      type: 'url',
+      group: 'settings'
     },
     {
       name: 'facilitators',
       title: 'Facilitators',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'staff' } }],
-      group: 'taxonomy'
+      group: 'settings'
     },
     {
       name: 'artform',
       title: 'Artforms',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'artform' } }],
-      group: 'taxonomy'
+      group: 'settings'
     },
     {
       name: 'keystage',
       title: 'Key Stage',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'keystage' } }],
-      group: 'taxonomy'
+      group: 'settings'
     },
     {
-      name: 'ogTitle',
-      title: 'Social title',
-      description:
-        'Displayed on Facebook and Twitter shares (max 60 characters)',
-      type: 'string',
-      group: 'seo'
+      name: 'meta',
+      title: 'Meta data',
+      type: 'metaData',
+      group: 'meta'
     },
     {
-      name: 'ogDescription',
-      title: 'Social description',
-      description:
-        'Displayed on Facebook and Twitter shares (max 65 characters)',
-      type: 'string',
-      group: 'seo'
+      name: 'twitterCard',
+      title: 'Twitter Card',
+      type: 'twitterCard',
+      group: 'twitter'
     },
     {
-      name: 'ogImage',
-      title: 'Social image',
-      type: 'image',
-      options: {
-        hotspot: true
-      },
-      group: 'seo'
+      name: 'facebookCard',
+      title: 'Facebook Card',
+      type: 'facebookCard',
+      group: 'facebook'
     }
   ],
 
   preview: {
     select: {
       title: 'title',
-      subtitle: 'date',
+      subtitle: 'dateStart',
       media: 'mainImage'
     },
     prepare(selection) {

@@ -2,9 +2,11 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // object
-import portableText from './object/portableText'
-import metaData from './object/metaData'
 import facebookCard from './object/facebookCard'
+import imageData from './object/imageData'
+import metaData from './object/metaData'
+import pageSettings from './object/pageSettings'
+import portableText from './object/portableText'
 import twitterCard from './object/twitterCard'
 import youtube from './object/youtube'
 
@@ -38,7 +40,9 @@ export default createSchema({
   types: schemaTypes.concat([
     // objects
     facebookCard,
+    imageData,
     metaData,
+    pageSettings,
     portableText,
     twitterCard,
     youtube,

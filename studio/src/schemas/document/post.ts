@@ -6,100 +6,115 @@ export default {
   title: 'Post',
   type: 'document',
   icon: WritingHand,
-  i18n: {
-    base: 'en',
-    languages: [
-      {
-        title: 'English',
-        id: 'en'
-      },
-      {
-        title: 'Welsh',
-        id: 'cy'
-      }
-    ]
-  },
-  initialValue: {
-    __i18n_lang: 'en',
-    __i18n_refs: []
-  },
+  groups: [
+    {
+      name: 'post',
+      title: 'Content'
+    },
+    {
+      name: 'settings',
+      title: 'Settings'
+    },
+    {
+      name: 'meta',
+      title: 'Meta data'
+    },
+    {
+      name: 'twitter',
+      title: 'Twitter'
+    },
+    {
+      name: 'facebook',
+      title: 'Facebook'
+    }
+  ],
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string'
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96
-      }
-    },
-    {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: { type: 'staff' }
-    },
-    {
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Feature image',
       type: 'image',
       options: {
         hotspot: true
-      }
+      },
+      group: 'post'
     },
     {
-      name: 'imageCaption',
-      title: 'Image Caption',
-      type: 'string'
+      name: 'imageData',
+      title: 'Image data',
+      type: 'imageData',
+      group: 'post'
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'tag' } }]
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime'
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      group: 'post'
     },
     {
       name: 'body',
       title: 'Body',
-      type: 'portableText'
+      type: 'portableText',
+      group: 'post'
     },
     {
-      name: 'ogTitle',
-      title: 'Social title',
-      description:
-        'Displayed on Facebook and Twitter shares (max 60 characters)',
-      type: 'string'
+      name: 'anotherDate',
+      title: 'Another date',
+      type: 'datetime',
+      options: {
+        timeStep: 15,
+        calendarTodayLabel: 'Today'
+      }
     },
     {
-      name: 'ogDescription',
-      title: 'Social description',
-      description:
-        'Displayed on Facebook and Twitter shares (max 65 characters)',
-      type: 'string'
+      name: 'settings',
+      title: 'Post settings',
+      type: 'pageSettings',
+      group: 'settings'
+    },
+    {
+      name: 'meta',
+      title: 'Meta data',
+      type: 'metaData',
+      group: 'meta'
+    },
+    {
+      name: 'twitterCard',
+      title: 'Twitter Card',
+      type: 'twitterCard',
+      group: 'twitter'
+    },
+    {
+      name: 'facebookCard',
+      title: 'Facebook Card',
+      type: 'facebookCard',
+      group: 'facebook'
+    },
+    {
+      name: 'feature',
+      title: 'Feature this post',
+      type: 'boolean',
+      group: 'settings'
     }
   ],
 
   preview: {
     select: {
       title: 'title',
-      author: 'staff.name',
-      media: 'mainImage'
+      author0: 'settings.authors.0.name',
+      author1: 'settings.authors.1.name',
+      author2: 'settings.authors.2.name',
+      author3: 'settings.authors.3.name',
+      media: 'image'
     },
-    prepare(selection) {
-      const { author } = selection
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`
-      })
+    prepare: ({ title, author0, author1, author2, author3, media }) => {
+      const authors = [author0, author1, author2].filter(Boolean)
+      const subtitle = authors.length > 0 ? `by ${authors.join(', ')}` : ''
+      const hasMoreAuthors = Boolean(author3)
+      return {
+        title,
+        subtitle: hasMoreAuthors ? `${subtitle}…` : subtitle,
+        media
+      }
     }
   }
 }

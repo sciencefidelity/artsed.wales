@@ -30,14 +30,31 @@ export default {
       type: 'string'
     },
     {
+      name: 'videoLink',
+      title: 'Video Link',
+      type: 'url'
+    },
+    {
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'portableText'
     },
     {
-      name: 'videoLink',
-      title: 'Video Link',
-      type: 'url'
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96
+      }
     },
     {
       name: 'publishDate',
@@ -46,19 +63,6 @@ export default {
       options: {
         dateFormat: 'dddd, MMMM Do YYYY',
         calendarTodayLabel: 'Today'
-      }
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug'
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true
       }
     }
   ],
