@@ -1,10 +1,10 @@
-import {FiType} from 'react-icons/fi'
+import { CardFileBox } from '../../components/twemoji'
 
 export default {
   name: 'labelGroup',
   title: 'Label Group',
   type: 'document',
-  icon: FiType,
+  icon: CardFileBox,
   i18n: {
     languages: [
       {

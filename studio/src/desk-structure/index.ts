@@ -6,6 +6,7 @@ import {
   BarChart,
   Books,
   CameraFlash,
+  CardFileBox,
   Clipboard,
   ClosedLockWithKey,
   Date,
@@ -165,7 +166,20 @@ const items = [
   S.listItem()
     .title('Settings')
     .icon(Gear)
-    .child(S.document().schemaType('settings').documentId('settings')),
+    .child(
+      S.list()
+        .title('Taxonomy')
+        .items([
+          S.listItem()
+            .title('Settings')
+            .icon(Gear)
+            .child(S.document().schemaType('settings').documentId('settings')),
+          S.listItem()
+            .title('Label Group')
+            .icon(CardFileBox)
+            .child(S.document().schemaType('labelGroup').documentId('labelGroup')),
+        ])
+    ),
   S.divider(),
   Structure.getMaintenanceListItem().serialize(),
   ...S.documentTypeListItems().filter(
@@ -175,6 +189,7 @@ const items = [
       'engagement',
       'event',
       'keystage',
+      'labelGroup',
       'newsletter',
       'page',
       'photography',
