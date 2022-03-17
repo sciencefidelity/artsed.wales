@@ -14,6 +14,7 @@ import {
   Gear,
   Label,
   Newspaper,
+  PostOffice,
   SpeechBalloon,
   WhiteCheckMark,
   WomanTeacher,
@@ -175,6 +176,10 @@ const items = [
             .icon(Gear)
             .child(S.document().schemaType('settings').documentId('settings')),
           S.listItem()
+            .title('Company')
+            .icon(PostOffice)
+            .child(S.document().schemaType('company').documentId('company')),
+          S.listItem()
             .title('Label Group')
             .icon(CardFileBox)
             .child(S.document().schemaType('labelGroup').documentId('labelGroup')),
@@ -186,6 +191,7 @@ const items = [
     item => ![
       'artform',
       'comment',
+      'company',
       'engagement',
       'event',
       'keystage',

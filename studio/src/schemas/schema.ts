@@ -29,6 +29,7 @@ import video from './document/video'
 
 // field translation
 import comment from './field/comment'
+import company from './field/company'
 import engagement from './field/engagement'
 import labelGroup from './field/labelGroup'
 import photography from './field/photography'
@@ -67,6 +68,7 @@ export default createSchema({
 
     // field
     comment,
+    company,
     engagement,
     labelGroup,
     photography,
