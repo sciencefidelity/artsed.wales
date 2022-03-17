@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { Date } from '../components/twemoji'
+import { Date } from '../../components/twemoji'
 //import { RiCalendarEventLine } from 'react-icons/ri'
 
 export default {

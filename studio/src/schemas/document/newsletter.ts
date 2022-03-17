@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { Newspaper } from '../components/twemoji'
+import { Newspaper } from '../../components/twemoji'
 // import { RiNewspaperLine } from 'react-icons/ri'
 
 export default {

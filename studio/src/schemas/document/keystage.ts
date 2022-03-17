@@ -1,4 +1,4 @@
-import { ClosedLockWithKey } from '../components/twemoji'
+import { ClosedLockWithKey } from '../../components/twemoji'
 //import { MdOutlineVpnKey } from 'react-icons/md'
 
 export default {

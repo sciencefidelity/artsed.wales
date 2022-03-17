@@ -1,4 +1,4 @@
-import { CameraFlash } from '../components/twemoji'
+import { CameraFlash } from '../../components/twemoji'
 // import { RiCamera3Line } from 'react-icons/ri'
 
 export default {

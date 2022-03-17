@@ -1,5 +1,5 @@
 // import { MdOutlinePalette } from 'react-icons/md'
-import { Art } from '../components/twemoji'
+import { Art } from '../../components/twemoji'
 
 export default {
   name: 'artform',

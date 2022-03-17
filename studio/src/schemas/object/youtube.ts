@@ -1,5 +1,5 @@
 import { RiYoutubeLine } from 'react-icons/ri'
-import YouTubePreview from '../components/YouTubePreview'
+import YouTubePreview from '../../components/YouTubePreview'
 
 export default {
   name: 'youtube',

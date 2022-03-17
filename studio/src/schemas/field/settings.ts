@@ -1,11 +1,11 @@
-import { Gear } from '../components/twemoji'
+import { Gear } from '../../components/twemoji'
 // import { RiSettings2Line } from 'react-icons/ri'
 
 export default {
   name: 'settings',
   title: 'Settings',
   type: 'document',
-  // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   icon: Gear,
   i18n: {
     languages: [

@@ -1,4 +1,4 @@
-import { Label } from '../components/twemoji'
+import { Label } from '../../components/twemoji'
 // import { RiPriceTag3Line } from 'react-icons/ri'
 
 export default {

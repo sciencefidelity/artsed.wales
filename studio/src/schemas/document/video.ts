@@ -1,4 +1,4 @@
-import { FilmProjector } from '../components/twemoji'
+import { FilmProjector } from '../../components/twemoji'
 // import { HiOutlineFilm } from 'react-icons/hi'
 
 export default {

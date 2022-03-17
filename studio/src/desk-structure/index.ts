@@ -2,6 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import * as Structure from '@sanity/document-internationalization/lib/structure'
 import {
   Art,
+  BallotBoxWithCheck,
   BarChart,
   Books,
   CameraFlash,
@@ -12,10 +13,12 @@ import {
   Gear,
   Label,
   Newspaper,
+  SpeechBalloon,
+  WhiteCheckMark,
   WomanTeacher,
   WorldMap,
   WritingHand
-} from '../schemas/components/twemoji'
+} from '../components/twemoji'
 
 const items = [
   S.listItem()
@@ -59,22 +62,30 @@ const items = [
         .filter('_type == "video" && __i18n_lang != "cy"')
     ),
   S.divider(),
-  ...S.documentTypeListItems().filter(
-    item => ![
-      'artform',
-      'engagement',
-      'event',
-      'keystage',
-      'newsletter',
-      'page',
-      'photography',
-      'post',
-      'quote',
-      'settings',
-      'staff',
-      'tag',
-      'video'
-    ].includes(item.getId())
+  S.listItem()
+  .title('Comment')
+  .icon(SpeechBalloon)
+  .child(
+    S.list()
+      .title('Inbox')
+      .items([
+        S.listItem()
+        .title('Pending')
+        .icon(BallotBoxWithCheck)
+        .child(
+          S.documentTypeList('comment')
+            .title('Comments pending')
+            .filter('_type == "comment" && approved != true')
+        ),
+        S.listItem()
+        .title('Approved')
+        .icon(WhiteCheckMark)
+        .child(
+          S.documentTypeList('comment')
+            .title('Comments approved')
+            .filter('_type == "comment" && approved == true')
+        )
+      ])
   ),
   S.listItem()
   .title('Engagement')
@@ -157,6 +168,24 @@ const items = [
     .child(S.document().schemaType('settings').documentId('settings')),
   S.divider(),
   Structure.getMaintenanceListItem().serialize(),
+  ...S.documentTypeListItems().filter(
+    item => ![
+      'artform',
+      'comment',
+      'engagement',
+      'event',
+      'keystage',
+      'newsletter',
+      'page',
+      'photography',
+      'post',
+      'quote',
+      'settings',
+      'staff',
+      'tag',
+      'video'
+    ].includes(item.getId())
+  )
 ]
 
 export default () => {

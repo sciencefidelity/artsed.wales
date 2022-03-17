@@ -1,4 +1,4 @@
-import { WritingHand } from '../components/twemoji'
+import { WritingHand } from '../../components/twemoji'
 // import { RiEdit2Line } from 'react-icons/ri'
 
 export default {

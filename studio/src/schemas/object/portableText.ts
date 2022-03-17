@@ -2,7 +2,7 @@ import {
   codeRender,
   emailRender,
   linkRender
-} from '../components/textComponents'
+} from '../../components/textComponents'
 import { MdOutlineAddLink, MdOutlineAlternateEmail } from 'react-icons/md'
 import { RiExternalLinkLine } from 'react-icons/ri'
 

@@ -1,4 +1,4 @@
-import { WomanTeacher } from '../components/twemoji'
+import { WomanTeacher } from '../../components/twemoji'
 // import { RiTeamLine } from 'react-icons/ri'
 
 export default {

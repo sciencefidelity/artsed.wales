@@ -1,4 +1,4 @@
-import StringWithLimits from '../components/StringWithLimits'
+import StringWithLimits from '../../components/StringWithLimits'
 
 export default {
   name: 'twitterCard',

@@ -1,4 +1,4 @@
-import { Clipboard } from '../components/twemoji'
+import { Clipboard } from '../../components/twemoji'
 // import { MdOutlineFormatQuote } from 'react-icons/md'
 
 export default {
