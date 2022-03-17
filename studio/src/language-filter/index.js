@@ -6,7 +6,7 @@ export default {
   ],
   // defaultLanguages: ['en'],
   // Only show language filter for document type `page` (schemaType.name)
-  documentTypes: ['author', 'settings', 'tag'],
+  documentTypes: ['comment', 'engagement', 'photography', 'quote', 'settings'],
   filterField: (enclosingType, field, selectedLanguageIds) =>
     !enclosingType.name.startsWith('locale') || selectedLanguageIds.includes(field.name),
 }
