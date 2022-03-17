@@ -9,6 +9,7 @@ export default {
   i18n: {
     languages: [
       {
+        title: 'fields',
         id: 'ft'
       }
     ]
