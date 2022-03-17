@@ -5,14 +5,14 @@ export default {
   title: 'Photography',
   type: 'document',
   icon: CameraFlash,
-  i18n: {
-    languages: [
-      {
-        title: 'fields',
-        id: 'ft'
-      }
-    ]
-  },
+  // i18n: {
+  //   languages: [
+  //     {
+  //       title: 'fields',
+  //       id: 'ft'
+  //     }
+  //   ]
+  // },
   fields: [
     {
       name: 'title',

@@ -1436,10 +1436,10 @@
   dependencies:
     diff-match-patch "^1.0.4"
 
-"@sanity/document-internationalization@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.npmjs.org/@sanity/document-internationalization/-/document-internationalization-0.1.2.tgz#ac177c6fdb7e76cda6bba8869ee5d3f5691730f7"
-  integrity sha512-z1HV7XSyZOrRCU/z/M7urqLLeN47NAkahSz7+4CpzcrE7bhxW0rI97o5zFBQ0oBt0E9g8jN4r/tAAlOmvORzGA==
+"@sanity/document-internationalization@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@sanity/document-internationalization/-/document-internationalization-0.1.4.tgz#1069597c73edd380a2bb93a5981a1f368f4a05a1"
+  integrity sha512-XA3VaLEoYK9RR+8W6t+f9/aZ24iGoieSJ+m5cJ2Rt482UsOtWsmQJr68Y0NWRSr1PursaIb4fCUH9TnMMr6Rkg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@cprecioso/country-flag-emoji" "^1.0.0"

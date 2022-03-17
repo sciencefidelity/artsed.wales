@@ -5,14 +5,14 @@ export default {
   title: 'Quote',
   type: 'document',
   icon: Clipboard,
-  i18n: {
-    languages: [
-      {
-        title: 'fields',
-        id: 'ft'
-      }
-    ]
-  },
+  // i18n: {
+  //   languages: [
+  //     {
+  //       title: 'fields',
+  //       id: 'ft'
+  //     }
+  //   ]
+  // },
   fields: [
     {
       name: 'quote',
