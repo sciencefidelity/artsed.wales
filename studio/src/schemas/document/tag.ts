@@ -1,10 +1,11 @@
-import { MdOutlinePalette } from 'react-icons/md'
+import { Label } from '../components/twemoji'
+// import { RiPriceTag3Line } from 'react-icons/ri'
 
 export default {
-  name: 'artform',
-  title: 'Artform',
+  name: 'tag',
+  title: 'Tag',
   type: 'document',
-  icon: MdOutlinePalette,
+  icon: Label,
   i18n: {
     base: 'en',
     languages: [
@@ -31,7 +32,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'localeText'
+      type: 'localeString'
     },
     {
       name: 'slug',

@@ -1,11 +1,12 @@
 import moment from 'moment'
-import { RiCalendarEventLine } from 'react-icons/ri'
+import { Date } from '../components/twemoji'
+//import { RiCalendarEventLine } from 'react-icons/ri'
 
 export default {
   name: 'event',
   title: 'Event',
   type: 'document',
-  icon: RiCalendarEventLine,
+  icon: Date,
   i18n: {
     base: 'en',
     languages: [

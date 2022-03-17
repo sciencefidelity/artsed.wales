@@ -1,10 +1,11 @@
-import { MdOutlineAutoGraph } from 'react-icons/md'
+import { BarChart } from '../components/twemoji'
+// import { MdOutlineAutoGraph } from 'react-icons/md'
 
 export default {
   name: 'engagement',
   title: 'Engagement',
   type: 'document',
-  icon: MdOutlineAutoGraph,
+  icon: BarChart,
   i18n: {
     languages: [
       {

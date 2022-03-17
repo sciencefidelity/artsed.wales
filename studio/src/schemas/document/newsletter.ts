@@ -1,11 +1,12 @@
 import moment from 'moment'
-import { RiNewspaperLine } from 'react-icons/ri'
+import { Newspaper } from '../components/twemoji'
+// import { RiNewspaperLine } from 'react-icons/ri'
 
 export default {
   name: 'newsletter',
   title: 'Newsletter',
   type: 'document',
-  icon: RiNewspaperLine,
+  icon: Newspaper,
   i18n: {
     base: 'en',
     languages: [

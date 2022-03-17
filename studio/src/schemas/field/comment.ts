@@ -1,10 +1,11 @@
-import { VscCommentDiscussion } from 'react-icons/vsc'
+import { SpeechBalloon } from '../components/twemoji'
+// import { VscCommentDiscussion } from 'react-icons/vsc'
 
 export default {
   name: 'comment',
   title: 'Comment',
   type: 'document',
-  icon: VscCommentDiscussion,
+  icon: SpeechBalloon,
   i18n: {
     languages: [
       {

@@ -1,10 +1,11 @@
-import { RiCamera3Line } from 'react-icons/ri'
+import { CameraFlash } from '../components/twemoji'
+// import { RiCamera3Line } from 'react-icons/ri'
 
 export default {
   name: 'photography',
   title: 'Photography',
   type: 'document',
-  icon: RiCamera3Line,
+  icon: CameraFlash,
   i18n: {
     languages: [
       {

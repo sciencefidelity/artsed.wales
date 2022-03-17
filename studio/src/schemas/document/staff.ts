@@ -1,10 +1,11 @@
-import { RiTeamLine } from 'react-icons/ri'
+import { WomanTeacher } from '../components/twemoji'
+// import { RiTeamLine } from 'react-icons/ri'
 
 export default {
   name: 'staff',
   title: 'Staff',
   type: 'document',
-  icon: RiTeamLine,
+  icon: WomanTeacher,
   i18n: {
     base: 'en',
     languages: [

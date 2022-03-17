@@ -1,10 +1,11 @@
-import { RiPriceTag3Line } from 'react-icons/ri'
+import { ClosedLockWithKey } from '../components/twemoji'
+//import { MdOutlineVpnKey } from 'react-icons/md'
 
 export default {
-  name: 'tag',
-  title: 'Tag',
+  name: 'keystage',
+  title: 'Key Stage',
   type: 'document',
-  icon: RiPriceTag3Line,
+  icon: ClosedLockWithKey,
   i18n: {
     base: 'en',
     languages: [
@@ -31,7 +32,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'localeString'
+      type: 'localeText'
     },
     {
       name: 'slug',

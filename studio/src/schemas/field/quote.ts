@@ -1,10 +1,11 @@
-import { MdOutlineFormatQuote } from 'react-icons/md'
+import { Clipboard } from '../components/twemoji'
+// import { MdOutlineFormatQuote } from 'react-icons/md'
 
 export default {
   name: 'quote',
   title: 'Quote',
   type: 'document',
-  icon: MdOutlineFormatQuote,
+  icon: Clipboard,
   i18n: {
     languages: [
       {

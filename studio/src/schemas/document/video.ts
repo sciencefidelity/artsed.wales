@@ -1,10 +1,11 @@
-import { HiOutlineFilm } from 'react-icons/hi'
+import { FilmProjector } from '../components/twemoji'
+// import { HiOutlineFilm } from 'react-icons/hi'
 
 export default {
   name: 'video',
   title: 'Video',
   type: 'document',
-  icon: HiOutlineFilm,
+  icon: FilmProjector,
   i18n: {
     base: 'en',
     languages: [

@@ -1,10 +1,11 @@
-import { RiEdit2Line } from 'react-icons/ri'
+import { WritingHand } from '../components/twemoji'
+// import { RiEdit2Line } from 'react-icons/ri'
 
 export default {
   name: 'post',
   title: 'Post',
   type: 'document',
-  icon: RiEdit2Line,
+  icon: WritingHand,
   i18n: {
     base: 'en',
     languages: [

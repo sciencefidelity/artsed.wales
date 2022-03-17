@@ -1,10 +1,11 @@
-import { MdOutlineVpnKey } from 'react-icons/md'
+// import { MdOutlinePalette } from 'react-icons/md'
+import { Art } from '../components/twemoji'
 
 export default {
-  name: 'keystage',
-  title: 'Key Stage',
+  name: 'artform',
+  title: 'Artform',
   type: 'document',
-  icon: MdOutlineVpnKey,
+  icon: Art,
   i18n: {
     base: 'en',
     languages: [

@@ -1,10 +1,11 @@
-import { RiBook2Line } from 'react-icons/ri'
+import { Books } from '../components/twemoji'
+// import { RiBook2Line } from 'react-icons/ri'
 
 export default {
   name: 'page',
   title: 'Page',
   type: 'document',
-  icon: RiBook2Line,
+  icon: Books,
   i18n: {
     base: 'en',
     languages: [
