@@ -1,5 +1,5 @@
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { FilmProjector } from '../../components/twemoji'
-// import { HiOutlineFilm } from 'react-icons/hi'
 
 export default {
   name: 'video',
@@ -53,7 +53,8 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
+        maxLength: 96,
+        isUnique: isUniqueLocale
       }
     },
     {

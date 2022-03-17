@@ -1,5 +1,4 @@
 import { SpeechBalloon } from '../../components/twemoji'
-// import { VscCommentDiscussion } from 'react-icons/vsc'
 
 export default {
   name: 'comment',

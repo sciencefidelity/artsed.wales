@@ -1,5 +1,5 @@
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { ClosedLockWithKey } from '../../components/twemoji'
-//import { MdOutlineVpnKey } from 'react-icons/md'
 
 export default {
   name: 'keystage',
@@ -40,7 +40,8 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
+        maxLength: 96,
+        isUnique: isUniqueLocale
       }
     }
   ],
@@ -48,7 +49,12 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'description'
+    },
+    prepare({ title }) {
+      return {
+        title: title,
+        media: ClosedLockWithKey
+      }
     }
   }
 }

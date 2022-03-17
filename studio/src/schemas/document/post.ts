@@ -1,5 +1,5 @@
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { WritingHand } from '../../components/twemoji'
-// import { RiEdit2Line } from 'react-icons/ri'
 
 export default {
   name: 'post',
@@ -74,15 +74,6 @@ export default {
       group: 'post'
     },
     {
-      name: 'anotherDate',
-      title: 'Another date',
-      type: 'datetime',
-      options: {
-        timeStep: 15,
-        calendarTodayLabel: 'Today'
-      }
-    },
-    {
       name: 'settings',
       title: 'Post settings',
       type: 'pageSettings',
@@ -121,7 +112,7 @@ export default {
       author1: 'settings.authors.1.name',
       author2: 'settings.authors.2.name',
       author3: 'settings.authors.3.name',
-      media: 'image'
+      media: 'mainImage'
     },
     prepare: ({ title, author0, author1, author2, author3, media }) => {
       const authors = [author0, author1, author2].filter(Boolean)

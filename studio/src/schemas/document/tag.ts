@@ -1,5 +1,5 @@
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { Label } from '../../components/twemoji'
-// import { RiPriceTag3Line } from 'react-icons/ri'
 
 export default {
   name: 'tag',
@@ -41,7 +41,8 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
+        maxLength: 96,
+        isUnique: isUniqueLocale
       }
     }
   ],
@@ -50,6 +51,12 @@ export default {
     select: {
       title: 'title',
       subtitle: 'description'
+    },
+    prepare({ title }) {
+      return {
+        title: title,
+        media: Label
+      }
     }
   }
 }

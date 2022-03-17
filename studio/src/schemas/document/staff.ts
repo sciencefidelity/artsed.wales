@@ -1,5 +1,5 @@
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { WomanTeacher } from '../../components/twemoji'
-// import { RiTeamLine } from 'react-icons/ri'
 
 export default {
   name: 'staff',
@@ -70,7 +70,8 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
+        maxLength: 96,
+        isUnique: isUniqueLocale
       }
     }
   ],

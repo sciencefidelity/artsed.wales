@@ -1,6 +1,6 @@
 import moment from 'moment'
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { Date } from '../../components/twemoji'
-//import { RiCalendarEventLine } from 'react-icons/ri'
 
 export default {
   name: 'event',
@@ -91,7 +91,7 @@ export default {
       type: 'number',
       group: 'basicInfo'
     },
-    // Keywords / tags
+    // TODO: keywords / tags
     {
       name: 'mainImage',
       title: 'Main event image',
@@ -128,7 +128,8 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
+        maxLength: 96,
+        isUnique: isUniqueLocale
       },
       group: 'settings'
     },

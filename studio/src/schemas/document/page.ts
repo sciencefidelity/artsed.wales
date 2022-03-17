@@ -1,5 +1,4 @@
 import { Books } from '../../components/twemoji'
-// import { RiBook2Line } from 'react-icons/ri'
 
 export default {
   name: 'page',

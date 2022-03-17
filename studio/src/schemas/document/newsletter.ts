@@ -1,6 +1,6 @@
 import moment from 'moment'
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { Newspaper } from '../../components/twemoji'
-// import { RiNewspaperLine } from 'react-icons/ri'
 
 export default {
   name: 'newsletter',
@@ -56,6 +56,16 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'portableText'
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        isUnique: isUniqueLocale
+      }
     }
   ],
 

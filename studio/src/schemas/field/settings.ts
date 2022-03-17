@@ -1,5 +1,4 @@
 import { Gear } from '../../components/twemoji'
-// import { RiSettings2Line } from 'react-icons/ri'
 
 export default {
   name: 'settings',

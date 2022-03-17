@@ -1,5 +1,4 @@
 import { BarChart } from '../../components/twemoji'
-// import { MdOutlineAutoGraph } from 'react-icons/md'
 
 export default {
   name: 'engagement',

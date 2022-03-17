@@ -1,11 +1,18 @@
-// import { MdOutlinePalette } from 'react-icons/md'
-import { Art } from '../../components/twemoji'
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
+import {
+  Art,
+  FilmProjector,
+  Guitar,
+  PerformingArts,
+  WomanDancing
+} from '../../components/twemoji'
 
 export default {
   name: 'artform',
   title: 'Artform',
   type: 'document',
   icon: Art,
+  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   i18n: {
     base: 'en',
     languages: [
@@ -40,7 +47,8 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
+        maxLength: 96,
+        isUnique: isUniqueLocale
       }
     }
   ],
@@ -48,7 +56,17 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'description'
+    },
+    prepare({ title }) {
+      let previewIcon = Art
+      if (title === 'Dance') previewIcon = WomanDancing
+      if (title === 'Drama') previewIcon = PerformingArts
+      if (title === 'Film and Digital Media') previewIcon = FilmProjector
+      if (title === 'Music') previewIcon = Guitar
+      return {
+        title: title,
+        media: previewIcon
+      }
     }
   }
 }
