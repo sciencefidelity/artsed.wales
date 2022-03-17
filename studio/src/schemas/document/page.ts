@@ -6,6 +6,23 @@ export default {
   title: 'Page',
   type: 'document',
   icon: Books,
+  i18n: {
+    base: 'en',
+    languages: [
+      {
+        title: 'English',
+        id: 'en'
+      },
+      {
+        title: 'Welsh',
+        id: 'cy'
+      }
+    ]
+  },
+  initialValue: {
+    __i18n_lang: 'en',
+    __i18n_refs: []
+  },
   groups: [
     {
       name: 'page',
