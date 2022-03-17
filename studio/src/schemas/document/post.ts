@@ -1,3 +1,4 @@
+import { i18n } from '../../languages'
 import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { WritingHand } from '../../components/twemoji'
 
@@ -6,26 +7,14 @@ export default {
   title: 'Post',
   type: 'document',
   icon: WritingHand,
-  i18n: {
-    base: 'en',
-    languages: [
-      {
-        title: 'English',
-        id: 'en'
-      },
-      {
-        title: 'Welsh',
-        id: 'cy'
-      }
-    ]
-  },
+  i18n,
   initialValue: {
     __i18n_lang: 'en',
     __i18n_refs: []
   },
   groups: [
     {
-      name: 'post',
+      name: 'content',
       title: 'Content'
     },
     {
@@ -53,25 +42,36 @@ export default {
       options: {
         hotspot: true
       },
-      group: 'post'
+      group: 'content'
     },
     {
       name: 'imageData',
       title: 'Image data',
       type: 'imageData',
-      group: 'post'
+      group: 'content'
     },
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-      group: 'post'
+      group: 'content'
     },
     {
       name: 'body',
       title: 'Body',
       type: 'portableText',
-      group: 'post'
+      group: 'content'
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        isUnique: isUniqueLocale
+      },
+      group: 'settings'
     },
     {
       name: 'settings',

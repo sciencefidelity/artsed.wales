@@ -1,3 +1,5 @@
+import { i18n } from '../../languages'
+import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { Books } from '../../components/twemoji'
 
 export default {
@@ -5,26 +7,14 @@ export default {
   title: 'Page',
   type: 'document',
   icon: Books,
-  i18n: {
-    base: 'en',
-    languages: [
-      {
-        title: 'English',
-        id: 'en'
-      },
-      {
-        title: 'Welsh',
-        id: 'cy'
-      }
-    ]
-  },
+  i18n,
   initialValue: {
     __i18n_lang: 'en',
     __i18n_refs: []
   },
   groups: [
     {
-      name: 'page',
+      name: 'content',
       title: 'Content'
     },
     {
@@ -52,25 +42,36 @@ export default {
       options: {
         hotspot: true
       },
-      group: 'page'
+      group: 'content'
     },
     {
       name: 'imageData',
       title: 'Image data',
       type: 'imageData',
-      group: 'page'
+      group: 'content'
     },
     {
       name: 'title',
       title: 'Page title',
       type: 'string',
-      group: 'page'
+      group: 'content'
     },
     {
       name: 'body',
       title: 'Body',
       type: 'portableText',
-      group: 'page'
+      group: 'content'
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        isUnique: isUniqueLocale
+      },
+      group: 'settings'
     },
     {
       name: 'settings',

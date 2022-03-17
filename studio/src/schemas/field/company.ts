@@ -6,20 +6,6 @@ export default {
   type: 'document',
   // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   icon: PostOffice,
-  groups: [
-    {
-      name: 'meta',
-      title: 'Meta'
-    },
-    {
-      name: 'seo',
-      title: 'SEO'
-    },
-    {
-      name: 'footer',
-      title: 'Footer'
-    }
-  ],
   fields: [
     {
       name: 'title',
@@ -27,43 +13,30 @@ export default {
       type: 'localeString'
     },
     {
-      name: 'addressLine1',
-      title: 'Address Line 1',
-      type: 'localeString',
-    },
-    {
-      name: 'addressLine2',
-      title: 'Address Line 2',
-      type: 'localeString',
-    },
-    {
-      name: 'city',
-      title: 'City',
-      type: 'localeString',
-    },
-    {
-      name: 'postcode',
-      title: 'Postcode',
-      type: 'localeString',
-    },
-    {
-      name: 'telephone',
-      title: 'Telephone',
-      type: 'string',
-      group: 'footer'
+      name: 'address',
+      title: 'Address',
+      type: 'localeAddress',
     },
     {
       name: 'email',
       title: 'Email',
       type: 'localeEmail',
-      group: 'footer'
+    },
+    {
+      name: 'telephone',
+      title: 'Telephone',
+      type: 'string',
     }
   ],
   preview: {
     select: {
-      title: 'siteName.en',
-      subtitle: 'siteName.cy',
-      media: 'seoImage'
+      title: 'title.en',
+    },
+    prepare({ title }) {
+      return {
+        title: title,
+        media: PostOffice
+      }
     }
   }
 }

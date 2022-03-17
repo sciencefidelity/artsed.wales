@@ -1,18 +1,7 @@
-import { Rule } from '@sanity/types'
-import SlugWithPath from '../../components/SlugWithPath'
-
 export default {
   name: 'pageSettings',
   type: 'object',
   fields: [
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'string',
-      inputComponent: SlugWithPath,
-      validation: (Rule: Rule) =>
-        Rule.max(70).warning("Some text won't be visible.")
-    },
     {
       name: 'publishedAt',
       title: 'Publish date',

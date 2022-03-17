@@ -1,34 +1,41 @@
 import moment from 'moment'
+import { i18n } from '../../languages'
 import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { Newspaper } from '../../components/twemoji'
-
 export default {
   name: 'newsletter',
   title: 'Newsletter',
   type: 'document',
   icon: Newspaper,
-  i18n: {
-    base: 'en',
-    languages: [
-      {
-        title: 'English',
-        id: 'en'
-      },
-      {
-        title: 'Welsh',
-        id: 'cy'
-      }
-    ]
-  },
+  i18n,
   initialValue: {
     __i18n_lang: 'en',
     __i18n_refs: []
   },
+  groups: [
+    {
+      name: 'content',
+      title: 'Content'
+    },
+    {
+      name: 'meta',
+      title: 'Meta data'
+    },
+    {
+      name: 'twitter',
+      title: 'Twitter'
+    },
+    {
+      name: 'facebook',
+      title: 'Facebook'
+    }
+  ],
   fields: [
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
+      group: 'content'
     },
     {
       name: 'logo',
@@ -37,12 +44,14 @@ export default {
       options: {
         hotspot: true
       },
+      group: 'content'
     },
     {
       name: 'headline',
       title: 'Headline',
       type: 'text',
-      rows: 3
+      rows: 3,
+      group: 'content'
     },
     {
       name: 'mainImage',
@@ -51,11 +60,13 @@ export default {
       options: {
         hotspot: true
       },
+      group: 'content'
     },
     {
       name: 'body',
       title: 'Body',
-      type: 'portableText'
+      type: 'portableText',
+      group: 'content'
     },
     {
       name: 'slug',
@@ -65,7 +76,26 @@ export default {
         source: 'title',
         maxLength: 96,
         isUnique: isUniqueLocale
-      }
+      },
+      group: 'content'
+    },
+    {
+      name: 'meta',
+      title: 'Meta data',
+      type: 'metaData',
+      group: 'meta'
+    },
+    {
+      name: 'twitterCard',
+      title: 'Twitter Card',
+      type: 'twitterCard',
+      group: 'twitter'
+    },
+    {
+      name: 'facebookCard',
+      title: 'Facebook Card',
+      type: 'facebookCard',
+      group: 'facebook'
     }
   ],
 

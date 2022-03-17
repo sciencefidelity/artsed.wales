@@ -1,3 +1,4 @@
+import { i18n } from '../../languages'
 import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { WomanTeacher } from '../../components/twemoji'
 
@@ -6,28 +7,35 @@ export default {
   title: 'Staff',
   type: 'document',
   icon: WomanTeacher,
-  i18n: {
-    base: 'en',
-    languages: [
-      {
-        title: 'English',
-        id: 'en'
-      },
-      {
-        title: 'Welsh',
-        id: 'cy'
-      }
-    ]
-  },
+  i18n,
   initialValue: {
     __i18n_lang: 'en',
     __i18n_refs: []
   },
+  groups: [
+    {
+      name: 'content',
+      title: 'Content'
+    },
+    {
+      name: 'meta',
+      title: 'Meta data'
+    },
+    {
+      name: 'twitter',
+      title: 'Twitter'
+    },
+    {
+      name: 'facebook',
+      title: 'Facebook'
+    }
+  ],
   fields: [
     {
       name: 'title',
       title: 'Name',
-      type: 'string'
+      type: 'string',
+      group: 'content'
     },
     {
       name: 'role',
@@ -44,17 +52,20 @@ export default {
           { title: 'Trustee', value: 'trustee' }
         ]
       },
-      validation: Rule => Rule.required()
+      validation: Rule => Rule.required(),
+      group: 'content'
     },
     {
       name: 'job',
       title: 'Job',
-      type: 'string'
+      type: 'string',
+      group: 'content'
     },
     {
       name: 'bio',
       title: 'Bio',
-      type: 'text'
+      type: 'text',
+      group: 'content'
     },
     {
       name: 'avatar',
@@ -62,7 +73,8 @@ export default {
       type: 'image',
       options: {
         hotspot: true
-      }
+      },
+      group: 'content'
     },
     {
       name: 'slug',
@@ -72,7 +84,26 @@ export default {
         source: 'title',
         maxLength: 96,
         isUnique: isUniqueLocale
-      }
+      },
+      group: 'content'
+    },
+    {
+      name: 'meta',
+      title: 'Meta data',
+      type: 'metaData',
+      group: 'meta'
+    },
+    {
+      name: 'twitterCard',
+      title: 'Twitter Card',
+      type: 'twitterCard',
+      group: 'twitter'
+    },
+    {
+      name: 'facebookCard',
+      title: 'Facebook Card',
+      type: 'facebookCard',
+      group: 'facebook'
     }
   ],
 

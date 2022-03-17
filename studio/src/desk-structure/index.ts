@@ -9,6 +9,7 @@ import {
   CardFileBox,
   Clipboard,
   ClosedLockWithKey,
+  Compass,
   Date,
   FilmProjector,
   Gear,
@@ -176,13 +177,17 @@ const items = [
             .icon(Gear)
             .child(S.document().schemaType('settings').documentId('settings')),
           S.listItem()
+            .title('Navigation')
+            .icon(Compass)
+            .child(S.document().schemaType('navigation').documentId('navigation')),
+          S.listItem()
             .title('Company')
             .icon(PostOffice)
             .child(S.document().schemaType('company').documentId('company')),
           S.listItem()
             .title('Label Group')
             .icon(CardFileBox)
-            .child(S.document().schemaType('labelGroup').documentId('labelGroup')),
+            .child(S.document().schemaType('labelGroup').documentId('labelGroup'))
         ])
     ),
   S.divider(),
@@ -196,6 +201,7 @@ const items = [
       'event',
       'keystage',
       'labelGroup',
+      'navigation',
       'newsletter',
       'page',
       'photography',

@@ -1,4 +1,5 @@
 import moment from 'moment'
+import { i18n } from '../../languages'
 import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { Date } from '../../components/twemoji'
 
@@ -7,19 +8,7 @@ export default {
   title: 'Event',
   type: 'document',
   icon: Date,
-  i18n: {
-    base: 'en',
-    languages: [
-      {
-        title: 'English',
-        id: 'en'
-      },
-      {
-        title: 'Welsh',
-        id: 'cy'
-      }
-    ]
-  },
+  i18n,
   initialValue: {
     __i18n_lang: 'en',
     __i18n_refs: []

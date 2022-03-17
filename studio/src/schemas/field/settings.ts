@@ -8,141 +8,78 @@ export default {
   icon: Gear,
   groups: [
     {
+      name: 'site',
+      title: 'Site'
+    },
+    {
       name: 'meta',
-      title: 'Meta'
+      title: 'Meta data'
     },
     {
-      name: 'seo',
-      title: 'SEO'
+      name: 'twitter',
+      title: 'Twitter'
     },
     {
-      name: 'footer',
-      title: 'Footer'
+      name: 'facebook',
+      title: 'Facebook'
+    },
+    {
+      name: 'social',
+      title: 'Social'
     }
   ],
   fields: [
     {
       name: 'siteName',
-      title: 'Site Name',
+      title: 'Site name',
       type: 'localeString',
-      group: 'meta'
-    },
-    {
-      name: 'siteURL',
-      title: 'Site URL',
-      type: 'localeURL',
-      group: 'meta'
+      description: 'The name of your site',
+      group: 'site'
     },
     {
       name: 'siteDescription',
-      title: 'Site Description',
+      title: 'Site description',
       type: 'localeString',
+      description: 'Used in your theme, meta data and search results',
+      group: 'site'
+    },
+    {
+      name: 'url',
+      title: 'Site URL',
+      type: 'localeURL',
+      group: 'site'
+    },
+    {
+      name: 'meta',
+      title: 'Site meta',
+      type: 'localeMeta',
       group: 'meta'
     },
     {
-      name: 'keywords',
-      title: 'Keywords',
-      type: 'localeString',
-      description: 'A list of keywords seperated by commas.',
-      group: 'meta'
+      name: 'twitterCard',
+      title: 'Twitter Card',
+      type: 'localeTwitter',
+      group: 'twitter'
     },
     {
-      name: 'seoTitle',
-      title: 'SEO title',
-      type: 'localeString',
-      description:
-        'Displayed on Facebook and Twitter shares (max 60 characters).',
-      group: 'seo'
+      name: 'facebookCard',
+      title: 'Facebook Card',
+      type: 'localeFacebook',
+      group: 'facebook'
     },
     {
-      name: 'seoDescription',
-      title: 'SEO description',
-      type: 'localeString',
-      description:
-        'Displayed on Facebook and Twitter shares (max 65 characters).',
-      group: 'seo'
-    },
-    {
-      name: 'twitterHandle',
-      title: 'Twitter Handle',
-      type: 'string',
-      group: 'seo'
-    },
-    {
-      name: 'seoImage',
-      title: 'SEO Image',
-      type: 'image',
-      description: 'Ideal size 1200 x 630px.',
-      options: {
-        hotspot: true
-      },
-      group: 'seo'
-    },
-    {
-      name: 'addressLine1',
-      title: 'Address Line 1',
-      type: 'localeString',
-      group: 'footer'
-    },
-    {
-      name: 'addressLine2',
-      title: 'Address Line 2',
-      type: 'localeString',
-      group: 'footer'
-    },
-    {
-      name: 'telephone',
-      title: 'Telephone',
-      type: 'string',
-      group: 'footer'
-    },
-    {
-      name: 'email',
-      title: 'Email',
-      type: 'localeEmail',
-      group: 'footer'
-    },
-    {
-      name: 'signUp',
-      title: 'Sign Up Heading',
-      type: 'localeString',
-      group: 'footer'
-    },
-    {
-      name: 'signUpText',
-      title: 'Sign Up Text',
-      type: 'localeString',
-      group: 'footer'
-    },
-    {
-      name: 'signUpPlaceholder',
-      title: 'Sign Up Placeholder',
-      description: 'One line only (ie Email address...)',
-      type: 'localeString',
-      group: 'footer'
-    },
-    // {
-    //   name: 'socialLinks',
-    //   title: 'Social Links',
-    //   type: 'array',
-    //   of: [{ type: 'reference', to: { type: 'social' } }],
-    //   sortable: true,
-    //   group: 'footer'
-    // },
-    {
-      name: 'engagement',
-      title: 'Engagement',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'engagement' } }],
-      sortable: true,
-      group: 'footer'
+      name: 'social',
+      title: 'Social links',
+      type: 'social',
+      description: 'URLs of your social profiles',
+      group: 'social'
     }
   ],
   preview: {
     select: {
-      title: 'siteName.en',
-      subtitle: 'siteName.cy',
-      media: 'seoImage'
+      title: 'siteName',
+      subtitle: 'siteDescription',
+      media: 'twitterCard.image'
     }
   }
 }
