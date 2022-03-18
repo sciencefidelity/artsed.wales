@@ -1,0 +1,34 @@
+---
+const { locale, en, cy } = Astro.props
+---
+
+<table
+  class="preheader"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+>
+  <tr class="preheader__row">
+    <td class="preheader__data">
+      <a href="#" set:html={locale.labels.browser} />
+    </td>
+  </tr>
+</table>
+
+<style lang="scss">
+  .preheader {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    &__row {
+      font-size: 12px;
+    }
+    &__data {
+      width: 50%;
+    }
+    a {
+      color: var(--darkgray);
+      text-decoration: underline;
+    }
+  }
+</style>

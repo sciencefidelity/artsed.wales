@@ -1,0 +1,100 @@
+---
+const { locale, en, cy } = Astro.props
+const year = new Date().getFullYear()
+---
+
+<table
+  class="footer"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+>
+  <tr class="footer__row--social">
+    <td class="footer__data--social">
+      <a href="#">
+        <img
+          src="/color-facebook-96.png"
+          class="image__social"
+          alt="Facebook"
+          width="48"
+          height="48"
+        >
+      </a>
+      <a href="#">
+        <img
+          src="/color-twitter-96.png"
+          class="image__social"
+          alt="Twitter"
+          width="48"
+          height="48"
+        >
+      </a>
+      <a href="#">
+        <img
+          src="/color-instagram-96.png"
+          class="image__social"
+          alt="Instagram"
+          width="48"
+          height="48"
+        >
+      </a>
+      <a href="#">
+        <img
+          src="/color-link-96.png"
+          class="image__social"
+          alt="Our website"
+          width="48"
+          height="48"
+        >
+      </a>
+    </td>
+  </tr>
+  <tr class="footer__row">
+    <td class="footer__data">
+      <p>&copy; {year} <span set:html={locale.company.title} /></p>
+      <p>
+        <span set:html={locale.company.address.line1} /> &bull;
+        <span set:html={locale.company.address.line2} /> &bull;
+        <span set:html={locale.company.address.city} /> &bull;
+        <span set:html={locale.company.address.postcode} />
+      </p>
+      <p>
+        <span set:html={locale.labels.change} /><br />
+        <a href="#" set:html={locale.labels.unsubscribe} />.
+      </p>
+    </td>
+  </tr>
+</table>
+
+<style lang="scss">
+  .footer {
+    padding: 20px 10px 40px 10px;
+    width: 100%;
+    text-align: center;
+    color: var(--darkgray);
+    p {
+      font-weight: 400;
+    }
+    a {
+      color: var(--darkgray);
+      text-decoration: underline;
+    }
+    &__data {
+      text-align: center;
+      width: 100%;
+      font-size: 13px;
+      &--social {
+        padding: 20px;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .image__social {
+    width: 48px;
+    height: 48px;
+    margin: 5px;
+  }
+</style>

@@ -1,0 +1,59 @@
+---
+import { urlFor } from "../lib/utils"
+const { locale, en, cy } = Astro.props
+---
+
+<table
+  class="headline"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+>
+  <tr class="headline__row">
+    <td class="headline__data">
+      <h1 set:html={locale.newsletter.headline} />
+    </td>
+  </tr>
+  <tr class="headline__row--image">
+    <th class="headline__data--image">
+      <a href="#">
+        <img
+          src={urlFor(locale.newsletter.mainImage)
+            .auto("format")
+            .width(600)
+            .height(400)
+            .quality(80)
+            .url()}
+          class="image__fullwidth"
+          alt="Expressive arts for wellbeing (Key Stage 2)"
+          width="600"
+          height="400"
+        >
+      </a>
+    </th>
+  </tr>
+</table>
+
+<style lang="scss">
+  .headline {
+    background-color: var(--white);
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    &__data {
+      margin: 0 0 40px 0;
+      display: block;
+      padding: 20px;
+    }
+    h1 {
+      @media only screen and (max-width: 480px) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .image__fullwidth {
+    width: 100%;
+    height: auto;
+  }
+</style>

@@ -1,0 +1,89 @@
+---
+import format from "date-fns/format"
+// import { cy } from 'date-fns/locale'
+import { urlFor } from "../lib/utils"
+const { locale, en, cy } = Astro.props
+---
+
+<table
+  class="events"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+>
+  <tr class="events__row">
+    <td class="events__data">
+      {locale.events.map(event => (
+        <table
+          class="event"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+        >
+          <tr class="event__row">
+            <th class="event__head">
+              <a href="#">
+                <img
+                  src={urlFor(event.mainImage)
+                    .auto("format")
+                    .width(600)
+                    .height(400)
+                    .quality(80)
+                    .url()}
+                  class="image__inset"
+                  alt="Expressive arts for wellbeing (Key Stage 2)"
+                  width="300"
+                  height="200"
+                >
+              </a>
+              <time datetime={
+                format(new Date(event.dateStart), "yyyy-MM-dd")
+              }>
+                {format(new Date(event.dateStart), "d MMMM yyyy, k:mm")}
+              </time>
+              <h2 set:html={event.title} />
+              <p set:html={event.summary} />
+              <p>
+                <a
+                  href={event.britelink}
+                  set:html={locale.labels.register}
+                />
+              </p>
+            </th>
+          </tr>
+        </table>
+      ))}
+    </td>
+  </tr>
+</table>
+
+<style lang="scss">
+  .events {
+    padding: 40px 0;
+    background-color: var(--white);
+    border-bottom: 3px solid var(--border);
+  }
+
+  .event {
+    text-align: left;
+    display: block;
+    width: 50%;
+    float: left;
+    &__head,
+    &__data {
+      padding: 20px;
+    }
+    a {
+      font-weight: 400;
+    }
+    @media only screen and (max-width: 480px) {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  .image__inset {
+    width: 100%;
+    height: auto;
+  }
+</style>
