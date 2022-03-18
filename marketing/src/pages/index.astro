@@ -1,26 +1,24 @@
 ---
-import groq from 'groq'
+import format from "date-fns/format"
+// import { cy as cym } from 'date-fns/locale'
+// import { toHTML } from "@portabletext/to-html"
+import { /* portableTextComponents, */ urlFor } from "../lib/utils"
 import sanityClient from "../lib/sanityClient"
-const year = new Date().getFullYear()
+import { newsletterQuery } from "../lib/queries"
+import PortableText from "../components/PortableText"
+import { components } from "../components/PortableTextComponents"
 
-const newsletterQuery = groq`{
-  "newsletter": {
-    "en": *[_type == "newsletter" && __i18n_lang != "cy"][0]{
-      body, headline, logo, mainImage, title
-    },
-    "cy": *[_type == "newsletter" && __i18n_lang == "cy"][0]{
-      body, headline, logo, mainImage, title
-    }
-  }
-}`
 const response = await sanityClient.fetch(newsletterQuery)
 const data = response
+const { cy, en } = data
+const year = new Date().getFullYear()
+const locale = en
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{data.newsletter.en.title}</title>
+    <title set:html={locale.newsletter.title} />
   </head>
   <body>
     <table
@@ -33,6 +31,7 @@ const data = response
         <td
           valign="top"
         >
+          <!-- preheader -->
           <table
             class="preheader"
             border="0"
@@ -41,13 +40,14 @@ const data = response
           >
             <tr class="preheader__row">
               <td class="preheader__data">
-                <a href="#">View this email in your browser</a>
+                <a href="#" set:html={locale.labels.browser} />
               </td>
               <!-- <td class="preheader__data">
                 <a href="#">Gweld yr e-bost hwn yn eich porwr</a>
               </td> -->
             </tr>
           </table>
+          <!-- header -->
           <table
             class="header"
             border="0"
@@ -56,9 +56,9 @@ const data = response
           >
             <tr class="header__row--brand">
               <td class="header__data--brand">
-                <a href="#">
+                <a href={locale.settings.url}>
                   <img
-                    src="/naen-logo.png"
+                    src={locale.newsletter.logo.url}
                     class="brand"
                     alt="National Arts and Education Network logo"
                     width="150"
@@ -68,12 +68,13 @@ const data = response
               </td>
             </tr>
             <tr class="header__row">
-              <td class="header__data">National Arts & Education Network</td>
+              <td class="header__data" set:html={locale.company.title} />
             </tr>
             <tr class="header__row">
               <td class="divider"></td>
             </tr>
           </table>
+          <!-- headline -->
           <table
             class="headline"
             border="0"
@@ -82,14 +83,19 @@ const data = response
           >
             <tr class="headline__row">
               <td class="headline__data">
-                <h1>{data.newsletter.en.headline}</h1>
+                <h1 set:html={locale.newsletter.headline} />
               </td>
             </tr>
             <tr class="headline__row--image">
               <th class="headline__data--image">
                 <a href="#">
                   <img
-                    src="/wellbeing2.jpg"
+                    src={urlFor(locale.newsletter.mainImage)
+                      .auto("format")
+                      .width(600)
+                      .height(400)
+                      .quality(80)
+                      .url()}
                     class="image__fullwidth"
                     alt="Expressive arts for wellbeing (Key Stage 2)"
                     width="600"
@@ -99,6 +105,7 @@ const data = response
               </th>
             </tr>
           </table>
+          <!-- body -->
           <table
             class="body"
             border="0"
@@ -106,20 +113,25 @@ const data = response
             cellspacing="0"
           >
             <tr class="body__row">
+              <!-- <td
+                class="body__data"
+                set:html={toHTML(
+                  en.newsletter.body,
+                  {components: portableTextComponents}
+                )}
+              /> -->
               <td class="body__data">
-                <p>
-                  The newly formed <a href="https://artsed.wales">National Arts & Education Network</a> is excited to launch a new programme of online Expressive Arts training for teachers, artists and cultural educators to support the education and arts sector in facilitating the new Curriculum for Wales. With support from the Welsh Local Government Association and Arts Council of Wales, the programme aims to develop skills, build confidence and generate ideas for teachers across Wales to design engaging expressive arts projects that support the wellbeing of pupils and staff alike.
-                </p><p>
-                  With the pressures and impacts of the Covid-19 Pandemic continuing, the Network is focussed on supporting the enjoyment of learning, teaching and learning outdoors, using local sites and facilities for inspiration and creative strategies that positively impact on improved wellbeing, within the Expressive Arts Area of Learning and Experience.
-                </p><p>
-                  Training sessions will take place online and towards the end of the school day to help teachers join and schools manage cover arrangements.
-                </p>
+                <PortableText
+                  value={locale.newsletter.body}
+                  components={components}
+                  />
               </td>
             </tr>
             <tr class="header__row">
               <td class="divider"></td>
             </tr>
           </table>
+          <!-- events -->
           <table
             class="events"
             border="0"
@@ -128,125 +140,50 @@ const data = response
           >
             <tr class="events__row">
               <td class="events__data">
-                <table
-                  class="event"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr class="event__row">
-                    <th class="event__head">
-                      <a href="#">
-                        <img
-                          src="/wellbeing2.jpg"
-                          class="image__inset"
-                          alt="Expressive arts for wellbeing (Key Stage 2)"
-                          width="300"
-                          height="200"
-                        >
-                      </a>
-                      <time datetime="2022-16-03">
-                        16 March 2022 14:00
-                      </time>
-                      <h2>Expressive Arts for Wellbeing</h2>
-                      <h3>Key Stage 2</h3>
-                      <p>
-                        Yoga, mindfulness and music to support wellbeing of the whole class.
-                      </p>
-                      <p><a href="#">Register »</a></p>
-                    </th>
-                  </tr>
-                </table>
-                <table
-                  class="event"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr class="event__row">
-                    <td class="event__data">
-                      <a href="#">
-                        <img
-                          src="/wellbeing1.jpg"
-                          class="image__inset"
-                          alt="Expressive arts for wellbeing (Key Stage 1)"
-                          width="300"
-                          height="200"
-                        >
-                      </a>
-                      <time datetime="2022-16-03">
-                        16 March 2022 14:00
-                      </time>
-                      <h2>Expressive Arts for Wellbeing</h2>
-                      <h3>Key Stage 2</h3>
-                      <p>
-                        Yoga, mindfulness and music to support wellbeing of the whole class.
-                      </p>
-                      <p><a href="#">Register »</a></p>
-                    </td>
-                  </tr>
-                </table>
-                <table
-                  class="event"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr class="event__row">
-                    <th class="event__head">
-                      <a href="#">
-                        <img
-                          src="/wellbeing2.jpg"
-                          class="image__inset"
-                          alt="Expressive arts for wellbeing (Key Stage 2)"
-                          width="300"
-                          height="200"
-                        >
-                      </a>
-                      <time datetime="2022-16-03">
-                        16 March 2022 14:00
-                      </time>
-                      <h2>Expressive Arts for Wellbeing</h2>
-                      <h3>Key Stage 2</h3>
-                      <p>
-                        Yoga, mindfulness and music to support wellbeing of the whole class.
-                      </p>
-                      <p><a href="#">Register »</a></p>
-                    </th>
-                  </tr>
-                </table>
-                <table
-                  class="event"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr class="event__row">
-                    <td class="event__data">
-                      <a href="#">
-                        <img
-                          src="/wellbeing1.jpg"
-                          class="image__inset"
-                          alt="Expressive arts for wellbeing (Key Stage 1)"
-                          width="300"
-                          height="200"
-                        >
-                      </a>
-                      <time datetime="2022-16-03">
-                        16 March 2022 14:00
-                      </time>
-                      <h2>Expressive Arts for Wellbeing</h2>
-                      <h3>Key Stage 2</h3>
-                      <p>
-                        Yoga, mindfulness and music to support wellbeing of the whole class.
-                      </p>
-                      <p><a href="#">Register »</a></p>
-                    </td>
-                  </tr>
-                </table>
+                {locale.events.map(event => (
+                  <table
+                    class="event"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                  >
+                    <tr class="event__row">
+                      <th class="event__head">
+                        <a href="#">
+                          <img
+                            src={urlFor(event.mainImage)
+                              .auto("format")
+                              .width(600)
+                              .height(400)
+                              .quality(80)
+                              .url()}
+                            class="image__inset"
+                            alt="Expressive arts for wellbeing (Key Stage 2)"
+                            width="300"
+                            height="200"
+                          >
+                        </a>
+                        <time datetime={
+                          format(new Date(event.dateStart), "yyyy-MM-dd")
+                        }>
+                          {format(new Date(event.dateStart), "d MMMM yyyy, k:mm")}
+                        </time>
+                        <h2 set:html={event.title} />
+                        <p set:html={event.summary} />
+                        <p>
+                          <a
+                            href={event.britelink}
+                            set:html={locale.labels.register}
+                          />
+                        </p>
+                      </th>
+                    </tr>
+                  </table>
+                ))}
               </td>
             </tr>
           </table>
+          <!-- footer -->
           <table
             class="footer"
             border="0"
@@ -295,14 +232,16 @@ const data = response
             </tr>
             <tr class="footer__row">
               <td class="footer__data">
-                <p>&copy; {year} National Arts &amp; Education Network</p>
+                <p>&copy; {year} <span set:html={locale.company.title} /></p>
                 <p>
-                  Blackwood Miners Institute &bull; High Street &bull; Blackwood &bull; NP12&nbsp;1BB
+                  <span set:html={locale.company.address.line1} /> &bull;
+                  <span set:html={locale.company.address.line2} /> &bull;
+                  <span set:html={locale.company.address.city} /> &bull;
+                  <span set:html={locale.company.address.postcode} />
                 </p>
                 <p>
-                  Want to change how you receive these emails?<br />You can
-<!--                   <a href="#">update your preferences</a> or -->
-                  <a href="#">unsubscribe from this list</a>.
+                  <span set:html={locale.labels.change} /><br />
+                  <a href="#" set:html={locale.labels.unsubscribe} />.
                 </p>
               </td>
             </tr>
@@ -313,7 +252,7 @@ const data = response
   </body>
 </html>
 
-<style lang="scss">
+<style global>
 :root {
   --white: hsl(0, 0%, 100%);
   --lightgray: hsl(0, 0%, 98%);
@@ -353,7 +292,6 @@ p {
   font-weight: 200;
   padding: 5px 0;
   line-height: 1.45;
-  // font-family: var(--serif);
 }
 
 h1 {
@@ -389,7 +327,9 @@ a {
     text-decoration: underline;
   }
 }
+</style>
 
+<style lang="scss">
 .image__fullwidth {
   width: 100%;
   height: auto;
@@ -476,6 +416,10 @@ a {
   &__row {
     display: block;
     padding: 50px 20px;
+  }
+  &__data p {
+    font-family: var(--sans);
+    font-weight: 200;
   }
 }
 
