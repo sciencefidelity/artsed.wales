@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom", "DOM.Iterable", "esnext"],
+    "jsx": "react",
+    "allowJs": false,
+    "checkJs": false,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"],
+      "components": ["./src/components"],
+      "lib": ["./src/lib"],
+      "images": ["./src/images"],
+      "pages": ["./src/pages"],
+      "styles": ["./src/styles"]
+    },
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": false,
+    "types": [
+      "jest",
+      "node",
+      "reach__router",
+      "react",
+      "react-dom",
+      "testing-library__jest-dom"
+    ],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "./src",
+    "./types",
+    "./__mocks__",
+    "./babel.config.ts",
+    "./jest.config.ts",
+    "./jest.setup.ts"
+  ],
+  "exclude": ["node_modules"]
+}
