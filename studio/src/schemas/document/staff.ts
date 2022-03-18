@@ -38,12 +38,23 @@ export default {
       group: 'content'
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        isUnique: isUniqueLocale
+      },
+      group: 'content'
+    },
+    {
       name: 'role',
       title: 'Role',
       type: 'array',
       of: [{ type: 'string' }],
       options: {
-        layout: 'tags',
+        layout: 'grid',
         list: [
           { title: 'Author', value: 'author' },
           { title: 'Chair', value: 'chair' },
@@ -73,17 +84,6 @@ export default {
       type: 'image',
       options: {
         hotspot: true
-      },
-      group: 'content'
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-        isUnique: isUniqueLocale
       },
       group: 'content'
     },

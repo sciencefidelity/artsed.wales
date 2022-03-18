@@ -87,10 +87,18 @@ export default {
     },
     prepare({ title }) {
       let previewIcon = Art
-      if (title === 'Dance') previewIcon = WomanDancing
-      if (title === 'Drama') previewIcon = PerformingArts
-      if (title === 'Film and Digital Media') previewIcon = FilmProjector
-      if (title === 'Music') previewIcon = Guitar
+      if (title.includes('Dance') || title.includes('Dawns')) {
+        previewIcon = WomanDancing
+      }
+      if (title.includes('Drama')) {
+        previewIcon = PerformingArts
+      }
+      if (title.includes('Film') || title.includes('Ffilm')) {
+        previewIcon = FilmProjector
+      }
+      if (title.includes('Music') || title.includes('Cerddoriaeth')){
+        previewIcon = Guitar
+      }
       return {
         title: title,
         media: previewIcon

@@ -15,7 +15,20 @@ export default {
       name: 'tags',
       title: 'Tags',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'tag' } }]
+      of: [
+        {
+          type: 'reference',
+          to: { type: 'tag' },
+          options: {
+            filter: ({document}) => {
+              const { __i18n_lang } = document
+              return {
+                filter: `__i18n_lang == "${__i18n_lang}"`
+              }
+            }
+          }
+        }
+      ]
     },
     {
       name: 'excerpt',
@@ -27,7 +40,19 @@ export default {
       name: 'authors',
       title: 'Authors',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'staff' } }]
+      of: [
+        { type: 'reference',
+          to: { type: 'staff' },
+          options: {
+            filter: ({document}) => {
+              const { __i18n_lang } = document
+              return {
+                filter: `__i18n_lang == "${__i18n_lang}" && "author" in role`
+              }
+            }
+          }
+        }
+      ]
     }
   ],
   options: {

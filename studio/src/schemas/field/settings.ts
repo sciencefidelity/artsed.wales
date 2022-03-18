@@ -77,8 +77,8 @@ export default {
   ],
   preview: {
     select: {
-      title: 'siteName',
-      subtitle: 'siteDescription',
+      title: 'siteName.en',
+      subtitle: 'siteDescription.en',
       media: 'twitterCard.image'
     }
   }

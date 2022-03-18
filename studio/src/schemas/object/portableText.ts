@@ -14,6 +14,7 @@ export default {
     {
       title: 'Block',
       type: 'block',
+      options: { spellCheck: true },
       styles: [
         { title: 'Normal', value: 'normal' },
         { title: 'H1', value: 'h1' },
@@ -54,7 +55,15 @@ export default {
                   { type: 'staff' },
                   { type: 'tag' },
                   { type: 'video' }
-                ]
+                ],
+                options: {
+                  filter: ({document}) => {
+                    const { __i18n_lang } = document
+                    return {
+                      filter: `__i18n_lang == '${__i18n_lang}'`
+                    }
+                  }
+                }
               }
             ],
             blockEditor: {

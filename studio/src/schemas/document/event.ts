@@ -132,21 +132,60 @@ export default {
       name: 'facilitators',
       title: 'Facilitators',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'staff' } }],
+      of: [
+        {
+          type: 'reference',
+          to: { type: 'staff' },
+          options: {
+            filter: ({document}) => {
+              const { __i18n_lang } = document
+              return {
+                filter: `__i18n_lang == "${__i18n_lang}" && "facilitator" in role`
+              }
+            }
+          }
+        }
+      ],
       group: 'settings'
     },
     {
       name: 'artform',
       title: 'Artforms',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'artform' } }],
+      of: [
+        {
+          type: 'reference',
+          to: { type: 'artform' },
+          options: {
+            filter: ({document}) => {
+              const { __i18n_lang } = document
+              return {
+                filter: `__i18n_lang == '${__i18n_lang}'`
+              }
+            }
+          }
+        }
+      ],
       group: 'settings'
     },
     {
       name: 'keystage',
       title: 'Key Stage',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'keystage' } }],
+      of: [
+        {
+          type: 'reference',
+          to: { type: 'keystage' },
+          options: {
+            filter: ({document}) => {
+              const { __i18n_lang } = document
+              return {
+                filter: `__i18n_lang == '${__i18n_lang}'`
+              }
+            }
+          }
+        }
+      ],
       group: 'settings'
     },
     {
