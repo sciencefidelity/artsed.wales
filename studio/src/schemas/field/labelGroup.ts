@@ -31,26 +31,30 @@ export default {
           ],
           preview: {
             select: {
-              text: 'text',
-              subtitle: 'key'
+              title: 'key',
+              subtitle: 'text.en'
             },
-            prepare({text, subtitle}) {
-              const title =
-                text && Object.keys(text).filter((key) => key !== '_type').length
-                  ? Object.keys(text)
-                      .filter((key) => key !== '_type')
-                      .map((lang) => text[lang])
-                      .join(', ')
-                  : `[No translated text strings]`
-
+            prepare({ subtitle, title }) {
               return {
-                title,
-                subtitle
+                title: title,
+                subtitle: subtitle,
+                media: CardFileBox
               }
             }
           }
         }
       ]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title'
+    },
+    prepare() {
+      return {
+        title: 'Label groups',
+        media: CardFileBox
+      }
+    }
+  }
 }
