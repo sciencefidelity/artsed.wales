@@ -1,6 +1,9 @@
 export default {
   name: 'pageSettings',
   type: 'object',
+  // initialValue: {
+  //   publishedAt: new Date().toISOString()
+  // },
   fields: [
     {
       name: 'publishedAt',
@@ -9,7 +12,8 @@ export default {
       options: {
         timeStep: 15,
         calendarTodayLabel: 'Today'
-      }
+      },
+      initialValue: (new Date()).toISOString()
     },
     {
       name: 'tags',

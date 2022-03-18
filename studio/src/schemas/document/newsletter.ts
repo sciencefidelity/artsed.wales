@@ -10,7 +10,8 @@ export default {
   i18n,
   initialValue: {
     __i18n_lang: 'en',
-    __i18n_refs: []
+    __i18n_refs: [],
+    publishedAt: new Date().toISOString()
   },
   groups: [
     {
