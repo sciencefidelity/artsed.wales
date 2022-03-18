@@ -16,7 +16,7 @@ const Events: FC<Props> = ({en}) => (
   >
     <tr className="events__row">
       <td className="events__data">
-        {en.events.map(event => (
+        {en.newsletter.events.map(event => (
           <table
             className="event"
             // border="0"
@@ -26,7 +26,7 @@ const Events: FC<Props> = ({en}) => (
           >
             <tr className="event__row">
               <th className="event__head">
-                <a href="#">
+                <a href={event.britelink}>
                   <img
                     src={urlFor(event.mainImage)
                       .auto("format")

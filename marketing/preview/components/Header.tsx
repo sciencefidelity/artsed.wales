@@ -15,7 +15,7 @@ export const Header: FC<Props> = ({en}) => (
       <td className="header__data--brand">
         <a href={en.settings.url}>
           <img
-            src={en.newsletter.logo.url}
+            src={en.newsletter.logo}
             className="brand"
             alt="National Arts and Education Network logo"
             width="150"

@@ -5,13 +5,21 @@ export const newsletterQuery = groq`{
     "newsletter": *[
       _type == "newsletter" && __i18n_lang == "cy"
     ] | order(_createdAt desc)[0]{
-      __i18n_lang, body, headline, logo, mainImage, title
+      _type,
+      "accent": accent.hex,
+      body,
+      "background": background.hex,
+      events[]->{
+        _id, _type, dateStart, mainImage, title, summary, britelink
+      },
+      headline, "logo": logo.asset->.url, mainImage, "slug": slug.current,
+      social[]{
+        _key, "icon": icon.asset->.url, name, url
+      },
+      title
     },
     "company": *[_type == "company"][0]{
       "address": address.cy, "title": title.cy
-    },
-    "events": *[_type == "event" && __i18n_lang == "cy"] | order(dateStart){
-      _id, _type, dateStart, mainImage, title, summary, britelink
     },
     "labels": {
       "browser": *[_type == "labelGroup"][0]
@@ -31,13 +39,21 @@ export const newsletterQuery = groq`{
     "newsletter": *[
       _type == "newsletter" && __i18n_lang == "en"
     ] | order(_createdAt desc)[0]{
-      __i18n_lang, body, headline, "logo": logo.asset->{url}, mainImage, title
+      _type,
+      "accent": accent.hex,
+      body,
+      "background": background.hex,
+      events[]->{
+        _id, _type, dateStart, mainImage, title, summary, britelink
+      },
+      headline, "logo": logo.asset->.url, mainImage, "slug": slug.current,
+      social[]{
+        _key, "icon": icon.asset->.url, name, url
+      },
+      title
     },
     "company": *[_type == "company"][0]{
       "address": address.en, "title": title.en
-    },
-    "events": *[_type == "event" && __i18n_lang == "en"] | order(dateStart){
-      _id, _type, dateStart, mainImage, title, summary, britelink
     },
     "labels": {
       "browser": *[_type == "labelGroup"][0]
