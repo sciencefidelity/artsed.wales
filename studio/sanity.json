@@ -9,7 +9,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/document-internationalization"
+    "@sanity/document-internationalization",
+    "@sanity/color-input"
   ],
   "env": {
     "development": {

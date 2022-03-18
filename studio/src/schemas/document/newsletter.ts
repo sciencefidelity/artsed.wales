@@ -19,6 +19,10 @@ export default {
       title: 'Content'
     },
     {
+      name: 'design',
+      title: 'Design'
+    },
+    {
       name: 'settings',
       title: 'Settings'
     },
@@ -72,6 +76,77 @@ export default {
       title: 'Body',
       type: 'portableText',
       group: 'content'
+    },
+    {
+      name: 'events',
+      title: 'Events',
+      type: 'array',
+      of: [
+        { type: 'reference',
+          to: { type: 'event' },
+          options: {
+            filter: ({document}) => {
+              const { __i18n_lang } = document
+              return {
+                filter: `__i18n_lang == "${__i18n_lang}"`
+              }
+            }
+          }
+        }
+      ],
+      group: 'design'
+    },
+    {
+      name: 'social',
+      title: 'Social links',
+      type: 'array',
+      of: [
+        {
+          name: 'socialLink',
+          title: 'Social link',
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              title: 'Social network',
+              type: 'string',
+              options: {
+                list: [
+                  'facebook',
+                  'instagram',
+                  'linkedin',
+                  'pinterest',
+                  'twitter',
+                  'youtube',
+                  'website'
+                ]
+              }
+            },
+            {
+              name: 'url',
+              title: 'URL',
+              type: 'url'
+            },
+            {
+              name: 'icon',
+              title: 'Icon',
+              type: 'file'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'accent',
+      title: 'Accent color',
+      type: 'color',
+      group: 'design'
+    },
+    {
+      name: 'background',
+      title: 'Background color',
+      type: 'color',
+      group: 'design'
     },
     {
       name: 'slug',
