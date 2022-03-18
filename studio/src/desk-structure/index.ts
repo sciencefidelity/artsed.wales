@@ -98,29 +98,26 @@ const items = [
       .title('Engagement')
       .items([
         S.listItem()
-        .title('Engagement')
-        .icon(BarChart)
-        .child(
-          S.documentTypeList('engagement')
-            .title('Engagement')
-            .filter('_type == "engagement"')
-        ),
+          .title('Engagement')
+          .icon(BarChart)
+          .child(S.document()
+            .schemaType('engagement')
+            .documentId('engagement')
+          ),
         S.listItem()
-        .title('Photography')
-        .icon(CameraFlash)
-        .child(
-          S.documentTypeList('photography')
-            .title('Photography')
-            .filter('_type == "photography"')
-        ),
+          .title('Photography')
+          .icon(CameraFlash)
+          .child(S.document()
+            .schemaType('photography')
+            .documentId('photography')
+          ),
         S.listItem()
-        .title('Quote')
-        .icon(Clipboard)
-        .child(
-          S.documentTypeList('quote')
-            .title('Quote')
-            .filter('_type == "quote"')
-        )
+          .title('Quote')
+          .icon(Clipboard)
+          .child(S.document()
+            .schemaType('quote')
+            .documentId('quote')
+          ),
       ])
   ),
   S.listItem()

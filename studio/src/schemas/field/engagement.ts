@@ -7,21 +7,52 @@ export default {
   icon: BarChart,
   fields: [
     {
-      name: 'heading',
-      title: 'Heading',
-      type: 'localeString'
-    },
-    {
-      name: 'count',
-      title: 'Count',
-      type: 'number'
+      name: 'engagement',
+      title: 'Engagement',
+      type: 'array',
+      of: [
+        {
+          name: 'engagement',
+          title: 'Engagement',
+          type: 'object',
+          fields: [
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'localeString'
+            },
+            {
+              name: 'count',
+              title: 'Count',
+              type: 'number'
+            }
+          ],
+          preview: {
+            select: {
+              title: 'title.en',
+              subtitle: 'count'
+            },
+            prepare({ title, subtitle }) {
+              return {
+                title: title,
+                subtitle: subtitle,
+                media: BarChart
+              }
+            }
+          }
+        }
+      ]
     }
   ],
-
   preview: {
     select: {
-      title: 'heading.en',
-      subtitle: 'count'
+      title: 'Engagement'
+    },
+    prepare({ title }) {
+      return {
+        title: title,
+        media: BarChart
+      }
     }
   }
 }

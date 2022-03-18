@@ -7,29 +7,48 @@ export default {
   icon: CameraFlash,
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'localeString'
-    },
-    {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
-    },
-    {
-      name: 'hero',
-      title: 'Hero Image',
-      type: 'boolean'
+      name: 'photograpy',
+      title: 'Photography',
+      type: 'array',
+      of: [
+        {
+          name: 'photograpy',
+          title: 'Photography',
+          type: 'object',
+          fields: [
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'localeString'
+            },
+            {
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: {
+                hotspot: true
+              }
+            }
+          ],
+          preview: {
+            select: {
+              title: 'title.en',
+              media: 'image'
+            }
+          }
+        }
+      ]
     }
   ],
-
   preview: {
     select: {
-      title: 'title.en',
-      media: 'image'
+      title: 'Photography'
+    },
+    prepare({ title }) {
+      return {
+        title: title,
+        media: CameraFlash
+      }
     }
   }
 }
