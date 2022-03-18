@@ -18,6 +18,10 @@ export default {
       title: 'Content'
     },
     {
+      name: 'settings',
+      title: 'Settings'
+    },
+    {
       name: 'meta',
       title: 'Meta data'
     },
@@ -77,7 +81,17 @@ export default {
         maxLength: 96,
         isUnique: isUniqueLocale
       },
-      group: 'content'
+      group: 'settings'
+    },
+    {
+      name: 'publishedAt',
+      title: 'Publish date',
+      type: 'datetime',
+      options: {
+        timeStep: 15,
+        calendarTodayLabel: 'Today'
+      },
+      group: 'settings'
     },
     {
       name: 'meta',
@@ -98,11 +112,19 @@ export default {
       group: 'facebook'
     }
   ],
-
+  orderings: [
+    {
+      title: 'Publish Date',
+      name: 'publishedAt',
+      by: [
+        {field: 'publishedAt', direction: 'desc'}
+      ]
+    }
+  ],
   preview: {
     select: {
       title: 'title',
-      subtitle: '_createdAt',
+      subtitle: 'publishedAt',
       media: 'mainImage'
     },
     prepare(selection) {

@@ -207,7 +207,15 @@ export default {
       group: 'facebook'
     }
   ],
-
+  orderings: [
+    {
+      title: 'Start Date',
+      name: 'dateStart',
+      by: [
+        {field: 'dateStart', direction: 'asc'}
+      ]
+    }
+  ],
   preview: {
     select: {
       title: 'title',
