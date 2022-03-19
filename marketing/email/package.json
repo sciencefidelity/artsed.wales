@@ -10,16 +10,12 @@
   },
   "devDependencies": {
     "@portabletext/react": "^1.0.4",
-    "@portabletext/to-html": "^1.0.3",
     "@sanity/client": "^3.2.0",
     "@sanity/image-url": "^1.0.1",
-    "@types/vhtml": "^2.2.4",
     "astro": "^0.24.0",
-    "date-fns": "^2.28.0",
     "groq": "^2.15.0",
-    "htm": "^3.1.0",
+    "moment": "^2.29.1",
     "prettier": "^2.5.1",
-    "sass": "^1.49.9",
-    "vhtml": "^2.2.0"
+    "sass": "^1.49.9"
   }
 }
