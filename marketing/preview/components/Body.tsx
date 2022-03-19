@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import PortableText from "components/PortableText"
 import { components } from "components/PortableTextComponents"
+import s from "styles/Mail.module.css"
 
 interface Props {
   en: any
@@ -8,21 +9,21 @@ interface Props {
 
 export const Body: FC<Props> = ({en}) => (
   <table
-    className="body"
+    className={s.body}
     // border="0"
     cellPadding="0"
     cellSpacing="0"
   >
-    <tr className="body__row">
-      <td className="body__data">
+    <tr className={s.bodyRow}>
+      <td className={s.bodyData}>
         <PortableText
           value={en.newsletter.body}
           components={components}
-          />
+        />
       </td>
     </tr>
-    <tr className="header__row">
-      <td className="divider"></td>
+    <tr className={s.headerRow}>
+      <td className={s.divider}></td>
     </tr>
   </table>
 )

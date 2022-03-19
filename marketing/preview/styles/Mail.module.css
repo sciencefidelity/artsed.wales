@@ -1,0 +1,191 @@
+.outer {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  background-color: #f4f0e6;
+  color: #212121;
+  margin: 0;
+  width: 100%;
+}
+.outer p {
+  font-weight: 200;
+  padding: 5px 0;
+  line-height: 1.45;
+}
+.outer h1 {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.outer h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.outer h3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.outer time {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 10px 0 2px 0;
+}
+.outer a {
+  color: #00abd6;
+  text-decoration: none;
+}
+.outer a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+.divider {
+  background-color: #f4f0e6;
+  height: 2px;
+  display: block;
+  margin: auto;
+}
+
+.preheader {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+.preheaderRow {
+  font-size: 12px;
+}
+.preheaderData {
+  width: 50%;
+}
+.preheader a {
+  color: #666666;
+  text-decoration: underline;
+}
+
+.header {
+  background-color: white;
+  text-transform: uppercase;
+  line-height: 1.5;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding: 40px 0;
+  font-weight: 200;
+  letter-spacing: 0.6px;
+}
+.headerData {
+  display: block;
+  margin: 30px 20px 60px;
+}
+.header a {
+  text-decoration: none;
+}
+@media only screen and (max-width: 480px) {
+  .header {
+    font-size: 18px;
+  }
+}
+
+.brand {
+  border-radius: 100%;
+}
+
+.headline {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+.headlineData {
+  margin: 0 0 40px 0;
+  display: block;
+  padding: 20px;
+}
+@media only screen and (max-width: 480px) {
+  .headline h1 {
+    font-size: 22px;
+  }
+}
+
+.imageFullwidth {
+  width: 100%;
+  height: auto;
+}
+
+.body {
+  background-color: white;
+}
+.bodyRow {
+  display: block;
+  padding: 50px 20px;
+}
+
+.events {
+  padding: 40px 0;
+  background-color: white;
+  border-bottom: 3px solid #e5dbc3;
+}
+
+.event {
+  text-align: left;
+  display: block;
+  width: 50%;
+  float: left;
+}
+.eventHead, .eventData {
+  padding: 20px;
+}
+.event a {
+  font-weight: 400;
+}
+@media only screen and (max-width: 480px) {
+  .event {
+    float: none;
+    width: 100%;
+  }
+}
+
+.imageInset {
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  padding: 20px 10px 40px 10px;
+  width: 100%;
+  text-align: center;
+  color: #666666;
+}
+.footer p {
+  font-weight: 400;
+}
+.footer a {
+  color: #666666;
+  text-decoration: underline;
+}
+.footerData {
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+}
+.footerDataSocial {
+  padding: 20px;
+}
+.footerDataSocial a {
+  text-decoration: none;
+}
+
+.imageSocial {
+  width: 48px;
+  height: 48px;
+  margin: 5px;
+  border-radius: 100%;
+}
+
+/*# sourceMappingURL=Mail.module.css.map */

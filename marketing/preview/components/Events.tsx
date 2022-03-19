@@ -1,7 +1,8 @@
 import React, { FC } from "react"
 import format from "date-fns/format"
-// import { cy } from 'date-fns/locale'
+// import { cy } from "date-fns/locale"
 import { urlFor } from "../lib/utils"
+import s from "styles/Mail.module.css"
 
 interface Props {
   en: any
@@ -9,23 +10,23 @@ interface Props {
 
 const Events: FC<Props> = ({en}) => (
   <table
-    className="events"
+    className={s.events}
     // border="0"
     cellPadding="0"
     cellSpacing="0"
   >
-    <tr className="events__row">
-      <td className="events__data">
+    <tr className={s.eventsRow}>
+      <td className={s.eventsData}>
         {en.newsletter.events.map(event => (
           <table
-            className="event"
+            className={s.event}
             // border="0"
             cellPadding="0"
             cellSpacing="0"
             key={event._id}
           >
-            <tr className="event__row">
-              <th className="event__head">
+            <tr className={s.eventRow}>
+              <th className={s.eventHead}>
                 <a href={event.britelink}>
                   <img
                     src={urlFor(event.mainImage)
@@ -34,8 +35,8 @@ const Events: FC<Props> = ({en}) => (
                       .height(400)
                       .quality(80)
                       .url()}
-                    className="image__inset"
-                    alt="Expressive arts for wellbeing (Key Stage 2)"
+                    className={s.imageInset}
+                    alt={event.title}
                     width="300"
                     height="200"
                   />
