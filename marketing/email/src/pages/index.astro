@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import Headline from "../components/Headline.astro"
 import Preheader from "../components/Preheader.astro"
+import "../styles/global.scss"
 
 const response = await sanityClient.fetch(newsletterQuery)
 const data = response
@@ -42,6 +43,6 @@ const locale = en
   </body>
 </html>
 
-<style global>
-  @import '../styles/global.css';
-</style>
+<!-- <style lang:scss global>
+  @import '../styles/global.scss';
+</style> -->

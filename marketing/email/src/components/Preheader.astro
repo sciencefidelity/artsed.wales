@@ -16,6 +16,8 @@ const { locale, en, cy } = Astro.props
 </table>
 
 <style lang="scss">
+  @use '../styles/vars' as v;
+
   .preheader {
     width: 100%;
     text-align: center;
@@ -27,7 +29,7 @@ const { locale, en, cy } = Astro.props
       width: 50%;
     }
     a {
-      color: var(--darkgray);
+      color: v.$darkgray;
       text-decoration: underline;
     }
   }

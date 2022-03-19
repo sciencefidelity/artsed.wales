@@ -30,8 +30,10 @@ const { locale, en, cy } = Astro.props
 </table>
 
 <style lang="scss">
+  @use '../styles/vars' as v;
+
   .header {
-    background-color: var(--white);
+    background-color: v.$white;
     text-transform: uppercase;
     line-height: 1.5;
     width: 100%;

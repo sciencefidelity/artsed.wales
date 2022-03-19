@@ -58,10 +58,12 @@ const { locale, en, cy } = Astro.props
 </table>
 
 <style lang="scss">
+  @use '../styles/vars' as v;
+
   .events {
     padding: 40px 0;
-    background-color: var(--white);
-    border-bottom: 3px solid var(--border);
+    background-color: v.$white;
+    border-bottom: 3px solid v.$border;
   }
 
   .event {

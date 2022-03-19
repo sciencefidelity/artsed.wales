@@ -67,16 +67,18 @@ const year = new Date().getFullYear()
 </table>
 
 <style lang="scss">
+  @use '../styles/vars' as v;
+
   .footer {
     padding: 20px 10px 40px 10px;
     width: 100%;
     text-align: center;
-    color: var(--darkgray);
+    color: v.$darkgray;
     p {
       font-weight: 400;
     }
     a {
-      color: var(--darkgray);
+      color: v.$darkgray;
       text-decoration: underline;
     }
     &__data {

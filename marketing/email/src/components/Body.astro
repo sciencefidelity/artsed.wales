@@ -24,14 +24,16 @@ const { locale, en, cy } = Astro.props
 </table>
 
 <style lang="scss">
+  @use '../styles/vars' as v;
+
   .body {
-    background-color: var(--white);
+    background-color: v.$white;
     &__row {
       display: block;
       padding: 50px 20px;
     }
     &__data p {
-      font-family: var(--sans);
+      font-family: v.$sans;
       font-weight: 200;
     }
   }
