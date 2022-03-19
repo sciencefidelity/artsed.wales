@@ -17,6 +17,15 @@ $mono: ui-monospace,Menlo,Courier,monospace;
   margin: 0;
   width: 100%;
 
+  p,
+  h1,
+  h2,
+  h3,
+  time,
+  a {
+    margin: 0;
+  }
+
   p {
     font-weight: 200;
     padding: 5px 0;
