@@ -2,14 +2,14 @@
 import {
   PublishWithi18nAction,
   DeleteWithi18nAction,
-  DuplicateWithi18nAction,
+  DuplicateWithi18nAction
 } from '@sanity/document-internationalization/lib/actions'
 
 // Import the default actions for comparison
 import defaultResolve, {
   PublishAction,
   DuplicateAction,
-  DeleteAction,
+  DeleteAction
 } from 'part:@sanity/base/document-actions'
 
 // Instead of checking for the document type,
@@ -22,14 +22,14 @@ export default function resolveDocumentActions(props) {
 
   if (documentSchema.i18n) {
     const actionsWithoutDefaults = defaultActions.filter(
-      (action) => ![PublishAction, DuplicateAction, DeleteAction].includes(action)
+      action => ![PublishAction, DuplicateAction, DeleteAction].includes(action)
     )
 
     return [
       PublishWithi18nAction,
       ...actionsWithoutDefaults,
       DuplicateWithi18nAction,
-      DeleteWithi18nAction,
+      DeleteWithi18nAction
     ]
   }
 

@@ -1,7 +1,7 @@
-import React, { FC } from "react"
-import format from "date-fns/format"
-import { urlFor } from "../../../lib/utils"
-import s from "../styles/Mail.module.css"
+import React, { FC } from 'react'
+import format from 'date-fns/format'
+import { urlFor } from '../../../lib/utils'
+import s from '../styles/Mail.module.css'
 
 interface Props {
   data: any
@@ -30,7 +30,7 @@ const Events: FC<Props> = ({ data, document }) => (
                 <a href={event.britelink}>
                   <img
                     src={urlFor(event.mainImage)
-                      .auto("format")
+                      .auto('format')
                       .width(600)
                       .height(400)
                       .quality(80)
@@ -41,10 +41,10 @@ const Events: FC<Props> = ({ data, document }) => (
                     height="200"
                   />
                 </a>
-                <time dateTime={
-                  format(new Date(event.dateStart), "yyyy-MM-dd")
-                }>
-                  {format(new Date(event.dateStart), "d MMMM yyyy, k:mm")}
+                <time
+                  dateTime={format(new Date(event.dateStart), 'yyyy-MM-dd')}
+                >
+                  {format(new Date(event.dateStart), 'd MMMM yyyy, k:mm')}
                 </time>
                 <h2>{event.title}</h2>
                 <p>{event.summary}</p>

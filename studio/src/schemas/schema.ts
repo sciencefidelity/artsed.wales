@@ -43,7 +43,6 @@ import photography from './field/photography'
 import quote from './field/quote'
 import settings from './field/settings'
 
-
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([

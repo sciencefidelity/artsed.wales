@@ -83,7 +83,7 @@ export default {
 
   preview: {
     select: {
-      title: 'title',
+      title: 'title'
     },
     prepare({ title }) {
       let previewIcon = Art
@@ -96,7 +96,7 @@ export default {
       if (title.includes('Film') || title.includes('Ffilm')) {
         previewIcon = FilmProjector
       }
-      if (title.includes('Music') || title.includes('Cerddoriaeth')){
+      if (title.includes('Music') || title.includes('Cerddoriaeth')) {
         previewIcon = Guitar
       }
       return {

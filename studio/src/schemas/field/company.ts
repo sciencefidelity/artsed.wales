@@ -15,22 +15,22 @@ export default {
     {
       name: 'address',
       title: 'Address',
-      type: 'localeAddress',
+      type: 'localeAddress'
     },
     {
       name: 'email',
       title: 'Email',
-      type: 'localeEmail',
+      type: 'localeEmail'
     },
     {
       name: 'telephone',
       title: 'Telephone',
-      type: 'string',
+      type: 'string'
     }
   ],
   preview: {
     select: {
-      title: 'title.en',
+      title: 'title.en'
     },
     prepare({ title }) {
       return {

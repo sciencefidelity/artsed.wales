@@ -102,7 +102,7 @@ export default {
       title: 'Summary',
       type: 'text',
       rows: 3,
-      validation: Rule => Rule.max(140).warning("Max 140 characters."),
+      validation: Rule => Rule.max(140).warning('Max 140 characters.'),
       group: 'content'
     },
     {
@@ -137,7 +137,7 @@ export default {
           type: 'reference',
           to: { type: 'staff' },
           options: {
-            filter: ({document}) => {
+            filter: ({ document }) => {
               const { __i18n_lang } = document
               return {
                 filter: `__i18n_lang == "${__i18n_lang}" && "facilitator" in role`
@@ -157,7 +157,7 @@ export default {
           type: 'reference',
           to: { type: 'artform' },
           options: {
-            filter: ({document}) => {
+            filter: ({ document }) => {
               const { __i18n_lang } = document
               return {
                 filter: `__i18n_lang == '${__i18n_lang}'`
@@ -177,7 +177,7 @@ export default {
           type: 'reference',
           to: { type: 'keystage' },
           options: {
-            filter: ({document}) => {
+            filter: ({ document }) => {
               const { __i18n_lang } = document
               return {
                 filter: `__i18n_lang == '${__i18n_lang}'`
@@ -211,9 +211,7 @@ export default {
     {
       title: 'Start Date',
       name: 'dateStart',
-      by: [
-        {field: 'dateStart', direction: 'asc'}
-      ]
+      by: [{ field: 'dateStart', direction: 'asc' }]
     }
   ],
   preview: {
@@ -226,9 +224,9 @@ export default {
       const { subtitle, title, media } = selection
       return {
         title: title,
-        subtitle: `${subtitle
-          ? moment(subtitle).format('ddd Do MMM YYYY')
-          : "TBA"}`,
+        subtitle: `${
+          subtitle ? moment(subtitle).format('ddd Do MMM YYYY') : 'TBA'
+        }`,
         media: media
       }
     }

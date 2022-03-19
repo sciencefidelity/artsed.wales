@@ -1,7 +1,7 @@
-import React, { FC } from "react"
-import PortableText from "../components/PortableText"
-import { components } from "../components/PortableTextComponents"
-import s from "../styles/Mail.module.css"
+import React, { FC } from 'react'
+import PortableText from '../components/PortableText'
+import { components } from '../components/PortableTextComponents'
+import s from '../styles/Mail.module.css'
 
 interface Props {
   document: any
@@ -16,10 +16,7 @@ export const Body: FC<Props> = ({ document }) => (
   >
     <tr className={s.bodyRow}>
       <td className={s.bodyData}>
-        <PortableText
-          value={document.displayed.body}
-          components={components}
-        />
+        <PortableText value={document.displayed.body} components={components} />
       </td>
     </tr>
     <tr className={s.headerRow}>

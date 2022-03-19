@@ -6,23 +6,23 @@ export default {
     {
       name: 'line1',
       title: 'Address Line 1',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'line2',
       title: 'Address Line 2',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'city',
       title: 'City',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'postcode',
       title: 'Postcode',
-      type: 'string',
-    },
+      type: 'string'
+    }
   ],
   options: {
     collapsible: true,

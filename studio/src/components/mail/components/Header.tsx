@@ -1,5 +1,5 @@
-import React, { FC } from "react"
-import s from "../styles/Mail.module.css"
+import React, { FC } from 'react'
+import s from '../styles/Mail.module.css'
 
 interface Props {
   data: any
@@ -16,13 +16,15 @@ export const Header: FC<Props> = ({ data, document }) => (
     <tr className={s.headerRowBrand}>
       <td className={s.headerDataBrand}>
         <a href={data.settings.url}>
-          {data.newsletter.logo && <img
-            src={data.newsletter.logo}
-            className={s.brand}
-            alt=""
-            width="150"
-            height="150"
-          />}
+          {data.newsletter.logo && (
+            <img
+              src={data.newsletter.logo}
+              className={s.brand}
+              alt=""
+              width="150"
+              height="150"
+            />
+          )}
         </a>
       </td>
     </tr>

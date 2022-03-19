@@ -1,6 +1,6 @@
-import React, { FC } from "react"
-import s from "../styles/Mail.module.css"
-import { urlFor } from "../../../lib/utils"
+import React, { FC } from 'react'
+import s from '../styles/Mail.module.css'
+import { urlFor } from '../../../lib/utils'
 
 interface Props {
   document: any
@@ -22,7 +22,7 @@ export const Headline: FC<Props> = ({ document }) => (
       <th className={s.headlineDataImage}>
         <img
           src={urlFor(document.displayed.mainImage)
-            .auto("format")
+            .auto('format')
             .width(600)
             .height(400)
             .quality(80)

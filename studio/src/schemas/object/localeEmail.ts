@@ -13,12 +13,12 @@ export default {
     {
       title: 'English',
       name: 'en',
-      type: 'email',
+      type: 'email'
     },
     {
       title: 'Welsh',
       name: 'cy',
-      type: 'email',
+      type: 'email'
     }
   ]
 }

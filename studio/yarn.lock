@@ -1280,18 +1280,6 @@
     object-assign "^4.1.1"
     rxjs "^6.0.0"
 
-"@sanity/client@^3.2.2":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-3.2.2.tgz#432b3b671c396984aad08c102aec1087cbf6bbd5"
-  integrity sha512-EciZKrX8AgeKb+w7sTrqBOVPFlkazFlavV+S06KWUcl9lE8z7m8RIbYwLgzCfl2ec0RFmuTPnIjD8CC+evBaGA==
-  dependencies:
-    "@sanity/eventsource" "^3.0.2"
-    "@sanity/generate-help-url" "^3.0.0"
-    get-it "^6.0.1"
-    make-error "^1.3.0"
-    object-assign "^4.1.1"
-    rxjs "^6.0.0"
-
 "@sanity/color-input@^2.29.1":
   version "2.29.1"
   resolved "https://registry.npmjs.org/@sanity/color-input/-/color-input-2.29.1.tgz#fec5a50e1711344664688892103f017158c6b061"
@@ -1507,14 +1495,6 @@
   integrity sha512-xeMzr0wK/1+lawSicDg8yA7mdoNY3SKtr70CCsb1ltWbtYtsgZWjKeqNivNAWofxSU2GN7yU23HPzyk6Tx9fkA==
   dependencies:
     event-source-polyfill "^1.0.25"
-    eventsource "^1.0.6"
-
-"@sanity/eventsource@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@sanity/eventsource/-/eventsource-3.0.2.tgz#483a75e9118aa510957b23a638be560d926dc4d3"
-  integrity sha512-cg0NTs75gbW84tpKFRBeFLbG6hSLp9U5mwLaGaMjuqP7DkfXbpkZsgRPPnRRVj1M+o32eiGZ8xQaLop2Ixn7yw==
-  dependencies:
-    event-source-polyfill "1.0.25"
     eventsource "^1.0.6"
 
 "@sanity/export@2.28.1":
@@ -4516,7 +4496,7 @@ event-emitter@~0.3.5:
     d "1"
     es5-ext "~0.10.14"
 
-event-source-polyfill@1.0.25, event-source-polyfill@^1.0.25:
+event-source-polyfill@^1.0.25:
   version "1.0.25"
   resolved "https://registry.npmjs.org/event-source-polyfill/-/event-source-polyfill-1.0.25.tgz#d8bb7f99cb6f8119c2baf086d9f6ee0514b6d9c8"
   integrity sha512-hQxu6sN1Eq4JjoI7ITdQeGGUN193A2ra83qC0Ltm9I2UJVAten3OFVN6k5RX4YWeCS0BoC8xg/5czOCIHVosQg==
@@ -5109,7 +5089,7 @@ get-it@^5.2.1:
     tunnel-agent "^0.6.0"
     url-parse "^1.1.9"
 
-get-it@^6.0.0, get-it@^6.0.1:
+get-it@^6.0.0:
   version "6.0.1"
   resolved "https://registry.npmjs.org/get-it/-/get-it-6.0.1.tgz#5fd4276c9bb0f61990688a22a2a4d2f700132148"
   integrity sha512-tZMsIu4VatXy2RT3M1sStmqn5U0JI6JratUi5kNV/SKpF14+2hssT9J+C51HVO8BPc34fuYVO9W9OzqhbZyQ4A==
@@ -5283,11 +5263,6 @@ groq-js@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/groq-js/-/groq-js-0.2.0.tgz#abd4870014a1ccdf0936d5d75a78063aff9197c0"
   integrity sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==
-
-groq@^2.15.0:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/groq/-/groq-2.15.0.tgz#d5618e0424c866a7998722d6ed441b3cc97e8de3"
-  integrity sha512-V3VLBLftaEylbeXDwb2VoGa87SFLGLbU9h6Lz7vuZK+wcs4Kk92qG3A8nWtsdCp63hYKft0/AaXuanbkch0GeA==
 
 gunzip-maybe@^1.4.1:
   version "1.4.2"
@@ -8530,11 +8505,6 @@ raw-body@2.4.3:
     http-errors "1.8.1"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
-
-react-async@^10.0.1:
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/react-async/-/react-async-10.0.1.tgz#575c083f808303d2f6ca52d11ec7554dbdbd9fcd"
-  integrity sha512-ORUz5ca0B57QgBIzEZM5SuhJ6xFjkvEEs0gylLNlWf06vuVcLZsjIw3wx58jJkZG38p+0nUAxRgFW2b7mnVZzA==
 
 react-base16-styling@^0.6.0:
   version "0.6.0"

@@ -19,7 +19,7 @@ export default {
       title: 'Twitter title',
       type: 'string',
       inputComponent: StringWithLimits,
-      validation: Rule => Rule.max(70).warning('Some text won\'t be visible.')
+      validation: Rule => Rule.max(70).warning("Some text won't be visible.")
     },
     {
       name: 'description',

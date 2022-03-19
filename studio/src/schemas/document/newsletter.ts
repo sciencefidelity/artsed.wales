@@ -82,10 +82,11 @@ export default {
       title: 'Events',
       type: 'array',
       of: [
-        { type: 'reference',
+        {
+          type: 'reference',
           to: { type: 'event' },
           options: {
-            filter: ({document}) => {
+            filter: ({ document }) => {
               const { __i18n_lang } = document
               return {
                 filter: `__i18n_lang == "${__i18n_lang}"`
@@ -192,9 +193,7 @@ export default {
     {
       title: 'Publish Date',
       name: 'publishedAt',
-      by: [
-        {field: 'publishedAt', direction: 'desc'}
-      ]
+      by: [{ field: 'publishedAt', direction: 'desc' }]
     }
   ],
   preview: {

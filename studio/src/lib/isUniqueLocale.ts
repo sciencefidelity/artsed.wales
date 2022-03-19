@@ -3,7 +3,7 @@ import client from 'part:@sanity/base/client'
 // Note: this assumes that every document that has a slug field
 // has it on the `slug` field at the root
 export function isUniqueLocale(slug, options) {
-  const {document} = options
+  const { document } = options
 
   const id = document._id.replace(/^drafts\./, '')
   const params = {

@@ -7,4 +7,3 @@
 [https://artsed.sanity.studio](https://artsed.sanity.studio)
 
 Backend content studio with [Sanity](https://sanity.io).
-

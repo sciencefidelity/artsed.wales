@@ -1,5 +1,5 @@
-import React, { FC } from "react"
-import s from "../styles/Mail.module.css"
+import React, { FC } from 'react'
+import s from '../styles/Mail.module.css'
 
 interface Props {
   data: any

@@ -57,7 +57,7 @@ export default {
                   { type: 'video' }
                 ],
                 options: {
-                  filter: ({document}) => {
+                  filter: ({ document }) => {
                     const { __i18n_lang } = document
                     return {
                       filter: `__i18n_lang == '${__i18n_lang}'`

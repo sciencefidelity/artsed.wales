@@ -1,19 +1,19 @@
-import React, { FC } from "react"
-import { QueryClient, QueryClientProvider, useQuery } from "react-query"
+import React, { FC } from 'react'
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import sanityClient from 'part:@sanity/base/client'
-import Preheader from "./components/Preheader"
-import Header from "./components/Header"
-import Headline from "./components/Headline"
-import Body from "./components/Body"
-import Events from "./components/Events"
-import Footer from "./components/Footer"
-import s from "./styles/Mail.module.css"
+import Preheader from './components/Preheader'
+import Header from './components/Header'
+import Headline from './components/Headline'
+import Body from './components/Body'
+import Events from './components/Events'
+import Footer from './components/Footer'
+import s from './styles/Mail.module.css'
 
 interface Props {
   document: any
 }
 
-const client = sanityClient.withConfig({apiVersion: `2021-05-19`})
+const client = sanityClient.withConfig({ apiVersion: `2021-05-19` })
 const queryClient = new QueryClient()
 const queryCy = `{
   "newsletter": *[
@@ -88,7 +88,7 @@ const queryEn = `{
 export default function Mail({ document }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Preview document={ document } />
+      <Preview document={document} />
     </QueryClientProvider>
   )
 }
@@ -96,12 +96,12 @@ export default function Mail({ document }) {
 const Preview: FC<Props> = ({ document }) => {
   const locale = document.displayed.__i18n_lang
   const { isLoading, error, data } = useQuery('useDocuments', () =>
-    client.fetch(locale === "cy" ? queryCy : queryEn)
+    client.fetch(locale === 'cy' ? queryCy : queryEn)
   )
 
-  if (isLoading) return "Loading..."
+  if (isLoading) return 'Loading...'
 
-  if (error) return "An error has occurred: " + error.message
+  if (error) return 'An error has occurred: ' + error.message
 
   return (
     <div className={s.outer}>
@@ -126,10 +126,11 @@ const Preview: FC<Props> = ({ document }) => {
   )
 }
 
-
-{/* const loadData = async () => {
+{
+  /* const loadData = async () => {
     const res = await client.fetch(groq`*[_type == "newsletter"]`)
     if (!res.ok) throw new Error(res.statusText)
     const data = res.json()
     return "data: " + data
-  } */}
+  } */
+}

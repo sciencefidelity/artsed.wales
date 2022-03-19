@@ -9,7 +9,8 @@ export default {
     {
       name: 'labels',
       title: 'Labels',
-      description: 'Strings of text that are used through the Website and require translation',
+      description:
+        'Strings of text that are used through the Website and require translation',
       type: 'array',
       of: [
         {
@@ -25,9 +26,9 @@ export default {
               validation: Rule =>
                 Rule.regex(/^[a-z.]+$/).error(
                   'The key should contain only lowercase letters and periods'
-                ),
+                )
             },
-            {name: 'text', type: 'localeString'}
+            { name: 'text', type: 'localeString' }
           ],
           preview: {
             select: {

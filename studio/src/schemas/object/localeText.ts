@@ -18,7 +18,7 @@ export default {
     {
       title: 'Welsh',
       name: 'cy',
-      type: 'text',
+      type: 'text'
     }
   ]
 }

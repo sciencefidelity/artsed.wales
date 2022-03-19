@@ -13,7 +13,7 @@ export default {
         timeStep: 15,
         calendarTodayLabel: 'Today'
       },
-      initialValue: (new Date()).toISOString()
+      initialValue: new Date().toISOString()
     },
     {
       name: 'tags',
@@ -24,7 +24,7 @@ export default {
           type: 'reference',
           to: { type: 'tag' },
           options: {
-            filter: ({document}) => {
+            filter: ({ document }) => {
               const { __i18n_lang } = document
               return {
                 filter: `__i18n_lang == "${__i18n_lang}"`
@@ -45,10 +45,11 @@ export default {
       title: 'Authors',
       type: 'array',
       of: [
-        { type: 'reference',
+        {
+          type: 'reference',
           to: { type: 'staff' },
           options: {
-            filter: ({document}) => {
+            filter: ({ document }) => {
               const { __i18n_lang } = document
               return {
                 filter: `__i18n_lang == "${__i18n_lang}" && "author" in role`
