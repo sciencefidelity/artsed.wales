@@ -1,9 +1,9 @@
 .outer {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-  background-color: #f4f0e6;
-  color: #212121;
-  margin: 0;
   width: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  color: #212121;
+  background-color: #f4f0e6;
 }
 .outer p,
 .outer h1,
@@ -14,8 +14,8 @@
   margin: 0;
 }
 .outer p {
-  font-weight: 200;
   padding: 5px 0;
+  font-weight: 200;
   line-height: 1.45;
 }
 .outer h1 {
@@ -35,35 +35,32 @@
 }
 .outer time {
   display: block;
+  margin: 10px 0 2px;
   font-size: 14px;
   font-weight: 300;
-  margin: 10px 0 2px 0;
 }
 .outer a {
   color: #00abd6;
   text-decoration: none;
 }
-.outer a:hover {
-  text-decoration: underline;
-}
 
 .container {
-  max-width: 600px;
   width: 100%;
+  max-width: 600px;
   margin: auto;
 }
 
 .divider {
-  background-color: #f4f0e6;
-  height: 2px;
   display: block;
+  height: 2px;
   margin: auto;
+  background-color: #f4f0e6;
 }
 
 .preheader {
   width: 100%;
-  text-align: center;
   padding: 20px 0;
+  text-align: center;
 }
 .preheaderRow {
   font-size: 12px;
@@ -77,15 +74,15 @@
 }
 
 .header {
-  background-color: white;
-  text-transform: uppercase;
-  line-height: 1.5;
   width: 100%;
-  text-align: center;
-  font-size: 20px;
   padding: 40px 0;
+  font-size: 20px;
   font-weight: 200;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
   letter-spacing: 0.6px;
+  background-color: white;
 }
 .headerData {
   display: block;
@@ -105,15 +102,15 @@
 }
 
 .headline {
-  background-color: white;
   width: 100%;
-  text-align: center;
   font-size: 16px;
+  text-align: center;
+  background-color: white;
 }
 .headlineData {
-  margin: 0 0 40px 0;
   display: block;
   padding: 20px;
+  margin: 0 0 40px;
 }
 @media only screen and (max-width: 480px) {
   .headline h1 {
@@ -141,10 +138,10 @@
 }
 
 .event {
-  text-align: left;
   display: block;
-  width: 50%;
   float: left;
+  width: 50%;
+  text-align: left;
 }
 .eventHead, .eventData {
   padding: 20px;
@@ -165,10 +162,10 @@
 }
 
 .footer {
-  padding: 20px 10px 40px 10px;
   width: 100%;
-  text-align: center;
+  padding: 20px 10px 40px;
   color: #666666;
+  text-align: center;
 }
 .footer p {
   font-weight: 400;
@@ -178,9 +175,9 @@
   text-decoration: underline;
 }
 .footerData {
-  text-align: center;
   width: 100%;
   font-size: 13px;
+  text-align: center;
 }
 .footerDataSocial {
   padding: 20px;
@@ -194,6 +191,10 @@
   height: 48px;
   margin: 5px;
   border-radius: 100%;
+}
+
+.outer a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=Mail.module.css.map */
