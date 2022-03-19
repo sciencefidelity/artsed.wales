@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "concurrently 'yarn:lint:*'",
+    "lint:js": "eslint '**/*.{ts,js,tsx,jsx}'",
+    "lint:format": "prettier --check '**/*.{ts,js,tsx,jsx,json,md,yml}'",
+    "lint:styles": "stylelint --ignore-path .eslintignore '**/*.scss'",
+    "fix": "concurrently 'yarn:fix:*'",
+    "fix:js": "eslint --fix '**/*.{ts,js}'",
+    "fix:format": "prettier --write '**/*.{ts,js,tsx,jsx,json,md,yml}'",
+    "fix:styles": "stylelint --fix --ignore-path .eslintignore '**/*scss'"
   },
   "dependencies": {
     "@portabletext/react": "^1.0.4",

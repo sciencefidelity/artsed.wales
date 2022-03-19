@@ -5,3 +5,5 @@ dist
 coverage
 *.json
 generated
+*.css
+*.css.map
