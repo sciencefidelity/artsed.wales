@@ -1,6 +1,5 @@
 ---
-import format from "date-fns/format"
-// import { cy } from 'date-fns/locale'
+import moment from "moment"
 import { urlFor } from "../lib/utils"
 const { locale, en, cy } = Astro.props
 ---
@@ -13,7 +12,7 @@ const { locale, en, cy } = Astro.props
 >
   <tr class="events__row">
     <td class="events__data">
-      {locale.events.map(event => (
+      {locale.newsletter.events.map(event => (
         <table
           class="event"
           border="0"
@@ -37,9 +36,9 @@ const { locale, en, cy } = Astro.props
                 />
               </a>
               <time datetime={
-                format(new Date(event.dateStart), "yyyy-MM-dd")
+                moment(new Date(event.dateStart)).format("yyyy-MM-dd")
               }>
-                {format(new Date(event.dateStart), "d MMMM yyyy, k:mm")}
+                {moment(new Date(event.dateStart)).format("d MMMM yyyy, k:mm")}
               </time>
               <h2 set:html={event.title} />
               <p set:html={event.summary} />
