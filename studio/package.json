@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "@sanity/base": "^2.29.1",
+    "@sanity/client": "^3.2.2",
     "@sanity/color-input": "^2.29.1",
     "@sanity/core": "^2.28.1",
     "@sanity/dashboard": "^2.29.1",
@@ -29,10 +30,13 @@
     "@sanity/vision": "^2.29.1",
     "eslint": "^8.11.0",
     "get-youtube-id": "^1.0.1",
+    "groq": "^2.15.0",
     "prop-types": "^15.7",
     "react": "^17.0",
+    "react-async": "^10.0.1",
     "react-dom": "^17.0",
     "react-icons": "^4.3.1",
+    "react-query": "^3.34.16",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
 import * as Structure from '@sanity/document-internationalization/lib/structure'
+import Mail from "../components/mail"
 import {
   Art,
   BallotBoxWithCheck,
@@ -22,6 +23,15 @@ import {
   WorldMap,
   WritingHand
 } from '../components/twemoji'
+
+export const getDefaultDocumentNode = ({ schemaType }) => {
+    if (schemaType === "newsletter") {
+      return S.document().views([
+        S.view.form(),
+        S.view.component(Mail).title('Preview'),
+      ])
+    }
+  }
 
 const items = [
   S.listItem()
