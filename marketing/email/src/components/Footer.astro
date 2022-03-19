@@ -45,10 +45,10 @@ const year = new Date().getFullYear()
   @use '../styles/vars' as v;
 
   .footer {
-    padding: 20px 10px 40px 10px;
     width: 100%;
-    text-align: center;
+    padding: 20px 10px 40px;
     color: v.$darkgray;
+    text-align: center;
     p {
       font-weight: 400;
     }
@@ -57,9 +57,9 @@ const year = new Date().getFullYear()
       text-decoration: underline;
     }
     &__data {
-      text-align: center;
       width: 100%;
       font-size: 13px;
+      text-align: center;
       &--social {
         padding: 20px;
         a {

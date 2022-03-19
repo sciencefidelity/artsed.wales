@@ -33,15 +33,15 @@ const { locale, en, cy } = Astro.props
   @use '../styles/vars' as v;
 
   .header {
-    background-color: v.$white;
-    text-transform: uppercase;
-    line-height: 1.5;
     width: 100%;
-    text-align: center;
-    font-size: 18px;
     padding: 40px 0;
+    font-size: 18px;
     font-weight: 200;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
     letter-spacing: 0.2px;
+    background-color: v.$white;
     &__data {
       display: block;
       margin: 30px 20px 60px;

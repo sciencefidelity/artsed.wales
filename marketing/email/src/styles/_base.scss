@@ -1,9 +1,9 @@
 @use 'vars' as v;
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -11,14 +11,14 @@ html {
 }
 
 body {
-  background-color: v.$background;
-  color: v.$black;
   margin: 0;
+  color: v.$black;
+  background-color: v.$background;
 }
 
 p {
-  font-weight: 200;
   padding: 5px 0;
+  font-weight: 200;
   line-height: 1.45;
 }
 
@@ -42,9 +42,9 @@ h3 {
 
 time {
   display: block;
+  margin: 10px 0 2px;
   font-size: 14px;
   font-weight: 300;
-  margin: 10px 0 2px 0;
 }
 
 a {
@@ -56,14 +56,14 @@ a {
 }
 
 .container {
-  max-width: 600px;
   width: 100%;
+  max-width: 600px;
   margin: auto;
 }
 
 .divider {
-  background-color: v.$background;
-  height: 2px;
   display: block;
+  height: 2px;
   margin: auto;
+  background-color: v.$background;
 }
