@@ -1,0 +1,30 @@
+---
+const { locale, en, cy } = Astro.props
+---
+
+<table
+  class="header w-full py-40 text-lg font-200 leading-6 text-center uppercase tracking-wide bg-white"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+>
+  <tr>
+    <td>
+      <a href={locale.settings.url} class="no-underline">
+        <img
+          src={locale.newsletter.logo}
+          class="rounded-full"
+          alt="National Arts and Education Network logo"
+          width="150"
+          height="150"
+        />
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="block mt-30 mx-20 mb-60" set:html={locale.company.title} />
+  </tr>
+  <tr>
+    <td class="block h-5 m-auto bg-color"></td>
+  </tr>
+</table>

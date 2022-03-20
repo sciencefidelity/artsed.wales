@@ -1,0 +1,48 @@
+---
+const { locale, en, cy } = Astro.props
+const year = new Date().getFullYear()
+---
+
+<table
+  class="w-full pt-20 px-20 mb-40 text-muted"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+>
+  <tr>
+    <td class="pb-20 pt-40 text-center">
+      {locale.newsletter.social.map(link => (
+        <a href={link.url} class="no-underline">
+          <img
+            src={link.icon}
+            class="social-icon m-5 rounded-full"
+            alt={link.name}
+            width="48"
+            height="48"
+          />
+        </a>
+      ))}
+    </td>
+  </tr>
+  <tr>
+    <td class="w-full text-sm text-center">
+      <p class="font-400 leading-6 m-0 py-5 px-0">
+        &copy; {year} <span set:html={locale.company.title} />
+      </p>
+      <p class="font-400 leading-6 m-0 py-5 px-0">
+        <span set:html={locale.company.address.line1} /> &bull;
+        <span set:html={locale.company.address.line2} /> &bull;
+        <span set:html={locale.company.address.city} /> &bull;
+        <span set:html={locale.company.address.postcode} />
+      </p>
+      <p class="font-400 leading-6 m-0 py-5 px-0">
+        <span set:html={locale.labels.change} /><br />
+        <a
+          href="*|UNSUB|*"
+          class="text-muted underline"
+          set:html={locale.labels.unsubscribe}
+        />.
+      </p>
+    </td>
+  </tr>
+</table>
