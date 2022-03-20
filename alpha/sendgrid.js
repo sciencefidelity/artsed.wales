@@ -4,10 +4,10 @@ require("dotenv").config()
 const sgMail = require("@sendgrid/mail")
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const msg = {
-  to: "matt@artsed.wales",
-  from: "hello@artsed.wales",
-  subject: "Sending with SendGrid is Fun",
-  text: "and easy to do anywhere, even with Node.js",
+  to: "matt@sciencefidelity.co.uk",
+  from: "Matt Cook <hello@artsed.wales>",
+  subject: "National Arts & Education Network",
+  text: "Professional development programme for teachers and educators",
   html: `
 
   `
