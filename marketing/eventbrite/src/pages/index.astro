@@ -1,0 +1,184 @@
+---
+const year = new Date().getFullYear()
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Astro</title>
+
+    <!-- <link rel="preload" href="/fonts/gtalpina-bold-sub.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/gtalpina-regular-lat.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/bananagrotesk-bold-sub.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/bananagrotesk-regular-lat.woff2" as="font" type="font/woff2" crossorigin /> -->
+
+    <style>
+      @font-face {
+        font-family: 'Neue Plak';
+        font-size: normal;
+        font-weight: 200;
+        src: url('/fonts/NeuePlak-UltraLight.woff2') format('woff2');
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Neue Plak';
+        font-size: normal;
+        font-weight: 300;
+        src: url('/fonts/NeuePlak-Light.woff2') format('woff2');
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Neue Plak';
+        font-size: normal;
+        font-weight: 400;
+        src: url('/fonts/NeuePlak-Regular.woff2') format('woff2');
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Neue Plak';
+        font-size: normal;
+        font-weight: 600;
+        src: url('/fonts/NeuePlak-SemiBold.woff2') format('woff2');
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Neue Plak';
+        font-size: normal;
+        font-weight: 700;
+        src: url('/fonts/NeuePlak-Bold.woff2') format('woff2');
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Neue Plak';
+        font-size: normal;
+        font-weight: 800;
+        src: url('/fonts/NeuePlak-Black.woff2') format('woff2');
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'briteicons';
+        font-size: normal;
+        font-weight: 400;
+        src: url('/fonts/briteicons.woff2') format('woff2');
+        font-display: swap;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header__container">
+        <div>
+          <a
+            class="eb-logo js-d-track-link"
+            href="https://www.eventbrite.co.uk/"
+          >
+            <i class="ico-eventbrite-wordmark ico--color-brand-orange ico--large"></i>
+          </a>
+        </div>
+        <div class="user-avatar header-link header-exper-large">
+          <button aria-label="Search events" class="search-takeover-trigger--react" style="
+              border: none;
+              width: 100%;
+              padding: 0;
+              background: transparent;
+            ">
+            <i class="ico-search-v2 header-search-icon" style="
+                font-size: 19px;
+                padding: 16px 20px;
+                color: #4B4D63;"></i>
+          </button>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" class="menu-icon">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"></path>
+            <circle fill-rule="evenodd" clip-rule="evenodd" cx="12" cy="12" r="2"></circle>
+            <circle fill-rule="evenodd" clip-rule="evenodd" cx="12" cy="6" r="2"></circle>
+          </svg>
+        </div>
+        <div>Sign In</div>
+      </div>
+    </header>
+  </body>
+</html>
+
+<style global>
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Neue Plak', sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .header__container {
+    display: flex;
+    height: 60px;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+  }
+
+  .ico-eventbrite-wordmark::before {
+    content: "";
+  }
+
+  .ico-search-v2::before {
+    content: "";
+  }
+
+  .user-avatar {
+    position: relative;
+    padding-left: 44px;
+  }
+
+  .ico-search-v2 {
+    font-size: 19px;
+    padding: 16px 20px;
+    color: #4B4D63;
+  }
+
+  .eb-logo {
+    display: block;
+    float: left;
+    margin: 0px 20px 0 24px;
+    width: 110px;
+    height: 59px;
+  }
+
+  .eb-logo i {
+    font-size: 35px;
+    line-height: 1.55;
+  }
+
+  .eb-logo i::before {
+    line-height: 1.55;
+  }
+
+  .eb-logo:link i, .eb-logo:visited i, .eb-logo:hover i, .eb-logo:focus i, .eb-logo:active i {
+    color: #F05537;
+  }
+
+  [class^="ico-"], [class*=" ico-"], .ico {
+    font-family: briteicons,"Neue Plak",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: inherit;
+    display: inline;
+    vertical-align: baseline;
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+  }
+</style>
