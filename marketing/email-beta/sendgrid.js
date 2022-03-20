@@ -5,11 +5,11 @@ const fs = require("fs")
 const sgMail = require("@sendgrid/mail")
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const msg = {
-  to: "matt@sciencefidelity.co.uk",
+  to: "hello@mattcook.dev",
   from: "Matt Cook <hello@artsed.wales>",
   subject: "National Arts & Education Network",
   text: "Professional development programme for teachers and educators",
-  html: fs.readFileSync("./index.html", "utf8")
+  html: fs.readFileSync("./dist/index.html", "utf8")
 }
 sgMail
   .send(msg)
