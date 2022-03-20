@@ -27,26 +27,35 @@ const locale = en
   </head>
   <body
     class="m-0 p-0 w-full bg-color text-dark sans"
+    style="
+      margin: 0px;
+      width: 100%;
+      background-color: #F4F0E6;
+      color: #212121;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',Helvetica,Arial,Verdana,sans-serif!important;
+    "
   >
     <table
-      class="max-w-600 w-full m-auto"
-      style="width: 100%"
+      class="w-full max-w-600 m-auto"
+      style="width: 100%; max-width: 600px; margin: auto;"
       border="0"
       cellpadding="0"
       cellspacing="0"
     >
-      <tr>
-        <td
-          valign="top"
-        >
-          <Preheader locale={locale} en={en} cy={cy} />
-          <Header locale={locale} en={en} cy={cy} />
-          <Headline locale={locale} en={en} cy={cy} />
-          <Body locale={locale} en={en} cy={cy} />
-          <Events locale={locale} en={en} cy={cy} />
-          <Footer locale={locale} en={en} cy={cy} />
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <td
+            valign="top"
+          >
+            <Preheader locale={locale} en={en} cy={cy} />
+            <Header locale={locale} en={en} cy={cy} />
+            <Headline locale={locale} en={en} cy={cy} />
+            <Body locale={locale} en={en} cy={cy} />
+            <Events locale={locale} en={en} cy={cy} />
+            <Footer locale={locale} en={en} cy={cy} />
+          </td>
+        </tr>
+      </tbody>
     </table>
   </body>
 </html>
