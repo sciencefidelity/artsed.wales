@@ -1,0 +1,35 @@
+---
+import moment from "moment"
+import { urlFor } from "../lib/utils"
+const { locale, en, cy } = Astro.props
+---
+
+<table class="py-40 bg-white border-2" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td>
+        {locale.newsletter.events.map(event => (
+          <table class="event block float-left w-half text-left" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+                <th class="p-20">
+                  <a href={event.britelink}>
+                    <img src={urlFor(event.mainImage).format("jpg").width(600).height(400).quality(80).url()} class="w-full h-auto" width="300" height="200" alt={event.title} />
+                  </a>
+                  <time datetime={moment(new Date(event.dateStart)).format("yyyy-MM-dd")} style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; margin-top: 10px; margin-bottom: 2px; padding-top: 5px; padding-bottom: 5px; font-size: 14px; font-weight: 300; letter-spacing: 0.025em;">
+                    {moment(new Date(event.dateStart)).format("d MMMM yyyy, k:mm")}
+                  </time>
+                  <h2 style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; padding: 0px; margin: 0px; font-size: 18px; font-weight: 700; line-height: 1.5em;" set:html={event.title} />
+                  <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; padding-top: 5px; padding-bottom: 5px; margin: 0px; font-size: 16px; font-weight: 200; line-height: 1.5; letter-spacing: 0.025em" set:html={event.summary} />
+                  <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; padding-top: 5px; padding-bottom: 5px; margin: 0px; font-size: 16px; font-weight: 200; line-height: 1.5; letter-spacing: 0.025em" />
+                    <a href={event.britelink} style="color: #00ABD6; font-weight: 400; text-decoration: none;" set:html={locale.labels.register} />
+                  </p>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        ))}
+      </td>
+    </tr>
+  </tbody>
+</table>

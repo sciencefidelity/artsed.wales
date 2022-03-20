@@ -1,0 +1,21 @@
+---
+import { urlFor } from "../lib/utils"
+const { locale, en, cy } = Astro.props
+---
+
+<table class="w-full text-base text-center bg-white" border="0" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <td class="block mt-20 mb-40">
+        <h1 style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 25px; margin: 0px; padding: 0px; font-weight: 500; line-height: 1.5; letter-spacing: 0.025em;" set:html={locale.newsletter.headline} />
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <img src={urlFor(locale.newsletter.mainImage).format("jpg").width(600).height(400).quality(80).url()} class="w-full h-auto" width="600" height="400" alt={locale.newsletter.title} />
+      </th>
+    </tr>
+  </tbody>
+</table>

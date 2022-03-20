@@ -1,0 +1,37 @@
+---
+const { locale, en, cy } = Astro.props
+const year = new Date().getFullYear()
+---
+
+<table class="w-full pt-40 px-20 mb-40" border="0" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <td class="pb-20 text-center">
+        {locale.newsletter.social.map(link => (
+          <a href={link.url} class="no-underline" style="text-decoration: none;">
+            <img src={link.icon} class="social-icon m-5 rounded-full" width="48" height="48" alt={link.name} />
+          </a>
+        ))}
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="w-full text-sm text-center">
+        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em; letter-spacing: 0.025em;">
+          &copy;{" "}{year}{" "}<span set:html={locale.company.title} />
+        </p>
+        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em; letter-spacing: 0.025em;">
+          <span set:html={locale.company.address.line1} /> &bull;
+          <span set:html={locale.company.address.line2} /> &bull;
+          <span set:html={locale.company.address.city} /> &bull;
+          <span set:html={locale.company.address.postcode} />
+        </p>
+        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em; letter-spacing: 0.025em;">
+          <span set:html={locale.labels.change} /><br />
+          <a href="#" style="color: #666666; text-decoration: underline;" set:html={locale.labels.unsubscribe} />.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>

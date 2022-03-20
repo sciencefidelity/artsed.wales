@@ -1,0 +1,40 @@
+---
+import sanityClient from "../lib/sanityClient"
+import { newsletterQuery } from "../lib/queries"
+import Body from "../components/Body.astro"
+import Events from "../components/Events.astro"
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
+import Headline from "../components/Headline.astro"
+import Preheader from "../components/Preheader.astro"
+import "../styles/global.css"
+
+const response = await sanityClient.fetch(newsletterQuery)
+const data = response
+const { cy, en } = data
+const locale = en
+---
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title set:html={locale.newsletter.title} />
+  </head>
+  <body class="m-0 p-0 w-full bg-color">
+    <table class="w-full max-w-600 m-auto" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <Preheader locale={locale} en={en} cy={cy} />
+            <Header locale={locale} en={en} cy={cy} />
+            <Headline locale={locale} en={en} cy={cy} />
+            <Body locale={locale} en={en} cy={cy} />
+            <Events locale={locale} en={en} cy={cy} />
+            <Footer locale={locale} en={en} cy={cy} />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
