@@ -1,60 +1,26 @@
 ---
+import { urlFor } from "../lib/utils"
 const { locale, en, cy } = Astro.props
 ---
 
-<table
-  class="header"
-  border="0"
-  cellpadding="0"
-  cellspacing="0"
->
-  <tr class="header__row--brand">
-    <td class="header__data--brand">
-      <a href={locale.settings.url}>
-        <img
-          src={locale.newsletter.logo}
-          class="brand"
-          alt="National Arts and Education Network logo"
-          width="150"
-          height="150"
-        />
-      </a>
-    </td>
-  </tr>
-  <tr class="header__row">
-    <td class="header__data" set:html={locale.company.title} />
-  </tr>
-  <tr class="header__row">
-    <td class="divider"></td>
-  </tr>
+<table class="header w-full py-40 bg-white text-center uppercase" border="0" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <td>
+        <a href={locale.settings.url} class="no-underline" style="text-decoration: none;">
+          <img src={urlFor(locale.newsletter.logo).format("png").width(300).height(300).url()} class="rounded-full" width="150" height="150" alt={locale.company.title} />
+        </a>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="block mt-30 mx-20 mb-60">
+        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 18px; font-weight: 200; line-height: 1.5em;  letter-spacing: 0.1em; padding-top: 5px; padding-bottom: 5px;" set:html={locale.company.title} />
+      </td>
+    </tr>
+    <tr>
+      <td class="block h-5 m-auto bg-color"></td>
+    </tr>
+  </tbody>
 </table>
-
-<style lang="scss">
-  @use '../styles/vars' as v;
-
-  .header {
-    width: 100%;
-    padding: 40px 0;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 1.5;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.2px;
-    background-color: v.$white;
-    &__data {
-      display: block;
-      margin: 30px 20px 60px;
-    }
-    a {
-      text-decoration: none;
-    }
-    @media only screen and (max-width: 480px) {
-      font-size: 18px;
-    }
-  }
-
-  .brand {
-    border-radius: 100%;
-  }
-</style>

@@ -5,35 +5,13 @@ const url = `
 `
 ---
 
-<table
-  class="preheader"
-  border="0"
-  cellpadding="0"
-  cellspacing="0"
->
-  <tr class="preheader__row">
-    <td class="preheader__data">
-      <a href={url} set:html={locale.labels.browser} />
-    </td>
-  </tr>
+<table class="w-full py-20 text-center" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td>
+        <a href={url} style="font-size: 12px; font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; color: #666666; text-decoration: underline; font-weight: 400; letter-spacing: 0.025em" set:html={locale.labels.browser}
+        />
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-<style lang="scss">
-  @use '../styles/vars' as v;
-
-  .preheader {
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    &__row {
-      font-size: 12px;
-    }
-    &__data {
-      width: 50%;
-    }
-    a {
-      color: v.$darkgray;
-      text-decoration: underline;
-    }
-  }
-</style>
