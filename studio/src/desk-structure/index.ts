@@ -1,5 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
 import * as Structure from '@sanity/document-internationalization/lib/structure'
+import { Facebook, Google, Twitter } from '../components/social'
 import Mail from '../components/mail'
 import {
   Art,
@@ -29,6 +30,14 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
     return S.document().views([
       S.view.form(),
       S.view.component(Mail).title('Preview')
+    ])
+  }
+  if (schemaType === "post" || schemaType === "page") {
+    return S.document().views([
+      S.view.form(),
+      S.view.component(Google).title('Google'),
+      S.view.component(Twitter).title('Twitter'),
+      S.view.component(Facebook).title('Facebook')
     ])
   }
 }
