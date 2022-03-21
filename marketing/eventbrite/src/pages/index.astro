@@ -72,36 +72,40 @@ const year = new Date().getFullYear()
   </head>
   <body>
     <header>
-      <div class="header__container">
-        <div>
-          <a
-            class="eb-logo js-d-track-link"
-            href="https://www.eventbrite.co.uk/"
-          >
-            <i class="ico-eventbrite-wordmark ico--color-brand-orange ico--large"></i>
-          </a>
+      <div class="global-header">
+        <div class="major">
+          <div>
+            <a
+              class="eb-logo js-d-track-link"
+              href="https://www.eventbrite.co.uk/"
+            >
+              <i class="ico-eventbrite-wordmark ico--color-brand-orange ico--large"></i>
+            </a>
+          </div>
         </div>
-        <div class="user-avatar header-link header-exper-large">
-          <button aria-label="Search events" class="search-takeover-trigger--react" style="
-              border: none;
-              width: 100%;
-              padding: 0;
-              background: transparent;
-            ">
-            <i class="ico-search-v2 header-search-icon" style="
-                font-size: 19px;
-                padding: 16px 20px;
-                color: #4B4D63;"></i>
-          </button>
+        <div class="minor">
+          <div class="user-avatar header-link header-exper-large">
+            <button aria-label="Search events" class="search-takeover-trigger--react" style="
+                border: none;
+                width: 100%;
+                padding: 0;
+                background: transparent;
+              ">
+              <i class="ico-search-v2 header-search-icon" style="
+                  font-size: 19px;
+                  padding: 16px 20px;
+                  color: #4B4D63;"></i>
+            </button>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" class="menu-icon">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"></path>
+              <circle fill-rule="evenodd" clip-rule="evenodd" cx="12" cy="12" r="2"></circle>
+              <circle fill-rule="evenodd" clip-rule="evenodd" cx="12" cy="6" r="2"></circle>
+            </svg>
+          </div>
+          <div>Sign In</div>
         </div>
-        <div>
-          <svg viewBox="0 0 24 24" class="menu-icon">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"></path>
-            <circle fill-rule="evenodd" clip-rule="evenodd" cx="12" cy="12" r="2"></circle>
-            <circle fill-rule="evenodd" clip-rule="evenodd" cx="12" cy="6" r="2"></circle>
-          </svg>
-        </div>
-        <div>Sign In</div>
       </div>
     </header>
   </body>
@@ -121,11 +125,40 @@ const year = new Date().getFullYear()
     text-decoration: none;
   }
 
-  .header__container {
+  .global-header {
     display: flex;
-    height: 60px;
-    border-bottom: 1px solid lightgray;
+    height: 59px;
+    max-width: none;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #EEEDF2;
+    z-index: 40000;
+    color: #39364F;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .global-header .major {
+    flex-grow: 2;
+    display: flex;
+    float: left;
+    background-color: white;
+    z-index: 39000;
+    border-bottom: 1px solid #EEEDF2;
+    height: 59px;
+  }
+
+  .global-header .minor {
+    display: box;
+    display: flex;
+    font-size: 0;
+  }
+
+
+  .user-avatar {
     position: relative;
+    padding-left: 44px;
+    display: flex;
   }
 
   .ico-eventbrite-wordmark::before {
@@ -134,11 +167,6 @@ const year = new Date().getFullYear()
 
   .ico-search-v2::before {
     content: "";
-  }
-
-  .user-avatar {
-    position: relative;
-    padding-left: 44px;
   }
 
   .ico-search-v2 {
