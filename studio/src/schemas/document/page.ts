@@ -86,13 +86,13 @@ export default {
       group: 'meta'
     },
     {
-      name: 'twitterCard',
+      name: 'twitter',
       title: 'Twitter Card',
       type: 'twitterCard',
       group: 'twitter'
     },
     {
-      name: 'facebookCard',
+      name: 'facebook',
       title: 'Facebook Card',
       type: 'facebookCard',
       group: 'facebook'
