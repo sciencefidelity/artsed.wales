@@ -29,10 +29,22 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
   if (schemaType === 'newsletter') {
     return S.document().views([
       S.view.form(),
-      S.view.component(Mail).title('Preview')
+      S.view.component(Mail).title('Preview'),
+      S.view.component(Google).title('Google'),
+      S.view.component(Twitter).title('Twitter'),
+      S.view.component(Facebook).title('Facebook')
     ])
   }
-  if (schemaType === "post" || schemaType === "page") {
+  if (
+    schemaType === "artform" ||
+    schemaType === "event" ||
+    schemaType === "keystage" ||
+    schemaType === "post" ||
+    schemaType === "page" ||
+    schemaType === "staff" ||
+    schemaType === "tag" ||
+    schemaType === "video"
+  ) {
     return S.document().views([
       S.view.form(),
       S.view.component(Google).title('Google'),

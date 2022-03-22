@@ -47,7 +47,7 @@ const Facebook = ({ document }) => {
           </div>
           <div className={s.ogPreview}>
             <div className={s.ogPreviewImage}>
-              <img
+              {document.displayed.mainImage && <img
                 src={urlFor(document.displayed.mainImage)
                   .auto('format')
                   .width(476)
@@ -55,7 +55,7 @@ const Facebook = ({ document }) => {
                   .quality(80)
                   .url()}
                 alt=""
-              />
+              />}
             </div>
             <div className={s.ogPreviewBookmark}>
               <div className={s.ogPreviewContent}>

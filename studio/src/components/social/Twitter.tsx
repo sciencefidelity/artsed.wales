@@ -52,7 +52,7 @@ const Twitter = ({ document }) => {
               </div>
               <div className={s.twitterPostPreview}>
                 <div className={s.twitterPreviewImage}>
-                  <img
+                  {document.displayed.mainImage && <img
                     src={urlFor(document.displayed.mainImage)
                       .auto('format')
                       .width(507)
@@ -60,7 +60,7 @@ const Twitter = ({ document }) => {
                       .quality(80)
                       .url()}
                     alt=""
-                  />
+                  />}
                 </div>
                 <div className={s.twitterPreviewContent}>
                   <div className={s.twitterPreviewTitle}>{twitterTitle}</div>
