@@ -1,0 +1,21 @@
+---
+import PortableText from "../components/PortableText"
+import { components } from "../components/ptComponents"
+const { locale, en, cy } = Astro.props
+---
+
+<table class="bg-white" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr class="block pt-10 px-20 pb-50">
+      <td>
+        <PortableText
+          value={locale.newsletter.body}
+          components={components}
+        />
+      </td>
+    </tr>
+    <tr>
+      <td class="block h-5 m-auto hr-color mx-20"></td>
+    </tr>
+  </tbody>
+</table>
