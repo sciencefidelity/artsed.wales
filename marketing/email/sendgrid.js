@@ -7,7 +7,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const msg = {
   to: "hello@mattcook.art",
   from: "Matt Cook <hello@artsed.wales>",
-  subject: "National Arts & Education Network",
+  subject: "Professional development programme for teachers and educators",
   text: "Professional development programme for teachers and educators",
   html: fs.readFileSync("./dist/index.html", "utf8")
 }

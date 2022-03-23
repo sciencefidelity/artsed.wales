@@ -9,7 +9,7 @@ const msg = {
   from: "Matt Cook <hello@artsed.wales>",
   subject: "Professional development programme for teachers and educators",
   text: "Professional development programme for teachers and educators",
-  html: fs.readFileSync("./dist/text.html", "utf8")
+  html: fs.readFileSync("./dist/index.html", "utf8")
 }
 sgMail
   .send(msg)
