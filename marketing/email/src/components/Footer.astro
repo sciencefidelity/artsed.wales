@@ -18,16 +18,16 @@ const year = new Date().getFullYear()
   <tbody>
     <tr>
       <td class="w-full text-sm text-center">
-        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em; letter-spacing: 0.025em;">
+        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em;">
           &copy;{" "}{year}{" "}<span set:html={locale.company.title} />
         </p>
-        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em; letter-spacing: 0.025em;">
+        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em;">
           <span set:html={locale.company.address.line1} /> &bull;
           <span set:html={locale.company.address.line2} /> &bull;
           <span set:html={locale.company.address.city} /> &bull;
           <span set:html={locale.company.address.postcode} />
         </p>
-        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em; letter-spacing: 0.025em;">
+        <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; font-size: 13px; font-weight: 400; color: #666666; padding-top: 5px; padding-bottom: 5px; margin: 0px; line-height: 1.5em;">
           <span set:html={locale.labels.change} /><br />
           <a href="#" style="color: #666666; text-decoration: underline;" set:html={locale.labels.unsubscribe}></a>.
         </p>

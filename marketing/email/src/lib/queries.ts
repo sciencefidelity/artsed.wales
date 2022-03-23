@@ -10,7 +10,8 @@ export const newsletterQuery = groq`{
       body,
       "background": background.hex,
       events[]->{
-        _id, _type, dateStart, mainImage, title, summary, britelink
+        _id, _type, dateStart, mainImage, "slug": slug.current,
+        title, summary, britelink
       },
       headline, "logo": logo.asset->.url, mainImage, "slug": slug.current,
       social[]{
@@ -44,7 +45,8 @@ export const newsletterQuery = groq`{
       body,
       "background": background.hex,
       events[]->{
-        _id, _type, dateStart, mainImage, title, summary, britelink
+        _id, _type, dateStart, mainImage, "slug": slug.current,
+        title, summary, britelink
       },
       headline, "logo": logo.asset->.url, mainImage, "slug": slug.current,
       social[]{

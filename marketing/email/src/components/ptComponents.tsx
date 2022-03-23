@@ -13,8 +13,7 @@ export const components: PortableTextComponents = {
             fontSize: "16px",
             fontFamily: "-apple-system,Helvetica Neue,Helvetica,Arial,Verdana,sans-serif !important",
             lineHeight: "1.5em",
-            fontWeight: 200,
-            letterSpacing: "0.025em"
+            fontWeight: 200
           }}
         >
           {children}
