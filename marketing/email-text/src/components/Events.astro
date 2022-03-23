@@ -13,10 +13,12 @@ const { locale, en, cy } = Astro.props
             <tbody>
               <tr>
                 <th class="p-20">
-                  {event.dateStart && <time datetime={format(new Date(event.dateStart), "yyyy-MM-dd")} style="font-family:'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; margin-top: 10px; margin-bottom: 10px; padding-top: 5px; padding-bottom: 5px; font-size: 14px; font-weight: 300;">
+                  {event.dateStart ? <p style="font-family:'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; margin: 0px; padding-top: 5px; padding-bottom: 5px; font-size: 16px; font-weight: 200;"><time datetime={format(new Date(event.dateStart), "yyyy-MM-dd")}>
                   {format(new Date(event.dateStart), "eeee, d MMMM yyyy, HH:mm")}
-                  </time>}
-                  {event.title && <h2 style="font-family:'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; padding-top: 5px; margin: 0px; font-size: 18px; font-weight: 700; line-height: 1.5em ">
+                  </time></p> : <p style="font-family: -apple-system,'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; padding-top: 5px; padding-bottom: 5px; margin: 0px; font-size: 16px; font-weight: 200; line-height: 1.5;">
+                    Date to be announced
+                  </p>}
+                  {event.title && <h2 style="font-family:'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; padding-top: 5px; margin: 0px; font-size: 20px; font-weight: 700; line-height: 1.5em ">
                     <a href={`https://artsed.wales/courses/${event.slug}`} style="color: #0060BA; text-decoration: none;" target="_blank" set:html={event.title}></a>
                   </h2>}
                   {event.summary && <p style="font-family:'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif !important; padding-top: 5px; padding-bottom: 5px; margin: 0px; font-size: 16px; font-weight: 200; line-height: 1.5; letter-spacing: 0.025em" set:html={event.summary} />}
