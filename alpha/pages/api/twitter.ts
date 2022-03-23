@@ -23,7 +23,7 @@ const client = new TwitterApi(process.env.TWITTER_TOKEN)
 // export default getTweet
 
 async function sendTweet(req, res) {
-  const { data: createdTweet } = await client.v2.tweet("Wondering about the name change? We've joined with @EdauCymru and @NAWRcymru to serve all Wales.")
+  const { data: createdTweet } = await client.v2.tweet("Wondering about the name change? We've joined with @EdauCymru and @NAWRcymru to form the National Art and Education Network to serve all Wales.")
   res.status(200).json({ createdTweet })
 }
 export default sendTweet
