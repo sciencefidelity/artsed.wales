@@ -15,17 +15,17 @@ async function sendEmail(req, res) {
       html: `
         <!DOCTYPE html>
         <html lang="en">
-        <head>
-          <meta charset="utf-8">
-          <title>${subject}</title>
-          <meta name="description" content="${subject}">
-        </head>
-        <body>
-          <p>New message from ${fullName}.</p>
-          <p>Their email is: <a href="mailto:${req.body.email}">${req.body.email}</a></p>
-          <p>Message:</p>
-          <p>${req.body.message}</p>
-        </body>
+          <head>
+            <meta charset="utf-8">
+            <title>${subject}</title>
+            <meta name="description" content="${subject}">
+          </head>
+          <body>
+            <p>New message from ${fullName}.</p>
+            <p>Their email is: <a href="mailto:${req.body.email}">${req.body.email}</a></p>
+            <p>Message:</p>
+            <p>${req.body.message}</p>
+          </body>
         </html>
       `
     }).then(() => {
