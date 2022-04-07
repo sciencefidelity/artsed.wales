@@ -1,5 +1,4 @@
 {
-  "plugins": ["stylelint-scss"],
   "extends": [
     "stylelint-config-prettier",
     "stylelint-config-standard",
@@ -33,6 +32,7 @@
         "combined": "^\\.combined-{componentName}-[a-z]+$"
       },
       "utilitySelectors": "^\\.util-[a-z]+$"
-    }
+    },
+    "function-no-unknown": [true, { "ignoreFunctions": ["map.get"] }]
   }
 }

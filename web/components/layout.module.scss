@@ -19,9 +19,9 @@
 }
 
 .langLink {
-  background: none;
-  border: none;
   font-size: 2rem;
+  background: none;
+  border: 0;
   @include b.mq(sm) {
     font-size: 1.7rem;
   }
@@ -170,9 +170,9 @@
 .linksMenu {
   display: flex;
   gap: 3rem;
-  list-style: none;
   justify-content: center;
   padding: 0;
+  list-style: none;
   @include b.mq(md) {
     gap: 0 2rem;
     line-height: 0;
