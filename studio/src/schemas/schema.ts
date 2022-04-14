@@ -29,6 +29,7 @@ import keystage from './document/keystage'
 import newsletter from './document/newsletter'
 import page from './document/page'
 import post from './document/post'
+import resource from './document/resource'
 import staff from './document/staff'
 import tag from './document/tag'
 import video from './document/video'
@@ -74,6 +75,7 @@ export default createSchema({
     newsletter,
     page,
     post,
+    resource,
     staff,
     tag,
     video,

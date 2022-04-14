@@ -15,6 +15,7 @@ import {
   Date,
   FilmProjector,
   Gear,
+  GreenBook,
   Label,
   Newspaper,
   PostOffice,
@@ -77,6 +78,14 @@ const items = [
     .child(
       S.documentTypeList('page')
         .title('Page')
+        .filter('_type == "page" && __i18n_lang != "cy"')
+    ),
+  S.listItem()
+    .title('Resource')
+    .icon(GreenBook)
+    .child(
+      S.documentTypeList('resource')
+        .title('Resource')
         .filter('_type == "page" && __i18n_lang != "cy"')
     ),
   S.listItem()
@@ -234,6 +243,7 @@ const items = [
         'page',
         'photography',
         'post',
+        'resource',
         'quote',
         'settings',
         'staff',
