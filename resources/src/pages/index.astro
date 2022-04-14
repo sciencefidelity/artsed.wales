@@ -2,29 +2,27 @@
 import "styles/global.css"
 import sanityClient from "lib/sanityClient"
 import { resourceQuery } from "lib/queries"
-import { Resource } from "lib/interfaces"
+import { Resource, SanityBlock } from "lib/interfaces"
 
 const response = await sanityClient.fetch(resourceQuery)
 const data = response
 const { resource } = data as { resource: Resource }
 
-const getNestedHeadings = headings => {
+const getNestedHeadings = (titles: SanityBlock[]) => {
   const nestedHeadings = []
-
-  headings.forEach((heading, index) => {
-    const { style, children } = heading
+  titles.forEach(title => {
+    const { style, children } = title
     const { text } = children[0]
 
-    if (heading.style === "h2") {
+    if (title.style === "h2") {
       nestedHeadings.push({ id: style, title: text, items: [] })
-    } else if (heading.style === "h3" && nestedHeadings.length > 0) {
+    } else if (title.style === "h3" && nestedHeadings.length > 0) {
       nestedHeadings[nestedHeadings.length - 1].items.push({
         id: style,
         title: text
       })
     }
   })
-
   return nestedHeadings
 }
 
