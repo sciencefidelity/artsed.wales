@@ -32,7 +32,7 @@ const getNestedHeadings = headings => {
 }
 
 const titles = resource.body.filter(block => block.style !== "normal")
-const nestedHeadings = getNestedHeadings(titles)
+const headings = getNestedHeadings(titles)
 ---
 <html lang="en">
   <head>
@@ -43,12 +43,23 @@ const nestedHeadings = getNestedHeadings(titles)
   </head>
   <body>
     <Header />
-    <!-- {titles.map(block =>
-      <Show when={block.style === "h2"}><h2>{block.children[0].text}</h2></Show>
-      <Show when={block.style === "h3"}><h3>{block.children[0].text}</h3></Show>
-      <Show when={block.style === "h4"}><h4>{block.children[0].text}</h4></Show>
-    )} -->
-    {JSON.stringify(nestedHeadings)}
+    <ul>
+      {headings.map(heading => (
+        <li>
+          <a href={`#${heading.id}`}>{heading.title}</a>
+          {heading.items.length > 0 && (
+            <ul>
+              {heading.items.map(child => (
+                <li>
+                  <a href={`#${child.id}`}>{child.title}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+    <!-- {JSON.stringify(nestedHeadings)} -->
     <Footer />
   </body>
 </html>
