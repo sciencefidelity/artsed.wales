@@ -1,5 +1,6 @@
 ---
 import "styles/global.css"
+import { Show } from "astro-control"
 import sanityClient from "lib/sanityClient"
 import { resourceQuery } from "lib/queries"
 import Footer from "components/Footer.astro"
@@ -9,8 +10,29 @@ import { Resource } from "lib/interfaces"
 const response = await sanityClient.fetch(resourceQuery)
 const data = response
 const { resource } = data as { resource: Resource }
-// const titles = resource.body.filter()
 
+const getNestedHeadings = headings => {
+  const nestedHeadings = []
+
+  headings.forEach((heading, index) => {
+    const { style, children } = heading
+    const { text } = children[0]
+
+    if (heading.style === "h2") {
+      nestedHeadings.push({ id: style, title: text, items: [] })
+    } else if (heading.style === "h3" && nestedHeadings.length > 0) {
+      nestedHeadings[nestedHeadings.length - 1].items.push({
+        id: style,
+        title: text
+      })
+    }
+  })
+
+  return nestedHeadings
+}
+
+const titles = resource.body.filter(block => block.style !== "normal")
+const nestedHeadings = getNestedHeadings(titles)
 ---
 <html lang="en">
   <head>
@@ -21,7 +43,12 @@ const { resource } = data as { resource: Resource }
   </head>
   <body>
     <Header />
-    <p>{resource.body[0].style}</p>
+    <!-- {titles.map(block =>
+      <Show when={block.style === "h2"}><h2>{block.children[0].text}</h2></Show>
+      <Show when={block.style === "h3"}><h3>{block.children[0].text}</h3></Show>
+      <Show when={block.style === "h4"}><h4>{block.children[0].text}</h4></Show>
+    )} -->
+    {JSON.stringify(nestedHeadings)}
     <Footer />
   </body>
 </html>
