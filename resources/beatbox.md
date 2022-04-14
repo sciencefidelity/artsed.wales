@@ -31,8 +31,8 @@ A project developed within the frameworks presented in this resource can enable 
 
 ### What kind of places could you visit?
 
-- [National Museum Wales](www.museum.wales)
-- Other national museums, collections and galleries (eg Tate, Museum of Science and Industry, National Archives), visit [www.nationalmuseums.org.uk](www.nationalmuseums.org.uk) a full list of national museums in the UK.
+- [National Museum Wales](https://www.museum.wales)
+- Other national museums, collections and galleries (eg Tate, Museum of Science and Industry, National Archives), visit [www.nationalmuseums.org.uk](https://www.nationalmuseums.org.uk) a full list of national museums in the UK.
 - Local museums, libraries, galleries
 - Historic houses and parks
 - National parks
@@ -43,10 +43,10 @@ A project developed within the frameworks presented in this resource can enable 
 - Handling collections that can be borrowed by a school
 - University and college collections
 - Local historic sites such as monuments, natural landscapes, bronze age sites, public art exhibits
-- [People’s Collection Wales](www.peoplescollection.wales)
-- [Kids in Museums](www.kidsinmuseums.org.uk)
-- [Literature Wales](www.literaturewales.org)
-- [Urdd Gobaith Cymru](www.urdd.cymru)
+- [People’s Collection Wales](https://www.peoplescollection.wales)
+- [Kids in Museums](https://www.kidsinmuseums.org.uk)
+- [Literature Wales](https://www.literaturewales.org)
+- [Urdd Gobaith Cymru](https://www.urdd.cymru)
 - Regional Music Education Services
 
 The possibilities are endless.
@@ -116,10 +116,9 @@ Though some spoken word poetry may also be published on the page, the genre has 
 - Hanan Issa (Wales)
 - Joelle Taylor (UK)
 - Kate Tempest (UK)
-- Kevin Coval (USA, but educated
-- at University of Wales)
+- Kevin Coval (USA, but educated at University of Wales)
 - Mab Jones (Wales)
-- Mahogany L Brown (USE
+- Mahogany L Brown (USA)
 - Murdoch Burnett (Canada)
 - Rosanne Watt (Scotland)
 - Samuel King (UK)
@@ -152,8 +151,7 @@ This framework has been designed to support the facilitation of the new Curricul
 - Creative idea generation.
 - Responding to new ideas, positively and critically.
 - Communication, presentation and team working skills.
-- Using a range of digitaltools, both skills-
-- based and for communication purposes.
+- Using a range of digitaltools, both skills-based and for communication purposes.
 - Making connections.
 - Developing skills in critical analysis, refinement and improvement.
 
