@@ -1,10 +1,7 @@
 ---
 import "styles/global.css"
-import { Show } from "astro-control"
 import sanityClient from "lib/sanityClient"
 import { resourceQuery } from "lib/queries"
-import Footer from "components/Footer.astro"
-import Header from "components/Header.astro"
 import { Resource } from "lib/interfaces"
 
 const response = await sanityClient.fetch(resourceQuery)
@@ -42,24 +39,23 @@ const headings = getNestedHeadings(titles)
     <title>Beatbox</title>
   </head>
   <body>
-    <Header />
-    <ul>
-      {headings.map(heading => (
-        <li>
-          <a href={`#${heading.id}`}>{heading.title}</a>
-          {heading.items.length > 0 && (
-            <ul>
-              {heading.items.map(child => (
-                <li>
-                  <a href={`#${child.id}`}>{child.title}</a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      ))}
-    </ul>
-    <!-- {JSON.stringify(nestedHeadings)} -->
-    <Footer />
+    <article>
+      <ul>
+        {headings.map(heading => (
+          <li>
+            <a href={`#${heading.id}`}>{heading.title}</a>
+            {heading.items.length > 0 && (
+              <ul>
+                {heading.items.map(child => (
+                  <li>
+                    <a href={`#${child.id}`}>{child.title}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </article>
   </body>
 </html>
