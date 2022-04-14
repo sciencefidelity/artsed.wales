@@ -1,0 +1,27 @@
+---
+import "styles/global.css"
+import sanityClient from "lib/sanityClient"
+import { resourceQuery } from "lib/queries"
+import Footer from "components/Footer.astro"
+import Header from "components/Header.astro"
+import { Resource } from "lib/interfaces"
+
+const response = await sanityClient.fetch(resourceQuery)
+const data = response
+const { resource } = data as { resource: Resource }
+// const titles = resource.body.filter()
+
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Beatbox</title>
+  </head>
+  <body>
+    <Header />
+    <p>{resource.body[0].style}</p>
+    <Footer />
+  </body>
+</html>
