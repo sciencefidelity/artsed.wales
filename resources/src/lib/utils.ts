@@ -1,6 +1,11 @@
+import { toHTML } from "@portabletext/to-html"
 import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "./sanityClient"
-import {  } from "lib/interfaces"
+import { SanityBlock } from "lib/interfaces"
+
+export const buildUrl = (type: string, slug: string): string => {
+  return `${subdir(type)}/${slug}`
+}
 
 export const getNestedHeadings = (titles: SanityBlock[]) => {
   const nestedHeadings = []
@@ -19,6 +24,24 @@ export const getNestedHeadings = (titles: SanityBlock[]) => {
   })
   return nestedHeadings
 }
+
+export const kebabCase = (str: string): string => {
+  return str.toLowerCase().split(" ").join("-").replace(/[^a-z0-9-]/g, "")
+}
+
+export const subdir = (type: string): string => {
+  switch (type) {
+  case "author":
+    return "/author"
+  case "post":
+    return "/blog"
+  case "tag":
+    return "/tag"
+  default:
+    return ""
+  }
+}
+
 
 export const urlFor = source => {
   return imageUrlBuilder(sanityClient).image(source)

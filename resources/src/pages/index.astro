@@ -1,9 +1,15 @@
 ---
 import "styles/global.css"
+import { Maybe } from "astro-control"
+import { toHTML } from "@portabletext/to-html"
+// import { PortableText } from "@portabletext/react"
 import sanityClient from "lib/sanityClient"
+import { portableTextComponents } from "lib/components"
 import { getNestedHeadings } from "lib/utils"
+// import PortableText from "components/PortableText"
+// import { components } from "components/ptComponents"
 import { resourceQuery } from "lib/queries"
-import { Resource, SanityBlock } from "lib/interfaces"
+import { Resource } from "lib/interfaces"
 
 const response = await sanityClient.fetch(resourceQuery)
 const data = response
@@ -15,28 +21,61 @@ const headings = getNestedHeadings(titles)
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" />
-    <title>Beatbox</title>
+    <title>{resource.title}</title>
   </head>
   <body>
-    <article>
-      <ul>
-        {headings.map(heading => (
-          <li>
-            <a href={`#${heading.id}`}>{heading.title}</a>
-            {heading.items.length > 0 && (
-              <ul>
-                {heading.items.map(child => (
-                  <li>
-                    <a href={`#${child.id}`}>{child.title}</a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
+    <article class="article">
+      <nav class="sidebar">
+        <ul>
+          {headings.map(heading => (
+            <li>
+              <a href={`#${heading.id}`}>{heading.title}</a>
+              {heading.items.length > 0 && (
+                <ul>
+                  {heading.items.map(child => (
+                    <li>
+                      <a href={`#${child.id}`}>{child.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <section class="main">
+        <h1 class="title">{resource.title}</h1>
+        <Maybe
+          as="div"
+          set:html={toHTML(resource.body, {components: portableTextComponents})}
+        >
+        </Maybe>
+        <!-- <PortableText value={resource.body} components={components} /> -->
+      </section>
     </article>
   </body>
 </html>
+
+<style>
+  .article {
+    display: flex;
+    gap: 5rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .sidebar {
+    width: 300px;
+    position: sticky;
+    top: 1rem;
+    overflow: auto;
+    align-self: flex-start;
+  }
+
+  .main {
+    max-width: 700px;
+  }
+</style>

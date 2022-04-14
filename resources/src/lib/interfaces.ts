@@ -8,8 +8,9 @@ export type PortableText = Array<
     }>
 >;
 
-export interface Resource {
+export interface Resource extends SanityDocument {
   body: PortableText
+  title: string
 }
 
 export interface SanityBlock {
