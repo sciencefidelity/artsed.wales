@@ -1,0 +1,12 @@
+.smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.serif {
+  font-family: Georgia, Times, serif;
+}
+
+.sans {
+  font-family: var(--font-sans-serif);
+}

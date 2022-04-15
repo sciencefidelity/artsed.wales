@@ -1,0 +1,17 @@
+// html {
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+.anchor {
+  opacity: 0;
+  left: -1em;
+  padding-right: 0.35em;
+  text-decoration: none;
+}
+
+.heading:hover .anchor {
+  opacity: 1;
+}
+
+
