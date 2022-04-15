@@ -8,13 +8,13 @@ export const portableTextComponents = {
   block: {
     normal: ({children}) => {
       return `
-        <p class="">${children}</p>
+        <p class="text-lg my-5">${children}</p>
       `
     },
     h2: ({children}) => {
       const id = kebabCase(children)
       return `
-        <h2 id="${id}" class="heading relative scroll-mt-5 text-3xl font-bold">
+        <h2 id="${id}" class="heading relative scroll-mt-5 text-3xl font-bold my-5">
           <a href="#${id}" class="anchor absolute"}>#</a>${children}
         </h2>
       `
@@ -22,7 +22,7 @@ export const portableTextComponents = {
     h3: ({children}) => {
       const id = kebabCase(children)
       return `
-        <h3 id="${id}" class="heading relative scroll-mt-5 text-2xl font-bold">
+        <h3 id="${id}" class="heading relative scroll-mt-5 text-2xl font-bold my-5">
           <a href="#${id}" class="anchor absolute"}>#</a>${children}
         </h3>
       `
