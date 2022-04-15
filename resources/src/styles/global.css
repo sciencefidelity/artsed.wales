@@ -18,6 +18,10 @@ body {
   float: left;
 }
 
+.scroll-mt-5 {
+  scroll-margin-top: 1.25rem;
+}
+
 .m-0 {
   margin: 0px;
 }

@@ -14,7 +14,7 @@ export const portableTextComponents = {
     h2: ({children}) => {
       const id = kebabCase(children)
       return `
-        <h2 id="${id}" class="relative heading">
+        <h2 id="${id}" class="relative heading scroll-mt-5">
           <a href="#${id}" class="absolute anchor"}>#</a>${children}
         </h2>
       `
@@ -22,7 +22,7 @@ export const portableTextComponents = {
     h3: ({children}) => {
       const id = kebabCase(children)
       return `
-        <h3 id="${id}" class="relative heading">
+        <h3 id="${id}" class="relative heading scroll-mt-5">
           <a href="#${id}" class="absolute anchor"}>#</a>${children}
         </h3>
       `
