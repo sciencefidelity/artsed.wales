@@ -19,6 +19,7 @@
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
     "@types/react": "^17.0.43",
+    "@types/vhtml": "^2.2.4",
     "add": "^2.0.6",
     "astro": "^1.0.0-beta.12",
     "astro-control": "^0.0.1",

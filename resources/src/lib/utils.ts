@@ -10,14 +10,14 @@ export const buildUrl = (type: string, slug: string): string => {
 export const getNestedHeadings = (titles: SanityBlock[]) => {
   const nestedHeadings = []
   titles.forEach(title => {
-    const { style, children } = title
+    const { children } = title
     const { text } = children[0]
 
     if (title.style === "h2") {
-      nestedHeadings.push({ id: style, title: text, items: [] })
+      nestedHeadings.push({ id: kebabCase(text), title: text, items: [] })
     } else if (title.style === "h3" && nestedHeadings.length > 0) {
       nestedHeadings[nestedHeadings.length - 1].items.push({
-        id: style,
+        id: kebabCase(text),
         title: text
       })
     }
