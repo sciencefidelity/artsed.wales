@@ -1,5 +1,17 @@
+body {
+  scroll-behavior: smooth;
+}
+
 .block {
   display: block;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .float-left {
@@ -239,6 +251,17 @@
 .social-icon {
   width: 48px;
   height: 48px;
+}
+
+.anchor {
+  opacity: 0;
+  left: -1em;
+  padding-right: 0.35em;
+  text-decoration: none;
+}
+
+.heading:hover .anchor {
+  opacity: 1;
 }
 
 @media only screen and (max-width: 480px) {

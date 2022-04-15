@@ -14,13 +14,17 @@ export const portableTextComponents = {
     h2: ({children}) => {
       const id = kebabCase(children)
       return `
-        <h2 id=${id} class="">${children}</h2>
+        <h2 id="${id}" class="relative heading">
+          <a href="#${id}" class="absolute anchor"}>#</a>${children}
+        </h2>
       `
     },
     h3: ({children}) => {
       const id = kebabCase(children)
       return `
-        <h3 id=${id} class="">${children}</h3>
+        <h3 id="${id}" class="relative heading">
+          <a href="#${id}" class="absolute anchor"}>#</a>${children}
+        </h3>
       `
     },
     blockquote: ({children}) => {
