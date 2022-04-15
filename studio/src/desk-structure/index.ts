@@ -86,7 +86,7 @@ const items = [
     .child(
       S.documentTypeList('resource')
         .title('Resource')
-        .filter('_type == "page" && __i18n_lang != "cy"')
+        .filter('_type == "resource" && __i18n_lang != "cy"')
     ),
   S.listItem()
     .title('Newsletter')

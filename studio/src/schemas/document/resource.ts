@@ -4,7 +4,7 @@ import { GreenBook } from '../../components/twemoji'
 
 export default {
   name: 'resource',
-  title: 'resource',
+  title: 'Resource',
   type: 'document',
   icon: GreenBook,
   i18n,
