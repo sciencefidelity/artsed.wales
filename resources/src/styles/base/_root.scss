@@ -1,24 +1,37 @@
 :root {
-  --black: hsl(210, 9%, 4%);
-  --link: hsl(216, 11%, 9%);
-  --text: hsl(216, 5%, 22%);
-  --meta: hsl(198, 13%, 52%);
-  --cta: hsl(216, 11%, 9%);
-  --footer-heading: hsl(0, 0%, 100%);
-  --footer-text: hsl(240, 1%, 62%);
-  --footer-border: hsl(210, 3%, 14%);
+  --grey-000: hsl(0, 0%, 100%);
+  --grey-050: hsl(0, 0%, 95%);
+  --grey-100: hsl(0, 0%, 90%);
+  --grey-150: hsl(0, 0%, 85%);
+  --grey-200: hsl(0, 0%, 80%);
+  --grey-250: hsl(0, 0%, 75%);
+  --grey-300: hsl(0, 0%, 70%);
+  --grey-350: hsl(0, 0%, 65%);
+  --grey-400: hsl(0, 0%, 60%);
+  --grey-450: hsl(0, 0%, 55%);
+  --grey-500: hsl(0, 0%, 50%);
+  --grey-550: hsl(0, 0%, 45%);
+  --grey-600: hsl(0, 0%, 40%);
+  --grey-650: hsl(0, 0%, 35%);
+  --grey-700: hsl(0, 0%, 30%);
+  --grey-750: hsl(0, 0%, 25%);
+  --grey-800: hsl(0, 0%, 20%);
+  --grey-850: hsl(0, 0%, 15%);
+  --grey-900: hsl(0, 0%, 10%);
+  --grey-950: hsl(0, 0%, 05%);
   --font-sans-serif:
+    Calibre,
+    system-ui,
     -apple-system,
     blinkmacsystemfont,
     'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
     'Fira Sans',
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  --font-serif: georgia, times, serif;
-  --font-mono: menlo, courier, monospace;
+  --font-monospace: 'Pitch Sans', ui-monospace, menlo, courier, monospace;
 }

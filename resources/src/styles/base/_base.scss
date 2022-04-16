@@ -3,6 +3,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sans {
+  font-family: var(--font-sans-serif);
+}
+
+.mono {
+  font-family: var(--font-monospace);
+}
+
 .relative {
   position: relative;
 }
