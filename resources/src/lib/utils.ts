@@ -1,10 +1,22 @@
-import { toHTML } from "@portabletext/to-html"
 import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "./sanityClient"
 import { SanityBlock } from "lib/interfaces"
 
 export const buildUrl = (type: string, slug: string): string => {
   return `${subdir(type)}/${slug}`
+}
+
+export const getHeadings = (blocks: SanityBlock[]): string[] => {
+  const headings: string[] = []
+  blocks.forEach(block => {
+    const { children } = block
+    const { text }: { text: string } = children[0]
+
+    if (block.style === "h2") {
+      headings.push(text)
+    }
+  })
+  return headings
 }
 
 export const getNestedHeadings = (titles: SanityBlock[]) => {

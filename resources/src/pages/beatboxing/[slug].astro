@@ -5,16 +5,29 @@ import { toHTML } from "@portabletext/to-html"
 import sanityClient from "lib/sanityClient"
 // import Image from "components/Image.astro"
 import { portableTextComponents } from "lib/components"
-import { getNestedHeadings } from "lib/utils"
+import { getHeadings, kebabCase } from "lib/utils"
 import { resourceQuery } from "lib/queries"
 import { Resource } from "lib/interfaces"
 
-const response = await sanityClient.fetch(resourceQuery)
-const data = response
-const { resource } = data as { resource: Resource }
+export async function getStaticPaths() {
+  const data: {
+    resource: Resource
+  } = await sanityClient.fetch(resourceQuery).then(response => response)
+  const { resource } = data
+  const titles = resource.body.filter(block => block.style !== "normal")
+  const headings = getHeadings(titles)
+  return headings.map(heading => {
+    const slug = kebabCase(heading)
+    return {
+      params: { slug: slug },
+      props: { resource }
+    }
+  })
+}
 
-const titles = resource.body.filter(block => block.style !== "normal")
-const headings = getNestedHeadings(titles)
+const { resource } = Astro.props as { resource: Resource }
+const blocks = resource.body.filter(block => block.style !== "normal")
+const pageHeadings = getHeadings(blocks)
 ---
 <html lang="en">
   <head>
@@ -37,24 +50,12 @@ const headings = getNestedHeadings(titles)
     <article class="flex gap-20 container">
       <nav class="w-1/4 sticky self-start top-12 overflow-auto mt-32">
         <ul class="sans smooth font-semibold text-xl color-850 list-dash list-inside">
-          {headings.map(heading => (
+          {pageHeadings.map(heading => (
             <li class="mt-3">
               <a
-                href={`#${heading.id}`}
+                href={`/beatboxing/${kebabCase(heading)}`}
                 class="hover:underline"
-              >{heading.title}</a>
-              {heading.items.length > 0 && (
-                <ul class="font-medium color-750 list-dash list-inside ml-3">
-                  {heading.items.map(child => (
-                    <li>
-                      <a
-                        href={`#${child.id}`}
-                        class="hover:underline"
-                      >{child.title}</a>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              >{heading}</a>
             </li>
           ))}
         </ul>
