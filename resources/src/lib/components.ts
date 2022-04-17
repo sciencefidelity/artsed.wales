@@ -44,7 +44,7 @@ export const portableTextComponents = {
   list: {
     bullet: ({children}) => {
       return `
-        <ul class="sans font-medium smooth text-xl color-750 list-disc list-inside">${children}</ul>
+        <ul class="sans font-medium smooth text-xl color-650 list-dash ml-5">${children}</ul>
       `
     }
   },

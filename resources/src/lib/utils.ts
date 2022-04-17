@@ -27,7 +27,7 @@ export const getNestedHeadings = (titles: SanityBlock[]) => {
 
     if (title.style === "h2") {
       nestedHeadings.push({ id: kebabCase(text), title: text, items: [] })
-    } else if (title.style === "h3" && nestedHeadings.length > 0) {
+    } else if (title.style === "h3" || title.style === "h4" && nestedHeadings.length > 0) {
       nestedHeadings[nestedHeadings.length - 1].items.push({
         id: kebabCase(text),
         title: text
@@ -35,6 +35,24 @@ export const getNestedHeadings = (titles: SanityBlock[]) => {
     }
   })
   return nestedHeadings
+}
+
+export const getNestedMinorHeadings = (titles: SanityBlock[]) => {
+  const nestedMinorHeadings = []
+  titles.forEach(title => {
+    const { children } = title
+    const { text } = children[0]
+
+    if (title.style === "h3") {
+      nestedMinorHeadings.push({ id: kebabCase(text), title: text, items: [] })
+    } else if (title.style === "h4" && nestedMinorHeadings.length > 0) {
+      nestedMinorHeadings[nestedMinorHeadings.length - 1].items.push({
+        id: kebabCase(text),
+        title: text
+      })
+    }
+  })
+  return nestedMinorHeadings
 }
 
 export const kebabCase = (str: string): string => {

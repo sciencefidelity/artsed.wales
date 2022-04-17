@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+li {
+  padding-left: 1em;
+}
+
 .hr {
   height: 2px;
   background: var(--grey-250);
