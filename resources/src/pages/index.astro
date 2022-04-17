@@ -35,7 +35,7 @@ const headings = getNestedHeadings(titles)
       }
     </header>
     <article class="flex gap-20 container">
-      <nav class="w-1/4 sticky self-start top-12 overflow-auto mt-32">
+      <nav class="sidebar sticky inline-block self-start w-1/4 h-screen top-0 bottom-0 overflow-y-auto py-12">
         <ul class="sans smooth font-semibold text-xl color-850 list-dash list-inside">
           {headings.map(heading => (
             <li class="mt-3">
@@ -71,3 +71,9 @@ const headings = getNestedHeadings(titles)
     </article>
   </body>
 </html>
+
+<style>
+  .sidebar {
+    scrollbar-width: none;
+  }
+</style>
