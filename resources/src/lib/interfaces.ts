@@ -18,6 +18,7 @@ export type PortableText = Array<
 export interface Resource extends SanityDocument {
   body: PortableText
   image: Image
+  slug: string
   title: string
 }
 

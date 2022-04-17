@@ -2,6 +2,10 @@
   text-decoration-thickness: 2px !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .hr {
   height: 2px;
   background: var(--grey-250);
