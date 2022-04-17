@@ -468,24 +468,24 @@ Back at school on the final day, the pupils focused on developing their word ban
 
 The first task was evaluating the experiences of the site visit. Many commented that they liked finding out about the people who’d lived in the house, especially the servants, whose stories were poorly represented.
 
-> It’s like we are giving them a voice and they are being seen properlynow.<br />
+> *It’s like we are giving them a voice and they are being seen properly now.*<br />
 > Pupil comment
 
 Rufus asked the class to think about why it was important to reflect on and learn from the past. They then discussed the pupils’ reflections from the visit, making links to current affairs.
 
 **Working together with Rufus, the group then transferred these comments into a piece of collaborative creative writing:**<br />
-*We’re bringing back the past*
-*Unlocking doors into the unknown*
-*Peeling back the house’s secrets*
-*Stepping into other time zones*
-*We’re bringing the past back*
-*Women wearing huge lampshades*
-*Crocodiles crawl around the posh rooms*
-*Next to the Louis Vuitton suitcase*
-*We’re bringing the past back*
-*Old games come back out to play*
-*Gold frames hang from the walls on chains*
-*Way too heavy for nails*
+*We’re bringing back the past*<br />
+*Unlocking doors into the unknown*<br />
+*Peeling back the house’s secrets*<br />
+*Stepping into other time zones*<br />
+*We’re bringing the past back*<br />
+*Women wearing huge lampshades*<br />
+*Crocodiles crawl around the posh rooms*<br />
+*Next to the Louis Vuitton suitcase*<br />
+*We’re bringing the past back*<br />
+*Old games come back out to play*<br />
+*Gold frames hang from the walls on chains*<br />
+*Way too heavy for nails*<br />
 *Extract from collaborative pupil poem.*
 
 ## Extending the learning and facilitating curriculum learning
