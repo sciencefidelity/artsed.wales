@@ -350,6 +350,221 @@ Work individually, in groups or even as a whole class, to pull your sentences to
 
 ## Case studies 1
 
+### Welsh language with key stage 2 – Ysgol Pentraeth, NationalSlate Museum, Mr Phormula, and Bari Gwilliam
 
+The aim of this project was to bring objects to life at the National Slate Museum, and use these as a basis for learning, through music/beatbox and rap. The project took place overthree full days of activity.
 
+The first session took place at the museum. The class explored the location and created word banks and mind maps describing the items in detail.
 
+Objects that stood out included: mining drills, thick rope that had been used to suspend workers on sides of the mountain, helmets and jackets worn by workers, and slate dust that was hazardous to workers, amongst many other artefacts.
+
+Once the groups had explored and analysed the objects we took the ideas back to school where we worked in groups and shared the objects with the rest ofthe class. Through exploring the objects we collaboratively worked on a big mind map highlighting descriptive words and ideas that best described the objects we were analysing. Through this process a fictional character was created: *Dafydd Drill*.
+
+The pupils decided that Dafydd Drill was a rather unpleasant individual due to him having to carry his gigantic drill around the quarry every day! He also lived in dre (town), but travelled to Llanber (Llanberis) every day which made him even more grumpy. By making this short character story about Dafydd Drill the class created a rhythmical rap based on this character:
+
+*Dafydd Drill yn dod o dre,*<br />
+*Ond goro gweithio yn Llanber,*<br />
+*Taflu ei bwysau o gwmpas y lle*<br />
+*Edrych mlaen gael panad o de!*
+
+Session 2 aimed to develop the objects into groups. There was a recap of the museum visit and pupils explored their pictures, each group choosing an object and creating a mind map or word bank to describe the selected object and it’s use. The groups then followed the same rap writing process as in the previous session to develop a character of their choice, and subsequently a rap.
+
+**Objects selected included:**
+
+- Jack Siaced (Jacket Jack – A worker’s jacket)
+- Huw and Hannah y Helmet (Worker’s protective helmet)
+- Llwch y Mynydd (Mountain dust)
+- Olwyn mawr (Big wheel)
+
+Each group performed their short rap based on the above characters, this objective was all about fun, expression, confidence building and character development.By using the above ideas we were able to create a collection of raps focusing on different objects and thus developing the object’s identity.
+
+The groups then had the opportunity to create and sample sounds using Mr Phormula and Bari Gwilliam’s equipment.
+
+The third session was aimed at performing and recording our objectraps. Each group recapped the general overview of the project. The final task was to mix beatboxing, then to perform and record the rap.
+
+Each group elected a number of members to be beatboxers. The beatboxers of the group recreated Queen’s simple “We will rock you” drum pattern to form the backing for the rappers. This beatis simple to re-create and only requires two letters – “B” and “C”, the individuals simply recreate the beat – “B / B / C, B / B / C, B / B / C”.
+
+The groups then separated and practised their raps and had the opportunity to add dance or movement which further enhanced the performances. The performances were recorded on tablets.
+
+**This project has involved:**
+
+- Object exploration and analysis
+- Local history exploration
+- Beatbox and rap activities
+- Object character building and
+- development
+- Creative writing
+- Performance, and dance
+- Digital competency.
+
+For more ideas on how to further enhance performances using tablets please see the section below on **Extending the learning**.
+
+## Case studies 2
+
+### Beatboxing and rap, English language with key stage 3 – Lewis School Pengam, Big Pit, ButtsBeat Technique and Steve
+
+A year eight group visited Six Bells Guardian Monument, Abertillery. This monument commemorates the 1960 Six Bells Mining disaster. The group was accompanied by beatboxer Beat Technique, and their teaching staff from the Expressive Arts department.
+
+The pupils participated in a guided tour led by a volunteer and had an opportunity to explore the mining object collection in the community museum at the site.
+
+The group then moved on to National Museum of Wales, Big Pit, Blaenavon, where they participated in an underground tour of an interpretive mining experience. During this tour, the pupils were asked to really think about everything that they were experiencing. They were asked to consider their sensory experience of the tour: sight, sound,taste, smell,feel, and the emotions that they were feeling.
+
+Pupils were also tasked to ask the museum guides plenty of questions in regards to differentroles in the coal industry, working conditions, and the experience of being underground.
+
+Back at school each of the classes were given a short introduction to beatboxing and a rap lyric writing session. Working with beatboxer Beat Technique, the pupils learnt how to produce basic beatbox sounds and also how to sequence them to make beatbox routines. They also explored how raps might flow and how different tempos and beats will affect this.
+
+**An example of work produced:**
+
+*Echos through the void as I finish my task*<br />
+*Cramped and claustrophobic in this dark, damp, shaft*<br />
+*Trapped like a rat as I feel the cold draft*<br />
+*Clunking sound of the water, back an’ forth in my flask*<br />
+*Year 8 pupil, Lewis School Pengam*
+
+## Case studies 3
+
+### Bilingual with key stage 2 – Tredegar Park Primary School, Tredegar House (National Trust), Nicola Williams and Rufus Mufasa
+
+Over a three day project, a year six group created spoken word poetry in response to their visit to Tredegar House in Newport. They worked with spoken word artist Rufus Mufasa,theirteacher, and the Newport Fusion Network Coordinator.
+
+#### Day 1: Developing confidence in creative play with language and a basic understanding of reading objects*
+
+In advance oftheir visit to Tredegar House, Rufus Mufasa led a whole day session in Tredegar Park School to introduce her practice. This covered her background, her professional journey and her experience of being a woman artist in the hip hop scene.
+
+Rufus introduced the concept of storytelling through poetry and rap. The session included a lot of games to free up the use of spoken language, including current youth culture language, nicknames, interests, hobbies, pets, and so on, to develop the pupils’ confidence in telling stories about themselves. It was important to highlight that each pupil was a teller of stories, and each one was unique, with a unique interpretation of the world.
+
+In the afternoon session, the group explored memory. The artist presented extracts from a book, inspiring the children to think about their own experiences of childhood. The artist also talked about her own childhood memories.
+
+The pupils worked in groups to create mind maps and then to use the words they’d gathered to start to construct sentences. These were then developed into quick, simple poems, raps and stories.
+
+Finally, the pupils then agreed a list of questions they would be asking themselves during the visit to Tredegar House on Day 2.
+
+#### Day 2: Visit to Tredegar House
+
+The aim of the visit was to collect creative ideas and make notes in response to the house and it’s collections,to take back to class.
+
+The group were given a tour of the site by the House Manager. This included a special trail around the property that introduced the Chartist Movementin relation to Tredegar House and its history. All pupils carried a notebook and their list of questions, and made notes during the tour.
+
+The artist collected her own notes, and after the first room, she read these out to the pupils. Her notes recorded words, thoughts, feelings and ideas, including ways to link the historic objects the group had seen to the world today. She stressed that there was no right or wrong thing to write down.
+
+**Here is an extract from her notes:**
+*Don’t be fooled by wealth*
+*It is still loaded with complication*
+*Take Harry & Megan for example*
+
+*Hand carved Caesars*
+*Meet little Mousey*
+*Floorboards the length of the house*
+*Tall trees, taken from their homes, thousands of miles away*
+*Roots ripped up from the kisses of the sun*
+
+The group talked a lot about life in the time that the house was built, referencing the Chartists, the people who lived and worked there, their sources of wealth, and the backgrounds of the portrait painters and crafts people who built or decorated the house. There were also discussions around ethics and power.
+
+The artist asked what the objects reminded them of within their own homes? This introduced their own visual knowledge into the meaning making from the object.
+
+#### Day 3: Writing poems
+
+Back at school on the final day, the pupils focused on developing their word banks into full poems which compared history with contemporary life, and began to work on performing their creative work.
+
+The first task was evaluating the experiences of the site visit. Many commented that they liked finding out about the people who’d lived in the house, especially the servants, whose stories were poorly represented.
+
+> It’s like we are giving them a voice and they are being seen properlynow.<br />
+> Pupil comment
+
+Rufus asked the class to think about why it was important to reflect on and learn from the past. They then discussed the pupils’ reflections from the visit, making links to current affairs.
+
+**Working together with Rufus, the group then transferred these comments into a piece of collaborative creative writing:**<br />
+*We’re bringing back the past*
+*Unlocking doors into the unknown*
+*Peeling back the house’s secrets*
+*Stepping into other time zones*
+*We’re bringing the past back*
+*Women wearing huge lampshades*
+*Crocodiles crawl around the posh rooms*
+*Next to the Louis Vuitton suitcase*
+*We’re bringing the past back*
+*Old games come back out to play*
+*Gold frames hang from the walls on chains*
+*Way too heavy for nails*
+*Extract from collaborative pupil poem.*
+
+## Extending the learning and facilitating curriculum learning
+
+**Ways to extend the learning:**
+
+- Create soundscapes of your character/ scenario/emotion by recording the voices or sounds present in the environment,for example, wind, bangs,thuds, whistles, machinery, or background noise. These recordings can be used as samples within a performance or recording.
+- Develop the rap or poem to be performed as part of a live performance by the pupils. For example, alongside a band, percussion group, choir or visual film, or as part of a drama performance.
+- Use the Samplebot app, which is designed to sample sounds via an Ipad’s internal microphone. Pupils could use
+- Samplebot to record sounds at the museum, or sounds relating to the objects. For example, at the National
+- Slate Museum, pupils recorded the sounds of stones and slate hitting each other, then used Samplebotto put these sounds on virtual square pads.
+- The virtual square pads on the screen were then used to create a sampled rhythm similar to an electronic drum beat. This method further enhances an object’s sensory identity whilst creating a unique backing track for the rappers.
+- Use the app Simple Minds + to create instantaneous mind maps including voice memos and photography to and create detailed mind maps.
+- The Pocket Operator Speak app can be used for sampling voice and relevant sound effects and can be used instead of or alongside an ipad.
+
+**Expressive arts project ideas:**
+
+- Offer open-ended creative tasks by inviting pupils to suggest ideas.
+- Create animations to tell a visual story alongside the rap/beatbox/spoken word soundtrack.
+- Explore dance moves to perform to the final track or performance.
+- Create stage costumes and props to use in a performance.
+- Design a book of the lyrics that includes illustrations and graphics.
+
+**Ideas for cross-curricular learning:**
+- Film and record performancesdigitally.
+- Write scripts and/or subtitles for a film or animation.
+- Share digital recordings on social media.
+- Create a written and visual blog to track the project process from beginning to end.
+- Design the project to facilitate a humanities topic or project.
+- Use a science or natural history collection for inspiration.
+- Reflect on the content of the lyrics created through a critique/ reflection session.
+- Explore maths through rhythm and lyrics.
+- Explore maths through film editing.
+- Improve emotional literacy by exploring emotional connections to objects.
+- Write about the materials (science) of the objects that are being explored.
+
+### Next steps
+
+Presenting creative work in partnership with arts and cultural organisations further supports the cultural democracy model of the new Expressive Arts Curriculum, and helps to facilitate the ‘Four Purposes’. Why not approach the cultural organisation that you visited, or that the work is connected to, to ask if it could support a sharing of the pupil’s achievements. Some ideas for this are:
+
+- A performance, welcoming the wider school community at a cultural organisation.
+- A TV screen that shows the completed work displayed for a number of weeks, placed near to objects that inspired the pupils work.
+- Sharing work digitally with the organisation.
+- A display showing the whole creative process including the initial visit, the creative mind mapping, written poetry and the final performance.
+- Ask the cultural organisation and the pupils to suggest some ideas for sharing work produced.
+
+### Online resources
+
+Collections online [museum.wales/collections/online/](https://museum.wales/collections/online/)
+
+[Art UK](https://www.artuk.org)
+
+[People’s Collection Wales](https://www.peoplescollection.wales)
+
+**Available on HWB**
+
+- People’s CollectionWales Image Resource
+- History of Wales resource
+- National Museum of Wales resources
+
+People’s Collection Wales, Learn (for teachers and includes resources). [www.peoplescollection.wales/learn](https://www.peoplescollection.wales/learn)
+
+### About the authors
+
+**This course and resource was created for the Arts and Education Network: South East Wales by the following group of artists and cultural educators.**
+
+**Beat Technique** is a talented beatboxerrapper, DJ, producer and songwriter. He also works as a music educator and consultant. He has forged a unique performance style and stage presence, which were built on the stages and events of Glastonbury, the O2,Royal Ascot and Silverstone to name a few. He is an advocate in the beatbox battle scene, having competed in the UK championships in 2014 before participating in the first ever Welsh Beatbox Championships in 2015. He currently spends the majority of his time teaching the art of beatbox, rap, dj-ing and music production, in schools and youth organisations. He has achieved significant success with disaffected young people who find school a challenge, enabling them to improve attendance, behaviour and motivation in all areas of the curriculum.
+
+**Rufus Mufasa** is a pioneering participatory artist, literary activist,poet,rapper, singer songwriter, theatre maker, and mother. Rufus is the *Wales Future Generations Act Poet in Residence* (2019 – 2020); a *Hay Writer at Work* (2018-19); and a *Barbican Fellow* (2015-17).She practises locally, nationally and internationally, and has participated in international arts programmes in Finland, Indonesia and Sweden that explore indigenous languages and women’s rights.
+
+Rufus has published two solo albums of poetry collections entitled *The Pride – Magic and Molecules* (2019) and *Flashbacks and Flowers* (2020).She has a degree in Theatre and Media Drama, and a master’s degree in Scriptwriting from University of South Wales.
+
+**Mr Phormula** is a pioneering beatboxer and live looping artist. With a career as diverse as the Welsh landscape within which he is rooted, Mr Phormula’s inspired performances and vocal compositions have gained him internationalrecognition as a leading beatboxer, rapper and producer. Over 15 years’ experience of working in educational environments highlights Mr Phormula’s commitment to using bilingual beatboxing and rap to engage people from all walks of life. Mr Phormula possesses a solid work ethic and involves participants from a wide range of backgrounds with varying needs. Mr Phormula is guaranteed to be engaging and entertaining whilst also supporting skills such as increasing confidence and collaborative working.
+
+**Danielle Cowell** is Learning, Participation & Interpretation Manager at the National Roman Legion Museum, and the strategic lead for digital learning for Amgueddfa Cymru - National Museum Wales. She has 20 years experience in delivering museum learning programmes at National Museum Cardiff and St Fagans: National History Museum. She currently leads the learning strand for the People’s Collection Wales.
+
+Danielle set up the successful digital learning project *Spring Bulbs for Schools*, which has been running for over ten years with 7,000 pupils participatingeach year across the UK. Her current role involves leading the learning programme at the National Roman Legion Museum and developing staff accross the organisation to increase their digital skills and create new digital learning resources (many of which are publishedon Hwb). Danielle has contributed to numerous strategic partnership projects including the First World War education project with National Library Wales.
+
+**Ruth Lloyd** is the Co-ordinator of the National Arts and Education Network. She has over twenty years’ experience of working in learning and interpretation settings in museums, galleries and the wider arts sector, and a special interest in bringing cultural organisations, artists and communities together through authentic creative projects. Her previous work has included setting up the innovative museum residency programme at the V&A Museum in London; project managing the establishment of the Exhibition Road Cultural Group in London; working on the Arts Council of Wales Lead Creative School programme and producing a wide range of socially engaged artworks and projects as a freelance producer. Ruth has a degree in Fine Art Textiles from Goldsmiths College, University of London, and a masters degree in *Interpretation, Representation and Heritage* from University of Leicester.
+
+**The National Arts and Education Network would like to thank:**<br />
+Lewis SchoolPengam, Tredegar Park PrimarySchool, Ysgol Gymunedd Pentraeth, Barri Gwilliam, Bethan Jenkins, Steve Butts, Nichola Williams, Naz Syed, National Slate Museum, Tredegar House and National Museum Big Pit for working with the team to facilitate innovative projects within their schools, and organisations that have formed the best-practice case studies on which this resource is based. We would also like to thank museum educator Karin Molson of Monmouthshire County Council Museum Service and Newport Fusion for their support.
