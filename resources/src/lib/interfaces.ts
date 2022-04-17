@@ -1,3 +1,10 @@
+export interface Image {
+  _type: "image"
+  asset: SanityReference<SanityImageAsset>
+  crop?: SanityImageCrop
+  hotspot?: SanityImageHotspot
+}
+
 export type PortableText = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
@@ -10,6 +17,7 @@ export type PortableText = Array<
 
 export interface Resource extends SanityDocument {
   body: PortableText
+  mainImage: Image
   title: string
 }
 
