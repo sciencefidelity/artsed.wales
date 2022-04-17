@@ -27,6 +27,14 @@ export const portableTextComponents = {
         </h3><hr class="hr" />
       `
     },
+    h4: ({children}) => {
+      const id = kebabCase(children)
+      return `
+        <h4 id="${id}" class="sans heading color-750 relative scroll-mt-10 text-3xl font-semibold mt-10">
+          <a href="#${id}" class="anchor absolute"}>#</a>${children}
+        </h4>
+      `
+    },
     blockquote: ({children}) => {
       return `
         <blockquote class="">${children}</blockquote>

@@ -4,6 +4,7 @@ import { Maybe } from "astro-control"
 import { toHTML } from "@portabletext/to-html"
 // import { PortableText } from "@portabletext/react"
 import sanityClient from "lib/sanityClient"
+import Image from "components/Image.astro"
 import { portableTextComponents } from "lib/components"
 import { getNestedHeadings } from "lib/utils"
 // import PortableText from "components/PortableText"
@@ -25,11 +26,22 @@ const headings = getNestedHeadings(titles)
     <title>{resource.title}</title>
   </head>
   <body>
+    <header>
+      {resource.image &&
+        <Image
+          className=""
+          image={resource.image}
+          width={2000}
+          height={700}
+          lazy={false}
+        />
+      }
+    </header>
     <article class="flex gap-20 container">
-      <nav class="w-1/4 sticky self-start top-12 overflow-auto mt-80">
+      <nav class="w-1/4 sticky self-start top-12 overflow-auto mt-32">
         <ul class="sans smooth font-semibold text-xl color-850 list-dash list-inside">
           {headings.map(heading => (
-            <li>
+            <li class="mt-3">
               <a
                 href={`#${heading.id}`}
                 class="hover:underline"
@@ -51,7 +63,7 @@ const headings = getNestedHeadings(titles)
         </ul>
       </nav>
       <section class="main w-3/4 pr-44">
-        <h1 class="text-7xl mono smooth font-bold color-850 my-12">{resource.title}</h1>
+        <!-- <h1 class="text-7xl mono smooth font-bold color-850 my-12">{resource.title}</h1> -->
         <Maybe
           as="div"
           set:html={toHTML(resource.body, {components: portableTextComponents})}
