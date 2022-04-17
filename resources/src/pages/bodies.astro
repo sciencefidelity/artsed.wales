@@ -1,0 +1,31 @@
+---
+import sanityClient from "lib/sanityClient"
+import { toHTML } from "@portabletext/to-html"
+import { separatePages } from "lib/utils"
+import { resourceQuery } from "lib/queries"
+import { Resource } from "lib/interfaces"
+
+const response = await sanityClient.fetch(resourceQuery)
+const data = response
+const { resource } = data as { resource: Resource }
+
+// const titles = resource.body.filter(block => block.style !== "normal")
+// const headings = getNestedHeadings(titles)
+const pages = separatePages(resource.body)
+// console.log(pages[0])
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bodies</title>
+  </head>
+  <body>
+    <!-- <pre class="text-xs">
+      {pages[0].length}
+      {JSON.stringify(pages[0], null, 4)}
+    </pre> -->
+    <div set:html={toHTML(pages[1])}></div>
+  </body>
+</html>

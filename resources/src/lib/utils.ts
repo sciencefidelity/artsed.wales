@@ -1,6 +1,6 @@
 import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "./sanityClient"
-import { SanityBlock } from "lib/interfaces"
+import { PortableText, SanityBlock } from "lib/interfaces"
 
 export const buildUrl = (type: string, slug: string): string => {
   return `${subdir(type)}/${slug}`
@@ -37,22 +37,22 @@ export const getNestedHeadings = (titles: SanityBlock[]) => {
   return nestedHeadings
 }
 
-export const getNestedMinorHeadings = (titles: SanityBlock[]) => {
-  const nestedMinorHeadings = []
-  titles.forEach(title => {
-    const { children } = title
-    const { text } = children[0]
-
-    if (title.style === "h3") {
-      nestedMinorHeadings.push({ id: kebabCase(text), title: text, items: [] })
-    } else if (title.style === "h4" && nestedMinorHeadings.length > 0) {
-      nestedMinorHeadings[nestedMinorHeadings.length - 1].items.push({
-        id: kebabCase(text),
-        title: text
-      })
+export const separatePages = (blocks: any) => {
+  let pages = []
+  let body = []
+  for (let i = 0; i < blocks.length; i++) {
+    if (blocks[i].style === "h2") {
+      if (i !== 0) {
+        pages.push(body)
+        body = []
+      }
+      body.push(blocks[i])
+    } else {
+      body.push(blocks[i])
     }
-  })
-  return nestedMinorHeadings
+  }
+  pages.push(body)
+  return pages
 }
 
 export const kebabCase = (str: string): string => {

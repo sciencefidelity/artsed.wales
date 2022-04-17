@@ -5,35 +5,41 @@ import { toHTML } from "@portabletext/to-html"
 import sanityClient from "lib/sanityClient"
 import Image from "components/Image.astro"
 import { portableTextComponents } from "lib/components"
-import { getHeadings, getNestedHeadings, kebabCase } from "lib/utils"
+import {
+  getHeadings,
+  getNestedHeadings,
+  kebabCase,
+  separatePages
+} from "lib/utils"
 import { resourceQuery } from "lib/queries"
-import { Resource } from "lib/interfaces"
+import { Resource, PortableText } from "lib/interfaces"
 
 export async function getStaticPaths() {
   const data: {
-    intro: Resource
     resource: Resource
   } = await sanityClient.fetch(resourceQuery).then(response => response)
-  const { intro, resource } = data
+  const { resource } = data
+  const pages = separatePages(resource.body)
   const titles = resource.body.filter(block => block.style !== "normal")
   const headings = getHeadings(titles)
-  return headings.map(heading => {
+  return headings.map((heading, idx) => {
     const slug = kebabCase(heading)
+    const page = pages[idx]
     return {
       params: { slug: slug },
-      props: { intro, resource }
+      props: { resource, page }
     }
   })
 }
 
-const { intro, resource } = Astro.props as {
-  intro: Resource
+const { resource, page } = Astro.props as {
   resource: Resource
+  page: PortableText
 }
 const blocks = resource.body.filter(block => block.style !== "normal")
-const introBlocks = intro.body.filter(block => block.style !== "normal")
+const pageBlocks = page.filter(block => block.style !== "normal")
 const pageHeadings = getHeadings(blocks)
-const headings = getNestedHeadings(introBlocks)
+const headings = getNestedHeadings(pageBlocks)
 const pathname = Astro.canonicalURL.pathname
 ---
 <html lang="en">
@@ -91,7 +97,7 @@ const pathname = Astro.canonicalURL.pathname
         </Maybe> -->
         <Maybe
           as="div"
-          set:html={toHTML(intro.body, {components: portableTextComponents})}
+          set:html={toHTML(page, {components: portableTextComponents})}
         ></Maybe>
       </section>
       <nav class="w-3/12 sticky self-start top-24 overflow-auto mt-24">
