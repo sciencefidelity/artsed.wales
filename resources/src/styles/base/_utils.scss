@@ -946,6 +946,10 @@
   list-style-type: '\2014';
 }
 
+.list-plus {
+  list-style-type: '\002B';
+}
+
 .list-decimal {
   list-style-type: decimal;
 }
@@ -960,4 +964,11 @@
 
 .bg-950 {
   background-color: var(--grey-950);
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

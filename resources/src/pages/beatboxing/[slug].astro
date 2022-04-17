@@ -88,7 +88,7 @@ const pathname = Astro.canonicalURL.pathname
                 as="a"
                 href={`/${resource.slug}/${kebabCase(heading)}#${kebabCase(heading)}`}
                 class={`
-                  hover:text-gray-800
+                  hover:text-gray-800 focus   :text-gray-800
                 `}
               >{heading}</Maybe>
             </li>
@@ -104,20 +104,36 @@ const pathname = Astro.canonicalURL.pathname
           class="mb-16"
           set:html={toHTML(page, {components: portableTextComponents})}
         ></Maybe>
-        <div class="grid grid-cols-2 smooth font-medium text-sm color-650">
+        <div class="grid grid-cols-2 gap-5 smooth font-medium text-sm color-650">
           {prevPage ?
-            <p>
-              <a href={`
-                /${resource.slug}/${kebabCase(prevPage)}#${kebabCase(prevPage)}
-              `}>← {prevPage}</a>
-            </p> : <p>&nbsp;</p>
+            <a href={`
+              /${resource.slug}/${kebabCase(prevPage)}#${kebabCase(prevPage)}
+            `}>
+              <div class="flex justify-between py-2 px-4 border-2 rounded-md hover:border-gray-300">
+                <div class="self-center text-lg font-bold color-400">←</div>
+                <div class="text-right">
+                  <p class="color-500">Back</p>
+                  <p class="truncate text-base">{prevPage}</p>
+                </div>
+              </div>
+            </a>
+            :
+            <div>&nbsp;</div>
           }
           {nextPage ?
-            <p class="text-right">
-              <a href={`
-                /${resource.slug}/${kebabCase(nextPage)}#${kebabCase(nextPage)}
-              `}>{nextPage} →</a>
-            </p> : <p>&nbsp;</p>
+            <a href={`
+              /${resource.slug}/${kebabCase(nextPage)}#${kebabCase(nextPage)}
+            `}>
+              <div class="flex justify-between py-2 px-4 border-2 rounded-md hover:border-gray-300">
+                <div>
+                  <p class="color-500">Next page</p>
+                  <p class="truncate text-base">{nextPage}</p>
+                </div>
+                <div class="self-center text-lg font-bold color-400">→</div>
+              </div>
+            </a>
+            :
+            <div>&nbsp;</div>
           }
         </div>
       </section>
