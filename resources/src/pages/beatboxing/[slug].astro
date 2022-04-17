@@ -3,9 +3,9 @@ import "styles/global.scss"
 import { Maybe } from "astro-control"
 import { toHTML } from "@portabletext/to-html"
 import sanityClient from "lib/sanityClient"
-// import Image from "components/Image.astro"
+import Image from "components/Image.astro"
 import { portableTextComponents } from "lib/components"
-import { getHeadings, kebabCase } from "lib/utils"
+import { getHeadings, getNestedHeadings, kebabCase } from "lib/utils"
 import { resourceQuery } from "lib/queries"
 import { Resource } from "lib/interfaces"
 
@@ -28,6 +28,8 @@ export async function getStaticPaths() {
 const { resource } = Astro.props as { resource: Resource }
 const blocks = resource.body.filter(block => block.style !== "normal")
 const pageHeadings = getHeadings(blocks)
+const headings = getNestedHeadings(blocks)
+const pathname = Astro.canonicalURL.pathname
 ---
 <html lang="en">
   <head>
@@ -36,39 +38,79 @@ const pageHeadings = getHeadings(blocks)
     <title>{resource.title}</title>
   </head>
   <body>
-    <!-- <header>
-      {resource.image &&
-        <Image
-          className=""
-          image={resource.image}
-          width={2000}
-          height={700}
-          lazy={false}
-        />
-      }
-    </header> -->
-    <article class="flex gap-20 container">
-      <nav class="w-1/4 sticky self-start top-12 overflow-auto mt-32">
-        <ul class="sans smooth font-semibold text-xl color-850 list-dash list-inside">
+    <header class="w-screen z-10 fixed top-0 flex gap-28 bg-950 py-2">
+      <h1
+        class="w-6/12 mono font-bold text-2xl color-050 uppercase mx-10"
+      >NAEN | RCCA</h1>
+    </header>
+    {resource.image &&
+      <Image
+        className=""
+        image={resource.image}
+        width={2000}
+        height={700}
+        lazy={false}
+      />
+    }
+    <article class="relative flex mx-10 gap-16">
+      <nav class="w-3/12 sticky self-start top-12 overflow-auto mt-24">
+        <h2 class="uppercase font-bold color-550 text-lg">Pages</h2>
+        <hr class="hr" />
+        <ul class="sans smooth font-semibold text-xl color-550 list-dash list-inside">
           {pageHeadings.map(heading => (
-            <li class="mt-3">
-              <a
+            <li class={`
+                mt-3
+                ${pathname === '/beatboxing/' + kebabCase(heading) + '/'
+                  ? 'color-850'
+                  : ''
+                }
+              `}>
+              <Maybe
+                as="a"
                 href={`/beatboxing/${kebabCase(heading)}`}
-                class="hover:underline"
-              >{heading}</a>
+                class={`
+                  hover:text-gray-800
+                `}
+              >{heading}</Maybe>
             </li>
           ))}
         </ul>
       </nav>
-      <section class="main w-3/4 pr-44">
-        <h1 class="text-7xl mono smooth font-bold color-850 my-12">
+      <section class="main w-6/12">
+        <!-- <Maybe as="h1" class="text-7xl mono smooth font-bold color-850 my-12">
           {resource.title}
-        </h1>
+        </Maybe> -->
         <Maybe
           as="div"
           set:html={toHTML(resource.body, {components: portableTextComponents})}
         ></Maybe>
       </section>
+      <nav class="w-3/12 sticky self-start top-12 overflow-auto mt-24">
+        <h2 class="uppercase font-bold color-550 text-lg">On this page</h2>
+        <hr class="hr" />
+        <ul class="sans smooth font-semibold text-xl color-850 list-dash list-inside">
+          {headings.map(heading => (
+            <li class="mt-3">
+              <a
+                href={`#${heading.id}`}
+                class="hover:underline"
+              >{heading.title}</a>
+              {heading.items.length > 0 && (
+                <ul class="font-medium color-750 list-dash list-inside ml-3">
+                  {heading.items.map(child => (
+                    <li>
+                      <a
+                        href={`#${child.id}`}
+                        class="hover:underline"
+                      >{child.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
     </article>
   </body>
 </html>
