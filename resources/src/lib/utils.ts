@@ -72,7 +72,6 @@ export const subdir = (type: string): string => {
   }
 }
 
-
 export const urlFor = source => {
   return imageUrlBuilder(sanityClient).image(source)
 }

@@ -24,17 +24,21 @@ export async function getStaticPaths() {
   const headings = getHeadings(titles)
   return headings.map((heading, idx) => {
     const slug = kebabCase(heading)
-    const page = pages[idx]
+    const page = pages[idx] as PortableText
+    const prevPage = headings[idx - 1] as string
+    const nextPage = headings[idx + 1] as string
     return {
       params: { slug: slug },
-      props: { resource, page }
+      props: { nextPage, resource, page, prevPage }
     }
   })
 }
 
-const { resource, page } = Astro.props as {
+const { nextPage, resource, page, prevPage } = Astro.props as {
+  nextPage: string
   resource: Resource
   page: PortableText
+  prevPage: string
 }
 const blocks = resource.body.filter(block => block.style !== "normal")
 const pageBlocks = page.filter(block => block.style !== "normal")
@@ -97,8 +101,25 @@ const pathname = Astro.canonicalURL.pathname
         </Maybe> -->
         <Maybe
           as="div"
+          class="mb-16"
           set:html={toHTML(page, {components: portableTextComponents})}
         ></Maybe>
+        <div class="grid grid-cols-2 smooth font-medium text-sm color-650">
+          {prevPage ?
+            <p>
+              <a href={`
+                /${resource.slug}/${kebabCase(prevPage)}#${kebabCase(prevPage)}
+              `}>← {prevPage}</a>
+            </p> : <p>&nbsp;</p>
+          }
+          {nextPage ?
+            <p class="text-right">
+              <a href={`
+                /${resource.slug}/${kebabCase(nextPage)}#${kebabCase(nextPage)}
+              `}>{nextPage} →</a>
+            </p> : <p>&nbsp;</p>
+          }
+        </div>
       </section>
       <nav class="w-3/12 sticky self-start top-24 overflow-auto mt-24">
         <h2 class="uppercase font-bold color-550 text-lg">On this page</h2>
