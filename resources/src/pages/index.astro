@@ -26,16 +26,22 @@ const headings = getNestedHeadings(titles)
   </head>
   <body>
     <article class="flex gap-20 container">
-      <nav class="w-1/4 sticky self-start top-4 overflow-auto">
-        <ul>
+      <nav class="w-1/4 sticky self-start top-12 overflow-auto mt-80">
+        <ul class="sans smooth font-semibold text-xl color-850 list-dash list-inside">
           {headings.map(heading => (
             <li>
-              <a href={`#${heading.id}`}>{heading.title}</a>
+              <a
+                href={`#${heading.id}`}
+                class="hover:underline"
+              >{heading.title}</a>
               {heading.items.length > 0 && (
-                <ul>
+                <ul class="font-medium color-750 list-dash list-inside ml-3">
                   {heading.items.map(child => (
                     <li>
-                      <a href={`#${child.id}`}>{child.title}</a>
+                      <a
+                        href={`#${child.id}`}
+                        class="hover:underline"
+                      >{child.title}</a>
                     </li>
                   ))}
                 </ul>
@@ -44,8 +50,8 @@ const headings = getNestedHeadings(titles)
           ))}
         </ul>
       </nav>
-      <section class="main w-3/4">
-        <h1 class="text-4xl font-bold">{resource.title}</h1>
+      <section class="main w-3/4 pr-44">
+        <h1 class="text-7xl mono smooth font-bold color-850 my-12">{resource.title}</h1>
         <Maybe
           as="div"
           set:html={toHTML(resource.body, {components: portableTextComponents})}

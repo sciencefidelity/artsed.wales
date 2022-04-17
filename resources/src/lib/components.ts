@@ -8,13 +8,13 @@ export const portableTextComponents = {
   block: {
     normal: ({children}) => {
       return `
-        <p class="text-lg my-5">${children}</p>
+        <p class="sans smooth text-xl font-medium color-650 my-5">${children}</p>
       `
     },
     h2: ({children}) => {
       const id = kebabCase(children)
       return `
-        <h2 id="${id}" class="heading relative scroll-mt-5 text-3xl font-bold my-5">
+        <h2 id="${id}" class="sans heading color-750 relative scroll-mt-10 text-5xl font-bold mb-10 mt-20">
           <a href="#${id}" class="anchor absolute"}>#</a>${children}
         </h2>
       `
@@ -22,9 +22,9 @@ export const portableTextComponents = {
     h3: ({children}) => {
       const id = kebabCase(children)
       return `
-        <h3 id="${id}" class="heading relative scroll-mt-5 text-2xl font-bold my-5">
+        <h3 id="${id}" class="sans heading color-750 relative scroll-mt-10 text-4xl font-bold mt-10">
           <a href="#${id}" class="anchor absolute"}>#</a>${children}
-        </h3>
+        </h3><hr class="hr" />
       `
     },
     blockquote: ({children}) => {
@@ -36,7 +36,7 @@ export const portableTextComponents = {
   list: {
     bullet: ({children}) => {
       return `
-        <ul class="">${children}</ul>
+        <ul class="sans font-medium smooth text-xl color-750 list-disc list-inside">${children}</ul>
       `
     }
   },
@@ -48,6 +48,11 @@ export const portableTextComponents = {
     }
   },
   marks: {
+    strong: ({children}) => {
+      return `
+        <strong class="smooth font-semibold color-750">${children}</strong>
+      `
+    },
     link: ({children, value}) => {
       const href = value.href || ""
       if (uriLooksSafe(href)) {
@@ -56,7 +61,8 @@ export const portableTextComponents = {
           <a
             href="${href}"
             rel="${rel}"
-            class=""
+            class="color-850 underline"
+            target="_blank"
           >${children}</a>
         `
       }

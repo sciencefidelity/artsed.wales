@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'Calibre';
   src: url('/assets/fonts/Calibre-Thin.woff2') format('woff2');
-  font-weight: 200;
+  font-weight: 100;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Calibre';
   src: url('/assets/fonts/Calibre-ThinItalic.woff2') format('woff2');
-  font-weight: 200;
+  font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
@@ -91,14 +91,14 @@
 @font-face {
   font-family: 'Calibre';
   src: url('/assets/fonts/Calibre-Black.woff2') format('woff2');
-  font-weight: 800;
+  font-weight: 900;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Calibre';
   src: url('/assets/fonts/Calibre-BlackItalic.woff2') format('woff2');
-  font-weight: 800;
+  font-weight: 900;
   font-style: italic;
   font-display: swap;
 }
@@ -149,14 +149,14 @@
 }
 
 @font-face {
-  font-family: 'PitchSans';
+  font-family: 'Pitch Sans';
   src: url('/assets/fonts/PitchSans-Semibold.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'PitchSans';
+  font-family: 'Pitch Sans';
   src: url('/assets/fonts/PitchSans-SemiboldItalic.woff2') format('woff2');
   font-weight: 600;
   font-style: italic;
@@ -164,14 +164,14 @@
 }
 
 @font-face {
-  font-family: 'PitchSans';
+  font-family: 'Pitch Sans';
   src: url('/assets/fonts/PitchSans-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'PitchSans';
+  font-family: 'Pitch Sans';
   src: url('/assets/fonts/PitchSans-BoldItalic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;

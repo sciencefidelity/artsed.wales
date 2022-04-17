@@ -1,45 +1,12 @@
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  text-decoration-thickness: 2px !important;
 }
 
-.sans {
-  font-family: var(--font-sans-serif);
-}
-
-.mono {
-  font-family: var(--font-monospace);
-}
-
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.my-5 {
-  margin-block: 1.25rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
+.hr {
+  height: 2px;
+  background: var(--grey-250);
+  border: none;
+  margin-bottom: 2rem;
 }
 
 .anchor {
@@ -52,5 +19,3 @@ html {
 .heading:hover .anchor {
   opacity: 1;
 }
-
-
