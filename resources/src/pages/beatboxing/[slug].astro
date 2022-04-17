@@ -3,7 +3,7 @@ import "styles/global.scss"
 import { Maybe } from "astro-control"
 import { toHTML } from "@portabletext/to-html"
 import sanityClient from "lib/sanityClient"
-import Image from "components/Image.astro"
+// import Image from "components/Image.astro"
 import { portableTextComponents } from "lib/components"
 import { getNestedHeadings } from "lib/utils"
 import { resourceQuery } from "lib/queries"
@@ -23,7 +23,7 @@ const headings = getNestedHeadings(titles)
     <title>{resource.title}</title>
   </head>
   <body>
-    <header>
+    <!-- <header>
       {resource.image &&
         <Image
           className=""
@@ -33,7 +33,7 @@ const headings = getNestedHeadings(titles)
           lazy={false}
         />
       }
-    </header>
+    </header> -->
     <article class="flex gap-20 container">
       <nav class="w-1/4 sticky self-start top-12 overflow-auto mt-32">
         <ul class="sans smooth font-semibold text-xl color-850 list-dash list-inside">
@@ -60,9 +60,9 @@ const headings = getNestedHeadings(titles)
         </ul>
       </nav>
       <section class="main w-3/4 pr-44">
-        <!-- <h1 class="text-7xl mono smooth font-bold color-850 my-12">
+        <h1 class="text-7xl mono smooth font-bold color-850 my-12">
           {resource.title}
-        </h1> -->
+        </h1>
         <Maybe
           as="div"
           set:html={toHTML(resource.body, {components: portableTextComponents})}
