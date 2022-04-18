@@ -1,6 +1,7 @@
 import htm from "htm"
 import vhtml from "vhtml"
 import { marked } from "marked"
+import getYouTubeID from "get-youtube-id"
 import { uriLooksSafe } from "@portabletext/to-html"
 import { buildUrl, kebabCase, urlFor } from "lib/utils"
 
@@ -38,7 +39,7 @@ export const portableTextComponents = {
     },
     blockquote: ({children}) => {
       return `
-        <blockquote class="">${children}</blockquote>
+        <blockquote class="pl-5 color-650 text-base font-medium italic leading-6">${children}</blockquote>
       `
     }
   },
@@ -46,6 +47,11 @@ export const portableTextComponents = {
     bullet: ({children}) => {
       return `
         <ul class="sans font-medium smooth text-xl color-650 list-dash ml-5">${children}</ul>
+      `
+    },
+    number: ({children}) => {
+      return `
+        <ol class="sans font-medium smooth text-xl color-650 list-decimal ml-5 mt-5">${children}</ol>
       `
     }
   },
@@ -84,6 +90,14 @@ export const portableTextComponents = {
           class=""
         >${children}</a>
       `
+    },
+    target: ({children, value}) => {
+      return `
+        <a
+          href=${value.target}
+          class="underline color-750"
+        >${children}</a>
+      `
     }
   },
   types: {
@@ -102,6 +116,24 @@ export const portableTextComponents = {
     markdown: ({value}) => {
       return `
         <span>${marked.parse(value.markdown)}</span>
+      `
+    },
+    youtube: ({value}) => {
+      const id = getYouTubeID(value.url)
+      const url = `https://www.youtube-nocookie.com/embed/${id}?modestbranding=1`
+      return `
+        <div class="embed-container mt-10">
+          <iframe
+            width="560"
+            height="315"
+            src=${url}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            frameBorder="0"
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+        </div>
       `
     }
   }

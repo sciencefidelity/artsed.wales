@@ -700,6 +700,10 @@
   margin-left: 5rem; /* 80px */
 }
 
+.pt-5 {
+  padding-left: 1.25rem; /* 20px */
+}
+
 .pl-5 {
   padding-left: 1.25rem; /* 20px */
 }
@@ -802,6 +806,14 @@
   line-height: 1;
 }
 
+.leading-5 {
+  line-height: 1.25rem;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
+}
+
 .font-thin {
   font-weight: 100;
 }
@@ -838,11 +850,11 @@
   font-weight: 900;
 }
 
-.italic{
+.italic {
   font-style: italic;
 }
 
-.not-italic{
+.not-italic {
   font-style: normal;
 }
 
