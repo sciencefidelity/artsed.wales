@@ -4,10 +4,32 @@
 
 html {
   scroll-behavior: smooth;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
 }
 
 li {
   padding-left: 1em;
+}
+
+table {
+  margin-block: 2rem;
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+  text-indent: 0;
+  color: var(--grey-650);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+th,
+td {
+  text-align: left;
+  padding-block: 0.5rem;
+  padding-inline: 0.7rem;
+  border: 1px solid var(--grey-250);
 }
 
 .hr {

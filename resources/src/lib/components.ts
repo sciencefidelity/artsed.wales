@@ -1,5 +1,6 @@
 import htm from "htm"
 import vhtml from "vhtml"
+import { marked } from "marked"
 import { uriLooksSafe } from "@portabletext/to-html"
 import { buildUrl, kebabCase, urlFor } from "lib/utils"
 
@@ -96,6 +97,11 @@ export const portableTextComponents = {
             .url()}
           class=""
         />
+      `
+    },
+    markdown: ({value}) => {
+      return `
+        <span>${marked.parse(value.markdown)}</span>
       `
     }
   }
