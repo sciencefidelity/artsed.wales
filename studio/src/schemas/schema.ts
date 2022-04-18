@@ -5,6 +5,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import address from './object/address'
 import facebookCard from './object/facebookCard'
 import imageData from './object/imageData'
+import markdown from './object/markdown'
 import metaData from './object/metaData'
 import pageSettings from './object/pageSettings'
 import portableText from './object/portableText'
@@ -51,6 +52,7 @@ export default createSchema({
     address,
     facebookCard,
     imageData,
+    markdown,
     metaData,
     pageSettings,
     portableText,

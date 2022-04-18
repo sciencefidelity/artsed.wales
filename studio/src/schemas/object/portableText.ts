@@ -4,7 +4,7 @@ import {
   linkRender
 } from '../../components/textComponents'
 import { MdOutlineAddLink, MdOutlineAlternateEmail } from 'react-icons/md'
-import { RiExternalLinkLine } from 'react-icons/ri'
+import { RiExternalLinkLine, RiHashtag } from 'react-icons/ri'
 
 export default {
   title: 'Rich Text',
@@ -92,6 +92,21 @@ export default {
             }
           },
           {
+            title: 'Target',
+            name: 'target',
+            type: 'object',
+            fields: [
+              {
+                name: 'target',
+                type: 'string'
+              }
+            ],
+            blockEditor: {
+              icon: RiHashtag,
+              render: linkRender
+            }
+          },
+          {
             title: 'Email',
             name: 'mailto',
             type: 'object',
@@ -115,6 +130,9 @@ export default {
     },
     {
       type: 'youtube'
+    },
+    {
+      type: 'markdown'
     }
   ]
 }
