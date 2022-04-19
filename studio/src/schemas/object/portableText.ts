@@ -3,6 +3,7 @@ import {
   emailRender,
   linkRender
 } from '../../components/textComponents'
+import { FaRegImage } from 'react-icons/fa'
 import { MdOutlineAddLink, MdOutlineAlternateEmail } from 'react-icons/md'
 import { RiExternalLinkLine, RiHashtag } from 'react-icons/ri'
 
@@ -129,7 +130,11 @@ export default {
     },
     {
       type: 'image',
-      options: { hotspot: true }
+      options: { hotspot: true },
+      icon: FaRegImage
+    },
+    {
+      type: 'imageGroup'
     },
     {
       type: 'youtube'

@@ -10,7 +10,9 @@ export const portableTextComponents = {
   block: {
     normal: ({children}) => {
       return `
-        <p class="sans smooth text-xl font-medium color-650 my-5">${children}</p>
+        <p class="sans smooth text-xl font-medium color-650 my-5">
+          ${children}
+        </p>
       `
     },
     h2: ({children}) => {
@@ -39,26 +41,37 @@ export const portableTextComponents = {
     },
     blockquote: ({children}) => {
       return `
-        <blockquote class="pl-5 color-650 text-base font-medium italic leading-6">${children}</blockquote>
+        <blockquote class="pl-5 color-650 text-base font-medium italic leading-6">
+          ${children}
+        </blockquote>
       `
     }
   },
   list: {
     bullet: ({children}) => {
       return `
-        <ul class="sans font-medium smooth text-xl color-650 list-dash ml-5">${children}</ul>
+        <ul class="sans smooth font-medium text-xl color-650 list-dash ml-5">
+          ${children}
+        </ul>
       `
     },
     number: ({children}) => {
       return `
-        <ol class="sans font-medium smooth text-xl color-650 list-decimal ml-5 mt-5">${children}</ol>
+        <ol class="sans smooth font-medium text-xl color-650 list-decimal ml-5 mt-5">
+          ${children}
+        </ol>
       `
     }
   },
   listItem: {
     bullet: ({children}) => {
       return `
-        <li class="">${children}</li>
+        <li class="hello">${children}</li>
+      `
+    },
+    number: ({children}) => {
+      return `
+        <li class="goodbye">${children}</li>
       `
     }
   },
@@ -109,8 +122,26 @@ export const portableTextComponents = {
             .width(2400)
             .quality(85)
             .url()}
-          class=""
+          class="mt-8 mb-10"
         />
+      `
+    },
+    imageGroup: ({value}) => {
+      const children = []
+      for (let i = 0; i < value.image.length; i++) {
+        children.push(`<img
+          src=${urlFor(value.image[i])
+            .auto("format")
+            .width(300)
+            .quality(85)
+            .url()}
+        />`)
+      }
+      return `
+        <div
+          class="grid gap-3 mt-8 mb-10"
+          style="grid-template-columns: repeat(${value.image.length}, 1fr);"
+        >${children.join("")}</div>
       `
     },
     markdown: ({value}) => {
