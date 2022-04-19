@@ -3,7 +3,7 @@ import "styles/global.scss"
 import { Maybe } from "astro-control"
 import { toHTML } from "@portabletext/to-html"
 import sanityClient from "lib/sanityClient"
-import Image from "components/Image.astro"
+// import Image from "components/Image.astro"
 import { portableTextComponents } from "lib/components"
 import {
   getHeadings,
@@ -53,14 +53,22 @@ const pathname = Astro.canonicalURL.pathname
     <title>{resource.title}</title>
   </head>
   <body>
-    <header class="w-screen z-10 fixed top-0 flex gap-28 bg-950 py-2">
+    <header class="flex w-screen z-10 fixed top-0 gap-16 bg-950 px-10 py-2">
       <h1
-        class="w-6/12 mono font-bold text-2xl color-050 uppercase mx-10"
+        class="w-3/12 mono font-bold text-2xl uppercase"
       >
-        <a href="https://artsed.wales">NAEN</a>
-         |
-        <a href="https://celfadd.cymru">RCCA</a>
+        <a href="https://artsed.wales" class="color-300 hover:text-white">
+          NAEN
+        </a>
+        <span class="color-300"> | </span>
+        <a href="https://celfadd.cymru" class="color-300 hover:text-white">
+          RCCA
+        </a>
       </h1>
+      <h1
+        class="w-6/12 mono font-bold text-2xl color-050 uppercase color-300"
+      >{resource.title}</h1>
+      <div class="w-3/12"></div>
     </header>
     <!-- {resource.image &&
       <Image
@@ -71,7 +79,7 @@ const pathname = Astro.canonicalURL.pathname
         lazy={false}
       />
     } -->
-    <article class="relative flex mx-10  mb-24 gap-16">
+    <article class="relative flex mx-10 mt-7 mb-24 gap-16">
       <nav class="w-3/12 sticky self-start top-24 overflow-auto mt-24">
         <h2 class="uppercase font-bold color-550 text-lg">Content</h2>
         <hr class="hr" />
