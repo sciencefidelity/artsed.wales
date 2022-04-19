@@ -114,16 +114,19 @@ export const portableTextComponents = {
     }
   },
   types: {
-    image: ({value}) => {
+    imageCaption: ({value}) => {
       return `
         <img
-          src=${urlFor(value)
+          src=${urlFor(value.image)
             .auto("format")
             .width(2400)
             .quality(85)
             .url()}
-          class="mt-8 mb-10"
+          class="mt-8 mb-2"
         />
+        <p class="sans smooth text-lg font-medium italic color-550 mb-10">
+          ${value.caption}
+        </p>
       `
     },
     imageGroup: ({value}) => {

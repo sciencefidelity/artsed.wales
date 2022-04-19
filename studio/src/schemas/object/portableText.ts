@@ -129,9 +129,7 @@ export default {
       }
     },
     {
-      type: 'image',
-      options: { hotspot: true },
-      icon: FaRegImage
+      type: 'imageCaption'
     },
     {
       type: 'imageGroup'
