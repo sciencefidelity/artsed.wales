@@ -109,6 +109,130 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'portableText',
+      initialValue: [
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Summary'
+            }
+          ],
+          markDefs: [],
+          style: 'h2'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'This one day training session...'
+            }
+          ],
+          markDefs: [],
+          style: 'normal'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'By the end of the course participants will...'
+            }
+          ],
+          markDefs: [],
+          style: 'h4'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: '...'
+            }
+          ],
+          level: 1,
+          listItem: 'bullet',
+          markDefs: [],
+          style: 'normal'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'About the facilitators'
+            }
+          ],
+          markDefs: [],
+          style: 'h3'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              marks: ['strong'],
+              text: 'Facilitator one'
+            },
+            {
+              _type: 'span',
+              text: '...'
+            }
+          ],
+          markDefs: [],
+          style: 'normal'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              marks: ['strong'],
+              text: 'Facilitator two'
+            },
+            {
+              _type: 'span',
+              text: '...'
+            }
+          ],
+          markDefs: [],
+          style: 'normal'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Price:'
+            }
+          ],
+          markDefs: [],
+          style: 'normal'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Date:'
+            }
+          ],
+          markDefs: [],
+          style: 'normal'
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Venue:'
+            }
+          ],
+          markDefs: [],
+          style: 'normal'
+        }
+      ],
       group: 'content'
     },
     {
