@@ -804,6 +804,13 @@
   line-height: 1.25rem; /* 20px */
 }
 
+@media (min-width: 1024px) {
+  .lg:text-sm {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+  }
+}
+
 .text-base {
   font-size: 1rem; /* 16px */
   line-height: 1.5rem; /* 24px */
@@ -814,9 +821,24 @@
   line-height: 1.75rem; /* 28px */
 }
 
+@media (min-width: 1024px) {
+  .lg\:text-lg {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+}
+
+
 .text-xl {
   font-size: 1.25rem; /* 20px */
   line-height: 1.75rem; /* 28px */
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-xl {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+  }
 }
 
 .text-2xl {

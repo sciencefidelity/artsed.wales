@@ -54,9 +54,9 @@ const pathname = Astro.canonicalURL.pathname
     <title>{resource.title}</title>
   </head>
   <body>
-    <header class="flex w-screen z-10 fixed top-0 gap-16 bg-950 px-10 py-2">
+    <header class="header grid w-screen z-10 fixed top-0 gap-x-7 xl:gap-x-12 bg-950 px-5 py-2">
       <h1
-        class="w-3/12 mono font-bold text-2xl uppercase"
+        class="mono font-bold text-base md:text-xl xl:text-2xl uppercase"
       >
         <a href="https://artsed.wales" class="color-300 hover:text-white">
           NAEN
@@ -66,26 +66,18 @@ const pathname = Astro.canonicalURL.pathname
           RCCA
         </a>
       </h1>
-      <h1
-        class="w-6/12 mono font-bold text-2xl color-050 uppercase color-300"
+      <Maybe
+        as="h1"
+        class="mono font-bold text-base md:text-xl xl:text-2xl color-050 uppercase color-300"
       >
         <a href={`/${resource.slug}`} class="color-300 hover:text-white">
           {resource.title}
         </a>
-      </h1>
-      <div class="w-3/12"></div>
+      </Maybe>
+      <div class=""></div>
     </header>
-    <!-- {resource.image &&
-      <Image
-        className=""
-        image={resource.image}
-        width={2000}
-        height={700}
-        lazy={false}
-      />
-    } -->
-    <article class="relative flex mx-10 mt-7 mb-24 gap-16">
-      <nav class="w-3/12 sticky self-start top-24 overflow-auto mt-24">
+    <article class="article relative grid mx-5 mt-7 mb-24 gap-x-7 xl:gap-x-12">
+      <nav class="sticky self-start top-24 overflow-auto mt-24">
         <h2 class="uppercase font-bold color-550 text-lg">Content</h2>
         <hr class="hr" />
         <ul class="sans smooth font-medium text-xl color-550 list-dash ml-3">
@@ -101,17 +93,14 @@ const pathname = Astro.canonicalURL.pathname
                 as="a"
                 href={`/${resource.slug}/${kebabCase(heading)}#${kebabCase(heading)}`}
                 class={`
-                  hover:text-gray-800 focus   :text-gray-800
+                  hover:text-gray-800 focus:text-gray-800
                 `}
               >{heading}</Maybe>
             </li>
           ))}
         </ul>
       </nav>
-      <section class="main w-6/12">
-        <!-- <Maybe as="h1" class="text-7xl mono smooth font-bold color-850 my-12">
-          {resource.title}
-        </Maybe> -->
+      <section class="main">
         <Maybe
           as="div"
           class="mb-16"
@@ -150,7 +139,7 @@ const pathname = Astro.canonicalURL.pathname
           }
         </div>
       </section>
-      <nav class="w-3/12 sticky self-start top-24 overflow-auto mt-24">
+      <nav class="sticky hidden lg:inline-block self-start top-24 overflow-auto mt-24">
         <h2 class="uppercase font-bold color-550 text-lg">On this page</h2>
         <hr class="hr" />
         <ul class="sans smooth font-semibold text-xl color-700 list-dash ml-3">
@@ -179,3 +168,17 @@ const pathname = Astro.canonicalURL.pathname
     </article>
   </body>
 </html>
+
+<style>
+  .article,
+  .header {
+    grid-template-columns: 2fr 5fr;
+  }
+
+  @media (min-width: 1024px) {
+    .article,
+    .header {
+      grid-template-columns: 2fr 5fr 2fr;
+    }
+  }
+</style>
