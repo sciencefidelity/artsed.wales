@@ -36,7 +36,7 @@ export default {
   ],
   fields: [
     {
-      name: 'mainImage',
+      name: 'image',
       title: 'Feature image',
       type: 'image',
       options: {
