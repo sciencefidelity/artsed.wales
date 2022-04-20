@@ -28,7 +28,7 @@ export async function getStaticPaths() {
       const prevPage = headings[idx - 1] as string
       const nextPage = headings[idx + 1] as string
       return {
-        params: { path: resource.slug, slug: slug },
+        params: { resource: resource.slug, slug: slug },
         props: { nextPage, resource, page, prevPage }
       }
     })
@@ -68,7 +68,11 @@ const pathname = Astro.canonicalURL.pathname
       </h1>
       <h1
         class="w-6/12 mono font-bold text-2xl color-050 uppercase color-300"
-      >{resource.title}</h1>
+      >
+        <a href={`/${resource.slug}`} class="color-300 hover:text-white">
+          {resource.title}
+        </a>
+      </h1>
       <div class="w-3/12"></div>
     </header>
     <!-- {resource.image &&
@@ -85,7 +89,7 @@ const pathname = Astro.canonicalURL.pathname
         <h2 class="uppercase font-bold color-550 text-lg">Content</h2>
         <hr class="hr" />
         <ul class="sans smooth font-medium text-xl color-550 list-dash ml-3">
-          {pageHeadings.map((heading, idx) => (
+          {pageHeadings.map(heading => (
             <li class={`
                 mt-3 pl-2
                 ${pathname === `/${resource.slug}/` + kebabCase(heading) + '/'

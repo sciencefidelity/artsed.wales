@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   } = await sanityClient.fetch(resourceQuery).then(response => response)
   return data.resources.map(resource => {
     return {
-      params: { path: resource.slug },
+      params: { resource: resource.slug },
       props: { resource }
     }
   })
@@ -21,7 +21,7 @@ const { resource } = Astro.props as { resource: Resource }
 <html>
    <head>
       <title>{resource.title}</title>
-      <meta http-equiv = "refresh" content = "0; url = /beatboxing/introduction" />
+      <meta http-equiv="refresh" content={`0; url = /${resource.slug}/introduction`} />
    </head>
    <body>
       <h1>{resource.title}</h1>
