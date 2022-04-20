@@ -1,4 +1,16 @@
-import { ReactNode } from "react"
+export interface Author extends SanityDocument {
+  _type: "author"
+  body: string
+  email: string
+  facebook: string
+  image: Image
+  location: string
+  name: string
+  posts: Post[]
+  twitter: string
+  slug: string
+  website: string
+}
 
 export interface Image {
   _type: "image"
@@ -7,199 +19,171 @@ export interface Image {
   hotspot?: SanityImageHotspot
 }
 
-export interface Quote {
-  _id: string
-  cite: string
-  organisation: string
-  quote: BlockContent
+export interface LocaleSocialCard {
+  cy: SocialCard
+  en: SocialCard
 }
 
-export interface Photography {
+export interface MetaData {
+  canonicalURL: string
+  description: string
+  title: string
+}
+
+export interface Page extends SanityDocument {
+  _type: "page"
+  body: PortableText
+  facebookCard: LocaleSocialCard
+  image: Image
+  meta: MetaData
+  settings: PageSettings
+  slug: string
+  title: string
+  twitterCard: SocialCard
+}
+
+export interface PageSettings {
+  authors: Author[]
+  excerpt: string
+  publishedAt: string
+  tags: Tag[]
+}
+
+export type PortableText = Array<
+  | SanityKeyed<SanityBlock>
+  | SanityKeyed<{
+      _type: "image"
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    }>
+>;
+
+export interface Post extends SanityDocument {
+  _type: "post"
+  body: PortableText
+  facebookCard: SocialCard
+  image: Image
+  meta: MetaData
+  settings: PageSettings
+  slug: string
+  title: string
+  twitterCard: SocialCard
+}
+
+export interface socialLink {
+  _key: string
+  url: string
+  name: "facebook" | "github" | "intagram" | "linkedin" | "pinterest" | "soundcloud" | "tiktok" | "twitter" | "youtube"
+}
+
+export interface Settings extends SanityDocument {
+  siteDescription: string
+  siteName: string
+  socialLinks: socialLink[]
+}
+
+export interface SocialCard {
+  description: string
   image: Image
   title: string
 }
 
-export interface Site {
-  addressLine1: string
-  addressLine2: string
-  email: string
-  engagements: Engagement[]
-  keywords: string
-  seoDescription: string
-  seoImage: Image
-  seoTitle: string
-  signUp: string
-  signUpPlaceholder: string
-  siteDescription: string
-  siteName: string
-  socialLinks: SocialLink[],
-  twitterHandle: string
-}
-
-export interface Engagement {
-  _id: string
-  count: number
-  heading: string
-}
-
-export interface SocialLink {
-  _id: string
-  link: string
-  site: string
-  username: string
-}
-
-export interface Statements {
-  statement: BlockContent
-}
-
-export interface Event {
-  _id: string
-  _type: string
-  artforms: Artform[]
-  body: BlockContent
-  britelink: string
-  date: string
-  date2: string
-  facilitators: Facilitator[]
-  imageCaption: string
-  keystages: Keystage[]
-  location: string
-  mainImage: string
-  ogDescription: string
-  ogTitle: string
-  price: string
+export interface Tag extends SanityDocument {
+  _type: "tag"
+  description: string
+  facebookCard: SocialCard
+  image: Image
+  meta: MetaData
+  posts: Post[]
   slug: string
-  subtitle: string
   title: string
+  twitterCard: SocialCard
 }
 
-export interface Artform {
+export interface SanityBlock {
+  _type: "block"
+  [key: string]: any
+}
+
+export interface SanityDocument {
   _id: string
-  title: string
-}
-
-export interface Facilitator {
-  _id: string
-  name: string
-}
-
-export interface Keystage {
-  _id: string
-  title: string
-}
-
-export interface Post {
   _createdAt: string
-  _id: string
-  _type: string
-  author: Author
-  body: BlockContent
-  categories: Category[]
-  mainImage: Image
-  ogDescription: string
-  ogTitle: string
-  publishedAt: string
-  slug: string
+  _rev: string
+  _updatedAt: string
+}
+
+export interface SanityImageAsset extends SanityDocument {
+  _type: "sanity.imageAsset"
+  assetId: string
+  extension: string
+  metadata: SanityImageMetadata
+  mimeType: string
+  originalFilename: string
+  path: string
+  sha1hash: string
+  size: number
+  uploadId: string
+  url: string
+}
+
+export interface SanityImageCrop {
+  _type: "sanity.imageCrop"
+  bottom: number
+  left: number
+  right: number
+  top: number
+}
+
+export interface SanityImageDimensions {
+  _type: "sanity.imageDimensions"
+  aspectRatio: number
+  height: number
+  width: number
+}
+
+export interface SanityImageHotspot {
+  _type: "sanity.imageHotspot"
+  height: number
+  width: number
+  x: number
+  y: number
+}
+
+export interface SanityImageMetadata {
+  _type: "sanity.imageMetadata"
+  dimensions: SanityImageDimensions
+  hasAlpha: boolean
+  isOpaque: boolean
+  lqip: string
+  palette: SanityImagePalette
+}
+
+export interface SanityImagePalette {
+  _type: "sanity.imagePalette"
+  darkMuted: SanityImagePaletteSwatch
+  darkVibrant: SanityImagePaletteSwatch
+  dominant: SanityImagePaletteSwatch
+  lightMuted: SanityImagePaletteSwatch
+  lightVibrant: SanityImagePaletteSwatch
+  muted: SanityImagePaletteSwatch
+  vibrant: SanityImagePaletteSwatch
+}
+
+export interface SanityImagePaletteSwatch {
+  _type: "sanity.imagePaletteSwatch"
+  background: string
+  foreground: string
+  population: number
   title: string
 }
 
-export interface Author {
-  _type: string
-  name: string
-  slug: string
+export declare type SanityKeyed<T> = T extends object ? T & {
+  _key: string
+} : T
+
+export declare type SanityReference<_T> = {
+  _type: "reference"
+  _ref: string
 }
 
-export interface Category {
-  _id: string
-  _type: string
-  title: string
-  slug: string
-}
-
-// export interface AllPagesData {
-//   site: SiteRefs
-//   statements: Statement[]
-// }
-//
-// export interface IndexData extends AllPagesData {
-//   hero: Photography
-//   photography: Photography[]
-//   video: Video
-//   quotes: Quote[]
-// }
-//
-// export interface SiteRefs extends Site {
-//   engagementFigures?: Figure[]
-//   socialMediaLinks?: Social[]
-// }
-//
-// export interface AboutData extends AllPagesData {
-//   statements: Statement[]
-// }
-//
-//
-// export interface EventsData extends AllPagesData {
-//   events: Event[]
-// }
-//
-// export interface PostData extends AllPagesData {
-//   post: Post
-// }
-//
-// export interface EventData extends AllPagesData {
-//   event: Event
-// }
-//
-// export interface LayoutProps {
-//   children: ReactNode
-//   site: Site
-//   statements: Statement[]
-//   title?: LocaleString
-// }
-//
-// export interface HeaderProps {
-//   site: Site
-// }
-//
-// export interface EventProps {
-//   event: EventRefs
-// }
-//
-// export interface EventRefs extends Event {
-//   artforms?: Artform[]
-//   people?: Facilitator[]
-//   keystages?: Keystage[]
-// }
-//
-// export interface SignUpProps {
-//   site: Site
-//   statements: Statement[]
-// }
-//
-// export interface QuoteProps {
-//   photograph: Photography
-//   quote: Quote
-//   direction?: any
-// }
-//
-// export interface FooterProps {
-//   site: SiteRefs
-// }
-//
-// export interface EngagementProps {
-//   site: SiteRefs
-//   statement: Statement
-// }
-//
-// export interface SocialLinksProps {
-//   site: SiteRefs
-// }
-//
-// export interface ImageProps {
-//   alt: string
-//   image: Image
-//   width?: number
-//   height?: number
-//   lazy?: boolean | true
-// }

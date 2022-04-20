@@ -2,7 +2,7 @@ import { FC } from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-export const BaseHead: FC = () => {
+const BaseHead: FC = () => {
   const { locale } = useRouter()
   return (
     <Head>
@@ -52,3 +52,4 @@ export const BaseHead: FC = () => {
     </Head>
   )
 }
+export default BaseHead

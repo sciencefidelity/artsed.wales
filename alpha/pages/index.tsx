@@ -8,18 +8,18 @@ import { indexQuery } from "lib/queries"
 import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const data = await sanityClient.fetch(indexQuery)
-//   return {
-//     props: { data }
-//   }
-// }
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await sanityClient.fetch(indexQuery)
+  return {
+    props: { data }
+  }
+}
 
 const Home = ({ data }) => {
-  // const { locale } = useRouter()
-  // const { hero, photography, quotes, site, statements, video } = data
+  const { locale } = useRouter()
+  const { company, pages, settings } = data
   return (
-    <Layout>
+    <Layout {company} {settings}>
       <h1>Main content</h1>
     </Layout>
   )
