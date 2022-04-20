@@ -54,7 +54,7 @@ const BaseHead: FC<Props> = ({ company, settings }) => {
       <meta name="twitter:image" content="" />
       <meta name="twitter:creator" content="" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="mask-icon" href="/mask-icon.svg" color="#FF9B59" />
+      <link rel="mask-icon" href="/mask-icon.svg" color="#FFFFFF" />
     </Head>
   )
 }
