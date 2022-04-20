@@ -11,9 +11,9 @@ import { Resource } from "lib/interfaces"
 
 const response = await sanityClient.fetch(resourceQuery)
 const data = response
-const { resource } = data as { resource: Resource }
+const resource: Resource = data.resources[0]
 
-const titles = resource.body.filter(block => block.style !== "normal")
+const titles = data.resources[0].body.filter(block => block.style !== "normal")
 const headings = getNestedHeadings(titles)
 ---
 <html lang="en">

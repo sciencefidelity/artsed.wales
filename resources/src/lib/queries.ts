@@ -1,7 +1,7 @@
 import groq from "groq"
 
 export const resourceQuery = groq`{
-  "resource": *[_type == "resource"][0]{
+  "resources": *[_type == "resource"]{
     body[], image, "slug": slug.current, title
   }
 }`

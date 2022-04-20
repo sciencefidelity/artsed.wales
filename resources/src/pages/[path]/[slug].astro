@@ -16,21 +16,22 @@ import { Resource, PortableText } from "lib/interfaces"
 
 export async function getStaticPaths() {
   const data: {
-    resource: Resource
+    resources: Resource[]
   } = await sanityClient.fetch(resourceQuery).then(response => response)
-  const { resource } = data
-  const pages = separatePages(resource.body)
-  const titles = resource.body.filter(block => block.style !== "normal")
-  const headings = getHeadings(titles)
-  return headings.map((heading, idx) => {
-    const slug = kebabCase(heading)
-    const page = pages[idx] as PortableText
-    const prevPage = headings[idx - 1] as string
-    const nextPage = headings[idx + 1] as string
-    return {
-      params: { slug: slug },
-      props: { nextPage, resource, page, prevPage }
-    }
+  return data.resources.map(resource => {
+    const pages = separatePages(resource.body)
+    const titles = resource.body.filter(block => block.style !== "normal")
+    const headings = getHeadings(titles)
+    return headings.map((heading, idx) => {
+      const slug = kebabCase(heading)
+      const page = pages[idx] as PortableText
+      const prevPage = headings[idx - 1] as string
+      const nextPage = headings[idx + 1] as string
+      return {
+        params: { path: resource.slug, slug: slug },
+        props: { nextPage, resource, page, prevPage }
+      }
+    })
   })
 }
 
