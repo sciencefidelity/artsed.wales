@@ -1,15 +1,27 @@
-export interface Author extends SanityDocument {
-  _type: "author"
-  body: string
-  email: string
-  facebook: string
-  image: Image
-  location: string
-  name: string
-  posts: Post[]
-  twitter: string
+export interface Address {
+  city: string
+  line1: string
+  line2: string
+  postcode: string
+}
+
+export interface Company extends SanityDocument {
+  address: LocaleAddress
+  description: LocaleString
   slug: string
-  website: string
+  title: LocaleString
+}
+
+export interface Event extends SanityDocument {
+  body: PortableText
+  dateEnd: string
+  dateStart: string
+  facilitators: Staff[]
+  keystage: Keystage[]
+  location: string
+  price: number
+  summary: string
+  title: string
 }
 
 export interface Image {
@@ -19,9 +31,30 @@ export interface Image {
   hotspot?: SanityImageHotspot
 }
 
+export interface Keystage extends SanityDocument {
+  description: string
+  slug: string
+  title: string
+}
+
+export interface LocaleAddress {
+  cy: Address
+  en: Address
+}
+
+export interface LocaleMetaData {
+  cy: MetaData
+  en: MetaData
+}
+
 export interface LocaleSocialCard {
   cy: SocialCard
   en: SocialCard
+}
+
+export interface LocaleString {
+  cy: string
+  en: string
 }
 
 export interface MetaData {
@@ -33,7 +66,7 @@ export interface MetaData {
 export interface Page extends SanityDocument {
   _type: "page"
   body: PortableText
-  facebookCard: LocaleSocialCard
+  facebookCard: SocialCard
   image: Image
   meta: MetaData
   settings: PageSettings
@@ -43,7 +76,7 @@ export interface Page extends SanityDocument {
 }
 
 export interface PageSettings {
-  authors: Author[]
+  authors: Staff[]
   excerpt: string
   publishedAt: string
   tags: Tag[]
@@ -71,21 +104,39 @@ export interface Post extends SanityDocument {
   twitterCard: SocialCard
 }
 
-export interface socialLink {
+export interface SocialLink {
   _key: string
   url: string
   name: "facebook" | "github" | "intagram" | "linkedin" | "pinterest" | "soundcloud" | "tiktok" | "twitter" | "youtube"
 }
 
 export interface Settings extends SanityDocument {
-  siteDescription: string
-  siteName: string
-  socialLinks: socialLink[]
+  facebookCard: LocaleSocialCard
+  meta: LocaleMetaData
+  siteDescription: LocaleString
+  siteName: LocaleString
+  socialLinks: SocialLink[]
+  twitterCard: LocaleSocialCard
+  url: LocaleString
 }
 
 export interface SocialCard {
   description: string
   image: Image
+  title: string
+}
+
+export interface Staff extends SanityDocument {
+  _type: "author"
+  body: string
+  email: string
+  facebook: string
+  image: Image
+  location: string
+  posts: Post[]
+  twitter: string
+  slug: string
+  website: string
   title: string
 }
 
@@ -107,6 +158,7 @@ export interface SanityBlock {
 }
 
 export interface SanityDocument {
+  __i18_lang: string
   _id: string
   _createdAt: string
   _rev: string

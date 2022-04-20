@@ -1,13 +1,19 @@
 import { FC } from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
+import { Company, Settings } from "lib/interfaces"
 
-const BaseHead: FC = () => {
+interface Props {
+  company: Company
+  settings: Settings
+}
+
+const BaseHead: FC<Props> = ({ company, settings }) => {
   const { locale } = useRouter()
   return (
     <Head>
-      <title>NAEN</title>
-      <meta name="Description" content="" />
+      <title>{company.title.en}</title>
+      <meta name="Description" content={settings.siteDescription.en} />
       <meta name="keywords" content="" />
       <link
         rel="preload"

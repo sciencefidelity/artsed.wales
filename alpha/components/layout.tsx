@@ -5,7 +5,7 @@ import { localize, urlFor } from "lib/utils"
 import BaseHead from "components/baseHead"
 import Footer from "components/footer"
 import Header from "components/header"
-import { } from "lib/interfaces"
+import { Company, Settings } from "lib/interfaces"
 import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
@@ -20,8 +20,8 @@ const Layout: FC<Props> = ({ children, company, settings }) => {
   const { locale } = router
   return (
     <>
-      <BaseHead {settings} />
-      <Header />
+      <BaseHead company={company} settings={settings} />
+      <Header company={company} settings={settings} />
       <main>
         {children}
       </main>

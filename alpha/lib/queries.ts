@@ -50,25 +50,25 @@ const events = groq`{
   }
 }`
 
-const pages = groq`{
+const pages = `
   "pages": *[_type == "page" && ${omitDrafts}] | order(settings.publishedAt){
     ${pagePostFields}
   }
-}`
+`
 
-const posts = groq`{
+const posts = `
   "posts": *[_type == "post" && ${omitDrafts}] | order(settings.publishedAt){
     ${pagePostFields}
   }
-}`
+`
 
-const settings = `{
+const settings = `
   "settings": *[_type == "settings" && ${omitDrafts}][1]{
     url, siteName, siteDescription, social{ name, url }, ${localeSeo}
   }
-}`
+`
 
-const company = `{
+const company = `
   "company": *[_type == "company" && ${omitDrafts}][0]{
     address{
       cy{ city, line1, line2, postcode },
@@ -76,8 +76,14 @@ const company = `{
     },
     email, telephone, title
   }
+`
+
+const keystages = `{
+  "keystages": *[_type == "keystage"][0]{
+    __i18n_lang, _id, _type, description, ${slug}, title
+  }
 }`
 
-export const indexQuery = groq`
+export const indexQuery = groq`{
   ${company}, ${pages}, ${settings}
-`
+}`
