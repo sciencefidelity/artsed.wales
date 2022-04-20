@@ -50,11 +50,6 @@ const Custom404 = ({ data }: {data: IndexData}) => {
         <p className={`${u.textCenter} ${u.serif}`}>
           <Localize data={message} />
         </p>
-        {/* <div className={`${u.textCenter} ${u.sans} ${u.uppercase}`}>
-          <Link href="/" className={u.textDark}>
-            <Localize data={link} />
-          </Link>
-        </div> */}
         <div className={`${u.textCenter} ${u.sans} ${u.uppercase}`}>
           <a href="https://se.artsed.wales">
             <Localize data={former} />

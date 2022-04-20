@@ -1,23 +1,4 @@
 import { ReactNode } from "react"
-import type {
-  // Artform,
-  // Event,
-  // Facilitator,
-  Figure,
-  // Keystage,
-  LocaleString,
-  // Photography,
-  // Post,
-  // Quote,
-  Social,
-  SanityImageAsset,
-  SanityImageCrop,
-  SanityImageHotspot,
-  SanityReference,
-  Statement,
-  // Site,
-  Video
-} from "@/generated/schema"
 
 export interface Image {
   _type: "image"
