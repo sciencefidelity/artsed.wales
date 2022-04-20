@@ -20,7 +20,7 @@ const Home = ({ data }) => {
   // const { hero, photography, quotes, site, statements, video } = data
   return (
     <Layout>
-      <div>Main content</div>
+      <h1>Main content</h1>
     </Layout>
   )
 }

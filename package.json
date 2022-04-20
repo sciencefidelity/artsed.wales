@@ -21,11 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "add": "^2.0.6",
-    "eslint": "^8.12.0",
+    "eslint": "^8.13.0",
     "typescript": "^4.6.3"
-  },
-  "dependencies": {
-    "twitter-api-v2": "^1.11.2"
   }
 }
