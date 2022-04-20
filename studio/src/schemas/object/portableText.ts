@@ -3,7 +3,6 @@ import {
   emailRender,
   linkRender
 } from '../../components/textComponents'
-import { FaRegImage } from 'react-icons/fa'
 import { MdOutlineAddLink, MdOutlineAlternateEmail } from 'react-icons/md'
 import { RiExternalLinkLine, RiHashtag } from 'react-icons/ri'
 
@@ -38,7 +37,8 @@ export default {
             blockEditor: {
               render: codeRender
             }
-          }
+          },
+          { title: 'Date', value: 'date' }
         ],
         annotations: [
           {

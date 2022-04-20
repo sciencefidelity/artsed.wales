@@ -1,4 +1,5 @@
 import { FaRegImage } from 'react-icons/fa'
+import ImageCaptionPreview from '../../components/ImageCaptionPreview'
 
 export default {
   name: 'imageCaption',
@@ -8,7 +9,7 @@ export default {
   fields: [
     {
       name: 'image',
-      title: 'Image Group',
+      title: 'Image',
       type: 'image'
     },
     {
@@ -16,5 +17,12 @@ export default {
       title: 'Caption',
       type: 'string'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      image: 'image',
+      caption: 'caption'
+    },
+    component: ImageCaptionPreview
+  }
 }
