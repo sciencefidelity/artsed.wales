@@ -131,9 +131,9 @@ export const portableTextComponents = {
     },
     imageGroup: ({value}) => {
       const children = []
-      for (let i = 0; i < value.image.length; i++) {
+      for (let i = 0; i < value.images.length; i++) {
         children.push(`<img
-          src=${urlFor(value.image[i])
+          src=${urlFor(value.images[i])
             .auto("format")
             .width(300)
             .quality(85)
@@ -143,7 +143,7 @@ export const portableTextComponents = {
       return `
         <div
           class="grid gap-3 mt-8 mb-10"
-          style="grid-template-columns: repeat(${value.image.length}, 1fr);"
+          style="grid-template-columns: repeat(${value.images.length}, 1fr);"
         >${children.join("")}</div>
       `
     },

@@ -1,4 +1,5 @@
 import { FaRegImages } from 'react-icons/fa'
+import ImageGroupPreview from '../../components/ImageGroupPreview'
 
 export default {
   name: 'imageGroup',
@@ -7,10 +8,16 @@ export default {
   icon: FaRegImages,
   fields: [
     {
-      name: 'image',
-      title: 'Image Group',
+      name: 'images',
+      title: 'Images',
       type: 'array',
       of: [{type: 'image'}]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      images: 'images'
+    },
+    component: ImageGroupPreview
+  }
 }
