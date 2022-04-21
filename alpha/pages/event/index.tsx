@@ -6,7 +6,7 @@ import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import { eventsQuery } from "lib/queries"
-import { LocaleEvent, Settings } from "lib/interfaces"
+import { Event, Settings } from "lib/interfaces"
 import Date from "components/date"
 import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
@@ -19,27 +19,33 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home = ({ data }) => {
+  console.log(data.events)
   const { locale } = useRouter()
   const { events, settings } = data as {
-    events: LocaleEvent
+    events: Event[]
     settings: Settings
   }
-  const { en, cy } = events
   return (
     <Layout settings={settings}>
       <div>
-        {locale === "cy" ? cy.map(event =>
-          <>
-            <h1>{event.title}</h1>
-            <p>{event.summary}</p>
-            <Date date={event.dateStart} />
-          </>
-        ) : cy.map(event =>
-          <>
-            <h1>{event.title}</h1>
-            <p>{event.summary}</p>
-            <Date date={event.dateStart} />
-          </>
+        {events.map(event =>
+          <div>
+            {event.title &&
+              <h1>
+                {locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.title
+                  : event.title}
+              </h1>
+            }
+            {event.summary &&
+              <p>
+                {locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.summary
+                  : event.summary}
+              </p>
+            }
+            {event.dateStart && <Date date={event.dateStart} />}
+          </div>
         )}
       </div>
     </Layout>

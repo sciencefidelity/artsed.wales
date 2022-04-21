@@ -1,6 +1,7 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
 import { acronym, localize } from "lib/utils"
+import Language from "components/language"
 import Localize from "components/localize"
 import { Settings } from "lib/interfaces"
 import u from "styles/utils.module.scss"
@@ -15,6 +16,7 @@ const Header: FC<Props> = ({ settings }) => {
     <header className={u.container}>
       <div>
         <Localize data={settings.siteName} />
+        <Language />
       </div>
     </header>
   )

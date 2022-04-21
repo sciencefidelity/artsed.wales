@@ -49,14 +49,9 @@ const eventFields = `
 `
 
 const events = `
-  "events": {
-    "cy": *[_type == "event" && __i18n_lang == "cy" && ${omitDrafts}] | order(dateStart){
-      ${eventFields}
-    },
-    "en": *[_type == "event" && __i18n_lang == "en" && ${omitDrafts}] | order(dateStart){
-      ${eventFields}
-    }
-  }
+  "events": *[
+    _type == "event" && __i18n_lang == "en" && ${omitDrafts}
+  ] | order(dateStart){ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
 `
 
 const pages = `
