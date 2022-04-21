@@ -39,16 +39,25 @@ const pagePostFields = `
 //   _id, _type, body, excerpt, image, title, ${pageSettings}, ${slug}
 // `
 
-const events = groq`{
-  "events": *[_type == "event" && ${omitDrafts}] | order(dateStart){
-    __i18_lang, _id, _type, ${body}, dateEnd, dateStart,
-    facilitators[]->{
-      __i18n_lang, _id, _type, avatar, role, ${slug}, title
+const eventFields = `
+  __i18n_lang, _id, _type, ${body}, dateEnd, dateStart,
+  facilitators[]->{
+    __i18n_lang, _id, _type, avatar, role, ${slug}, title
+  },
+  keystage[]->{ __i18n_lang, _id, _type, description, ${slug}, title },
+  location, price, ${slug}, summary, title
+`
+
+const events = `
+  "events": {
+    "cy": *[_type == "event" && __i18n_lang == "cy" && ${omitDrafts}] | order(dateStart){
+      ${eventFields}
     },
-    keystage[]->{ __i18n_lang, _id, _type, description, ${slug}, title },
-    location, price, ${slug}, summary, title
+    "en": *[_type == "event" && __i18n_lang == "en" && ${omitDrafts}] | order(dateStart){
+      ${eventFields}
+    }
   }
-}`
+`
 
 const pages = `
   "pages": *[_type == "page" && ${omitDrafts}] | order(settings.publishedAt){
@@ -85,5 +94,9 @@ const keystages = `{
 }`
 
 export const indexQuery = groq`{
-  ${company}, ${pages}, ${settings}
+  ${pages}, ${settings}
+}`
+
+export const eventsQuery = groq`{
+  ${events}, ${settings}
 }`

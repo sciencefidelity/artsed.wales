@@ -22,7 +22,7 @@ const Footer: FC<Props> = ({ settings }) => {
     <footer className={u.container}>
       <div>
         <span>
-          &copy;{" "}{year}{" "}{settings.siteName.en}
+          &copy;{" "}{year}{" "}<Localize data={settings.siteName} />
         </span>
       </div>
       <div>

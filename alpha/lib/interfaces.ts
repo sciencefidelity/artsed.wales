@@ -12,7 +12,12 @@ export interface Company extends SanityDocument {
   title: LocaleString
 }
 
-export interface Event extends SanityDocument {
+export interface LocaleEvent extends SanityDocument {
+  cy: Event[]
+  en: Event[]
+}
+
+export interface Event {
   body: PortableText
   dateEnd: string
   dateStart: string
@@ -158,7 +163,7 @@ export interface SanityBlock {
 }
 
 export interface SanityDocument {
-  __i18_lang: string
+  __i18n_lang: string
   _id: string
   _createdAt: string
   _rev: string
