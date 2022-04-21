@@ -1,6 +1,6 @@
 import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "lib/sanityClient"
-import { LocaleString, LocaleURL } from "generated/schema"
+import { LocaleString } from "lib/interfaces"
 import { Image } from "lib/interfaces"
 
 export const acronym = (str: string): string => {
@@ -23,7 +23,7 @@ export const keyStage = (str: string): string => {
 }
 
 export const localize = (
-  content: LocaleString | LocaleURL, locale: string
+  content: LocaleString, locale: string
 ): string => {
   return locale === "cy" && content.cy
     ? content.cy
