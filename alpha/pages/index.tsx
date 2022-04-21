@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
+import { components } from "components/portableTextComponents"
 import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
@@ -26,6 +27,7 @@ const Home = ({ data }) => {
   return (
     <Layout company={company} settings={settings}>
       <h1>{pages[1].title}</h1>
+      <PortableText value={pages[1].body} components={components} />
     </Layout>
   )
 }

@@ -1,5 +1,4 @@
 import { FC, ReactNode } from "react"
-import Head from "next/head"
 import { useRouter } from "next/router"
 import { localize, urlFor } from "lib/utils"
 import BaseHead from "components/baseHead"
@@ -22,7 +21,7 @@ const Layout: FC<Props> = ({ children, company, settings }) => {
     <>
       <BaseHead company={company} settings={settings} />
       <Header company={company} settings={settings} />
-      <main>
+      <main className={u.container}>
         {children}
       </main>
       <Footer />

@@ -14,7 +14,7 @@ const Footer: FC = () => {
     en: "Site by"
   }
   return (
-    <footer>
+    <footer className={u.container}>
       <div>
         <span>
           &copy;{" "}{year}{" "}
