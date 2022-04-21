@@ -2,10 +2,15 @@ import { FC } from "react"
 import { useRouter } from "next/router"
 import { acronym, localize } from "lib/utils"
 import Localize from "components/localize"
+import { Settings } from "lib/interfaces"
 import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
-const Footer: FC = () => {
+interface Props {
+  settings: Settings
+}
+
+const Footer: FC<Props> = ({ settings }) => {
   const { locale } = useRouter()
   const year = new Date().getFullYear()
   const siteBy: any = {
@@ -17,7 +22,7 @@ const Footer: FC = () => {
     <footer className={u.container}>
       <div>
         <span>
-          &copy;{" "}{year}{" "}
+          &copy;{" "}{year}{" "}{settings.siteName.en}
         </span>
       </div>
       <div>

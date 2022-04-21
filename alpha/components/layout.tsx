@@ -10,21 +10,18 @@ import u from "styles/utils.module.scss"
 
 interface Props {
   children: ReactNode
-  company: Company
   settings: Settings
 }
 
-const Layout: FC<Props> = ({ children, company, settings }) => {
+const Layout: FC<Props> = ({ children, settings }) => {
   const router = useRouter()
   const { locale } = router
   return (
     <>
-      <BaseHead company={company} settings={settings} />
-      <Header company={company} settings={settings} />
-      <main className={u.container}>
-        {children}
-      </main>
-      <Footer />
+      <BaseHead settings={settings} />
+      <Header settings={settings} />
+      <main className={u.container}>{children}</main>
+      <Footer settings={settings} />
     </>
   )
 }
