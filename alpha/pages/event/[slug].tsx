@@ -71,98 +71,106 @@ const EventPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      <section>
-        <div>
-          {event.title &&
-            <h1>
-              {locale === "cy" && event.__i18n_refs
-                ? event.__i18n_refs.title
-                : event.title}
-            </h1>
-          }
-          <PortableText
-            value={locale === "cy" && event.__i18n_refs
-              ? event.__i18n_refs.body
-              : event.body}
-            components={components}
-          />
-          {event.facilitators && <h3><Localize data={labels[7].text} /></h3>}
-          <p>
-            {event.facilitators && event.facilitators.map(facilitator =>
-              <>
-                <span key={facilitator._id}>
-                  {reactStringReplace(
-                    locale === "cy" && facilitator.__i18n_refs.job
-                      ? facilitator.__i18n_refs.job
-                      : facilitator.job
-                        ? facilitator.job
-                        : facilitator.title,
-                    facilitator.title,
-                    match =>
-                      <strong>
-                        <Link
-                          href={`/${facilitator._type}/${facilitator.slug}`}
-                        >
-                          {match}
-                        </Link>
-                      </strong>
-                  )}
-                </span>
-                <br />
-              </>
-            )}
-          </p>
-          <p>
-            <strong><Localize data={labels[4].text} />: </strong>
-            £{event.price.toString()}<br />
-            <strong><Localize data={labels[5].text} />: </strong>
-            <EventDate
-              dateEnd={event.dateEnd}
-              dateStart={event.dateStart}
-            /><br />
-            <strong><Localize data={labels[6].text} />: </strong>
-            {event.location}<br />
-            {event.keystage &&
-              <>
-                <Localize data={labels[8].text} />
-                {" "}{event.keystage.map((ks, idx) =>
-                <>
-                  {ks.title &&
-                    <Link href={`/${ks._type}/${ks.slug}`} key={ks._id}>
-                      {locale === "cy" && ks.__i18n_refs
-                        ? ks.__i18n_refs.title
-                        : ks.title}
-                    </Link>
-                  }
-                  {idx === event.keystage.length - 1 && ""}
-                  {idx === event.keystage.length - 2 &&
-                    <Localize data={labels[9].text} />
-                  }
-                  {idx >= 0 && idx < event.keystage.length - 2 && ", "}
-                </>
-              )}</>
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "3fr 1fr"
+      }}>
+        <section>
+          <div>
+            {event.title &&
+              <h1>
+                {locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.title
+                  : event.title}
+              </h1>
             }
-          </p>
-        </div>
-      </section>
-      <aside>
-        <h2>Upcoming Events</h2>
-        <ul>
-          {events.filter(e => e.title !== event.title).map(e =>
-            <li key={e._id}>
-              <Date date={e.dateStart} /><br />
-              <Link href={`/${e._type}/${e.slug}`}>
+            <PortableText
+              value={locale === "cy" && event.__i18n_refs
+                ? event.__i18n_refs.body
+                : event.body}
+              components={components}
+            />
+            {event.facilitators && <h3><Localize data={labels[7].text} /></h3>}
+            <p>
+              {event.facilitators && event.facilitators.map(facilitator =>
+                <>
+                  <span key={facilitator._id}>
+                    {reactStringReplace(
+                      locale === "cy" && facilitator.__i18n_refs.job
+                        ? facilitator.__i18n_refs.job
+                        : facilitator.job
+                          ? facilitator.job
+                          : facilitator.title,
+                      facilitator.title,
+                      match =>
+                        <strong>
+                          <Link
+                            href={`/${facilitator._type}/${facilitator.slug}`}
+                          >
+                            {match}
+                          </Link>
+                        </strong>
+                    )}
+                  </span>
+                  <br />
+                </>
+              )}
+            </p>
+            <p>
+              <strong><Localize data={labels[4].text} />: </strong>
+              £{event.price.toString()}<br />
+              <strong><Localize data={labels[5].text} />: </strong>
+              <EventDate
+                dateEnd={event.dateEnd}
+                dateStart={event.dateStart}
+              /><br />
+              <strong><Localize data={labels[6].text} />: </strong>
+              {event.location}<br />
+              {event.keystage &&
+                <>
+                  <Localize data={labels[8].text} />
+                  {" "}{event.keystage.map((ks, idx) =>
+                  <>
+                    {ks.title &&
+                      <Link href={`/${ks._type}/${ks.slug}`} key={ks._id}>
+                        {locale === "cy" && ks.__i18n_refs
+                          ? ks.__i18n_refs.title
+                          : ks.title}
+                      </Link>
+                    }
+                    {idx === event.keystage.length - 1 && ""}
+                    {idx === event.keystage.length - 2 &&
+                      <Localize data={labels[9].text} />
+                    }
+                    {idx >= 0 && idx < event.keystage.length - 2 && ", "}
+                  </>
+                )}</>
+              }
+            </p>
+          </div>
+        </section>
+        <aside>
+          <h2>Upcoming Events</h2>
+          <ul style={{
+            listStyleType: "none",
+            padding: 0
+          }}>
+            {events.filter(e => e.title !== event.title).map(e =>
+              <li key={e._id} style={{ marginBottom: "1.5rem" }}>
+                <Date date={e.dateStart} /><br />
+                <Link href={`/${e._type}/${e.slug}`}>
+                  {locale === "cy" && e.__i18n_refs
+                    ? e.__i18n_refs.title
+                    : e.title}
+                </Link><br />
                 {locale === "cy" && e.__i18n_refs
-                  ? e.__i18n_refs.title
-                  : e.title}
-              </Link><br />
-              {locale === "cy" && e.__i18n_refs
-                ? e.__i18n_refs.summary
-                : e.summary}
-            </li>
-          )}
-        </ul>
-      </aside>
+                  ? e.__i18n_refs.summary
+                  : e.summary}
+              </li>
+            )}
+          </ul>
+        </aside>
+      </div>
     </Layout>
   )
 }

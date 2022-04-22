@@ -119,8 +119,13 @@ const keystages = `
   "keystages": *[
     _type == "keystage" && __i18n_lang == "en" && ${omitDrafts}
   ] | order(title){
+    "events": *[
+      _type == "event" &&
+      __i18n_lang == "en" &&
+      dateTime(now()) < dateTime(dateStart) && references(^._id)
+    ]{ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } },
     ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} }
-  }
+  }[count(events) > 0]
 `
 
 const navigation = `

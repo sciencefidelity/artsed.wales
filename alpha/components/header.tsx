@@ -21,8 +21,8 @@ const Header: FC<Props> = ({ navigation, settings }) => {
         gridTemplateColumns: "3fr 1fr"
       }}>
         <div>
-          <Link href="/"><Localize data={settings.siteName} /></Link>
           <Language />
+          <Link href="/"><Localize data={settings.siteName} /></Link>
         </div>
         <nav>
           <ul>
