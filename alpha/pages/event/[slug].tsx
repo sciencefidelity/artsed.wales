@@ -149,7 +149,11 @@ const EventPage = ({ data }) => {
           {events.filter(e => e.title !== event.title).map(e =>
             <li key={e._id}>
               <Date date={e.dateStart} /><br />
-              <Link href={`/${e._type}/${e.slug}`}>{e.title}</Link><br />
+              <Link href={`/${e._type}/${e.slug}`}>
+                {locale === "cy" && e.__i18n_refs
+                  ? e.__i18n_refs.title
+                  : e.title}
+              </Link><br />
               {locale === "cy" && e.__i18n_refs
                 ? e.__i18n_refs.summary
                 : e.summary}

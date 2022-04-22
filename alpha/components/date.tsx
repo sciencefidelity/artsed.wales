@@ -9,7 +9,7 @@ const PostDate = ({ date }: { date: string }) => {
   return (
     <time dateTime={date}>
       {format(new Date(date),
-        "eee, d MMM yyyy",
+        "eee, d MMM",
         {locale: dateLocale}
       )}
     </time>
