@@ -20,14 +20,14 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const { locale } = useRouter()
-  const { events, keystages, navigation, settings, staff } = data as {
+  const { events, facilitators, keystages, navigation, settings } = data as {
     events: Event[]
     keystages: Keystage[]
     navigation: Navigation
     settings: Settings
-    staff: Staff[]
+    facilitators: Staff[]
   }
-  const res = staff.sort((a, b) =>
+  const res = facilitators.sort((a, b) =>
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
   return (
     <Layout navigation={navigation} settings={settings}>

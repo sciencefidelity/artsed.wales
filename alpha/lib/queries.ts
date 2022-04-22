@@ -103,6 +103,18 @@ const company = `
   }
 `
 
+const facilitators = `
+  "facilitators": *[_type == "staff" && __i18n_lang == "en" && ${omitDrafts}]{
+    "events": *[
+      _type == "event"
+      && __i18n_lang == "en"
+      && dateTime(now()) < dateTime(dateStart) && references(^._id)
+      && ${omitDrafts}
+    ]{ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } },
+    ${staffFields}, __i18n_refs[0]->{ ${staffFields} }
+  }[count(events) > 0]
+`
+
 const keystages = `
   "keystages": *[
     _type == "keystage" && __i18n_lang == "en" && ${omitDrafts}
@@ -123,7 +135,7 @@ export const indexQuery = groq`{
 }`
 
 export const eventsQuery = groq`{
-  ${events}, ${keystages}, ${navigation}, ${settings}, ${staff}
+  ${events}, ${facilitators}, ${keystages}, ${navigation}, ${settings}
 }`
 
 export const eventQuery = groq`{
