@@ -89,12 +89,6 @@ const settings = `
   }
 `
 
-const staff = `
-  "staff": *[_type == "staff" && __i18n_lang == "en" && ${omitDrafts}]{
-    ${staffFields}, __i18n_refs[0]->{ ${staffFields} }
-  }
-`
-
 const company = `
   "company": *[_type == "company" && ${omitDrafts}][0]{
     address{
@@ -158,6 +152,15 @@ const navigation = `
   }
 `
 
+const staff = `
+  "staff": *[
+    _type == "staff"
+    && __i18n_lang == "en"
+    && slug.current == $slug
+    && ${omitDrafts}
+  ][0]{ ${staffFields}, __i18n_refs[0]->{ ${staffFields} } }
+`
+
 export const indexQuery = groq`{
   ${navigation}, ${pages}, ${settings}
 }`
@@ -181,12 +184,25 @@ export const eventPathQuery = groq`
 `
 
 export const keystageQuery = groq`{
-  ${keystage}, ${events}, ${labels}, ${navigation}, ${settings}
+  ${keystage}, ${events}, ${navigation}, ${settings}
 }`
 
 export const keystagePathQuery = groq`
   *[
     _type == "keystage"
+    && defined(slug)
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ][].slug.current
+`
+
+export const staffQuery = groq`{
+  ${staff}, ${events}, ${navigation}, ${settings}
+}`
+
+export const staffPathQuery = groq`
+  *[
+    _type == "staff"
     && defined(slug)
     && __i18n_lang == "en"
     && ${omitDrafts}

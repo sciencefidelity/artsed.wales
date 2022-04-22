@@ -75,7 +75,7 @@ const EventPage = ({ data }) => {
         display: "grid",
         gridTemplateColumns: "3fr 1fr"
       }}>
-        <section>
+        <section style={{marginRight: "2rem"}}>
           <div>
             {event.title &&
               <h1>

@@ -15,11 +15,11 @@ import Layout from "components/layout"
 import Date from "components/date"
 import Link from "components/link"
 import ErrorTemplate from "components/errorTemplate"
-import { keystageQuery, keystagePathQuery } from "lib/queries"
-import { Event, Keystage, Navigation, Settings } from "lib/interfaces"
+import { staffQuery, staffPathQuery } from "lib/queries"
+import { Event, Navigation, Settings, Staff } from "lib/interfaces"
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await sanityClient.fetch(keystagePathQuery)
+  const paths = await sanityClient.fetch(staffPathQuery)
   return {
     paths: paths.map((slug: string[]) => ({ params: { slug } })),
     fallback: true
@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug = "" } = params
-  const data = await sanityClient.fetch(keystageQuery, { slug })
+  const data = await sanityClient.fetch(staffQuery, { slug })
   return {
     props: {
       data
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-const KeystagePage = ({ data }) => {
+const StaffPage = ({ data }) => {
   const router = useRouter()
   const { locale } = router
   if(router.isFallback) {
@@ -53,8 +53,8 @@ const KeystagePage = ({ data }) => {
       </>
     )
   }
-  const { keystage, events, navigation, settings } = data as {
-    keystage: Keystage
+  const { events, navigation, settings, staff } = data as {
+    staff: Staff
     events: Event[]
     navigation: Navigation
     settings: Settings
@@ -69,16 +69,16 @@ const KeystagePage = ({ data }) => {
         gridTemplateColumns: "3fr 1fr"
       }}>
         <section style={{marginRight: "2rem"}}>
-          <h1>
-            {locale === "cy" && keystage.__i18n_refs.title
-              ? keystage.__i18n_refs.title
-              : keystage.title}
-          </h1>
-          <p>
-            {locale === "cy" && keystage.__i18n_refs.description
-              ? keystage.__i18n_refs.description
-              : keystage.description}
-          </p>
+          {staff.title && <h1>
+            {locale === "cy" && staff.__i18n_refs.title
+              ? staff.__i18n_refs.title
+              : staff.title}
+          </h1>}
+          {staff.bio && <p>
+            {locale === "cy" && staff.__i18n_refs.bio
+              ? staff.__i18n_refs.bio
+              : staff.bio}
+          </p>}
         </section>
         <aside>
           <h2>Upcoming Events</h2>
@@ -105,4 +105,4 @@ const KeystagePage = ({ data }) => {
     </Layout>
   )
 }
-export default KeystagePage
+export default StaffPage
