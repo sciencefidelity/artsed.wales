@@ -17,10 +17,11 @@ import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import Date from "components/date"
 import Link from "components/link"
+import Localize from "components/localize"
 // import Event from "components/event"
 import ErrorTemplate from "components/errorTemplate"
 import { eventQuery, eventPathQuery } from "lib/queries"
-import { Event, Settings } from "lib/interfaces"
+import { Event, Label, Settings } from "lib/interfaces"
 // import s from "pages/courses/event.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -57,9 +58,10 @@ const EventPage = ({ data }) => {
       </>
     )
   }
-  const { event, settings } = data as {
+  const { event, labels, settings } = data as {
     event: Event
     settings: Settings
+    labels: Label[]
   }
   return (
     <Layout
@@ -80,18 +82,27 @@ const EventPage = ({ data }) => {
               : event.body}
             components={components}
           />
-          {event.facilitators && event.facilitators.map(facilitator =>
-            <p key={facilitator._id}>
-              {reactStringReplace(
-                facilitator.job,
-                facilitator.title,
-                (match, i) => <strong>{match}</strong>)}
-            </p>
-          )}
+          <h3><Localize data={labels[7].text} /></h3>
           <p>
-            <strong>Price: </strong>{event.price}<br />
-            <strong>Date: </strong><Date date={event.dateStart} /><br />
-            <strong>Venue: </strong>{event.location}<br />
+            {event.facilitators && event.facilitators.map(facilitator =>
+              <>
+                <span key={facilitator._id}>
+                  {reactStringReplace(
+                    facilitator.job,
+                    facilitator.title,
+                    (match, i) => <strong>{match}</strong>)}
+                </span>
+                <br />
+              </>
+            )}
+          </p>
+          <p>
+            <strong><Localize data={labels[4].text} />: </strong>
+            £{event.price.toString()}<br />
+            <strong><Localize data={labels[5].text} />: </strong>
+            <Date date={event.dateStart} /><br />
+            <strong><Localize data={labels[6].text} />: </strong>
+            {event.location}<br />
             {event.keystage &&
               <>Suitable for {event.keystage.map((ks, idx) =>
                 <>

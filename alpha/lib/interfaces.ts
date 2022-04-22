@@ -42,6 +42,12 @@ export interface Keystage extends SanityDocument {
   title: string
 }
 
+export interface Label {
+  _type: "label"
+  key: string
+  text: LocaleString
+}
+
 export interface LocaleAddress {
   cy: Address
   en: Address

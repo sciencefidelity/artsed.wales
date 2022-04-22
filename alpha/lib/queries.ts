@@ -116,7 +116,8 @@ export const eventsQuery = groq`{
 }`
 
 export const eventQuery = groq`{
-  ${event}, ${settings}
+  ${event}, ${settings},
+  "labels": *[_type == "labelGroup" && ${omitDrafts}][0].labels
 }`
 
 export const eventPathQuery = groq`
