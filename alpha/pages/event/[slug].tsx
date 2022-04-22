@@ -10,6 +10,7 @@
 import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
+import reactStringReplace from "react-string-replace"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
@@ -79,21 +80,35 @@ const EventPage = ({ data }) => {
               : event.body}
             components={components}
           />
-          <p>Price: {event.price}</p>
-          <p>Date: <Date date={event.dateStart} /></p>
-          <p>Venue: {event.location}</p>
-          {event.keystage &&
-            <p>Suitable for {event.keystage.map((ks, idx) =>
-              <>
-                <Link href={`/${ks._type}/${ks.slug}`}>
-                  {ks.title}
-                </Link>
-                {idx === event.keystage.length - 1 && ""}
-                {idx === event.keystage.length - 2 && " and "}
-                {idx >= 0 && idx < event.keystage.length - 2 && ", "}
-              </>
-            )}</p>
-          }
+          {event.facilitators && event.facilitators.map(facilitator =>
+            <p key={facilitator._id}>
+              {reactStringReplace(
+                facilitator.job,
+                facilitator.title,
+                (match, i) => <strong>{match}</strong>)}
+            </p>
+          )}
+          <p>
+            <strong>Price: </strong>{event.price}<br />
+            <strong>Date: </strong><Date date={event.dateStart} /><br />
+            <strong>Venue: </strong>{event.location}<br />
+            {event.keystage &&
+              <>Suitable for {event.keystage.map((ks, idx) =>
+                <>
+                  {ks.title &&
+                    <Link href={`/${ks._type}/${ks.slug}`} key={ks._id}>
+                      {locale === "cy" && ks.__i18n_refs
+                        ? ks.__i18n_refs.title
+                        : ks.title}
+                    </Link>
+                  }
+                  {idx === event.keystage.length - 1 && ""}
+                  {idx === event.keystage.length - 2 && " and "}
+                  {idx >= 0 && idx < event.keystage.length - 2 && ", "}
+                </>
+              )}</>
+            }
+          </p>
         </div>
       </section>
     </Layout>

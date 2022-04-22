@@ -35,6 +35,7 @@ export interface Image {
 }
 
 export interface Keystage extends SanityDocument {
+  __i18n_refs: Keystage
   _type: "keystage"
   description: string
   slug: string
@@ -131,16 +132,13 @@ export interface SocialCard {
 }
 
 export interface Staff extends SanityDocument {
-  _type: "author"
-  body: string
-  email: string
-  facebook: string
-  image: Image
-  location: string
-  posts: Post[]
-  twitter: string
+  __i18n_refs: Staff
+  _type: "staff"
+  avatar: Image
+  bio: string
+  job: string
+  role: string[]
   slug: string
-  website: string
   title: string
 }
 

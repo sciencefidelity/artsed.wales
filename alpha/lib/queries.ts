@@ -16,6 +16,12 @@ const seo = `
   twitterCard{ ${socialFields} }
 `
 
+const keystageFields = `__i18n_lang, _id, _type, description, ${slug}, title`
+
+const staffFields = `
+  __i18n_lang, _id, _type, avatar, bio, job, role, title, ${seo}, ${slug}
+`
+
 const localeSeo = `
   facebookCard{ cy{ ${socialFields} }, en{ ${socialFields} } },
   meta{ cy{ ${metaFields} }, en{ ${metaFields} } },
@@ -41,10 +47,8 @@ const pagePostFields = `
 
 const eventFields = `
   __i18n_lang, _id, _type, ${body}, dateEnd, dateStart,
-  facilitators[]->{
-    __i18n_lang, _id, _type, avatar, role, ${slug}, title
-  },
-  keystage[]->{ __i18n_lang, _id, _type, description, ${slug}, title },
+  facilitators[]->{ ${staffFields}, __i18n_refs[0]->{ ${staffFields} } },
+  keystage[]->{ ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} } },
   location, price, ${slug}, summary, title
 `
 
@@ -65,13 +69,13 @@ const event = `
 
 const pages = `
   "pages": *[_type == "page" && ${omitDrafts}] | order(settings.publishedAt){
-    ${pagePostFields}
+    ${pagePostFields}, __i18n_refs[0]->{ ${pagePostFields} }
   }
 `
 
 const posts = `
   "posts": *[_type == "post" && ${omitDrafts}] | order(settings.publishedAt){
-    ${pagePostFields}
+    ${pagePostFields}, __i18n_refs[0]->{ ${pagePostFields} }
   }
 `
 
@@ -80,6 +84,12 @@ const settings = `
     url, siteName, siteDescription, social{ name, url }, ${localeSeo}
   }
 `
+
+const staff = `*[
+  _type == "staff" && __i18n_lang == "en" && ${omitDrafts}
+] | order(settings.publishedAt){
+  ${staffFields}, __i18n_refs[0]->{ ${staffFields} }
+}`
 
 const company = `
   "company": *[_type == "company" && ${omitDrafts}][0]{
@@ -91,11 +101,11 @@ const company = `
   }
 `
 
-const keystages = `{
+const keystages = `
   "keystages": *[_type == "keystage"][0]{
-    __i18n_lang, _id, _type, description, ${slug}, title
+    ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} }
   }
-}`
+`
 
 export const indexQuery = groq`{
   ${pages}, ${settings}
