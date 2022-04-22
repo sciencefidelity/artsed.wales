@@ -129,6 +129,15 @@ const facilitators = `
   }[count(events) > 0]
 `
 
+const keystage = `
+  "keystage": *[
+    _type == "keystage"
+    && __i18n_lang == "en"
+    && slug.current == $slug
+    && ${omitDrafts}
+  ][0]{ ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} } }
+`
+
 const keystages = `
   "keystages": *[
     _type == "keystage" && __i18n_lang == "en" && ${omitDrafts}
@@ -165,6 +174,19 @@ export const eventQuery = groq`{
 export const eventPathQuery = groq`
   *[
     _type == "event"
+    && defined(slug)
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ][].slug.current
+`
+
+export const keystageQuery = groq`{
+  ${keystage}, ${events}, ${labels}, ${navigation}, ${settings}
+}`
+
+export const keystagePathQuery = groq`
+  *[
+    _type == "keystage"
     && defined(slug)
     && __i18n_lang == "en"
     && ${omitDrafts}
