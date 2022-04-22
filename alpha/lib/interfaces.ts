@@ -74,6 +74,23 @@ export interface MetaData {
   title: string
 }
 
+export interface Navigation {
+  primary: NavItem[]
+  secondary: NavItem[]
+}
+
+export interface NavItem {
+  _id: string
+  label: LocaleString
+  url: URL
+}
+
+export interface URL {
+  _type: "artform" | "event" | "keystage" | "newsletter" | "page" | "staff" | "tag" | "video"
+  slug: string
+  title: string
+}
+
 export interface Page extends SanityDocument {
   _type: "page"
   body: PortableText

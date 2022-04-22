@@ -5,19 +5,14 @@ import { cy, enGB } from "date-fns/locale"
 // dydd Sadwrn, 12 Chwefror 2022, 14:00
 const PostDate = ({ date }: { date: string }) => {
   const { locale } = useRouter()
+  const dateLocale = locale === "cy" ? cy : enGB
   return (
-    <>
-      {locale === "cy"
-        ? format(new Date(date),
-          "eeee, d MMMM yyyy, HH:mm",
-          {locale: cy}
-        )
-        : format(new Date(date),
-          "eeee, d MMMM yyyy, HH:mm",
-          {locale: enGB}
-        )
-      }
-    </>
+    <time dateTime={date}>
+      {format(new Date(date),
+        "eee, d MMM yyyy",
+        {locale: dateLocale}
+      )}
+    </time>
   )
 }
 export default PostDate

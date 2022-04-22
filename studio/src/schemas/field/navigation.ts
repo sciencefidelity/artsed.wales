@@ -26,8 +26,8 @@ export default {
           fields: [
             {
               name: 'label',
-              type: 'string',
-              title: 'Label'
+              title: 'Label',
+              type: 'localeString'
             },
             {
               name: 'url',
@@ -57,7 +57,11 @@ export default {
         {
           type: 'object',
           fields: [
-            { name: 'label', type: 'string', title: 'Label' },
+            {
+              name: 'label',
+              title: 'Label',
+              type: 'localeString'
+            },
             {
               name: 'url',
               type: 'reference',

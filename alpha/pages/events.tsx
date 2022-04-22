@@ -6,8 +6,8 @@ import { localize, urlFor } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import { eventsQuery } from "lib/queries"
-import { Event, Settings } from "lib/interfaces"
-import Date from "components/date"
+import { Event, Navigation, Settings } from "lib/interfaces"
+import EventDate from "components/eventDate"
 import Link from "components/link"
 import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
@@ -21,12 +21,13 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const { locale } = useRouter()
-  const { events, settings } = data as {
+  const { events, navigation, settings } = data as {
     events: Event[]
+    navigation: Navigation
     settings: Settings
   }
   return (
-    <Layout settings={settings}>
+    <Layout navigation={navigation} settings={settings}>
       <div>
         {events.map(event =>
           <div key={event._id}>
@@ -46,7 +47,12 @@ const Home = ({ data }) => {
                   : event.summary}
               </p>
             }
-            {event.dateStart && <Date date={event.dateStart} />}
+            {event.dateStart &&
+              <EventDate
+                dateEnd={event.dateEnd}
+                dateStart={event.dateStart}
+              />
+            }
           </div>
         )}
       </div>

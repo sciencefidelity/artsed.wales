@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Home = ({ data }) => {
+const About = ({ data }) => {
   const { locale } = useRouter()
   const { navigation, pages, settings } = data as {
     navigation: Navigation
@@ -26,9 +26,9 @@ const Home = ({ data }) => {
   }
   return (
     <Layout navigation={navigation} settings={settings}>
-      <h1>{pages[1].title}</h1>
-      <PortableText value={pages[1].body} components={components} />
+      <h1>{pages[0].title}</h1>
+      <PortableText value={pages[0].body} components={components} />
     </Layout>
   )
 }
-export default Home
+export default About

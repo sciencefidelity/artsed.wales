@@ -8,6 +8,8 @@ const body = `body[]{ ..., markDefs[]{ ..., item->{ _type, ${slug} } } }`
 
 const socialFields = `description, image, title`
 
+const labels = `"labels": *[_type == "labelGroup" && ${omitDrafts}][0].labels`
+
 const metaFields = `canonicalURL, description, title`
 
 const seo = `
@@ -107,17 +109,24 @@ const keystages = `
   }
 `
 
+const navigation = `
+  "navigation": *[_type == "navigation"][0]{
+    primary[]{ ..., url->{ _type, "slug": slug.current, title} },
+    secondary[]{ ..., url->{ _type, "slug": slug.current, title} }
+  }
+`
+
 export const indexQuery = groq`{
-  ${pages}, ${settings}
+  ${navigation}, ${pages}, ${settings}
 }`
 
 export const eventsQuery = groq`{
-  ${events}, ${settings}
+  ${events}, ${navigation}, ${settings}
 }`
 
 export const eventQuery = groq`{
-  ${event}, ${settings},
-  "labels": *[_type == "labelGroup" && ${omitDrafts}][0].labels
+  ${event}, ${events}, ${labels}, ${navigation}, ${settings},
+
 }`
 
 export const eventPathQuery = groq`

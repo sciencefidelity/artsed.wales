@@ -15,13 +15,14 @@ import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
+import Date from "components/date"
 import EventDate from "components/eventDate"
 import Link from "components/link"
 import Localize from "components/localize"
 // import Event from "components/event"
 import ErrorTemplate from "components/errorTemplate"
 import { eventQuery, eventPathQuery } from "lib/queries"
-import { Event, Label, Settings } from "lib/interfaces"
+import { Event, Label, Navigation, Settings } from "lib/interfaces"
 // import s from "pages/courses/event.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -58,13 +59,16 @@ const EventPage = ({ data }) => {
       </>
     )
   }
-  const { event, labels, settings } = data as {
+  const { event, events, labels, navigation, settings } = data as {
     event: Event
+    events: Event[]
+    navigation: Navigation
     settings: Settings
     labels: Label[]
   }
   return (
     <Layout
+      navigation={navigation}
       settings={settings}
     >
       <section>
@@ -90,7 +94,9 @@ const EventPage = ({ data }) => {
                   {reactStringReplace(
                     locale === "cy" && facilitator.__i18n_refs.job
                       ? facilitator.__i18n_refs.job
-                      : facilitator.job ? facilitator.job : facilitator.title,
+                      : facilitator.job
+                        ? facilitator.job
+                        : facilitator.title,
                     facilitator.title,
                     match =>
                       <strong>
@@ -117,7 +123,9 @@ const EventPage = ({ data }) => {
             <strong><Localize data={labels[6].text} />: </strong>
             {event.location}<br />
             {event.keystage &&
-              <>Suitable for {event.keystage.map((ks, idx) =>
+              <>
+                <Localize data={labels[8].text} />
+                {" "}{event.keystage.map((ks, idx) =>
                 <>
                   {ks.title &&
                     <Link href={`/${ks._type}/${ks.slug}`} key={ks._id}>
@@ -127,7 +135,7 @@ const EventPage = ({ data }) => {
                     </Link>
                   }
                   {idx === event.keystage.length - 1 && ""}
-                  {idx === event.keystage.length - 2 && " and "}
+                  {idx === event.keystage.length - 2 && <Localize data={labels[9].text} />}
                   {idx >= 0 && idx < event.keystage.length - 2 && ", "}
                 </>
               )}</>
@@ -135,6 +143,20 @@ const EventPage = ({ data }) => {
           </p>
         </div>
       </section>
+      <aside>
+        <h2>Upcoming Events</h2>
+        <ul>
+          {events.filter(e => e.title !== event.title).map(e =>
+            <li key={e._id}>
+              <Date date={e.dateStart} /><br />
+              <Link href={`/${e._type}/${e.slug}`}>{e.title}</Link><br />
+              {locale === "cy" && e.__i18n_refs
+                ? e.__i18n_refs.summary
+                : e.summary}
+            </li>
+          )}
+        </ul>
+      </aside>
     </Layout>
   )
 }

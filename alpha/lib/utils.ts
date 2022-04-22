@@ -8,7 +8,7 @@ export const acronym = (str: string): string => {
 }
 
 export const buildUrl = (type: string, slug: string): string => {
-  return `${type}/${slug}`
+  return `${subdir(type)}/${slug}`
 }
 
 export const capitalize = (str: string): string => {
@@ -35,13 +35,15 @@ export const subdir = (type: string): string => {
   case "event":
     return "/author"
   case "event":
-    return "/events"
-  case "facilitator":
-    return "/facilitators"
+    return "/event"
+  case "staff":
+    return "/staff"
   case "post":
     return "/news"
+  case "tag":
+    return "/tag"
   case "video":
-    return "/videos"
+    return "/video"
   default:
     return ""
   }
