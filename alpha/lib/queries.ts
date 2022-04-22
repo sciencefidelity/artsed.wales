@@ -87,11 +87,11 @@ const settings = `
   }
 `
 
-const staff = `*[
-  _type == "staff" && __i18n_lang == "en" && ${omitDrafts}
-] | order(settings.publishedAt){
-  ${staffFields}, __i18n_refs[0]->{ ${staffFields} }
-}`
+const staff = `
+  "staff": *[_type == "staff" && __i18n_lang == "en" && ${omitDrafts}]{
+    ${staffFields}, __i18n_refs[0]->{ ${staffFields} }
+  }
+`
 
 const company = `
   "company": *[_type == "company" && ${omitDrafts}][0]{
@@ -104,7 +104,9 @@ const company = `
 `
 
 const keystages = `
-  "keystages": *[_type == "keystage"][0]{
+  "keystages": *[
+    _type == "keystage" && __i18n_lang == "en" && ${omitDrafts}
+  ] | order(title){
     ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} }
   }
 `
@@ -121,12 +123,11 @@ export const indexQuery = groq`{
 }`
 
 export const eventsQuery = groq`{
-  ${events}, ${navigation}, ${settings}
+  ${events}, ${keystages}, ${navigation}, ${settings}, ${staff}
 }`
 
 export const eventQuery = groq`{
-  ${event}, ${events}, ${labels}, ${navigation}, ${settings},
-
+  ${event}, ${events}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const eventPathQuery = groq`

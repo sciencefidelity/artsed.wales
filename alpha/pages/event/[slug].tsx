@@ -135,7 +135,9 @@ const EventPage = ({ data }) => {
                     </Link>
                   }
                   {idx === event.keystage.length - 1 && ""}
-                  {idx === event.keystage.length - 2 && <Localize data={labels[9].text} />}
+                  {idx === event.keystage.length - 2 &&
+                    <Localize data={labels[9].text} />
+                  }
                   {idx >= 0 && idx < event.keystage.length - 2 && ", "}
                 </>
               )}</>

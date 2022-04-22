@@ -16,13 +16,18 @@ const Header: FC<Props> = ({ navigation, settings }) => {
   const { locale } = useRouter()
   return (
     <header className={u.container}>
-      <div>
-        <Link href="/"><Localize data={settings.siteName} /></Link>
-        <Language />
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "3fr 1fr"
+      }}>
+        <div>
+          <Link href="/"><Localize data={settings.siteName} /></Link>
+          <Language />
+        </div>
         <nav>
           <ul>
             {navigation.primary.map(item =>
-              <li>
+              <li key={item._id}>
                 <Link href={buildUrl(item.url._type, item.url.slug)}>
                   <Localize data={item.label} />
                 </Link>
