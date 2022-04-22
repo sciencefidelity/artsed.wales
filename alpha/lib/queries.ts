@@ -54,6 +54,15 @@ const events = `
   ] | order(dateStart){ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
 `
 
+const event = `
+  "event": *[
+    _type == "event"
+    && __i18n_lang == "en"
+    && slug.current == $slug
+    && ${omitDrafts}
+  ][0]{ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
+`
+
 const pages = `
   "pages": *[_type == "page" && ${omitDrafts}] | order(settings.publishedAt){
     ${pagePostFields}
@@ -95,3 +104,17 @@ export const indexQuery = groq`{
 export const eventsQuery = groq`{
   ${events}, ${settings}
 }`
+
+export const eventQuery = groq`{
+  ${event}, ${settings}
+}`
+
+export const eventPathQuery = groq`
+  *[
+    _type == "event"
+    && defined(slug)
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ][].slug.current
+`
+

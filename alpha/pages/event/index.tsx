@@ -8,6 +8,7 @@ import Layout from "components/layout"
 import { eventsQuery } from "lib/queries"
 import { Event, Settings } from "lib/interfaces"
 import Date from "components/date"
+import Link from "components/link"
 import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
 
@@ -19,7 +20,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home = ({ data }) => {
-  console.log(data.events)
   const { locale } = useRouter()
   const { events, settings } = data as {
     events: Event[]
@@ -32,9 +32,11 @@ const Home = ({ data }) => {
           <div>
             {event.title &&
               <h1>
-                {locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.title
-                  : event.title}
+                <Link href={`/${event._type}/${event.slug}`}>
+                  {locale === "cy" && event.__i18n_refs
+                    ? event.__i18n_refs.title
+                    : event.title}
+                </Link>
               </h1>
             }
             {event.summary &&

@@ -22,6 +22,7 @@ export interface Event extends SanityDocument {
   keystage: Keystage[]
   location: string
   price: number
+  slug: string
   summary: string
   title: string
 }
@@ -34,6 +35,7 @@ export interface Image {
 }
 
 export interface Keystage extends SanityDocument {
+  _type: "keystage"
   description: string
   slug: string
   title: string
