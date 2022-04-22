@@ -1,8 +1,8 @@
 /**
- * Course component (dynamic)
+ * Event component (dynamic)
  *
  * @remarks
- * Generates all pages in the subdirectory `/events`.
+ * Generates all pages in the subdirectory `/event`.
  *
  * @param data - all props fetched with `eventQuery` in `lib/queries.ts`.
  * @param slug - all props fetched with `eventPathQuery` in `lib/queries.ts`.
@@ -19,11 +19,10 @@ import Date from "components/date"
 import EventDate from "components/eventDate"
 import Link from "components/link"
 import Localize from "components/localize"
-// import Event from "components/event"
 import ErrorTemplate from "components/errorTemplate"
 import { eventQuery, eventPathQuery } from "lib/queries"
 import { Event, Label, Navigation, Settings } from "lib/interfaces"
-// import s from "pages/courses/event.module.scss"
+import s from "pages/courses/event.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(eventPathQuery)
@@ -41,6 +40,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 }
+
 const EventPage = ({ data }) => {
   const router = useRouter()
   const { locale } = router

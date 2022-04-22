@@ -1,9 +1,9 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
-import { Keystage, Staff } from "lib/interfaces"
+import { Artform, Keystage, Staff } from "lib/interfaces"
 
 interface Props {
-  data: Keystage[] | Staff[]
+  data: Artform[] | Keystage[] | Staff[]
   title: string
 }
 

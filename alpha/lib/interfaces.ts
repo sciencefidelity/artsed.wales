@@ -5,6 +5,14 @@ export interface Address {
   postcode: string
 }
 
+export interface Artform extends SanityDocument {
+  __i18n_refs: Artform
+  _type: "artform"
+  description: string
+  slug: string
+  title: string
+}
+
 export interface Company extends SanityDocument {
   address: LocaleAddress
   description: LocaleString

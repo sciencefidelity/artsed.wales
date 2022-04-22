@@ -18,6 +18,8 @@ const seo = `
   twitterCard{ ${socialFields} }
 `
 
+const artformFields = `__i18n_lang, _id, _type, description, ${slug}, title`
+
 const keystageFields = `__i18n_lang, _id, _type, description, ${slug}, title`
 
 const staffFields = `
@@ -103,6 +105,18 @@ const company = `
   }
 `
 
+const artforms = `
+  "artforms": *[_type == "artform" && __i18n_lang == "en" && ${omitDrafts}]{
+    "events": *[
+      _type == "event"
+      && __i18n_lang == "en"
+      && dateTime(now()) < dateTime(dateStart) && references(^._id)
+      && ${omitDrafts}
+    ]{ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } },
+    ${artformFields}, __i18n_refs[0]->{ ${artformFields} }
+  }[count(events) > 0]
+`
+
 const facilitators = `
   "facilitators": *[_type == "staff" && __i18n_lang == "en" && ${omitDrafts}]{
     "events": *[
@@ -140,7 +154,8 @@ export const indexQuery = groq`{
 }`
 
 export const eventsQuery = groq`{
-  ${events}, ${facilitators}, ${keystages}, ${navigation}, ${settings}
+  ${artforms}, ${events}, ${facilitators},
+  ${keystages}, ${navigation}, ${settings}
 }`
 
 export const eventQuery = groq`{

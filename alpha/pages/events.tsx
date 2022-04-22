@@ -7,7 +7,14 @@ import Checkboxes from "components/checkboxes"
 import EventDate from "components/eventDate"
 import Link from "components/link"
 import { eventsQuery } from "lib/queries"
-import { Event, Keystage, Navigation, Settings, Staff } from "lib/interfaces"
+import {
+  Artform,
+  Event,
+  Keystage,
+  Navigation,
+  Settings,
+  Staff
+} from "lib/interfaces"
 import s from "pages/index.module.scss"
 import u from "styles/utils.module.scss"
 
@@ -20,7 +27,15 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const { locale } = useRouter()
-  const { events, facilitators, keystages, navigation, settings } = data as {
+  const {
+    artforms,
+    events,
+    facilitators,
+    keystages,
+    navigation,
+    settings
+  } = data as {
+    artforms: Artform[]
     events: Event[]
     keystages: Keystage[]
     navigation: Navigation
@@ -72,6 +87,10 @@ const Home = ({ data }) => {
           <Checkboxes
             data={res}
             title={locale === "cy" ? "Hwylusydd" : "Facilitator"}
+          />
+          <Checkboxes
+            data={artforms}
+            title={locale === "cy" ? "Ffurf ar gelfyddyd" : "Artform"}
           />
         </div>
       </div>
