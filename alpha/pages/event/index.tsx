@@ -29,7 +29,7 @@ const Home = ({ data }) => {
     <Layout settings={settings}>
       <div>
         {events.map(event =>
-          <div>
+          <div key={event._id}>
             {event.title &&
               <h1>
                 <Link href={`/${event._type}/${event.slug}`}>

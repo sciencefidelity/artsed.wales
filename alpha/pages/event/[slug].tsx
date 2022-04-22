@@ -15,7 +15,7 @@ import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
-import Date from "components/date"
+import EventDate from "components/eventDate"
 import Link from "components/link"
 import Localize from "components/localize"
 // import Event from "components/event"
@@ -82,15 +82,25 @@ const EventPage = ({ data }) => {
               : event.body}
             components={components}
           />
-          <h3><Localize data={labels[7].text} /></h3>
+          {event.facilitators && <h3><Localize data={labels[7].text} /></h3>}
           <p>
             {event.facilitators && event.facilitators.map(facilitator =>
               <>
                 <span key={facilitator._id}>
                   {reactStringReplace(
-                    facilitator.job,
+                    locale === "cy" && facilitator.__i18n_refs.job
+                      ? facilitator.__i18n_refs.job
+                      : facilitator.job ? facilitator.job : facilitator.title,
                     facilitator.title,
-                    (match, i) => <strong>{match}</strong>)}
+                    match =>
+                      <strong>
+                        <Link
+                          href={`/${facilitator._type}/${facilitator.slug}`}
+                        >
+                          {match}
+                        </Link>
+                      </strong>
+                  )}
                 </span>
                 <br />
               </>
@@ -100,7 +110,10 @@ const EventPage = ({ data }) => {
             <strong><Localize data={labels[4].text} />: </strong>
             £{event.price.toString()}<br />
             <strong><Localize data={labels[5].text} />: </strong>
-            <Date date={event.dateStart} /><br />
+            <EventDate
+              dateEnd={event.dateEnd}
+              dateStart={event.dateStart}
+            /><br />
             <strong><Localize data={labels[6].text} />: </strong>
             {event.location}<br />
             {event.keystage &&
