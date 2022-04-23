@@ -196,7 +196,7 @@ export const eventPathQuery = groq`
 `
 
 export const keystageQuery = groq`{
-  ${keystage}, ${events}, ${navigation}, ${settings}
+  ${keystage}, ${events}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const keystagePathQuery = groq`
@@ -209,7 +209,7 @@ export const keystagePathQuery = groq`
 `
 
 export const staffQuery = groq`{
-  ${staff}, ${events}, ${navigation}, ${settings}
+  ${staff}, ${events}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const staffPathQuery = groq`

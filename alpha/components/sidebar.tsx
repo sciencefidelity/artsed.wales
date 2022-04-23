@@ -2,17 +2,19 @@ import { FC } from "react"
 import { useRouter } from "next/router"
 import Date from "components/date"
 import Link from "components/link"
-import { Event } from "lib/interfaces"
+import Localize from "components/localize"
+import { Event, LocaleString } from "lib/interfaces"
 
 interface Props {
   events: Event[]
+  title: LocaleString
 }
 
-const Sidebar: FC<Props> = ({ events }) => {
+const Sidebar: FC<Props> = ({ events, title }) => {
   const { locale } = useRouter()
   return (
     <aside>
-      <h2>Upcoming Events</h2>
+      <h2><Localize data={title} /></h2>
       <ul style={{
         listStyleType: "none",
         padding: 0

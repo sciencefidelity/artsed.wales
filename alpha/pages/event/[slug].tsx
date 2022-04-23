@@ -148,7 +148,10 @@ const EventPage = ({ data }) => {
             </p>
           </div>
         </section>
-        <Sidebar events={events.filter(e => e.title !== event.title)} />
+        <Sidebar
+          events={events.filter(e => e.title !== event.title)}
+          title={labels[10].text}
+        />
       </div>
     </Layout>
   )

@@ -11,13 +11,15 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
+import { capitalize } from "lib/utils"
 import Layout from "components/layout"
 import Date from "components/date"
-import Link from "components/link"
 import ErrorTemplate from "components/errorTemplate"
+import Link from "components/link"
+import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { staffQuery, staffPathQuery } from "lib/queries"
-import { Event, Navigation, Settings, Staff } from "lib/interfaces"
+import { Event, Label, Navigation, Settings, Staff } from "lib/interfaces"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(staffPathQuery)
@@ -54,11 +56,12 @@ const StaffPage = ({ data }) => {
       </>
     )
   }
-  const { events, navigation, settings, staff } = data as {
-    staff: Staff
+  const { events, labels, navigation, settings, staff } = data as {
     events: Event[]
+    labels: Label[]
     navigation: Navigation
     settings: Settings
+    staff: Staff
   }
   return (
     <Layout
@@ -75,12 +78,17 @@ const StaffPage = ({ data }) => {
               ? staff.__i18n_refs.title
               : staff.title}
           </h1>}
+          <ul style={{padding: 0}}>
+            {staff.role && staff.role.map((r, idx) =>
+              <li key={idx} className="horizontalList">{capitalize(r)}</li>
+            )}
+          </ul>
           {staff.bio && <p>
             {locale === "cy" && staff.__i18n_refs.bio
               ? staff.__i18n_refs.bio
               : staff.bio}
           </p>}
-          <h2>Events as facilitator</h2>
+          {labels[11] && <h2><Localize data={labels[11].text} /></h2>}
           <div>
             {staff.events.map(event =>
               <div key={event._id}>
@@ -107,7 +115,7 @@ const StaffPage = ({ data }) => {
             )}
           </div>
         </section>
-        <Sidebar events={events} />
+        <Sidebar events={events} title={labels[10].text} />
       </div>
     </Layout>
   )

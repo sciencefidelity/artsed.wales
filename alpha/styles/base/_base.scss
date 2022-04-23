@@ -4,3 +4,9 @@ html {
   // font-family: var(--font-sans-serif);
 }
 
+.horizontalList {
+  display: inline;
+  &:not(:last-child)::after {
+    content: ', ';
+  }
+}

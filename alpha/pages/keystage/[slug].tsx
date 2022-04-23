@@ -12,10 +12,13 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
+import Date from "components/date"
 import ErrorTemplate from "components/errorTemplate"
+import Link from "components/link"
+import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { keystageQuery, keystagePathQuery } from "lib/queries"
-import { Event, Keystage, Navigation, Settings } from "lib/interfaces"
+import { Event, Label, Keystage, Navigation, Settings } from "lib/interfaces"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(keystagePathQuery)
@@ -52,9 +55,10 @@ const KeystagePage = ({ data }) => {
       </>
     )
   }
-  const { keystage, events, navigation, settings } = data as {
-    keystage: Keystage
+  const {  events, labels, keystage, navigation, settings } = data as {
     events: Event[]
+    labels: Label[]
+    keystage: Keystage
     navigation: Navigation
     settings: Settings
   }
@@ -78,8 +82,39 @@ const KeystagePage = ({ data }) => {
               ? keystage.__i18n_refs.description
               : keystage.description}
           </p>
+          {labels[12] && <h2>
+            <Localize data={labels[12].text} />{" "}
+            {locale === "cy" && keystage.__i18n_refs.title
+              ? keystage.__i18n_refs.title
+              : keystage.title}
+          </h2>}
+          <div>
+            {keystage.events.map(event =>
+              <div key={event._id}>
+                {event.dateStart &&
+                  <Date date={event.dateStart} />
+                }
+                {event.title &&
+                  <h2 style={{margin: 0}}>
+                    <Link href={`/${event._type}/${event.slug}`}>
+                      {locale === "cy" && event.__i18n_refs
+                        ? event.__i18n_refs.title
+                        : event.title}
+                    </Link>
+                  </h2>
+                }
+                {event.summary &&
+                  <p>
+                    {locale === "cy" && event.__i18n_refs
+                      ? event.__i18n_refs.summary
+                      : event.summary}
+                  </p>
+                }
+              </div>
+            )}
+          </div>
         </section>
-        <Sidebar events={events} />
+        <Sidebar events={events} title={labels[10].text} />
       </div>
     </Layout>
   )
