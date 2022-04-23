@@ -134,6 +134,17 @@ const facilitators = `
   }[count(events) > 0]
 `
 
+const coordinators = `
+  "coordinators": *[
+    _type == "staff"
+    && role match "Co-ordinator"
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ]{
+    ${staffFields}, __i18n_refs[0]->{ ${staffFields} }
+  }
+`
+
 const keystage = `
   "keystage": *[
     _type == "keystage"
@@ -188,6 +199,10 @@ export const indexQuery = groq`{
   ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
 }`
 
+export const aboutQuery = groq`{
+  ${coordinators}, ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
+}`
+
 export const eventsQuery = groq`{
   ${artforms}, ${events}, ${facilitators},
   ${keystages}, ${labels}, ${navigation}, ${settings}
@@ -233,7 +248,7 @@ export const keystagePathQuery = groq`
 `
 
 export const staffQuery = groq`{
-  ${staff}, ${events}, ${labels}, ${navigation}, ${settings}
+  ${events}, ${labels}, ${navigation}, ${settings}, ${staff}
 }`
 
 export const staffPathQuery = groq`

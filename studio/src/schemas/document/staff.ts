@@ -56,11 +56,11 @@ export default {
       options: {
         layout: 'grid',
         list: [
-          { title: 'Author', value: 'author' },
-          { title: 'Chair', value: 'chair' },
-          { title: 'Co-ordinator', value: 'coordinator' },
-          { title: 'Facilitator', value: 'facilitator' },
-          { title: 'Trustee', value: 'trustee' }
+          { title: 'Author', value: 'Author' },
+          { title: 'Chair', value: 'Chair' },
+          { title: 'Co-ordinator', value: 'Co-ordinator' },
+          { title: 'Facilitator', value: 'Facilitator' },
+          { title: 'Trustee', value: 'Trustee' }
         ]
       },
       validation: Rule => Rule.required(),
@@ -76,6 +76,12 @@ export default {
       name: 'bio',
       title: 'Bio',
       type: 'text',
+      group: 'content'
+    },
+    {
+      name: 'email',
+      title: 'Email',
+      type: 'email',
       group: 'content'
     },
     {
@@ -110,8 +116,21 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'job',
+      role0: 'role.0',
+      role1: 'role.1',
+      role2: 'role.2',
+      role3: 'role.3',
       media: 'avatar'
+    },
+    prepare: ({ title, role0, role1, role2, role3, media }) => {
+      const roles = [role0, role1, role2].filter(Boolean)
+      const subtitle = roles.length > 0 ? `${roles.join(', ')}` : ''
+      const hasMoreRoles = Boolean(role3)
+      return {
+        title,
+        subtitle: hasMoreRoles ? `${subtitle}…` : subtitle,
+        media
+      }
     }
   }
 }

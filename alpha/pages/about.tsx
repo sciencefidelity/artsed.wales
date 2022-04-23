@@ -5,11 +5,11 @@ import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import Sidebar from "components/sidebar"
-import { indexQuery } from "lib/queries"
-import { Event, Label, Navigation, Page, Settings } from "lib/interfaces"
+import { aboutQuery } from "lib/queries"
+import { Event, Label, Navigation, Page, Settings, Staff } from "lib/interfaces"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await sanityClient.fetch(indexQuery)
+  const data = await sanityClient.fetch(aboutQuery)
   return {
     props: { data }
   }
@@ -17,13 +17,25 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const About = ({ data }) => {
   const { locale } = useRouter()
-  const { events, labels, navigation, pages, settings } = data as {
+  const {
+    coordinators,
+    events,
+    labels,
+    navigation,
+    pages,
+    settings
+  } = data as {
+    coordinators: Staff[]
     events: Event[]
     labels: Label[]
     navigation: Navigation
     pages: Page[]
     settings: Settings
   }
+  const coordinatorsSorted = coordinators.sort((a, b) =>
+    a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
+
+  console.log(coordinators)
   return (
     <Layout navigation={navigation} settings={settings}>
       <div style={{
@@ -42,6 +54,12 @@ const About = ({ data }) => {
               : pages[0].body}
             components={components}
           />
+          <h2>Network Co-ordinators</h2>
+          <ul style={{listStyleType: "none", padding: 0}}>
+            {coordinatorsSorted.map(coordinator =>
+              <li>{coordinator.title}</li>
+            )}
+          </ul>
         </div>
         <Sidebar
           events={events}
