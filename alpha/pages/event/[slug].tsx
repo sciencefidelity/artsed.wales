@@ -15,14 +15,13 @@ import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
-import Date from "components/date"
 import EventDate from "components/eventDate"
 import Link from "components/link"
 import Localize from "components/localize"
 import ErrorTemplate from "components/errorTemplate"
+import Sidebar from "components/sidebar"
 import { eventQuery, eventPathQuery } from "lib/queries"
 import { Event, Label, Navigation, Settings } from "lib/interfaces"
-import s from "pages/courses/event.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(eventPathQuery)
@@ -149,27 +148,7 @@ const EventPage = ({ data }) => {
             </p>
           </div>
         </section>
-        <aside>
-          <h2>Upcoming Events</h2>
-          <ul style={{
-            listStyleType: "none",
-            padding: 0
-          }}>
-            {events.filter(e => e.title !== event.title).map(e =>
-              <li key={e._id} style={{ marginBottom: "1.5rem" }}>
-                <Date date={e.dateStart} /><br />
-                <Link href={`/${e._type}/${e.slug}`}>
-                  {locale === "cy" && e.__i18n_refs
-                    ? e.__i18n_refs.title
-                    : e.title}
-                </Link><br />
-                {locale === "cy" && e.__i18n_refs
-                  ? e.__i18n_refs.summary
-                  : e.summary}
-              </li>
-            )}
-          </ul>
-        </aside>
+        <Sidebar events={events.filter(e => e.title !== event.title)} />
       </div>
     </Layout>
   )

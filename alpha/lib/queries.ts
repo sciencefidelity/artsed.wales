@@ -129,7 +129,13 @@ const keystage = `
     && __i18n_lang == "en"
     && slug.current == $slug
     && ${omitDrafts}
-  ][0]{ ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} } }
+  ][0]{ ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} },
+    "events": *[
+      _type == "event" &&
+      __i18n_lang == "en" &&
+      dateTime(now()) < dateTime(dateStart) && references(^._id)
+    ]{ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
+  }
 `
 
 const keystages = `
@@ -158,7 +164,13 @@ const staff = `
     && __i18n_lang == "en"
     && slug.current == $slug
     && ${omitDrafts}
-  ][0]{ ${staffFields}, __i18n_refs[0]->{ ${staffFields} } }
+  ][0]{ ${staffFields}, __i18n_refs[0]->{ ${staffFields} },
+    "events": *[
+      _type == "event" &&
+      __i18n_lang == "en" &&
+      dateTime(now()) < dateTime(dateStart) && references(^._id)
+    ]{ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
+  }
 `
 
 export const indexQuery = groq`{

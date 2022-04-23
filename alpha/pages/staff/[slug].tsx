@@ -15,6 +15,7 @@ import Layout from "components/layout"
 import Date from "components/date"
 import Link from "components/link"
 import ErrorTemplate from "components/errorTemplate"
+import Sidebar from "components/sidebar"
 import { staffQuery, staffPathQuery } from "lib/queries"
 import { Event, Navigation, Settings, Staff } from "lib/interfaces"
 
@@ -79,28 +80,34 @@ const StaffPage = ({ data }) => {
               ? staff.__i18n_refs.bio
               : staff.bio}
           </p>}
-        </section>
-        <aside>
-          <h2>Upcoming Events</h2>
-          <ul style={{
-            listStyleType: "none",
-            padding: 0
-          }}>
-            {events.map(e =>
-              <li key={e._id} style={{ marginBottom: "1.5rem" }}>
-                <Date date={e.dateStart} /><br />
-                <Link href={`/${e._type}/${e.slug}`}>
-                  {locale === "cy" && e.__i18n_refs
-                    ? e.__i18n_refs.title
-                    : e.title}
-                </Link><br />
-                {locale === "cy" && e.__i18n_refs
-                  ? e.__i18n_refs.summary
-                  : e.summary}
-              </li>
+          <h2>Events as facilitator</h2>
+          <div>
+            {staff.events.map(event =>
+              <div key={event._id}>
+                {event.dateStart &&
+                  <Date date={event.dateStart} />
+                }
+                {event.title &&
+                  <h2 style={{margin: 0}}>
+                    <Link href={`/${event._type}/${event.slug}`}>
+                      {locale === "cy" && event.__i18n_refs
+                        ? event.__i18n_refs.title
+                        : event.title}
+                    </Link>
+                  </h2>
+                }
+                {event.summary &&
+                  <p>
+                    {locale === "cy" && event.__i18n_refs
+                      ? event.__i18n_refs.summary
+                      : event.summary}
+                  </p>
+                }
+              </div>
             )}
-          </ul>
-        </aside>
+          </div>
+        </section>
+        <Sidebar events={events} />
       </div>
     </Layout>
   )

@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
-import { keyStage } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import Checkboxes from "components/checkboxes"
@@ -15,8 +14,6 @@ import {
   Settings,
   Staff
 } from "lib/interfaces"
-import s from "pages/index.module.scss"
-import u from "styles/utils.module.scss"
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(eventsQuery)
@@ -54,13 +51,13 @@ const Home = ({ data }) => {
           {events.map(event =>
             <div key={event._id}>
               {event.title &&
-                <h1>
+                <h2>
                   <Link href={`/${event._type}/${event.slug}`}>
                     {locale === "cy" && event.__i18n_refs
                       ? event.__i18n_refs.title
                       : event.title}
                   </Link>
-                </h1>
+                </h2>
               }
               {event.summary &&
                 <p>

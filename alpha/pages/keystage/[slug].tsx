@@ -12,9 +12,8 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
-import Date from "components/date"
-import Link from "components/link"
 import ErrorTemplate from "components/errorTemplate"
+import Sidebar from "components/sidebar"
 import { keystageQuery, keystagePathQuery } from "lib/queries"
 import { Event, Keystage, Navigation, Settings } from "lib/interfaces"
 
@@ -80,27 +79,7 @@ const KeystagePage = ({ data }) => {
               : keystage.description}
           </p>
         </section>
-        <aside>
-          <h2>Upcoming Events</h2>
-          <ul style={{
-            listStyleType: "none",
-            padding: 0
-          }}>
-            {events.map(e =>
-              <li key={e._id} style={{ marginBottom: "1.5rem" }}>
-                <Date date={e.dateStart} /><br />
-                <Link href={`/${e._type}/${e.slug}`}>
-                  {locale === "cy" && e.__i18n_refs
-                    ? e.__i18n_refs.title
-                    : e.title}
-                </Link><br />
-                {locale === "cy" && e.__i18n_refs
-                  ? e.__i18n_refs.summary
-                  : e.summary}
-              </li>
-            )}
-          </ul>
-        </aside>
+        <Sidebar events={events} />
       </div>
     </Layout>
   )

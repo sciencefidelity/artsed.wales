@@ -9,6 +9,7 @@ export interface Artform extends SanityDocument {
   __i18n_refs: Artform
   _type: "artform"
   description: string
+  events: Event[]
   slug: string
   title: string
 }
@@ -46,6 +47,7 @@ export interface Keystage extends SanityDocument {
   __i18n_refs: Keystage
   _type: "keystage"
   description: string
+  events: Event[]
   slug: string
   title: string
 }
@@ -167,6 +169,7 @@ export interface Staff extends SanityDocument {
   _type: "staff"
   avatar: Image
   bio: string
+  events: Event[]
   job: string
   role: string[]
   slug: string
