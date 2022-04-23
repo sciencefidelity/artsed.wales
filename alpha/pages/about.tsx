@@ -23,7 +23,8 @@ const About = ({ data }) => {
     labels,
     navigation,
     pages,
-    settings
+    settings,
+    trustees
   } = data as {
     coordinators: Staff[]
     events: Event[]
@@ -31,11 +32,12 @@ const About = ({ data }) => {
     navigation: Navigation
     pages: Page[]
     settings: Settings
+    trustees: Staff[]
   }
   const coordinatorsSorted = coordinators.sort((a, b) =>
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
-
-  console.log(coordinators)
+  const trusteesSorted = trustees.sort((a, b) =>
+    a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
   return (
     <Layout navigation={navigation} settings={settings}>
       <div style={{
@@ -58,6 +60,12 @@ const About = ({ data }) => {
           <ul style={{listStyleType: "none", padding: 0}}>
             {coordinatorsSorted.map(coordinator =>
               <li>{coordinator.title}</li>
+            )}
+          </ul>
+          <h2>Advisory Board</h2>
+          <ul style={{listStyleType: "none", padding: 0}}>
+            {trusteesSorted.map(trustee =>
+              <li>{trustee.title}</li>
             )}
           </ul>
         </div>

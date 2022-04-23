@@ -42,7 +42,7 @@ const Home = ({ data }) => {
     settings: Settings
     facilitators: Staff[]
   }
-  const res = facilitators.sort((a, b) =>
+  const facilitatorsSorted = facilitators.sort((a, b) =>
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
   return (
     <Layout navigation={navigation} settings={settings}>
@@ -85,7 +85,7 @@ const Home = ({ data }) => {
             title={locale === "cy" ? "Cyfnod Allweddol" : "Key Stage"}
           />
           <Checkboxes
-            data={res}
+            data={facilitatorsSorted}
             title={locale === "cy" ? "Hwylusydd" : "Facilitator"}
           />
           <Checkboxes

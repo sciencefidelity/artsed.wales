@@ -145,6 +145,17 @@ const coordinators = `
   }
 `
 
+const trustees = `
+  "trustees": *[
+    _type == "staff"
+    && (role match ["Chair"] || role match ["Trustee"])
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ]{
+    ${staffFields}, __i18n_refs[0]->{ ${staffFields} }
+  }
+`
+
 const keystage = `
   "keystage": *[
     _type == "keystage"
@@ -200,7 +211,8 @@ export const indexQuery = groq`{
 }`
 
 export const aboutQuery = groq`{
-  ${coordinators}, ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
+  ${coordinators}, ${events}, ${labels}, ${navigation},
+  ${pages}, ${settings}, ${trustees}
 }`
 
 export const eventsQuery = groq`{
