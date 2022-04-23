@@ -11,7 +11,6 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
-import { capitalize } from "lib/utils"
 import Layout from "components/layout"
 import Date from "components/date"
 import ErrorTemplate from "components/errorTemplate"
@@ -80,7 +79,7 @@ const StaffPage = ({ data }) => {
           </h1>}
           <ul style={{padding: 0}}>
             {staff.role && staff.role.map((r, idx) =>
-              <li key={idx} className="horizontalList">{capitalize(r)}</li>
+              <li key={idx} className="horizontalList">{r}</li>
             )}
           </ul>
           {staff.bio && <p>

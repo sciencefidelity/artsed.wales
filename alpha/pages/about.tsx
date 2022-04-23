@@ -59,13 +59,25 @@ const About = ({ data }) => {
           <h2>Network Co-ordinators</h2>
           <ul style={{listStyleType: "none", padding: 0}}>
             {coordinatorsSorted.map(coordinator =>
-              <li>{coordinator.title}</li>
+              <li>
+                <a href={`/${coordinator._type}/${coordinator.slug}`}>
+                  {locale === "cy" && coordinator.__i18n_refs
+                    ? coordinator.__i18n_refs.title
+                    : coordinator.title}
+                </a>
+              </li>
             )}
           </ul>
           <h2>Advisory Board</h2>
           <ul style={{listStyleType: "none", padding: 0}}>
             {trusteesSorted.map(trustee =>
-              <li>{trustee.title}</li>
+              <li>
+                <a href={`/${trustee._type}/${trustee.slug}`}>
+                  {locale === "cy" && trustee.__i18n_refs
+                    ? trustee.__i18n_refs.title
+                    : trustee.title}
+                </a>
+              </li>
             )}
           </ul>
         </div>
