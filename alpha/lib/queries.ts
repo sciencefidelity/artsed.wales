@@ -45,10 +45,6 @@ const pagePostFields = `
   ${body}, ${pageSettings}, ${seo}, ${slug}
 `
 
-// const postReferenceFields = `
-//   _id, _type, body, excerpt, image, title, ${pageSettings}, ${slug}
-// `
-
 const eventFields = `
   __i18n_lang, _id, _type, ${body}, dateEnd, dateStart,
   facilitators[]->{ ${staffFields}, __i18n_refs[0]->{ ${staffFields} } },
@@ -96,6 +92,21 @@ const company = `
       en{ city, line1, line2, postcode }
     },
     email, telephone, title
+  }
+`
+
+const artform = `
+  "artform": *[
+    _type == "artform"
+    && __i18n_lang == "en"
+    && slug.current == $slug
+    && ${omitDrafts}
+  ][0]{ ${artformFields}, __i18n_refs[0]->{ ${artformFields} },
+    "events": *[
+      _type == "event" &&
+      __i18n_lang == "en" &&
+      dateTime(now()) < dateTime(dateStart) && references(^._id)
+    ]{ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
   }
 `
 
@@ -189,6 +200,19 @@ export const eventQuery = groq`{
 export const eventPathQuery = groq`
   *[
     _type == "event"
+    && defined(slug)
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ][].slug.current
+`
+
+export const artformQuery = groq`{
+  ${artform}, ${events}, ${labels}, ${navigation}, ${settings}
+}`
+
+export const artformPathQuery = groq`
+  *[
+    _type == "keystage"
     && defined(slug)
     && __i18n_lang == "en"
     && ${omitDrafts}
