@@ -102,6 +102,7 @@ export interface URL {
 }
 
 export interface Page extends SanityDocument {
+  __i18n_refs: Page
   _type: "page"
   body: PortableText
   facebookCard: SocialCard
@@ -131,6 +132,7 @@ export type PortableText = Array<
 >;
 
 export interface Post extends SanityDocument {
+  __i18n_refs: Post
   _type: "post"
   body: PortableText
   facebookCard: SocialCard

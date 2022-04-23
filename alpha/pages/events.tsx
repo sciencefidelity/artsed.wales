@@ -9,6 +9,7 @@ import { eventsQuery } from "lib/queries"
 import {
   Artform,
   Event,
+  Label,
   Keystage,
   Navigation,
   Settings,
@@ -29,12 +30,14 @@ const Home = ({ data }) => {
     events,
     facilitators,
     keystages,
+    labels,
     navigation,
     settings
   } = data as {
     artforms: Artform[]
     events: Event[]
     keystages: Keystage[]
+    labels: Label[]
     navigation: Navigation
     settings: Settings
     facilitators: Staff[]

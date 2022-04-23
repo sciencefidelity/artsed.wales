@@ -174,12 +174,12 @@ const staff = `
 `
 
 export const indexQuery = groq`{
-  ${navigation}, ${pages}, ${settings}
+  ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
 }`
 
 export const eventsQuery = groq`{
   ${artforms}, ${events}, ${facilitators},
-  ${keystages}, ${navigation}, ${settings}
+  ${keystages}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const eventQuery = groq`{
