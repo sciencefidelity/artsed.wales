@@ -4,9 +4,17 @@ import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
+import Localize from "components/localize"
+import Markdown from "components/markdown"
 import Sidebar from "components/sidebar"
 import { indexQuery } from "lib/queries"
-import { Event, Label, Navigation, Page, Settings } from "lib/interfaces"
+import { Engagement,
+  Event,
+  Label,
+  Navigation,
+  Page,
+  Settings
+} from "lib/interfaces"
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(indexQuery)
@@ -17,7 +25,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const { locale } = useRouter()
-  const { events, labels, navigation, pages, settings } = data as {
+  const { engagement, events, labels, navigation, pages, settings } = data as {
+    engagement: Engagement
     events: Event[]
     labels: Label[]
     navigation: Navigation
@@ -42,6 +51,23 @@ const Home = ({ data }) => {
               : pages[1].body}
             components={components}
           />
+          {/* {engagement.title && <h2><Localize data={engagement.title} /></h2>} */}
+          {engagement.intro &&
+            <Markdown><Localize data={engagement.intro} /></Markdown>
+          }
+          {engagement.engagementFigure &&
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)"
+            }}>
+              {engagement.engagementFigure.map(figure =>
+                <div>
+                  <h3><Localize data={figure.title} /></h3>
+                  <p>{figure.count}</p>
+                </div>
+              )}
+            </div>
+          }
         </div>
         <Sidebar
           events={events}

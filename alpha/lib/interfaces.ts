@@ -21,6 +21,17 @@ export interface Company extends SanityDocument {
   title: LocaleString
 }
 
+export interface Engagement {
+  engagementFigure: EngagementFigure[]
+  intro: LocaleString
+  title: LocaleString
+}
+
+export interface EngagementFigure {
+  count: number
+  title: LocaleString
+}
+
 export interface Event extends SanityDocument {
   __i18n_refs: Event
   _type: "event"

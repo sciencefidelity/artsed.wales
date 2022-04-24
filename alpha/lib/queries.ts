@@ -122,6 +122,12 @@ const artforms = `
   }[count(events) > 0]
 `
 
+const engagement = `
+  "engagement": *[_type == "engagement"][0]{
+    title, intro, "engagementFigure": engagement[]{ count, title }
+  }
+`
+
 const facilitators = `
   "facilitators": *[_type == "staff" && __i18n_lang == "en" && ${omitDrafts}]{
     "events": *[
@@ -207,7 +213,7 @@ const staff = `
 `
 
 export const indexQuery = groq`{
-  ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
+  ${engagement}, ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
 }`
 
 export const aboutQuery = groq`{
