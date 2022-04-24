@@ -1,11 +1,8 @@
 import { FC, ReactNode } from "react"
-import { useRouter } from "next/router"
-import { localize, urlFor } from "lib/utils"
 import BaseHead from "components/baseHead"
 import Footer from "components/footer"
 import Header from "components/header"
 import { Navigation, Settings } from "lib/interfaces"
-import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
 interface Props {
@@ -15,8 +12,6 @@ interface Props {
 }
 
 const Layout: FC<Props> = ({ children, navigation, settings }) => {
-  const router = useRouter()
-  const { locale } = router
   return (
     <>
       <BaseHead settings={settings} />

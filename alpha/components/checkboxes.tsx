@@ -27,7 +27,7 @@ const Checkbox: FC<Props> = ({ data, title }) => {
             {locale === "cy" && item.__i18n_refs
               ? item.__i18n_refs.title
               : item.title}
-            </label>
+          </label>
         </div>
       )}
     </section>

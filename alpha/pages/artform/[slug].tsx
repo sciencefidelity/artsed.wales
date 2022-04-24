@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-const KeystagePage = ({ data }) => {
+const ArtformPage = ({ data }) => {
   const router = useRouter()
   const { locale } = router
   if(router.isFallback) {
@@ -72,51 +72,59 @@ const KeystagePage = ({ data }) => {
         gridTemplateColumns: "3fr 1fr"
       }}>
         <section style={{marginRight: "2rem"}}>
-          <h1>
-            {locale === "cy" && artform.__i18n_refs.title
-              ? artform.__i18n_refs.title
-              : artform.title}
-          </h1>
-          <p>
-            {locale === "cy" && artform.__i18n_refs.description
-              ? artform.__i18n_refs.description
-              : artform.description}
-          </p>
-          {labels[12] && <h2>
-            <Localize data={labels[12].text} />{" "}
-            {locale === "cy" && artform.__i18n_refs.title
-              ? artform.__i18n_refs.title
-              : artform.title}
-          </h2>}
-          <div>
-            {artform.events.map(event =>
-              <div key={event._id}>
-                {event.dateStart &&
-                  <Date date={event.dateStart} />
-                }
-                {event.title &&
-                  <h2 style={{margin: 0}}>
-                    <Link href={`/${event._type}/${event.slug}`}>
-                      {locale === "cy" && event.__i18n_refs
-                        ? event.__i18n_refs.title
-                        : event.title}
-                    </Link>
-                  </h2>
-                }
-                {event.summary &&
-                  <p>
-                    {locale === "cy" && event.__i18n_refs
-                      ? event.__i18n_refs.summary
-                      : event.summary}
-                  </p>
-                }
+          {artform.title &&
+            <h1>
+              {locale === "cy" && artform.__i18n_refs
+                ? artform.__i18n_refs.title
+                : artform.title}
+            </h1>
+          }
+          {artform.description &&
+            <p>
+              {locale === "cy" && artform.__i18n_refs
+                ? artform.__i18n_refs.description
+                : artform.description}
+            </p>
+          }
+          {artform.events[0] && labels[12] &&
+            <>
+              <h2>
+                <Localize data={labels[12].text} />{" "}
+                {locale === "cy" && artform.__i18n_refs
+                  ? artform.__i18n_refs.title
+                  : artform.title}
+              </h2>
+              <div>
+                {artform.events.map(event =>
+                  <div key={event._id}>
+                    {event.dateStart &&
+                      <Date date={event.dateStart} />
+                    }
+                    {event.title &&
+                      <h2 style={{margin: 0}}>
+                        <Link href={`/${event._type}/${event.slug}`}>
+                          {locale === "cy" && event.__i18n_refs
+                            ? event.__i18n_refs.title
+                            : event.title}
+                        </Link>
+                      </h2>
+                    }
+                    {event.summary &&
+                      <p>
+                        {locale === "cy" && event.__i18n_refs
+                          ? event.__i18n_refs.summary
+                          : event.summary}
+                      </p>
+                    }
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            </>
+          }
         </section>
         <Sidebar events={events} title={labels[10].text} />
       </div>
     </Layout>
   )
 }
-export default KeystagePage
+export default ArtformPage

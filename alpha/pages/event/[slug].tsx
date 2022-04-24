@@ -127,23 +127,24 @@ const EventPage = ({ data }) => {
               {event.location}<br />
               {event.keystage &&
                 <>
-                  <Localize data={labels[8].text} />
+                  {labels[8] && <Localize data={labels[8].text} />}
                   {" "}{event.keystage.map((ks, idx) =>
-                  <>
-                    {ks.title &&
-                      <Link href={`/${ks._type}/${ks.slug}`} key={ks._id}>
-                        {locale === "cy" && ks.__i18n_refs
-                          ? ks.__i18n_refs.title
-                          : ks.title}
-                      </Link>
-                    }
-                    {idx === event.keystage.length - 1 && ""}
-                    {idx === event.keystage.length - 2 &&
-                      <Localize data={labels[9].text} />
-                    }
-                    {idx >= 0 && idx < event.keystage.length - 2 && ", "}
-                  </>
-                )}</>
+                    <>
+                      {ks.title &&
+                        <Link href={`/${ks._type}/${ks.slug}`} key={ks._id}>
+                          {locale === "cy" && ks.__i18n_refs
+                            ? ks.__i18n_refs.title
+                            : ks.title}
+                        </Link>
+                      }
+                      {idx === event.keystage.length - 1 && ""}
+                      {idx === event.keystage.length - 2 &&
+                        <Localize data={labels[9].text} />
+                      }
+                      {idx >= 0 && idx < event.keystage.length - 2 && ", "}
+                    </>
+                  )}
+                </>
               }
             </p>
           </div>

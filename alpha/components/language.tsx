@@ -1,7 +1,6 @@
 import { useRouter } from "next/router"
 import { capitalize } from "lib/utils"
 import u from "styles/utils.module.scss"
-import s from "components/layout.module.scss"
 
 const Language = () => {
   const router = useRouter()

@@ -32,14 +32,16 @@ export const localize = (
 
 export const subdir = (type: string): string => {
   switch (type) {
-  case "event":
-    return "/author"
+  case "artform":
+    return "/artform"
   case "event":
     return "/event"
-  case "staff":
-    return "/staff"
+  case "keystage":
+    return "/keystage"
   case "post":
     return "/news"
+  case "staff":
+    return "/staff"
   case "tag":
     return "/tag"
   case "video":

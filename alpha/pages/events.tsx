@@ -10,7 +10,6 @@ import { eventsQuery } from "lib/queries"
 import {
   Artform,
   Event,
-  Label,
   Keystage,
   Navigation,
   Settings,
@@ -40,14 +39,12 @@ const Home = ({ data }) => {
     events,
     facilitators,
     keystages,
-    labels,
     navigation,
     settings
   } = data as {
     artforms: Artform[]
     events: Event[]
     keystages: Keystage[]
-    labels: Label[]
     navigation: Navigation
     settings: Settings
     facilitators: Staff[]
@@ -67,7 +64,6 @@ const Home = ({ data }) => {
   }
 
   useEffect(() => {
-    console.log(checkedItems)
     if (checkedItems.length === 0) {
       setFilteredEvents(events)
       return
@@ -136,7 +132,7 @@ const Home = ({ data }) => {
                   {locale === "cy" && item.__i18n_refs
                     ? item.__i18n_refs.title
                     : item.title}
-                  </label>
+                </label>
               </div>
             )}
           </section>

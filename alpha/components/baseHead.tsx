@@ -37,8 +37,8 @@ const BaseHead: FC<Props> = ({ settings }) => {
       <meta
         property="og:url"
         content={locale === "cy"
-          ? `https://celfadd.cymru/`
-          : `https://artsed.wales/`
+          ? "https://celfadd.cymru/"
+          : "https://artsed.wales/"
         }
       />
       <meta property="og:image" content="" />

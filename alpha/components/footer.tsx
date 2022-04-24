@@ -1,9 +1,6 @@
 import { FC } from "react"
-import { useRouter } from "next/router"
-import { acronym, localize } from "lib/utils"
 import Localize from "components/localize"
 import { Settings } from "lib/interfaces"
-import s from "components/layout.module.scss"
 import u from "styles/utils.module.scss"
 
 interface Props {
@@ -11,7 +8,6 @@ interface Props {
 }
 
 const Footer: FC<Props> = ({ settings }) => {
-  const { locale } = useRouter()
   const year = new Date().getFullYear()
   const siteBy: any = {
     _type: "localeString",

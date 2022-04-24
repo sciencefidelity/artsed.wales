@@ -1,6 +1,5 @@
 import { FC } from "react"
-import { useRouter } from "next/router"
-import { acronym, buildUrl, localize } from "lib/utils"
+import { buildUrl } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
 import Localize from "components/localize"
@@ -13,7 +12,6 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ navigation, settings }) => {
-  const { locale } = useRouter()
   return (
     <header className={u.container}>
       <div style={{

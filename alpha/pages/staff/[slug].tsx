@@ -62,7 +62,6 @@ const StaffPage = ({ data }) => {
     settings: Settings
     staff: Staff
   }
-  console.log(staff)
   return (
     <Layout
       navigation={navigation}
@@ -73,21 +72,27 @@ const StaffPage = ({ data }) => {
         gridTemplateColumns: "3fr 1fr"
       }}>
         <section style={{marginRight: "2rem"}}>
-          {staff.title && <h1>
-            {locale === "cy" && staff.__i18n_refs.title
-              ? staff.__i18n_refs.title
-              : staff.title}
-          </h1>}
-          <ul style={{padding: 0}}>
-            {staff.role && staff.role.map((r, idx) =>
-              <li key={idx} className="horizontalList">{r}</li>
-            )}
-          </ul>
-          {staff.bio && <p>
-            {locale === "cy" && staff.__i18n_refs.bio
-              ? staff.__i18n_refs.bio
-              : staff.bio}
-          </p>}
+          {staff.title &&
+            <h1>
+              {locale === "cy" && staff.__i18n_refs
+                ? staff.__i18n_refs.title
+                : staff.title}
+            </h1>
+          }
+          {staff.role &&
+            <ul style={{padding: 0}}>
+              {staff.role && staff.role.map((r, idx) =>
+                <li key={idx} className="horizontalList">{r}</li>
+              )}
+            </ul>
+          }
+          {staff.bio &&
+            <p>
+              {locale === "cy" && staff.__i18n_refs
+                ? staff.__i18n_refs.bio
+                : staff.bio}
+            </p>
+          }
           {staff.events.length > 0 && labels[11] &&
             <>
               <h2><Localize data={labels[11].text} /></h2>
