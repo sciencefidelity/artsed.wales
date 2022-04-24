@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
@@ -16,6 +17,13 @@ import {
   Staff
 } from "lib/interfaces"
 
+interface CheckboxEvent {
+  target: {
+    checked: boolean
+    id: string
+  }
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(eventsQuery)
   return {
@@ -24,6 +32,8 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home = ({ data }) => {
+  const [filteredEvents, setFilteredEvents] = useState<Event[]>([])
+  const [checkedItems, setCheckedItems] = useState<string[]>([])
   const { locale } = useRouter()
   const {
     artforms,
@@ -42,8 +52,41 @@ const Home = ({ data }) => {
     settings: Settings
     facilitators: Staff[]
   }
-  const facilitatorsSorted = facilitators.sort((a, b) =>
-    a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
+
+  useEffect(() => {
+    setFilteredEvents(events)
+  }, [])
+
+  const handleChange = (e: CheckboxEvent) => {
+    if (e.target.checked) {
+      return setCheckedItems(prev => [...prev, e.target.id])
+    }
+    if (!e.target.checked) {
+      // for (let i = 0; i < checkedItems.length; i++) {
+      //   if (checkedItems[i] === slug) {
+      //     setCheckedItems(checkedItems.splice(i, 1))
+      //   }
+      // }
+      return setCheckedItems(prev => prev.filter(item => item !== e.target.id))
+    }
+  }
+
+  useEffect(() => {
+    console.log(checkedItems)
+    if (checkedItems.length === 0) {
+      setFilteredEvents(events)
+      return
+    }
+    const filtered = events.filter(event => {
+      return event.keystage?.find(ks => checkedItems.includes(ks.slug))
+    })
+    setFilteredEvents(filtered)
+  }, [checkedItems])
+
+  const facilitatorsSorted = facilitators.sort((a, b) => {
+    return a.title.split(" ").pop().localeCompare(b.title.split(" ").pop())
+  })
+
   return (
     <Layout navigation={navigation} settings={settings}>
       <div style={{
@@ -51,7 +94,7 @@ const Home = ({ data }) => {
         gridTemplateColumns: "3fr 1fr"
       }}>
         <section>
-          {events.map(event =>
+          {filteredEvents.map(event =>
             <div key={event._id}>
               {event.title &&
                 <h2>
@@ -80,10 +123,32 @@ const Home = ({ data }) => {
         </section>
         <div>
           <h2>Filters</h2>
-          <Checkboxes
+          <section>
+            <h3>Key Stage</h3>
+            {keystages && keystages.map(item =>
+              <div key={item._id}>
+                <input
+                  type="checkbox"
+                  id={item.slug}
+                  onChange={e => handleChange(e)}
+                  name={
+                    locale === "cy" && item.__i18n_refs
+                      ? item.__i18n_refs.title
+                      : item.title
+                  }
+                />
+                <label htmlFor={item.slug}>
+                  {locale === "cy" && item.__i18n_refs
+                    ? item.__i18n_refs.title
+                    : item.title}
+                  </label>
+              </div>
+            )}
+          </section>
+          {/* <Checkboxes
             data={keystages}
             title={locale === "cy" ? "Cyfnod Allweddol" : "Key Stage"}
-          />
+          /> */}
           <Checkboxes
             data={facilitatorsSorted}
             title={locale === "cy" ? "Hwylusydd" : "Facilitator"}

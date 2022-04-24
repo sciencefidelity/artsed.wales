@@ -62,6 +62,7 @@ const StaffPage = ({ data }) => {
     settings: Settings
     staff: Staff
   }
+  console.log(staff)
   return (
     <Layout
       navigation={navigation}
@@ -87,32 +88,36 @@ const StaffPage = ({ data }) => {
               ? staff.__i18n_refs.bio
               : staff.bio}
           </p>}
-          {labels[11] && <h2><Localize data={labels[11].text} /></h2>}
-          <div>
-            {staff.events.map(event =>
-              <div key={event._id}>
-                {event.dateStart &&
-                  <Date date={event.dateStart} />
-                }
-                {event.title &&
-                  <h2 style={{margin: 0}}>
-                    <Link href={`/${event._type}/${event.slug}`}>
-                      {locale === "cy" && event.__i18n_refs
-                        ? event.__i18n_refs.title
-                        : event.title}
-                    </Link>
-                  </h2>
-                }
-                {event.summary &&
-                  <p>
-                    {locale === "cy" && event.__i18n_refs
-                      ? event.__i18n_refs.summary
-                      : event.summary}
-                  </p>
-                }
+          {staff.events.length > 0 && labels[11] &&
+            <>
+              <h2><Localize data={labels[11].text} /></h2>
+              <div>
+                {staff.events.map(event =>
+                  <div key={event._id}>
+                    {event.dateStart &&
+                      <Date date={event.dateStart} />
+                    }
+                    {event.title &&
+                      <h2 style={{margin: 0}}>
+                        <Link href={`/${event._type}/${event.slug}`}>
+                          {locale === "cy" && event.__i18n_refs
+                            ? event.__i18n_refs.title
+                            : event.title}
+                        </Link>
+                      </h2>
+                    }
+                    {event.summary &&
+                      <p>
+                        {locale === "cy" && event.__i18n_refs
+                          ? event.__i18n_refs.summary
+                          : event.summary}
+                      </p>
+                    }
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            </>
+          }
         </section>
         <Sidebar events={events} title={labels[10].text} />
       </div>
