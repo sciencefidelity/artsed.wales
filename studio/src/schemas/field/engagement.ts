@@ -7,6 +7,16 @@ export default {
   icon: BarChart,
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'localeString'
+    },
+    {
+      name: 'intro',
+      title: 'Introduction',
+      type: 'localeText'
+    },
+    {
       name: 'engagement',
       title: 'Engagement',
       type: 'array',
@@ -46,7 +56,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'Engagement'
+      title: 'title.en'
     },
     prepare({ title }) {
       return {
