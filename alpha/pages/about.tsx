@@ -4,6 +4,8 @@ import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
+import Link from "components/link"
+import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { aboutQuery } from "lib/queries"
 import { Event, Label, Navigation, Page, Settings, Staff } from "lib/interfaces"
@@ -56,27 +58,70 @@ const About = ({ data }) => {
               : pages[0].body}
             components={components}
           />
-          <h2>Network Co-ordinators</h2>
+          <h2><Localize data={labels[13].text} /></h2>
           <ul style={{listStyleType: "none", padding: 0}}>
             {coordinatorsSorted.map(coordinator =>
               <li key={coordinator._id}>
-                <a href={`/${coordinator._type}/${coordinator.slug}`}>
+                <Link href={`/${coordinator._type}/${coordinator.slug}`}>
                   {locale === "cy" && coordinator.__i18n_refs
                     ? coordinator.__i18n_refs.title
                     : coordinator.title}
-                </a>
+                </Link>
+                {coordinator.email &&
+                  <>
+                    {" – "}
+                    <a href={`mailto:${coordinator.email}`}>
+                      {locale === "cy" && coordinator.__i18n_refs
+                        ? coordinator.__i18n_refs.email
+                        : coordinator.email}
+                    </a>
+                  </>
+                }
               </li>
             )}
           </ul>
-          <h2>Advisory Board</h2>
+          <h2><Localize data={labels[15].text} /></h2>
+          <h3><Localize data={labels[14].text} /></h3>
           <ul style={{listStyleType: "none", padding: 0}}>
-            {trusteesSorted.map(trustee =>
+            {trusteesSorted.map(trustee => trustee.role.includes("Chair") &&
               <li key={trustee._id}>
-                <a href={`/${trustee._type}/${trustee.slug}`}>
+                <Link href={`/${trustee._type}/${trustee.slug}`}>
                   {locale === "cy" && trustee.__i18n_refs
                     ? trustee.__i18n_refs.title
                     : trustee.title}
-                </a>
+                </Link>
+                {trustee.email &&
+                  <>
+                    {" – "}
+                    <a href={`mailto:${trustee.email}`}>
+                      {locale === "cy" && trustee.__i18n_refs
+                        ? trustee.__i18n_refs.email
+                        : trustee.email}
+                    </a>
+                  </>
+                }
+              </li>
+            )}
+          </ul>
+          <h3><Localize data={labels[16].text} /></h3>
+          <ul style={{listStyleType: "none", padding: 0}}>
+            {trusteesSorted.map(trustee => trustee.role.includes("Trustee") &&
+              <li key={trustee._id}>
+                <Link href={`/${trustee._type}/${trustee.slug}`}>
+                  {locale === "cy" && trustee.__i18n_refs
+                    ? trustee.__i18n_refs.title
+                    : trustee.title}
+                </Link>
+                {trustee.email &&
+                  <>
+                    {" – "}
+                    <a href={`mailto:${trustee.email}`}>
+                      {locale === "cy" && trustee.__i18n_refs
+                        ? trustee.__i18n_refs.email
+                        : trustee.email}
+                    </a>
+                  </>
+                }
               </li>
             )}
           </ul>

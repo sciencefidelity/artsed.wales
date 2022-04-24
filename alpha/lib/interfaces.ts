@@ -182,6 +182,7 @@ export interface Staff extends SanityDocument {
   _type: "staff"
   avatar: Image
   bio: string
+  email: string
   events: Event[]
   job: string
   role: string[]

@@ -23,7 +23,7 @@ const artformFields = `__i18n_lang, _id, _type, description, ${slug}, title`
 const keystageFields = `__i18n_lang, _id, _type, description, ${slug}, title`
 
 const staffFields = `
-  __i18n_lang, _id, _type, avatar, bio, job, role, title, ${seo}, ${slug}
+  __i18n_lang, _id, _type, avatar, bio, email, job, role, title, ${seo}, ${slug}
 `
 
 const localeSeo = `
