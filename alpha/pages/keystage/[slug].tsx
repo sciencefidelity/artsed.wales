@@ -72,22 +72,28 @@ const KeystagePage = ({ data }) => {
         gridTemplateColumns: "3fr 1fr"
       }}>
         <section style={{marginRight: "2rem"}}>
-          <h1>
-            {locale === "cy" && keystage.__i18n_refs.title
-              ? keystage.__i18n_refs.title
-              : keystage.title}
-          </h1>
-          <p>
-            {locale === "cy" && keystage.__i18n_refs.description
-              ? keystage.__i18n_refs.description
-              : keystage.description}
-          </p>
-          {labels[12] && <h2>
-            <Localize data={labels[12].text} />{" "}
-            {locale === "cy" && keystage.__i18n_refs.title
-              ? keystage.__i18n_refs.title
-              : keystage.title}
-          </h2>}
+          {keystage.title &&
+            <h1>
+              {locale === "cy" && keystage.__i18n_refs
+                ? keystage.__i18n_refs.title
+                : keystage.title}
+            </h1>
+          }
+          {keystage.description &&
+            <p>
+              {locale === "cy" && keystage.__i18n_refs
+                ? keystage.__i18n_refs.description
+                : keystage.description}
+            </p>
+          }
+          {labels[12] &&
+            <h2>
+              <Localize data={labels[12].text} />{" "}
+              {locale === "cy" && keystage.__i18n_refs
+                ? keystage.__i18n_refs.title
+                : keystage.title}
+            </h2>
+          }
           <div>
             {keystage.events.map(event =>
               <div key={event._id}>

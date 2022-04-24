@@ -62,11 +62,6 @@ const Home = ({ data }) => {
       return setCheckedItems(prev => [...prev, e.target.id])
     }
     if (!e.target.checked) {
-      // for (let i = 0; i < checkedItems.length; i++) {
-      //   if (checkedItems[i] === slug) {
-      //     setCheckedItems(checkedItems.splice(i, 1))
-      //   }
-      // }
       return setCheckedItems(prev => prev.filter(item => item !== e.target.id))
     }
   }
