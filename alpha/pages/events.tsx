@@ -24,6 +24,11 @@ interface CheckboxEvent {
   }
 }
 
+interface CheckedItems {
+  type: string
+  id: string
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(eventsQuery)
   return {
@@ -33,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const [filteredEvents, setFilteredEvents] = useState<Event[]>([])
-  const [checkedItems, setCheckedItems] = useState<string[]>([])
+  const [checkedItems, setCheckedItems] = useState<CheckedItems[]>([])
   const { locale } = useRouter()
   const {
     artforms,
@@ -57,16 +62,18 @@ const Home = ({ data }) => {
     setFilteredEvents(events)
   }, [])
 
-  const handleChange = (e: CheckboxEvent) => {
+  const handleChange = (e: CheckboxEvent, type: string) => {
     if (e.target.checked) {
-      return setCheckedItems(prev => [...prev, e.target.id])
+      const id = e.target.id
+      return setCheckedItems(prev => [...prev, { type, id }])
     }
     if (!e.target.checked) {
-      return setCheckedItems(prev => prev.filter(item => item !== e.target.id))
+      return setCheckedItems(prev => prev.filter(item => item.id !== e.target.id))
     }
   }
 
   useEffect(() => {
+    console.log(checkedItems)
     if (checkedItems.length === 0) {
       setFilteredEvents(events)
       return
@@ -124,7 +131,51 @@ const Home = ({ data }) => {
                 <input
                   type="checkbox"
                   id={item.slug}
-                  onChange={e => handleChange(e)}
+                  onChange={e => handleChange(e, "keystage")}
+                  name={
+                    locale === "cy" && item.__i18n_refs
+                      ? item.__i18n_refs.title
+                      : item.title
+                  }
+                />
+                <label htmlFor={item.slug}>
+                  {locale === "cy" && item.__i18n_refs
+                    ? item.__i18n_refs.title
+                    : item.title}
+                </label>
+              </div>
+            )}
+          </section>
+          <section>
+            <h3>Facilitator</h3>
+            {facilitatorsSorted && facilitatorsSorted.map(item =>
+              <div key={item._id}>
+                <input
+                  type="checkbox"
+                  id={item.slug}
+                  onChange={e => handleChange(e, "facilitator")}
+                  name={
+                    locale === "cy" && item.__i18n_refs
+                      ? item.__i18n_refs.title
+                      : item.title
+                  }
+                />
+                <label htmlFor={item.slug}>
+                  {locale === "cy" && item.__i18n_refs
+                    ? item.__i18n_refs.title
+                    : item.title}
+                </label>
+              </div>
+            )}
+          </section>
+          <section>
+            <h3>Artform</h3>
+            {artforms && artforms.map(item =>
+              <div key={item._id}>
+                <input
+                  type="checkbox"
+                  id={item.slug}
+                  onChange={e => handleChange(e, "artform")}
                   name={
                     locale === "cy" && item.__i18n_refs
                       ? item.__i18n_refs.title
@@ -143,14 +194,14 @@ const Home = ({ data }) => {
             data={keystages}
             title={locale === "cy" ? "Cyfnod Allweddol" : "Key Stage"}
           /> */}
-          <Checkboxes
+          {/* <Checkboxes
             data={facilitatorsSorted}
             title={locale === "cy" ? "Hwylusydd" : "Facilitator"}
-          />
-          <Checkboxes
+          /> */}
+          {/* <Checkboxes
             data={artforms}
             title={locale === "cy" ? "Ffurf ar gelfyddyd" : "Artform"}
-          />
+          /> */}
         </div>
       </div>
     </Layout>
