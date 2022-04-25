@@ -51,10 +51,8 @@ const Home = ({ data }) => {
               : pages[1].body}
             components={components}
           />
-          {/* {engagement.title && <h2><Localize data={engagement.title} /></h2>} */}
-          {engagement.intro &&
-            <Markdown><Localize data={engagement.intro} /></Markdown>
-          }
+          {engagement.title && <h2><Localize data={engagement.title} /></h2>}
+          {engagement.intro && <p><Localize data={engagement.intro} /></p>}
           {engagement.engagementFigure &&
             <div style={{
               display: "grid",
