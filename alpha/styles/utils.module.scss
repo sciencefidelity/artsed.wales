@@ -1,14 +1,82 @@
 @use 'base/breakpoints' as b;
 
+// Layout
+
 .container {
   // padding: 1rem 2rem;
   max-width: 1200px;
   margin-inline: auto;
 }
 
+.inline {
+  display: inline;
+}
 
 
+// Spacing
 
+.py3 {
+  padding-top: 0.75rem; /* 12px */
+  padding-bottom: 0.75rem; /* 12px */
+}
+
+.mr3 {
+  margin-right: 0.75rem; /* 12px */
+}
+
+.ml3 {
+  margin-left: 0.75rem; /* 12px */
+}
+
+// Typograpy
+
+.sans {
+  font-family: var(--font-sans-serif);
+}
+
+.mono {
+  font-family: var(--font-monospace);
+}
+
+.fontMedium {
+  font-weight: 500;
+}
+
+.fontBold {
+  font-weight: 700;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.noUnderline {
+  text-decoration-line: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+// Backgrounds
+
+.bgTransparent {
+  background-color: transparent;
+}
+
+// Borders
+
+.borderBottom2 {
+  border-bottom-width: 2px;
+}
+
+.borderGrey900 {
+  border-color: var(--grey-900)
+}
 
 
 

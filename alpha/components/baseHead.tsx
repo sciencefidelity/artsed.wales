@@ -14,7 +14,7 @@ const BaseHead: FC<Props> = ({ settings }) => {
       <title>{settings.siteName.en}</title>
       <meta name="Description" content={settings.siteDescription.en} />
       <meta name="keywords" content="" />
-      {/* <link
+      <link
         rel="preload"
         href="/fonts/PitchSans-Bold.woff2"
         as="font"
@@ -31,7 +31,7 @@ const BaseHead: FC<Props> = ({ settings }) => {
         href="/fonts/Calibre-Bold.woff2"
         as="font"
         crossOrigin=""
-      /> */}
+      />
       <meta property="og:title" content="" />
       <meta property="og:description" content="" />
       <meta

@@ -7,7 +7,7 @@ const Language = () => {
   const { pathname, asPath, query, locale, locales } = router
   const languages = ["cymraeg", "english"]
   return (
-    <div>
+    <>
       <span className={u.screenReaderText}>
         {locale === "cy"
           ? "Switch language to English"
@@ -15,6 +15,7 @@ const Language = () => {
       </span>
       {locale === "cy" ? (
         <button
+          className={`${u.sans} ${u.uppercase} ${u.bgTransparent}`}
           onClick={() => {
             router.push(
               {pathname, query},
@@ -27,16 +28,19 @@ const Language = () => {
         </button>
       ) : (
         <button
+          className={`${u.sans} ${u.fontMedium} ${u.uppercase} ${u.bgTransparent}`}
           onClick={() => {
             router.push(
-              {pathname, query}, asPath, {scroll: false, shallow: true, locale: locales[1]}
+              {pathname, query},
+              asPath,
+              {scroll: false, shallow: true, locale: locales[1]}
             )
           }}
         >
           {" "}{capitalize(languages[0])}
         </button>
       )}
-    </div>
+    </>
   )
 }
 export default Language
