@@ -34,7 +34,6 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home = ({ data }) => {
   const [filteredEvents, setFilteredEvents] = useState<Event[]>([])
   const [checkedItems, setCheckedItems] = useState<string[]>([])
-  const [checked, setChecked] = useState(false)
 
   const { locale } = useRouter()
   const {
@@ -60,18 +59,11 @@ const Home = ({ data }) => {
   }, [])
 
   const handleChange = (e: CheckboxEvent) => {
-    setChecked(c => !c)
     if (e.target.checked) {
       return setCheckedItems(prev => [...prev, e.target.id])
     }
     if (!e.target.checked) {
       return setCheckedItems(prev => prev.filter(item => item !== e.target.id))
-    }
-  }
-
-  const clearFilters = () => {
-    if (checked) {
-      setChecked(false)
     }
   }
 
@@ -87,17 +79,6 @@ const Home = ({ data }) => {
     })
     setFilteredEvents(filtered)
   }, [checkedItems])
-
-  useEffect(() => {
-    if (!checked) {
-      setFilteredEvents(events)
-      setCheckedItems([])
-      return
-    }
-    if (checked) {
-      return
-    }
-  }, [checked])
 
   const facilitatorsSorted = facilitators.sort((a, b) => {
     return a.title.split(" ").pop().localeCompare(b.title.split(" ").pop())
@@ -139,9 +120,7 @@ const Home = ({ data }) => {
         </section>
         <div>
           <h2>Filters</h2>
-          <button
-            onClick={() => clearFilters()}
-          >Clear Filters</button>
+          <button>Clear Filters</button>
           <section>
             <h3>Key Stage</h3>
             {keystages && keystages.map(item =>
