@@ -15,7 +15,7 @@ const Language = () => {
       </span>
       {locale === "cy" ? (
         <button
-          className={`${u.sans} ${u.uppercase} ${u.bgTransparent}`}
+          className={`${u.sans} ${u.fontMedium} ${u.uppercase} ${u.bgTransparent}`}
           onClick={() => {
             router.push(
               {pathname, query},

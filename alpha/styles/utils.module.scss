@@ -8,10 +8,39 @@
   margin-inline: auto;
 }
 
+.inlineBlock {
+  display: inline-block;
+}
+
 .inline {
   display: inline;
 }
 
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+// Flexbox & Grid
+
+.gridCols3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gap2 {
+  gap: 0.5rem; /* 8px */
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.itemsCenter {
+  align-items: center;
+}
 
 // Spacing
 
@@ -20,12 +49,12 @@
   padding-bottom: 0.75rem; /* 12px */
 }
 
-.mr3 {
-  margin-right: 0.75rem; /* 12px */
+.mr6 {
+  margin-right: 1.5rem; /* 12px */
 }
 
-.ml3 {
-  margin-left: 0.75rem; /* 12px */
+.ml6 {
+  margin-left: 1.5rem; /* 12px */
 }
 
 // Typograpy
@@ -45,6 +74,7 @@
 .fontBold {
   font-weight: 700;
 }
+
 
 .textCenter {
   text-align: center;
@@ -78,311 +108,7 @@
   border-color: var(--grey-900)
 }
 
-
-
-
-// ---------------------------------------------
-
-.hide {
-  display: none;
-}
-
-.smHide {
-  @include b.mq(sm) {
-    display: none;
-  }
-}
-
-.mdHide {
-  @include b.mq(md) {
-    display: none;
-  }
-}
-
-.lgHide {
-  @include b.mq(lg) {
-    display: none;
-  }
-}
-
-.smBlock {
-  @include b.mq(sm) {
-    display: block;
-  }
-}
-
-.mdBlock {
-  @include b.mq(md) {
-    display: block;
-  }
-}
-
-.lgBlock {
-  @include b.mq(lg) {
-    display: block;
-  }
-}
-
-.flex {
-  display: flex;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.fAuto {
-  flex: auto;
-}
-
-.fNone {
-  flex: none;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.lgColumn {
-  @include b.mq(lg) {
-    flex-direction: column;
-  }
-}
-
-.grid {
-  display: grid;
-}
-
-.gapSmall {
-  gap: 3rem;
-  @include b.mq(md) {
-    gap: 5rem;
-  }
-}
-
-.gapLgNone {
-  @include b.mq(lg) {
-    gap: 0;
-  }
-}
-
-.inline {
-  display: inline;
-}
-
-.block {
-  display: block;
-}
-
-.inlineBlock {
-  display: inline-block;
-}
-
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.cover {
-  object-fit: cover;
-}
-
-.ofHidden {
-  overflow: hidden;
-}
-
-.h100 {
-  height: 100%;
-}
-
-.w100 {
-  width: 100%;
-}
-
-.w50 {
-  width: 50%;
-}
-
-.bgDark {
-  background-color: var(--foreground);
-}
-
-.bgLight {
-  background-color: var(--background);
-}
-
-.bgWhite {
-  background-color: var(--white);
-}
-
-.fgDark {
-  color: var(--foreground);
-}
-
-.fgLight {
-  color: var(--background);
-}
-
-.fgWhite {
-  color: var(--white);
-}
-
-.textDark {
-  color: var(--foreground);
-}
-
-.border {
-  border: var(--border);
-}
-
-.shadow {
-  box-shadow: var(--shadow);
-}
-
-.center {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.mlAuto {
-  margin-left: auto;
-}
-
-.mrAuto {
-  margin-right: auto;
-}
-
-.mtLarge {
-  margin-top: 10rem;
-  @include b.mq(xl) {
-    margin-top: 7rem;
-  }
-  @include b.mq(sm) {
-    margin-top: 6rem;
-  }
-}
-
-.mtSmall {
-  margin-top: 10rem;
-  @include b.mq(xl) {
-    margin-top: 7rem;
-  }
-  @include b.mq(sm) {
-    margin-top: 6rem;
-  }
-}
-
-.mtAuto {
-  margin-top: auto;
-}
-
-.mbXl {
-  margin-bottom: 15rem;
-  @include b.mq(xl) {
-    margin-bottom: 10rem;
-  }
-  @include b.mq(sm) {
-    margin-bottom: 9rem;
-  }
-}
-
-.mbLarge {
-  margin-bottom: 10rem;
-  @include b.mq(sm) {
-    margin-bottom: 6rem;
-  }
-}
-
-.mbMedium {
-  margin-bottom: 5rem;
-  @include b.mq(lg) {
-    margin-bottom: 7rem;
-  }
-  @include b.mq(md) {
-    margin-bottom: 7rem;
-  }
-  @include b.mq(sm) {
-    margin-bottom: 7rem;
-  }
-}
-
-.mbSmall {
-  margin-bottom: 6rem;
-  @include b.mq(md) {
-    margin-bottom: 4rem;
-  }
-}
-
-.pbSmall {
-  padding-bottom: 1.5rem;
-  @include b.mq(md) {
-    padding-bottom: 1rem;
-  }
-  @include b.mq(sm) {
-    padding-bottom: 0.7rem;
-  }
-}
-
-.lineSpacer {
-  height: 1rem;
-}
-
-.sans {
-  font-family: var(--sans);
-}
-
-.serif {
-  font-family: var(--serif);
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.lowercase {
-  text-transform: lowercase;
-}
-
-.textCenter {
-  text-align: center;
-}
-
-.smTextLeft {
-  @include b.mq(sm) {
-    text-align: left;
-  }
-}
-
-.textLeft {
-  text-align: left;
-}
-
-.textRight {
-  text-align: right;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-.noUnderline {
-  text-decoration-line: none;
-}
-
-.lh2 {
-  line-height: 2;
-}
-
-.pointer {
-  cursor: pointer;
-}
+// Accessibility
 
 .screenReaderText {
   position: absolute !important;

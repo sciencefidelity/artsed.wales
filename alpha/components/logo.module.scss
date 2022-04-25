@@ -1,20 +1,7 @@
-@use '../styles/foundation/breakpoints' as b;
+@use '../styles/base/breakpoints' as b;
 
 .logo {
-  position: absolute;
-  width: 47rem;
-  height: 47rem;
-  fill: var(--white);
-  @include b.mq(lg) {
-    width: 73px;
-    height: 73px;
-  }
-  @include b.mq(md) {
-    width: 60px;
-    height: 60px;
-  }
-  @include b.mq(sm) {
-    width: 73px;
-    height: 73px;
-  }
+  width: 2.8rem;
+  height: 2.8rem;
+  fill: var(--grey-900);
 }

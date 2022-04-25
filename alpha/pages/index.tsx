@@ -40,11 +40,6 @@ const Home = ({ data }) => {
         gridTemplateColumns: "3fr 1fr"
       }}>
         <div style={{marginRight: "3rem"}}>
-          <h1>
-            {locale === "cy" && pages[1].__i18n_refs
-              ? pages[1].__i18n_refs.title
-              : pages[1].title}
-          </h1>
           <PortableText
             value={locale === "cy" && pages[1].__i18n_refs
               ? pages[1].__i18n_refs.body

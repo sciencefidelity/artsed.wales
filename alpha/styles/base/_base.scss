@@ -1,7 +1,17 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // font-family: var(--font-sans-serif);
+}
+
+body {
+  font-family: var(--font-sans-serif);
+  font-size: 125%;
+  color: var(--grey-900);
+}
+
+header a {
+  text-decoration-line: none;
+  color: var(--grey-900);
 }
 
 .horizontalList {
