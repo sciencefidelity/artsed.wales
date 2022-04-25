@@ -64,6 +64,7 @@ const ArtformPage = ({ data }) => {
   }
   return (
     <Layout
+      labels={labels}
       navigation={navigation}
       settings={settings}
     >

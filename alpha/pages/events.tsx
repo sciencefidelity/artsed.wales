@@ -11,6 +11,7 @@ import {
   Artform,
   Event,
   Keystage,
+  Label,
   Navigation,
   Settings,
   Staff
@@ -39,12 +40,14 @@ const Home = ({ data }) => {
     events,
     facilitators,
     keystages,
+    labels,
     navigation,
     settings
   } = data as {
     artforms: Artform[]
     events: Event[]
     keystages: Keystage[]
+    labels: Label[]
     navigation: Navigation
     settings: Settings
     facilitators: Staff[]
@@ -79,7 +82,7 @@ const Home = ({ data }) => {
   })
 
   return (
-    <Layout navigation={navigation} settings={settings}>
+    <Layout labels={labels} navigation={navigation} settings={settings}>
       <div style={{
         display: "grid",
         gridTemplateColumns: "3fr 1fr"

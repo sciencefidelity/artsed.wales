@@ -64,6 +64,7 @@ const KeystagePage = ({ data }) => {
   }
   return (
     <Layout
+      labels={labels}
       navigation={navigation}
       settings={settings}
     >

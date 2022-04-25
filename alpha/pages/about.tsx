@@ -41,7 +41,7 @@ const About = ({ data }) => {
   const trusteesSorted = trustees.sort((a, b) =>
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
   return (
-    <Layout navigation={navigation} settings={settings}>
+    <Layout labels={labels} navigation={navigation} settings={settings}>
       <div style={{
         display: "grid",
         gridTemplateColumns: "3fr 1fr"
