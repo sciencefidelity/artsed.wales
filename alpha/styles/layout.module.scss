@@ -1,0 +1,26 @@
+@use '/styles/base/breakpoints' as b;
+
+.header {
+  padding-block: 1rem;
+  border-bottom: 2px solid var(--grey-950);
+  margin-bottom: 3rem;
+  position: fixed;
+  inset: 0 0 auto;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.logo {
+  width: 3rem;
+  height: 3rem;
+  fill: var(--grey-900);
+}
+
+.main {
+  margin-top: 10rem;
+}
+
