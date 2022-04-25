@@ -3,9 +3,9 @@ import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
+import { localize } from "lib/utils"
 import Layout from "components/layout"
 import Localize from "components/localize"
-import Markdown from "components/markdown"
 import Sidebar from "components/sidebar"
 import { indexQuery } from "lib/queries"
 import { Engagement,
@@ -52,7 +52,13 @@ const Home = ({ data }) => {
             components={components}
           />
           {engagement.title && <h2><Localize data={engagement.title} /></h2>}
-          {engagement.intro && <p><Localize data={engagement.intro} /></p>}
+          {engagement.intro &&
+            <div
+              dangerouslySetInnerHTML={{
+                __html: localize(engagement.intro, locale)
+              }}
+            />
+          }
           {engagement.engagementFigure &&
             <div style={{
               display: "grid",
