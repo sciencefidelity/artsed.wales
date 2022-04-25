@@ -35,6 +35,7 @@ export interface EngagementFigure {
 export interface Event extends SanityDocument {
   __i18n_refs: Event
   _type: "event"
+  artform: Artform[]
   body: PortableText
   dateEnd: string
   dateStart: string

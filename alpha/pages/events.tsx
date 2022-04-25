@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const [filteredEvents, setFilteredEvents] = useState<Event[]>([])
-  const [checkedItems, setCheckedItems] = useState<CheckedItems[]>([])
+  const [checkedItems, setCheckedItems] = useState<string[]>([])
   const { locale } = useRouter()
   const {
     artforms,
@@ -62,13 +62,12 @@ const Home = ({ data }) => {
     setFilteredEvents(events)
   }, [])
 
-  const handleChange = (e: CheckboxEvent, type: string) => {
+  const handleChange = (e: CheckboxEvent) => {
     if (e.target.checked) {
-      const id = e.target.id
-      return setCheckedItems(prev => [...prev, { type, id }])
+      return setCheckedItems(prev => [...prev, e.target.id])
     }
     if (!e.target.checked) {
-      return setCheckedItems(prev => prev.filter(item => item.id !== e.target.id))
+      return setCheckedItems(prev => prev.filter(item => item !== e.target.id))
     }
   }
 
@@ -79,7 +78,9 @@ const Home = ({ data }) => {
       return
     }
     const filtered = events.filter(event => {
-      return event.keystage?.find(ks => checkedItems.includes(ks.slug))
+      return event.artform?.find(i => checkedItems.includes(i.slug))
+        || event.facilitators?.find(i => checkedItems.includes(i.slug))
+        || event.keystage?.find(i => checkedItems.includes(i.slug))
     })
     setFilteredEvents(filtered)
   }, [checkedItems])
@@ -131,7 +132,7 @@ const Home = ({ data }) => {
                 <input
                   type="checkbox"
                   id={item.slug}
-                  onChange={e => handleChange(e, "keystage")}
+                  onChange={e => handleChange(e)}
                   name={
                     locale === "cy" && item.__i18n_refs
                       ? item.__i18n_refs.title
@@ -153,7 +154,7 @@ const Home = ({ data }) => {
                 <input
                   type="checkbox"
                   id={item.slug}
-                  onChange={e => handleChange(e, "facilitator")}
+                  onChange={e => handleChange(e)}
                   name={
                     locale === "cy" && item.__i18n_refs
                       ? item.__i18n_refs.title
@@ -175,7 +176,7 @@ const Home = ({ data }) => {
                 <input
                   type="checkbox"
                   id={item.slug}
-                  onChange={e => handleChange(e, "artform")}
+                  onChange={e => handleChange(e)}
                   name={
                     locale === "cy" && item.__i18n_refs
                       ? item.__i18n_refs.title
