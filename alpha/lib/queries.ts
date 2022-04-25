@@ -253,7 +253,7 @@ export const artformPathQuery = groq`
 `
 
 export const keystageQuery = groq`{
-  ${keystage}, ${events}, ${labels}, ${navigation}, ${settings}
+  ${events}, ${keystage}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const keystagePathQuery = groq`

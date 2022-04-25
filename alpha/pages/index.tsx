@@ -34,7 +34,7 @@ const Home = ({ data }) => {
     settings: Settings
   }
   return (
-    <Layout navigation={navigation} settings={settings}>
+    <Layout labels={labels} navigation={navigation} settings={settings}>
       <div style={{
         display: "grid",
         gridTemplateColumns: "3fr 1fr"
