@@ -1,3 +1,4 @@
+import { Fragment } from "react"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
@@ -30,13 +31,13 @@ const Home = ({ data }) => {
 
   return (
     <Layout labels={labels} navigation={navigation} settings={settings}>
-      <div className={`${s.events}`}>
-        <section>
-          {events.map(event =>
+      <section className={`${s.events}`}>
+        {events.map(event =>
+          <Fragment key={event._id}>
             <SingleEvent event={event} />
-          )}
-        </section>
-      </div>
+          </Fragment>
+        )}
+      </section>
     </Layout>
   )
 }

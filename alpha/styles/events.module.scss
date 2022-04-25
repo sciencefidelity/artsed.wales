@@ -5,6 +5,37 @@
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   margin-bottom: 4rem;
+  gap: 2rem;
 }
 
+.event {
+  margin-bottom: 2rem;
+}
 
+.eventImage {
+  border: 2px solid var(--grey-900);
+  background: var(--grey-100);
+  aspect-ratio: 1 / 1;
+  margin-bottom: 1.3rem;
+}
+
+.eventDate {
+  font-size: 1.2rem;
+  color: var(--accent);
+  // color: var(--grey-750);
+}
+
+.eventTitle {
+  font-size: 2.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.9rem;
+  a {
+    color: var(--grey-900);
+  }
+}
+
+.eventSummary {
+  font-size: 1.5rem;
+  color: var(--grey-500);
+  line-height: 1.3;
+}

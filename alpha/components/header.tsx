@@ -3,7 +3,7 @@ import { acronym, buildUrl } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
 import Localize from "components/localize"
-import Logo from "components/logo"
+import ColorLogo from "components/colorLogo"
 import { Navigation, Settings } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/layout.module.scss"
@@ -34,11 +34,11 @@ const Header: FC<Props> = ({ navigation, settings }) => {
           </ul>
         </nav>
         <div className={`
-          ${u.mono} ${u.fontBold} ${u.uppercase}
+          ${u.mono} ${u.bold} ${u.uppercase}
         `}>
           <div className={`${u.flex} ${u.gap2} ${u.justifyCenter}`}>
             <Link href="/" className={`${u.flex} ${u.gap2} ${u.noUnderline}`}>
-              <Logo />
+              <ColorLogo />
               <div className={`${u.inlineBlock}`}>
                 <div className={`${u.borderBottom2} ${u.inlineBlock}`}>{acronym(settings.siteName.cy)}</div>
                 <br />

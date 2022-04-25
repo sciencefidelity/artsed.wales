@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8,11 +12,6 @@ body {
   font-size: 125%;
   color: var(--grey-650);
   font-weight: 500;
-}
-
-header a {
-  text-decoration-line: none;
-  color: var(--grey-900);
 }
 
 .horizontalList {
