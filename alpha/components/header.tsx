@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, Fragment } from "react"
 import { acronym, buildUrl } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
@@ -14,22 +14,25 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ navigation, settings }) => {
+  console.log(navigation)
   return (
     <header className={`${s.header}`}>
       <nav className={`${u.container} ${s.nav}`}>
         <div>
           <ul className={`${u.uppercase}`}>
-            {navigation.primary.map((item, idx) =>
-              <li key={item._id} className={`
-                ${u.inline} ${idx === 0 && u.mr6}
-              `}>
-                <Link
-                  href={buildUrl(item.url._type, item.url.slug)}
-                  className={`${u.noUnderline}`}
-                >
-                  <Localize data={item.label} />
-                </Link>
-              </li>
+            {navigation.primary.map(item =>
+              <Fragment key={item._key}>
+                <li className={`
+                  ${u.inline} ${s.navLeft}
+                `}>
+                  <Link
+                    href={buildUrl(item.url._type, item.url.slug)}
+                    className={`${u.noUnderline}`}
+                  >
+                    <Localize data={item.label} />
+                  </Link>
+                </li>
+              </Fragment>
             )}
           </ul>
         </div>
@@ -49,10 +52,10 @@ const Header: FC<Props> = ({ navigation, settings }) => {
         </div>
         <div>
           <ul className={`${u.sans} ${u.fontMedium} ${u.textRight} ${u.uppercase}`}>
-            <li className={`${u.inline}`}>
+            <li className={`${u.inline} ${s.navRight}`}>
               Contact
             </li>
-            <li className={`${u.inline} ${u.ml6}`}>
+            <li className={`${u.inline} ${s.navRight}`}>
               <Language />
             </li>
           </ul>

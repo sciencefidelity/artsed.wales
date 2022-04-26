@@ -53,7 +53,7 @@ const Home = ({ data }) => {
           />
           {engagement.title && <h2><Localize data={engagement.title} /></h2>}
           {engagement.intro &&
-            <div
+            <p
               dangerouslySetInnerHTML={{
                 __html: localize(engagement.intro, locale)
               }}
@@ -62,12 +62,14 @@ const Home = ({ data }) => {
           {engagement.engagementFigure &&
             <div style={{
               display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)"
+              gridTemplateColumns: "repeat(4, 1fr)"
             }}>
               {engagement.engagementFigure.map(figure =>
                 <div>
-                  <h3><Localize data={figure.title} /></h3>
                   <p>{figure.count}</p>
+                  <h3 className={`${s.engagementFigure}`}>
+                    <Localize data={figure.title} />
+                  </h3>
                 </div>
               )}
             </div>

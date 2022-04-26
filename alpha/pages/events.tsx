@@ -29,7 +29,6 @@ const Home = ({ data }) => {
     navigation: Navigation
     settings: Settings
   }
-
   return (
     <Layout labels={labels} navigation={navigation} settings={settings}>
       <section className={`${u.container} ${s.events}`}>

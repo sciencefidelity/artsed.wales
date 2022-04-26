@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { localize } from "lib/utils"
 import Localize from "components/localize"
 import { Label } from "lib/interfaces"
+import s from "styles/layout.module.scss"
 
 interface Props {
   labels: Label[]
@@ -11,7 +12,7 @@ interface Props {
 const SignUp: FC<Props> = ({ labels }) => {
   const { locale } = useRouter()
   return (
-    <section>
+    <section className={`${s.signUp}`}>
       <div>
         {labels[10].text &&
           <h2><Localize data={labels[17].text} /></h2>
@@ -23,7 +24,7 @@ const SignUp: FC<Props> = ({ labels }) => {
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
-          className="validate"
+          className={`${s.signUpForm}`}
           target="_blank"
           noValidate
         >
@@ -31,9 +32,8 @@ const SignUp: FC<Props> = ({ labels }) => {
             <input
               type="email"
               name={localize(labels[18].text, locale)}
-              placeholder={
-                localize(labels[18].text, locale)
-              }
+              placeholder={localize(labels[18].text, locale)}
+              className={`${s.signUpInput}`}
             />
           </label>
           <input
@@ -41,6 +41,7 @@ const SignUp: FC<Props> = ({ labels }) => {
             src=""
             alt={localize(labels[20].text, locale)}
             name="subscribe"
+            className={`${s.signUpSend}`}
             id="mc-embedded-subscribe"
           />
           <div id="mce-responses">
@@ -59,7 +60,7 @@ const SignUp: FC<Props> = ({ labels }) => {
           </div>
         </form>
       </div>
-      <div>
+      <div className={`${s.signUpText}`}>
         {labels[19].text &&
           <p><Localize data={labels[19].text} /></p>
         }

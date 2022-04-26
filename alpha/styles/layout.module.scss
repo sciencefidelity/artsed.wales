@@ -20,6 +20,23 @@
   align-items: center;
 }
 
+.navLeft,
+.navRight {
+  font-size: 1.5rem;
+}
+
+.navLeft {
+  &:first-child {
+    margin-right: 3rem;
+  }
+}
+
+.navRight {
+  &:last-child {
+    margin-left: 3rem;
+  }
+}
+
 .logo {
   width: 5rem;
   height: 5rem;
@@ -37,3 +54,42 @@
 .main {
   margin-top: 7rem;
 }
+
+.signUp {
+  margin-bottom: 5rem;
+  width: 800px;
+  margin-inline: auto;
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+.signUpForm {
+  margin-block: 1rem 2.5rem;
+  position: relative;
+}
+
+.signUpInput {
+  border-bottom: 3px solid var(--grey-750);
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--grey-750);
+  font-weight: 500;
+}
+
+.signUpSend {
+  position: absolute;
+  right: 2%;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--grey-450);
+  &:hover,
+  &:focus {
+    color: var(--grey-750);
+  }
+}
+
+// .signUpText {
+//   width: 90%;
+//   margin-inline: auto;
+// }

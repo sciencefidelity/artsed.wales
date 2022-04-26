@@ -13,12 +13,19 @@ interface Props {
 }
 
 const patterns = [p.cubes, p.lines, p.circles, p.squares, p.linesDiagonal]
+const images = ["head"]
+const imageClasses = [s.head]
 
 const SingleEvent: FC<Props> = ({ event, idx }) => {
   const { locale } = useRouter()
   return (
     <article className={`${s.event}`}>
-      <div className={`${s.eventImage} ${patterns[idx]}`}></div>
+      <div className={`${s.eventImage} ${patterns[idx]}`}>
+        <img
+          className={`${imageClasses[idx]}`}
+          src={`/images/${images[idx]}.png`}
+        />
+      </div>
       {event.dateStart &&
         <span className={`${s.eventDate} ${u.uppercase}`}>
           <Date date={event.dateStart} />

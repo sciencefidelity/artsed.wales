@@ -10,8 +10,26 @@ html {
 body {
   font-family: var(--font-sans-serif);
   font-size: 125%;
-  color: var(--grey-650);
+  color: var(--grey-550);
   font-weight: 500;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 0.7em;
+  a {
+    color: var(--grey-750);
+    text-decoration-thickness: 0.1em;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 1.5;
+  color: var(--grey-750);
+  font-weight: 600;
 }
 
 .horizontalList {

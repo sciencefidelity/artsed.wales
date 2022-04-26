@@ -102,7 +102,7 @@ export interface Navigation {
 }
 
 export interface NavItem {
-  _id: string
+  _key: string
   label: LocaleString
   url: URL
 }

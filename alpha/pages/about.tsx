@@ -9,6 +9,7 @@ import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { aboutQuery } from "lib/queries"
 import { Event, Label, Navigation, Page, Settings, Staff } from "lib/interfaces"
+import u from "styles/utils.module.scss"
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(aboutQuery)
@@ -42,7 +43,9 @@ const About = ({ data }) => {
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
   return (
     <Layout labels={labels} navigation={navigation} settings={settings}>
-      <div style={{
+      <div
+        className={`${u.container}`}
+      style={{
         display: "grid",
         gridTemplateColumns: "3fr 1fr"
       }}>
