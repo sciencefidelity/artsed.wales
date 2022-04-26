@@ -36,7 +36,7 @@ const Home = ({ data }) => {
   return (
     <Layout labels={labels} navigation={navigation} settings={settings}>
       <section className={`${u.container}`}>
-        <div className={`${s.indexContent}`}>
+        <div className={`${s.eventsContent}`}>
           <PortableText
             value={locale === "cy" && pages[1].__i18n_refs
               ? pages[2].__i18n_refs.body
