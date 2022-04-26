@@ -15,6 +15,9 @@ import { Engagement,
   Page,
   Settings
 } from "lib/interfaces"
+import u from "styles/utils.module.scss"
+import s from "styles/index.module.scss"
+import p from "styles/patterns.module.scss"
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(indexQuery)
@@ -35,11 +38,13 @@ const Home = ({ data }) => {
   }
   return (
     <Layout labels={labels} navigation={navigation} settings={settings}>
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "3fr 1fr"
-      }}>
-        <div style={{marginRight: "3rem"}}>
+      <div>
+        <div className={`${s.hero} ${p.lines}`}>
+          <div className={`${s.heroText}`}>
+            Bringing together schools, artists and cultural organisations to support Expressive Arts learning.
+          </div>
+        </div>
+        <div className={`${u.container}`}>
           <PortableText
             value={locale === "cy" && pages[1].__i18n_refs
               ? pages[1].__i18n_refs.body
@@ -68,10 +73,6 @@ const Home = ({ data }) => {
             </div>
           }
         </div>
-        <Sidebar
-          events={events}
-          title={labels[10].text}
-        />
       </div>
     </Layout>
   )

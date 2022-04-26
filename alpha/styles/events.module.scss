@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  margin-top: 15rem;
   margin-bottom: 4rem;
   gap: 2rem;
 }
@@ -14,14 +15,14 @@
 
 .eventImage {
   border: 2px solid var(--grey-900);
-  background: var(--grey-100);
+  background-color: var(--background);
   aspect-ratio: 1 / 1;
   margin-bottom: 1.3rem;
 }
 
 .eventDate {
   font-size: 1.2rem;
-  color: var(--accent);
+  color: var(--grey-650);
   // color: var(--grey-750);
 }
 
@@ -39,3 +40,5 @@
   color: var(--grey-500);
   line-height: 1.3;
 }
+
+

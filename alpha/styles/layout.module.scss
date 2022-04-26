@@ -2,15 +2,15 @@
 
 .header {
   padding-block: 1rem;
-  // border-bottom: 1px solid var(--grey-950);
-  margin-bottom: 3rem;
+  // border-bottom: 4px solid var(--grey-450);
+  // margin-bottom: 2rem;
   position: fixed;
   inset: 0 0 auto;
   background-color: var(--grey-000);
   box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
   a {
     text-decoration-line: none;
-    color: var(--grey-900);
+    color: var(--grey-750);
   }
 }
 
@@ -26,7 +26,14 @@
   fill: var(--grey-900);
 }
 
-.main {
-  margin-top: 10rem;
+.logoText {
+  display: inline-block;
+  font-size: 2.2rem;
+  &:first-child {
+    border-bottom: 3px solid var(--grey-750);
+  }
 }
 
+.main {
+  margin-top: 7rem;
+}

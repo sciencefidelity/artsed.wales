@@ -5,16 +5,20 @@ import Link from "components/link"
 import { Event } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/events.module.scss"
+import p from "styles/patterns.module.scss"
 
 interface Props {
   event: Event
+  idx: number
 }
 
-const SingleEvent: FC<Props> = ({ event }) => {
+const patterns = [p.cubes, p.lines, p.circles, p.squares, p.linesDiagonal]
+
+const SingleEvent: FC<Props> = ({ event, idx }) => {
   const { locale } = useRouter()
   return (
     <article className={`${s.event}`}>
-      <div className={`${s.eventImage}`}></div>
+      <div className={`${s.eventImage} ${patterns[idx]}`}></div>
       {event.dateStart &&
         <span className={`${s.eventDate} ${u.uppercase}`}>
           <Date date={event.dateStart} />

@@ -17,7 +17,7 @@ const Header: FC<Props> = ({ navigation, settings }) => {
   return (
     <header className={`${s.header}`}>
       <nav className={`${u.container} ${s.nav}`}>
-        <nav>
+        <div>
           <ul className={`${u.uppercase}`}>
             {navigation.primary.map((item, idx) =>
               <li key={item._id} className={`
@@ -32,17 +32,17 @@ const Header: FC<Props> = ({ navigation, settings }) => {
               </li>
             )}
           </ul>
-        </nav>
+        </div>
         <div className={`
           ${u.mono} ${u.bold} ${u.uppercase}
         `}>
           <div className={`${u.flex} ${u.gap2} ${u.justifyCenter}`}>
-            <Link href="/" className={`${u.flex} ${u.gap2} ${u.noUnderline}`}>
+            <Link href="/" className={`${u.flex} ${u.gap4} ${u.noUnderline}`}>
               <ColorLogo />
               <div className={`${u.inlineBlock}`}>
-                <div className={`${u.borderBottom2} ${u.inlineBlock}`}>{acronym(settings.siteName.cy)}</div>
+                <div className={`${s.logoText}`}>{acronym(settings.siteName.cy)}</div>
                 <br />
-                <div className={`${u.inlineBlock}`}>{acronym(settings.siteName.en)}</div>
+                <div className={`${s.logoText}`}>{acronym(settings.siteName.en)}</div>
               </div>
             </Link>
           </div>

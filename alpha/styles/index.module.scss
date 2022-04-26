@@ -1,0 +1,17 @@
+.hero {
+  margin-bottom: 7rem;
+  width: 100vw;
+  aspect-ratio: 3 / 1;
+  background-color: var(--background);
+  // border-bottom: 4px solid var(--grey-450);
+  display: grid;
+  place-items: center;
+}
+
+.heroText {
+  padding: 0 9rem;
+  font-weight: 700;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 1.25;
+}

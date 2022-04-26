@@ -6,6 +6,7 @@ import Layout from "components/layout"
 import SingleEvent from "components/singleEvent"
 import { eventsQuery } from "lib/queries"
 import { Event, Label, Navigation, Settings } from "lib/interfaces"
+import u from "styles/utils.module.scss"
 import s from "styles/events.module.scss"
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -31,10 +32,10 @@ const Home = ({ data }) => {
 
   return (
     <Layout labels={labels} navigation={navigation} settings={settings}>
-      <section className={`${s.events}`}>
-        {events.map(event =>
+      <section className={`${u.container} ${s.events}`}>
+        {events.map((event, idx) =>
           <Fragment key={event._id}>
-            <SingleEvent event={event} />
+            <SingleEvent event={event} idx={idx} />
           </Fragment>
         )}
       </section>

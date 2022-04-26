@@ -19,7 +19,7 @@ const Layout: FC<Props> = ({ children, labels, navigation, settings }) => {
     <>
       <BaseHead settings={settings} />
       <Header navigation={navigation} settings={settings} />
-      <main className={`${u.container} ${s.main}`}>{children}</main>
+      <main className={`${s.main}`}>{children}</main>
       <section className={u.container}><SignUp labels={labels}/></section>
       <Footer settings={settings} />
     </>
