@@ -18,7 +18,14 @@ import Link from "components/link"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { staffQuery, staffPathQuery } from "lib/queries"
-import { Event, Label, Navigation, Settings, Staff } from "lib/interfaces"
+import {
+  Company,
+  Event,
+  Label,
+  Navigation,
+  Settings,
+  Staff
+} from "lib/interfaces"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(staffPathQuery)
@@ -55,7 +62,15 @@ const StaffPage = ({ data }) => {
       </>
     )
   }
-  const { events, labels, navigation, settings, staff } = data as {
+  const {
+    company,
+    events,
+    labels,
+    navigation,
+    settings,
+    staff
+  } = data as {
+    company: Company
     events: Event[]
     labels: Label[]
     navigation: Navigation
@@ -64,6 +79,7 @@ const StaffPage = ({ data }) => {
   }
   return (
     <Layout
+      company={company}
       labels={labels}
       navigation={navigation}
       settings={settings}

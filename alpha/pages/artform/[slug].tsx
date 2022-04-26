@@ -18,7 +18,14 @@ import Link from "components/link"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { artformQuery, artformPathQuery } from "lib/queries"
-import { Artform, Event, Label, Navigation, Settings } from "lib/interfaces"
+import {
+  Artform,
+  Company,
+  Event,
+  Label,
+  Navigation,
+  Settings
+} from "lib/interfaces"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(artformPathQuery)
@@ -55,7 +62,15 @@ const ArtformPage = ({ data }) => {
       </>
     )
   }
-  const { artform, events, labels, navigation, settings } = data as {
+  const {
+    artform,
+    company,
+    events,
+    labels,
+    navigation,
+    settings
+  } = data as {
+    company: Company
     artform: Artform
     events: Event[]
     labels: Label[]
@@ -64,6 +79,7 @@ const ArtformPage = ({ data }) => {
   }
   return (
     <Layout
+      company={company}
       labels={labels}
       navigation={navigation}
       settings={settings}

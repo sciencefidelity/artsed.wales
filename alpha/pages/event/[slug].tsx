@@ -21,7 +21,13 @@ import Localize from "components/localize"
 import ErrorTemplate from "components/errorTemplate"
 import Sidebar from "components/sidebar"
 import { eventQuery, eventPathQuery } from "lib/queries"
-import { Event, Label, Navigation, Settings } from "lib/interfaces"
+import {
+  Company,
+  Event,
+  Label,
+  Navigation,
+  Settings
+} from "lib/interfaces"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(eventPathQuery)
@@ -58,7 +64,15 @@ const EventPage = ({ data }) => {
       </>
     )
   }
-  const { event, events, labels, navigation, settings } = data as {
+  const {
+    company,
+    event,
+    events,
+    labels,
+    navigation,
+    settings
+  } = data as {
+    company: Company
     event: Event
     events: Event[]
     navigation: Navigation
@@ -67,6 +81,7 @@ const EventPage = ({ data }) => {
   }
   return (
     <Layout
+      company={company}
       labels={labels}
       navigation={navigation}
       settings={settings}

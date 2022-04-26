@@ -9,7 +9,9 @@ import Layout from "components/layout"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { indexQuery } from "lib/queries"
-import { Engagement,
+import {
+  Company,
+  Engagement,
   Event,
   Label,
   Navigation,
@@ -29,7 +31,16 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const { locale } = useRouter()
-  const { engagement, events, labels, navigation, pages, settings } = data as {
+  const {
+    company,
+    engagement,
+    events,
+    labels,
+    navigation,
+    pages,
+    settings
+  } = data as {
+    company: Company
     engagement: Engagement
     events: Event[]
     labels: Label[]
@@ -38,7 +49,12 @@ const Home = ({ data }) => {
     settings: Settings
   }
   return (
-    <Layout labels={labels} navigation={navigation} settings={settings}>
+    <Layout
+      company={company}
+      labels={labels}
+      navigation={navigation}
+      settings={settings}
+    >
       <div>
         <div className={`${s.hero} ${p.lines}`}>
           <h2

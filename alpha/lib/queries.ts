@@ -214,21 +214,21 @@ const staff = `
 `
 
 export const indexQuery = groq`{
-  ${engagement}, ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
+  ${company}, ${engagement}, ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
 }`
 
 export const aboutQuery = groq`{
-  ${coordinators}, ${events}, ${labels}, ${navigation},
+  ${company}, ${coordinators}, ${events}, ${labels}, ${navigation},
   ${pages}, ${settings}, ${trustees}
 }`
 
 export const eventsQuery = groq`{
-  ${artforms}, ${events}, ${facilitators}, ${keystages},
+  ${artforms}, ${company}, ${events}, ${facilitators}, ${keystages},
   ${labels}, ${navigation}, ${pages}, ${settings}
 }`
 
 export const eventQuery = groq`{
-  ${event}, ${events}, ${labels}, ${navigation}, ${settings}
+  ${company}, ${event}, ${events}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const eventPathQuery = groq`
@@ -241,7 +241,7 @@ export const eventPathQuery = groq`
 `
 
 export const artformQuery = groq`{
-  ${artform}, ${events}, ${labels}, ${navigation}, ${settings}
+  ${artform}, ${company}, ${events}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const artformPathQuery = groq`
@@ -254,7 +254,7 @@ export const artformPathQuery = groq`
 `
 
 export const keystageQuery = groq`{
-  ${events}, ${keystage}, ${labels}, ${navigation}, ${settings}
+  ${company}, ${events}, ${keystage}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const keystagePathQuery = groq`
@@ -267,7 +267,7 @@ export const keystagePathQuery = groq`
 `
 
 export const staffQuery = groq`{
-  ${events}, ${labels}, ${navigation}, ${settings}, ${staff}
+  ${company}, ${events}, ${labels}, ${navigation}, ${settings}, ${staff}
 }`
 
 export const staffPathQuery = groq`

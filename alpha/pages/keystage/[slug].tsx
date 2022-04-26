@@ -18,7 +18,14 @@ import Link from "components/link"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { keystageQuery, keystagePathQuery } from "lib/queries"
-import { Event, Label, Keystage, Navigation, Settings } from "lib/interfaces"
+import {
+  Company,
+  Event,
+  Label,
+  Keystage,
+  Navigation,
+  Settings
+} from "lib/interfaces"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(keystagePathQuery)
@@ -55,7 +62,15 @@ const KeystagePage = ({ data }) => {
       </>
     )
   }
-  const {  events, labels, keystage, navigation, settings } = data as {
+  const {
+    company,
+    events,
+    labels,
+    keystage,
+    navigation,
+    settings
+  } = data as {
+    company: Company
     events: Event[]
     labels: Label[]
     keystage: Keystage
@@ -64,6 +79,7 @@ const KeystagePage = ({ data }) => {
   }
   return (
     <Layout
+      company={company}
       labels={labels}
       navigation={navigation}
       settings={settings}

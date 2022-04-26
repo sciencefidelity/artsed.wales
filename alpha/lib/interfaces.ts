@@ -16,8 +16,8 @@ export interface Artform extends SanityDocument {
 
 export interface Company extends SanityDocument {
   address: LocaleAddress
-  description: LocaleString
-  slug: string
+  email: LocaleString
+  telephone: LocaleString
   title: LocaleString
 }
 

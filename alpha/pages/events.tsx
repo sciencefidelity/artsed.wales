@@ -7,7 +7,14 @@ import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import SingleEvent from "components/singleEvent"
 import { eventsQuery } from "lib/queries"
-import { Event, Label, Navigation, Page, Settings } from "lib/interfaces"
+import {
+  Company,
+  Event,
+  Label,
+  Navigation,
+  Page,
+  Settings
+} from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/events.module.scss"
 
@@ -21,12 +28,14 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home = ({ data }) => {
   const { locale } = useRouter()
   const {
+    company,
     events,
     labels,
     navigation,
     pages,
     settings
   } = data as {
+    company: Company
     events: Event[]
     labels: Label[]
     navigation: Navigation
@@ -34,7 +43,12 @@ const Home = ({ data }) => {
     settings: Settings
   }
   return (
-    <Layout labels={labels} navigation={navigation} settings={settings}>
+    <Layout
+      company={company}
+      labels={labels}
+      navigation={navigation}
+      settings={settings}
+    >
       <section className={`${u.container}`}>
         <div className={`${s.eventsContent}`}>
           <PortableText

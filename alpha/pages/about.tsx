@@ -8,7 +8,15 @@ import Link from "components/link"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { aboutQuery } from "lib/queries"
-import { Event, Label, Navigation, Page, Settings, Staff } from "lib/interfaces"
+import {
+  Company,
+  Event,
+  Label,
+  Navigation,
+  Page,
+  Settings,
+  Staff
+} from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/about.module.scss"
 
@@ -22,6 +30,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const About = ({ data }) => {
   const { locale } = useRouter()
   const {
+    company,
     coordinators,
     events,
     labels,
@@ -30,6 +39,7 @@ const About = ({ data }) => {
     settings,
     trustees
   } = data as {
+    company: Company
     coordinators: Staff[]
     events: Event[]
     labels: Label[]
@@ -43,7 +53,12 @@ const About = ({ data }) => {
   const trusteesSorted = trustees.sort((a, b) =>
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
   return (
-    <Layout labels={labels} navigation={navigation} settings={settings}>
+    <Layout
+      company={company}
+      labels={labels}
+      navigation={navigation}
+      settings={settings}
+    >
       <div className={`${u.container} ${s.about} ${u.grid}`}>
         <div className={`${s.aboutContent}`}>
           <PortableText
