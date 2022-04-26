@@ -39,21 +39,23 @@ const Header: FC<Props> = ({ navigation, settings }) => {
             <Link href="/" className={`${u.flex} ${u.gap4} ${u.noUnderline}`}>
               <ColorLogo />
               <div className={`${u.inlineBlock}`}>
-                <div className={`${s.logoText}`}>{acronym(settings.siteName.cy)}</div>
+                <div className={`${s.logoText}`}>
+                  {acronym(settings.siteName.cy)}
+                </div>
                 <br />
-                <div className={`${s.logoText}`}>{acronym(settings.siteName.en)}</div>
+                <div className={`${s.logoText}`}>
+                  {acronym(settings.siteName.en)}
+                </div>
               </div>
             </Link>
           </div>
         </div>
         <div>
-          <ul className={`${u.sans} ${u.fontMedium} ${u.textRight} ${u.uppercase}`}>
-            <li className={`${u.inline} ${s.navRight}`}>
-              Contact
-            </li>
-            <li className={`${u.inline} ${s.navRight}`}>
-              <Language />
-            </li>
+          <ul className={`
+            ${u.sans} ${u.fontMedium} ${u.textRight} ${u.uppercase}
+          `}>
+            {/* <li className={`${u.inline} ${s.navRight}`}>Resources</li> */}
+            <li className={`${u.inline} ${s.navRight}`}><Language /></li>
           </ul>
         </div>
       </nav>
