@@ -54,7 +54,7 @@ const Header: FC<Props> = ({ navigation, settings }) => {
           <ul className={`
             ${u.sans} ${u.fontMedium} ${u.textRight} ${u.uppercase}
           `}>
-            {/* <li className={`${u.inline} ${s.navRight}`}>Resources</li> */}
+            <li className={`${u.inline} ${s.navRight}`}>Resources</li>
             <li className={`${u.inline} ${s.navRight}`}><Language /></li>
           </ul>
         </div>

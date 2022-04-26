@@ -42,6 +42,16 @@ h2 {
   font-weight: 600;
 }
 
+button {
+  color: var(--grey-500);
+  font-weight: 500;
+  background-color: transparent;
+  &:hover {
+    color: var(--grey-750);
+    transition: color 0.3s ease-in-out;
+  }
+}
+
 hr {
   border-top: 5px dotted var(--pattern);
   margin-block: 4rem 5rem;

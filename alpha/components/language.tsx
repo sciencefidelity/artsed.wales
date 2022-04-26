@@ -15,7 +15,7 @@ const Language = () => {
       </span>
       {locale === "cy" ? (
         <button
-          className={`${u.sans} ${u.fontMedium} ${u.uppercase} ${u.bgTransparent}`}
+          className={`${u.uppercase}`}
           onClick={() => {
             router.push(
               {pathname, query},
@@ -23,12 +23,10 @@ const Language = () => {
               {scroll: false, shallow: true, locale: locales[0]}
             )
           }}
-        >
-          {capitalize(languages[1])}
-        </button>
+        >{capitalize(languages[1])}</button>
       ) : (
         <button
-          className={`${u.sans} ${u.fontMedium} ${u.uppercase} ${u.bgTransparent}`}
+          className={`${u.uppercase}`}
           onClick={() => {
             router.push(
               {pathname, query},
@@ -36,9 +34,7 @@ const Language = () => {
               {scroll: false, shallow: true, locale: locales[1]}
             )
           }}
-        >
-          {" "}{capitalize(languages[0])}
-        </button>
+        >{" "}{capitalize(languages[0])}</button>
       )}
     </>
   )

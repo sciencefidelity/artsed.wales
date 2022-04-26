@@ -27,19 +27,11 @@
   a {
     color: var(--grey-500);
     transition: color 0.3s ease;
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--grey-750);
       transition: color 0.3s ease;
     }
-  }
-  // text-decoration-color: var(--grey-000);
-  // text-decoration-line: underline;
-  // text-decoration-thickness: 2px;
-  // transition: text-decoration-color 0.3s ease;
-  &:hover,
-  &:focus {
-    // text-decoration-color: 2px solid var(--grey-750);
-    // transition: text-decoration-color 0.3s ease;
   }
 }
 
