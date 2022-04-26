@@ -25,10 +25,7 @@ const Header: FC<Props> = ({ navigation, settings }) => {
                 <li className={`
                   ${u.inline} ${s.navLeft}
                 `}>
-                  <Link
-                    href={buildUrl(item.url._type, item.url.slug)}
-                    className={`${u.noUnderline}`}
-                  >
+                  <Link href={buildUrl(item.url._type, item.url.slug)}>
                     <Localize data={item.label} />
                   </Link>
                 </li>
@@ -39,7 +36,7 @@ const Header: FC<Props> = ({ navigation, settings }) => {
         <div className={`
           ${u.mono} ${u.bold} ${u.uppercase}
         `}>
-          <div className={`${u.flex} ${u.gap2} ${u.justifyCenter}`}>
+          <div className={`${u.flex} ${u.justifyCenter}`}>
             <Link href="/" className={`${u.flex} ${u.gap4} ${u.noUnderline}`}>
               <ColorLogo />
               <div className={`${u.inlineBlock}`}>

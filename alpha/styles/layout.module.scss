@@ -5,6 +5,7 @@
   // border-bottom: 4px solid var(--grey-450);
   // margin-bottom: 2rem;
   position: fixed;
+  z-index: 10;
   inset: 0 0 auto;
   background-color: var(--grey-000);
   box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
@@ -23,6 +24,23 @@
 .navLeft,
 .navRight {
   font-size: 1.5rem;
+  a {
+    color: var(--grey-500);
+    transition: color 0.3s ease;
+    &:hover {
+      color: var(--grey-750);
+      transition: color 0.3s ease;
+    }
+  }
+  // text-decoration-color: var(--grey-000);
+  // text-decoration-line: underline;
+  // text-decoration-thickness: 2px;
+  // transition: text-decoration-color 0.3s ease;
+  &:hover,
+  &:focus {
+    // text-decoration-color: 2px solid var(--grey-750);
+    // transition: text-decoration-color 0.3s ease;
+  }
 }
 
 .navLeft {
@@ -79,7 +97,7 @@
 
 .signUpSend {
   position: absolute;
-  right: 2%;
+  right: 0.7%;
   font-weight: 500;
   font-size: 1.6rem;
   color: var(--grey-450);

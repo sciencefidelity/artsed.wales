@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import { localize } from "lib/utils"
+import Highlight from "components/icons/highlight"
 import Layout from "components/layout"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
@@ -40,6 +41,7 @@ const Home = ({ data }) => {
     <Layout labels={labels} navigation={navigation} settings={settings}>
       <div>
         <div className={`${s.hero} ${p.lines}`}>
+          <Highlight className={`${s.highlight}`}/>
           <div className={`${s.heroText}`}>
             Bringing together schools, artists and cultural organisations to support Expressive Arts learning.
           </div>
