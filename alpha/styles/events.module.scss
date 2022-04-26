@@ -20,6 +20,7 @@
   margin-bottom: 1.3rem;
   position: relative;
   overflow: hidden;
+  display: grid;
 }
 
 .head {
@@ -30,16 +31,23 @@
   top: -10%;
 }
 
+.icon {
+  fill: var(--grey-550);
+  width: 3rem;
+  position: relative;
+  place-self: center;
+  transform: translateY(250%);
+}
+
 .eventDate {
   font-size: 1.2rem;
   color: var(--grey-650);
-  // color: var(--grey-750);
 }
 
 .eventTitle {
-  font-size: 2.5rem;
-  margin-top: 0.2rem;
-  margin-bottom: 0.9rem;
+  font-size: 2.4rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.2rem;
   a {
     color: var(--grey-900);
   }

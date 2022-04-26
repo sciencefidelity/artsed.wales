@@ -2,6 +2,7 @@ import { FC } from "react"
 import { useRouter } from "next/router"
 import Date from "components/date"
 import Link from "components/link"
+import Landmark from "components/icons/landmark"
 import { Event } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/events.module.scss"
@@ -15,17 +16,25 @@ interface Props {
 const patterns = [p.cubes, p.lines, p.circles, p.squares, p.linesDiagonal]
 const images = ["head"]
 const imageClasses = [s.head]
+const icons = [<Landmark className={s.icon} />]
 
 const SingleEvent: FC<Props> = ({ event, idx }) => {
   const { locale } = useRouter()
   return (
     <article className={`${s.event}`}>
-      <div className={`${s.eventImage} ${patterns[idx]}`}>
-        <img
-          className={`${imageClasses[idx]}`}
-          src={`/images/${images[idx]}.png`}
-        />
-      </div>
+      <Link
+        href={`/${event._type}/${event.slug}`}
+        className={`${u.noUnderline}`}
+        tabIndex={-1}
+      >
+        <div className={`${s.eventImage} ${patterns[idx]}`}>
+          <img
+            className={`${imageClasses[idx]}`}
+            src={`/images/${images[idx]}.png`}
+          />
+          {/* {icons[idx]} */}
+        </div>
+      </Link>
       {event.dateStart &&
         <span className={`${s.eventDate} ${u.uppercase}`}>
           <Date date={event.dateStart} />
