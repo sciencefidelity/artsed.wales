@@ -14,8 +14,8 @@ interface Props {
 }
 
 const patterns = [p.cubes, p.lines, p.circles, p.squares, p.linesDiagonal]
-const images = ["head"]
-const imageClasses = [s.head]
+const images = ["head", "whale", "map", "tree", "dance"]
+const imageClasses = [s.head, s.whale, s.map, s.tree, s.dance]
 const icons = [<Landmark className={s.icon} />]
 
 const SingleEvent: FC<Props> = ({ event, idx }) => {
@@ -29,7 +29,7 @@ const SingleEvent: FC<Props> = ({ event, idx }) => {
       >
         <div className={`${s.eventImage} ${patterns[idx]}`}>
           <img
-            className={`${imageClasses[idx]}`}
+            className={`${u.absolute} ${imageClasses[idx]}`}
             src={`/images/${images[idx]}.png`}
           />
           {/* {icons[idx]} */}

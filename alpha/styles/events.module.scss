@@ -1,11 +1,38 @@
 @use '/styles/base/breakpoints' as b;
 
-@keyframes wobble {
+// @keyframes head {
+//   from {
+//     transform: rotate(-90deg);
+//   }
+//   to {
+//     transform: rotate(-120deg);
+//   }
+// }
+
+@keyframes head {
   from {
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(-120deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes whale {
+  from {
+    transform: scale(-1, 1) rotate(0deg);
+  }
+  to {
+    transform: scale(-1.1, 1.1) rotate(20deg);
+  }
+}
+
+@keyframes dance {
+  from {
+    transform: translate(-50px) rotate(-10deg);
+  }
+  to {
+    transform: translate(50px) rotate(10deg);
   }
 }
 
@@ -33,12 +60,43 @@
 }
 
 .head {
-  position: absolute;
   width: 200px;
-  transform: rotate(-110deg);
+  // transform: rotate(-110deg);
   filter: drop-shadow(20px -20px 0px rgba(0, 0, 0, 1));
   top: -10%;
-  animation: 14s ease-in-out 1s infinite alternate wobble;
+  // animation: 12s ease-in-out 1s infinite alternate head;
+  animation: 500s 1s infinite head;
+}
+
+.whale {
+  width: 500px;
+  // transform: scaleX(-1) rotate(15deg);
+  // transform: scale(-1.1, 1.1) rotate(20deg);
+  right: 16%;
+  bottom: -2%;
+  animation: 20s ease-in-out 1s infinite alternate whale;
+}
+
+.map {
+  width: 300px;
+  right: 0;
+}
+
+.tree {
+  left: 20%;
+  top: -7%;
+}
+
+.dance {
+  width: 400px;
+  filter:
+    drop-shadow(-2px -2px 0px rgba(0, 0, 0, 1))
+    drop-shadow(-2px 2px 0px rgba(0, 0, 0, 1))
+    drop-shadow(15px -4px 0px rgba(0, 0, 0, 1))
+    drop-shadow(15px -4px 0px rgba(255, 255, 255, 1));
+  left: 20%;
+  top: -7%;
+  animation: 30s ease-in-out 1s infinite alternate dance;
 }
 
 .icon {

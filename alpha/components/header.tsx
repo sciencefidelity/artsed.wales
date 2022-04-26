@@ -14,7 +14,6 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ navigation, settings }) => {
-  console.log(navigation)
   return (
     <header className={`${s.header}`}>
       <nav className={`${u.container} ${s.nav}`}>
