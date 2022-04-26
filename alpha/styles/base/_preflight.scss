@@ -51,6 +51,10 @@ object {
   border-color: theme('borderColor.DEFAULT', currentColor);
 }
 
+input {
+  border: none;
+}
+
 button {
   padding: 0;
   border: none;
