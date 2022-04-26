@@ -3,19 +3,26 @@
   width: 100vw;
   aspect-ratio: 3 / 1;
   background-color: var(--background);
-  // border-bottom: 4px solid var(--grey-450);
   display: grid;
   place-items: center;
   position: relative;
 }
 
 .heroText {
+  color: var(--grey-550);
   padding: 0 9rem;
   font-weight: 700;
   font-size: 5rem;
   text-align: center;
   line-height: 1.25;
   position: relative;
+  em {
+    font-style: normal;
+    background-image: url("/images/em-heading.svg");
+    background-size: 107%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .highlight {
@@ -23,3 +30,27 @@
   width: 57%;
   top: 18.5rem;
 }
+
+.indexContent,
+.indexEngagement {
+  width: 700px;
+}
+
+.indexEngagement {
+  margin-inline: auto;
+  margin-bottom: 4rem;
+}
+
+.engagementFigures {
+  text-align: center;
+  margin-bottom: 3rem;
+  figure {
+    color: var(--grey-750);
+    font-size: 5rem;
+    font-weight: 500;
+  }
+  h3 {
+  }
+}
+
+

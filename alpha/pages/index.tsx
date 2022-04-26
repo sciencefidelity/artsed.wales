@@ -41,41 +41,48 @@ const Home = ({ data }) => {
     <Layout labels={labels} navigation={navigation} settings={settings}>
       <div>
         <div className={`${s.hero} ${p.lines}`}>
-          <Highlight className={`${s.highlight}`}/>
-          <div className={`${s.heroText}`}>
-            Bringing together schools, artists and cultural organisations to support Expressive Arts learning.
-          </div>
+          <h2
+            className={`${s.heroText}`}
+            dangerouslySetInnerHTML={{
+              __html: localize(labels[21].text, locale)
+            }}
+          />
         </div>
         <div className={`${u.container}`}>
-          <PortableText
-            value={locale === "cy" && pages[1].__i18n_refs
-              ? pages[1].__i18n_refs.body
-              : pages[1].body}
-            components={components}
-          />
-          {engagement.title && <h2><Localize data={engagement.title} /></h2>}
-          {engagement.intro &&
-            <p
-              dangerouslySetInnerHTML={{
-                __html: localize(engagement.intro, locale)
-              }}
+          <div className={`${s.indexContent}`}>
+            <PortableText
+              value={locale === "cy" && pages[1].__i18n_refs
+                ? pages[1].__i18n_refs.body
+                : pages[1].body}
+              components={components}
             />
-          }
-          {engagement.engagementFigure &&
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)"
-            }}>
+          </div>
+          <hr />
+          <div className={`${s.indexEngagement}`}>
+            {engagement.intro &&
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: localize(engagement.intro, locale)
+                }}
+              />
+            }
+          </div>
+            {engagement.engagementFigure &&
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)"
+              }}>
               {engagement.engagementFigure.map(figure =>
-                <div>
-                  <p>{figure.count}</p>
-                  <h3 className={`${s.engagementFigure}`}>
+                <div className={`${s.engagementFigures}`}>
+                  <figure>{figure.count}</figure>
+                  <h3 className={`${u.uppercase}`}>
                     <Localize data={figure.title} />
                   </h3>
                 </div>
               )}
-            </div>
-          }
+              </div>
+            }
+            <hr />
         </div>
       </div>
     </Layout>
