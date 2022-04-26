@@ -10,6 +10,7 @@ import Sidebar from "components/sidebar"
 import { aboutQuery } from "lib/queries"
 import { Event, Label, Navigation, Page, Settings, Staff } from "lib/interfaces"
 import u from "styles/utils.module.scss"
+import s from "styles/about.module.scss"
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await sanityClient.fetch(aboutQuery)
@@ -43,18 +44,8 @@ const About = ({ data }) => {
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
   return (
     <Layout labels={labels} navigation={navigation} settings={settings}>
-      <div
-        className={`${u.container}`}
-      style={{
-        display: "grid",
-        gridTemplateColumns: "3fr 1fr"
-      }}>
-        <div style={{marginRight: "3rem"}}>
-          <h1>
-            {locale === "cy" && pages[0].__i18n_refs
-              ? pages[0].__i18n_refs.title
-              : pages[0].title}
-          </h1>
+      <div className={`${u.container} ${s.about} ${u.grid}`}>
+        <div className={`${s.aboutContent}`}>
           <PortableText
             value={locale === "cy" && pages[0].__i18n_refs
               ? pages[0].__i18n_refs.body
