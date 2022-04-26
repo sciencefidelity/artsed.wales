@@ -223,8 +223,8 @@ export const aboutQuery = groq`{
 }`
 
 export const eventsQuery = groq`{
-  ${artforms}, ${events}, ${facilitators},
-  ${keystages}, ${labels}, ${navigation}, ${settings}
+  ${artforms}, ${events}, ${facilitators}, ${keystages},
+  ${labels}, ${navigation}, ${pages}, ${settings}
 }`
 
 export const eventQuery = groq`{

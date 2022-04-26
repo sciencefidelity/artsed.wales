@@ -21,7 +21,6 @@ p {
   margin-bottom: 0.9em;
   a {
     color: var(--grey-750);
-    // text-decoration-thickness: 0.07em;
     text-decoration-line: none;
     transition: all 0.3s ease-in-out;
     font-style: normal;
@@ -31,8 +30,7 @@ p {
     background-repeat: no-repeat;
     &:hover {
       color: var(--grey-900);
-      background-color: var(--background);
-      transition: all 0.3s ease-in-out;
+      transition: color 0.3s ease-in-out;
     }
   }
 }
