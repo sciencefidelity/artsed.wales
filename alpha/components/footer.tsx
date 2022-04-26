@@ -2,6 +2,7 @@ import { FC } from "react"
 import Localize from "components/localize"
 import { Settings } from "lib/interfaces"
 import u from "styles/utils.module.scss"
+import s from "styles/layout.module.scss"
 
 interface Props {
   settings: Settings
@@ -15,7 +16,7 @@ const Footer: FC<Props> = ({ settings }) => {
     en: "Site by"
   }
   return (
-    <footer className={u.container}>
+    <footer className={`${u.container} ${s.footer} ${u.grid}`}>
       <div>
         <span>
           &copy;{" "}{year}{" "}<Localize data={settings.siteName} />
@@ -24,7 +25,7 @@ const Footer: FC<Props> = ({ settings }) => {
       <div>
         <Localize data={siteBy} />{" "}
         <a href="https://mattcook.dev" target="_blank" rel="noreferrer">
-          Matt
+          matt
         </a>
       </div>
     </footer>

@@ -103,3 +103,12 @@
 //   width: 90%;
 //   margin-inline: auto;
 // }
+
+.footer {
+  margin-block: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  div:last-child {
+    text-align: right;
+  }
+}
+
