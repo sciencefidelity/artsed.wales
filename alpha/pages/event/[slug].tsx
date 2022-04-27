@@ -94,7 +94,7 @@ const EventPage = ({ data }) => {
         <h1
           className={`${s.heroText} ${u.mono}`}
           dangerouslySetInnerHTML={{
-            __html: {}
+            __html: event.longTitle
           }}
         />
       </div>

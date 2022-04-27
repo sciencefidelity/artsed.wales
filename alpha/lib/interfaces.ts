@@ -43,6 +43,7 @@ export interface Event extends SanityDocument {
   facilitators: Staff[]
   keystage: Keystage[]
   location: string
+  longTitle: string
   price: number
   slug: string
   summary: string

@@ -46,7 +46,7 @@ const pagePostFields = `
 `
 
 const eventFields = `
-  __i18n_lang, _id, _type, ${body}, dateEnd, dateStart,
+  __i18n_lang, _id, _type, ${body}, dateEnd, dateStart, longTitle,
   artform[]->{ ${artformFields}, __i18n_refs[0]->{ ${artformFields} } },
   facilitators[]->{ ${staffFields}, __i18n_refs[0]->{ ${staffFields} } },
   keystage[]->{ ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} } },
