@@ -125,7 +125,7 @@ const artforms = `
 
 const engagement = `
   "engagement": *[_type == "engagement"][0]{
-    title, intro, "engagementFigure": engagement[]{ count, title }
+    title, intro, "engagementFigure": engagement[]{ _key, count, title }
   }
 `
 

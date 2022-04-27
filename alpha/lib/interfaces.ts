@@ -28,6 +28,7 @@ export interface Engagement {
 }
 
 export interface EngagementFigure {
+  _key: string
   count: number
   title: LocaleString
 }

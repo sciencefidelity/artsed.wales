@@ -89,7 +89,7 @@ const Home = ({ data }) => {
                 gridTemplateColumns: "repeat(4, 1fr)"
               }}>
               {engagement.engagementFigure.map(figure =>
-                <div className={`${s.engagementFigures}`}>
+                <div className={`${s.engagementFigures}`} key={figure._key}>
                   <figure className={`${u.mono}`}>{figure.count}</figure>
                   <h3 className={`${u.uppercase}`}>
                     <Localize data={figure.title} />
