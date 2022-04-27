@@ -65,6 +65,7 @@ const Home = ({ data }) => {
             </Fragment>
           )}
         </div>
+      <hr />
       </section>
     </Layout>
   )

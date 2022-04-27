@@ -14,6 +14,7 @@ import { useRouter } from "next/router"
 import reactStringReplace from "react-string-replace"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
+import { localize } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import EventDate from "components/eventDate"
@@ -31,6 +32,7 @@ import {
 } from "lib/interfaces"
 import s from "styles/event.module.scss"
 import u from "styles/utils.module.scss"
+import p from "styles/patterns.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(eventPathQuery)
@@ -82,7 +84,6 @@ const EventPage = ({ data }) => {
     settings: Settings
     labels: Label[]
   }
-  console.log(event)
   return (
     <Layout
       company={company}
@@ -90,6 +91,14 @@ const EventPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
+      <div className={`${s.hero} ${p.cubes}`}>
+        <h1
+          className={`${s.heroText} ${u.mono}`}
+          dangerouslySetInnerHTML={{
+            __html: "<em>Secret Life<br />of<br />Objects</em>"
+          }}
+        />
+      </div>
       <div className={`${u.container} ${s.event} ${u.grid}`}>
         <section className={`${s.eventContent}`}>
           <div>

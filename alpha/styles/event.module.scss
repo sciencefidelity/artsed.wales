@@ -2,6 +2,40 @@
   grid-template-columns: 3fr 1fr;
 }
 
+.hero {
+  margin-bottom: 0rem;
+  width: 100vw;
+  aspect-ratio: 3 / 1;
+  background-color: var(--background);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.heroText {
+  color: var(--grey-550);
+  // color: transparent;
+  padding: 0 9rem;
+  font-weight: 700;
+  // font-size: 7rem;
+  font-size: 5rem;
+  text-align: center;
+  // line-height: 1;
+  line-height: 1.2;
+  position: relative;
+  // -webkit-text-stroke: 0px var(--grey-750);
+  // background: linear-gradient(45deg, rgba(232,75,248,1) 0%, rgba(248,190,80,1) 75%, rgba(253,237,95,1) 100%);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  em {
+    font-style: normal;
+    // background-image: url("/images/em-heading.svg");
+    // background-size: 107%;
+    // background-position: center;
+    // background-repeat: no-repeat;
+  }
+}
+
 .eventContent {
   width: 750px;
   margin-block: 7rem 5rem;
