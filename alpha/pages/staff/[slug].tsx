@@ -27,6 +27,7 @@ import {
   Staff
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
+import s from "styles/staff.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(staffPathQuery)
@@ -85,23 +86,17 @@ const StaffPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div
-        className={`${u.container}`}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "3fr 1fr"
-        }}
-      >
-        <section style={{marginRight: "2rem"}}>
+      <div className={`${s.staff} ${u.container} ${u.grid}`}>
+        <section className={`${s.staffContent}`}>
           {staff.title &&
-            <h1>
+            <h1 className={`${u.mono} ${u.bold}`}>
               {locale === "cy" && staff.__i18n_refs
                 ? staff.__i18n_refs.title
                 : staff.title}
             </h1>
           }
           {staff.role &&
-            <ul style={{padding: 0}}>
+            <ul className={`${s.staffRoles} ${u.uppercase}`}>
               {staff.role && staff.role.map((r, idx) =>
                 <li key={idx} className="horizontalList">{r}</li>
               )}
@@ -124,13 +119,13 @@ const StaffPage = ({ data }) => {
                       <Date date={event.dateStart} />
                     }
                     {event.title &&
-                      <h2 style={{margin: 0}}>
+                      <h3 className={`${s.staffEventsHeading}`}>
                         <Link href={`/${event._type}/${event.slug}`}>
                           {locale === "cy" && event.__i18n_refs
                             ? event.__i18n_refs.title
                             : event.title}
                         </Link>
-                      </h2>
+                      </h3>
                     }
                     {event.summary &&
                       <p>
@@ -145,7 +140,9 @@ const StaffPage = ({ data }) => {
             </>
           }
         </section>
-        <Sidebar events={events} title={labels[10].text} />
+        <aside className={`${s.staffSidebar}`}>
+          <Sidebar events={events} title={labels[10].text} />
+        </aside>
       </div>
     </Layout>
   )

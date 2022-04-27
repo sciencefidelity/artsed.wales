@@ -1,0 +1,33 @@
+.staff {
+  grid-template-columns: 3fr 1fr;
+}
+
+.staffContent {
+  width: 710px;
+  margin-top: 7rem;
+  margin-right: 2rem;
+  h1 {
+    color: var(--grey-650);
+    font-size: 5rem;
+  }
+}
+
+.staffRoles {
+
+}
+
+.staffEventsHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  a {
+    text-decoration-line: none;
+    color: var(--grey-650);
+    &:hover {
+      color: var(--grey-850);
+    }
+  }
+}
+
+.staffSidebar {
+  margin-top: 7rem;
+}
