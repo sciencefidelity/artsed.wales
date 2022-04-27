@@ -4,8 +4,9 @@
 
 .container {
   // padding: 1rem 2rem;
-  max-width: 1200px;
+  max-width: calc(1200px + 4rem);
   margin-inline: auto;
+  padding: 0 2rem;
 }
 
 .absolute {
