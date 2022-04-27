@@ -26,6 +26,7 @@ import {
   Navigation,
   Settings
 } from "lib/interfaces"
+import u from "styles/utils.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(keystagePathQuery)
@@ -84,10 +85,13 @@ const KeystagePage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "3fr 1fr"
-      }}>
+      <div
+        className={`${u.container}`}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "3fr 1fr"
+        }}
+      >
         <section style={{marginRight: "2rem"}}>
           {keystage.title &&
             <h1>
