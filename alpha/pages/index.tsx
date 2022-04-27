@@ -90,7 +90,7 @@ const Home = ({ data }) => {
               }}>
               {engagement.engagementFigure.map(figure =>
                 <div className={`${s.engagementFigures}`}>
-                  <figure>{figure.count}</figure>
+                  <figure className={`${u.mono}`}>{figure.count}</figure>
                   <h3 className={`${u.uppercase}`}>
                     <Localize data={figure.title} />
                   </h3>

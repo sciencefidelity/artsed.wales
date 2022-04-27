@@ -36,7 +36,7 @@ const Header: FC<Props> = ({ navigation, settings }) => {
           ${u.mono} ${u.bold} ${u.uppercase}
         `}>
           <div className={`${u.flex} ${u.justifyCenter}`}>
-            <Link href="/" className={`${u.flex} ${u.gap4} ${u.noUnderline}`}>
+            <Link href="/" className={`${u.flex} ${u.gap4}`}>
               <ColorLogo />
               <div className={`${u.inlineBlock}`}>
                 <div className={`${s.logoText}`}>

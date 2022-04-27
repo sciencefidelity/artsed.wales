@@ -158,7 +158,7 @@ export interface Post extends SanityDocument {
 
 export interface SocialLink {
   _key: string
-  url: string
+  url: LocaleString
   name: "facebook" | "github" | "intagram" | "linkedin" | "pinterest" | "soundcloud" | "tiktok" | "twitter" | "youtube"
 }
 
@@ -167,7 +167,7 @@ export interface Settings extends SanityDocument {
   meta: LocaleMetaData
   siteDescription: LocaleString
   siteName: LocaleString
-  socialLinks: SocialLink[]
+  social: SocialLink[]
   twitterCard: LocaleSocialCard
   url: LocaleString
 }

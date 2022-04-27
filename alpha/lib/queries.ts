@@ -82,7 +82,7 @@ const posts = `
 
 const settings = `
   "settings": *[_type == "settings" && ${omitDrafts}][1]{
-    url, siteName, siteDescription, social{ name, url }, ${localeSeo}
+    url, siteName, siteDescription, social[]{ _key, name, url }, ${localeSeo}
   }
 `
 

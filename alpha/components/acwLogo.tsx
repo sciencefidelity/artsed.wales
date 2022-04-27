@@ -1,4 +1,4 @@
-import s from "components/layout.module.scss"
+import s from "styles/layout.module.scss"
 
 const AcwLogo = () => (
   <svg
