@@ -7,6 +7,7 @@
  * @param data - all props fetched with `eventQuery` in `lib/queries.ts`.
  * @param slug - all props fetched with `eventPathQuery` in `lib/queries.ts`.
  */
+import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
@@ -28,6 +29,7 @@ import {
   Navigation,
   Settings
 } from "lib/interfaces"
+import s from "styles/event.module.scss"
 import u from "styles/utils.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -80,6 +82,7 @@ const EventPage = ({ data }) => {
     settings: Settings
     labels: Label[]
   }
+  console.log(event)
   return (
     <Layout
       company={company}
@@ -87,17 +90,11 @@ const EventPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div
-        className={`${u.container}`}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "3fr 1fr"
-        }}
-      >
-        <section style={{marginRight: "2rem"}}>
+      <div className={`${u.container} ${s.event} ${u.grid}`}>
+        <section className={`${s.eventContent}`}>
           <div>
             {event.title &&
-              <h1>
+              <h1 className={`${u.mono} ${u.bold}`}>
                 {locale === "cy" && event.__i18n_refs
                   ? event.__i18n_refs.title
                   : event.title}
@@ -112,8 +109,8 @@ const EventPage = ({ data }) => {
             {event.facilitators && <h3><Localize data={labels[7].text} /></h3>}
             <p>
               {event.facilitators && event.facilitators.map(facilitator =>
-                <>
-                  <span key={facilitator._id}>
+                <Fragment key={facilitator._id}>
+                  <span>
                     {reactStringReplace(
                       locale === "cy" && facilitator.__i18n_refs.job
                         ? facilitator.__i18n_refs.job
@@ -132,7 +129,7 @@ const EventPage = ({ data }) => {
                     )}
                   </span>
                   <br />
-                </>
+                </Fragment>
               )}
             </p>
             <p>
@@ -149,9 +146,9 @@ const EventPage = ({ data }) => {
                 <>
                   {labels[8] && <Localize data={labels[8].text} />}
                   {" "}{event.keystage.map((ks, idx) =>
-                    <>
+                    <Fragment key={ks._id}>
                       {ks.title &&
-                        <Link href={`/${ks._type}/${ks.slug}`} key={ks._id}>
+                        <Link href={`/${ks._type}/${ks.slug}`}>
                           {locale === "cy" && ks.__i18n_refs
                             ? ks.__i18n_refs.title
                             : ks.title}
@@ -162,7 +159,7 @@ const EventPage = ({ data }) => {
                         <Localize data={labels[9].text} />
                       }
                       {idx >= 0 && idx < event.keystage.length - 2 && ", "}
-                    </>
+                    </Fragment>
                   )}
                 </>
               }

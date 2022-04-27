@@ -11,7 +11,6 @@ interface Props {
 
 const SocialLinks: FC<Props> = ({ settings }) => {
   const { locale } = useRouter()
-  console.log(settings.social)
   return (
     <section className={`${s.socialLinks} ${u.uppercase}`}>
       <div className={`${u.hidden} ${u.uppercase}`}>

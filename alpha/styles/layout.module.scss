@@ -99,6 +99,47 @@
   }
 }
 
+.sidebar {
+  margin-top: 7rem;
+}
+
+.sidebarItem {
+  margin-bottom: 2.2rem;
+  li {
+    list-style-type: none;
+  }
+  time {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: -1rem;
+    padding: 0;
+  }
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+    a {
+      text-decoration-line: none;
+      background-image: url("/images/em-heading.svg");
+      background-size: 107%;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--grey-650);
+      &:hover {
+        color: var(--grey-850);
+      }
+    }
+  }
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+.sidebarHeading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
 // .signUpText {
 //   width: 90%;
 //   margin-inline: auto;

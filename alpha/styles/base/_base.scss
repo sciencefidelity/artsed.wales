@@ -14,7 +14,8 @@ body {
   font-weight: 500;
 }
 
-p {
+p,
+ul {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.3;
@@ -22,7 +23,7 @@ p {
   a {
     color: var(--grey-750);
     text-decoration-line: none;
-    transition: all 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
     font-style: normal;
     background-image: url("/images/highlight.svg");
     background-size: 180%;

@@ -140,9 +140,7 @@ const StaffPage = ({ data }) => {
             </>
           }
         </section>
-        <aside className={`${s.staffSidebar}`}>
-          <Sidebar events={events} title={labels[10].text} />
-        </aside>
+        <Sidebar events={events} title={labels[10].text} />
       </div>
     </Layout>
   )

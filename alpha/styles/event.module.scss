@@ -1,0 +1,39 @@
+.event {
+  grid-template-columns: 3fr 1fr;
+}
+
+.eventContent {
+  width: 750px;
+  margin-block: 7rem 5rem;
+  margin-right: 2rem;
+  h1 {
+    color: var(--grey-750);
+    font-size: 4.8rem;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    color: var(--grey-550);
+    font-size: 1.6rem;
+    margin-bottom: 3.5rem;
+    font-weight: 500;
+  }
+  h3 {
+    color: var(--grey-600);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  ul {
+    padding: 0 1rem 2rem;
+    list-style-type: "–";
+    list-style-position: outside;
+    // list-style-image: url('/images/arrow1.svg');
+    li {
+      padding: 0.2rem 0 0 1rem;
+    }
+  }
+  strong {
+    color: var(--grey-600);
+  }
+}
+
