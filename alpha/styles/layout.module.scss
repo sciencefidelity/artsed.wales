@@ -105,7 +105,16 @@
 // }
 
 .logos {
-  margin: auto;
+  // width: 100%;
+  margin-block: 4rem 5rem;
+  justify-content: space-between;
+}
+
+.acwLogo,
+.lotteryLogo,
+.wgLogo,
+.wlgaLogo {
+  fill: var(--grey-750);
 }
 
 .footer {

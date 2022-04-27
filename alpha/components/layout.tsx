@@ -29,9 +29,11 @@ const Layout: FC<Props> = ({
       <BaseHead settings={settings} />
       <Header navigation={navigation} settings={settings} />
       <main className={`${s.main}`}>{children}</main>
-      <section className={u.container}><SignUp labels={labels}/></section>
-      <SocialLinks settings={settings} />
-      <Logos />
+      <section className={u.container}>
+        <SignUp labels={labels}/>
+        <SocialLinks settings={settings} />
+        <Logos />
+      </section>
       <Footer settings={settings} company={company} />
     </>
   )
