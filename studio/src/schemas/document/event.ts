@@ -37,6 +37,10 @@ export default {
     {
       name: 'facebook',
       title: 'Facebook'
+    },
+    {
+      name: 'design',
+      title: 'Design'
     }
   ],
   fields: [
@@ -153,82 +157,6 @@ export default {
           ],
           level: 1,
           listItem: 'bullet',
-          markDefs: [],
-          style: 'normal'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              text: 'About the facilitators'
-            }
-          ],
-          markDefs: [],
-          style: 'h3'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              marks: ['strong'],
-              text: 'Facilitator one'
-            },
-            {
-              _type: 'span',
-              text: '...'
-            }
-          ],
-          markDefs: [],
-          style: 'normal'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              marks: ['strong'],
-              text: 'Facilitator two'
-            },
-            {
-              _type: 'span',
-              text: '...'
-            }
-          ],
-          markDefs: [],
-          style: 'normal'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              text: 'Price:'
-            }
-          ],
-          markDefs: [],
-          style: 'normal'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              text: 'Date:'
-            }
-          ],
-          markDefs: [],
-          style: 'normal'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              text: 'Venue:'
-            }
-          ],
           markDefs: [],
           style: 'normal'
         }
