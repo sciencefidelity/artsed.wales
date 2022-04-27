@@ -159,7 +159,7 @@ export interface Post extends SanityDocument {
 
 export interface SocialLink {
   _key: string
-  url: LocaleString
+  url: string
   name: "facebook" | "github" | "intagram" | "linkedin" | "pinterest" | "soundcloud" | "tiktok" | "twitter" | "youtube"
 }
 

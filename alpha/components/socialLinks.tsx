@@ -11,30 +11,20 @@ interface Props {
 
 const SocialLinks: FC<Props> = ({ settings }) => {
   const { locale } = useRouter()
+  console.log(settings.social)
   return (
-    <section className={`${u.center} ${u.w100} ${u.mbMedium}`}>
-      <div className={`
-        ${u.hide}
-        ${u.mdBlock}
-        ${u.sans}
-        ${u.uppercase}
-        ${u.lh2}
-        ${u.textCenter}
-        ${u.smTextLeft}
-      `}>
+    <section className={`${s.socialLinks} ${u.uppercase}`}>
+      <div className={`${u.hidden} ${u.uppercase}`}>
         {locale === "cy" ? "Dilynwch ni ar" : "Follow us on"}{": "}
       </div>
-      <ul
-        className={`
-          ${s.linksMenu}
-          ${u.wrap}
-          ${u.sans}
-          ${u.uppercase}
-        `}
-      >
-        <li className={`${u.mdHide}`}>{locale === "cy" ? "Dilynwch ni ar" : "Follow us on"}{": "}</li>
+      <ul className={`${s.socialLinksMenu} ${u.flex}`}>
+        <li className={`${u.block}`}>
+          {locale === "cy" ? "Dilynwch ni ar" : "Follow us on"}{": "}
+        </li>
         {settings.social.map(link =>
-          <li key={link._key}><a href={localize(link.url, locale)}>{link.name}</a></li>
+          <li key={link._key}>
+            <a href={link.url}>{link.name}</a>
+          </li>
         )}
       </ul>
     </section>

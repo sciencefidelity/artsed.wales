@@ -117,6 +117,23 @@
   fill: var(--grey-750);
 }
 
+.socialLinks {
+  display: flex;
+  justify-content: space-around;
+}
+
+.socialLinksMenu {
+  text-align: center;
+  gap: 2rem;
+  a {
+    color: var(--grey-650);
+    text-decoration-line: none;
+    &:hover {
+      color: var(--grey-750);
+    }
+  }
+}
+
 .footer {
   margin-block: 2rem;
   line-height: 1.3;
