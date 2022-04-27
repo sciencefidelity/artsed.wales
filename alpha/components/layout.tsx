@@ -32,6 +32,7 @@ const Layout: FC<Props> = ({
       <section className={u.container}>
         <SignUp labels={labels}/>
         <SocialLinks settings={settings} />
+        <hr />
         <Logos />
       </section>
       <Footer settings={settings} company={company} />
