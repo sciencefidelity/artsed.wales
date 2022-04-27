@@ -30,10 +30,18 @@ p {
     text-decoration-line: none;
     transition: color 0.3s ease-in-out;
     font-style: normal;
+
     // background-image: url("/images/highlight.svg");
-    // background-size: 180%;
-    // background-position: center;
-    // background-repeat: no-repeat;
+    // background-size: 200px 160%;
+
+    background-image: url("/images/highlight-stroke.svg");
+    background-size: 85px 100%;
+
+    // background-image: url("/images/wavy.svg");
+    // background-size: 50px 100%;
+
+    background-position: center;
+    background-repeat: repeat;
     &:hover {
       color: var(--grey-900);
       transition: color 0.3s ease-in-out;

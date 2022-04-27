@@ -14,7 +14,6 @@ import { useRouter } from "next/router"
 import reactStringReplace from "react-string-replace"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
-import { localize } from "lib/utils"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
 import EventDate from "components/eventDate"
@@ -95,64 +94,66 @@ const EventPage = ({ data }) => {
         <h1
           className={`${s.heroText} ${u.mono}`}
           dangerouslySetInnerHTML={{
-            __html: "<em>Secret Life<br />of<br />Objects</em>"
+            __html: {}
           }}
         />
       </div>
-      <div className={`${u.container} ${s.event} ${u.grid}`}>
-        <section className={`${s.eventContent}`}>
-          <div>
-            {event.title &&
-              <h1 className={`${u.mono} ${u.bold}`}>
-                {locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.title
-                  : event.title}
-              </h1>
-            }
-            <PortableText
-              value={locale === "cy" && event.__i18n_refs
-                ? event.__i18n_refs.body
-                : event.body}
-              components={components}
-            />
-            {event.facilitators && <h3><Localize data={labels[7].text} /></h3>}
-            <p>
-              {event.facilitators && event.facilitators.map(facilitator =>
-                <Fragment key={facilitator._id}>
-                  <span>
-                    {reactStringReplace(
-                      locale === "cy" && facilitator.__i18n_refs.job
-                        ? facilitator.__i18n_refs.job
-                        : facilitator.job
-                          ? facilitator.job
-                          : facilitator.title,
-                      facilitator.title,
-                      match =>
-                        <strong>
-                          <Link
-                            href={`/${facilitator._type}/${facilitator.slug}`}
-                          >
-                            {match}
-                          </Link>
-                        </strong>
-                    )}
-                  </span>
-                  <br />
-                </Fragment>
-              )}
-            </p>
-            <p>
-              <strong><Localize data={labels[4].text} />: </strong>
-              £{event.price.toString()}<br />
-              <strong><Localize data={labels[5].text} />: </strong>
-              <EventDate
-                dateEnd={event.dateEnd}
-                dateStart={event.dateStart}
-              /><br />
-              <strong><Localize data={labels[6].text} />: </strong>
-              {event.location}<br />
+      <div className={`${u.container}`}>
+        <div className={`${s.event} ${u.grid}`}>
+          <section className={`${s.eventContent}`}>
+            <div>
+              {event.title &&
+                <h1 className={`${u.mono} ${u.bold}`}>
+                  {locale === "cy" && event.__i18n_refs
+                    ? event.__i18n_refs.title
+                    : event.title}
+                </h1>
+              }
+              <PortableText
+                value={locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.body
+                  : event.body}
+                components={components}
+              />
+              {event.facilitators && <h3><Localize data={labels[7].text} /></h3>}
+              <p>
+                {event.facilitators && event.facilitators.map(facilitator =>
+                  <Fragment key={facilitator._id}>
+                    <span>
+                      {reactStringReplace(
+                        locale === "cy" && facilitator.__i18n_refs.job
+                          ? facilitator.__i18n_refs.job
+                          : facilitator.job
+                            ? facilitator.job
+                            : facilitator.title,
+                        facilitator.title,
+                        match =>
+                          <strong>
+                            <Link
+                              href={`/${facilitator._type}/${facilitator.slug}`}
+                            >
+                              {match}
+                            </Link>
+                          </strong>
+                      )}
+                    </span>
+                    <br />
+                  </Fragment>
+                )}
+              </p>
+              <p>
+                <strong><Localize data={labels[4].text} />: </strong>
+                £{event.price.toString()}<br />
+                <strong><Localize data={labels[5].text} />: </strong>
+                <EventDate
+                  dateEnd={event.dateEnd}
+                  dateStart={event.dateStart}
+                /><br />
+                <strong><Localize data={labels[6].text} />: </strong>
+                {event.location}
+              </p>
               {event.keystage &&
-                <>
+                <p>
                   {labels[8] && <Localize data={labels[8].text} />}
                   {" "}{event.keystage.map((ks, idx) =>
                     <Fragment key={ks._id}>
@@ -170,15 +171,16 @@ const EventPage = ({ data }) => {
                       {idx >= 0 && idx < event.keystage.length - 2 && ", "}
                     </Fragment>
                   )}
-                </>
+                </p>
               }
-            </p>
-          </div>
-        </section>
-        <Sidebar
-          events={events.filter(e => e.title !== event.title)}
-          title={labels[10].text}
-        />
+            </div>
+          </section>
+          <Sidebar
+            events={events.filter(e => e.title !== event.title)}
+            title={labels[10].text}
+          />
+        </div>
+        <hr />
       </div>
     </Layout>
   )
