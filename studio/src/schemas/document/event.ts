@@ -51,6 +51,12 @@ export default {
       group: 'basicInfo'
     },
     {
+      name: 'longTitle',
+      title: 'Long title',
+      type: 'string',
+      group: 'basicInfo'
+    },
+    {
       name: 'location',
       title: 'Location',
       type: 'string',
@@ -257,7 +263,42 @@ export default {
       title: 'Facebook Card',
       type: 'facebookCard',
       group: 'facebook'
-    }
+    },
+    {
+      name: 'imageOne',
+      title: 'Hero two',
+      type: 'image',
+      description: 'Cutout image for animation',
+      options: {
+        hotspot: true
+      },
+      group: 'content'
+    },
+    {
+      name: 'classOne',
+      title: 'Image class two',
+      type: 'string',
+      group: 'design'
+    },
+    {
+      name: 'imageTwo',
+      title: 'Hero one',
+      type: 'image',
+      description: 'Cutout image for animation',
+      group: 'design'
+    },
+    {
+      name: 'classTwo',
+      title: 'Image class one',
+      type: 'string',
+      group: 'design'
+    },
+    {
+      name: 'pattern',
+      title: 'Pattern class',
+      type: 'string',
+      group: 'design'
+    },
   ],
   orderings: [
     {
