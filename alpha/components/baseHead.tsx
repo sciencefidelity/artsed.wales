@@ -13,10 +13,16 @@ const BaseHead: FC<Props> = ({ pageHead, settings }) => {
   const { locale } = useRouter()
   return (
     <Head>
-      <title>{pageHead && pageHead.title ? pageHead.title : localize(settings.siteName, locale)}</title>
+      <title>
+        {pageHead && pageHead.title
+          ? pageHead.title
+          : localize(settings.siteName, locale)}
+      </title>
       <meta
         name="Description"
-        content={pageHead && pageHead.description ? pageHead.description : localize(settings.siteDescription, locale)}
+        content={pageHead && pageHead.description
+          ? pageHead.description
+          : localize(settings.siteDescription, locale)}
       />
       <meta name="keywords" content="" />
       <link
@@ -88,10 +94,11 @@ const BaseHead: FC<Props> = ({ pageHead, settings }) => {
       />
       <meta
         name="twitter:description"
-        content={pageHead && pageHead.twitterDescription ? pageHead.twitterDescription :
-          (locale === "cy" && settings.twitterCard.cy.description
-            ? settings.twitterCard.cy.description
-            : settings.twitterCard.en.description)}
+        content={pageHead &&
+          pageHead.twitterDescription ? pageHead.twitterDescription :
+            (locale === "cy" && settings.twitterCard.cy.description
+              ? settings.twitterCard.cy.description
+              : settings.twitterCard.en.description)}
       />
       <meta
         name="twitter:site"
@@ -102,15 +109,16 @@ const BaseHead: FC<Props> = ({ pageHead, settings }) => {
       />
       <meta
         name="twitter:image"
-        content={urlFor(pageHead && pageHead.twitterImage ? pageHead.twitterImage :
-          (locale === "cy" && settings.twitterCard.cy.image
-              ? settings.twitterCard.cy.image
-              : settings.twitterCard.en.image))
-            .auto("format")
-            .width(1200)
-            .height(628)
-            .quality(100)
-            .url()}
+        content={urlFor(pageHead &&
+          pageHead.twitterImage ? pageHead.twitterImage :
+            (locale === "cy" && settings.twitterCard.cy.image
+                ? settings.twitterCard.cy.image
+                : settings.twitterCard.en.image))
+              .auto("format")
+              .width(1200)
+              .height(628)
+              .quality(100)
+              .url()}
       />
       <meta name="twitter:creator" content="@artsed_wales" />
 

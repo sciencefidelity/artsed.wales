@@ -79,11 +79,43 @@ const StaffPage = ({ data }) => {
     settings: Settings
     staff: Staff
   }
+
+  const pageHead = {
+    title: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.meta.title
+      : staff.meta?.title,
+    description: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.meta.description
+      : staff.meta?.description,
+    ogTitle: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.facebook.title
+      : staff.facebook?.title,
+    ogDescription: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.facebook.description
+      : staff.facebook?.description,
+    ogURL: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.meta.canonicalURL
+      : staff.meta?.canonicalURL,
+    ogImage: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.facebook.image
+      : staff.facebook?.image,
+    twitterTitle: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.twitter.title
+      : staff.twitter?.title,
+    twitterDescription: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.twitter.description
+      : staff.twitter?.description,
+    twitterImage: locale === "cy" && staff.__i18n_refs
+      ? staff.__i18n_refs.twitter.image
+      : staff.twitter?.image
+  }
+
   return (
     <Layout
       company={company}
       labels={labels}
       navigation={navigation}
+      pageHead={pageHead}
       settings={settings}
     >
       <div className={`${s.staff} ${u.container} ${u.grid}`}>

@@ -10,8 +10,11 @@ export interface Artform extends SanityDocument {
   _type: "artform"
   description: string
   events: Event[]
+  facebook: SocialCard
+  meta: MetaData
   slug: string
   title: string
+  twitter: SocialCard
 }
 
 export interface Company extends SanityDocument {
@@ -85,8 +88,11 @@ export interface Keystage extends SanityDocument {
   _type: "keystage"
   description: string
   events: Event[]
+  facebook: SocialCard
+  meta: MetaData
   slug: string
   title: string
+  twitter: SocialCard
 }
 
 export interface Label {
@@ -142,13 +148,13 @@ export interface Page extends SanityDocument {
   __i18n_refs: Page
   _type: "page"
   body: PortableText
-  facebookCard: SocialCard
+  facebook: SocialCard
   image: Image
   meta: MetaData
   settings: PageSettings
   slug: string
   title: string
-  twitterCard: SocialCard
+  twitter: SocialCard
 }
 
 export interface PageSettings {
@@ -172,13 +178,13 @@ export interface Post extends SanityDocument {
   __i18n_refs: Post
   _type: "post"
   body: PortableText
-  facebookCard: SocialCard
+  facebook: SocialCard
   image: Image
   meta: MetaData
   settings: PageSettings
   slug: string
   title: string
-  twitterCard: SocialCard
+  twitter: SocialCard
 }
 
 export interface SocialLink {
@@ -210,10 +216,13 @@ export interface Staff extends SanityDocument {
   bio: string
   email: string
   events: Event[]
+  facebook: SocialCard
   job: string
+  meta: MetaData
   role: string[]
   slug: string
   title: string
+  twitter: SocialCard
 }
 
 export interface Tag extends SanityDocument {

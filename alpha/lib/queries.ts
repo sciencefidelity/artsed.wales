@@ -18,9 +18,13 @@ const seo = `
   twitter{ ${socialFields} }
 `
 
-const artformFields = `__i18n_lang, _id, _type, description, ${slug}, title`
+const artformFields = `
+  __i18n_lang, _id, _type, description, ${slug}, ${seo}, title
+`
 
-const keystageFields = `__i18n_lang, _id, _type, description, ${slug}, title`
+const keystageFields = `
+  __i18n_lang, _id, _type, description, ${slug}, ${seo}, title
+`
 
 const staffFields = `
   __i18n_lang, _id, _type, avatar, bio, email, job, role, title, ${seo}, ${slug}
@@ -70,7 +74,7 @@ const event = `
 `
 
 const pages = `
-  "pages": *[_type == "page" && ${omitDrafts}] | order(settings.publishedAt){
+  "pages": *[_type == "page" && ${omitDrafts}]{
     ${pagePostFields}, __i18n_refs[0]->{ ${pagePostFields} }
   }
 `

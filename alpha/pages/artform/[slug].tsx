@@ -78,11 +78,25 @@ const ArtformPage = ({ data }) => {
     navigation: Navigation
     settings: Settings
   }
+
+  const pageHead = {
+    title: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.meta.title : artform.meta?.title,
+    description: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.meta.description : artform.meta?.description,
+    ogTitle: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.facebook.title : artform.facebook?.title,
+    ogDescription: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.facebook.description : artform.facebook?.description,
+    ogURL: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.meta.canonicalURL : artform.meta?.canonicalURL,
+    ogImage: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.facebook.image : artform.facebook?.image,
+    twitterTitle: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.twitter.title : artform.twitter?.title,
+    twitterDescription: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.twitter.description : artform.twitter?.description,
+    twitterImage: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.twitter.image : artform.twitter?.image
+  }
+
   return (
     <Layout
       company={company}
       labels={labels}
       navigation={navigation}
+      pageHead={pageHead}
       settings={settings}
     >
       <div

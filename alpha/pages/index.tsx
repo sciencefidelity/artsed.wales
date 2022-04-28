@@ -71,9 +71,9 @@ const Home = ({ data }) => {
         <div className={`${u.container}`}>
           <div className={`${s.indexContent}`}>
             <PortableText
-              value={locale === "cy" && pages[1].__i18n_refs
-                ? pages[1].__i18n_refs.body
-                : pages[1].body}
+              value={locale === "cy" && pages[2].__i18n_refs
+                ? pages[2].__i18n_refs.body
+                : pages[2].body}
               components={components}
             />
           </div>
