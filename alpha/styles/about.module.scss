@@ -1,6 +1,11 @@
 .about {
   // margin-top: 13rem;
   grid-template-columns: 3fr 1fr;
+  a {
+    text-decoration-line: none;
+    color: var(--grey-650);
+    color: var(--grey-750);
+  }
 }
 
 .aboutContent {

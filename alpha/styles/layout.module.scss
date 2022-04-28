@@ -7,7 +7,7 @@
   position: fixed;
   z-index: 10;
   inset: 0 0 auto;
-  background-color: var(--grey-000);
+  background-color: var(--page-bg);
   box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
   a {
     text-decoration-line: none;
@@ -155,7 +155,7 @@
 .lotteryLogo,
 .wgLogo,
 .wlgaLogo {
-  fill: var(--grey-750);
+  fill: var(--grey-600);
 }
 
 .socialLinks {
@@ -180,12 +180,12 @@
   display: flex;
   width: 65px;
   height: 65px;
-  background-color: var(--paper-550);
+  background-color: var(--grey-550);
   border-radius: 100%;
   place-items: center;
   transition: background-color 0.3s ease-in-out;
   &:hover {
-    background-color: var(--paper-650);
+    background-color: var(--grey-650);
     transition: background-color 0.3s ease-in-out;
   }
   svg {

@@ -36,10 +36,11 @@ p {
     // background-size: 200px 160%;
 
     background-image: url("/images/highlight-stroke.svg");
-    background-size: 85px 100%;
+    // background-size: 85px 100%;
+    background-size: 100px 100%;
 
     // background-image: url("/images/wavy.svg");
-    // background-size: 50px 100%;
+    // background-size: 100px 200%;
 
     background-position: center;
     background-repeat: repeat;
@@ -71,10 +72,15 @@ button {
   color: var(--grey-500);
   font-weight: 500;
   background-color: transparent;
+  background: transparent;
   &:hover {
     color: var(--grey-750);
     transition: color 0.3s ease-in-out;
   }
+}
+
+input {
+  background-color: transparent;
 }
 
 hr {

@@ -1,7 +1,7 @@
-import AcwLogo from "components/acwLogo"
-import LotteryLogo from "components/lotteryLogo"
-import WgLogo from "components/wgLogo"
-import WlgaLogo from "components/wlgaLogo"
+import AcwLogo from "components/icons/acwLogo"
+import LotteryLogo from "components/icons/lotteryLogo"
+import WgLogo from "components/icons/wgLogo"
+import WlgaLogo from "components/icons/wlgaLogo"
 import s from "styles/layout.module.scss"
 import u from "styles/utils.module.scss"
 

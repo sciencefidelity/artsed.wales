@@ -59,86 +59,89 @@ const About = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div className={`${u.container} ${s.about} ${u.grid}`}>
-        <div className={`${s.aboutContent}`}>
-          <PortableText
-            value={locale === "cy" && pages[0].__i18n_refs
-              ? pages[0].__i18n_refs.body
-              : pages[0].body}
-            components={components}
+      <div className={`${u.container}`}>
+        <div className={`${s.about} ${u.grid}`}>
+          <div className={`${s.aboutContent}`}>
+            <PortableText
+              value={locale === "cy" && pages[0].__i18n_refs
+                ? pages[0].__i18n_refs.body
+                : pages[0].body}
+              components={components}
+            />
+            <h2><Localize data={labels[13].text} /></h2>
+            <ul style={{listStyleType: "none", padding: 0}}>
+              {coordinatorsSorted.map(coordinator =>
+                <li key={coordinator._id}>
+                  <Link href={`/${coordinator._type}/${coordinator.slug}`}>
+                    {locale === "cy" && coordinator.__i18n_refs
+                      ? coordinator.__i18n_refs.title
+                      : coordinator.title}
+                  </Link>
+                  {coordinator.email &&
+                    <>
+                      {" – "}
+                      <a href={`mailto:${coordinator.email}`}>
+                        {locale === "cy" && coordinator.__i18n_refs
+                          ? coordinator.__i18n_refs.email
+                          : coordinator.email}
+                      </a>
+                    </>
+                  }
+                </li>
+              )}
+            </ul>
+            <h2><Localize data={labels[15].text} /></h2>
+            <h3><Localize data={labels[14].text} /></h3>
+            <ul style={{listStyleType: "none", padding: 0}}>
+              {trusteesSorted.map(trustee => trustee.role.includes("Chair") &&
+                <li key={trustee._id}>
+                  <Link href={`/${trustee._type}/${trustee.slug}`}>
+                    {locale === "cy" && trustee.__i18n_refs
+                      ? trustee.__i18n_refs.title
+                      : trustee.title}
+                  </Link>
+                  {trustee.email &&
+                    <>
+                      {" – "}
+                      <a href={`mailto:${trustee.email}`}>
+                        {locale === "cy" && trustee.__i18n_refs
+                          ? trustee.__i18n_refs.email
+                          : trustee.email}
+                      </a>
+                    </>
+                  }
+                </li>
+              )}
+            </ul>
+            <h3><Localize data={labels[16].text} /></h3>
+            <ul style={{listStyleType: "none", padding: 0}}>
+              {trusteesSorted.map(trustee => trustee.role.includes("Trustee") &&
+                <li key={trustee._id}>
+                  <Link href={`/${trustee._type}/${trustee.slug}`}>
+                    {locale === "cy" && trustee.__i18n_refs
+                      ? trustee.__i18n_refs.title
+                      : trustee.title}
+                  </Link>
+                  {trustee.email &&
+                    <>
+                      {" – "}
+                      <a href={`mailto:${trustee.email}`}>
+                        {locale === "cy" && trustee.__i18n_refs
+                          ? trustee.__i18n_refs.email
+                          : trustee.email}
+                      </a>
+                    </>
+                  }
+                </li>
+              )}
+            </ul>
+          </div>
+          <Sidebar
+            events={events}
+            title={labels[10].text}
           />
-          <h2><Localize data={labels[13].text} /></h2>
-          <ul style={{listStyleType: "none", padding: 0}}>
-            {coordinatorsSorted.map(coordinator =>
-              <li key={coordinator._id}>
-                <Link href={`/${coordinator._type}/${coordinator.slug}`}>
-                  {locale === "cy" && coordinator.__i18n_refs
-                    ? coordinator.__i18n_refs.title
-                    : coordinator.title}
-                </Link>
-                {coordinator.email &&
-                  <>
-                    {" – "}
-                    <a href={`mailto:${coordinator.email}`}>
-                      {locale === "cy" && coordinator.__i18n_refs
-                        ? coordinator.__i18n_refs.email
-                        : coordinator.email}
-                    </a>
-                  </>
-                }
-              </li>
-            )}
-          </ul>
-          <h2><Localize data={labels[15].text} /></h2>
-          <h3><Localize data={labels[14].text} /></h3>
-          <ul style={{listStyleType: "none", padding: 0}}>
-            {trusteesSorted.map(trustee => trustee.role.includes("Chair") &&
-              <li key={trustee._id}>
-                <Link href={`/${trustee._type}/${trustee.slug}`}>
-                  {locale === "cy" && trustee.__i18n_refs
-                    ? trustee.__i18n_refs.title
-                    : trustee.title}
-                </Link>
-                {trustee.email &&
-                  <>
-                    {" – "}
-                    <a href={`mailto:${trustee.email}`}>
-                      {locale === "cy" && trustee.__i18n_refs
-                        ? trustee.__i18n_refs.email
-                        : trustee.email}
-                    </a>
-                  </>
-                }
-              </li>
-            )}
-          </ul>
-          <h3><Localize data={labels[16].text} /></h3>
-          <ul style={{listStyleType: "none", padding: 0}}>
-            {trusteesSorted.map(trustee => trustee.role.includes("Trustee") &&
-              <li key={trustee._id}>
-                <Link href={`/${trustee._type}/${trustee.slug}`}>
-                  {locale === "cy" && trustee.__i18n_refs
-                    ? trustee.__i18n_refs.title
-                    : trustee.title}
-                </Link>
-                {trustee.email &&
-                  <>
-                    {" – "}
-                    <a href={`mailto:${trustee.email}`}>
-                      {locale === "cy" && trustee.__i18n_refs
-                        ? trustee.__i18n_refs.email
-                        : trustee.email}
-                    </a>
-                  </>
-                }
-              </li>
-            )}
-          </ul>
         </div>
-        <Sidebar
-          events={events}
-          title={labels[10].text}
-        />
+        <hr />
       </div>
     </Layout>
   )
