@@ -15,7 +15,8 @@ import {
   Landmark,
   MasksTheatre,
   Pencil,
-  TreeCity } from "components/icons/icons"
+  TreeCity
+} from "components/icons/icons"
 import { Event } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/events.module.scss"
@@ -30,7 +31,13 @@ const patterns = [p.cubes, p.lines, p.circles, p.isometric, p.linesDiagonal]
 const images = ["head", "whale", "globe", "tree", "dance"]
 const imageClasses = [s.head, s.whale, s.globe, s.tree, s.dance]
 const shapes = [<DashedCircle />, , <Triange />, <StripedCircle />, <Circle />]
-const icons = [<Landmark />, <Pencil />, <MasksTheatre />, <TreeCity />, <Bolt />]
+const icons = [
+  <Landmark />,
+  <Pencil />,
+  <MasksTheatre />,
+  <TreeCity />,
+  <Bolt />
+]
 
 const SingleEvent: FC<Props> = ({ event, idx }) => {
   const { locale } = useRouter()

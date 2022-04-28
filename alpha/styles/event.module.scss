@@ -58,12 +58,12 @@
     font-weight: 600;
   }
   ul {
-    padding: 0 1rem 2rem;
-    list-style-type: "–";
+    padding: 0 3rem 3rem;
+    list-style-type: "⸺";
     list-style-position: outside;
-    // list-style-image: url('/images/arrow1.svg');
+    // list-style-image: url('/images/dash.svg');
     li {
-      padding: 0.2rem 0 0 1rem;
+      padding: 0 0 1.5rem 0.5rem;
     }
   }
   strong {

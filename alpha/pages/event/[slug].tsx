@@ -174,6 +174,7 @@ const EventPage = ({ data }) => {
                 </p>
               }
             </div>
+            <button>Book you place</button>
           </section>
           <Sidebar
             // events={events.filter(e => e.title !== event.title)}
