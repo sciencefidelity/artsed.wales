@@ -194,19 +194,21 @@
   gap: 2rem;
   a {
     color: var(--grey-650);
-    transition: color 0.3s ease-in-out;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
     text-decoration-line: none;
     &:hover {
       color: var(--grey-750);
-      transition: color 0.3s ease-in-out;
+      opacity: 0.8;
+      transition: opacity 0.3s ease-in-out;
     }
   }
 }
 
 .socialIcon {
   display: flex;
-  width: 65px;
-  height: 65px;
+  width: 55px;
+  height: 55px;
   background-color: var(--grey-550);
   border-radius: 100%;
   place-items: center;
@@ -216,7 +218,6 @@
     transition: background-color 0.3s ease-in-out;
   }
   svg {
-    // width: 50%;
     height: 50%;
     margin: auto;
     fill: var(--grey-000);
