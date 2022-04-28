@@ -52,11 +52,11 @@ const Twitter = ({ document }) => {
               </div>
               <div className={s.twitterPostPreview}>
                 <div className={s.twitterPreviewImage}>
-                  {document.displayed.mainImage && <img
-                    src={urlFor(document.displayed.mainImage)
+                  {document.displayed.twitter.image && <img
+                    src={urlFor(document.displayed.twitter.image)
                       .auto('format')
-                      .width(507)
-                      .height(266)
+                      .width(1014)
+                      .height(532)
                       .quality(80)
                       .url()}
                     alt=""

@@ -1,7 +1,14 @@
+import { Rule } from "@sanity/types"
 import moment from 'moment'
 import { i18n } from '../../languages'
 import { isUniqueLocale } from '../../lib/isUniqueLocale'
 import { Date } from '../../components/twemoji'
+
+interface Selection {
+  subtitle: string
+  title: string
+  media: string
+}
 
 export default {
   name: 'event',
@@ -112,7 +119,7 @@ export default {
       title: 'Summary',
       type: 'text',
       rows: 3,
-      validation: Rule => Rule.max(140).warning('Max 140 characters.'),
+      validation: (Rule: Rule) => Rule.max(140).warning('Max 140 characters.'),
       group: 'content'
     },
     {
@@ -266,30 +273,30 @@ export default {
     },
     {
       name: 'imageOne',
-      title: 'Hero two',
+      title: 'Hero one',
       type: 'image',
       description: 'Cutout image for animation',
       options: {
         hotspot: true
       },
-      group: 'content'
+      group: 'design'
     },
     {
       name: 'classOne',
-      title: 'Image class two',
+      title: 'Image class one',
       type: 'string',
       group: 'design'
     },
     {
       name: 'imageTwo',
-      title: 'Hero one',
+      title: 'Hero two',
       type: 'image',
       description: 'Cutout image for animation',
       group: 'design'
     },
     {
       name: 'classTwo',
-      title: 'Image class one',
+      title: 'Image class two',
       type: 'string',
       group: 'design'
     },
@@ -313,7 +320,7 @@ export default {
       subtitle: 'dateStart',
       media: 'mainImage'
     },
-    prepare(selection) {
+    prepare(selection: Selection) {
       const { subtitle, title, media } = selection
       return {
         title: title,

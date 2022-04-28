@@ -47,12 +47,12 @@ const Facebook = ({ document }) => {
           </div>
           <div className={s.ogPreview}>
             <div className={s.ogPreviewImage}>
-              {document.displayed.mainImage && <img
-                src={urlFor(document.displayed.mainImage)
+              {document.displayed.facebook.image && <img
+                src={urlFor(document.displayed.facebook.image)
                   .auto('format')
-                  .width(476)
-                  .height(248)
-                  .quality(80)
+                  .width(952)
+                  .height(496)
+                  .quality(100)
                   .url()}
                 alt=""
               />}
