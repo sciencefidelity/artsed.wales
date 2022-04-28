@@ -13,7 +13,10 @@ const BaseHead: FC<Props> = ({ settings }) => {
   return (
     <Head>
       <title>{localize(settings.siteName, locale)}</title>
-      <meta name="Description" content={localize(settings.siteDescription, locale)} />
+      <meta
+        name="Description"
+        content={localize(settings.siteDescription, locale)}
+      />
       <meta name="keywords" content="" />
       <link
         rel="preload"
@@ -54,13 +57,13 @@ const BaseHead: FC<Props> = ({ settings }) => {
       />
       <meta
         property="og:image"
-        content={urlFor(settings.facebookCard.cy.image
+        content={urlFor(locale === "cy" && settings.facebookCard.cy.image
             ? settings.facebookCard.cy.image
             : settings.facebookCard.en.image)
           .auto("format")
           .width(1200)
           .height(630)
-          .quality(85)
+          .quality(100)
           .url()}
         />
       <meta
@@ -91,13 +94,13 @@ const BaseHead: FC<Props> = ({ settings }) => {
       />
       <meta
         name="twitter:image"
-        content={urlFor(settings.facebookCard.cy.image
+        content={urlFor(locale === "cy" && settings.facebookCard.cy.image
             ? settings.facebookCard.cy.image
             : settings.facebookCard.en.image)
           .auto("format")
           .width(1200)
           .height(630)
-          .quality(85)
+          .quality(100)
           .url()}
       />
       <meta name="twitter:creator" content="@artsed_wales" />
