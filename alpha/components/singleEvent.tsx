@@ -1,6 +1,7 @@
 
 import { FC } from "react"
 import { useRouter } from "next/router"
+import { pattern, urlFor } from "lib/utils"
 import Date from "components/date"
 import Link from "components/link"
 import {
@@ -8,7 +9,6 @@ import {
   DashedCircle,
   StripedCircle,
   Triange
-
 } from "components/icons/shapes"
 import {
   Bolt,
@@ -20,16 +20,12 @@ import {
 import { Event } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/events.module.scss"
-import p from "styles/patterns.module.scss"
 
 interface Props {
   event: Event
   idx: number
 }
 
-const patterns = [p.cubes, p.lines, p.circles, p.isometric, p.linesDiagonal]
-const images = ["head", "whale", "globe", "tree", "dance"]
-const imageClasses = [s.head, s.whale, s.globe, s.tree, s.dance]
 const shapes = [<DashedCircle />, , <Triange />, <StripedCircle />, <Circle />]
 const icons = [
   <Landmark />,
@@ -48,11 +44,15 @@ const SingleEvent: FC<Props> = ({ event, idx }) => {
         className={`${u.noUnderline}`}
         tabIndex={-1}
       >
-        <div className={`${s.eventImage} ${patterns[idx]}`}>
+        <div className={`${s.eventImage} ${pattern(event.pattern)}`}>
           {shapes[idx] && shapes[idx]}
           <img
-            className={`${u.absolute} ${imageClasses[idx]}`}
-            src={`/images/${images[idx]}.png`}
+            src={urlFor(event.imageOne)
+              .auto("format")
+              .quality(85)
+              .url()}
+            alt={event.title}
+            className={event.classOne}
           />
         </div>
       </Link>

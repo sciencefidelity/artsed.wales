@@ -2,6 +2,7 @@ import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "lib/sanityClient"
 import { LocaleString } from "lib/interfaces"
 import { Image } from "lib/interfaces"
+import p from "styles/patterns.module.scss"
 
 export const acronym = (str: string): string => {
   return str.split(" ").map(e => /[A-Z]/.test(e) ? e[0] : "").join("")
@@ -28,6 +29,45 @@ export const localize = (
   return locale === "cy" && content.cy
     ? content.cy
     : content.en
+}
+
+export const pattern = (pattern: string): string => {
+  switch (pattern) {
+  case "cubes":
+    return p.cubes
+  case "lines":
+    return p.lines
+  case "dots":
+    return p.dots
+  case "circles":
+    return p.circles
+  case "linesVertical":
+    return p.linesVertical
+  case "squares":
+    return p.squares
+  case "linesDiagonal":
+    return p.linesDiagonal
+  case "diagonal":
+    return p.diagonal
+  case "textbook":
+    return p.textbook
+  case "target":
+    return p.target
+  case "repeatingCircles":
+    return p.repeatingCircles
+  case "radial":
+    return p.radial
+  case "zigzag":
+    return p.zigzag
+  case "isometric":
+    return p.isometric
+  case "isometric3d":
+    return p.isometric3d
+  case "cross":
+    return p.cross
+  default:
+    return p.lines
+  }
 }
 
 export const subdir = (type: string): string => {

@@ -1,0 +1,88 @@
+@keyframes dance {
+  from {
+    transform: translate(-50px) rotate(-10deg);
+  }
+  to {
+    transform: translate(50px) rotate(10deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes tree {
+  from {
+    transform: scale(100%);
+  }
+  to {
+    transform: scale(120%);
+  }
+}
+
+@keyframes whale {
+  from {
+    transform: scale(-1, 1) rotate(0deg);
+  }
+  to {
+    transform: scale(-1.1, 1.1) rotate(20deg);
+  }
+}
+
+.dance,
+.head,
+.globe,
+.tree,
+.whale {
+  position: absolute;
+}
+
+.dance {
+  width: 400px;
+  transform: translate(-50px) rotate(-10deg);
+  filter:
+    drop-shadow(-2px -2px 0px rgba(0, 0, 0, 1))
+    drop-shadow(-2px 2px 0px rgba(0, 0, 0, 1))
+    drop-shadow(15px -4px 0px rgba(0, 0, 0, 1))
+    drop-shadow(15px -4px 0px rgba(255, 255, 255, 1));
+  left: 20%;
+  top: -7%;
+  animation: 30s ease-in-out infinite alternate dance;
+}
+
+
+.head {
+  width: 200px;
+  transform: rotate(0deg);
+  filter: drop-shadow(20px -20px 0px rgba(0, 0, 0, 1));
+  top: -10%;
+  animation: 300s linear infinite spin;
+}
+
+.globe {
+  width: 330px;
+  right: -13%;
+  top: -8.5%;
+  animation: 400s linear infinite reverse spin;
+}
+
+.tree {
+  width: 400px;
+  left: 20%;
+  top: 5%;
+  filter: brightness(1.3);
+  animation: 20s linear infinite alternate tree;
+}
+
+.whale {
+  width: 500px;
+  transform: scale(-1, 1) rotate(0deg);
+  right: 16%;
+  bottom: -2%;
+  animation: 40s ease-in-out infinite alternate whale;
+}

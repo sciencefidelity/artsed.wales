@@ -38,12 +38,18 @@ export interface Event extends SanityDocument {
   _type: "event"
   artform: Artform[]
   body: PortableText
+  briteLink: string
+  classOne: string
+  classTwo: string
   dateEnd: string
   dateStart: string
   facilitators: Staff[]
+  imageOne: Image
+  imageTwo: Image
   keystage: Keystage[]
   location: string
   longTitle: string
+  pattern: string
   price: number
   slug: string
   summary: string

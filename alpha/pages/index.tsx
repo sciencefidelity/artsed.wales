@@ -31,7 +31,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const [isCounting, setIsCounting] = useState(false)
-  const [autoResetKey, setAutoResetKey] = useState(0)
   const { locale } = useRouter()
   const {
     company,
@@ -49,9 +48,8 @@ const Home = ({ data }) => {
     settings: Settings
   }
 
-  const countUpSharedProps = {
+  const countUpProps = {
     isCounting,
-    autoResetKey,
     onComplete: () => setIsCounting(false)
   }
   return (
@@ -96,7 +94,7 @@ const Home = ({ data }) => {
                   <div className={`${s.engagementFigures}`} key={figure._key}>
                     <figure className={`${u.mono}`}>
                       <CountUp
-                        {...countUpSharedProps}
+                        {...countUpProps}
                         end={figure.count}
                         duration={3.2}
                       />
