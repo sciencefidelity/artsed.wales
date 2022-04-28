@@ -1,6 +1,15 @@
-import { FC } from "react"
+import { FC, ReactElement } from "react"
 import { useRouter } from "next/router"
 import { Settings } from "lib/interfaces"
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+  Paperclip,
+  Pinterest,
+  Twitter,
+  YouTube
+} from "components/icons/social"
 import s from "styles/layout.module.scss"
 import u from "styles/utils.module.scss"
 
@@ -10,18 +19,34 @@ interface Props {
 
 const SocialLinks: FC<Props> = ({ settings }) => {
   const { locale } = useRouter()
+
+  const icon = (network: string): ReactElement<any, any> => {
+    switch (network) {
+    case "facebook":
+      return <Facebook />
+    case "instagram":
+      return <Instagram />
+    case "linkedin":
+      return <LinkedIn />
+    case "pinterest":
+      return <Pinterest />
+    case "youtube":
+      return <YouTube />
+    case "twitter":
+      return <Twitter />
+    default:
+      return <Paperclip />
+    }
+  }
+
   return (
     <section className={`${s.socialLinks} ${u.uppercase}`}>
-      <div className={`${u.hidden} ${u.uppercase}`}>
-        {locale === "cy" ? "Dilynwch ni ar" : "Follow us on"}{": "}
-      </div>
       <ul className={`${s.socialLinksMenu} ${u.flex}`}>
-        <li className={`${u.block}`}>
-          {locale === "cy" ? "Dilynwch ni ar" : "Follow us on"}{": "}
-        </li>
         {settings.social.map(link =>
           <li key={link._key}>
-            <a href={link.url}>{link.name}</a>
+            <a href={link.url}>
+              <div  className={`${s.socialIcon}`}>{icon(link.name)}</div>
+            </a>
           </li>
         )}
       </ul>

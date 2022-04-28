@@ -176,6 +176,26 @@
   }
 }
 
+.socialIcon {
+  display: flex;
+  width: 65px;
+  height: 65px;
+  background-color: var(--paper-550);
+  border-radius: 100%;
+  place-items: center;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--paper-650);
+    transition: background-color 0.3s ease-in-out;
+  }
+  svg {
+    // width: 50%;
+    height: 50%;
+    margin: auto;
+    fill: var(--grey-000);
+  }
+}
+
 .footer {
   margin-block: 2rem;
   line-height: 1.3;
