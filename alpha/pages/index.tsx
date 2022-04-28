@@ -2,7 +2,6 @@ import { useState } from "react"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { CountUp } from "use-count-up"
-import VisibilitySensor from "react-visibility-sensor"
 import { Waypoint } from "react-waypoint"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
@@ -55,7 +54,6 @@ const Home = ({ data }) => {
     autoResetKey,
     onComplete: () => setIsCounting(false)
   }
-  console.log(isCounting)
   return (
     <Layout
       company={company}
