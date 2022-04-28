@@ -1,18 +1,19 @@
+import { useState } from "react"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
+import { CountUp } from "use-count-up"
+import VisibilitySensor from "react-visibility-sensor"
+import { Waypoint } from "react-waypoint"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import { localize } from "lib/utils"
-import Highlight from "components/icons/highlight"
 import Layout from "components/layout"
 import Localize from "components/localize"
-import Sidebar from "components/sidebar"
 import { indexQuery } from "lib/queries"
 import {
   Company,
   Engagement,
-  Event,
   Label,
   Navigation,
   Page,
@@ -30,11 +31,12 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home = ({ data }) => {
+  const [isCounting, setIsCounting] = useState(false)
+  const [autoResetKey, setAutoResetKey] = useState(0)
   const { locale } = useRouter()
   const {
     company,
     engagement,
-    events,
     labels,
     navigation,
     pages,
@@ -42,12 +44,18 @@ const Home = ({ data }) => {
   } = data as {
     company: Company
     engagement: Engagement
-    events: Event[]
     labels: Label[]
     navigation: Navigation
     pages: Page[]
     settings: Settings
   }
+
+  const countUpSharedProps = {
+    isCounting,
+    autoResetKey,
+    onComplete: () => setIsCounting(false)
+  }
+  console.log(isCounting)
   return (
     <Layout
       company={company}
@@ -83,19 +91,23 @@ const Home = ({ data }) => {
               />
             }
           </div>
+            <Waypoint onEnter={() => setIsCounting(true)} />
             {engagement.engagementFigure &&
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)"
-              }}>
-              {engagement.engagementFigure.map(figure =>
-                <div className={`${s.engagementFigures}`} key={figure._key}>
-                  <figure className={`${u.mono}`}>{figure.count}</figure>
-                  <h3 className={`${u.uppercase}`}>
-                    <Localize data={figure.title} />
-                  </h3>
-                </div>
-              )}
+              <div className={`${s.engagement} ${u.grid}`}>
+                {engagement.engagementFigure.map(figure =>
+                  <div className={`${s.engagementFigures}`} key={figure._key}>
+                    <figure className={`${u.mono}`}>
+                      <CountUp
+                        {...countUpSharedProps}
+                        end={figure.count}
+                        duration={3.2}
+                      />
+                    </figure>
+                    <h3 className={`${u.uppercase}`}>
+                      <Localize data={figure.title} />
+                    </h3>
+                  </div>
+                )}
               </div>
             }
             <hr />
