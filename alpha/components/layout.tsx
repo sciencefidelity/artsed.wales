@@ -5,13 +5,14 @@ import Header from "components/header"
 import Logos from "components/logos"
 import SignUp from "components/signUp"
 import SocialLinks from "components/socialLinks"
-import { Company, Label, Navigation, Settings } from "lib/interfaces"
+import { Company, HeadProps, Label, Navigation, Settings } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/layout.module.scss"
 
 interface Props {
   children: ReactNode
   company: Company
+  pageHead?: HeadProps
   labels: Label[]
   navigation: Navigation
   settings: Settings
@@ -20,13 +21,14 @@ interface Props {
 const Layout: FC<Props> = ({
   children,
   company,
+  pageHead,
   labels,
   navigation,
   settings
 }) => {
   return (
     <>
-      <BaseHead settings={settings} />
+      <BaseHead pageHead={pageHead} settings={settings} />
       <Header navigation={navigation} settings={settings} />
       <main className={`${s.main}`}>{children}</main>
       <section className={u.container}>

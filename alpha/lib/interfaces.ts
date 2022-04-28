@@ -43,17 +43,34 @@ export interface Event extends SanityDocument {
   classTwo: string
   dateEnd: string
   dateStart: string
+  facebook: SocialCard
   facilitators: Staff[]
   imageOne: Image
   imageTwo: Image
   keystage: Keystage[]
   location: string
   longTitle: string
+  meta: MetaData
   pattern: string
   price: number
   slug: string
   summary: string
   title: string
+  twitter: SocialCard
+}
+
+export interface HeadProps {
+  description: string
+  ogDescription: string
+  ogImage: Image
+  ogSiteName?: string
+  ogTitle: string
+  ogURL: string
+  title: string
+  twitterCreator?: string
+  twitterDescription: string
+  twitterImage: Image
+  twitterTitle: string
 }
 
 export interface Image {

@@ -32,7 +32,6 @@ import {
 } from "lib/interfaces"
 import s from "styles/event.module.scss"
 import u from "styles/utils.module.scss"
-import p from "styles/patterns.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(eventPathQuery)
@@ -84,9 +83,23 @@ const EventPage = ({ data }) => {
     settings: Settings
     labels: Label[]
   }
+
+  const pageHead = {
+    title: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.meta.title : event.meta.title,
+    description: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.meta.description : event.meta.description,
+    ogTitle: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.facebook.title : event.facebook.title,
+    ogDescription: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.facebook.description : event.facebook.description,
+    ogURL: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.meta.canonicalURL : event.meta.canonicalURL,
+    ogImage: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.facebook.image : event.facebook.image,
+    twitterTitle: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.twitter.title : event.twitter.title,
+    twitterDescription: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.twitter.description : event.twitter.description,
+    twitterImage: locale === "cy" && event.__i18n_refs ? event.__i18n_refs.twitter.image : event.twitter.image
+  }
+
   return (
     <Layout
       company={company}
+      pageHead={pageHead}
       labels={labels}
       navigation={navigation}
       settings={settings}

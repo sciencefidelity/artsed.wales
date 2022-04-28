@@ -13,9 +13,9 @@ const labels = `"labels": *[_type == "labelGroup" && ${omitDrafts}][0].labels`
 const metaFields = `canonicalURL, description, title`
 
 const seo = `
-  facebookCard{ ${socialFields} },
+  facebook{ ${socialFields} },
   meta{ ${metaFields} },
-  twitterCard{ ${socialFields} }
+  twitter{ ${socialFields} }
 `
 
 const artformFields = `__i18n_lang, _id, _type, description, ${slug}, title`

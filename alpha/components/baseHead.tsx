@@ -2,20 +2,21 @@ import { FC } from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { localize, urlFor } from "lib/utils"
-import { Settings } from "lib/interfaces"
+import { HeadProps, Settings } from "lib/interfaces"
 
 interface Props {
+  pageHead?: HeadProps
   settings: Settings
 }
 
-const BaseHead: FC<Props> = ({ settings }) => {
+const BaseHead: FC<Props> = ({ pageHead, settings }) => {
   const { locale } = useRouter()
   return (
     <Head>
-      <title>{localize(settings.siteName, locale)}</title>
+      <title>{pageHead.title ? pageHead.title : localize(settings.siteName, locale)}</title>
       <meta
         name="Description"
-        content={localize(settings.siteDescription, locale)}
+        content={pageHead.description ? pageHead.description : localize(settings.siteDescription, locale)}
       />
       <meta name="keywords" content="" />
       <link
@@ -39,32 +40,36 @@ const BaseHead: FC<Props> = ({ settings }) => {
       {/* Facebook */}
       <meta
         property="og:title"
-        content={locale === "cy" && settings.facebookCard.cy.title
-          ? settings.facebookCard.cy.title
-          : settings.facebookCard.en.title}
+        content={pageHead.ogTitle ? pageHead.ogTitle :
+          (locale === "cy" && settings.facebookCard.cy.title
+            ? settings.facebookCard.cy.title
+            : settings.facebookCard.en.title)}
       />
       <meta
         property="og:description"
-        content={locale === "cy" && settings.facebookCard.cy.description
-          ? settings.facebookCard.cy.description
-          : settings.facebookCard.en.description}
+        content={pageHead.ogDescription ? pageHead.ogDescription :
+          locale === "cy" && settings.facebookCard.cy.description
+            ? settings.facebookCard.cy.description
+            : settings.facebookCard.en.description}
       />
       <meta
         property="og:url"
-        content={locale === "cy" && settings.meta.cy.canonicalURL
-          ? settings.meta.cy.canonicalURL
-          : settings.meta.en.canonicalURL}
+        content={pageHead.ogURL ? pageHead.ogURL :
+          (locale === "cy" && settings.meta.cy.canonicalURL
+            ? settings.meta.cy.canonicalURL
+            : settings.meta.en.canonicalURL)}
       />
       <meta
         property="og:image"
-        content={urlFor(locale === "cy" && settings.facebookCard.cy.image
-            ? settings.facebookCard.cy.image
-            : settings.facebookCard.en.image)
-          .auto("format")
-          .width(1200)
-          .height(630)
-          .quality(100)
-          .url()}
+        content={urlFor(pageHead.ogImage ? pageHead.ogImage :
+          (locale === "cy" && settings.facebookCard.cy.image
+              ? settings.facebookCard.cy.image
+              : settings.facebookCard.en.image))
+            .auto("format")
+            .width(1200)
+            .height(630)
+            .quality(100)
+            .url()}
         />
       <meta
         property="og:site_name"
@@ -76,32 +81,36 @@ const BaseHead: FC<Props> = ({ settings }) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:title"
-        content={locale === "cy" && settings.twitterCard.cy.title
-          ? settings.twitterCard.cy.title
-          : settings.twitterCard.en.title}
+        content={pageHead.twitterTitle ? pageHead.twitterTitle :
+          (locale === "cy" && settings.twitterCard.cy.title
+            ? settings.twitterCard.cy.title
+            : settings.twitterCard.en.title)}
       />
       <meta
         name="twitter:description"
-        content={locale === "cy" && settings.facebookCard.cy.description
-          ? settings.facebookCard.cy.description
-          : settings.facebookCard.en.description}
+        content={pageHead.twitterDescription ? pageHead.twitterDescription :
+          (locale === "cy" && settings.twitterCard.cy.description
+            ? settings.twitterCard.cy.description
+            : settings.twitterCard.en.description)}
       />
       <meta
         name="twitter:site"
-        content={locale === "cy" && settings.meta.cy.canonicalURL
-          ? settings.meta.cy.canonicalURL
-          : settings.meta.en.canonicalURL}
+        content={pageHead.ogURL ? pageHead.ogURL :
+          (locale === "cy" && settings.meta.cy.canonicalURL
+            ? settings.meta.cy.canonicalURL
+            : settings.meta.en.canonicalURL)}
       />
       <meta
         name="twitter:image"
-        content={urlFor(locale === "cy" && settings.facebookCard.cy.image
-            ? settings.facebookCard.cy.image
-            : settings.facebookCard.en.image)
-          .auto("format")
-          .width(1200)
-          .height(630)
-          .quality(100)
-          .url()}
+        content={urlFor(pageHead.twitterImage ? pageHead.twitterImage :
+          (locale === "cy" && settings.twitterCard.cy.image
+              ? settings.twitterCard.cy.image
+              : settings.twitterCard.en.image))
+            .auto("format")
+            .width(1200)
+            .height(628)
+            .quality(100)
+            .url()}
       />
       <meta name="twitter:creator" content="@artsed_wales" />
 
