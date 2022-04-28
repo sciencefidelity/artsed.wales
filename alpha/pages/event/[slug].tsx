@@ -115,7 +115,9 @@ const EventPage = ({ data }) => {
                   : event.body}
                 components={components}
               />
-              {event.facilitators && <h3><Localize data={labels[7].text} /></h3>}
+              {event.facilitators &&
+                <h3><Localize data={labels[7].text} /></h3>
+              }
               <p>
                 {event.facilitators && event.facilitators.map(facilitator =>
                   <Fragment key={facilitator._id}>
@@ -131,9 +133,7 @@ const EventPage = ({ data }) => {
                           <strong>
                             <Link
                               href={`/${facilitator._type}/${facilitator.slug}`}
-                            >
-                              {match}
-                            </Link>
+                            >{match}</Link>
                           </strong>
                       )}
                     </span>
@@ -176,7 +176,8 @@ const EventPage = ({ data }) => {
             </div>
           </section>
           <Sidebar
-            events={events.filter(e => e.title !== event.title)}
+            // events={events.filter(e => e.title !== event.title)}
+            events={events}
             title={labels[10].text}
           />
         </div>

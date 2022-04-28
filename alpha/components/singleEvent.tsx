@@ -1,9 +1,21 @@
+
 import { FC } from "react"
 import { useRouter } from "next/router"
 import Date from "components/date"
 import Link from "components/link"
-import { Circle, DashedCircle, StripedCircle, Triange } from "components/icons/shapes"
-import { Bolt, Landmark, MasksTheatre, Pencil, TreeCity } from "components/icons/icons"
+import {
+  Circle,
+  DashedCircle,
+  StripedCircle,
+  Triange
+
+} from "components/icons/shapes"
+import {
+  Bolt,
+  Landmark,
+  MasksTheatre,
+  Pencil,
+  TreeCity } from "components/icons/icons"
 import { Event } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/events.module.scss"
