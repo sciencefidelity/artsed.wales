@@ -15,6 +15,7 @@ import reactStringReplace from "react-string-replace"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
+import { pattern } from "lib/utils"
 import Layout from "components/layout"
 import EventDate from "components/eventDate"
 import Link from "components/link"
@@ -90,7 +91,7 @@ const EventPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div className={`${s.hero} ${p.cubes}`}>
+      <div className={`${s.hero} ${pattern(event.pattern)}`}>
         <h1
           className={`${s.heroText} ${u.mono}`}
           dangerouslySetInnerHTML={{
@@ -121,22 +122,20 @@ const EventPage = ({ data }) => {
               <p>
                 {event.facilitators && event.facilitators.map(facilitator =>
                   <Fragment key={facilitator._id}>
-                    <span>
-                      {reactStringReplace(
-                        locale === "cy" && facilitator.__i18n_refs.job
-                          ? facilitator.__i18n_refs.job
-                          : facilitator.job
-                            ? facilitator.job
-                            : facilitator.title,
-                        facilitator.title,
-                        match =>
-                          <strong>
-                            <Link
-                              href={`/${facilitator._type}/${facilitator.slug}`}
-                            >{match}</Link>
-                          </strong>
-                      )}
-                    </span>
+                    {reactStringReplace(
+                      locale === "cy" && facilitator.__i18n_refs.job
+                        ? facilitator.__i18n_refs.job
+                        : facilitator.job
+                          ? facilitator.job
+                          : facilitator.title,
+                      facilitator.title,
+                      match =>
+                        <strong>
+                          <Link
+                            href={`/${facilitator._type}/${facilitator.slug}`}
+                          >{match}</Link>
+                        </strong>
+                    )}
                     <br />
                   </Fragment>
                 )}
