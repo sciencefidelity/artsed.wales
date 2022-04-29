@@ -282,9 +282,6 @@ export default {
       title: 'Hero one',
       type: 'image',
       description: 'Cutout image for animation',
-      options: {
-        hotspot: true
-      },
       group: 'design'
     },
     {
