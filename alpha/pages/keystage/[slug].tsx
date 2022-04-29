@@ -27,6 +27,7 @@ import {
   Settings
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
+import s from "styles/keystage.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(keystagePathQuery)
@@ -117,63 +118,66 @@ const KeystagePage = ({ data }) => {
       pageHead={pageHead}
       settings={settings}
     >
-      <div
-        className={`${u.container}`}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "3fr 1fr"
-        }}
-      >
-        <section style={{marginRight: "2rem"}}>
-          {keystage.title &&
-            <h1>
-              {locale === "cy" && keystage.__i18n_refs
-                ? keystage.__i18n_refs.title
-                : keystage.title}
-            </h1>
-          }
-          {keystage.description &&
-            <p>
-              {locale === "cy" && keystage.__i18n_refs
-                ? keystage.__i18n_refs.description
-                : keystage.description}
-            </p>
-          }
-          {labels[12] &&
-            <h2>
-              <Localize data={labels[12].text} />{" "}
-              {locale === "cy" && keystage.__i18n_refs
-                ? keystage.__i18n_refs.title
-                : keystage.title}
-            </h2>
-          }
-          <div>
-            {keystage.events.map(event =>
-              <div key={event._id}>
-                {event.dateStart &&
-                  <Date date={event.dateStart} />
-                }
-                {event.title &&
-                  <h2 style={{margin: 0}}>
-                    <Link href={`/${event._type}/${event.slug}`}>
-                      {locale === "cy" && event.__i18n_refs
-                        ? event.__i18n_refs.title
-                        : event.title}
-                    </Link>
-                  </h2>
-                }
-                {event.summary &&
-                  <p>
-                    {locale === "cy" && event.__i18n_refs
-                      ? event.__i18n_refs.summary
-                      : event.summary}
-                  </p>
-                }
-              </div>
-            )}
-          </div>
-        </section>
-        <Sidebar events={events} title={labels[10].text} />
+      <div className={`${u.container}`}>
+        <div className={`${s.keystage} ${u.grid}`}>
+          <section className={`${s.keystageContent}`}>
+            {keystage.title &&
+              <h1 className={`${u.mono} ${u.bold}`}>
+                {locale === "cy" && keystage.__i18n_refs
+                  ? keystage.__i18n_refs.title
+                  : keystage.title}
+              </h1>
+            }
+            {keystage.description &&
+              <article className={`${s.keystageBody}`}>
+                <p>
+                  {locale === "cy" && keystage.__i18n_refs
+                    ? keystage.__i18n_refs.description
+                    : keystage.description}
+                </p>
+              </article>
+            }
+            {keystage.events.length > 0 && labels[12] &&
+              <>
+                <h2 className={`${u.uppercase}`}>
+                  <Localize data={labels[12].text} />{" "}
+                  {locale === "cy" && keystage.__i18n_refs
+                    ? keystage.__i18n_refs.title
+                    : keystage.title}
+                </h2>
+                <div>
+                  {keystage.events.map(event =>
+                    <div className={`${s.event}`} key={event._id}>
+                      {event.dateStart &&
+                        <Date date={event.dateStart} />
+                      }
+                      {event.title &&
+                        <h3 className={`
+                          ${s.keystageEventsHeading} ${u.mono} ${u.bold}
+                        `}>
+                          <Link href={`/${event._type}/${event.slug}`}>
+                            {locale === "cy" && event.__i18n_refs
+                              ? event.__i18n_refs.title
+                              : event.title}
+                          </Link>
+                        </h3>
+                      }
+                      {event.summary &&
+                        <p>
+                          {locale === "cy" && event.__i18n_refs
+                            ? event.__i18n_refs.summary
+                            : event.summary}
+                        </p>
+                      }
+                    </div>
+                  )}
+                </div>
+              </>
+            }
+          </section>
+          <Sidebar events={events} title={labels[10].text} />
+        </div>
+        <hr />
       </div>
     </Layout>
   )

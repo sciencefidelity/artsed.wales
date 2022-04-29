@@ -169,7 +169,9 @@ const StaffPage = ({ data }) => {
             }
             {staff.events.length > 0 && labels[11] &&
               <>
-                <h2 className={`${u.uppercase}`}><Localize data={labels[11].text} /></h2>
+                <h2 className={`${u.uppercase}`}>
+                  <Localize data={labels[11].text} />
+                </h2>
                 <div>
                   {staff.events.map(event =>
                     <div key={event._id}>
@@ -177,7 +179,9 @@ const StaffPage = ({ data }) => {
                         <Date date={event.dateStart} />
                       }
                       {event.title &&
-                        <h3 className={`${s.staffEventsHeading} ${u.mono} ${u.bold}`}>
+                        <h3 className={`
+                          ${s.staffEventsHeading} ${u.mono} ${u.bold}
+                        `}>
                           <Link href={`/${event._type}/${event.slug}`}>
                             {locale === "cy" && event.__i18n_refs
                               ? event.__i18n_refs.title
