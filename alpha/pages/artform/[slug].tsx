@@ -27,6 +27,7 @@ import {
   Settings
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
+import s from "styles/artform.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(artformPathQuery)
@@ -80,15 +81,33 @@ const ArtformPage = ({ data }) => {
   }
 
   const pageHead = {
-    title: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.meta.title : artform.meta?.title,
-    description: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.meta.description : artform.meta?.description,
-    ogTitle: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.facebook.title : artform.facebook?.title,
-    ogDescription: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.facebook.description : artform.facebook?.description,
-    ogURL: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.meta.canonicalURL : artform.meta?.canonicalURL,
-    ogImage: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.facebook.image : artform.facebook?.image,
-    twitterTitle: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.twitter.title : artform.twitter?.title,
-    twitterDescription: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.twitter.description : artform.twitter?.description,
-    twitterImage: locale === "cy" && artform.__i18n_refs ? artform.__i18n_refs.twitter.image : artform.twitter?.image
+    title: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.meta?.title
+      : artform.meta?.title,
+    description: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.meta?.description
+      : artform.meta?.description,
+    ogTitle: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.facebook?.title
+      : artform.facebook?.title,
+    ogDescription: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.facebook?.description
+      : artform.facebook?.description,
+    ogURL: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.meta?.canonicalURL
+      : artform.meta?.canonicalURL,
+    ogImage: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.facebook?.image
+      : artform.facebook?.image,
+    twitterTitle: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.twitter?.title
+      : artform.twitter?.title,
+    twitterDescription: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.twitter?.description
+      : artform.twitter?.description,
+    twitterImage: locale === "cy" && artform.__i18n_refs
+      ? artform.__i18n_refs.twitter?.image
+      : artform.twitter?.image
   }
 
   return (
@@ -99,65 +118,66 @@ const ArtformPage = ({ data }) => {
       pageHead={pageHead}
       settings={settings}
     >
-      <div
-        className={`${u.container}`}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "3fr 1fr"
-        }}
-      >
-        <section style={{marginRight: "2rem"}}>
-          {artform.title &&
-            <h1>
-              {locale === "cy" && artform.__i18n_refs
-                ? artform.__i18n_refs.title
-                : artform.title}
-            </h1>
-          }
-          {artform.description &&
-            <p>
-              {locale === "cy" && artform.__i18n_refs
-                ? artform.__i18n_refs.description
-                : artform.description}
-            </p>
-          }
-          {artform.events[0] && labels[12] &&
-            <>
-              <h2>
-                <Localize data={labels[12].text} />{" "}
+      <div className={`${u.container}`}>
+        <div className={`${s.artform} ${u.grid}`}>
+          <section className={`${s.artformContent}`}>
+            {artform.title &&
+              <h1 className={`${u.mono} ${u.bold}`}>
                 {locale === "cy" && artform.__i18n_refs
                   ? artform.__i18n_refs.title
                   : artform.title}
-              </h2>
-              <div>
-                {artform.events.map(event =>
-                  <div key={event._id}>
-                    {event.dateStart &&
-                      <Date date={event.dateStart} />
-                    }
-                    {event.title &&
-                      <h2 style={{margin: 0}}>
-                        <Link href={`/${event._type}/${event.slug}`}>
+              </h1>
+            }
+            {artform.description &&
+              <article className={`${s.artformBody}`}>
+                <p>
+                  {locale === "cy" && artform.__i18n_refs
+                    ? artform.__i18n_refs.description
+                    : artform.description}
+                </p>
+              </article>
+            }
+            {artform.events.length > 0 && labels[12] &&
+              <>
+                <h2 className={`${u.uppercase}`}>
+                  <Localize data={labels[12].text} />{" "}
+                  {locale === "cy" && artform.__i18n_refs
+                    ? artform.__i18n_refs.title
+                    : artform.title}
+                </h2>
+                <div>
+                  {artform.events.map(event =>
+                    <div  className={`${s.event}`} key={event._id}>
+                      {event.dateStart &&
+                        <Date date={event.dateStart} />
+                      }
+                      {event.title &&
+                        <h3 className={`
+                          ${s.artformEventsHeading} ${u.mono} ${u.bold}
+                        `}>
+                          <Link href={`/${event._type}/${event.slug}`}>
+                            {locale === "cy" && event.__i18n_refs
+                              ? event.__i18n_refs.title
+                              : event.title}
+                          </Link>
+                        </h3>
+                      }
+                      {event.summary &&
+                        <p>
                           {locale === "cy" && event.__i18n_refs
-                            ? event.__i18n_refs.title
-                            : event.title}
-                        </Link>
-                      </h2>
-                    }
-                    {event.summary &&
-                      <p>
-                        {locale === "cy" && event.__i18n_refs
-                          ? event.__i18n_refs.summary
-                          : event.summary}
-                      </p>
-                    }
-                  </div>
-                )}
-              </div>
-            </>
-          }
-        </section>
-        <Sidebar events={events} title={labels[10].text} />
+                            ? event.__i18n_refs.summary
+                            : event.summary}
+                        </p>
+                      }
+                    </div>
+                  )}
+                </div>
+              </>
+            }
+          </section>
+          <Sidebar events={events} title={labels[10].text} />
+        </div>
+        <hr />
       </div>
     </Layout>
   )

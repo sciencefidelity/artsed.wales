@@ -1,0 +1,47 @@
+.artform {
+  grid-template-columns: 3fr 1fr;
+}
+
+.artformContent {
+  margin-top: 7rem;
+  margin-right: 2rem;
+  h1 {
+    color: var(--grey-650);
+    font-size: 3.4rem;
+    margin-bottom: 3rem;
+  }
+  h2 {
+    font-size: 2.1rem;
+    color: var(--grey-650);
+    margin-bottom: 1rem;
+  }
+  time {
+    text-transform: uppercase;
+  }
+}
+
+.artformBody {
+  width: 710px;
+  margin-bottom: 4rem;
+}
+
+.event {
+  margin-bottom: 2rem;
+}
+
+.artformEventsHeading {
+  font-size: 2.3rem;
+  margin-block: -0.3rem 0.5rem;
+  a {
+    text-decoration-line: none;
+    color: var(--grey-650);
+    &:hover {
+      color: var(--grey-850);
+    }
+  }
+}
+
+.artformSidebar {
+  margin-top: 7rem;
+}
+
