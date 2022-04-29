@@ -3,13 +3,7 @@ import { useRouter } from "next/router"
 import Date from "components/date"
 import Link from "components/link"
 import Localize from "components/localize"
-import {
-  Bolt,
-  Landmark,
-  MasksTheatre,
-  Pencil,
-  TreeCity
-} from "components/icons/icons"
+import { Icon } from "components/icons/icon"
 import { Event, LocaleString } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/layout.module.scss"
@@ -18,14 +12,6 @@ interface Props {
   events: Event[]
   title: LocaleString
 }
-
-const icons = [
-  <Landmark />,
-  <Pencil />,
-  <MasksTheatre />,
-  <TreeCity />,
-  <Bolt />
-]
 
 const Sidebar: FC<Props> = ({ events, title }) => {
   const { locale } = useRouter()
@@ -39,7 +25,7 @@ const Sidebar: FC<Props> = ({ events, title }) => {
           <li key={e._id} className={`${s.sidebarItem}`}>
             <div className={`${u.flex}`}>
               <div className={`${s.sidebarIcon}`}>
-                <Link href={`/${e._type}/${e.slug}`}>{icons[idx]}</Link>
+                <Link href={`/${e._type}/${e.slug}`}><Icon name={e.icon} /></Link>
               </div>
               <div>
                 <Date date={e.dateStart} /><br />

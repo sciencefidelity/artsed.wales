@@ -51,8 +51,8 @@ const pagePostFields = `
 
 const eventFields = `
   __i18n_lang, _id, _type, ${body}, briteLink, classOne, ClassTwo,
-  dateEnd, dateStart, imageOne, imageTwo, location, longTitle, pattern,
-  price, ${seo}, ${slug}, summary, title,
+  dateEnd, dateStart, icon, imageOne, imageTwo, location, longTitle,
+  pattern, price, ${seo}, ${slug}, summary, title,
   artform[]->{ ${artformFields}, __i18n_refs[0]->{ ${artformFields} } },
   facilitators[]->{ ${staffFields}, __i18n_refs[0]->{ ${staffFields} } },
   keystage[]->{ ${keystageFields}, __i18n_refs[0]->{ ${keystageFields} } }

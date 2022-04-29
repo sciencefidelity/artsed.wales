@@ -272,6 +272,12 @@ export default {
       group: 'facebook'
     },
     {
+      name: 'icon',
+      title: 'Icon',
+      type: 'string',
+      group: 'design'
+    },
+    {
       name: 'imageOne',
       title: 'Hero one',
       type: 'image',
