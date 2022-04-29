@@ -110,22 +110,27 @@ const About = ({ data }) => {
             <ul className={`${s.aboutCoordinators}`}>
               {coordinatorsSorted.map(coordinator =>
                 <li key={coordinator._id} className={`${u.flex}`}>
-                  <div className={`${s.avatar} ${u.grid}`}>
-                    {coordinator.avatar &&
-                      <Image
-                        image={coordinator.avatar}
-                        alt={coordinator.title}
-                        height={200}
-                        width={200}
-                        lazy={true}
-                      />
-                    }
-                    {!coordinator.avatar &&
-                      <div className={`${s.initials} ${u.mono} ${u.bold}`}>
-                        {acronym(coordinator.title)}
-                      </div>
-                    }
-                  </div>
+                  <Link
+                    href={`/${coordinator._type}/${coordinator.slug}`}
+                    className={`${u.noUnderline}`}
+                  >
+                    <div className={`${s.avatar} ${u.grid}`}>
+                      {coordinator.avatar &&
+                        <Image
+                          image={coordinator.avatar}
+                          alt={coordinator.title}
+                          height={200}
+                          width={200}
+                          lazy={true}
+                        />
+                      }
+                      {!coordinator.avatar &&
+                        <div className={`${s.initials} ${u.mono} ${u.bold}`}>
+                          {acronym(coordinator.title)}
+                        </div>
+                      }
+                    </div>
+                  </Link>
                   <div>
                     <h3>
                       <Link
@@ -164,22 +169,27 @@ const About = ({ data }) => {
             <ul className={`${s.aboutCoordinators}`}>
               {trusteesSorted.map(trustee => trustee.role.includes("Chair") &&
                 <li key={trustee._id} className={`${u.flex}`}>
-                  <div className={`${s.avatar} ${u.grid}`}>
-                    {trustee.avatar &&
-                      <Image
-                        image={trustee.avatar}
-                        alt={trustee.title}
-                        height={200}
-                        width={200}
-                        lazy={true}
-                      />
-                    }
-                    {!trustee.avatar &&
-                      <div className={`${s.initials} ${u.mono} ${u.bold}`}>
-                        {acronym(trustee.title)}
-                      </div>
-                    }
-                  </div>
+                  <Link
+                    href={`/${trustee._type}/${trustee.slug}`}
+                    className={`${u.noUnderline}`}
+                  >
+                    <div className={`${s.avatar} ${u.grid}`}>
+                      {trustee.avatar &&
+                        <Image
+                          image={trustee.avatar}
+                          alt={trustee.title}
+                          height={200}
+                          width={200}
+                          lazy={true}
+                        />
+                      }
+                      {!trustee.avatar &&
+                        <div className={`${s.initials} ${u.mono} ${u.bold}`}>
+                          {acronym(trustee.title)}
+                        </div>
+                      }
+                    </div>
+                  </Link>
                   <div>
                     <h3>
                       <Link
