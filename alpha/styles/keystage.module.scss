@@ -6,14 +6,14 @@
   margin-top: 7rem;
   margin-right: 2rem;
   h1 {
-    color: var(--grey-650);
-    font-size: 3.4rem;
     margin-bottom: 3rem;
+    font-size: 3.4rem;
+    color: var(--grey-650);
   }
   h2 {
+    margin-bottom: 1rem;
     font-size: 2.1rem;
     color: var(--grey-650);
-    margin-bottom: 1rem;
   }
   time {
     text-transform: uppercase;
@@ -30,11 +30,11 @@
 }
 
 .keystageEventsHeading {
-  font-size: 2.3rem;
   margin-block: -0.3rem 0.5rem;
+  font-size: 2.3rem;
   a {
-    text-decoration-line: none;
     color: var(--grey-650);
+    text-decoration-line: none;
     &:hover {
       color: var(--grey-850);
     }
@@ -44,4 +44,3 @@
 .keystageSidebar {
   margin-top: 7rem;
 }
-

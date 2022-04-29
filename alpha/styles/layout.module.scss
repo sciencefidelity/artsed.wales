@@ -1,17 +1,15 @@
 @use '/styles/base/breakpoints' as b;
 
 .header {
-  padding-block: 1rem;
-  // border-bottom: 4px solid var(--grey-450);
-  // margin-bottom: 2rem;
   position: fixed;
-  z-index: 10;
   inset: 0 0 auto;
+  z-index: 10;
+  padding-block: 1rem;
   background-color: var(--page-bg);
-  box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 19px 0 rgba(0, 0, 0, 16%);
   a {
-    text-decoration-line: none;
     color: var(--grey-700);
+    text-decoration-line: none;
   }
 }
 
@@ -19,6 +17,94 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
+}
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+  fill: var(--grey-900);
+}
+
+.logoText {
+  display: inline-block;
+  font-size: 2.2rem;
+  &:first-child {
+    border-bottom: 3px solid var(--grey-700);
+  }
+}
+
+.main {
+  margin-top: 7rem;
+}
+
+.signUp {
+  width: 800px;
+  margin-inline: auto;
+  margin-bottom: 5rem;
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+.signUpForm {
+  position: relative;
+  margin-block: 1rem 2.5rem;
+}
+
+.signUpInput {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--grey-750);
+  border-bottom: 3px solid var(--grey-750);
+}
+
+.signUpSend {
+  position: absolute;
+  right: 0.7%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--grey-450);
+  transition: color 0.3s ease-in-out;
+  &:hover,
+  &:focus {
+    color: var(--grey-750);
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+.sidebar {
+  margin-top: 7rem;
+}
+
+.sidebarItem {
+  margin-bottom: 2.5rem;
+  li {
+    list-style-type: none;
+  }
+  time {
+    display: block;
+    padding: 0;
+    margin-bottom: -2.3rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+  h3 {
+    margin-bottom: 0.7rem;
+    font-size: 1.6rem;
+    a {
+      color: var(--grey-750);
+      text-decoration-line: none;
+      transition: color 0.3s ease-in-out;
+      &:hover {
+        color: var(--grey-850);
+        transition: color 0.3s ease-in-out;
+      }
+    }
+  }
+  p {
+    font-size: 1.3rem;
+  }
 }
 
 .navLeft,
@@ -47,107 +133,15 @@
   }
 }
 
-.logo {
-  width: 5rem;
-  height: 5rem;
-  fill: var(--grey-900);
-}
-
-.logoText {
-  display: inline-block;
-  font-size: 2.2rem;
-  &:first-child {
-    border-bottom: 3px solid var(--grey-700);
-  }
-}
-
-.main {
-  margin-top: 7rem;
-}
-
-.signUp {
-  margin-bottom: 5rem;
-  width: 800px;
-  margin-inline: auto;
-  p {
-    font-size: 1.4rem;
-  }
-}
-
-.signUpForm {
-  margin-block: 1rem 2.5rem;
-  position: relative;
-}
-
-.signUpInput {
-  border-bottom: 3px solid var(--grey-750);
-  width: 100%;
-  font-size: 1.6rem;
-  color: var(--grey-750);
-  font-weight: 500;
-}
-
-.signUpSend {
-  position: absolute;
-  right: 0.7%;
-  font-weight: 500;
-  font-size: 1.6rem;
-  color: var(--grey-450);
-  transition: color 0.3s ease-in-out;
-  &:hover,
-  &:focus {
-    color: var(--grey-750);
-    transition: color 0.3s ease-in-out;
-  }
-}
-
-.sidebar {
-  margin-top: 7rem;
-}
-
-.sidebarItem {
-  margin-bottom: 2.5rem;
-  li {
-    list-style-type: none;
-  }
-  time {
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    display: block;
-    margin-bottom: -2.3rem;
-    padding: 0;
-  }
-  h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.7rem;
-    a {
-      text-decoration-line: none;
-      // background-image: url("/images/em-heading.svg");
-      // background-size: 107%;
-      // background-position: center;
-      // background-repeat: no-repeat;
-      color: var(--grey-750);
-      transition: color 0.3s ease-in-out;
-      &:hover {
-        color: var(--grey-850);
-        transition: color 0.3s ease-in-out;
-      }
-    }
-  }
-  p {
-    font-size: 1.3rem;
-  }
-}
-
 .sidebarIcon {
   display: flex;
-  height: 40px;
-  width: 40px;
-  background-color: var(--grey-650);
-  transition: background-color 0.3s ease-in-out;
-  margin-right: 0.8rem;
-  border-radius: 100%;
   place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 0.8rem;
+  background-color: var(--grey-650);
+  border-radius: 100%;
+  transition: background-color 0.3s ease-in-out;
   &:hover {
     background-color: var(--grey-750);
     transition: background-color 0.3s ease-in-out;
@@ -160,20 +154,14 @@
 }
 
 .sidebarHeading {
-  font-size: 2rem;
   margin-bottom: 2rem;
+  font-size: 2rem;
   color: var(--grey-650);
 }
 
-// .signUpText {
-//   width: 90%;
-//   margin-inline: auto;
-// }
-
 .logos {
-  // width: 100%;
-  margin-block: 4rem 5rem;
   justify-content: space-between;
+  margin-block: 4rem 5rem;
 }
 
 .acwLogo,
@@ -190,13 +178,13 @@
 }
 
 .socialLinksMenu {
-  text-align: center;
   gap: 2rem;
+  text-align: center;
   a {
     color: var(--grey-650);
+    text-decoration-line: none;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
-    text-decoration-line: none;
     &:hover {
       color: var(--grey-750);
       opacity: 0.8;
@@ -207,11 +195,11 @@
 
 .socialIcon {
   display: flex;
+  place-items: center;
   width: 55px;
   height: 55px;
   background-color: var(--grey-550);
   border-radius: 100%;
-  place-items: center;
   transition: background-color 0.3s ease-in-out;
   &:hover {
     background-color: var(--grey-650);
@@ -225,13 +213,13 @@
 }
 
 .footer {
+  grid-template-columns: repeat(2, 1fr);
   margin-block: 2rem;
   line-height: 1.3;
-  grid-template-columns: repeat(2, 1fr);
   a {
     color: var(--grey-650);
-    transition: color 0.3s ease-in-out;
     text-decoration-line: none;
+    transition: color 0.3s ease-in-out;
     &:hover {
       color: var(--grey-750);
       transition: color 0.3s ease-in-out;

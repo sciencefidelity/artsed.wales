@@ -6,17 +6,17 @@
   margin-top: 7rem;
   margin-right: 2rem;
   h1 {
-    color: var(--grey-650);
-    font-size: 3.4rem;
     margin-top: -0.6rem;
+    font-size: 3.4rem;
+    color: var(--grey-650);
   }
   p {
     margin-bottom: 4rem;
   }
   h2 {
+    margin-bottom: 1rem;
     font-size: 2.1rem;
     color: var(--grey-650);
-    margin-bottom: 1rem;
   }
   time {
     text-transform: uppercase;
@@ -30,18 +30,17 @@
 
 .staffRoles {
   font-size: 1.3rem;
-  // margin-bottom: -0.7rem;
 }
 
 .avatar {
   width: 120px;
   height: 120px;
   aspect-ratio: 1 / 1;
-  background-color: var(--grey-650);
   margin-right: 2rem;
-  border-radius: 100%;
-  border: 1px solid var(--grey-650);
+  background-color: var(--grey-650);
   filter: grayscale(0.25);
+  border: 1px solid var(--grey-650);
+  border-radius: 100%;
   transition: filter 0.3s ease-in-out;
   img {
     border-radius: 100%;
@@ -49,10 +48,10 @@
 }
 
 .initials {
+  place-self: center;
   font-size: 2.2rem;
   color: var(--grey-000);
   text-align: center;
-  place-self: center;
 }
 
 .staffBody {
@@ -60,11 +59,11 @@
 }
 
 .staffEventsHeading {
-  font-size: 2.3rem;
   margin-block: -0.3rem 0.5rem;
+  font-size: 2.3rem;
   a {
-    text-decoration-line: none;
     color: var(--grey-650);
+    text-decoration-line: none;
     &:hover {
       color: var(--grey-850);
     }
@@ -74,4 +73,3 @@
 .staffSidebar {
   margin-top: 7rem;
 }
-

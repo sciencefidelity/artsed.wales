@@ -105,9 +105,9 @@ const About = ({ data }) => {
               {/* <Venn /> */}
               <div className={`${s.aboutBody}`}>
                 <PortableText
-                  value={locale === "cy" && pages[0].__i18n_refs
-                    ? pages[0].__i18n_refs.body
-                    : pages[0].body}
+                  value={locale === "cy" && pages[1].__i18n_refs
+                    ? pages[1].__i18n_refs.body
+                    : pages[1].body}
                   components={components}
                 />
               </div>

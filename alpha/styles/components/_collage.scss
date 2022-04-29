@@ -43,46 +43,45 @@
 }
 
 .dance {
-  width: 400px;
-  transform: translate(-50px) rotate(-10deg);
-  filter:
-    drop-shadow(-2px -2px 0px rgba(0, 0, 0, 1))
-    drop-shadow(-2px 2px 0px rgba(0, 0, 0, 1))
-    drop-shadow(15px -4px 0px rgba(0, 0, 0, 1))
-    drop-shadow(15px -4px 0px rgba(255, 255, 255, 1));
-  left: 20%;
   top: -7%;
+  left: 20%;
+  width: 400px;
+  filter:
+    drop-shadow(-2px -2px 0 rgba(0, 0, 0, 100%))
+    drop-shadow(-2px 2px 0 rgba(0, 0, 0, 100%))
+    drop-shadow(15px -4px 0 rgba(0, 0, 0, 100%))
+    drop-shadow(15px -4px 0 rgba(255, 255, 255, 100%));
+  transform: translate(-50px) rotate(-10deg);
   animation: 30s ease-in-out infinite alternate dance;
 }
 
-
 .head {
-  width: 200px;
-  transform: rotate(0deg);
-  filter: drop-shadow(20px -20px 0px rgba(0, 0, 0, 1));
   top: -10%;
+  width: 200px;
+  filter: drop-shadow(20px -20px 0 rgba(0, 0, 0, 100%));
+  transform: rotate(0deg);
   animation: 300s linear infinite spin;
 }
 
 .globe {
-  width: 330px;
-  right: -13%;
   top: -8.5%;
+  right: -13%;
+  width: 330px;
   animation: 400s linear infinite reverse spin;
 }
 
 .tree {
-  width: 400px;
-  left: 20%;
   top: 5%;
+  left: 20%;
+  width: 400px;
   filter: brightness(1.3);
   animation: 20s linear infinite alternate tree;
 }
 
 .whale {
-  width: 500px;
-  transform: scale(-1, 1) rotate(0deg);
   right: 16%;
   bottom: -2%;
+  width: 500px;
+  transform: scale(-1, 1) rotate(0deg);
   animation: 40s ease-in-out infinite alternate whale;
 }

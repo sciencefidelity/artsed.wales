@@ -11,7 +11,6 @@
     radial-gradient(var(--pattern) 9%, transparent 9%),
     radial-gradient(var(--pattern) 9%, transparent 9%);
   background-position: center;
-  // background-position: 0 0, 16px 16px;
   background-size: 32px 32px;
 }
 
@@ -139,21 +138,16 @@
     repeating-radial-gradient(var(--pattern),
     1px,
     transparent 30px);
-  // opacity: 0.8;
 }
 
 .repeatingCircles {
-  background-image:
-    repeating-radial-gradient(var(--pattern) 0 0.2%, transparent 0.2% 2%);
-    // background-position: center;
-    // background-size: 410px 410px;
+  background-image: repeating-radial-gradient(var(--pattern) 0 0.2%, transparent 0.2% 2%);
 }
 
 .radial {
-  background-image:
-    radial-gradient(transparent 21%, var(--pattern) 21% 24%, transparent 26%);
-    background-position: center;
-    background-size: 21px 21px;
+  background-image: radial-gradient(transparent 21%, var(--pattern) 21% 24%, transparent 26%);
+  background-position: center;
+  background-size: 21px 21px;
 }
 
 .zigzag {
@@ -164,13 +158,12 @@
     linear-gradient(315deg, var(--pattern) 25%, transparent 25%);
   background-position: 20px 0, 20px 0, 0 0, 0 0;
   background-size: 40px 80px;
-  // opacity: 0.8;
 }
 
 .isometric {
   background-image: url('/images/isometric.svg');
-  background-size: 60px;
   background-position: center;
+  background-size: 60px;
 }
 
 .isometric3d {
@@ -213,7 +206,6 @@
     var(--pattern-light));
   background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
   background-size: 20px 35px;
-  // opacity: 0.8;
 }
 
 .cross {
@@ -233,5 +225,4 @@
     linear-gradient(var(--pattern) 1px, transparent 1px) 0 -1px,
     linear-gradient(90deg, var(--pattern) 1px, var(--background) 1px) -1px 0;
   background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
-  // opacity: 0.8;
 }

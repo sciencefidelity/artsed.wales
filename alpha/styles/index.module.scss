@@ -1,35 +1,35 @@
 .hero {
-  margin-bottom: 7rem;
-  width: 100vw;
-  aspect-ratio: 3 / 1;
-  background-color: var(--background);
+  position: relative;
   display: grid;
   place-items: center;
-  position: relative;
+  width: 100vw;
+  aspect-ratio: 3 / 1;
+  margin-bottom: 7rem;
+  background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
 }
 
 .heroText {
-  color: var(--grey-550);
-  padding: 0 9rem;
-  font-weight: 700;
-  font-size: 5rem;
-  text-align: center;
-  line-height: 1.25;
   position: relative;
+  padding: 0 9rem;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--grey-550);
+  text-align: center;
   em {
     font-style: normal;
-    background-image: url("/images/em-heading.svg");
-    background-size: 107%;
-    background-position: center;
+    background-image: url('/images/em-heading.svg');
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 107%;
   }
 }
 
 .highlight {
   position: absolute;
-  width: 57%;
   top: 18.5rem;
+  width: 57%;
 }
 
 .indexContent,
@@ -47,14 +47,12 @@
 }
 
 .engagementFigures {
-  text-align: center;
   margin-bottom: 3rem;
+  text-align: center;
   figure {
-    color: var(--grey-750);
+    margin-bottom: 1.2rem;
     font-size: 5rem;
     font-weight: 700;
-    margin-bottom: 1.2rem;
+    color: var(--grey-750);
   }
 }
-
-

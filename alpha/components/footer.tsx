@@ -19,6 +19,11 @@ const Footer: FC<Props> = ({ company, settings }) => {
     cy: "Safle gan",
     en: "Site by"
   }
+  const contact: any = {
+    _type: "localeString",
+    cy: "Contact",
+    en: "Site by"
+  }
   return (
     <footer className={`${u.container} ${s.footer} ${u.grid}`}>
       <div>

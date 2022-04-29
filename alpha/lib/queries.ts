@@ -74,7 +74,10 @@ const event = `
 `
 
 const pages = `
-  "pages": *[_type == "page" && ${omitDrafts}]{
+  "pages": *[_type == "page"
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ] | order(settings.publishedAt){
     ${pagePostFields}, __i18n_refs[0]->{ ${pagePostFields} }
   }
 `

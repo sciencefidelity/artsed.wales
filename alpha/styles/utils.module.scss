@@ -3,10 +3,10 @@
 // Layout
 
 .container {
-  // padding: 1rem 2rem;
   max-width: calc(1200px + 4rem);
-  margin-inline: auto;
+  padding: 1rem 2rem;
   padding: 0 2rem;
+  margin-inline: auto;
 }
 
 .absolute {
@@ -37,44 +37,13 @@
   display: none;
 }
 
-// Flexbox & Grid
-
-.gridCols3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.gap2 {
-  gap: 0.5rem; /* 8px */
-}
-
 .gap4 {
-  gap: 1rem; /* 8px */
+  gap: 1rem;
 }
 
 .justifyCenter {
   justify-content: center;
 }
-
-.itemsCenter {
-  align-items: center;
-}
-
-// Spacing
-
-.py3 {
-  padding-top: 0.75rem; /* 12px */
-  padding-bottom: 0.75rem; /* 12px */
-}
-
-.mr6 {
-  margin-right: 1.5rem; /* 12px */
-}
-
-.ml6 {
-  margin-left: 1.5rem; /* 12px */
-}
-
-// Typograpy
 
 .sans {
   font-family: var(--font-sans-serif);
@@ -92,7 +61,6 @@
   font-weight: 700;
 }
 
-
 .textCenter {
   text-align: center;
 }
@@ -109,35 +77,19 @@
   text-transform: uppercase;
 }
 
-// Backgrounds
-
 .bgTransparent {
   background-color: transparent;
 }
-
-// Borders
-
-.borderBottom2 {
-  border-bottom-width: 2px;
-}
-
-.borderGrey900 {
-  border-color: var(--grey-900)
-}
-
-// Other
 
 .pointer {
   cursor: pointer;
 }
 
-// Universal Classes
-
 .emailAddress {
-  text-decoration-thickness: 1.7px;
-  color: var(--grey-550);
-  transition: color 0.3s ease-in-out;
   font-size: 1.4rem;
+  color: var(--grey-550);
+  text-decoration-thickness: 1.7px;
+  transition: color 0.3s ease-in-out;
   &:hover {
     color: var(--grey-750);
     transition: color 0.3s ease-in-out;

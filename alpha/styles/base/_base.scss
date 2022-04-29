@@ -10,40 +10,25 @@ html {
 body {
   font-family: var(--font-sans-serif);
   font-size: 125%;
-  color: var(--grey-500);
   font-weight: 500;
+  color: var(--grey-500);
   background: var(--page-bg);
 }
 
-// a {
-//   padding: 0;
-//   margin: 0;
-//   line-height: 0;
-// }
-
 p {
+  margin-bottom: 0.9em;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.3;
-  margin-bottom: 0.9em;
   a {
+    font-style: normal;
     color: var(--grey-750);
     text-decoration-line: none;
-    transition: color 0.3s ease-in-out;
-    font-style: normal;
-
-    // background-image: url("/images/highlight.svg");
-    // background-size: 200px 160%;
-
-    background-image: url("/images/highlight-stroke.svg");
-    // background-size: 85px 100%;
-    background-size: 100px 100%;
-
-    // background-image: url("/images/wavy.svg");
-    // background-size: 100px 200%;
-
-    background-position: center;
+    background-image: url('/images/highlight-stroke.svg');
     background-repeat: repeat;
+    background-position: center;
+    background-size: 100px 100%;
+    transition: color 0.3s ease-in-out;
     &:hover {
       color: var(--grey-900);
       transition: color 0.3s ease-in-out;
@@ -59,9 +44,9 @@ ul {
 
 h2 {
   font-size: 3rem;
+  font-weight: 600;
   line-height: 1.5;
   color: var(--grey-750);
-  font-weight: 600;
 }
 
 strong {
@@ -69,10 +54,10 @@ strong {
 }
 
 button {
-  color: var(--grey-500);
   font-weight: 500;
-  background-color: transparent;
+  color: var(--grey-500);
   background: transparent;
+  background-color: transparent;
   &:hover {
     color: var(--grey-750);
     transition: color 0.3s ease-in-out;
@@ -84,9 +69,9 @@ input {
 }
 
 hr {
-  border-top: 5px dotted var(--pattern);
-  border-bottom: none;
   margin-block: 4rem 5rem;
+  border-top: 5px dotted var(--pattern);
+  border-bottom: 0;
 }
 
 .horizontalList {
