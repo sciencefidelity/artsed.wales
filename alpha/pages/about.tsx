@@ -3,12 +3,11 @@ import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
-import { acronym, joinName } from "lib/utils"
+import { joinName, sortNames } from "lib/utils"
 import Layout from "components/layout"
-import Image from "components/image"
-import Link from "components/link"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
+import { StaffList } from "components/staffList"
 import Venn from "components/venn"
 import { aboutQuery } from "lib/queries"
 import {
@@ -55,38 +54,34 @@ const About = ({ data }) => {
 
   const pageHead = {
     title: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.meta?.title
-      : pages[0].meta?.title,
-    description: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.meta?.description
-      : pages[0].meta?.description,
-    ogTitle: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.facebook?.title
-      : pages[0].facebook?.title,
-    ogDescription: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.facebook?.description
-      : pages[0].facebook?.description,
-    ogURL: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.meta?.canonicalURL
-      : pages[0].meta?.canonicalURL,
-    ogImage: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.facebook?.image
-      : pages[0].facebook?.image,
-    twitterTitle: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.twitter?.title
-      : pages[0].twitter?.title,
-    twitterDescription: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.twitter?.description
-      : pages[0].twitter?.description,
-    twitterImage: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.twitter?.image
-      : pages[0].twitter?.image
+      ? pages[1].__i18n_refs.meta?.title
+      : pages[1].meta?.title,
+    description: locale === "cy" && pages[1].__i18n_refs
+      ? pages[1].__i18n_refs.meta?.description
+      : pages[1].meta?.description,
+    ogTitle: locale === "cy" && pages[1].__i18n_refs
+      ? pages[1].__i18n_refs.facebook?.title
+      : pages[1].facebook?.title,
+    ogDescription: locale === "cy" && pages[1].__i18n_refs
+      ? pages[1].__i18n_refs.facebook?.description
+      : pages[1].facebook?.description,
+    ogURL: locale === "cy" && pages[1].__i18n_refs
+      ? pages[1].__i18n_refs.meta?.canonicalURL
+      : pages[1].meta?.canonicalURL,
+    ogImage: locale === "cy" && pages[1].__i18n_refs
+      ? pages[1].__i18n_refs.facebook?.image
+      : pages[1].facebook?.image,
+    twitterTitle: locale === "cy" && pages[1].__i18n_refs
+      ? pages[1].__i18n_refs.twitter?.title
+      : pages[1].twitter?.title,
+    twitterDescription: locale === "cy" && pages[1].__i18n_refs
+      ? pages[1].__i18n_refs.twitter?.description
+      : pages[1].twitter?.description,
+    twitterImage: locale === "cy" && pages[1].__i18n_refs
+      ? pages[1].__i18n_refs.twitter?.image
+      : pages[1].twitter?.image
   }
 
-  const coordinatorsSorted = coordinators.sort((a, b) =>
-    a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
-  const trusteesSorted = trustees.sort((a, b) =>
-    a.title.split(" ").pop().localeCompare(b.title.split(" ").pop()))
   return (
     <Layout
       company={company}
@@ -102,145 +97,45 @@ const About = ({ data }) => {
         <div className={`${u.container}`}>
           <div className={`${s.about} ${u.grid}`}>
             <div className={`${s.aboutContent}`}>
-              {/* <Venn /> */}
               <div className={`${s.aboutBody}`}>
                 <PortableText
                   value={locale === "cy" && pages[1].__i18n_refs
-                    ? pages[1].__i18n_refs.body
-                    : pages[1].body}
+                    ? pages[1].__i18n_refs.body : pages[1].body}
                   components={components}
                 />
               </div>
               <h2 className={`${u.uppercase}`}>
                 <Localize data={labels[13].text} />{/* Network Co-ordinators */}
               </h2>
-              <ul className={`${s.aboutCoordinators}`}>
-                {coordinatorsSorted.map(coordinator =>
-                  <li key={coordinator._id} className={`${u.flex}`}>
-                    <Link
-                      href={`/${coordinator._type}/${coordinator.slug}`}
-                      className={`${u.noUnderline}`}
-                    >
-                      <div className={`${s.avatar} ${u.grid}`}>
-                        {coordinator.avatar &&
-                          <Image
-                            image={coordinator.avatar}
-                            alt={coordinator.title}
-                            height={200}
-                            width={200}
-                            lazy={true}
-                          />
-                        }
-                        {!coordinator.avatar &&
-                          <div className={`${s.initials} ${u.mono} ${u.bold}`}>
-                            {acronym(coordinator.title)}
-                          </div>
-                        }
-                      </div>
-                    </Link>
-                    <div>
-                      <h3>
-                        <Link
-                          href={`/${coordinator._type}/${coordinator.slug}`}
-                          className={`${u.noUnderline}`}
-                        >{coordinator.title}</Link>
-                      </h3>
-                      {coordinator.job &&
-                        <span className={`${s.coordinatorBio}`}>
-                          {locale === "cy" && coordinator.__i18n_refs
-                            ? coordinator.__i18n_refs.job
-                            : coordinator.job}
-                        </span>
-                      }
-                      <br />
-                      {coordinator.email &&
-                        <a
-                          href={`mailto:${coordinator.email}`}
-                          className={`${u.underline} ${u.emailAddress}`}
-                        >
-                          {locale === "cy" && coordinator.__i18n_refs
-                            ? coordinator.__i18n_refs.email
-                            : coordinator.email}
-                        </a>
-                      }
-                    </div>
-                  </li>
+              <ul className={`${s.staffList}`}>
+                {sortNames(coordinators).map(coordinator =>
+                  <StaffList person={coordinator} />
                 )}
               </ul>
               <h2 className={`${u.uppercase}`}>
                 <Localize data={labels[14].text} />{/* Chair of Trustees */}
               </h2>
-              <ul className={`${s.aboutCoordinators}`}>
-                {trusteesSorted.map(trustee => trustee.role.includes("Chair") &&
-                  <li key={trustee._id} className={`${u.flex}`}>
-                    <Link
-                      href={`/${trustee._type}/${trustee.slug}`}
-                      className={`${u.noUnderline}`}
-                    >
-                      <div className={`${s.avatar} ${u.grid}`}>
-                        {trustee.avatar &&
-                          <Image
-                            image={trustee.avatar}
-                            alt={trustee.title}
-                            height={200}
-                            width={200}
-                            lazy={true}
-                          />
-                        }
-                        {!trustee.avatar &&
-                          <div className={`${s.initials} ${u.mono} ${u.bold}`}>
-                            {acronym(trustee.title)}
-                          </div>
-                        }
-                      </div>
-                    </Link>
-                    <div>
-                      <h3>
-                        <Link
-                          href={`/${trustee._type}/${trustee.slug}`}
-                          className={`${u.noUnderline}`}
-                        >{trustee.title}</Link>
-                      </h3>
-                      {trustee.job &&
-                        <span className={`${s.coordinatorBio}`}>
-                          {locale === "cy" && trustee.__i18n_refs
-                            ? trustee.__i18n_refs.job
-                            : trustee.job}
-                        </span>
-                      }
-                      <br />
-                      {trustee.email &&
-                        <a
-                          href={`mailto:${trustee.email}`}
-                          className={`${u.underline} ${u.emailAddress}`}
-                        >
-                          {locale === "cy" && trustee.__i18n_refs
-                            ? trustee.__i18n_refs.email
-                            : trustee.email}
-                        </a>
-                      }
-                    </div>
-                  </li>
+              <ul className={`${s.staffList}`}>
+                {sortNames(trustees).map(trustee =>
+                  trustee.role.includes("Chair") &&
+                    <StaffList person={trustee} />
                 )}
               </ul>
               <h2 className={`${u.uppercase}`}>
                 <Localize data={labels[16].text} />{/* Trustees */}
               </h2>
-              <ul className={`${s.aboutTrustees}`}>
-                {trusteesSorted.map(trustee => trustee.role.includes("Trustee") &&
-                  <li
-                    key={trustee._id}
-                    dangerouslySetInnerHTML={{
-                      __html: joinName(trustee.title)
-                    }}
-                  />
+              <ul className={`${s.trustees}`}>
+                {sortNames(trustees).map(trustee =>
+                  trustee.role.includes("Trustee") &&
+                    <li
+                      key={trustee._id}
+                      dangerouslySetInnerHTML={{
+                        __html: joinName(trustee.title) }}
+                    />
                 )}
               </ul>
             </div>
-            <Sidebar
-              events={events}
-              title={labels[10].text}
-            />
+            <Sidebar events={events} title={labels[10].text} />
           </div>
           <hr />
         </div>

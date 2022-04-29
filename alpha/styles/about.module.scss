@@ -179,51 +179,11 @@
   margin-bottom: 5rem;
 }
 
-.aboutCoordinators {
+.staffList {
   margin-bottom: 5rem;
-  h3 {
-    font-size: 1.9rem;
-    font-weight: 600;
-    a {
-      color: var(grey-950);
-      &:hover {
-        color: var(grey-950);
-      }
-    }
-  }
 }
 
-.coordinatorBio {
-  font-size: 1.4rem;
-}
-
-.avatar {
-  width: 100px;
-  height: 100px;
-  aspect-ratio: 1 / 1;
-  margin-right: 2rem;
-  background-color: var(--grey-650);
-  filter: grayscale(0.25);
-  border: 1px solid var(--grey-650);
-  border-radius: 100%;
-  transition: filter 0.3s ease-in-out;
-  &:hover {
-    filter: grayscale(0);
-    transition: filter 0.3s ease-in-out;
-  }
-  img {
-    border-radius: 100%;
-  }
-}
-
-.initials {
-  place-self: center;
-  font-size: 2.2rem;
-  color: var(--grey-000);
-  text-align: center;
-}
-
-.aboutTrustees {
+.trustees {
   li {
     display: inline;
     &:not(:last-child)::after {

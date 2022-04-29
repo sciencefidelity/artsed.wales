@@ -1,7 +1,7 @@
 import imageUrlBuilder from "@sanity/image-url"
 import sanityClient from "lib/sanityClient"
 import { LocaleString } from "lib/interfaces"
-import { Image } from "lib/interfaces"
+import { Image, Staff } from "lib/interfaces"
 import p from "styles/patterns.module.scss"
 
 export const acronym = (str: string): string => {
@@ -72,6 +72,12 @@ export const pattern = (pattern: string): string => {
   default:
     return p.lines
   }
+}
+
+export const sortNames = (names: Staff[]): Staff[] => {
+  return names.sort((a, b) => {
+    return a.title.split(" ").pop().localeCompare(b.title.split(" ").pop())
+  })
 }
 
 export const subdir = (type: string): string => {
