@@ -90,9 +90,9 @@ const Home = ({ data }) => {
           />
         </div>
         <div className={`${s.events}`}>
-          {events.map((event, idx) =>
+          {events.map(event =>
             <Fragment key={event._id}>
-              <SingleEvent event={event} idx={idx} />
+              <SingleEvent event={event} />
             </Fragment>
           )}
         </div>
