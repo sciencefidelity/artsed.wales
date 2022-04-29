@@ -216,6 +216,7 @@
   background-color: var(--grey-650);
   margin-right: 2rem;
   border-radius: 100%;
+  border: 1px solid var(--grey-650);
   filter: grayscale(0.25);
   transition: filter 0.3s ease-in-out;
   &:hover {

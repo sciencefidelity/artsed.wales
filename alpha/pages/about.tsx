@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
-import { acronym, localize } from "lib/utils"
+import { acronym } from "lib/utils"
 import Layout from "components/layout"
 import Image from "components/image"
 import Link from "components/link"
@@ -235,24 +235,14 @@ const About = ({ data }) => {
               <ul className={`${s.aboutTrustees}`}>
                 {trusteesSorted.map(trustee => trustee.role.includes("Trustee") &&
                   <li key={trustee._id}>
-                    <Link
+                    {/* <Link
                       href={`/${trustee._type}/${trustee.slug}`}
                       className={`${u.noUnderline}`}
-                    >
+                    > */}
                       {locale === "cy" && trustee.__i18n_refs
                         ? trustee.__i18n_refs.title
                         : trustee.title}
-                    </Link>
-                    {trustee.email &&
-                      <>
-                        {" – "}
-                        <a href={`mailto:${trustee.email}`}>
-                          {locale === "cy" && trustee.__i18n_refs
-                            ? trustee.__i18n_refs.email
-                            : trustee.email}
-                        </a>
-                      </>
-                    }
+                    {/* </Link> */}
                   </li>
                 )}
               </ul>
