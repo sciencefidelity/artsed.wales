@@ -31,7 +31,7 @@ const SingleEvent: FC<Props> = ({ event, idx }) => {
         className={`${u.noUnderline}`}
         tabIndex={-1}
       >
-        <div className={`${s.eventImage} ${pattern(event.pattern)}`}>
+        <div className={`${s.image} ${pattern(event.pattern)}`}>
           {shapes[idx] && shapes[idx]}
           <img
             src={urlFor(event.imageOne)
@@ -43,37 +43,38 @@ const SingleEvent: FC<Props> = ({ event, idx }) => {
           />
         </div>
       </Link>
-
-      <div className={`${u.flex}`}>
-        <div className={`${s.icon}`}><Icon name={event.icon} /></div>
+      <header className={`${u.flex}`}>
+        <div className={`${s.icon}`}>
+          <Link
+            href={`/${event._type}/${event.slug}`}
+            className={`${u.noUnderline}`}
+          >
+            <Icon name={event.icon} />
+          </Link>
+        </div>
         <div>
           {event.dateStart &&
-            <span className={`${s.eventDate} ${u.uppercase}`}>
+            <span className={`${s.date} ${u.uppercase}`}>
               <Date date={event.dateStart} />
             </span>
           }
           {event.title &&
-            <h2 className={`
-              ${s.eventTitle} ${u.mono} ${u.bold} ${u.noUnderline}
-            `}>
+            <h2 className={`${s.h2} ${u.mono} ${u.bold} ${u.noUnderline}`}>
               <Link
                 href={`/${event._type}/${event.slug}`}
                 className={`${u.noUnderline}`}
               >
                 {locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.title
-                  : event.title}
+                  ? event.__i18n_refs.title : event.title}
               </Link>
             </h2>
           }
         </div>
-      </div>
-
+      </header>
       {event.summary &&
-        <p className={`${s.eventSummary}`}>
+        <p className={`${s.summary}`}>
           {locale === "cy" && event.__i18n_refs
-            ? event.__i18n_refs.summary
-            : event.summary}
+            ? event.__i18n_refs.summary : event.summary}
         </p>
       }
     </article>

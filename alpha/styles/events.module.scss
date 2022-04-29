@@ -1,4 +1,16 @@
-@use '/styles/base/breakpoints' as b;
+.content {
+  width: 710px;
+  margin-top: 14rem;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
 
 @keyframes dance {
   from {
@@ -88,32 +100,18 @@
   animation: 40s ease-in-out infinite alternate whale;
 }
 
-.events {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  align-items: center;
-  margin-top: 6rem;
-  margin-bottom: 4rem;
-}
-
-.eventsContent {
-  width: 710px;
-  margin-top: 14rem;
-}
-
 .event {
   margin-bottom: 2rem;
 }
 
-.eventImage {
+.image {
   position: relative;
   display: grid;
   aspect-ratio: 1 / 1;
   margin-bottom: 1.6rem;
   overflow: hidden;
   background-color: var(--background);
-  border: 2px solid var(--grey-900);
+  border: 2px solid var(--grey-850);
 }
 
 .icon {
@@ -122,21 +120,26 @@
   width: 48px;
   height: 48px;
   margin-right: 1rem;
-  background-color: var(--grey-900);
+  background-color: var(--grey-650);
   border-radius: 100%;
+  transition: background-color 0.3s ease-in-out;
   svg {
     width: 50%;
     margin: auto;
-    fill: var(--background);
+    fill: var(--grey-000);
+  }
+  &:hover {
+    background-color: var(--grey-750);
+    transition: background-color 0.3s ease-in-out;
   }
 }
 
-.eventDate {
+.date {
   font-size: 1.1rem;
   color: var(--grey-650);
 }
 
-.eventTitle {
+.h2 {
   margin-top: -0.8rem;
   margin-bottom: 0.2rem;
   font-size: 2.1rem;
@@ -145,7 +148,7 @@
   }
 }
 
-.eventSummary {
+.summary {
   margin-top: 0.6rem;
   font-size: 1.5rem;
   line-height: 1.3;

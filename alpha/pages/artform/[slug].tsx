@@ -8,15 +8,14 @@
  * @param slug - all props fetched with `artformPagePathQuery` in `lib/queries.ts`.
  */
 import { GetStaticProps, GetStaticPaths } from "next"
-import Head from "next/head"
-import { useRouter } from "next/router"
-import sanityClient from "lib/sanityClient"
-import Layout from "components/layout"
-import Date from "components/date"
-import ErrorTemplate from "components/errorTemplate"
-import Link from "components/link"
-import Localize from "components/localize"
-import Sidebar from "components/sidebar"
+ import Head from "next/head"
+ import { useRouter } from "next/router"
+ import sanityClient from "lib/sanityClient"
+ import Layout from "components/layout"
+ import ErrorTemplate from "components/errorTemplate"
+ import { EventList } from "components/eventList"
+ import Localize from "components/localize"
+ import Sidebar from "components/sidebar"
 import { artformQuery, artformPathQuery } from "lib/queries"
 import {
   Artform,
@@ -50,19 +49,13 @@ const ArtformPage = ({ data }) => {
   const router = useRouter()
   const { locale } = router
   if(router.isFallback) {
-    return (
-      <ErrorTemplate />
-    )
+    return <ErrorTemplate />
   }
   if(!data) {
-    return (
-      <>
-        <Head>
-          <meta name="robots" content="noindex" />
-        </Head>
-        <ErrorTemplate />
-      </>
-    )
+    return (<>
+      <Head><meta name="robots" content="noindex" /></Head>
+      <ErrorTemplate />
+    </>)
   }
   const {
     artform,
@@ -120,60 +113,31 @@ const ArtformPage = ({ data }) => {
     >
       <div className={`${u.container}`}>
         <div className={`${s.artform} ${u.grid}`}>
-          <section className={`${s.artformContent}`}>
+          <section className={`${s.content}`}>
             {artform.title &&
-              <h1 className={`${u.mono} ${u.bold}`}>
+              <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
                 {locale === "cy" && artform.__i18n_refs
-                  ? artform.__i18n_refs.title
-                  : artform.title}
+                  ? artform.__i18n_refs.title : artform.title}
               </h1>
             }
             {artform.description &&
-              <article className={`${s.artformBody}`}>
+              <article className={`${s.body}`}>
                 <p>
                   {locale === "cy" && artform.__i18n_refs
-                    ? artform.__i18n_refs.description
-                    : artform.description}
+                    ? artform.__i18n_refs.description : artform.description}
                 </p>
               </article>
             }
-            {artform.events.length > 0 && labels[12] &&
-              <>
-                <h2 className={`${u.uppercase}`}>
-                  <Localize data={labels[12].text} />{" "}
-                  {locale === "cy" && artform.__i18n_refs
-                    ? artform.__i18n_refs.title
-                    : artform.title}
-                </h2>
-                <div>
-                  {artform.events.map(event =>
-                    <div  className={`${s.event}`} key={event._id}>
-                      {event.dateStart &&
-                        <Date date={event.dateStart} />
-                      }
-                      {event.title &&
-                        <h3 className={`
-                          ${s.artformEventsHeading} ${u.mono} ${u.bold}
-                        `}>
-                          <Link href={`/${event._type}/${event.slug}`}>
-                            {locale === "cy" && event.__i18n_refs
-                              ? event.__i18n_refs.title
-                              : event.title}
-                          </Link>
-                        </h3>
-                      }
-                      {event.summary &&
-                        <p>
-                          {locale === "cy" && event.__i18n_refs
-                            ? event.__i18n_refs.summary
-                            : event.summary}
-                        </p>
-                      }
-                    </div>
-                  )}
-                </div>
-              </>
-            }
+            {artform.events.length > 0 && labels[12] && <>
+              <h2 className={`${s.h2} ${u.uppercase}`}>
+                <Localize data={labels[12].text} />{" "}
+                {locale === "cy" && artform.__i18n_refs
+                  ? artform.__i18n_refs.title : artform.title}
+              </h2>
+              <div>
+                {artform.events.map(event => <EventList event={event} />)}
+              </div>
+            </>}
           </section>
           <Sidebar events={events} title={labels[10].text} />
         </div>

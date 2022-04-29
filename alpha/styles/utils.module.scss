@@ -85,6 +85,13 @@
   cursor: pointer;
 }
 
+.horizontalList {
+  display: inline;
+  &:not(:last-child)::after {
+    content: ', ';
+  }
+}
+
 .emailAddress {
   font-size: 1.4rem;
   color: var(--grey-550);

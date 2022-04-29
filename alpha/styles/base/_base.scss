@@ -73,10 +73,3 @@ hr {
   border-top: 5px dotted var(--pattern);
   border-bottom: 0;
 }
-
-.horizontalList {
-  display: inline;
-  &:not(:last-child)::after {
-    content: ', ';
-  }
-}

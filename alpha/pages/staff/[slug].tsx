@@ -14,10 +14,9 @@ import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import { acronym } from "lib/utils"
 import Layout from "components/layout"
-import Date from "components/date"
 import ErrorTemplate from "components/errorTemplate"
+import { EventList } from "components/eventList"
 import Image from "components/image"
-import Link from "components/link"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { staffQuery, staffPathQuery } from "lib/queries"
@@ -53,19 +52,13 @@ const StaffPage = ({ data }) => {
   const router = useRouter()
   const { locale } = router
   if(router.isFallback) {
-    return (
-      <ErrorTemplate />
-    )
+    return <ErrorTemplate />
   }
   if(!data) {
-    return (
-      <>
-        <Head>
-          <meta name="robots" content="noindex" />
-        </Head>
-        <ErrorTemplate />
-      </>
-    )
+    return (<>
+      <Head><meta name="robots" content="noindex" /></Head>
+      <ErrorTemplate />
+    </>)
   }
   const {
     company,
@@ -123,8 +116,8 @@ const StaffPage = ({ data }) => {
     >
       <div className={`${u.container}`}>
         <div className={`${s.staff} ${u.grid}`}>
-          <section className={`${s.staffContent}`}>
-            <header className={`${u.flex} ${s.staffHeader}`}>
+          <section className={`${s.content}`}>
+            <header className={`${u.flex} ${s.header}`}>
               <div className={`${s.avatar} ${u.grid}`}>
                 {staff.avatar &&
                   <Image
@@ -143,64 +136,38 @@ const StaffPage = ({ data }) => {
               </div>
               <div>
                 {staff.role &&
-                  <ul className={`${s.staffRoles} ${u.uppercase}`}>
-                    {staff.role && staff.role.map((r, idx) =>
-                      <li key={idx} className="horizontalList">{r}</li>
+                  <ul className={`${s.roles} ${u.uppercase}`}>
+                    {staff.role && staff.role.map(role =>
+                      <li key={role} className={`${u.horizontalList}`}>
+                        {role}
+                      </li>
                     )}
                   </ul>
                 }
                 {staff.title &&
-                  <h1 className={`${u.mono} ${u.bold}`}>
+                  <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
                     {locale === "cy" && staff.__i18n_refs
-                      ? staff.__i18n_refs.title
-                      : staff.title}
+                      ? staff.__i18n_refs.title : staff.title}
                   </h1>
                 }
               </div>
             </header>
             {staff.bio &&
-              <article className={`${s.staffBody}`}>
+              <article className={`${s.body}`}>
                 <p>
                   {locale === "cy" && staff.__i18n_refs
-                    ? staff.__i18n_refs.bio
-                    : staff.bio}
+                    ? staff.__i18n_refs.bio : staff.bio}
                 </p>
               </article>
             }
-            {staff.events.length > 0 && labels[11] &&
-              <>
-                <h2 className={`${u.uppercase}`}>
-                  <Localize data={labels[11].text} />
-                </h2>
-                <div>
-                  {staff.events.map(event =>
-                    <div key={event._id}>
-                      {event.dateStart &&
-                        <Date date={event.dateStart} />
-                      }
-                      {event.title &&
-                        <h3 className={`
-                          ${s.staffEventsHeading} ${u.mono} ${u.bold}
-                        `}>
-                          <Link href={`/${event._type}/${event.slug}`}>
-                            {locale === "cy" && event.__i18n_refs
-                              ? event.__i18n_refs.title
-                              : event.title}
-                          </Link>
-                        </h3>
-                      }
-                      {event.summary &&
-                        <p>
-                          {locale === "cy" && event.__i18n_refs
-                            ? event.__i18n_refs.summary
-                            : event.summary}
-                        </p>
-                      }
-                    </div>
-                  )}
-                </div>
-              </>
-            }
+            {staff.events.length > 0 && labels[11] && <>
+              <h2 className={`${s.h2} ${u.uppercase}`}>
+                <Localize data={labels[11].text} />
+              </h2>
+              <div>
+                {staff.events.map(event => <EventList event={event} />)}
+              </div>
+            </>}
           </section>
           <Sidebar events={events} title={labels[10].text} />
         </div>
