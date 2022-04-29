@@ -149,12 +149,13 @@ const About = ({ data }) => {
                             : coordinator.title}
                         </Link>
                       </h3>
-                      <span className={`${s.coordinatorBio}`}>
-                        {coordinator.job
-                          ? coordinator.job
-                          : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        }
-                      </span>
+                      {coordinator.job &&
+                        <span className={`${s.coordinatorBio}`}>
+                          {locale === "cy" && coordinator.__i18n_refs
+                            ? coordinator.__i18n_refs.job
+                            : coordinator.job}
+                        </span>
+                      }
                       <br />
                       {coordinator.email &&
                         <a
@@ -208,12 +209,13 @@ const About = ({ data }) => {
                             : trustee.title}
                         </Link>
                       </h3>
-                      <span className={`${s.coordinatorBio}`}>
-                        {trustee.bio
-                          ? trustee.bio
-                          : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        }
-                      </span>
+                      {trustee.job &&
+                        <span className={`${s.coordinatorBio}`}>
+                          {locale === "cy" && trustee.__i18n_refs
+                            ? trustee.__i18n_refs.job
+                            : trustee.job}
+                        </span>
+                      }
                       <br />
                       {trustee.email &&
                         <a
