@@ -1,5 +1,5 @@
 import u from "styles/utils.module.scss"
-import s from "pages/about.module.scss"
+import s from "styles/about.module.scss"
 
 const Ampersand = () => (
   <svg

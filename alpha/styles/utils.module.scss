@@ -115,6 +115,14 @@
   background-color: transparent;
 }
 
+.fgDark {
+  color: var(--grey-700);
+}
+
+.fgWhite {
+  color: var(--foreground);
+}
+
 // Borders
 
 .borderBottom2 {
@@ -123,6 +131,12 @@
 
 .borderGrey900 {
   border-color: var(--grey-900)
+}
+
+// Other
+
+.pointer {
+  cursor: pointer;
 }
 
 // Universal Classes
