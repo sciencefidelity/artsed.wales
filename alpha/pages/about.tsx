@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
-import { acronym } from "lib/utils"
+import { acronym, joinName } from "lib/utils"
 import Layout from "components/layout"
 import Image from "components/image"
 import Link from "components/link"
@@ -143,11 +143,7 @@ const About = ({ data }) => {
                         <Link
                           href={`/${coordinator._type}/${coordinator.slug}`}
                           className={`${u.noUnderline}`}
-                        >
-                          {locale === "cy" && coordinator.__i18n_refs
-                            ? coordinator.__i18n_refs.title
-                            : coordinator.title}
-                        </Link>
+                        >{coordinator.title}</Link>
                       </h3>
                       {coordinator.job &&
                         <span className={`${s.coordinatorBio}`}>
@@ -203,11 +199,7 @@ const About = ({ data }) => {
                         <Link
                           href={`/${trustee._type}/${trustee.slug}`}
                           className={`${u.noUnderline}`}
-                        >
-                          {locale === "cy" && trustee.__i18n_refs
-                            ? trustee.__i18n_refs.title
-                            : trustee.title}
-                        </Link>
+                        >{trustee.title}</Link>
                       </h3>
                       {trustee.job &&
                         <span className={`${s.coordinatorBio}`}>
@@ -236,16 +228,12 @@ const About = ({ data }) => {
               </h2>
               <ul className={`${s.aboutTrustees}`}>
                 {trusteesSorted.map(trustee => trustee.role.includes("Trustee") &&
-                  <li key={trustee._id}>
-                    {/* <Link
-                      href={`/${trustee._type}/${trustee.slug}`}
-                      className={`${u.noUnderline}`}
-                    > */}
-                      {locale === "cy" && trustee.__i18n_refs
-                        ? trustee.__i18n_refs.title
-                        : trustee.title}
-                    {/* </Link> */}
-                  </li>
+                  <li
+                    key={trustee._id}
+                    dangerouslySetInnerHTML={{
+                      __html: joinName(trustee.title)
+                    }}
+                  />
                 )}
               </ul>
             </div>

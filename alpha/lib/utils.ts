@@ -19,6 +19,10 @@ export const capitalize = (str: string): string => {
     .join(" ")
 }
 
+export const joinName = (name: string) => {
+  return name.split(" ").join("&nbsp;")
+}
+
 export const keyStage = (str: string): string => {
   return str.split(" ").map(e => e.replace(e, e[0])).join("")
 }

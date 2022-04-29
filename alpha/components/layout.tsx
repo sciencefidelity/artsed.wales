@@ -37,7 +37,7 @@ const Layout: FC<Props> = ({
         <hr />
         <Logos />
       </section>
-      <Footer settings={settings} company={company} />
+      <Footer company={company} labels={labels} settings={settings} />
     </>
   )
 }

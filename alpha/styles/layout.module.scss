@@ -19,6 +19,32 @@
   align-items: center;
 }
 
+.navLeft,
+.navRight {
+  font-size: 1.5rem;
+  a {
+    color: var(--grey-500);
+    transition: color 0.3s ease;
+    &:hover,
+    &:focus {
+      color: var(--grey-750);
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+.navLeft {
+  &:first-child {
+    margin-right: 3rem;
+  }
+}
+
+.navRight {
+  &:last-child {
+    margin-left: 3rem;
+  }
+}
+
 .logo {
   width: 5rem;
   height: 5rem;
@@ -104,32 +130,6 @@
   }
   p {
     font-size: 1.3rem;
-  }
-}
-
-.navLeft,
-.navRight {
-  font-size: 1.5rem;
-  a {
-    color: var(--grey-500);
-    transition: color 0.3s ease;
-    &:hover,
-    &:focus {
-      color: var(--grey-750);
-      transition: color 0.3s ease;
-    }
-  }
-}
-
-.navLeft {
-  &:first-child {
-    margin-right: 3rem;
-  }
-}
-
-.navRight {
-  &:last-child {
-    margin-left: 3rem;
   }
 }
 
