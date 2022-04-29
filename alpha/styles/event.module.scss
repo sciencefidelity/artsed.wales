@@ -9,20 +9,136 @@
   width: 100vw;
   aspect-ratio: 3 / 1;
   margin-bottom: 0;
+  overflow: hidden;
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
 }
 
-.heroText {
+.icon {
+  width: 40px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+  svg {
+    fill: var(--grey-750);
+  }
+}
+
+.title {
   position: relative;
   padding: 0 9rem;
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 700;
-  line-height: 1.2;
-  color: var(--grey-550);
+  line-height: 1.1;
+  color: var(--grey-750);
   text-align: center;
-  em {
-    font-style: normal;
+}
+
+@keyframes statue {
+  0% {
+    transform: translate(0px) rotate(0deg);
+  }
+  33% {
+    transform: translate(50px) rotate(10deg);
+  }
+  66% {
+    transform: translate(-50px) rotate(-10deg);
+  }
+  100% {
+    transform: translate(0px) rotate(0deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(-110deg);
+  }
+  to {
+    transform: rotate(-470deg);
+  }
+}
+
+@keyframes tree {
+  from {
+    transform: scale(100%);
+  }
+  to {
+    transform: scale(120%);
+  }
+}
+
+@keyframes whale {
+  from {
+    transform: scale(-1, 1) rotate(10deg);
+  }
+  to {
+    transform: scale(-1.1, 1.1) rotate(15deg);
+  }
+}
+
+.dance,
+.globe,
+.hand,
+.head,
+.statue,
+.tree,
+.whale {
+  position: absolute;
+}
+
+.head {
+  top: -2%;
+  left: 5%;
+  width: 240px;
+  filter: drop-shadow(20px -20px 0 rgba(0, 0, 0, 90%));
+  transform: rotate(-110deg);
+  animation: 300s linear infinite spin;
+}
+
+.statue {
+  top: 0;
+  right: 1%;
+  width: 540px;
+  transform: translate(0px) rotate(0deg);
+  filter:
+    drop-shadow(20px -20px 0 rgba(0, 0, 0, 90%))
+    brightness(1.2)
+    contrast(80%);
+  animation: 100s ease-in-out infinite alternate statue;
+}
+
+.whale {
+  left: -5%;
+  bottom: -10%;
+  width: 600px;
+  transform: scale(-1, 1) rotate(10deg);
+  animation: 20s ease-in-out infinite alternate whale;
+}
+
+.hand {
+  right: 0%;
+  top: 10%;
+  width: 500px;
+  // transform: scale(-1, 1) rotate(0deg);
+  // animation: 40s ease-in-out infinite alternate whale;
+}
+
+.dashedCircle {
+  position: absolute;
+  width: 65%;
+  height: 70%;
+  svg {
+    z-index: 0;
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -30%;
+    left: -30%;
+    circle {
+      stroke-width: 15;
+      stroke-dasharray: 6%;
+      fill: transparent;
+      stroke: black;
+    }
   }
 }
 

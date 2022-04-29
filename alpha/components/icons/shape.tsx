@@ -1,5 +1,6 @@
 import { FC } from "react"
 import s from "styles/events.module.scss"
+// import b from "styles/event.module.scss"
 
 interface Props {
   name: string

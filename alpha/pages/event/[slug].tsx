@@ -15,12 +15,14 @@ import reactStringReplace from "react-string-replace"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
-import { pattern } from "lib/utils"
+import { pattern, urlFor } from "lib/utils"
 import Layout from "components/layout"
 import EventDate from "components/eventDate"
+import { Icon } from "components/icons/icon"
 import Link from "components/link"
 import Localize from "components/localize"
 import ErrorTemplate from "components/errorTemplate"
+import { Shape } from "components/icons/shape"
 import Sidebar from "components/sidebar"
 import { eventQuery, eventPathQuery } from "lib/queries"
 import {
@@ -54,19 +56,15 @@ const EventPage = ({ data }) => {
   const router = useRouter()
   const { locale } = router
   if(router.isFallback) {
-    return (
-      <ErrorTemplate />
-    )
+    return <ErrorTemplate />
   }
   if(!data) {
-    return (
-      <>
-        <Head>
-          <meta name="robots" content="noindex" />
-        </Head>
-        <ErrorTemplate />
-      </>
-    )
+    return (<>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <ErrorTemplate />
+    </>)
   }
   const {
     company,
@@ -123,11 +121,29 @@ const EventPage = ({ data }) => {
       settings={settings}
     >
       <div className={`${s.hero} ${pattern(event.pattern)}`}>
-        <h1
-          className={`${s.heroText} ${u.mono}`}
-          dangerouslySetInnerHTML={{
-            __html: event.longTitle
-          }}
+        <div>
+          <div className={`${s.icon}`}><Icon name={event.icon} /></div>
+          <h1
+            className={`${s.title} ${u.mono}`}
+            dangerouslySetInnerHTML={{ __html: event.longTitle }}
+          />
+        </div>
+        {/* {event.shapeOne && <Shape name={event.shapeOne} />} */}
+        <img
+          src={urlFor(event.imageOne)
+            .auto("format")
+            .quality(85)
+            .url()}
+          alt={event.title}
+          className={`${s[event.classOne]}`}
+        />
+        <img
+          src={urlFor(event.imageTwo)
+            .auto("format")
+            .quality(85)
+            .url()}
+          alt={event.title}
+          className={`${s[event.classTwo]}`}
         />
       </div>
       <div className={`${u.container}`}>
