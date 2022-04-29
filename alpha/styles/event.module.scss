@@ -15,25 +15,14 @@
 
 .heroText {
   color: var(--grey-550);
-  // color: transparent;
   padding: 0 9rem;
   font-weight: 700;
-  // font-size: 7rem;
   font-size: 5rem;
   text-align: center;
-  // line-height: 1;
   line-height: 1.2;
   position: relative;
-  // -webkit-text-stroke: 0px var(--grey-750);
-  // background: linear-gradient(45deg, rgba(232,75,248,1) 0%, rgba(248,190,80,1) 75%, rgba(253,237,95,1) 100%);
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
   em {
     font-style: normal;
-    // background-image: url("/images/em-heading.svg");
-    // background-size: 107%;
-    // background-position: center;
-    // background-repeat: no-repeat;
   }
 }
 
@@ -49,9 +38,6 @@
     padding: 1.2rem 1.7rem;
     border: 1px solid var(--pattern);
   }
-  // p:first-of-type {
-  //   margin-bottom: 4rem;
-  // }
   h1 {
     color: var(--grey-750);
     font-size: 4.8rem;
@@ -73,7 +59,6 @@
     padding: 0 3rem 3rem;
     list-style-type: "⸺";
     list-style-position: outside;
-    // list-style-image: url('/images/dash.svg');
     li {
       padding: 0 0 1.5rem 0.5rem;
     }

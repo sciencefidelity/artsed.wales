@@ -55,31 +55,31 @@ const About = ({ data }) => {
 
   const pageHead = {
     title: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.meta.title
+      ? pages[0].__i18n_refs.meta?.title
       : pages[0].meta?.title,
     description: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.meta.description
+      ? pages[0].__i18n_refs.meta?.description
       : pages[0].meta?.description,
     ogTitle: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.facebook.title
+      ? pages[0].__i18n_refs.facebook?.title
       : pages[0].facebook?.title,
     ogDescription: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.facebook.description
+      ? pages[0].__i18n_refs.facebook?.description
       : pages[0].facebook?.description,
     ogURL: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.meta.canonicalURL
+      ? pages[0].__i18n_refs.meta?.canonicalURL
       : pages[0].meta?.canonicalURL,
     ogImage: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.facebook.image
+      ? pages[0].__i18n_refs.facebook?.image
       : pages[0].facebook?.image,
     twitterTitle: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.twitter.title
+      ? pages[0].__i18n_refs.twitter?.title
       : pages[0].twitter?.title,
     twitterDescription: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.twitter.description
+      ? pages[0].__i18n_refs.twitter?.description
       : pages[0].twitter?.description,
     twitterImage: locale === "cy" && pages[0].__i18n_refs
-      ? pages[0].__i18n_refs.twitter.image
+      ? pages[0].__i18n_refs.twitter?.image
       : pages[0].twitter?.image
   }
 

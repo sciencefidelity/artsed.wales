@@ -86,31 +86,31 @@ const EventPage = ({ data }) => {
 
   const pageHead = {
     title: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.meta.title
+      ? event.__i18n_refs.meta?.title
       : event.meta?.title,
     description: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.meta.description
+      ? event.__i18n_refs.meta?.description
       : event.meta?.description,
     ogTitle: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.facebook.title
+      ? event.__i18n_refs.facebook?.title
       : event.facebook?.title,
     ogDescription: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.facebook.description
+      ? event.__i18n_refs.facebook?.description
       : event.facebook?.description,
     ogURL: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.meta.canonicalURL
+      ? event.__i18n_refs.meta?.canonicalURL
       : event.meta?.canonicalURL,
     ogImage: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.facebook.image
+      ? event.__i18n_refs.facebook?.image
       : event.facebook?.image,
     twitterTitle: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.twitter.title
+      ? event.__i18n_refs.twitter?.title
       : event.twitter?.title,
     twitterDescription: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.twitter.description
+      ? event.__i18n_refs.twitter?.description
       : event.twitter?.description,
     twitterImage: locale === "cy" && event.__i18n_refs
-      ? event.__i18n_refs.twitter.image
+      ? event.__i18n_refs.twitter?.image
       : event.twitter?.image
   }
 

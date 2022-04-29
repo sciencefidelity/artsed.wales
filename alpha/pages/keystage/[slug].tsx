@@ -82,31 +82,31 @@ const KeystagePage = ({ data }) => {
 
   const pageHead = {
     title: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.meta.title
+      ? keystage.__i18n_refs.meta?.title
       : keystage.meta?.title,
     description: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.meta.description
+      ? keystage.__i18n_refs.meta?.description
       : keystage.meta?.description,
     ogTitle: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.facebook.title
+      ? keystage.__i18n_refs.facebook?.title
       : keystage.facebook?.title,
     ogDescription: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.facebook.description
+      ? keystage.__i18n_refs.facebook?.description
       : keystage.facebook?.description,
     ogURL: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.meta.canonicalURL
+      ? keystage.__i18n_refs.meta?.canonicalURL
       : keystage.meta?.canonicalURL,
     ogImage: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.facebook.image
+      ? keystage.__i18n_refs.facebook?.image
       : keystage.facebook?.image,
     twitterTitle: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.twitter.title
+      ? keystage.__i18n_refs.twitter?.title
       : keystage.twitter?.title,
     twitterDescription: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.twitter.description
+      ? keystage.__i18n_refs.twitter?.description
       : keystage.twitter?.description,
     twitterImage: locale === "cy" && keystage.__i18n_refs
-      ? keystage.__i18n_refs.twitter.image
+      ? keystage.__i18n_refs.twitter?.image
       : keystage.twitter?.image
   }
 
