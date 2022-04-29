@@ -312,6 +312,18 @@ export default {
       type: 'string',
       group: 'design'
     },
+    {
+      name: 'shapeOne',
+      title: 'Shape one',
+      type: 'string',
+      group: 'design'
+    },
+    {
+      name: 'shapeTwo',
+      title: 'Shape two',
+      type: 'string',
+      group: 'design'
+    }
   ],
   orderings: [
     {
