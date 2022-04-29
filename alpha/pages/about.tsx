@@ -96,13 +96,13 @@ const About = ({ data }) => {
       settings={settings}
     >
       <div>
-        <div className={`${s.hero} ${p.lines}`}>
+        <div className={`${s.hero} ${p.textbook}`}>
           <Venn />
         </div>
         <div className={`${u.container}`}>
           <div className={`${s.about} ${u.grid}`}>
             <div className={`${s.aboutContent}`}>
-              <Venn />
+              {/* <Venn /> */}
               <div className={`${s.aboutBody}`}>
                 <PortableText
                   value={locale === "cy" && pages[0].__i18n_refs

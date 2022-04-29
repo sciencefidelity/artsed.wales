@@ -15,84 +15,57 @@
   width: 100vw;
   aspect-ratio: 3 / 1;
   background-color: var(--background);
-  display: grid;
-  place-items: center;
   position: relative;
   border-bottom: 1px solid var(--pattern);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
-.heroText {
-  color: var(--grey-550);
-  padding: 0 9rem;
-  font-weight: 700;
-  font-size: 5rem;
-  text-align: center;
-  line-height: 1.2;
+.venn {
   position: relative;
-  em {
-    font-style: normal;
-  }
+  // margin-top: -10rem;
+  margin-block: auto;
+  width: 60vw;
+  transform: translateY(-19rem);
 }
 
 .vennDiagram {
   position: relative;
-  width: 56vw;
-  margin-top: 6rem;
-  margin-right: -2rem;
-  margin-left: auto;
-  @include b.mq(lg) {
-    width: 100%;
-    margin: 6rem 0 -16rem;
-  }
-  @include b.mq(md) {
-    width: 120%;
-    margin: 6rem -3rem -14rem;
-  }
-  @include b.mq(sm) {
-    width: 125%;
-    margin: 6rem -4rem -12rem;
-  }
+  width: 125%;
+  margin: 6rem -4rem -12rem;
 }
 
 %all-content {
+  font-family: var(--font-monospace);
+  font-weight: 700;
   position: absolute;
-  font-size: 1.8vw;
+  font-size: 2.4vw;
   text-align: center;
   user-select: none;
   transform: translate(-50%, -50%);
-  @include b.mq(xl) {
-    font-size: 2vw;
-  }
-  @include b.mq(lg) {
-    font-size: 3vw;
-  }
-  @include b.mq(md) {
-    font-size: 3.7vw;
-  }
-  @include b.mq(sm) {
-    font-size: 4vw;
-  }
+  color: var(--grey-650);
 }
 
 .content1 {
   @extend %all-content;
 
-  top: 18%;
+  top: 25%;
   left: 50%;
 }
 
 .content2 {
   @extend %all-content;
 
-  top: 67%;
-  left: 21%;
+  top: 62%;
+  left: 20%;
 }
 
 .content3 {
   @extend %all-content;
 
-  top: 67%;
-  left: 78%;
+  top: 62%;
+  left: 80%;
   line-height: 1.2;
 }
 
@@ -101,22 +74,16 @@
 
   top: 55%;
   left: 50%;
-  @include b.mq(xl) {
-    top: 56%;
-  }
-  @include b.mq(lg) {
-    top: 55%;
-  }
-  @include b.mq(md) {
-    top: 56%;
-  }
+  color: var(--background);
 }
 
 %bg-circle {
   position: absolute;
   width: 60.59%;
-  background-color: var(--white);
+  // background-color: var(--grey-000);
+  background-color: hsla(0, 100%, 100%, 0.7);
   border-radius: 50%;
+  border: 1px solid var(--pattern);
 }
 
 .circle1 {
@@ -145,8 +112,10 @@
   position: absolute;
   width: 60.59%;
   border-radius: 50%;
+  // mix-blend-mode: difference;
   mix-blend-mode: difference;
   opacity: 0.65;
+  // border: 1px solid var(--pattern);
 }
 
 .circle4 {
@@ -154,7 +123,9 @@
 
   top: 0;
   left: 50%;
-  background-color: var(--red);
+  // background-color: var(--grey-950);
+  background-color: hsla(60, 100%, 50%, 0.5);
+  // background-color: rgb(90, 89, 255);
   transform: translateX(-50%);
 }
 
@@ -163,7 +134,9 @@
 
   right: 2.41%;
   bottom: 10.02%;
-  background-color: var(--green);
+  // background-color: var(--grey-600);
+  background-color: hsla(180, 100%, 50%, 0.5);
+  // background-color: rgb(255, 89, 90);
 }
 
 .circle6 {
@@ -171,7 +144,9 @@
 
   bottom: 10.02%;
   left: 2.41%;
-  background-color: var(--blue);
+  // background-color: var(--grey-700);
+  background-color: hsla(120, 100%, 50%, 0.5);
+  // background-color: rgb(255, 88, 255);
 }
 
 .vennDiagram::after,
@@ -189,20 +164,9 @@
 .ampersand {
   top: 45%;
   left: 50%;
-  width: 3.7em;
+  width: 9vw;
   transform: translate(-46%, -45%);
-  @include b.mq(xl) {
-    width: 6vw;
-  }
-  @include b.mq(lg) {
-    width: 9vw;
-  }
-  @include b.mq(md) {
-    width: 10vw;
-  }
-  @include b.mq(md) {
-    width: 11vw;
-  }
+  fill: var(--background);
 }
 
 .aboutContent {

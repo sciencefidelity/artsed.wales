@@ -6,8 +6,8 @@ import s from "styles/about.module.scss"
 const Venn = () => {
   const { locale } = useRouter()
   return (
-    <section className={`${s.venn} ${u.mbLarge}`}>
-      <div className={`${u.flex} ${u.uppercase}`}>
+    <section className={`${s.venn}`}>
+      <div className={`${u.flex}`}>
         <div className={s.vennDiagram}>
           <div className={s.circle1}></div>
           <div className={s.circle2}></div>
@@ -15,18 +15,18 @@ const Venn = () => {
           <div className={s.circle4}></div>
           <div className={s.circle5}></div>
           <div className={s.circle6}></div>
-          <div className={`${s.content1} ${u.fgDark}`}>
+          <div className={`${s.content1}`}>
             {locale === "cy" ? "Artistiaid" : "Artists"}
           </div>
-          <div className={`${s.content2} ${u.fgDark}`}>
+          <div className={`${s.content2}`}>
             {locale === "cy" ? "Ysgolion" : "Schools"}
           </div>
-          <div className={`${s.content3} ${u.fgDark}`}>
+          <div className={`${s.content3}`}>
             {locale === "cy" ? "Cyrff " : "Cultural"}
             <br />
             {locale === "cy" ? "Diwylliannol" : "Organisations"}
           </div>
-          <div className={`${s.content4} ${u.fgWhite}`}>
+          <div className={`${s.content4}`}>
             {locale === "cy" ? "Rhwydwaith" : "Network"}
           </div>
           <div>
