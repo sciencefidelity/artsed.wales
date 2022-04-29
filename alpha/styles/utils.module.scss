@@ -125,6 +125,19 @@
   border-color: var(--grey-900)
 }
 
+// Universal Classes
+
+.emailAddress {
+  text-decoration-thickness: 1.7px;
+  color: var(--grey-550);
+  transition: color 0.3s ease-in-out;
+  font-size: 1.4rem;
+  &:hover {
+    color: var(--grey-750);
+    transition: color 0.3s ease-in-out;
+  }
+}
+
 // Accessibility
 
 .screenReaderText {

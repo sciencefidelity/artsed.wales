@@ -3,7 +3,9 @@ import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
+import { acronym } from "lib/utils"
 import Layout from "components/layout"
+import Image from "components/image"
 import Link from "components/link"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
@@ -94,62 +96,132 @@ const About = ({ data }) => {
       <div className={`${u.container}`}>
         <div className={`${s.about} ${u.grid}`}>
           <div className={`${s.aboutContent}`}>
-            <PortableText
-              value={locale === "cy" && pages[0].__i18n_refs
-                ? pages[0].__i18n_refs.body
-                : pages[0].body}
-              components={components}
-            />
-            <h2><Localize data={labels[13].text} /></h2>
-            <ul style={{listStyleType: "none", padding: 0}}>
+            <div className={`${s.aboutBody}`}>
+              <PortableText
+                value={locale === "cy" && pages[0].__i18n_refs
+                  ? pages[0].__i18n_refs.body
+                  : pages[0].body}
+                components={components}
+              />
+            </div>
+            <h2 className={`${u.uppercase}`}>
+              <Localize data={labels[13].text} />{/* Network Co-ordinators */}
+            </h2>
+            <ul className={`${s.aboutCoordinators}`}>
               {coordinatorsSorted.map(coordinator =>
-                <li key={coordinator._id}>
-                  <Link href={`/${coordinator._type}/${coordinator.slug}`}>
-                    {locale === "cy" && coordinator.__i18n_refs
-                      ? coordinator.__i18n_refs.title
-                      : coordinator.title}
-                  </Link>
-                  {coordinator.email &&
-                    <>
-                      {" – "}
-                      <a href={`mailto:${coordinator.email}`}>
+                <li key={coordinator._id} className={`${u.flex}`}>
+                  <div className={`${s.avatar} ${u.grid}`}>
+                    {coordinator.avatar &&
+                      <Image
+                        image={coordinator.avatar}
+                        alt={coordinator.title}
+                        height={200}
+                        width={200}
+                        lazy={true}
+                      />
+                    }
+                    {!coordinator.avatar &&
+                      <div className={`${s.initials} ${u.mono} ${u.bold}`}>
+                        {acronym(coordinator.title)}
+                      </div>
+                    }
+                  </div>
+                  <div>
+                    <h3>
+                      <Link
+                        href={`/${coordinator._type}/${coordinator.slug}`}
+                        className={`${u.noUnderline}`}
+                      >
+                        {locale === "cy" && coordinator.__i18n_refs
+                          ? coordinator.__i18n_refs.title
+                          : coordinator.title}
+                      </Link>
+                    </h3>
+                    <span className={`${s.coordinatorBio}`}>
+                      {coordinator.bio
+                        ? coordinator.bio
+                        : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                      }
+                    </span>
+                    <br />
+                    {coordinator.email &&
+                      <a
+                        href={`mailto:${coordinator.email}`}
+                        className={`${u.underline} ${u.emailAddress}`}
+                      >
                         {locale === "cy" && coordinator.__i18n_refs
                           ? coordinator.__i18n_refs.email
                           : coordinator.email}
                       </a>
-                    </>
-                  }
+                    }
+                  </div>
                 </li>
               )}
             </ul>
-            <h2><Localize data={labels[15].text} /></h2>
-            <h3><Localize data={labels[14].text} /></h3>
-            <ul style={{listStyleType: "none", padding: 0}}>
+            <h2 className={`${u.uppercase}`}>
+              <Localize data={labels[14].text} />{/* Chair of Trustees */}
+            </h2>
+            <ul className={`${s.aboutCoordinators}`}>
               {trusteesSorted.map(trustee => trustee.role.includes("Chair") &&
-                <li key={trustee._id}>
-                  <Link href={`/${trustee._type}/${trustee.slug}`}>
-                    {locale === "cy" && trustee.__i18n_refs
-                      ? trustee.__i18n_refs.title
-                      : trustee.title}
-                  </Link>
-                  {trustee.email &&
-                    <>
-                      {" – "}
-                      <a href={`mailto:${trustee.email}`}>
+                <li key={trustee._id} className={`${u.flex}`}>
+                  <div className={`${s.avatar} ${u.grid}`}>
+                    {trustee.avatar &&
+                      <Image
+                        image={trustee.avatar}
+                        alt={trustee.title}
+                        height={200}
+                        width={200}
+                        lazy={true}
+                      />
+                    }
+                    {!trustee.avatar &&
+                      <div className={`${s.initials} ${u.mono} ${u.bold}`}>
+                        {acronym(trustee.title)}
+                      </div>
+                    }
+                  </div>
+                  <div>
+                    <h3>
+                      <Link
+                        href={`/${trustee._type}/${trustee.slug}`}
+                        className={`${u.noUnderline}`}
+                      >
+                        {locale === "cy" && trustee.__i18n_refs
+                          ? trustee.__i18n_refs.title
+                          : trustee.title}
+                      </Link>
+                    </h3>
+                    <span className={`${s.coordinatorBio}`}>
+                      {trustee.bio
+                        ? trustee.bio
+                        : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                      }
+                    </span>
+                    <br />
+                    {trustee.email &&
+                      <a
+                        href={`mailto:${trustee.email}`}
+                        className={`${u.underline} ${u.emailAddress}`}
+                      >
                         {locale === "cy" && trustee.__i18n_refs
                           ? trustee.__i18n_refs.email
                           : trustee.email}
                       </a>
-                    </>
-                  }
+                    }
+                  </div>
                 </li>
               )}
             </ul>
-            <h3><Localize data={labels[16].text} /></h3>
-            <ul style={{listStyleType: "none", padding: 0}}>
+            <h2 className={`${u.uppercase}`}>
+              <Localize data={labels[16].text} />{/* Trustees */}
+            </h2>
+            <ul className={`${s.aboutCoordinators}`}>
               {trusteesSorted.map(trustee => trustee.role.includes("Trustee") &&
                 <li key={trustee._id}>
-                  <Link href={`/${trustee._type}/${trustee.slug}`}>
+                  <Link
+                    href={`/${trustee._type}/${trustee.slug}`}
+                    className={`${u.noUnderline}`}
+                  >
                     {locale === "cy" && trustee.__i18n_refs
                       ? trustee.__i18n_refs.title
                       : trustee.title}

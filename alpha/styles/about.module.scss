@@ -2,9 +2,9 @@
   // margin-top: 13rem;
   grid-template-columns: 3fr 1fr;
   a {
-    text-decoration-line: none;
-    color: var(--grey-650);
-    color: var(--grey-750);
+    // text-decoration-line: none;
+    color: var(--grey-550);
+    line-height: 1.3;
   }
 }
 
@@ -12,4 +12,64 @@
   margin-block: 7rem 5rem;
   margin-right: 3rem;
   width: 710px;
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--grey-650);
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 3rem;
+  }
 }
+
+.aboutBody {
+  margin-bottom: 5rem;
+}
+
+.aboutCoordinators {
+  margin-bottom: 5rem;
+  h3 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    a {
+      color: var(grey-950);
+      &:hover {
+        color: var(grey-950);
+      }
+    }
+  }
+}
+
+.coordinatorBio {
+  font-size: 1.4rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--grey-650);
+  margin-right: 2rem;
+  border-radius: 100%;
+  filter: grayscale(0.25);
+  transition: filter 0.3s ease-in-out;
+  &:hover {
+    filter: grayscale(0);
+    transition: filter 0.3s ease-in-out;
+  }
+  img {
+    border-radius: 100%;
+  }
+}
+
+.initials {
+  font-size: 2.2rem;
+  color: var(--grey-000);
+  text-align: center;
+  place-self: center;
+}
+
