@@ -129,22 +129,22 @@ const EventPage = ({ data }) => {
           />
         </div>
         {/* {event.shapeOne && <Shape name={event.shapeOne} />} */}
-        <img
+        {event.imageOne && <img
           src={urlFor(event.imageOne)
             .auto("format")
             .quality(85)
             .url()}
           alt={event.title}
           className={`${s[event.classOne]}`}
-        />
-        <img
+        />}
+        {event.imageTwo && <img
           src={urlFor(event.imageTwo)
             .auto("format")
             .quality(85)
             .url()}
           alt={event.title}
           className={`${s[event.classTwo]}`}
-        />
+        />}
       </div>
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>
