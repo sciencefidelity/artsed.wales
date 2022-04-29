@@ -4,12 +4,7 @@ import { useRouter } from "next/router"
 import { pattern, urlFor } from "lib/utils"
 import Date from "components/date"
 import Link from "components/link"
-import {
-  Circle,
-  DashedCircle,
-  StripedCircle,
-  Triange
-} from "components/icons/shapes"
+import { Shape } from "components/icons/shape"
 import { Icon } from "components/icons/icon"
 import { Event } from "lib/interfaces"
 import u from "styles/utils.module.scss"
@@ -17,12 +12,9 @@ import s from "styles/events.module.scss"
 
 interface Props {
   event: Event
-  idx: number
 }
 
-const shapes = [<DashedCircle />, , <Triange />, <StripedCircle />, <Circle />]
-
-const SingleEvent: FC<Props> = ({ event, idx }) => {
+const SingleEvent: FC<Props> = ({ event }) => {
   const { locale } = useRouter()
   return (
     <article className={`${s.event}`}>
@@ -32,7 +24,7 @@ const SingleEvent: FC<Props> = ({ event, idx }) => {
         tabIndex={-1}
       >
         <div className={`${s.image} ${pattern(event.pattern)}`}>
-          {shapes[idx] && shapes[idx]}
+          {event.shapeOne && <Shape name={event.shapeOne} />}
           <img
             src={urlFor(event.imageOne)
               .auto("format")

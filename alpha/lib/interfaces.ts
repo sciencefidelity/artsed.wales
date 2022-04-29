@@ -57,6 +57,8 @@ export interface Event extends SanityDocument {
   meta: MetaData
   pattern: string
   price: number
+  shapeOne: string
+  shapeTwo: string
   slug: string
   summary: string
   title: string

@@ -100,6 +100,63 @@
   animation: 40s ease-in-out infinite alternate whale;
 }
 
+.circle {
+  svg {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -30%;
+    left: 30%;
+    circle {
+      stroke-width: 15;
+      stroke-dasharray: 6%;
+      fill: transparent;
+      stroke: black;
+    }
+  }
+}
+
+.dashedCircle {
+  svg {
+    z-index: 1;
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -30%;
+    left: -30%;
+    circle {
+      stroke-width: 15;
+      stroke-dasharray: 6%;
+      fill: transparent;
+      stroke: black;
+    }
+  }
+}
+
+.stripedCircle {
+  svg {
+    z-index: 1;
+    position: absolute;
+    width: 70%;
+    top: -10;
+    right: 130;
+    transform: rotate(-55deg);
+  }
+}
+
+.triangle {
+  z-index: 1;
+  position: absolute;
+  width: 170%;
+  height: 170%;
+  stroke-width: 3.5;
+  fill: transparent;
+  stroke: black;
+  left: -34px;
+  top: 135px;
+  transform: rotate(25deg);
+}
+
 .event {
   margin-bottom: 2rem;
 }
