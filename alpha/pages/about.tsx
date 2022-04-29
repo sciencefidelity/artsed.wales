@@ -150,8 +150,8 @@ const About = ({ data }) => {
                         </Link>
                       </h3>
                       <span className={`${s.coordinatorBio}`}>
-                        {coordinator.bio
-                          ? coordinator.bio
+                        {coordinator.job
+                          ? coordinator.job
                           : "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                         }
                       </span>

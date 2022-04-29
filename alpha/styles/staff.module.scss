@@ -3,22 +3,66 @@
 }
 
 .staffContent {
-  width: 710px;
+  // width: 710px;
   margin-top: 7rem;
-  margin-right: 2rem;
+  // margin-right: 2rem;
   h1 {
     color: var(--grey-650);
-    font-size: 5rem;
+    font-size: 3.4rem;
+    margin-top: -0.6rem;
+  }
+  p {
+    margin-bottom: 4rem;
+  }
+  h2 {
+    font-size: 2.1rem;
+    color: var(--grey-650);
+    margin-bottom: 1rem;
+  }
+  time {
+    text-transform: uppercase;
   }
 }
 
-.staffRoles {
+.staffHeader {
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
 
+.staffRoles {
+  font-size: 1.3rem;
+  // margin-bottom: -0.7rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--grey-650);
+  margin-right: 2rem;
+  border-radius: 100%;
+  border: 1px solid var(--grey-650);
+  filter: grayscale(0.25);
+  transition: filter 0.3s ease-in-out;
+  img {
+    border-radius: 100%;
+  }
+}
+
+.initials {
+  font-size: 2.2rem;
+  color: var(--grey-000);
+  text-align: center;
+  place-self: center;
+}
+
+.staffBody {
+  width: 710px;
 }
 
 .staffEventsHeading {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 2.3rem;
+  margin-block: -0.3rem 0.5rem;
   a {
     text-decoration-line: none;
     color: var(--grey-650);
@@ -31,3 +75,4 @@
 .staffSidebar {
   margin-top: 7rem;
 }
+
