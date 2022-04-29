@@ -99,66 +99,6 @@
   }
 }
 
-.sidebar {
-  margin-top: 7rem;
-}
-
-.sidebarItem {
-  margin-bottom: 2.5rem;
-  li {
-    list-style-type: none;
-  }
-  time {
-    display: block;
-    padding: 0;
-    margin-bottom: -2.3rem;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-  }
-  h3 {
-    margin-bottom: 0.7rem;
-    font-size: 1.6rem;
-    a {
-      color: var(--grey-750);
-      text-decoration-line: none;
-      transition: color 0.3s ease-in-out;
-      &:hover {
-        color: var(--grey-850);
-        transition: color 0.3s ease-in-out;
-      }
-    }
-  }
-  p {
-    font-size: 1.3rem;
-  }
-}
-
-.sidebarIcon {
-  display: flex;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  margin-right: 0.8rem;
-  background-color: var(--grey-650);
-  border-radius: 100%;
-  transition: background-color 0.3s ease-in-out;
-  &:hover {
-    background-color: var(--grey-750);
-    transition: background-color 0.3s ease-in-out;
-  }
-  svg {
-    width: 50%;
-    margin: auto;
-    fill: var(--grey-000);
-  }
-}
-
-.sidebarHeading {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: var(--grey-650);
-}
-
 .logos {
   justify-content: space-between;
   margin-block: 4rem 5rem;

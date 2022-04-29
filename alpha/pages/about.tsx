@@ -96,15 +96,15 @@ const About = ({ data }) => {
         </div>
         <div className={`${u.container}`}>
           <div className={`${s.about} ${u.grid}`}>
-            <div className={`${s.aboutContent}`}>
-              <div className={`${s.aboutBody}`}>
+            <div className={`${s.content}`}>
+              <article className={`${s.body}`}>
                 <PortableText
                   value={locale === "cy" && pages[1].__i18n_refs
                     ? pages[1].__i18n_refs.body : pages[1].body}
                   components={components}
                 />
-              </div>
-              <h2 className={`${u.uppercase}`}>
+              </article>
+              <h2 className={`${s.h2} ${u.uppercase}`}>
                 <Localize data={labels[13].text} />{/* Network Co-ordinators */}
               </h2>
               <ul className={`${s.staffList}`}>
@@ -112,7 +112,7 @@ const About = ({ data }) => {
                   <StaffList person={coordinator} />
                 )}
               </ul>
-              <h2 className={`${u.uppercase}`}>
+              <h2 className={`${s.h2} ${u.uppercase}`}>
                 <Localize data={labels[14].text} />{/* Chair of Trustees */}
               </h2>
               <ul className={`${s.staffList}`}>

@@ -44,33 +44,33 @@ const Home = ({ data }) => {
   }
 
   const pageHead = {
-    title: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.meta?.title
-      : pages[1].meta?.title,
-    description: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.meta?.description
-      : pages[1].meta?.description,
-    ogTitle: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.facebook?.title
-      : pages[1].facebook?.title,
-    ogDescription: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.facebook?.description
-      : pages[1].facebook?.description,
-    ogURL: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.meta?.canonicalURL
-      : pages[1].meta?.canonicalURL,
-    ogImage: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.facebook?.image
-      : pages[1].facebook?.image,
-    twitterTitle: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.twitter?.title
-      : pages[1].twitter?.title,
-    twitterDescription: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.twitter?.description
-      : pages[1].twitter?.description,
-    twitterImage: locale === "cy" && pages[1].__i18n_refs
-      ? pages[1].__i18n_refs.twitter?.image
-      : pages[1].twitter?.image
+    title: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.meta?.title
+      : pages[2].meta?.title,
+    description: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.meta?.description
+      : pages[2].meta?.description,
+    ogTitle: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.facebook?.title
+      : pages[2].facebook?.title,
+    ogDescription: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.facebook?.description
+      : pages[2].facebook?.description,
+    ogURL: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.meta?.canonicalURL
+      : pages[2].meta?.canonicalURL,
+    ogImage: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.facebook?.image
+      : pages[2].facebook?.image,
+    twitterTitle: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.twitter?.title
+      : pages[2].twitter?.title,
+    twitterDescription: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.twitter?.description
+      : pages[2].twitter?.description,
+    twitterImage: locale === "cy" && pages[2].__i18n_refs
+      ? pages[2].__i18n_refs.twitter?.image
+      : pages[2].twitter?.image
   }
 
   return (

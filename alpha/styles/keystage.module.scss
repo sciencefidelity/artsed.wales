@@ -2,45 +2,24 @@
   grid-template-columns: 3fr 1fr;
 }
 
-.keystageContent {
+.content {
   margin-top: 7rem;
   margin-right: 2rem;
-  h1 {
-    margin-bottom: 3rem;
-    font-size: 3.4rem;
-    color: var(--grey-650);
-  }
-  h2 {
-    margin-bottom: 1rem;
-    font-size: 2.1rem;
-    color: var(--grey-650);
-  }
-  time {
-    text-transform: uppercase;
-  }
 }
 
-.keystageBody {
+.h1 {
+  margin-bottom: 3rem;
+  font-size: 3.4rem;
+  color: var(--grey-650);
+}
+
+.h2 {
+  margin-bottom: 1rem;
+  font-size: 2.1rem;
+  color: var(--grey-650);
+}
+
+.body {
   width: 710px;
   margin-bottom: 4rem;
-}
-
-.event {
-  margin-bottom: 2rem;
-}
-
-.keystageEventsHeading {
-  margin-block: -0.3rem 0.5rem;
-  font-size: 2.3rem;
-  a {
-    color: var(--grey-650);
-    text-decoration-line: none;
-    &:hover {
-      color: var(--grey-850);
-    }
-  }
-}
-
-.keystageSidebar {
-  margin-top: 7rem;
 }

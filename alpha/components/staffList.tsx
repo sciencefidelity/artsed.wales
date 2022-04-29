@@ -14,7 +14,7 @@ interface Props {
 export const StaffList: FC<Props> = ({ person }) => {
   const { locale } = useRouter()
   return (
-    <li key={person._id} className={`${u.flex}`}>
+    <li key={person._id} className={`${s.person} ${u.flex}`}>
       <Link
         href={`/${person._type}/${person.slug}`}
         className={`${u.noUnderline}`}

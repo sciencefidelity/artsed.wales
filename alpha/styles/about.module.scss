@@ -157,30 +157,27 @@
   transform: translate(-46%, -45%);
 }
 
-.aboutContent {
+.content {
   margin-block: 7rem 0;
   margin-right: 3rem;
-  h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: var(--grey-650);
-  }
-  ul {
-    padding: 0;
-    list-style-type: none;
-  }
-  li {
-    margin-bottom: 3rem;
-  }
 }
 
-.aboutBody {
+.body {
   width: 710px;
   margin-bottom: 5rem;
 }
 
+.h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--grey-650);
+}
+
 .staffList {
   margin-bottom: 5rem;
+  padding: 0;
+  list-style-type: none;
+
 }
 
 .trustees {

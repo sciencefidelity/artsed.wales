@@ -32,6 +32,28 @@
   font-size: 1.3rem;
 }
 
+.avatar {
+  width: 120px;
+  height: 120px;
+  aspect-ratio: 1 / 1;
+  margin-right: 2rem;
+  background-color: var(--grey-650);
+  filter: grayscale(0.25);
+  border: 1px solid var(--grey-650);
+  border-radius: 100%;
+  transition: filter 0.3s ease-in-out;
+  img {
+    border-radius: 100%;
+  }
+}
+
+.initials {
+  place-self: center;
+  font-size: 3.4rem;
+  color: var(--grey-000);
+  text-align: center;
+}
+
 .staffBody {
   width: 710px;
 }

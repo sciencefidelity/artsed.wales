@@ -12,9 +12,8 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import Layout from "components/layout"
-import Date from "components/date"
 import ErrorTemplate from "components/errorTemplate"
-import Link from "components/link"
+import { EventList } from "components/eventList"
 import Localize from "components/localize"
 import Sidebar from "components/sidebar"
 import { keystageQuery, keystagePathQuery } from "lib/queries"
@@ -50,19 +49,13 @@ const KeystagePage = ({ data }) => {
   const router = useRouter()
   const { locale } = router
   if(router.isFallback) {
-    return (
-      <ErrorTemplate />
-    )
+    return <ErrorTemplate />
   }
   if(!data) {
-    return (
-      <>
-        <Head>
-          <meta name="robots" content="noindex" />
-        </Head>
-        <ErrorTemplate />
-      </>
-    )
+    return (<>
+      <Head><meta name="robots" content="noindex" /></Head>
+      <ErrorTemplate />
+    </>)
   }
   const {
     company,
@@ -120,60 +113,31 @@ const KeystagePage = ({ data }) => {
     >
       <div className={`${u.container}`}>
         <div className={`${s.keystage} ${u.grid}`}>
-          <section className={`${s.keystageContent}`}>
+          <section className={`${s.content}`}>
             {keystage.title &&
-              <h1 className={`${u.mono} ${u.bold}`}>
+              <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
                 {locale === "cy" && keystage.__i18n_refs
-                  ? keystage.__i18n_refs.title
-                  : keystage.title}
+                  ? keystage.__i18n_refs.title : keystage.title}
               </h1>
             }
             {keystage.description &&
-              <article className={`${s.keystageBody}`}>
+              <article className={`${s.body}`}>
                 <p>
                   {locale === "cy" && keystage.__i18n_refs
-                    ? keystage.__i18n_refs.description
-                    : keystage.description}
+                    ? keystage.__i18n_refs.description : keystage.description}
                 </p>
               </article>
             }
-            {keystage.events.length > 0 && labels[12] &&
-              <>
-                <h2 className={`${u.uppercase}`}>
-                  <Localize data={labels[12].text} />{" "}
-                  {locale === "cy" && keystage.__i18n_refs
-                    ? keystage.__i18n_refs.title
-                    : keystage.title}
-                </h2>
-                <div>
-                  {keystage.events.map(event =>
-                    <div className={`${s.event}`} key={event._id}>
-                      {event.dateStart &&
-                        <Date date={event.dateStart} />
-                      }
-                      {event.title &&
-                        <h3 className={`
-                          ${s.keystageEventsHeading} ${u.mono} ${u.bold}
-                        `}>
-                          <Link href={`/${event._type}/${event.slug}`}>
-                            {locale === "cy" && event.__i18n_refs
-                              ? event.__i18n_refs.title
-                              : event.title}
-                          </Link>
-                        </h3>
-                      }
-                      {event.summary &&
-                        <p>
-                          {locale === "cy" && event.__i18n_refs
-                            ? event.__i18n_refs.summary
-                            : event.summary}
-                        </p>
-                      }
-                    </div>
-                  )}
-                </div>
-              </>
-            }
+            {keystage.events.length > 0 && labels[12] && <>
+              <h2 className={`${s.h2} ${u.uppercase}`}>
+                <Localize data={labels[12].text} />{" "}
+                {locale === "cy" && keystage.__i18n_refs
+                  ? keystage.__i18n_refs.title : keystage.title}
+              </h2>
+              <div>
+                {keystage.events.map(event => <EventList event={event} />)}
+              </div>
+            </>}
           </section>
           <Sidebar events={events} title={labels[10].text} />
         </div>

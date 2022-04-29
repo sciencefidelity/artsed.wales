@@ -6,7 +6,7 @@ import Localize from "components/localize"
 import { Icon } from "components/icons/icon"
 import { Event, LocaleString } from "lib/interfaces"
 import u from "styles/utils.module.scss"
-import s from "styles/layout.module.scss"
+import s from "styles/sidebar.module.scss"
 
 interface Props {
   events: Event[]
@@ -17,32 +17,37 @@ const Sidebar: FC<Props> = ({ events, title }) => {
   const { locale } = useRouter()
   return (
     <aside className={`${s.sidebar}`}>
-      <h2 className={`${s.sidebarHeading} ${u.uppercase}`}>
+      <h2 className={`${s.heading} ${u.uppercase}`}>
         <Localize data={title} />
       </h2>
       <ul>
-        {events.map((e, idx) =>
-          <li key={e._id} className={`${s.sidebarItem}`}>
-            <div className={`${u.flex}`}>
-              <div className={`${s.sidebarIcon}`}>
-                <Link href={`/${e._type}/${e.slug}`}><Icon name={e.icon} /></Link>
+        {events && events.map(event =>
+          <li key={event._id} className={`${s.event}`}>
+            <header className={`${u.flex} ${s.header}`}>
+              <div className={`${s.icon}`}>
+                <Link href={`/${event._type}/${event.slug}`}>
+                  <Icon name={event.icon ? event.icon : "Bolt"} />
+                </Link>
               </div>
               <div>
-                <Date date={e.dateStart} /><br />
-                <h3 className={`${u.mono} ${u.bold}`}>
-                  <Link href={`/${e._type}/${e.slug}`}>
-                    {locale === "cy" && e.__i18n_refs
-                      ? e.__i18n_refs.title
-                      : e.title}
-                  </Link>
-                </h3>
+                {event.dateStart && <Date date={event.dateStart} />}
+                <br />
+                {event.title &&
+                  <h3 className={`${s.eventHeading} ${u.mono} ${u.bold}`}>
+                    <Link href={`/${event._type}/${event.slug}`}>
+                      {locale === "cy" && event.__i18n_refs
+                        ? event.__i18n_refs.title : event.title}
+                    </Link>
+                  </h3>
+                }
               </div>
-            </div>
-            <p>
-            {locale === "cy" && e.__i18n_refs
-              ? e.__i18n_refs.summary
-              : e.summary}
-            </p>
+            </header>
+            {event.summary &&
+              <article className={`${s.summary}`}>
+                {locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.summary : event.summary}
+              </article>
+            }
           </li>
         )}
       </ul>
