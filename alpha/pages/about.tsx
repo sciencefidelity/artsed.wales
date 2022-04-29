@@ -232,7 +232,7 @@ const About = ({ data }) => {
               <h2 className={`${u.uppercase}`}>
                 <Localize data={labels[16].text} />{/* Trustees */}
               </h2>
-              <ul className={`${s.aboutCoordinators}`}>
+              <ul className={`${s.aboutTrustees}`}>
                 {trusteesSorted.map(trustee => trustee.role.includes("Trustee") &&
                   <li key={trustee._id}>
                     <Link
