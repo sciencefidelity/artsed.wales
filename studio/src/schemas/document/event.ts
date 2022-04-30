@@ -304,6 +304,19 @@ export default {
       group: 'design'
     },
     {
+      name: 'imageThree',
+      title: 'Hero three',
+      type: 'image',
+      description: 'Cutout image for animation',
+      group: 'design'
+    },
+    {
+      name: 'classThree',
+      title: 'Image class three',
+      type: 'string',
+      group: 'design'
+    },
+    {
       name: 'pattern',
       title: 'Pattern class',
       type: 'string',
@@ -318,6 +331,12 @@ export default {
     {
       name: 'shapeTwo',
       title: 'Shape two',
+      type: 'string',
+      group: 'design'
+    },
+    {
+      name: 'shapeThree',
+      title: 'Shape three',
       type: 'string',
       group: 'design'
     }
