@@ -24,7 +24,9 @@ const SingleEvent: FC<Props> = ({ event }) => {
         tabIndex={-1}
       >
         <div className={`${s.image} ${pattern(event.pattern)}`}>
-          {event.shapeOne && <Shape name={event.shapeOne} />}
+          {event.shapeOne && <div className={`${s[event.shapeOne]}`}>
+            <Shape name={event.shapeOne} />
+          </div>}
           <img
             src={urlFor(event.imageOne)
               .auto("format")

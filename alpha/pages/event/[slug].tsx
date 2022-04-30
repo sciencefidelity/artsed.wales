@@ -111,7 +111,7 @@ const EventPage = ({ data }) => {
       ? event.__i18n_refs.twitter?.image
       : event.twitter?.image
   }
-
+  console.log(event.shapeThree)
   return (
     <Layout
       company={company}
@@ -128,11 +128,15 @@ const EventPage = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: event.longTitle }}
           />
         </div>
-        {/* {event.shapeOne &&
-          <div className={`${s[event.shapeOne]}`}>
-            <Shape name={event.shapeOne} />
-          </div>
-        } */}
+        {event.shapeOne && <div className={`${s[event.shapeOne]}`}>
+          <Shape name={event.shapeOne} />
+        </div>}
+        {event.shapeTwo && <div className={`${s[event.shapeTwo]}`}>
+          <Shape name={event.shapeTwo} />
+        </div>}
+        {event.shapeThree && <div className={`${s[event.shapeThree]}`}>
+          <Shape name={event.shapeThree} />
+        </div>}
         {event.imageOne && <img
           src={urlFor(event.imageOne)
             .auto("format")
@@ -148,6 +152,14 @@ const EventPage = ({ data }) => {
             .url()}
           alt={event.title}
           className={`${s[event.classTwo]}`}
+        />}
+        {event.imageThree && <img
+          src={urlFor(event.imageThree)
+            .auto("format")
+            .quality(85)
+            .url()}
+          alt={event.title}
+          className={`${s[event.classThree]}`}
         />}
       </div>
       <div className={`${u.container}`}>

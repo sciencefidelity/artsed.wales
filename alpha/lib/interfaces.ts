@@ -44,6 +44,7 @@ export interface Event extends SanityDocument {
   britelink: string
   classOne: string
   classTwo: string
+  classThree: string
   dateEnd: string
   dateStart: string
   facebook: SocialCard
@@ -51,6 +52,7 @@ export interface Event extends SanityDocument {
   icon: string
   imageOne: Image
   imageTwo: Image
+  imageThree: Image
   keystage: Keystage[]
   location: string
   longTitle: string
@@ -59,6 +61,7 @@ export interface Event extends SanityDocument {
   price: number
   shapeOne: string
   shapeTwo: string
+  shapeThree: string
   slug: string
   summary: string
   title: string

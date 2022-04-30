@@ -1,6 +1,4 @@
 import { FC } from "react"
-import s from "styles/events.module.scss"
-// import b from "styles/event.module.scss"
 
 interface Props {
   name: string
@@ -8,19 +6,92 @@ interface Props {
 
 export const Shape: FC<Props> = ({ name }) => {
   return (
-    <div className={`${s[name]}`}>
-      {name === "dashedCircle" && (
+    <>
+      {name === "secretCircle" && (
         <svg><circle cx="50%" cy="50%" r="200px"></circle></svg>
       )}
-      {name === "circle" && (
+      {name === "digitalCircle" && (
+        <svg width="100%" height="100%" viewBox="0 0 512 512">
+          <circle cx="256" cy="256" r="256" style={{fill:"none"}}/>
+          <clipPath id="_clip1"><circle cx="256" cy="256" r="256"/></clipPath>
+          <g clipPath="url(#_clip1)">
+            <g>
+              <rect y="19.297" width="512" height="25"/>
+              <rect y="74.895" width="512" height="25"/>
+              <rect y="130.494" width="512" height="25"/>
+              <rect y="186.092" width="512" height="25"/>
+              <rect y="241.691" width="512" height="25"/>
+              <rect y="297.289" width="512" height="25"/>
+              <rect y="352.887" width="512" height="25"/>
+              <rect y="408.486" width="512" height="25"/>
+              <rect y="464.084" width="512" height="25"/>
+            </g>
+          </g>
+        </svg>
+      )}
+      {name === "digitalCircle1" && (
+        <svg width="100%" height="100%" viewBox="0 0 512 512">
+          <circle cx="256" cy="256" r="256" style={{fill:"none"}}/>
+          <clipPath id="_clip2"><circle cx="256" cy="256" r="256"/></clipPath>
+          <g clipPath="url(#_clip2)">
+            <g>
+              <rect y="10" width="512" height="20"/>
+              <rect y="50" width="512" height="20"/>
+              <rect y="90" width="512" height="20"/>
+              <rect y="130" width="512" height="20"/>
+              <rect y="170" width="512" height="20"/>
+              <rect y="210" width="512" height="20"/>
+              <rect y="250" width="512" height="20"/>
+              <rect y="290" width="512" height="20"/>
+              <rect y="330" width="512" height="20"/>
+              <rect y="370" width="512" height="20"/>
+              <rect y="410" width="512" height="20"/>
+              <rect y="450" width="512" height="20"/>
+              <rect y="490" width="512" height="20"/>
+            </g>
+          </g>
+        </svg>
+      )}
+      {name === "digitalTriangle" && (
+        <svg width="100%" height="100%" viewBox="0 0 200 174">
+          <path d="M100.006,0.018l100.005,173.613l-200.011,-0l100.006,-173.613Z" style={{fill: "none"}} />
+          <clipPath id="_clip3">
+            <path d="M100.006,0.018l100.005,173.613l-200.011,-0l100.006,-173.613Z"/>
+          </clipPath>
+          <g clip-path="url(#_clip3)">
+            <g>
+              <rect x="-54.701" y="44.815" width="259.081" height="5.771"/>
+              <rect x="-54.701" y="33.603" width="259.081" height="5.771"/>
+              <rect x="-54.701" y="22.39" width="259.081" height="5.771"/>
+              <rect x="-54.701" y="11.178" width="259.081" height="5.771"/>
+              <rect x="-54.701" y="-0.034" width="259.081" height="5.771"/>
+              <rect x="-54.701" y="78.452" width="259.081" height="5.771"/>
+              <rect x="-54.701" y="56.027" width="259.081" height="5.771"/>
+              <rect x="-54.701" y="67.24" width="259.081" height="5.771"/>
+              <rect x="-54.632" y="134.222" width="259.081" height="5.771"/>
+              <rect x="-54.632" y="123.01" width="259.081" height="5.771"/>
+              <rect x="-54.632" y="111.797" width="259.081" height="5.771"/>
+              <rect x="-54.632" y="100.585" width="259.081" height="5.771"/>
+              <rect x="-54.632" y="89.373" width="259.081" height="5.771"/>
+              <rect x="-54.632" y="167.859" width="259.081" height="5.771"/>
+              <rect x="-54.632" y="145.434" width="259.081" height="5.771"/>
+              <rect x="-54.632" y="156.647" width="259.081" height="5.771"/>
+            </g>
+          </g>
+        </svg>
+      )}
+      {name === "siteTriangle" && (
+        <svg width="220" height="220"><polygon points="100 30, 200 200, 0 200" /></svg>
+      )}
+      {name === "siteCircle" && (
+        <svg width="400" height="400"><circle cx="200" cy="200" r="85"></circle></svg>
+      )}
+      {name === "siteSquare" && (
+        <svg width="200" height="200"><rect width="160" height="160" x="20" y="20" /></svg>
+      )}
+      {name === "danceCircle" && (
         <svg><circle cx="50%" cy="50%" r="200px"></circle></svg>
       )}
-      {name === "stripedCircle" && (
-        <svg width="100%" height="100%" viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" style={{fill:"none"}}/><clipPath id="_clip1"><circle cx="256" cy="256" r="256"/></clipPath><g clipPath="url(#_clip1)"><g><rect x="-0" y="297.289" width="512" height="21"/><rect x="-0" y="241.691" width="512" height="21"/><rect x="-0" y="186.092" width="512" height="21"/><rect x="-0" y="130.494" width="512" height="21"/><rect x="-0" y="74.895" width="512" height="21"/><rect x="-0" y="19.297" width="512" height="21"/><rect x="-0" y="464.084" width="512" height="21"/><rect x="-0" y="352.887" width="512" height="21"/><rect x="-0" y="408.486" width="512" height="21"/></g></g></svg>
-      )}
-      {name === "triangle" && (
-        <svg viewBox="0 0 200 200"><polygon points="50 15, 100 100, 0 100" /></svg>
-      )}
-    </div>
+    </>
   )
 }
