@@ -29,7 +29,7 @@ const Layout: FC<Props> = ({
   return (
     <>
       <BaseHead pageHead={pageHead} settings={settings} />
-      <Header navigation={navigation} settings={settings} />
+      <Header labels={labels} navigation={navigation} settings={settings} />
       <main className={`${s.main}`}>{children}</main>
       <section className={u.container}>
         <SignUp labels={labels}/>

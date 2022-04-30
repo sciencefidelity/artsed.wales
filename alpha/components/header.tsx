@@ -4,16 +4,17 @@ import Language from "components/language"
 import Link from "components/link"
 import Localize from "components/localize"
 import ColorLogo from "components/icons/colorLogo"
-import { Navigation, Settings } from "lib/interfaces"
+import { Label, Navigation, Settings } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/layout.module.scss"
 
 interface Props {
+  labels: Label[]
   navigation: Navigation
   settings: Settings
 }
 
-const Header: FC<Props> = ({ navigation, settings }) => {
+const Header: FC<Props> = ({ labels, navigation, settings }) => {
   return (
     <header className={`${s.header}`}>
       <nav className={`${u.container} ${s.nav}`}>
@@ -55,7 +56,9 @@ const Header: FC<Props> = ({ navigation, settings }) => {
             ${u.sans} ${u.fontMedium} ${u.textRight} ${u.uppercase}
           `}>
             {/* <li className={`${u.inline} ${s.navRight}`}>Resources</li> */}
-            <li className={`${u.inline} ${s.navRight}`}><Language /></li>
+            <li className={`${u.inline} ${s.navRight}`}>
+              <Language labels={labels} />
+            </li>
           </ul>
         </div>
       </nav>

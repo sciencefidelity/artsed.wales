@@ -63,7 +63,7 @@ const SocialLinks: FC<Props> = ({ settings }) => {
       <ul className={`${s.socialLinksMenu} ${u.flex}`}>
         {settings.social.map(link =>
           <li key={link._key}>
-            <a href={link.url}>
+            <a href={link.url} target="_blank" rel="noreferrer">
               <div
                 className={`${s.socialIcon}`}
                 style={{
