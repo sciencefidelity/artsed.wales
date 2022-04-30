@@ -41,7 +41,7 @@ export interface Event extends SanityDocument {
   _type: "event"
   artform: Artform[]
   body: PortableText
-  briteLink: string
+  britelink: string
   classOne: string
   classTwo: string
   dateEnd: string

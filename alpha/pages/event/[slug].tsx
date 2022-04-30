@@ -128,7 +128,11 @@ const EventPage = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: event.longTitle }}
           />
         </div>
-        {/* {event.shapeOne && <Shape name={event.shapeOne} />} */}
+        {/* {event.shapeOne &&
+          <div className={`${s[event.shapeOne]}`}>
+            <Shape name={event.shapeOne} />
+          </div>
+        } */}
         {event.imageOne && <img
           src={urlFor(event.imageOne)
             .auto("format")
@@ -150,19 +154,24 @@ const EventPage = ({ data }) => {
         <div className={`${s.event} ${u.grid}`}>
           <section className={`${s.eventContent}`}>
             <div>
-              {event.title &&
-                <h1 className={`${u.mono} ${u.bold}`}>
-                  {locale === "cy" && event.__i18n_refs
-                    ? event.__i18n_refs.title
-                    : event.title}
-                </h1>
-              }
-              <PortableText
+              {event.title && <h1 className={`${u.mono} ${u.bold}`}>
+                {locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.title : event.title}
+              </h1>}
+              {event.body && <PortableText
                 value={locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.body
-                  : event.body}
+                  ? event.__i18n_refs.body : event.body}
                 components={components}
-              />
+              />}
+              {event.britelink && <div className={`${s.britelink} ${u.grid}`}>
+                <a href={locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.britelink : event.britelink}
+                  target="_blank" rel="noreferrer">
+                  <button className={`${s.btn} ${u.pointer}`}>
+                    <Localize data={labels[24].text} />
+                  </button>
+                </a>
+              </div>}
               {event.facilitators &&
                 <h3><Localize data={labels[7].text} /></h3>
               }
@@ -171,10 +180,8 @@ const EventPage = ({ data }) => {
                   <Fragment key={facilitator._id}>
                     {reactStringReplace(
                       locale === "cy" && facilitator.__i18n_refs.job
-                        ? facilitator.__i18n_refs.job
-                        : facilitator.job
-                          ? facilitator.job
-                          : facilitator.title,
+                        ? facilitator.__i18n_refs.job : facilitator.job
+                          ? facilitator.job : facilitator.title,
                       facilitator.title,
                       match =>
                         <strong>
@@ -220,7 +227,6 @@ const EventPage = ({ data }) => {
                 </p>
               }
             </div>
-            <button>Book you place</button>
           </section>
           <Sidebar
             // events={events.filter(e => e.title !== event.title)}
