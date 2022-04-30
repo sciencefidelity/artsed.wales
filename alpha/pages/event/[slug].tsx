@@ -111,7 +111,7 @@ const EventPage = ({ data }) => {
       ? event.__i18n_refs.twitter?.image
       : event.twitter?.image
   }
-  console.log(event.shapeThree)
+
   return (
     <Layout
       company={company}
@@ -125,7 +125,9 @@ const EventPage = ({ data }) => {
           <div className={`${s.icon}`}><Icon name={event.icon} /></div>
           <h1
             className={`${s.title} ${u.mono}`}
-            dangerouslySetInnerHTML={{ __html: event.longTitle }}
+            dangerouslySetInnerHTML={{
+              __html: locale === "cy" && event.__i18n_refs
+                ? event.__i18n_refs.longTitle : event.longTitle }}
           />
         </div>
         {event.shapeOne && <div className={`${s[event.shapeOne]}`}>
