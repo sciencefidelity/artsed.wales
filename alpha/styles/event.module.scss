@@ -314,6 +314,53 @@
   }
 }
 
+.danceCircle {
+  z-index: 1;
+  top: -25%;
+  right: -5%;
+  svg {
+    circle {
+      stroke-width: 10;
+      stroke-dasharray: 10% 5%;
+      fill: transparent;
+      stroke: var(--grey-950);
+    }
+  }
+}
+
+.danceTriangle {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  transform: rotate(22.5deg);
+  bottom: -25%;
+  left: 8%;
+  svg {
+    polygon {
+      transform: translateX(9px);
+      stroke-width: 10;
+      stroke-dasharray: 14% 5%;
+      fill: transparent;
+      stroke: var(--grey-950);
+    }
+  }
+}
+
+.danceSquare {
+  z-index: 1;
+  transform: rotate(-36deg);
+  top: -25%;
+  left: 0%;
+  svg {
+    rect {
+      stroke-width: 10;
+      stroke-dasharray: 13% 5%;
+      fill: transparent;
+      stroke: var(--grey-950);
+    }
+  }
+}
+
 .eventContent {
   width: 750px;
   margin-block: 7rem 5rem;

@@ -100,67 +100,70 @@
   animation: 40s ease-in-out infinite alternate whale;
 }
 
+.secretCircle,
+.siteTriangle,
+.digitalCircle,
+.danceCircle {
+  position: absolute;
+}
+
 .secretCircle {
+  top: -22%;
+  left: -23%;
   svg {
-    z-index: 1;
-    position: absolute;
-    width: 420px;
-    height: 420px;
-    top: -30%;
-    left: -30%;
+    transform: scale(215%);
     circle {
-      stroke-width: 15;
-      stroke-dasharray: 6%;
+      stroke-width: 7px;
+      stroke-dasharray: 3%;
       fill: transparent;
-      stroke: black;
+      stroke: var(--grey-900);
     }
   }
 }
 
 .siteTriangle {
   display: grid;
-  // display: none;
   z-index: 1;
   width: 100%;
   height: 100%;
   place-items: center;
   transform: rotate(25deg);
-  bottom: -20%;
-  right: -42%;
+  bottom: 0;
+  right: 0;
   svg {
     transform: scale(150%) translate(28px, 33px);
     polygon {
       transform: translateX(9px);
       stroke-width: 8px;
       fill: transparent;
-      stroke: var(--grey-950);
+      stroke: var(--grey-900);
     }
   }
 }
 
 .digitalCircle {
+  z-index: 1;
+  width: 70%;
+  top: 15%;
+  left: 0;
   svg {
-    z-index: 1;
-    position: absolute;
-    width: 70%;
-    top: -10;
-    right: 130;
     transform: rotate(-55deg);
+    rect {
+      fill: var(--grey-900);
+    }
   }
 }
 
 .danceCircle {
+  top: -33%;
+  right: -39%;
   svg {
-    position: absolute;
-    width: 420px;
-    height: 420px;
-    top: -30%;
-    left: 30%;
+    transform: scale(120%);
     circle {
-      stroke-width: 15;
-      stroke-dasharray: 6%;
+      stroke-width: 12px;
+      stroke-dasharray: 4%;
       fill: transparent;
-      stroke: black;
+      stroke: var(--grey-900);
     }
   }
 }

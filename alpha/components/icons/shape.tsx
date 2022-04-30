@@ -8,7 +8,7 @@ export const Shape: FC<Props> = ({ name }) => {
   return (
     <>
       {name === "secretCircle" && (
-        <svg><circle cx="50%" cy="50%" r="200px"></circle></svg>
+        <svg width="400" height="400"><circle cx="200" cy="200" r="85"></circle></svg>
       )}
       {name === "digitalCircle" && (
         <svg width="100%" height="100%" viewBox="0 0 512 512">
@@ -90,7 +90,13 @@ export const Shape: FC<Props> = ({ name }) => {
         <svg width="200" height="200"><rect width="160" height="160" x="20" y="20" /></svg>
       )}
       {name === "danceCircle" && (
-        <svg><circle cx="50%" cy="50%" r="200px"></circle></svg>
+        <svg width="500" height="500"><circle cx="250" cy="250" r="150"></circle></svg>
+      )}
+      {name === "danceTriangle" && (
+        <svg width="440" height="440"><polygon points="200 60, 400 400, 0 400" /></svg>
+      )}
+      {name === "danceSquare" && (
+        <svg width="400" height="400"><rect width="300" height="300" x="20" y="20" /></svg>
       )}
     </>
   )
