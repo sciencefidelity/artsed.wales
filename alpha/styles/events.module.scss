@@ -1,3 +1,5 @@
+@use 'styles/base/breakpoints' as b;
+
 .content {
   width: 710px;
   margin-top: 14rem;
@@ -5,11 +7,32 @@
 
 .events {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
   align-items: center;
   margin-top: 6rem;
   margin-bottom: 4rem;
+  @include b.mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include b.mq(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.event {
+  margin-bottom: 2rem;
+}
+
+.image {
+  position: relative;
+  display: grid;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 1.6rem;
+  overflow: hidden;
+  background-color: var(--background);
+  border: 2px solid var(--grey-850);
+  // font-size: 1.6vw;
 }
 
 @keyframes dance {
@@ -59,7 +82,8 @@
 .dance {
   top: -7%;
   left: 20%;
-  width: 400px;
+  // width: 400px;
+  width: 105.6%;
   filter:
     drop-shadow(-2px -2px 0 rgba(0, 0, 0, 100%))
     drop-shadow(-2px 2px 0 rgba(0, 0, 0, 100%))
@@ -71,7 +95,8 @@
 
 .head {
   top: -10%;
-  width: 200px;
+  // width: 200px;
+  width: 52.8%;
   filter: drop-shadow(20px -20px 0 rgba(0, 0, 0, 100%));
   transform: rotate(0deg);
   animation: 300s linear infinite spin;
@@ -80,14 +105,16 @@
 .globe {
   top: -8.5%;
   right: -13%;
-  width: 330px;
+  // width: 330px;
+  width: 87.1%;
   animation: 400s linear infinite reverse spin;
 }
 
 .tree {
   top: 5%;
   left: 20%;
-  width: 400px;
+  // width: 400px;
+  width: 105.6%;
   filter: brightness(1.3);
   animation: 20s linear infinite alternate tree;
 }
@@ -95,7 +122,8 @@
 .whale {
   right: 16%;
   bottom: -2%;
-  width: 500px;
+  // width: 500px;
+  width: 132%;
   transform: scale(-1, 1) rotate(0deg);
   animation: 40s ease-in-out infinite alternate whale;
 }
@@ -108,10 +136,13 @@
 }
 
 .secretCircle {
-  top: -22%;
-  left: -23%;
+  // top: -22%;
+  // left: -23%;
+  top: -91%;
+  left: -91%;
+  width: 241%;
   svg {
-    transform: scale(215%);
+    // transform: scale(215%);
     circle {
       stroke-width: 7px;
       stroke-dasharray: 3%;
@@ -124,16 +155,16 @@
 .siteTriangle {
   display: grid;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 89%;
+  // height: 100%;
   place-items: center;
   transform: rotate(25deg);
-  bottom: 0;
-  right: 0;
+  bottom: -10%;
+  right: 4.5%;
   svg {
-    transform: scale(150%) translate(28px, 33px);
+    // transform: translate(28px, 33px);
     polygon {
-      transform: translateX(9px);
+      transform: translateX(9%);
       stroke-width: 8px;
       fill: transparent;
       stroke: var(--grey-900);
@@ -155,10 +186,13 @@
 }
 
 .danceCircle {
-  top: -33%;
-  right: -39%;
+  // top: -33%;
+  // right: -39%;
+  top: -45%;
+  right: -50%;
+  width: 158%;
   svg {
-    transform: scale(120%);
+    // transform: scale(120%);
     circle {
       stroke-width: 12px;
       stroke-dasharray: 4%;
@@ -166,20 +200,6 @@
       stroke: var(--grey-900);
     }
   }
-}
-
-.event {
-  margin-bottom: 2rem;
-}
-
-.image {
-  position: relative;
-  display: grid;
-  aspect-ratio: 1 / 1;
-  margin-bottom: 1.6rem;
-  overflow: hidden;
-  background-color: var(--background);
-  border: 2px solid var(--grey-850);
 }
 
 .icon {
@@ -210,7 +230,8 @@
 .h2 {
   margin-top: -0.8rem;
   margin-bottom: 0.2rem;
-  font-size: 2.1rem;
+  // font-size: 2.1rem;
+  font-size: clamp(1rem, 2.4vw, 2.1rem);
   a {
     color: var(--grey-900);
   }
@@ -218,7 +239,8 @@
 
 .summary {
   margin-top: 0.6rem;
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
+  font-size: clamp(1rem, 2.1vw, 1.5rem);
   line-height: 1.3;
   color: var(--grey-500);
 }

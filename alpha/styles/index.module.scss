@@ -12,7 +12,8 @@
 .heroText {
   position: relative;
   padding: 0 9rem;
-  font-size: 5rem;
+  // font-size: 5rem;
+  font-size: 5.25vw;
   font-weight: 700;
   line-height: 1.25;
   color: var(--grey-550);
@@ -34,7 +35,7 @@
 
 .indexContent,
 .indexEngagement {
-  width: 700px;
+  max-width: 710px;
 }
 
 .indexEngagement {
