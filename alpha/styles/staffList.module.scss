@@ -28,9 +28,11 @@
   font-size: 1.9rem;
   font-weight: 600;
   a {
-    color: var(grey-950);
+    color: var(--grey-600);
+    transition: color 0.3s ease-in-out;
     &:hover {
-      color: var(grey-950);
+      color: var(--grey-750);
+      transition: color 0.3s ease-in-out;
     }
   }
 }

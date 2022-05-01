@@ -1,4 +1,5 @@
 import { FC, Fragment } from "react"
+import { useRouter } from "next/router"
 import { acronym, buildUrl } from "lib/utils"
 import Language from "components/language"
 import Link from "components/link"
@@ -15,6 +16,8 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ labels, navigation, settings }) => {
+  const { pathname } = useRouter()
+  console.log(pathname)
   return (
     <header className={`${s.header}`}>
       <nav className={`${u.container} ${s.nav}`}>
@@ -24,6 +27,9 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
               <Fragment key={item._key}>
                 <li className={`
                   ${u.inline} ${s.navLeft}
+                  ${pathname === buildUrl(item.url._type, item.url.slug)
+                    ? s.active : ""
+                  }
                 `}>
                   <Link href={buildUrl(item.url._type, item.url.slug)}>
                     <Localize data={item.label} />

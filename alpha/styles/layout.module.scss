@@ -48,7 +48,6 @@
 .logo {
   width: 5rem;
   height: 5rem;
-  fill: var(--grey-900);
 }
 
 .logoText {
@@ -56,6 +55,13 @@
   font-size: 2.2rem;
   &:first-child {
     border-bottom: 3px solid var(--grey-700);
+  }
+}
+
+.active {
+  a {
+    color: var(--grey-750);
+    cursor: default;
   }
 }
 

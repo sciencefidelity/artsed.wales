@@ -121,7 +121,7 @@ const About = ({ data }) => {
                     <StaffList person={trustee} />
                 )}
               </ul>
-              <h2 className={`${u.uppercase}`}>
+              <h2 className={`${s.h2} ${u.uppercase}`}>
                 <Localize data={labels[16].text} />{/* Trustees */}
               </h2>
               <ul className={`${s.trustees}`}>
