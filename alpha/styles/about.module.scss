@@ -1,32 +1,37 @@
 @use '/styles/base/breakpoints' as b;
 
-.about {
-  grid-template-columns: 1fr;
-  a {
-    line-height: 1.3;
-  }
-  @include b.mq(md) {
-    grid-template-columns: 3fr 1fr;
-  }
-}
-
 .hero {
   position: relative;
   display: grid;
   place-items: center;
   width: 100vw;
+  height: unset;
   aspect-ratio: 3 / 1;
   margin-bottom: 0;
   overflow: hidden;
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
+  @media only screen and (min-width: 1504px) {
+    aspect-ratio: unset;
+    height: 504px;
+  }
+}
+
+.heroInner {
+
 }
 
 .venn {
   position: relative;
   width: 60vw;
-  margin-block: auto;
-  transform: translateY(-19rem);
+  max-width: 902px;
+  margin-inline: auto;
+  // margin-top: -19rem;
+  // margin-top: -20vw;
+  margin-top: calc(-9.5rem - 10%);
+  @media only screen and (min-width: 1504px) {
+    margin-top: -19rem;
+  }
 }
 
 .vennDiagram {
@@ -38,7 +43,9 @@
 %all-content {
   position: absolute;
   font-family: var(--font-monospace);
-  font-size: 2.4vw;
+  // font-size: 2.4vw;
+  // font-size: 2.27rem;
+  font-size: clamp(1.8rem, 2.4vw, 2.27rem);
   font-weight: 700;
   color: var(--grey-650);
   text-align: center;
@@ -79,7 +86,7 @@
 %bg-circle {
   position: absolute;
   width: 60.59%;
-  background-color: hsla(0, 100%, 100%, 70%);
+  background-color: hsla(0, 100%, 100%, 40%);
   border: 1px solid var(--pattern);
   border-radius: 50%;
 }
@@ -119,7 +126,7 @@
 
   top: 0;
   left: 50%;
-  background-color: hsla(60, 100%, 50%, 50%);
+  background-color: hsla(60, 100%, 50%, 40%);
   transform: translateX(-50%);
 }
 
@@ -128,7 +135,7 @@
 
   right: 2.41%;
   bottom: 10.02%;
-  background-color: hsla(180, 100%, 50%, 50%);
+  background-color: hsla(180, 100%, 50%, 40%);
 }
 
 .circle6 {
@@ -136,7 +143,7 @@
 
   bottom: 10.02%;
   left: 2.41%;
-  background-color: hsla(120, 100%, 50%, 50%);
+  background-color: hsla(120, 100%, 50%, 40%);
 }
 
 .vennDiagram::after,
@@ -154,9 +161,21 @@
 .ampersand {
   top: 45%;
   left: 50%;
-  width: 9vw;
+  // width: 9vw;
+  // width: 8.53rem;
+  width: clamp(4rem, 8.53rem, 9vw);
   fill: var(--background);
   transform: translate(-46%, -45%);
+}
+
+.about {
+  grid-template-columns: 1fr;
+  a {
+    line-height: 1.3;
+  }
+  @include b.mq(md) {
+    grid-template-columns: 3fr 1fr;
+  }
 }
 
 .content {

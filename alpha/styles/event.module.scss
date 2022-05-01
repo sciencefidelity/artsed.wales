@@ -9,6 +9,11 @@
   border-bottom: 1px solid var(--pattern);
   overflow-y: hidden;
   overflow-x: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
   @media only screen and (max-width: 1504px) {
     overflow-x: hidden;
     height: unset;
@@ -357,6 +362,8 @@
   position: relative;
   padding: 0 9rem;
   font-size: 4.5rem;
+  font-size: 4.5vw;
+  font-size: clamp(3rem, 4.5vw, 4.5rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--grey-750);
@@ -365,7 +372,8 @@
 }
 
 .icon {
-  width: 40px;
+  width: 1.7rem;
+  width: clamp(1.7rem, 2.65vw, 2.5rem);
   margin-inline: auto;
   margin-bottom: 2.5rem;
   user-select: none;
