@@ -1,7 +1,5 @@
 @use 'base/breakpoints' as b;
 
-// Layout
-
 .container {
   max-width: calc(1200px + 4rem);
   padding: 1rem 2rem;
@@ -102,8 +100,6 @@
     transition: color 0.3s ease-in-out;
   }
 }
-
-// Accessibility
 
 .screenReaderText {
   position: absolute !important;

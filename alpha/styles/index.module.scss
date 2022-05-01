@@ -3,9 +3,6 @@
 .hero {
   position: relative;
   display: flex;
-  // place-items: center;
-  // width: 100vw;
-  // aspect-ratio: 3 / 1;
   height: 504px;
   margin-bottom: 7rem;
   background-color: var(--background);
@@ -16,8 +13,6 @@
   position: relative;
   padding: 0 9rem;
   max-width: 1510px;
-  // font-size: 5rem;
-  // font-size: 5.25vw;
   font-size: clamp(2rem, 5.3vw, 5rem);
   font-weight: 700;
   line-height: 1.25;
