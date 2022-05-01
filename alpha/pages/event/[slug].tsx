@@ -121,48 +121,50 @@ const EventPage = ({ data }) => {
       settings={settings}
     >
       <div className={`${s.hero} ${pattern(event.pattern)}`}>
-        <div>
-          <div className={`${s.icon}`}><Icon name={event.icon} /></div>
-          <h1
-            className={`${s.title} ${u.mono}`}
-            dangerouslySetInnerHTML={{
-              __html: locale === "cy" && event.__i18n_refs
-                ? event.__i18n_refs.longTitle : event.longTitle }}
-          />
+        <div className={`${s.heroContent}`}>
+          <div>
+            <div className={`${s.icon}`}><Icon name={event.icon} /></div>
+            <h1
+              className={`${s.title} ${u.mono}`}
+              dangerouslySetInnerHTML={{
+                __html: locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.longTitle : event.longTitle }}
+            />
+          </div>
+          {event.shapeOne && <div className={`${s[event.shapeOne]}`}>
+            <Shape name={event.shapeOne} />
+          </div>}
+          {event.shapeTwo && <div className={`${s[event.shapeTwo]}`}>
+            <Shape name={event.shapeTwo} />
+          </div>}
+          {event.shapeThree && <div className={`${s[event.shapeThree]}`}>
+            <Shape name={event.shapeThree} />
+          </div>}
+          {event.imageOne && <img
+            src={urlFor(event.imageOne)
+              .auto("format")
+              .quality(85)
+              .url()}
+            alt={event.title}
+            className={`${s[event.classOne]}`}
+          />}
+          {event.imageTwo && <img
+            src={urlFor(event.imageTwo)
+              .auto("format")
+              .quality(85)
+              .url()}
+            alt={event.title}
+            className={`${s[event.classTwo]}`}
+          />}
+          {event.imageThree && <img
+            src={urlFor(event.imageThree)
+              .auto("format")
+              .quality(85)
+              .url()}
+            alt={event.title}
+            className={`${s[event.classThree]}`}
+          />}
         </div>
-        {event.shapeOne && <div className={`${s[event.shapeOne]}`}>
-          <Shape name={event.shapeOne} />
-        </div>}
-        {event.shapeTwo && <div className={`${s[event.shapeTwo]}`}>
-          <Shape name={event.shapeTwo} />
-        </div>}
-        {event.shapeThree && <div className={`${s[event.shapeThree]}`}>
-          <Shape name={event.shapeThree} />
-        </div>}
-        {event.imageOne && <img
-          src={urlFor(event.imageOne)
-            .auto("format")
-            .quality(85)
-            .url()}
-          alt={event.title}
-          className={`${s[event.classOne]}`}
-        />}
-        {event.imageTwo && <img
-          src={urlFor(event.imageTwo)
-            .auto("format")
-            .quality(85)
-            .url()}
-          alt={event.title}
-          className={`${s[event.classTwo]}`}
-        />}
-        {event.imageThree && <img
-          src={urlFor(event.imageThree)
-            .auto("format")
-            .quality(85)
-            .url()}
-          alt={event.title}
-          className={`${s[event.classThree]}`}
-        />}
       </div>
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>

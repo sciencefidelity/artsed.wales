@@ -83,13 +83,19 @@ export const Shape: FC<Props> = ({ name }) => {
         </svg>
       )}
       {name === "siteTriangle" && (
-        <svg width="100%" height="100%" viewBox="0 0 220 220"><polygon points="100 30, 200 200, 0 200" /></svg>
+        <svg width="100%" height="100%" viewBox="0 0 220 220">
+          <polygon points="100 30, 200 200, 0 200" />
+        </svg>
       )}
       {name === "siteCircle" && (
-        <svg width="400" height="400"><circle cx="200" cy="200" r="85"></circle></svg>
+        <svg width="100%" height="100%" viewBox="0 0 400 400">
+          <circle cx="50%" cy="50%" r="21.25%"></circle>
+        </svg>
       )}
       {name === "siteSquare" && (
-        <svg width="200" height="200"><rect width="160" height="160" x="20" y="20" /></svg>
+        <svg width="100%" height="100%" viewBox="0 0 200 200">
+          <rect width="80%" height="80%" x="10%" y="10%" />
+        </svg>
       )}
       {name === "danceCircle" && (
         <svg width="100%" height="100%" viewBox="0 0 500 500">
@@ -97,10 +103,14 @@ export const Shape: FC<Props> = ({ name }) => {
         </svg>
       )}
       {name === "danceTriangle" && (
-        <svg width="440" height="440"><polygon points="200 60, 400 400, 0 400" /></svg>
+        <svg width="100%" height="100%" viewBox="0 0 440 440">
+          <polygon points="200 60, 400 400, 0 400" />
+        </svg>
       )}
       {name === "danceSquare" && (
-        <svg width="400" height="400"><rect width="300" height="300" x="20" y="20" /></svg>
+        <svg width="100%" height="100%" viewBox="0 0 400 400">
+          <rect width="75%" height="75%" x="5%" y="5%" />
+        </svg>
       )}
     </>
   )
