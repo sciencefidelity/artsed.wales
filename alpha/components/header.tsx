@@ -21,12 +21,12 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
   return (
     <header className={`${s.header}`}>
       <nav className={`${u.container} ${s.nav}`}>
-        <div>
+        <div className={`${s.navLeft}`}>
           <ul className={`${u.uppercase}`}>
             {navigation.primary.map(item =>
               <Fragment key={item._key}>
                 <li className={`
-                  ${u.inline} ${s.navLeft}
+                  ${u.inline} ${s.navItemLeft}
                   ${pathname === buildUrl(item.url._type, item.url.slug)
                     ? s.active : ""
                   }
@@ -43,7 +43,7 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
           ${u.mono} ${u.bold} ${u.uppercase}
         `}>
           <div className={`${u.flex} ${u.justifyCenter}`}>
-            <Link href="/" className={`${u.flex} ${u.gap4}`}>
+            <Link href="/" className={`${s.headerLogo} ${u.flex}`}>
               <ColorLogo />
               <div className={`${u.inlineBlock}`}>
                 <div className={`${s.logoText}`}>
@@ -57,12 +57,12 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className={`${s.navLeft}`}>
           <ul className={`
             ${u.sans} ${u.fontMedium} ${u.textRight} ${u.uppercase}
           `}>
             {/* <li className={`${u.inline} ${s.navRight}`}>Resources</li> */}
-            <li className={`${u.inline} ${s.navRight}`}>
+            <li className={`${u.inline} ${s.navitemRight}`}>
               <Language labels={labels} />
             </li>
           </ul>

@@ -4,12 +4,15 @@
   position: fixed;
   inset: 0 0 auto;
   z-index: 10;
-  padding-block: 1rem;
+  padding-block: 0.7rem;
   background-color: var(--page-bg);
   box-shadow: 0 0 19px 0 rgba(0, 0, 0, 16%);
   a {
     color: var(--grey-700);
     text-decoration-line: none;
+  }
+  @include b.mq(md) {
+    padding-block: 1rem;
   }
 }
 
@@ -28,6 +31,14 @@
 
 .navLeft,
 .navRight {
+  display: none;
+  @include b.mq(md) {
+    display: block;
+  }
+}
+
+.navItemLeft,
+.navItemRight {
   font-size: 1.5rem;
   a {
     color: var(--grey-500);
@@ -35,33 +46,50 @@
   }
 }
 
-.navLeft {
+.navItemLeft {
   &:first-child {
     margin-right: 3rem;
   }
 }
 
-.navRight {
+.navItemRight {
   &:last-child {
     margin-left: 3rem;
   }
 }
 
+.headerLogo {
+  gap: 0.7rem;
+  @include b.mq(md) {
+    gap: 1rem;
+  }
+}
+
 .logo {
-  width: 5rem;
-  height: 5rem;
+  width: 3.7rem;
+  height: 3.7rem;
+  @include b.mq(md) {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .logoText {
   display: inline-block;
-  font-size: 2.2rem;
+  font-size: 1.55rem;
   &:first-child {
-    border-bottom: 3px solid var(--grey-700);
+    border-bottom: 0.1em solid var(--grey-700);
+  }
+  @include b.mq(md) {
+    font-size: 2.2rem;
   }
 }
 
 .main {
-  margin-top: 7rem;
+  margin-top: 5rem;
+  @include b.mq(md) {
+    margin-top: 7rem;
+  }
 }
 
 .signUp {
@@ -176,10 +204,10 @@
   margin-bottom: 0.3rem;
 }
 
-.navLeft a:hover,
-.navLeft a:focus,
-.navRight a:hover,
-.navRight a:focus,
+.navItemLeft a:hover,
+.navItemLeft a:focus,
+.navItemRight a:hover,
+.navItemRight a:focus,
 .footer a:hover,
 .footer a:focus {
   color: var(--grey-750);

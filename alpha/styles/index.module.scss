@@ -3,16 +3,24 @@
 .hero {
   position: relative;
   display: flex;
-  height: 504px;
-  margin-bottom: 7rem;
+  height: unset;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 3rem;
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
+  @include b.mq(md) {
+    display: flex;
+    height: 504px;
+    margin-bottom: 7rem;
+    aspect-ratio: unset;
+  }
 }
 
 .heroText {
   position: relative;
   max-width: 1510px;
-  padding: 0 9rem;
+  padding: 0 0.7rem;
   margin: auto;
   font-size: clamp(2rem, 5.3vw, 5rem);
   font-weight: 700;
@@ -26,12 +34,9 @@
     background-position: center;
     background-size: 107%;
   }
-}
-
-.highlight {
-  position: absolute;
-  top: 18.5rem;
-  width: 57%;
+  @include b.mq(md) {
+    padding: 0 9rem;
+  }
 }
 
 .indexContent,
