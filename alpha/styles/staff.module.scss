@@ -9,21 +9,21 @@
 
 .content {
   margin-top: 7rem;
-  margin-right: 0rem;
+  margin-right: 0;
   @include b.mq(md) {
-    margin-right: 2rem;
     flex-direction: row;
+    margin-right: 2rem;
   }
 }
 
 .header {
-  align-items: center;
-  margin-bottom: 3.5rem;
   flex-direction: column;
   gap: 3rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
   @include b.mq(md) {
-    gap: 0rem;
     flex-direction: row;
+    gap: 0;
   }
 }
 

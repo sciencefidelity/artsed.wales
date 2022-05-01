@@ -11,13 +11,9 @@
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
   @media only screen and (min-width: 1504px) {
-    aspect-ratio: unset;
     height: 504px;
+    aspect-ratio: unset;
   }
-}
-
-.heroInner {
-
 }
 
 .venn {
@@ -165,11 +161,11 @@
 
 .about {
   grid-template-columns: 1fr;
-  a {
-    line-height: 1.3;
-  }
   @include b.mq(md) {
     grid-template-columns: 3fr 1fr;
+  }
+  a {
+    line-height: 1.3;
   }
 }
 
@@ -193,10 +189,9 @@
 }
 
 .staffList {
-  margin-bottom: 5rem;
   padding: 0;
+  margin-bottom: 5rem;
   list-style-type: none;
-
 }
 
 .trustees {

@@ -11,12 +11,12 @@
 
 .heroText {
   position: relative;
-  padding: 0 9rem;
   max-width: 1510px;
+  padding: 0 9rem;
+  margin: auto;
   font-size: clamp(2rem, 5.3vw, 5rem);
   font-weight: 700;
   line-height: 1.25;
-  margin: auto;
   color: var(--grey-550);
   text-align: center;
   em {

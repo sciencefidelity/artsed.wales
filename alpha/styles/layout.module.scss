@@ -19,17 +19,19 @@
   align-items: center;
 }
 
+.active {
+  a {
+    color: var(--grey-750);
+    cursor: default;
+  }
+}
+
 .navLeft,
 .navRight {
   font-size: 1.5rem;
   a {
     color: var(--grey-500);
     transition: color 0.3s ease;
-    &:hover,
-    &:focus {
-      color: var(--grey-750);
-      transition: color 0.3s ease;
-    }
   }
 }
 
@@ -55,13 +57,6 @@
   font-size: 2.2rem;
   &:first-child {
     border-bottom: 3px solid var(--grey-700);
-  }
-}
-
-.active {
-  a {
-    color: var(--grey-750);
-    cursor: default;
   }
 }
 
@@ -106,14 +101,14 @@
 }
 
 .logos {
+  flex-wrap: wrap;
+  gap: 2rem 4rem;
   justify-content: center;
   margin-block: 4rem 5rem;
-  gap: 2rem 4rem;
-  flex-wrap: wrap;
   @include b.mq(md) {
     flex-wrap: nowrap;
-    justify-content: space-between;
     gap: 2rem;
+    justify-content: space-between;
     margin-block: 4rem 5rem;
   }
 }
@@ -131,20 +126,15 @@
 }
 
 .socialLinksMenu {
-  gap: 2rem;
-  text-align: center;
   flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
+  text-align: center;
   a {
     color: var(--grey-650);
     text-decoration-line: none;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
-    &:hover {
-      color: var(--grey-750);
-      opacity: 0.8;
-      transition: opacity 0.3s ease-in-out;
-    }
   }
 }
 
@@ -175,10 +165,6 @@
     color: var(--grey-650);
     text-decoration-line: none;
     transition: color 0.3s ease-in-out;
-    &:hover {
-      color: var(--grey-750);
-      transition: color 0.3s ease-in-out;
-    }
   }
   div:last-child {
     text-align: right;
@@ -188,6 +174,22 @@
 .footerContent {
   display: inline-block;
   margin-bottom: 0.3rem;
+}
+
+.navLeft a:hover,
+.navLeft a:focus,
+.navRight a:hover,
+.navRight a:focus,
+.footer a:hover,
+.footer a:focus {
+  color: var(--grey-750);
+  transition: color 0.3s ease;
+}
+
+.socialLinksMenu a:hover,
+.socialLinksMenu a:focus {
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .brandMd {

@@ -9,7 +9,7 @@
 
 .content {
   margin-top: 7rem;
-  margin-right: 0rem;
+  margin-right: 0;
   @include b.mq(md) {
     margin-right: 2rem;
   }
