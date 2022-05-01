@@ -52,10 +52,14 @@ ul {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 600;
   line-height: 1.5;
   color: var(--grey-750);
+  @include b.mq(md) {
+    font-size: 3rem;
+    line-height: 1.3;
+  }
 }
 
 strong {

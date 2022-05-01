@@ -96,7 +96,7 @@ const About = ({ data }) => {
         </div>
         <div className={`${u.container}`}>
           <div className={`${s.about} ${u.grid}`}>
-            <div className={`${s.content}`}>
+            <section className={`${s.content}`}>
               <article className={`${s.body}`}>
                 <PortableText
                   value={locale === "cy" && pages[1].__i18n_refs
@@ -134,7 +134,8 @@ const About = ({ data }) => {
                     />
                 )}
               </ul>
-            </div>
+            </section>
+            <hr className={`${s.hr}`} />
             <Sidebar events={events} title={labels[10].text} />
           </div>
           <hr />

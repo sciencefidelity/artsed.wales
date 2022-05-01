@@ -15,6 +15,10 @@
     margin-bottom: 7rem;
     aspect-ratio: unset;
   }
+  @media only screen and (min-width: 1504px) {
+    height: 504px;
+    aspect-ratio: unset;
+  }
 }
 
 .heroText {
@@ -61,8 +65,15 @@
   text-align: center;
   figure {
     margin-bottom: 1.2rem;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
     color: var(--grey-750);
+    @include b.mq(md) {
+      font-size: 5rem;
+    }
   }
+}
+
+.h3 {
+  font-size: 1.2rem;
 }

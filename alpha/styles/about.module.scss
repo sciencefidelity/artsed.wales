@@ -3,13 +3,19 @@
 .hero {
   position: relative;
   display: grid;
-  place-items: center;
   height: unset;
-  aspect-ratio: 3 / 1;
-  margin-bottom: 0;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 3rem;
   overflow: hidden;
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
+  @include b.mq(md) {
+    display: flex;
+    height: 504px;
+    margin-bottom: 7rem;
+    aspect-ratio: unset;
+  }
   @media only screen and (min-width: 1504px) {
     height: 504px;
     aspect-ratio: unset;
@@ -17,53 +23,75 @@
 }
 
 .venn {
-  position: relative;
-  width: 60vw;
-  max-width: 902px;
-  margin-inline: auto;
-  margin-top: calc(-9.5rem - 10%);
+  position: absolute;
+  width: 115vw;
+  margin-top: calc(5rem - 10%);
   @media only screen and (min-width: 1504px) {
     margin-top: -19rem;
+  }
+  @include b.mq(md) {
+    margin-inline: auto;
+    position: relative;
+    width: 60vw;
+    max-width: 902px;
+    margin-top: calc(-9.5rem - 10%);
   }
 }
 
 .vennDiagram {
   position: relative;
   width: 125%;
-  margin: 6rem -4rem -12rem;
+  // margin: 6rem -4rem -12rem;
+  @include b.mq(md) {
+    margin: 6rem -4rem -12rem;
+  }
 }
 
 %all-content {
   position: absolute;
   font-family: var(--font-monospace);
-  font-size: clamp(1.8rem, 2.4vw, 2.27rem);
+  font-size: 1rem;
   font-weight: 700;
   color: var(--grey-650);
   text-align: center;
   user-select: none;
   transform: translate(-50%, -50%);
+  @include b.mq(md) {
+    font-size: clamp(1.8rem, 2.4vw, 2.27rem);
+  }
 }
 
 .content1 {
   @extend %all-content;
 
-  top: 25%;
+  top: 20%;
   left: 50%;
+  @include b.mq(md) {
+    top: 25%;
+  }
 }
 
 .content2 {
   @extend %all-content;
 
-  top: 62%;
-  left: 20%;
+  top: 70%;
+  left: 23%;
+  @include b.mq(md) {
+    top: 62%;
+    left: 20%;
+  }
 }
 
 .content3 {
   @extend %all-content;
 
-  top: 62%;
-  left: 80%;
+  top: 70%;
+  left: 77%;
   line-height: 1.2;
+  @include b.mq(md) {
+    top: 62%;
+    left: 80%;
+  }
 }
 
 .content4 {
@@ -152,11 +180,12 @@
 .ampersand {
   top: 45%;
   left: 50%;
-  // width: 9vw;
-  // width: 8.53rem;
-  width: clamp(4rem, 8.53rem, 9vw);
+  width: 3.5rem;
   fill: var(--background);
   transform: translate(-46%, -45%);
+  @include b.mq(md) {
+    width: clamp(4rem, 8.53rem, 9vw);
+  }
 }
 
 .about {
@@ -170,7 +199,6 @@
 }
 
 .content {
-  margin-block: 7rem 0;
   margin-right: 0;
   @include b.mq(md) {
     margin-right: 3rem;
@@ -184,8 +212,11 @@
 
 .h2 {
   margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: var(--grey-700);
+  @include b.mq(md) {
+    font-size: 2rem;
+  }
 }
 
 .staffList {
@@ -200,5 +231,12 @@
     &:not(:last-child)::after {
       content: ', ';
     }
+  }
+}
+
+.hr {
+  display: initial;
+  @include b.mq(md) {
+    display: none;
   }
 }

@@ -99,13 +99,14 @@ const Home = ({ data }) => {
                         duration={3.2}
                       />
                     </figure>
-                    <h3 className={`${u.uppercase}`}>
+                    <h3 className={`${u.uppercase} ${s.h3}`}>
                       <Localize data={figure.title} />
                     </h3>
                   </div>
                 )}
               </div>
             }
+            <Waypoint onEnter={() => setIsCounting(true)} />
             <hr />
         </div>
       </div>

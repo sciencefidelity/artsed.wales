@@ -7,7 +7,7 @@ const Venn = () => {
   const { locale } = useRouter()
   return (
     <section className={`${s.venn}`}>
-      <div className={`${u.flex}`}>
+      <div className={`${u.flex} ${u.justifyCenter}`}>
         <div className={s.vennDiagram}>
           <div className={s.circle1}></div>
           <div className={s.circle2}></div>
