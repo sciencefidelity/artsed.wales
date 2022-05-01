@@ -1,15 +1,30 @@
+@use '/styles/base/breakpoints' as b;
+
 .staff {
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr;
+  @include b.mq(md) {
+    grid-template-columns: 3fr 1fr;
+  }
 }
 
 .content {
   margin-top: 7rem;
-  margin-right: 2rem;
+  margin-right: 0rem;
+  @include b.mq(md) {
+    margin-right: 2rem;
+    flex-direction: row;
+  }
 }
 
 .header {
   align-items: center;
   margin-bottom: 3.5rem;
+  flex-direction: column;
+  gap: 3rem;
+  @include b.mq(md) {
+    gap: 0rem;
+    flex-direction: row;
+  }
 }
 
 .avatar {
@@ -44,7 +59,7 @@
 }
 
 .body {
-  width: 710px;
+  max-width: 710px;
   margin-bottom: 4rem;
 }
 
@@ -68,4 +83,11 @@
 
 .staffSidebar {
   margin-top: 7rem;
+}
+
+.hr {
+  display: initial;
+  @include b.mq(md) {
+    display: none;
+  }
 }

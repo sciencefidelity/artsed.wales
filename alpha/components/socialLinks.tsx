@@ -1,5 +1,4 @@
 import { FC, ReactElement } from "react"
-import { useRouter } from "next/router"
 import { Settings } from "lib/interfaces"
 import {
   Facebook,
@@ -18,7 +17,6 @@ interface Props {
 }
 
 const SocialLinks: FC<Props> = ({ settings }) => {
-  const { locale } = useRouter()
 
   const icon = (network: string): ReactElement<any, any> => {
     switch (network) {
@@ -59,7 +57,7 @@ const SocialLinks: FC<Props> = ({ settings }) => {
   }
 
   return (
-    <section className={`${s.socialLinks} ${u.uppercase}`}>
+    <section className={`${s.socialLinks} ${u.uppercase} ${u.flex}`}>
       <ul className={`${s.socialLinksMenu} ${u.flex}`}>
         {settings.social.map(link =>
           <li key={link._key}>

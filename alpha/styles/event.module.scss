@@ -1,3 +1,5 @@
+@use '/styles/base/breakpoints' as b;
+
 .hero {
   position: relative;
   display: grid;
@@ -362,13 +364,20 @@
 }
 
 .event {
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr;
+  @include b.mq(md) {
+    grid-template-columns: 3fr 1fr;
+  }
 }
 
 .content {
-  width: 750px;
-  margin-block: 7rem 5rem;
-  margin-right: 2rem;
+  max-width: 750px;
+  margin-block: 7rem 1rem;
+  margin-right: 0rem;
+  @include b.mq(md) {
+    margin-block: 7rem 5rem;
+    margin-right: 2rem;
+  }
   blockquote {
     padding: 1.2rem 1.7rem;
     margin-bottom: 4rem;
@@ -391,7 +400,7 @@
     color: var(--grey-600);
   }
   ul {
-    padding: 0 3rem 3rem;
+    padding: 0 2.7rem 3rem;
     list-style-position: outside;
     list-style-type: '⸺';
     li {
@@ -437,5 +446,12 @@
   &:hover {
     background-color: var(--btn-hover);
     transition: 0.3s background-color ease-in-out;
+  }
+}
+
+.hr {
+  display: initial;
+  @include b.mq(md) {
+    display: none;
   }
 }

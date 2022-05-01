@@ -1,9 +1,12 @@
+@use '/styles/base/breakpoints' as b;
+
 .hero {
   position: relative;
-  display: grid;
-  place-items: center;
-  width: 100vw;
-  aspect-ratio: 3 / 1;
+  display: flex;
+  // place-items: center;
+  // width: 100vw;
+  // aspect-ratio: 3 / 1;
+  height: 504px;
   margin-bottom: 7rem;
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
@@ -12,10 +15,13 @@
 .heroText {
   position: relative;
   padding: 0 9rem;
+  max-width: 1510px;
   // font-size: 5rem;
-  font-size: 5.25vw;
+  // font-size: 5.25vw;
+  font-size: clamp(2rem, 5.3vw, 5rem);
   font-weight: 700;
   line-height: 1.25;
+  margin: auto;
   color: var(--grey-550);
   text-align: center;
   em {
@@ -44,7 +50,10 @@
 }
 
 .engagement {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  @include b.mq(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .engagementFigures {

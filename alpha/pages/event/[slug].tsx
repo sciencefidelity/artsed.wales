@@ -246,6 +246,7 @@ const EventPage = ({ data }) => {
               </p>
             }
           </section>
+          <hr className={`${s.hr}`} />
           <Sidebar
             // events={events.filter(e => e.title !== event.title)}
             events={events}

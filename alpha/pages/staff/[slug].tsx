@@ -169,6 +169,7 @@ const StaffPage = ({ data }) => {
               </div>
             </>}
           </section>
+          <hr className={`${s.hr}`} />
           <Sidebar events={events} title={labels[10].text} />
         </div>
         <hr />

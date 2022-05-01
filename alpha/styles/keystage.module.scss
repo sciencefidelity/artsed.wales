@@ -1,10 +1,18 @@
+@use '/styles/base/breakpoints' as b;
+
 .keystage {
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr;
+  @include b.mq(md) {
+    grid-template-columns: 3fr 1fr;
+  }
 }
 
 .content {
   margin-top: 7rem;
-  margin-right: 2rem;
+  margin-right: 0rem;
+  @include b.mq(md) {
+    margin-right: 2rem;
+  }
 }
 
 .h1 {
@@ -20,6 +28,13 @@
 }
 
 .body {
-  width: 710px;
+  max-width: 710px;
   margin-bottom: 4rem;
+}
+
+.hr {
+  display: initial;
+  @include b.mq(md) {
+    display: none;
+  }
 }

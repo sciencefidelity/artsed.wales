@@ -1,7 +1,7 @@
 @use 'styles/base/breakpoints' as b;
 
 .content {
-  width: 710px;
+  max-width: 710px;
   margin-top: 14rem;
 }
 
