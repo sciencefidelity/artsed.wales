@@ -166,81 +166,85 @@ const EventPage = ({ data }) => {
       </div>
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>
-          <section className={`${s.eventContent}`}>
-            <div>
-              {event.title && <h1 className={`${u.mono} ${u.bold}`}>
-                {locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.title : event.title}
-              </h1>}
-              {event.body && <PortableText
-                value={locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.body : event.body}
-                components={components}
-              />}
-              {event.britelink && <div className={`${s.britelink} ${u.grid}`}>
-                <a href={locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.britelink : event.britelink}
-                  target="_blank" rel="noreferrer">
-                  <button className={`${s.btn} ${u.pointer}`}>
-                    <Localize data={labels[24].text} />
-                  </button>
-                </a>
-              </div>}
-              {event.facilitators &&
-                <h3><Localize data={labels[7].text} /></h3>
-              }
+          <section className={`${s.content}`}>
+            {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
+              {locale === "cy" && event.__i18n_refs
+                ? event.__i18n_refs.title : event.title}
+            </h1>}
+            {event.body && <PortableText
+              value={locale === "cy" && event.__i18n_refs
+                ? event.__i18n_refs.body : event.body}
+              components={components}
+            />}
+            {event.britelink && <div className={`${s.britelink} ${u.grid}`}>
+              <a href={locale === "cy" && event.__i18n_refs
+                ? event.__i18n_refs.britelink : event.britelink}
+                target="_blank" rel="noreferrer">
+                <button className={`${s.btn} ${u.pointer}`}>
+                  <Localize data={labels[24].text} />
+                </button>
+              </a>
+            </div>}
+            {event.facilitators &&
+              <h3 className={`${s.h3}`}><Localize data={labels[7].text} /></h3>
+            }
+            <p>
+              {event.facilitators && event.facilitators.map(facilitator =>
+                <Fragment key={facilitator._id}>
+                  {reactStringReplace(
+                    locale === "cy" && facilitator.__i18n_refs.job
+                      ? facilitator.__i18n_refs.job : facilitator.job
+                        ? facilitator.job : facilitator.title,
+                    facilitator.title,
+                    match =>
+                      <strong className={`${s.strong}`}>
+                        <Link
+                          href={`/${facilitator._type}/${facilitator.slug}`}
+                        >{match}</Link>
+                      </strong>
+                  )}
+                  <br />
+                </Fragment>
+              )}
+            </p>
+            <p>
+              <strong className={`${s.strong} ${u.bold}`}>
+                <Localize data={labels[4].text} />{": "}
+              </strong>
+              {"£"}{event.price.toString()}<br />
+              <strong className={`${s.strong} ${u.bold}`}>
+                <Localize data={labels[5].text} />{": "}
+              </strong>
+              <EventDate
+                dateEnd={event.dateEnd}
+                dateStart={event.dateStart}
+              /><br />
+              <strong className={`${s.strong} ${u.bold}`}>
+                <Localize data={labels[6].text} />{": "}
+              </strong>
+              {event.location}
+            </p>
+            {event.keystage &&
               <p>
-                {event.facilitators && event.facilitators.map(facilitator =>
-                  <Fragment key={facilitator._id}>
-                    {reactStringReplace(
-                      locale === "cy" && facilitator.__i18n_refs.job
-                        ? facilitator.__i18n_refs.job : facilitator.job
-                          ? facilitator.job : facilitator.title,
-                      facilitator.title,
-                      match =>
-                        <strong>
-                          <Link
-                            href={`/${facilitator._type}/${facilitator.slug}`}
-                          >{match}</Link>
-                        </strong>
-                    )}
-                    <br />
+                {labels[8] && <Localize data={labels[8].text} />}
+                {" "}{event.keystage.map((ks, idx) =>
+                  <Fragment key={ks._id}>
+                    {ks.title &&
+                      <Link href={`/${ks._type}/${ks.slug}`}>
+                        {locale === "cy" && ks.__i18n_refs
+                          ? ks.__i18n_refs.title
+                          : ks.title}
+                      </Link>
+                    }
+                    {idx === event.keystage.length - 1 && ""}
+                    {idx === event.keystage.length - 2 &&
+                      <Localize data={labels[9].text} />
+                    }
+                    {idx >= 0 && idx < event.keystage.length - 2 && ", "}
                   </Fragment>
                 )}
               </p>
-              <p>
-                <strong><Localize data={labels[4].text} />: </strong>
-                £{event.price.toString()}<br />
-                <strong><Localize data={labels[5].text} />: </strong>
-                <EventDate
-                  dateEnd={event.dateEnd}
-                  dateStart={event.dateStart}
-                /><br />
-                <strong><Localize data={labels[6].text} />: </strong>
-                {event.location}
-              </p>
-              {event.keystage &&
-                <p>
-                  {labels[8] && <Localize data={labels[8].text} />}
-                  {" "}{event.keystage.map((ks, idx) =>
-                    <Fragment key={ks._id}>
-                      {ks.title &&
-                        <Link href={`/${ks._type}/${ks.slug}`}>
-                          {locale === "cy" && ks.__i18n_refs
-                            ? ks.__i18n_refs.title
-                            : ks.title}
-                        </Link>
-                      }
-                      {idx === event.keystage.length - 1 && ""}
-                      {idx === event.keystage.length - 2 &&
-                        <Localize data={labels[9].text} />
-                      }
-                      {idx >= 0 && idx < event.keystage.length - 2 && ", "}
-                    </Fragment>
-                  )}
-                </p>
-              }
-            </div>
+            }
           </section>
           <Sidebar
             // events={events.filter(e => e.title !== event.title)}
