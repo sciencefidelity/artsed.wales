@@ -271,6 +271,7 @@
   text-align: center;
   @include b.mq(md) {
     text-align: left;
+    margin-inline: unset;
   }
   li {
     display: inline;
