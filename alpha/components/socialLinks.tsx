@@ -12,6 +12,8 @@ import {
 import s from "styles/layout.module.scss"
 import u from "styles/utils.module.scss"
 
+// TODO: aria-label in Welsh
+
 interface Props {
   settings: Settings
 }
@@ -61,7 +63,12 @@ const SocialLinks: FC<Props> = ({ settings }) => {
       <ul className={`${s.socialLinksMenu} ${u.flex}`}>
         {settings.social.map(link =>
           <li key={link._key}>
-            <a href={link.url} target="_blank" rel="noreferrer">
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Link to ${link.name}`}
+            >
               <div
                 className={`${s.socialIcon}`}
                 style={{
