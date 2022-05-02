@@ -3,8 +3,8 @@
 .hero {
   position: relative;
   display: grid;
-  height: unset;
   place-items: center;
+  height: unset;
   aspect-ratio: 1 / 1;
   margin-bottom: 3rem;
   overflow: hidden;
@@ -13,8 +13,8 @@
   @include b.mq(md) {
     display: flex;
     height: unset;
-    margin-bottom: 7rem;
     aspect-ratio: 3 / 1;
+    margin-bottom: 7rem;
   }
   @media only screen and (min-width: 1504px) {
     height: 504px;
@@ -31,11 +31,11 @@
     margin-top: -11rem;
   }
   @include b.mq(md) {
-    margin-top: -13.5rem;
-    margin-inline: auto;
     position: relative;
     width: 60vw;
     max-width: 902px;
+    margin-inline: auto;
+    margin-top: -13.5rem;
   }
   @include b.mq(lg) {
     margin-top: -12.5rem;
@@ -221,8 +221,8 @@
 
 .body {
   max-width: 710px;
-  margin-bottom: 4rem;
   margin-inline: auto;
+  margin-bottom: 4rem;
   @include b.mq(md) {
     margin-bottom: 5rem;
   }
@@ -233,55 +233,55 @@
 
 .h2 {
   max-width: 710px;
-  text-align: center;
+  margin-inline: auto;
   margin-bottom: 3rem;
   font-size: 1.7rem;
   color: var(--grey-700);
-  margin-inline: auto;
+  text-align: center;
   @include b.mq(md) {
+    margin-bottom: 1rem;
     font-size: 2rem;
     text-align: left;
-    margin-bottom: 1rem;
   }
   @include b.mq(lg) {
-    margin-inline: unset;
     max-width: unset;
+    margin-inline: unset;
   }
 }
 
 .staffList {
   max-width: 710px;
   padding: 0;
+  margin-inline: auto;
   margin-bottom: 5rem;
   list-style-type: none;
-  margin-inline: auto;
   @include b.mq(lg) {
-    margin-inline: unset;
     max-width: unset;
+    margin-inline: unset;
   }
   @include b.mq(lg) {
-    margin-inline: unset;
     max-width: unset;
+    margin-inline: unset;
   }
 }
 
 .trustees {
   max-width: 710px;
-  text-align: center;
   margin-inline: auto;
+  text-align: center;
+  @include b.mq(md) {
+    text-align: left;
+  }
   li {
+    display: inline;
     font-size: 1.3rem;
     text-align: center;
-    display: inline;
-    &:not(:last-child)::after {
-      content: ', ';
-    }
     @include b.mq(md) {
       font-size: 1.4rem;
     }
-  }
-  @include b.mq(md) {
-    text-align: left;
+    &:not(:last-child)::after {
+      content: ', ';
+    }
   }
 }
 

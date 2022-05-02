@@ -1,9 +1,13 @@
 @use 'styles/base/breakpoints' as b;
 
 .event {
-  margin-bottom: 2rem;
-  margin-inline: auto;
   max-width: 710px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  @include b.mq(lg) {
+    max-width: unset;
+    margin-inline: unset;
+  }
   time {
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -12,10 +16,6 @@
       padding: 0;
       font-size: 1.2rem;
     }
-  }
-  @include b.mq(lg) {
-    margin-inline: unset;
-    max-width: unset;
   }
 }
 
@@ -28,6 +28,11 @@
   background-color: var(--grey-650);
   border-radius: 100%;
   transition: background-color 0.3s ease-in-out;
+  @include b.mq(md) {
+    width: 52px;
+    height: 52px;
+    margin-right: 1.2rem;
+  }
   svg {
     width: 50%;
     margin: auto;
@@ -37,26 +42,21 @@
     background-color: var(--grey-750);
     transition: background-color 0.3s ease-in-out;
   }
-  @include b.mq(md) {
-    width: 52px;
-    height: 52px;
-    margin-right: 1.2rem;
-  }
 }
 
 .heading {
   margin-block: -0.3rem 0.8rem;
   font-size: 1.6rem;
+  @include b.mq(md) {
+    margin-block: -0.3rem 0.8rem;
+    font-size: 2.3rem;
+  }
   a {
     color: var(--grey-750);
     text-decoration-line: none;
     &:hover {
       color: var(--grey-850);
     }
-  }
-  @include b.mq(md) {
-    margin-block: -0.3rem 0.8rem;
-    font-size: 2.3rem;
   }
 }
 

@@ -22,6 +22,10 @@ p {
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 1.3;
+  @include b.mq(md) {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
   a {
     font-style: normal;
     color: var(--grey-750);
@@ -31,17 +35,13 @@ p {
     background-position: center;
     background-size: 90px 110%;
     transition: color 0.3s ease-in-out;
+    @include b.mq(md) {
+      background-size: 100px 100%;
+    }
     &:hover {
       color: var(--grey-900);
       transition: color 0.3s ease-in-out;
     }
-    @include b.mq(md) {
-      background-size: 100px 100%;
-    }
-  }
-  @include b.mq(md) {
-    font-size: 1.5rem;
-    line-height: 1.3;
   }
 }
 
@@ -83,7 +83,6 @@ input {
 
 hr {
   margin-block: 3rem 3.75rem;
-  // margin-block: 4rem 5rem;
   border-top: 4px dotted var(--pattern);
   border-bottom: 0;
   @include b.mq(md) {

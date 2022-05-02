@@ -16,8 +16,8 @@
   margin-top: 4rem;
   margin-bottom: 4rem;
   @include b.mq(md) {
-    margin-top: 6rem;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 6rem;
   }
   @include b.mq(xl) {
     grid-template-columns: repeat(3, 1fr);
@@ -206,6 +206,10 @@
   background-color: var(--grey-650);
   border-radius: 100%;
   transition: background-color 0.3s ease-in-out;
+  @include b.mq(md) {
+    width: 48px;
+    height: 48px;
+  }
   svg {
     width: 50%;
     margin: auto;
@@ -214,10 +218,6 @@
   &:hover {
     background-color: var(--grey-750);
     transition: background-color 0.3s ease-in-out;
-  }
-  @include b.mq(md) {
-    width: 48px;
-    height: 48px;
   }
 }
 
@@ -230,9 +230,6 @@
   margin-top: -0.3rem;
   margin-bottom: 0.2rem;
   font-size: 1.8rem;
-  a {
-    color: var(--grey-900);
-  }
   @include b.mq(md) {
     margin-top: -0.2rem;
     font-size: clamp(1.6rem, 2.4vw, 2.1rem);
@@ -242,6 +239,9 @@
   }
   @include b.mq(xl) {
     margin-top: -0.5rem;
+  }
+  a {
+    color: var(--grey-900);
   }
 }
 

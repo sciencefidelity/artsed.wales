@@ -3,16 +3,16 @@
 .hero {
   position: relative;
   display: flex;
-  height: unset;
   justify-content: center;
+  height: unset;
   aspect-ratio: 1 / 1;
   margin-bottom: 3rem;
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
   @include b.mq(md) {
     height: unset;
-    margin-bottom: 7rem;
     aspect-ratio: 3 / 1;
+    margin-bottom: 7rem;
   }
   @media only screen and (min-width: 1504px) {
     height: 504px;
@@ -23,7 +23,7 @@
 .heroText {
   position: relative;
   max-width: 1504px;
-  padding: 0 0;
+  padding: 0;
   margin: auto;
   font-size: 4rem;
   font-size: clamp(1.8rem, 8.5vw, 4rem);
@@ -31,13 +31,6 @@
   line-height: 1.25;
   color: var(--grey-550);
   text-align: center;
-  em {
-    font-style: normal;
-    background-image: url('/images/em-heading.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 107%;
-  }
   @include b.mq(md) {
     padding: 0 4rem;
     font-size: clamp(1.8rem, 6vw, 3.8rem);
@@ -45,6 +38,13 @@
   @include b.mq(lg) {
     padding: 0 9rem;
     font-size: clamp(1.8rem, 5.1vw, 5rem);
+  }
+  em {
+    font-style: normal;
+    background-image: url('/images/em-heading.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 107%;
   }
 }
 
@@ -71,6 +71,9 @@
 .engagementFigures {
   margin-bottom: 1.7rem;
   text-align: center;
+  @include b.mq(md) {
+    margin-bottom: 3rem;
+  }
   figure {
     margin-bottom: 0.7rem;
     font-size: 4rem;
@@ -82,9 +85,6 @@
     @include b.mq(lg) {
       font-size: 5rem;
     }
-  }
-  @include b.mq(md) {
-    margin-bottom: 3rem;
   }
 }
 
