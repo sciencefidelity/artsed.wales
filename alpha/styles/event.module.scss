@@ -524,12 +524,10 @@
 .content {
   max-width: 750px;
   margin-block: 7rem 1rem;
-  // margin-right: 0;
   margin-inline: 0;
   @include b.mq(md) {
     margin-block: 7rem 1rem;
     margin-inline: auto;
-    margin-right: 2rem;
   }
   @include b.mq(lg) {
     margin-block: 7rem 5rem;

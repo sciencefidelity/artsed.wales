@@ -6,7 +6,6 @@
   place-items: center;
   height: unset;
   aspect-ratio: 1 / 1;
-  margin-bottom: 3rem;
   overflow: hidden;
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
@@ -14,7 +13,6 @@
     display: flex;
     height: unset;
     aspect-ratio: 3 / 1;
-    margin-bottom: 7rem;
   }
   @media only screen and (min-width: 1504px) {
     height: 504px;
@@ -213,8 +211,10 @@
 }
 
 .content {
+  margin-top: 3rem;
   margin-right: 0;
   @include b.mq(md) {
+    margin-top: 7rem;
     margin-right: 3rem;
   }
 }
@@ -270,6 +270,10 @@
   margin-inline: auto;
   text-align: center;
   @include b.mq(md) {
+    text-align: left;
+    margin-inline: auto;
+  }
+  @include b.mq(lg) {
     text-align: left;
     margin-inline: unset;
   }
