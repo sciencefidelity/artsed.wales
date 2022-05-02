@@ -10,7 +10,7 @@ const WlgaLogo = () => {
       xmlSpace="preserve"
       width="5em"
       className={s.wlgaLogo}
-      area-label={locale === "cy"
+      aria-label={locale === "cy"
         ? "Cymdeithas Llywodraeth Leol Cymru"
         : "Welsh Local Government Association"}
     >
