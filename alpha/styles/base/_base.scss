@@ -87,7 +87,7 @@ hr {
   border-top: 4px dotted var(--pattern);
   border-bottom: 0;
   @include b.mq(md) {
-    margin-block: 4rem 5rem;
+    margin-block: 4rem 6rem;
     border-top: 5px dotted var(--pattern);
   }
 }

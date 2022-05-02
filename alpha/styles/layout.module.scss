@@ -80,10 +80,12 @@
   &:first-child {
     border-bottom: 2px solid var(--grey-700);
     line-height: 1.2;
+    @include b.mq(md) {
+      border-bottom: 3px solid var(--grey-700);
+    }
   }
   @include b.mq(md) {
     font-size: 2.2rem;
-    border-bottom: 3px solid var(--grey-700);
   }
 }
 
