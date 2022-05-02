@@ -28,11 +28,6 @@
   }
 }
 
-.active a {
-  color: var(--grey-750);
-  cursor: default;
-}
-
 .overlay {
   position: absolute;
   inset: 0;
@@ -91,6 +86,11 @@
   @include b.mq(lg) {
     margin-left: 3rem;
   }
+}
+
+.active a {
+  color: var(--grey-750);
+  cursor: default;
 }
 
 .logoContainer {
