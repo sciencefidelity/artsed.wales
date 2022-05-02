@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa")
-
-module.exports = withPWA({
+module.exports = {
   async headers() {
     return [
       {
@@ -12,7 +10,7 @@ module.exports = withPWA({
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "http://sendgrid.com" },
           { key: "Access-Control-Allow-Methods", value: "POST, GET, OPTIONS" },
-          { key: "Access-Control-Allow-Headers", value: "X-Requested-With" },
+          { key: "Access-Control-Allow-Headers", value: "X-Requested-With" }
         ]
       }
     ]
@@ -30,14 +28,11 @@ module.exports = withPWA({
         domain: "celfadd.cymru",
         defaultLocale: "cy",
         http: true
-      },
+      }
     ]
   },
   images: {
-    domains: ["cdn.sanity.io"],
+    domains: ["cdn.sanity.io"]
   },
-  swcMinify: true,
-  pwa: {
-    dest: "public"
-  }
-})
+  swcMinify: true
+}
