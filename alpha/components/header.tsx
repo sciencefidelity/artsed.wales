@@ -96,8 +96,8 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
           <ul className={`
             ${u.sans} ${u.fontMedium} ${u.textRight} ${u.uppercase}
           `}>
-            {/* <li className={`${u.inline} ${s.navRight}`}>Resources</li> */}
-            <li className={`${u.inline} ${s.navitemRight}`}>
+            {/* <li className={`${u.inline} ${s.navItemRight}`}>Resources</li> */}
+            <li className={`${u.inline} ${s.navItemRight}`}>
               <Language labels={labels} />
             </li>
           </ul>

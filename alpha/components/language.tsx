@@ -4,6 +4,7 @@ import { capitalize } from "lib/utils"
 import { Label } from "lib/interfaces"
 import Localize from "components/localize"
 import u from "styles/utils.module.scss"
+import s from "styles/layout.module.scss"
 
 interface Props {
   labels: Label[]
