@@ -92,13 +92,13 @@ const Home = ({ data }) => {
               <div className={`${s.engagement} ${u.grid}`}>
                 {engagement.engagementFigure.map(figure =>
                   <div className={`${s.engagementFigures}`} key={figure._key}>
-                    <figure className={`${u.mono}`}>
+                    <span className={`${s.number} ${u.mono}`}>
                       <CountUp
                         {...countUpProps}
                         end={figure.count}
                         duration={2}
                       />
-                    </figure>
+                    </span>
                     <h3 className={`${u.uppercase} ${s.h3}`}>
                       <Localize data={figure.title} />
                     </h3>

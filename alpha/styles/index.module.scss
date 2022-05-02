@@ -74,17 +74,18 @@
   @include b.mq(md) {
     margin-bottom: 3rem;
   }
-  figure {
-    margin-bottom: 0.7rem;
-    font-size: 4rem;
-    font-weight: 700;
-    color: var(--grey-750);
-    @include b.mq(md) {
-      margin-bottom: 1.2rem;
-    }
-    @include b.mq(lg) {
-      font-size: 5rem;
-    }
+}
+
+.number {
+  margin-bottom: 0.7rem;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--grey-750);
+  @include b.mq(md) {
+    margin-bottom: 1.2rem;
+  }
+  @include b.mq(lg) {
+    font-size: 5rem;
   }
 }
 
