@@ -183,12 +183,14 @@ const EventPage = ({ data }) => {
                 ? event.__i18n_refs.britelink : event.britelink}
                 target="_blank" rel="noreferrer">
                 <button className={`${s.btn} ${u.pointer}`}>
-                  <Localize data={labels[24].text} />
+                  <Localize data={labels[24].text} />{/* Book your place */}
                 </button>
               </a>
             </div>}
             {event.facilitators &&
-              <h3 className={`${s.h3}`}><Localize data={labels[7].text} /></h3>
+              <h3 className={`${s.h3}`}>
+                <Localize data={labels[7].text} />{/* About the facilitators */}
+              </h3>
             }
             <p>
               {event.facilitators && event.facilitators.map(facilitator =>

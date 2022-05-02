@@ -23,11 +23,9 @@
 .heroText {
   position: relative;
   max-width: 1504px;
-  // padding: 0 0.7rem;
   padding: 0 0;
   margin: auto;
   font-size: 4rem;
-  // font-size: 8.5vw;
   font-size: clamp(1.8rem, 8.5vw, 4rem);
   font-weight: 700;
   line-height: 1.25;
@@ -56,8 +54,11 @@
 }
 
 .indexEngagement {
-  margin-inline: auto;
+  margin-inline: unset;
   margin-bottom: 4rem;
+  @include b.mq(md) {
+    margin-inline: auto;
+  }
 }
 
 .engagement {
@@ -68,19 +69,31 @@
 }
 
 .engagementFigures {
-  margin-bottom: 3rem;
+  margin-bottom: 1.7rem;
   text-align: center;
   figure {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.7rem;
     font-size: 4rem;
     font-weight: 700;
     color: var(--grey-750);
     @include b.mq(md) {
+      margin-bottom: 1.2rem;
+    }
+    @include b.mq(lg) {
       font-size: 5rem;
     }
+  }
+  @include b.mq(md) {
+    margin-bottom: 3rem;
   }
 }
 
 .h3 {
   font-size: 1.2rem;
+  @include b.mq(md) {
+    font-size: 1.1rem;
+  }
+  @include b.mq(lg) {
+    font-size: 1.2rem;
+  }
 }

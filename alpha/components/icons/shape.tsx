@@ -60,7 +60,7 @@ export const Shape: FC<Props> = ({ name }) => {
           <clipPath id="_clip3">
             <path d="M100.006,0.018l100.005,173.613l-200.011,-0l100.006,-173.613Z"/>
           </clipPath>
-          <g clip-path="url(#_clip3)">
+          <g clipPath="url(#_clip3)">
             <g>
               <rect x="-54.701" y="44.815" width="259.081" height="5.771"/>
               <rect x="-54.701" y="33.603" width="259.081" height="5.771"/>

@@ -96,7 +96,7 @@ const Home = ({ data }) => {
                       <CountUp
                         {...countUpProps}
                         end={figure.count}
-                        duration={3.2}
+                        duration={2}
                       />
                     </figure>
                     <h3 className={`${u.uppercase} ${s.h3}`}>

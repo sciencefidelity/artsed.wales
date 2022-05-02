@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react"
+import { FC, Fragment, useState } from "react"
 import { useRouter } from "next/router"
 import { acronym, buildUrl } from "lib/utils"
 import Language from "components/language"
@@ -16,11 +16,46 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ labels, navigation, settings }) => {
-  const { pathname } = useRouter()
-  console.log(pathname)
+  const [isActive, setActive] = useState(false)
+  const { locale, pathname } = useRouter()
+  const menuOpen = () => {
+    setActive(true)
+  }
+  const menuClose = () => {
+    setActive(false)
+  }
   return (
     <header className={`${s.header}`}>
       <nav className={`${u.container} ${s.nav}`}>
+        <div
+          className={`${s.overlay} ${isActive ? s.overlayActive : null}`}
+          onClick={isActive ? menuClose : null}
+        >
+          <ul className={`${s.overlayNav} ${u.uppercase}`}>
+            <li className={`${s.overlayNavItem}`}>
+              <Link href="/">
+                {locale === "cy" ? "Cartref" : "Home"}
+              </Link>
+            </li>
+            {navigation.primary.map(item =>
+              <Fragment key={item._key}>
+                <li className={`
+                  ${s.overlayNavItem}
+                  ${pathname === buildUrl(item.url._type, item.url.slug)
+                    ? s.active : ""
+                  }
+                `}>
+                  <Link href={buildUrl(item.url._type, item.url.slug)}>
+                    <Localize data={item.label} />
+                  </Link>
+                </li>
+              </Fragment>
+            )}
+            <li className={`${s.overlayNavItem}`}>
+              <Language labels={labels} />
+            </li>
+          </ul>
+        </div>
         <div className={`${s.navLeft}`}>
           <ul className={`${u.uppercase}`}>
             {navigation.primary.map(item =>
@@ -42,7 +77,7 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
         <div className={`
           ${u.mono} ${u.bold} ${u.uppercase}
         `}>
-          <div className={`${u.flex} ${u.justifyCenter}`}>
+          <div className={`${s.logoContainer} ${u.flex}`}>
             <Link href="/" className={`${s.headerLogo} ${u.flex}`}>
               <ColorLogo />
               <div className={`${u.inlineBlock}`}>
@@ -67,6 +102,16 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
             </li>
           </ul>
         </div>
+        <button
+          className={`${s.hamburgerContainer}`}
+          onClick={isActive ? menuClose : menuOpen}
+        >
+          <span className={`${u.screenReaderText}`}>
+            {locale === "cy" ? "Prif Ddewislen" : "Main Menu"}
+          </span>
+          <div className={`${s.hamburger} ${isActive ? s.navActive : null}`}>
+          </div>
+        </button>
       </nav>
     </header>
   )

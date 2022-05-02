@@ -18,14 +18,45 @@
 
 .nav {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
+  @include b.mq(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.active {
+.active a {
+  color: var(--grey-750);
+  cursor: default;
+}
+
+.overlay {
+  z-index: -1;
+  position: absolute;
+  height: 100vh;
+  inset: 0;
+  background-color: var(--page-bg);
+  transform: translateX(100vw);
+  transition: transform 0.5s;
+}
+
+.overlayActive {
+  transform: translateX(0);
+  transition: transform 0.5s;
+}
+
+.overlayNav {
+  margin: 8rem 2rem;
+}
+
+.overlayNavItem {
+  margin-bottom: 0.5rem;
   a {
-    color: var(--grey-750);
-    cursor: default;
+    color: var(--grey-550);
+    &:hover,
+    &:focus {
+      color: var(--grey-750);
+    }
   }
 }
 
@@ -52,9 +83,14 @@
   }
 }
 
-.navItemRight {
-  &:last-child {
-    margin-left: 3rem;
+.navItemRight:last-child {
+  margin-left: 3rem;
+}
+
+.logoContainer {
+  justify-content: left;
+  @include b.mq(md) {
+    justify-content: center;
   }
 }
 
@@ -89,7 +125,78 @@
   }
 }
 
+.hamburgerContainer {
+  justify-self: right;
+  display: grid;
+  width: 8em;
+  height: 5.8em;
+  font-size: 5px;
+  cursor: pointer;
+  margin-right: 2em;
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin: 2.6em 0 3em 0;
+  background-color: var(--grey-550);
+  transition: background-color 0s;
+  transition-delay: 0.5s;
+  &:hover,
+  &:focus {
+    background-color: var(--grey-750);
+  }
+  @include b.mq(md) {
+    display: none;
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    content: '';
+    background-color: var(--grey-550);
+    transition: transform 0.5s, top 0.5s;
+    transition-delay: 0s, 0.5s;
+    transition-property: transform, top;
+    transform: rotate(0);
+    &:hover,
+    &:focus{
+      background-color: var(--grey-750);
+    }
+  }
+  &::before {
+    top: -2.3em;
+  }
+  &::after {
+    top: 2.3em;
+  }
+}
+
+.navActive {
+  background-color: var(--green-150);
+  transition: background-color 0s;
+  transition-delay: 0.5s;
+  &::before,
+  &::after {
+    top: 0;
+    transition: top 0.5s, transform 0.5s;
+    transition-delay: 0s, 0.5s;
+    transition-property: top, transform;
+  }
+  &::before {
+    transform: rotate(0.125turn);
+  }
+  &::after {
+    transform: rotate(-0.125turn);
+  }
+}
+
 .main {
+  position: relative;
   margin-top: 5rem;
   @include b.mq(md) {
     margin-top: 7rem;
@@ -144,15 +251,38 @@
 
 .logos {
   flex-wrap: wrap;
+  justify-content: unset;
+  font-size: 3vw;
+  width: 100%;
   gap: 2rem 4rem;
-  justify-content: center;
-  margin-block: 4rem 5rem;
+  margin-block: 5rem 5rem;
+  @include b.mq(lg) {
+    margin-bottom: 6rem;
+    gap: 4rem;
+    font-size: 1.6vw;
+  }
   @include b.mq(md) {
     flex-wrap: nowrap;
-    gap: 2rem;
-    justify-content: space-between;
-    margin-block: 4rem 5rem;
+    gap: 3rem 2rem;
+    font-size: 2.5vw;
+    justify-content: center;
   }
+}
+
+.lotteryLogo {
+  width: 13em;
+}
+
+.acwLogo {
+  width: 18em;
+}
+
+.wgLogo {
+  width: 11em;
+}
+
+.wlgaLogo {
+  width: 5em;
 }
 
 .acwLogo,
@@ -171,7 +301,6 @@
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  text-align: center;
   a {
     color: var(--grey-650);
     text-decoration-line: none;
