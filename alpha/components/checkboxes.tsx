@@ -7,12 +7,14 @@ interface Props {
   title: string
 }
 
+type Item = Artform | Keystage | Staff
+
 const Checkbox: FC<Props> = ({ data, title }) => {
   const { locale } = useRouter()
   return (
     <section>
       <h3>{title}</h3>
-      {data && data.map(item =>
+      {data && data.map((item: Item) =>
         <div key={item._id}>
           <input
             type="checkbox"

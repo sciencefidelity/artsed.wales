@@ -42,7 +42,7 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
                 <li className={`
                   ${s.overlayNavItem}
                   ${pathname === buildUrl(item.url._type, item.url.slug)
-                    ? s.active : ""
+                    ? s.active : null
                   }
                 `}>
                   <Link href={buildUrl(item.url._type, item.url.slug)}>
@@ -63,7 +63,7 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
                 <li className={`
                   ${u.inline} ${s.navItemLeft}
                   ${pathname === buildUrl(item.url._type, item.url.slug)
-                    ? s.active : ""
+                    ? s.active : null
                   }
                 `}>
                   <Link href={buildUrl(item.url._type, item.url.slug)}>
