@@ -207,15 +207,21 @@
 
 .body {
   max-width: 710px;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
+  @include b.mq(md) {
+    margin-bottom: 5rem;
+  }
 }
 
 .h2 {
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
   font-size: 1.7rem;
   color: var(--grey-700);
   @include b.mq(md) {
     font-size: 2rem;
+    text-align: left;
+    margin-bottom: 1rem;
   }
 }
 
@@ -226,16 +232,25 @@
 }
 
 .trustees {
+  text-align: center;
   li {
+    font-size: 1.3rem;
+    text-align: center;
     display: inline;
     &:not(:last-child)::after {
       content: ', ';
     }
+    @include b.mq(md) {
+      font-size: 1.4rem;
+    }
+  }
+  @include b.mq(md) {
+    text-align: left;
   }
 }
 
 .hr {
-  display: initial;
+  display: block;
   @include b.mq(md) {
     display: none;
   }

@@ -44,17 +44,16 @@ export const StaffList: FC<Props> = ({ person }) => {
           >{person.title}</Link>
         </h3>
         {person.job &&
-          <span className={`${s.bio}`}>
+          <div className={`${s.bio}`}>
             {locale === "cy" && person.__i18n_refs
               ? person.__i18n_refs.job
               : person.job}
-          </span>
+          </div>
         }
-        <br />
         {person.email &&
           <a
             href={`mailto:${person.email}`}
-            className={`${u.underline} ${u.emailAddress}`}
+            className={`${u.underline} ${s.emailAddress}`}
           >
             {locale === "cy" && person.__i18n_refs
               ? person.__i18n_refs.email

@@ -2,8 +2,9 @@
 
 .hero {
   position: relative;
-  height: 504px;
-  aspect-ratio: unset;
+  height: unset;
+  aspect-ratio: 1 / 1;
+  // margin-bottom: 3rem;
   overflow-x: auto;
   overflow-y: hidden;
   background-color: var(--background);
@@ -13,7 +14,12 @@
   &::-webkit-scrollbar {
     display: none;
   }
-  @media only screen and (max-width: 1504px) {
+  @include b.mq(md) {
+    height: 504px;
+    margin-bottom: 7rem;
+    aspect-ratio: unset;
+  }
+  @media only screen and (min-width: 1504px) {
     height: unset;
     aspect-ratio: 3 / 1;
     overflow-x: hidden;
@@ -23,12 +29,15 @@
 .heroContent {
   position: relative;
   display: grid;
-  place-items: center;
+  place-items: unset;
   width: 100vw;
   max-width: 1504px;
   height: 100%;
   margin-inline: auto;
   margin-bottom: 0;
+  @include b.mq(md) {
+    place-items: center;
+  }
 }
 
 @keyframes dance {
@@ -115,51 +124,86 @@
 }
 
 .dance {
-  top: 0%;
-  right: -10%;
-  width: 40%;
+  top: -7%;
+  left: 20%;
+  width: 105.6%;
   filter:
     drop-shadow(-2px -2px 0 rgba(0, 0, 0, 100%))
     drop-shadow(-2px 2px 0 rgba(0, 0, 0, 100%))
-    drop-shadow(30px -10px 0 rgba(0, 0, 0, 100%))
-    drop-shadow(30px -10px 0 rgba(255, 255, 255, 100%));
+    drop-shadow(15px -4px 0 rgba(0, 0, 0, 100%))
+    drop-shadow(15px -4px 0 rgba(255, 255, 255, 100%));
   transform: translate(-50px) rotate(-10deg);
   animation: 30s ease-in-out infinite alternate dance;
+  @include b.mq(md) {
+    top: 0%;
+    right: -10%;
+    width: 40%;
+    filter:
+      drop-shadow(-2px -2px 0 rgba(0, 0, 0, 100%))
+      drop-shadow(-2px 2px 0 rgba(0, 0, 0, 100%))
+      drop-shadow(30px -10px 0 rgba(0, 0, 0, 100%))
+      drop-shadow(30px -10px 0 rgba(255, 255, 255, 100%));
+    transform: translate(-50px) rotate(-10deg);
+  }
 }
 
 .globe {
-  display: none;
+  top: -8.5%;
+  right: -13%;
+  width: 87.1%;
+  animation: 400s linear infinite reverse spin;
+  @include b.mq(md) {
+    display: none;
+  }
 }
 
 .head {
-  top: -2%;
-  left: 5%;
-  width: 16%;
-  filter: drop-shadow(20px -20px 0 rgba(0, 0, 0, 90%));
-  transform: rotate(-110deg);
+  top: -10%;
+  width: 52.8%;
+  filter: drop-shadow(20px -20px 0 rgba(0, 0, 0, 100%));
   animation: 300s linear infinite spin;
+  @include b.mq(md) {
+    top: -2%;
+    left: 5%;
+    width: 16%;
+    filter: drop-shadow(20px -20px 0 rgba(0, 0, 0, 90%));
+    transform: rotate(-110deg);
+  }
 }
 
 .hand {
+  display: none;
   top: 10%;
   right: 0%;
   width: 33%;
   animation: 40s ease-in-out infinite alternate hand;
+  @include b.mq(md) {
+    display: block;
+  }
 }
 
 .map {
+  display: none;
   top: -1%;
   right: -1%;
   width: 29%;
+  @include b.mq(md) {
+    display: block;
+  }
 }
 
 .map1 {
+  display: none;
   bottom: -3%;
   left: -1%;
   width: 29%;
+  @include b.mq(md) {
+    display: block;
+  }
 }
 
 .statue {
+  display: none;
   top: 0;
   right: 1%;
   width: 36%;
@@ -169,32 +213,49 @@
     contrast(80%);
   transform: translate(0) rotate(0deg);
   animation: 100s ease-in-out infinite alternate statue;
+  @include b.mq(md) {
+    display: block;
+  }
 }
 
 .tree {
   top: 5%;
-  right: -5%;
-  width: 27%;
+  left: 20%;
+  width: 105.6%;
   filter: brightness(1.3);
-  transform: scale(120%);
   animation: 20s linear infinite alternate tree;
+  @include b.mq(md) {
+    top: 5%;
+    right: -5%;
+    width: 27%;
+    transform: scale(120%);
+  }
 }
 
 .tree2 {
+  display: none;
   bottom: 0%;
   left: -7%;
   width: 30%;
   filter: brightness(1.3);
   transform: scale(90%);
   animation: 25s linear infinite alternate tree1;
+  @include b.mq(md) {
+    display: block;
+  }
 }
 
 .whale {
-  bottom: -10%;
-  left: -5%;
-  width: 40%;
+  right: 16%;
+  bottom: -2%;
+  width: 132%;
   transform: scale(-1, 1) rotate(10deg);
-  animation: 20s ease-in-out infinite alternate whale;
+  animation: 40s ease-in-out infinite alternate whale;
+  @include b.mq(md) {
+    bottom: -10%;
+    left: -5%;
+    width: 40%;
+  }
 }
 
 .secretCircle,
@@ -212,32 +273,54 @@
 }
 
 .secretCircle {
-  display: none;
+  top: -91%;
+  left: -91%;
+  width: 241%;
+  svg {
+    circle {
+      fill: transparent;
+      stroke: var(--grey-900);
+      stroke-dasharray: 3%;
+      stroke-width: 7px;
+    }
+  }
+  @include b.mq(md) {
+    display: none;
+  }
 }
 
 .siteTriangle {
-  right: 1%;
-  bottom: 8%;
+  right: 4.5%;
+  bottom: -10%;
   z-index: 1;
   display: grid;
   place-items: center;
-  width: 14.5%;
+  width: 89%;
   transform: rotate(25deg);
   svg {
     polygon {
       fill: transparent;
-      stroke: var(--grey-750);
+      stroke: var(--grey-900);
       stroke-width: 8px;
-      transform: translateX(5%);
+      transform: translateX(9%);
+      @include b.mq(md) {
+        stroke: var(--grey-750);
+        transform: translateX(5%);
+      }
     }
+  }
+  @include b.mq(md) {
+    right: 1%;
+    bottom: 8%;
+    width: 14.5%;
   }
 }
 
 .siteCircle {
+  display: none;
   top: -12%;
   right: 8%;
   z-index: 1;
-  display: grid;
   place-items: center;
   width: 26.5%;
   svg {
@@ -247,13 +330,16 @@
       stroke-width: 8px;
     }
   }
+  @include b.mq(md) {
+    display: grid;
+  }
 }
 
 .siteSquare {
+  display: none;
   bottom: 5%;
   left: 6%;
   z-index: 1;
-  display: grid;
   place-items: center;
   width: 13.3%;
   transform: rotate(-30deg);
@@ -264,22 +350,37 @@
       stroke-width: 8px;
     }
   }
+  @include b.mq(md) {
+    display: grid;
+  }
 }
 
 .digitalCircle {
-  top: 5%;
-  left: 10%;
+  top: 15%;
+  left: 0;
   z-index: 1;
-  width: 17%;
+  width: 70%;
   svg {
-    transform: rotate(45deg);
+    transform: rotate(-55deg);
     rect {
-      fill: var(--grey-800);
+      fill: var(--grey-900);
+      @include b.mq(md) {
+        fill: var(--grey-800);
+      }
     }
+    @include b.mq(md) {
+      transform: rotate(45deg);
+    }
+  }
+  @include b.mq(md) {
+    top: 5%;
+    left: 10%;
+    width: 17%;
   }
 }
 
 .digitalCircle1 {
+  display: none;
   right: 6%;
   bottom: 5%;
   z-index: 1;
@@ -290,13 +391,16 @@
       fill: var(--grey-800);
     }
   }
+  @include b.mq(md) {
+    display: block;
+  }
 }
 
 .digitalTriangle {
+  display: none;
   top: 10%;
   right: 15%;
   z-index: 1;
-  display: grid;
   place-items: center;
   width: 13%;
   transform: rotate(240deg);
@@ -305,20 +409,33 @@
       fill: var(--grey-800);
     }
   }
+  @include b.mq(md) {
+    display: grid;
+  }
 }
 
 .danceCircle {
-  top: -25%;
-  right: -5%;
-  z-index: 1;
-  width: 33.5%;
+  top: -45%;
+  right: -50%;
+  width: 158%;
   svg {
     circle {
       fill: transparent;
-      stroke: var(--grey-950);
-      stroke-dasharray: 10% 5%;
-      stroke-width: 10;
+      stroke: var(--grey-900);
+      stroke-dasharray: 4%;
+      stroke-width: 12px;
+      @include b.mq(md) {
+        stroke: var(--grey-950);
+        stroke-dasharray: 10% 5%;
+        stroke-width: 10;
+      }
     }
+  }
+  @include b.mq(md) {
+    top: -25%;
+    right: -5%;
+    z-index: 1;
+    width: 33.5%;
   }
 }
 
@@ -326,7 +443,7 @@
   bottom: -25%;
   left: 8%;
   z-index: 1;
-  display: grid;
+  display: none;
   place-items: center;
   width: 29.5%;
   transform: rotate(22.5deg);
@@ -339,9 +456,13 @@
       transform: translateX(9px);
     }
   }
+  @include b.mq(md) {
+    display: grid;
+  }
 }
 
 .danceSquare {
+  display: none;
   top: -25%;
   left: 0%;
   z-index: 1;
@@ -355,9 +476,13 @@
       stroke-width: 10;
     }
   }
+  @include b.mq(md) {
+    display: block;
+  }
 }
 
 .title {
+  display: none;
   position: relative;
   padding: 0 9rem;
   font-size: 4.5rem;
@@ -368,9 +493,13 @@
   color: var(--grey-750);
   text-align: center;
   user-select: none;
+  @include b.mq(md) {
+    display: block;
+  }
 }
 
 .icon {
+  display: none;
   width: 1.7rem;
   width: clamp(1.7rem, 2.65vw, 2.5rem);
   margin-inline: auto;
@@ -378,6 +507,9 @@
   user-select: none;
   svg {
     fill: var(--grey-750);
+  }
+  @include b.mq(md) {
+    display: block;
   }
 }
 
@@ -397,13 +529,17 @@
     margin-right: 2rem;
   }
   blockquote {
-    padding: 1.2rem 1.7rem;
+    padding: 0.9rem 1.1rem 0.7rem;
     margin-bottom: 4rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.3;
     background-color: var(--background);
     border: 1px solid var(--pattern);
     border-radius: 4px;
+    @include b.mq(md) {
+      padding: 1.2rem 1.7rem;
+      font-size: 1.5rem;
+    }
   }
   h2 {
     margin-bottom: 3rem;
@@ -418,9 +554,15 @@
     color: var(--grey-600);
   }
   ul {
-    padding: 0 2.7rem 3rem;
+    font-size: 1.3rem;
+    padding: 0 1.2rem 3rem;
     list-style-position: outside;
-    list-style-type: '⸺';
+    list-style-type: '—';
+    @include b.mq(md) {
+      font-size: 1.5rem;
+      list-style-type: '⸺';
+      padding: 0 2.7rem 3rem;
+    }
     li {
       padding: 0 0 1.5rem 0.5rem;
     }
@@ -429,8 +571,13 @@
 
 .h1 {
   margin-bottom: 0.5rem;
-  font-size: 4.8rem;
+  font-size: 4rem;
   color: var(--grey-750);
+  margin-top: -4rem;
+  @include b.mq(md) {
+    font-size: 4.8rem;
+    margin-top: unset;
+  }
 }
 
 .h3 {

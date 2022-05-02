@@ -104,6 +104,7 @@ const About = ({ data }) => {
                   components={components}
                 />
               </article>
+              <hr className={`${s.hr}`} />
               <h2 className={`${s.h2} ${u.uppercase}`}>
                 <Localize data={labels[13].text} />{/* Network Co-ordinators */}
               </h2>
