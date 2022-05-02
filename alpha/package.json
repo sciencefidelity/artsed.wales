@@ -29,6 +29,7 @@
     "groq": "^2.29.3",
     "modern-normalize": "^1.1.0",
     "next": "^12.1.5",
+    "next-pwa": "^5.5.2",
     "postcss": "^8.4.12",
     "postcss-scss": "^4.0.3",
     "react": "^18.0.0",

@@ -1,4 +1,7 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const withPWA = require("next-pwa")
+
+module.exports = withPWA({
   async headers() {
     return [
       {
@@ -33,5 +36,8 @@ module.exports = {
   images: {
     domains: ["cdn.sanity.io"],
   },
-  swcMinify: true
-}
+  swcMinify: true,
+  pwa: {
+    dest: "public"
+  }
+})
