@@ -1,17 +1,30 @@
+@use 'styles/base/breakpoints' as b;
+
 .event {
   margin-bottom: 2rem;
+  margin-inline: auto;
+  max-width: 710px;
   time {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    @include b.mq(md) {
+      display: block;
+      padding: 0;
+      font-size: 1.2rem;
+    }
+  }
+  @include b.mq(lg) {
+    margin-inline: unset;
+    max-width: unset;
   }
 }
 
 .icon {
   display: flex;
   place-items: center;
-  width: 52px;
-  height: 52px;
-  margin-right: 1.2rem;
+  width: 40px;
+  height: 40px;
+  margin-right: 0.8rem;
   background-color: var(--grey-650);
   border-radius: 100%;
   transition: background-color 0.3s ease-in-out;
@@ -24,11 +37,16 @@
     background-color: var(--grey-750);
     transition: background-color 0.3s ease-in-out;
   }
+  @include b.mq(md) {
+    width: 52px;
+    height: 52px;
+    margin-right: 1.2rem;
+  }
 }
 
 .heading {
   margin-block: -0.3rem 0.8rem;
-  font-size: 2.3rem;
+  font-size: 1.6rem;
   a {
     color: var(--grey-750);
     text-decoration-line: none;
@@ -36,8 +54,15 @@
       color: var(--grey-850);
     }
   }
+  @include b.mq(md) {
+    margin-block: -0.3rem 0.8rem;
+    font-size: 2.3rem;
+  }
 }
 
 .summary {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  @include b.mq(md) {
+    font-size: 1.4rem;
+  }
 }

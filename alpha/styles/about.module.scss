@@ -12,9 +12,9 @@
   border-bottom: 1px solid var(--pattern);
   @include b.mq(md) {
     display: flex;
-    height: 504px;
+    height: unset;
     margin-bottom: 7rem;
-    aspect-ratio: unset;
+    aspect-ratio: 3 / 1;
   }
   @media only screen and (min-width: 1504px) {
     height: 504px;
@@ -25,23 +25,26 @@
 .venn {
   position: absolute;
   width: 115vw;
+  margin-top: -19rem;
   margin-top: calc(5rem - 10%);
   @media only screen and (min-width: 1504px) {
-    margin-top: -19rem;
+    margin-top: -11rem;
   }
   @include b.mq(md) {
+    margin-top: -13.5rem;
     margin-inline: auto;
     position: relative;
     width: 60vw;
     max-width: 902px;
-    margin-top: calc(-9.5rem - 10%);
+  }
+  @include b.mq(lg) {
+    margin-top: -12.5rem;
   }
 }
 
 .vennDiagram {
   position: relative;
   width: 125%;
-  // margin: 6rem -4rem -12rem;
   @include b.mq(md) {
     margin: 6rem -4rem -12rem;
   }
@@ -51,13 +54,15 @@
   position: absolute;
   font-family: var(--font-monospace);
   font-size: 1rem;
+  font-size: 4.3vw;
+  font-size: clamp(1rem, 4.3vw, 5rem);
   font-weight: 700;
   color: var(--grey-650);
   text-align: center;
   user-select: none;
   transform: translate(-50%, -50%);
   @include b.mq(md) {
-    font-size: clamp(1.8rem, 2.4vw, 2.27rem);
+    font-size: clamp(1.4rem, 2.4vw, 2.27rem);
   }
 }
 
@@ -67,6 +72,9 @@
   top: 20%;
   left: 50%;
   @include b.mq(md) {
+    top: 26%;
+  }
+  @include b.mq(lg) {
     top: 25%;
   }
 }
@@ -77,8 +85,11 @@
   top: 70%;
   left: 23%;
   @include b.mq(md) {
-    top: 62%;
+    top: 60%;
     left: 20%;
+  }
+  @include b.mq(lg) {
+    top: 62%;
   }
 }
 
@@ -89,8 +100,11 @@
   left: 77%;
   line-height: 1.2;
   @include b.mq(md) {
-    top: 62%;
+    top: 60%;
     left: 80%;
+  }
+  @include b.mq(lg) {
+    top: 62%;
   }
 }
 
@@ -190,7 +204,7 @@
 
 .about {
   grid-template-columns: 1fr;
-  @include b.mq(md) {
+  @include b.mq(lg) {
     grid-template-columns: 3fr 1fr;
   }
   a {
@@ -208,31 +222,53 @@
 .body {
   max-width: 710px;
   margin-bottom: 4rem;
+  margin-inline: auto;
   @include b.mq(md) {
     margin-bottom: 5rem;
+  }
+  @include b.mq(lg) {
+    margin-inline: unset;
   }
 }
 
 .h2 {
+  max-width: 710px;
   text-align: center;
   margin-bottom: 3rem;
   font-size: 1.7rem;
   color: var(--grey-700);
+  margin-inline: auto;
   @include b.mq(md) {
     font-size: 2rem;
     text-align: left;
     margin-bottom: 1rem;
   }
+  @include b.mq(lg) {
+    margin-inline: unset;
+    max-width: unset;
+  }
 }
 
 .staffList {
+  max-width: 710px;
   padding: 0;
   margin-bottom: 5rem;
   list-style-type: none;
+  margin-inline: auto;
+  @include b.mq(lg) {
+    margin-inline: unset;
+    max-width: unset;
+  }
+  @include b.mq(lg) {
+    margin-inline: unset;
+    max-width: unset;
+  }
 }
 
 .trustees {
+  max-width: 710px;
   text-align: center;
+  margin-inline: auto;
   li {
     font-size: 1.3rem;
     text-align: center;
@@ -251,7 +287,7 @@
 
 .hr {
   display: block;
-  @include b.mq(md) {
+  @include b.mq(lg) {
     display: none;
   }
 }

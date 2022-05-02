@@ -200,8 +200,8 @@
 .icon {
   display: flex;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 55px;
+  height: 55px;
   margin-right: 1rem;
   background-color: var(--grey-650);
   border-radius: 100%;
@@ -215,6 +215,10 @@
     background-color: var(--grey-750);
     transition: background-color 0.3s ease-in-out;
   }
+  @include b.mq(md) {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .date {
@@ -223,15 +227,21 @@
 }
 
 .h2 {
-  margin-top: -0.5rem;
+  margin-top: -0.3rem;
   margin-bottom: 0.2rem;
   font-size: 1.8rem;
   a {
     color: var(--grey-900);
   }
   @include b.mq(md) {
-    margin-top: -0.8rem;
+    margin-top: -0.2rem;
     font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  }
+  @include b.mq(lg) {
+    margin-top: -0.3rem;
+  }
+  @include b.mq(xl) {
+    margin-top: -0.5rem;
   }
 }
 

@@ -2,7 +2,7 @@
 
 .staff {
   grid-template-columns: 1fr;
-  @include b.mq(md) {
+  @include b.mq(lg) {
     grid-template-columns: 3fr 1fr;
   }
 }
@@ -21,9 +21,15 @@
   gap: 3rem;
   align-items: center;
   margin-bottom: 3.5rem;
+  margin-inline: auto;
+  max-width: 710px;
   @include b.mq(md) {
     flex-direction: row;
     gap: 0;
+  }
+  @include b.mq(lg) {
+    margin-inline: unset;
+    max-width: unset;
   }
 }
 
@@ -31,13 +37,16 @@
   width: 120px;
   height: 120px;
   aspect-ratio: 1 / 1;
-  margin-right: 2rem;
+  margin-right: 0;
   background-color: var(--grey-650);
   filter: grayscale(0.1);
   border: 1px solid var(--grey-650);
   border-radius: 100%;
   img {
     border-radius: 100%;
+  }
+  @include b.mq(md) {
+    margin-right: 2rem;
   }
 }
 
@@ -50,23 +59,46 @@
 
 .roles {
   font-size: 1.3rem;
+  text-align: center;
+  @include b.mq(md) {
+    text-align: left;
+  }
 }
 
 .h1 {
-  margin-top: -0.6rem;
+  margin-top: -0.3rem;
   font-size: 3.4rem;
+  text-align: center;
   color: var(--grey-650);
+  @include b.mq(md) {
+    margin-top: -0.6rem;
+    text-align: left;
+  }
 }
 
 .body {
   max-width: 710px;
   margin-bottom: 4rem;
+  margin-inline: auto;
+  @include b.mq(lg) {
+    margin-inline: unset;
+  }
 }
 
 .h2 {
-  margin-bottom: 1rem;
-  font-size: 2.1rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
   color: var(--grey-650);
+  margin-inline: auto;
+  max-width: 710px;
+  @include b.mq(md) {
+    margin-bottom: 1rem;
+    font-size: 2.1rem;
+  }
+  @include b.mq(lg) {
+    margin-inline: unset;
+    max-width: unset;
+  }
 }
 
 .staffEventsHeading {
@@ -87,7 +119,7 @@
 
 .hr {
   display: initial;
-  @include b.mq(md) {
+  @include b.mq(lg) {
     display: none;
   }
 }

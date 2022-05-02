@@ -1,18 +1,19 @@
 @use '/styles/base/breakpoints' as b;
 
 .sidebar {
+  width: unset;
+  max-width: 750px;
   margin-top: 1rem;
   width: unset;
   margin-inline: unset;
   @include b.mq(md) {
     width: 100%;
-    margin-top: 1rem;
-    max-width: 750px;
     margin-inline: auto;
   }
   @include b.mq(lg) {
     margin-top: 7rem;
     margin-inline: unset;
+    width: 300px;
   }
 }
 

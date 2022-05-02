@@ -527,15 +527,6 @@
   margin-block: 7rem 1rem;
   // margin-right: 0;
   margin-inline: 0;
-  @include b.mq(md) {
-    margin-block: 7rem 1rem;
-    margin-right: 2rem;
-    margin-inline: auto;
-  }
-  @include b.mq(lg) {
-    margin-block: 7rem 5rem;
-    margin-right: 2rem;
-  }
   blockquote {
     padding: 0.9rem 1.1rem 0.7rem;
     margin-bottom: 4rem;
@@ -574,6 +565,15 @@
     li {
       padding: 0 0 1.5rem 0.5rem;
     }
+  }
+  @include b.mq(md) {
+    margin-block: 7rem 1rem;
+    margin-right: 2rem;
+    margin-inline: auto;
+  }
+  @include b.mq(lg) {
+    margin-block: 7rem 5rem;
+    margin-inline: 0 2rem;
   }
 }
 

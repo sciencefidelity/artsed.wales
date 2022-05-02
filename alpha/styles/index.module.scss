@@ -10,10 +10,9 @@
   background-color: var(--background);
   border-bottom: 1px solid var(--pattern);
   @include b.mq(md) {
-    display: flex;
-    height: 504px;
+    height: unset;
     margin-bottom: 7rem;
-    aspect-ratio: unset;
+    aspect-ratio: 3 / 1;
   }
   @media only screen and (min-width: 1504px) {
     height: 504px;
@@ -23,10 +22,13 @@
 
 .heroText {
   position: relative;
-  max-width: 1510px;
-  padding: 0 0.7rem;
+  max-width: 1504px;
+  // padding: 0 0.7rem;
+  padding: 0 0;
   margin: auto;
-  font-size: clamp(2rem, 5.3vw, 5rem);
+  font-size: 4rem;
+  // font-size: 8.5vw;
+  font-size: clamp(1.8rem, 8.5vw, 4rem);
   font-weight: 700;
   line-height: 1.25;
   color: var(--grey-550);
@@ -39,7 +41,12 @@
     background-size: 107%;
   }
   @include b.mq(md) {
+    padding: 0 4rem;
+    font-size: clamp(1.8rem, 6vw, 3.8rem);
+  }
+  @include b.mq(lg) {
     padding: 0 9rem;
+    font-size: clamp(1.8rem, 5.1vw, 5rem);
   }
 }
 
