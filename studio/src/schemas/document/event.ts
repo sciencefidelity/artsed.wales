@@ -339,6 +339,13 @@ export default {
       title: 'Shape three',
       type: 'string',
       group: 'design'
+    },
+    {
+      name: 'feature',
+      title: 'Feature this post',
+      type: 'boolean',
+      group: 'settings',
+      initialValue: false
     }
   ],
   orderings: [
