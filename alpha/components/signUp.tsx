@@ -42,6 +42,7 @@ const SignUp: FC<Props> = ({ labels }) => {
             className={`${s.signUpSend}`}
             id="mc-embedded-subscribe"
             value={localize(labels[20].text, locale)}
+            style={{cursor: "pointer"}}
           />
           <div id="mce-responses">
             <div id="mce-error-response" style={{ display: "none" }}></div>
