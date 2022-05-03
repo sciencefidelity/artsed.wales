@@ -14,10 +14,14 @@ interface Props {
 export const EventList: FC<Props> = ({ event }) => {
   const { locale } = useRouter()
   return (
-    <div className={`${s.event}`} key={event._id}>
+    <div className={`${s.event}`}>
       <header className={`${u.flex} ${s.header}`}>
         <div className={`${s.icon}`}>
           <Link href={`/${event._type}/${event.slug}`}>
+            {event.title && <span className={`${u.screenReaderText}`}>
+              {locale === "cy" && event.__i18n_refs
+                ? event.__i18n_refs.title : event.title}
+            </span>}
             <Icon name={event.icon ? event.icon : "Bolt"} />
           </Link>
         </div>

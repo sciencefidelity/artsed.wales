@@ -8,6 +8,7 @@
  * @param data - all props fetched with `keystagePageQuery` in `lib/queries.ts`.
  * @param slug - all props fetched with `keystagePagePathQuery` in `lib/queries.ts`.
  */
+import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
@@ -138,9 +139,11 @@ const StaffPage = ({ data }) => {
                 {staff.role &&
                   <ul className={`${s.roles} ${u.uppercase}`}>
                     {staff.role && staff.role.map(role =>
-                      <li key={role} className={`${u.horizontalList}`}>
-                        {role}
-                      </li>
+                      <Fragment key={role}>
+                        <li className={`${u.horizontalList}`}>
+                          {role}
+                        </li>
+                      </Fragment>
                     )}
                   </ul>
                 }
@@ -165,7 +168,11 @@ const StaffPage = ({ data }) => {
                 <Localize data={labels[11].text} />
               </h2>
               <div>
-                {staff.events.map(event => <EventList event={event} />)}
+                {staff.events.map(event =>
+                  <Fragment key={event._id}>
+                    <EventList event={event} />
+                  </Fragment>
+                )}
               </div>
             </>}
           </section>
