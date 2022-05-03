@@ -38,14 +38,18 @@ const SingleEvent: FC<Props> = ({ event }) => {
         </div>
       </Link>
       <header className={`${u.flex}`}>
-        <div className={`${s.icon}`}>
-          <Link
-            href={`/${event._type}/${event.slug}`}
-            className={`${u.noUnderline}`}
-          >
+        <Link
+          href={`/${event._type}/${event.slug}`}
+          className={`${u.noUnderline}`}
+        >
+          {event.title && <span className={`${u.screenReaderText}`}>
+            {locale === "cy" && event.__i18n_refs
+              ? event.__i18n_refs.title : event.title}
+          </span>}
+          <div className={`${s.icon}`}>
             <Icon name={event.icon} />
-          </Link>
-        </div>
+          </div>
+        </Link>
         <div>
           {event.dateStart &&
             <span className={`${s.date} ${u.uppercase}`}>
