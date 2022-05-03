@@ -7,6 +7,7 @@
  * @param data - all props fetched with `keystagePageQuery` in `lib/queries.ts`.
  * @param slug - all props fetched with `keystagePagePathQuery` in `lib/queries.ts`.
  */
+import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
@@ -135,7 +136,11 @@ const KeystagePage = ({ data }) => {
                   ? keystage.__i18n_refs.title : keystage.title}
               </h2>
               <div>
-                {keystage.events.map(event => <EventList event={event} />)}
+                {keystage.events.map(event =>
+                  <Fragment key={event._id}>
+                    <EventList event={event} />
+                  </Fragment>
+                )}
               </div>
             </>}
           </section>
