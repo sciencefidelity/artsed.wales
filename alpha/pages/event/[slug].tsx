@@ -200,15 +200,14 @@ const EventPage = ({ data }) => {
                     locale === "cy" && facilitator.__i18n_refs.job
                       ? facilitator.__i18n_refs.job : facilitator.job
                         ? facilitator.job : facilitator.title,
-                    facilitator.title,
-                    match =>
-                    <Fragment key={facilitator._id}>
-                      <strong className={`${s.strong}`}>
-                        <Link
-                          href={`/${facilitator._type}/${facilitator.slug}`}
-                        >{match}</Link>
-                      </strong>
-                    </Fragment>
+                    facilitator.title, match =>
+                      <Fragment key={facilitator._id}>
+                        <strong className={`${s.strong}`}>
+                          <Link
+                            href={`/${facilitator._type}/${facilitator.slug}`}
+                          >{match}</Link>
+                        </strong>
+                      </Fragment>
                   )}
                   <br />
                 </Fragment>

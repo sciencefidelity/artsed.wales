@@ -41,9 +41,7 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
               <Fragment key={item._key}>
                 <li className={`
                   ${s.overlayNavItem}
-                  ${pathname === buildUrl(item.url._type, item.url.slug)
-                    ? s.active : null
-                  }
+                  ${pathname === buildUrl(item.url._type, item.url.slug) ? s.active : null}
                 `}>
                   <Link href={buildUrl(item.url._type, item.url.slug)}>
                     <Localize data={item.label} />
@@ -62,9 +60,7 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
               <Fragment key={item._key}>
                 <li className={`
                   ${u.inline} ${s.navItemLeft}
-                  ${pathname === buildUrl(item.url._type, item.url.slug)
-                    ? s.active : null
-                  }
+                  ${pathname === buildUrl(item.url._type, item.url.slug) ? s.active : null}
                 `}>
                   <Link href={buildUrl(item.url._type, item.url.slug)}>
                     <Localize data={item.label} />
