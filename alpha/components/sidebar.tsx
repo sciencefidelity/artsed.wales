@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, Fragment } from "react"
 import { useRouter } from "next/router"
 import Date from "components/date"
 import Link from "components/link"
@@ -22,37 +22,39 @@ const Sidebar: FC<Props> = ({ events, title }) => {
       </h2>
       <ul>
         {events && events.map(event =>
-          <li key={event._id} className={`${s.event}`}>
-            <header className={`${u.flex} ${s.header}`}>
-              <Link href={`/${event._type}/${event.slug}`}>
-                {event.title && <span className={`${u.screenReaderText}`}>
-                  {locale === "cy" && event.__i18n_refs
-                    ? event.__i18n_refs.title : event.title}
-                </span>}
-                <div className={`${s.icon}`}>
-                  <Icon name={event.icon ? event.icon : "Bolt"} />
+          <Fragment key={event._id}>
+            <li className={`${s.event}`}>
+              <header className={`${u.flex} ${s.header}`}>
+                <Link href={`/${event._type}/${event.slug}`}>
+                  {event.title && <span className={`${u.screenReaderText}`}>
+                    {locale === "cy" && event.__i18n_refs
+                      ? event.__i18n_refs.title : event.title}
+                  </span>}
+                  <div className={`${s.icon}`}>
+                    <Icon name={event.icon ? event.icon : "Bolt"} />
+                  </div>
+                </Link>
+                <div>
+                  {event.dateStart && <Date date={event.dateStart} />}
+                  <br />
+                  {event.title &&
+                    <h3 className={`${s.eventHeading} ${u.mono} ${u.bold}`}>
+                      <Link href={`/${event._type}/${event.slug}`}>
+                        {locale === "cy" && event.__i18n_refs
+                          ? event.__i18n_refs.title : event.title}
+                      </Link>
+                    </h3>
+                  }
                 </div>
-              </Link>
-              <div>
-                {event.dateStart && <Date date={event.dateStart} />}
-                <br />
-                {event.title &&
-                  <h3 className={`${s.eventHeading} ${u.mono} ${u.bold}`}>
-                    <Link href={`/${event._type}/${event.slug}`}>
-                      {locale === "cy" && event.__i18n_refs
-                        ? event.__i18n_refs.title : event.title}
-                    </Link>
-                  </h3>
-                }
-              </div>
-            </header>
-            {event.summary &&
-              <article className={`${s.summary}`}>
-                {locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.summary : event.summary}
-              </article>
-            }
-          </li>
+              </header>
+              {event.summary &&
+                <article className={`${s.summary}`}>
+                  {locale === "cy" && event.__i18n_refs
+                    ? event.__i18n_refs.summary : event.summary}
+                </article>
+              }
+            </li>
+          </Fragment>
         )}
       </ul>
     </aside>

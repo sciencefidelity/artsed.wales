@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react"
+import { FC, Fragment, ReactElement } from "react"
 import { Settings } from "lib/interfaces"
 import {
   Facebook,
@@ -62,21 +62,23 @@ const SocialLinks: FC<Props> = ({ settings }) => {
     <section className={`${s.socialLinks} ${u.uppercase} ${u.flex}`}>
       <ul className={`${s.socialLinksMenu} ${u.flex}`}>
         {settings.social.map(link =>
-          <li key={link._key}>
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Link to ${link.name}`}
-            >
-              <div
-                className={`${s.socialIcon}`}
-                style={{
-                  backgroundColor: background(link.name)
-                }}
-              >{icon(link.name)}</div>
-            </a>
-          </li>
+          <Fragment key={link._key}>
+            <li>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Link to ${link.name}`}
+              >
+                <div
+                  className={`${s.socialIcon}`}
+                  style={{
+                    backgroundColor: background(link.name)
+                  }}
+                >{icon(link.name)}</div>
+              </a>
+            </li>
+          </Fragment>
         )}
       </ul>
     </section>

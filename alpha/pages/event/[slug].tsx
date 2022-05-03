@@ -143,7 +143,8 @@ const EventPage = ({ data }) => {
           {event.imageOne && <img
             src={urlFor(event.imageOne)
               .auto("format")
-              .quality(85)
+              .quality(75)
+              .width(500)
               .url()}
             alt={event.title}
             className={`${s[event.classOne]}`}
@@ -151,7 +152,8 @@ const EventPage = ({ data }) => {
           {event.imageTwo && <img
             src={urlFor(event.imageTwo)
               .auto("format")
-              .quality(85)
+              .quality(75)
+              .width(500)
               .url()}
             alt={event.title}
             className={`${s[event.classTwo]}`}
@@ -159,13 +161,15 @@ const EventPage = ({ data }) => {
           {event.imageThree && <img
             src={urlFor(event.imageThree)
               .auto("format")
-              .quality(85)
+              .quality(75)
+              .width(500)
               .url()}
             alt={event.title}
             className={`${s[event.classThree]}`}
           />}
         </div>
       </div>
+
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>
           <section className={`${s.content}`}>
@@ -201,11 +205,13 @@ const EventPage = ({ data }) => {
                         ? facilitator.job : facilitator.title,
                     facilitator.title,
                     match =>
+                    <Fragment key={facilitator._id}>
                       <strong className={`${s.strong}`}>
                         <Link
                           href={`/${facilitator._type}/${facilitator.slug}`}
                         >{match}</Link>
                       </strong>
+                    </Fragment>
                   )}
                   <br />
                 </Fragment>
@@ -252,7 +258,6 @@ const EventPage = ({ data }) => {
           </section>
           <hr className={`${s.hr}`} />
           <Sidebar
-            // events={events.filter(e => e.title !== event.title)}
             events={events}
             title={labels[10].text}
           />
