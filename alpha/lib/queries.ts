@@ -2,15 +2,15 @@ import groq from "groq"
 
 const omitDrafts = "!(_id in path('drafts.**'))"
 
-const slug = `"slug": slug.current`
+const slug = "'slug': slug.current"
 
 const body = `body[]{ ..., markDefs[]{ ..., item->{ _type, ${slug} } } }`
 
-const socialFields = `description, image, title`
+const socialFields = "description, image, title"
 
 const labels = `"labels": *[_type == "labelGroup" && ${omitDrafts}][0].labels`
 
-const metaFields = `canonicalURL, description, title`
+const metaFields = "canonicalURL, description, title"
 
 const seo = `
   facebook{ ${socialFields} },

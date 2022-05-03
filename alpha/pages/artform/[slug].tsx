@@ -7,15 +7,16 @@
  * @param data - all props fetched with `artformPageQuery` in `lib/queries.ts`.
  * @param slug - all props fetched with `artformPagePathQuery` in `lib/queries.ts`.
  */
+import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
- import Head from "next/head"
- import { useRouter } from "next/router"
- import sanityClient from "lib/sanityClient"
- import Layout from "components/layout"
- import ErrorTemplate from "components/errorTemplate"
- import { EventList } from "components/eventList"
- import Localize from "components/localize"
- import Sidebar from "components/sidebar"
+import Head from "next/head"
+import { useRouter } from "next/router"
+import sanityClient from "lib/sanityClient"
+import Layout from "components/layout"
+import ErrorTemplate from "components/errorTemplate"
+import { EventList } from "components/eventList"
+import Localize from "components/localize"
+import Sidebar from "components/sidebar"
 import { artformQuery, artformPathQuery } from "lib/queries"
 import {
   Artform,
@@ -135,7 +136,11 @@ const ArtformPage = ({ data }) => {
                   ? artform.__i18n_refs.title : artform.title}
               </h2>
               <div>
-                {artform.events.map(event => <EventList event={event} />)}
+                {artform.events.map(event =>
+                  <Fragment key={event._id}>
+                    <EventList event={event} />
+                  </Fragment>
+                )}
               </div>
             </>}
           </section>

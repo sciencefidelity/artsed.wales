@@ -135,7 +135,7 @@ const About = ({ data }) => {
                   trustee.role.includes("Trustee") &&
                     <Fragment  key={trustee._id}>
                       <li dangerouslySetInnerHTML={{
-                          __html: joinName(trustee.title) }} />
+                        __html: joinName(trustee.title) }} />
                     </Fragment>
                 )}
               </ul>

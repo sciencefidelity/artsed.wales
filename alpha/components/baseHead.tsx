@@ -69,14 +69,14 @@ const BaseHead: FC<Props> = ({ pageHead, settings }) => {
         property="og:image"
         content={urlFor(pageHead && pageHead.ogImage ? pageHead.ogImage :
           (locale === "cy" && settings.facebookCard.cy.image
-              ? settings.facebookCard.cy.image
-              : settings.facebookCard.en.image))
-            .auto("format")
-            .width(1200)
-            .height(630)
-            .quality(100)
-            .url()}
-        />
+            ? settings.facebookCard.cy.image
+            : settings.facebookCard.en.image))
+          .auto("format")
+          .width(1200)
+          .height(630)
+          .quality(100)
+          .url()}
+      />
       <meta
         property="og:site_name"
         content={localize(settings.siteName, locale)}
@@ -96,9 +96,9 @@ const BaseHead: FC<Props> = ({ pageHead, settings }) => {
         name="twitter:description"
         content={pageHead &&
           pageHead.twitterDescription ? pageHead.twitterDescription :
-            (locale === "cy" && settings.twitterCard.cy.description
-              ? settings.twitterCard.cy.description
-              : settings.twitterCard.en.description)}
+          (locale === "cy" && settings.twitterCard.cy.description
+            ? settings.twitterCard.cy.description
+            : settings.twitterCard.en.description)}
       />
       <meta
         name="twitter:site"
@@ -111,17 +111,16 @@ const BaseHead: FC<Props> = ({ pageHead, settings }) => {
         name="twitter:image"
         content={urlFor(pageHead &&
           pageHead.twitterImage ? pageHead.twitterImage :
-            (locale === "cy" && settings.twitterCard.cy.image
-                ? settings.twitterCard.cy.image
-                : settings.twitterCard.en.image))
-              .auto("format")
-              .width(1200)
-              .height(628)
-              .quality(100)
-              .url()}
+          (locale === "cy" && settings.twitterCard.cy.image
+            ? settings.twitterCard.cy.image
+            : settings.twitterCard.en.image))
+          .auto("format")
+          .width(1200)
+          .height(628)
+          .quality(100)
+          .url()}
       />
       <meta name="twitter:creator" content="@artsed_wales" />
-
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="mask-icon" href="/mask-icon.svg" color="#FFFFFF" />
     </Head>

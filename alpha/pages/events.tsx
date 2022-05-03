@@ -96,7 +96,7 @@ const Home = ({ data }) => {
             </Fragment>
           )}
         </div>
-      <hr />
+        <hr />
       </section>
     </Layout>
   )

@@ -87,27 +87,27 @@ const Home = ({ data }) => {
               />
             }
           </div>
-            <Waypoint onEnter={() => setIsCounting(true)} />
-            {engagement.engagementFigure &&
-              <div className={`${s.engagement} ${u.grid}`}>
-                {engagement.engagementFigure.map(figure =>
-                  <div className={`${s.engagementFigures}`} key={figure._key}>
-                    <span className={`${s.number} ${u.mono}`}>
-                      <CountUp
-                        {...countUpProps}
-                        end={figure.count}
-                        duration={2}
-                      />
-                    </span>
-                    <h3 className={`${u.uppercase} ${s.h3}`}>
-                      <Localize data={figure.title} />
-                    </h3>
-                  </div>
-                )}
-              </div>
-            }
-            <Waypoint onEnter={() => setIsCounting(true)} />
-            <hr />
+          <Waypoint onEnter={() => setIsCounting(true)} />
+          {engagement.engagementFigure &&
+            <div className={`${s.engagement} ${u.grid}`}>
+              {engagement.engagementFigure.map(figure =>
+                <div className={`${s.engagementFigures}`} key={figure._key}>
+                  <span className={`${s.number} ${u.mono}`}>
+                    <CountUp
+                      {...countUpProps}
+                      end={figure.count}
+                      duration={2}
+                    />
+                  </span>
+                  <h3 className={`${u.uppercase} ${s.h3}`}>
+                    <Localize data={figure.title} />
+                  </h3>
+                </div>
+              )}
+            </div>
+          }
+          <Waypoint onEnter={() => setIsCounting(true)} />
+          <hr />
         </div>
       </div>
     </Layout>
