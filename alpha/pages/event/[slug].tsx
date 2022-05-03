@@ -143,8 +143,7 @@ const EventPage = ({ data }) => {
           {event.imageOne && <img
             src={urlFor(event.imageOne)
               .auto("format")
-              .quality(75)
-              .width(500)
+              .quality(85)
               .url()}
             alt={event.title}
             className={`${s[event.classOne]}`}
@@ -152,8 +151,7 @@ const EventPage = ({ data }) => {
           {event.imageTwo && <img
             src={urlFor(event.imageTwo)
               .auto("format")
-              .quality(75)
-              .width(500)
+              .quality(85)
               .url()}
             alt={event.title}
             className={`${s[event.classTwo]}`}
@@ -161,8 +159,7 @@ const EventPage = ({ data }) => {
           {event.imageThree && <img
             src={urlFor(event.imageThree)
               .auto("format")
-              .quality(75)
-              .width(500)
+              .quality(85)
               .url()}
             alt={event.title}
             className={`${s[event.classThree]}`}
