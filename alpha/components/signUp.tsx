@@ -37,7 +37,6 @@ const SignUp: FC<Props> = ({ labels }) => {
             />
           </label>
           <input
-            type="image"
             src=""
             alt={localize(labels[20].text, locale)}
             name="subscribe"
