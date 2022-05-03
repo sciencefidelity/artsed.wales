@@ -1,3 +1,4 @@
+import { Fragment } from "react"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
@@ -110,7 +111,9 @@ const About = ({ data }) => {
               </h2>
               <ul className={`${s.staffList}`}>
                 {sortNames(coordinators).map(coordinator =>
-                  <StaffList person={coordinator} />
+                  <Fragment  key={coordinator._id} >
+                    <StaffList person={coordinator} />
+                  </Fragment>
                 )}
               </ul>
               <h2 className={`${s.h2} ${u.uppercase}`}>
@@ -119,7 +122,9 @@ const About = ({ data }) => {
               <ul className={`${s.staffList}`}>
                 {sortNames(trustees).map(trustee =>
                   trustee.role.includes("Chair") &&
-                    <StaffList person={trustee} />
+                    <Fragment  key={trustee._id}>
+                      <StaffList person={trustee} />
+                    </Fragment>
                 )}
               </ul>
               <h2 className={`${s.h2} ${u.uppercase}`}>
@@ -128,11 +133,10 @@ const About = ({ data }) => {
               <ul className={`${s.trustees}`}>
                 {sortNames(trustees).map(trustee =>
                   trustee.role.includes("Trustee") &&
-                    <li
-                      key={trustee._id}
-                      dangerouslySetInnerHTML={{
-                        __html: joinName(trustee.title) }}
-                    />
+                    <Fragment  key={trustee._id}>
+                      <li dangerouslySetInnerHTML={{
+                          __html: joinName(trustee.title) }} />
+                    </Fragment>
                 )}
               </ul>
             </section>

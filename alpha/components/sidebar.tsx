@@ -24,11 +24,15 @@ const Sidebar: FC<Props> = ({ events, title }) => {
         {events && events.map(event =>
           <li key={event._id} className={`${s.event}`}>
             <header className={`${u.flex} ${s.header}`}>
-              <div className={`${s.icon}`}>
-                <Link href={`/${event._type}/${event.slug}`}>
+              <Link href={`/${event._type}/${event.slug}`}>
+                {event.title && <span className={`${u.screenReaderText}`}>
+                  {locale === "cy" && event.__i18n_refs
+                    ? event.__i18n_refs.title : event.title}
+                </span>}
+                <div className={`${s.icon}`}>
                   <Icon name={event.icon ? event.icon : "Bolt"} />
-                </Link>
-              </div>
+                </div>
+              </Link>
               <div>
                 {event.dateStart && <Date date={event.dateStart} />}
                 <br />
