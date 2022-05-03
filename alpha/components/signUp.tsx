@@ -14,9 +14,8 @@ const SignUp: FC<Props> = ({ labels }) => {
   return (
     <section className={`${s.signUp}`}>
       <div>
-        {labels[10].text &&
-          <h2><Localize data={labels[17].text} /></h2>
-        }
+        {/* Join the Network */}
+        {labels[17].text && <h2><Localize data={labels[17].text} /></h2>}
       </div>
       <div>
         <form
@@ -37,11 +36,12 @@ const SignUp: FC<Props> = ({ labels }) => {
             />
           </label>
           <input
-            src=""
+            type="submit"
             alt={localize(labels[20].text, locale)}
             name="subscribe"
             className={`${s.signUpSend}`}
             id="mc-embedded-subscribe"
+            value={localize(labels[20].text, locale)}
           />
           <div id="mce-responses">
             <div id="mce-error-response" style={{ display: "none" }}></div>
@@ -60,9 +60,7 @@ const SignUp: FC<Props> = ({ labels }) => {
         </form>
       </div>
       <div className={`${s.signUpText}`}>
-        {labels[19].text &&
-          <p><Localize data={labels[19].text} /></p>
-        }
+        {labels[19].text && <p><Localize data={labels[19].text} /></p>}
       </div>
     </section>
   )
