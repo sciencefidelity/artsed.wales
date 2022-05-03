@@ -180,9 +180,11 @@ const EventPage = ({ data }) => {
               components={components}
             />}
             {event.britelink && <div className={`${s.britelink} ${u.grid}`}>
-              <a href={locale === "cy" && event.__i18n_refs
-                ? event.__i18n_refs.britelink : event.britelink}
-                target="_blank" rel="noreferrer">
+              <a
+                href={locale === "cy" && event.__i18n_refs
+                  ? event.__i18n_refs.britelink : event.britelink}
+                target="_blank" rel="noreferrer"
+              >
                 <button className={`${s.btn} ${u.pointer}`}>
                   <Localize data={labels[24].text} />{/* Book your place */}
                 </button>
