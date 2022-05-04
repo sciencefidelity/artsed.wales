@@ -34,6 +34,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ data }) => {
   const [isCounting, setIsCounting] = useState(false)
+  const [quoteNumber, setQuoteNumber] = useState(0)
   const { locale } = useRouter()
   const {
     company,
@@ -59,6 +60,7 @@ const Home = ({ data }) => {
     isCounting,
     onComplete: () => setIsCounting(false)
   }
+
   return (
     <Layout
       company={company}
@@ -115,17 +117,33 @@ const Home = ({ data }) => {
           }
           <Waypoint onEnter={() => setIsCounting(true)} />
           <div className={`${s.indexEngagement}`}>
-            {quotes.map(quote =>
-              <Fragment key={quote._key} >
-                <blockquote className={`${s.quote}`}>
-                  {"“"}<Localize data={quote.quote} />{"”"}<br />
-                  <cite className={`${s.cite}`}>
-                    {quote.cite}<br />
-                    <Localize data={quote.organisation} />
-                  </cite>
-                </blockquote>
-              </Fragment>
-            )}
+            <div className={`${s.quoteContainer} ${u.grid}`}>
+              <blockquote className={`${s.quote}`}>
+                {"“"}<Localize data={quotes[quoteNumber].quote} />{"”"}<br />
+                <cite className={`${s.cite}`}>
+                  {quotes[quoteNumber].cite}<br />
+                  <Localize data={quotes[quoteNumber].organisation} />
+                </cite>
+              </blockquote>
+            </div>
+            <div className={`${u.flex} ${s.quoteBtns}`}>
+              {quotes.map((quote, idx) =>
+                <Fragment key={quote._key}>
+                  <button
+                    onClick={() => setQuoteNumber(idx)}
+                    className={`
+                      ${s.quoteBtn}
+                      ${idx === quoteNumber ? s.quoteBtnActive : null}
+                    `}
+                  >
+                    {" "}&bull;{" "}
+                    <span className={`${u.screenReaderText}`}>
+                      <Localize data={labels[27].text} />
+                    </span>
+                  </button>
+                </Fragment>
+              )}
+            </div>
           </div>
           <hr />
           <section>

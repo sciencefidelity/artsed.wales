@@ -100,10 +100,26 @@
     font-size: 1.2rem;
   }
 }
+
+.quoteContainer {
+  margin-block: 4rem 0;
+  height: 24rem;
+  place-items: center;
+  @include b.mq(sm) {
+    height: 18rem;
+  }
+  @include b.mq(md) {
+    margin-block: 4rem 0;
+    height: 20rem;
+  }
+}
+
 .quote {
-  margin-block: 4rem 7rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--grey-750);
+  @include b.mq(md) {
+    font-size: 2rem;
+  }
 }
 
 .cite {
@@ -114,6 +130,27 @@
   font-style: normal;
   text-align: right;
   line-height: 1.3;
+}
+
+.quoteBtns {
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.quoteBtn {
+  font-size: 2.5rem;
+  color: var(--grey-250);
+  cursor: pointer;
+  &:hover {
+    color: var(--grey-250);
+  }
+}
+
+.quoteBtnActive {
+  color: var(--grey-650);
+  &:hover {
+    color: var(--grey-650);
+  }
 }
 
 .featuredTitle {
