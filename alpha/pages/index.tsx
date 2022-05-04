@@ -111,10 +111,13 @@ const Home = ({ data }) => {
             </div>
           }
           <Waypoint onEnter={() => setIsCounting(true)} />
+          <blockquote>
+
+          </blockquote>
           <hr />
           <section>
             <h2 className={`${s.featuredTitle} ${u.uppercase}`}>
-              <Localize data={labels[10].text} />
+              <Localize data={labels[26].text} />
             </h2>
             <div className={`${s.featured} ${u.grid}`}>
               {events.filter(event => event.feature).map(event =>

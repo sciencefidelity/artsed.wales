@@ -7,20 +7,15 @@ export default {
   icon: Clipboard,
   fields: [
     {
-      name: 'photograpy',
-      title: 'Photography',
+      name: 'quote',
+      title: 'Quote',
       type: 'array',
       of: [
         {
-          name: 'photograpy',
-          title: 'Photography',
+          name: 'quote',
+          title: 'Quote',
           type: 'object',
           fields: [
-            {
-              name: 'quote',
-              title: 'Quote',
-              type: 'localeText'
-            },
             {
               name: 'cite',
               title: 'Citation',
@@ -32,6 +27,11 @@ export default {
               title: 'Organisation',
               type: 'localeString',
               description: 'Where do they work?'
+            },
+            {
+              name: 'quote',
+              title: 'Quote',
+              type: 'localeText'
             }
           ],
           preview: {
