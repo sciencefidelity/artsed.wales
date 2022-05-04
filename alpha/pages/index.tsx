@@ -10,6 +10,7 @@ import { localize, urlFor } from "lib/utils"
 import Layout from "components/layout"
 import Localize from "components/localize"
 import SingleEvent from "components/singleEvent"
+import VideoPlayer from "components/videoPlayer"
 import { indexQuery } from "lib/queries"
 import {
   Company,
@@ -19,7 +20,8 @@ import {
   Navigation,
   Page,
   Quote,
-  Settings
+  Settings,
+  Video
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/index.module.scss"
@@ -44,7 +46,8 @@ const Home = ({ data }) => {
     navigation,
     pages,
     quotes,
-    settings
+    settings,
+    videos
   } = data as {
     company: Company
     engagement: Engagement
@@ -54,6 +57,7 @@ const Home = ({ data }) => {
     pages: Page[]
     quotes: Quote[]
     settings: Settings
+    videos: Video[]
   }
 
   const countUpProps = {
@@ -86,6 +90,7 @@ const Home = ({ data }) => {
               components={components}
             />
           </div>
+          <VideoPlayer video={videos[0]}/>
           <hr />
           <div className={`${s.indexEngagement}`}>
             {engagement.intro &&

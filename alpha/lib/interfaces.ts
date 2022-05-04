@@ -252,6 +252,16 @@ export interface Tag extends SanityDocument {
   twitterCard: SocialCard
 }
 
+export interface Video extends SanityDocument {
+  _type: "video"
+  body: PortableText
+  mainImage: Image
+  publishedAt: string
+  slug: string
+  title: string
+  videoLink: string
+}
+
 export interface SanityBlock {
   _type: "block"
   [key: string]: any
@@ -338,4 +348,3 @@ export declare type SanityReference<_T> = {
   _type: "reference"
   _ref: string
 }
-

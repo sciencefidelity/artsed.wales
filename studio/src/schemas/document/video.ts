@@ -70,13 +70,14 @@ export default {
       group: 'content'
     },
     {
-      name: 'publishDate',
+      name: 'publishedAt',
       title: 'Publish date',
-      type: 'date',
+      type: 'datetime',
       options: {
-        dateFormat: 'dddd, MMMM Do YYYY',
+        timeStep: 15,
         calendarTodayLabel: 'Today'
       },
+      initialValue: new Date().toISOString(),
       group: 'content'
     },
     {

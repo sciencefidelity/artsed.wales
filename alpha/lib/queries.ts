@@ -30,6 +30,10 @@ const staffFields = `
   __i18n_lang, _id, _type, avatar, bio, email, job, role, title, ${seo}, ${slug}
 `
 
+const videoFields = `
+  _id, _type, ${body}, mainImage, publishedAt, ${slug}, title, videoLink
+`
+
 const localeSeo = `
   facebookCard{ cy{ ${socialFields} }, en{ ${socialFields} } },
   meta{ cy{ ${metaFields} }, en{ ${metaFields} } },
@@ -228,9 +232,18 @@ const staff = `
   }
 `
 
+const videos = `
+  "videos": *[
+    _type == "video"
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ] | order(publishedAt){ ${videoFields}, __i18n_refs[0]->{ ${videoFields} },
+  }
+`
+
 export const indexQuery = groq`{
   ${company}, ${engagement}, ${events}, ${labels}, ${navigation}, ${pages},
-  ${quotes}, ${settings}
+  ${quotes}, ${settings}, ${videos}
 }`
 
 export const aboutQuery = groq`{

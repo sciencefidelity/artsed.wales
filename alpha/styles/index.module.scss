@@ -53,6 +53,26 @@
   max-width: 710px;
 }
 
+.video {
+  width: 100%;
+  min-width: unset;
+  margin-inline: auto;
+  margin-block: 6rem;
+  @include b.mq(md) {
+    max-width: 710px;
+    width: 88%;
+    min-width: unset;
+  }
+}
+
+.caption {
+  font-size: 1rem;
+  margin-top: 0.7rem;
+  @include b.mq(lg) {
+    font-size: 1.2rem;
+  }
+}
+
 .indexEngagement {
   margin-inline: unset;
   margin-bottom: 4rem;
@@ -108,16 +128,11 @@
 
 .quoteContainer {
   margin-block: 4rem 1.5rem;
-  // grid-template-columns: repeat(2, auto);
   grid-template-columns: 1fr;
   gap: 4rem;
   place-items: center;
-  @include b.mq(sm) {
-    // height: 18rem;
-  }
   @include b.mq(lg) {
     margin-block: 4rem 0;
-    // height: 20rem;
     grid-template-columns: 1fr 2fr;
   }
 }
@@ -125,8 +140,6 @@
 .quoteImage {
   border-radius: 999px;
   border: 1px solid var(--pattern);
-  // width: 350px;
-  // height: 350px;
   width: 80%;
   max-width: 300px;
   height: auto;
