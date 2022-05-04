@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { Fragment, useState } from "react"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { CountUp } from "use-count-up"
@@ -9,10 +9,12 @@ import sanityClient from "lib/sanityClient"
 import { localize } from "lib/utils"
 import Layout from "components/layout"
 import Localize from "components/localize"
+import SingleEvent from "components/singleEvent"
 import { indexQuery } from "lib/queries"
 import {
   Company,
   Engagement,
+  Event,
   Label,
   Navigation,
   Page,
@@ -35,6 +37,7 @@ const Home = ({ data }) => {
   const {
     company,
     engagement,
+    events,
     labels,
     navigation,
     pages,
@@ -42,6 +45,7 @@ const Home = ({ data }) => {
   } = data as {
     company: Company
     engagement: Engagement
+    events: Event[]
     labels: Label[]
     navigation: Navigation
     pages: Page[]
@@ -107,6 +111,19 @@ const Home = ({ data }) => {
             </div>
           }
           <Waypoint onEnter={() => setIsCounting(true)} />
+          <hr />
+          <section>
+            <h2 className={`${s.featuredTitle} ${u.uppercase}`}>
+              <Localize data={labels[10].text} />
+            </h2>
+            <div className={`${s.featured} ${u.grid}`}>
+              {events.filter(event => event.feature).map(event =>
+                <Fragment key={event._id}>
+                  <SingleEvent event={event} />
+                </Fragment>
+              )}
+            </div>
+          </section>
           <hr />
         </div>
       </div>

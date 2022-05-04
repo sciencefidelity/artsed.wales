@@ -49,6 +49,7 @@ export interface Event extends SanityDocument {
   dateStart: string
   facebook: SocialCard
   facilitators: Staff[]
+  feature: boolean
   icon: string
   imageOne: Image
   imageTwo: Image

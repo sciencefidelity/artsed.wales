@@ -60,9 +60,7 @@ const EventPage = ({ data }) => {
   }
   if(!data) {
     return (<>
-      <Head>
-        <meta name="robots" content="noindex" />
-      </Head>
+      <Head><meta name="robots" content="noindex" /></Head>
       <ErrorTemplate />
     </>)
   }

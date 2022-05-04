@@ -100,3 +100,21 @@
     font-size: 1.2rem;
   }
 }
+
+.featuredTitle {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--grey-650);
+}
+
+.featured {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  align-items: center;
+  @include b.mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include b.mq(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
