@@ -6,7 +6,7 @@ import { Waypoint } from "react-waypoint"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
-import { localize } from "lib/utils"
+import { localize, urlFor } from "lib/utils"
 import Layout from "components/layout"
 import Localize from "components/localize"
 import SingleEvent from "components/singleEvent"
@@ -116,8 +116,18 @@ const Home = ({ data }) => {
             </div>
           }
           <Waypoint onEnter={() => setIsCounting(true)} />
-          <div className={`${s.indexEngagement}`}>
+          <div className={`${s.indexQuotes}`}>
             <div className={`${s.quoteContainer} ${u.grid}`}>
+              <img
+                src={urlFor(quotes[quoteNumber].image)
+                  .auto("format")
+                  .width(600)
+                  .height(600)
+                  .quality(100)
+                  .url()}
+                alt={localize(quotes[quoteNumber].organisation, locale)}
+                className={`${s.quoteImage}`}
+              />
               <blockquote className={`${s.quote}`}>
                 {"“"}<Localize data={quotes[quoteNumber].quote} />{"”"}<br />
                 <cite className={`${s.cite}`}>

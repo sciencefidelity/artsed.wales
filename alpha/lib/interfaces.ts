@@ -197,6 +197,7 @@ export interface Post extends SanityDocument {
 export interface Quote {
   _key: string
   cite: string
+  image: Image
   organisation: LocaleString
   quote: LocaleString
 }

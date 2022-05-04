@@ -101,16 +101,38 @@
   }
 }
 
+.indexQuotes {
+  max-width: 1000px;
+  margin: auto;
+}
+
 .quoteContainer {
-  margin-block: 4rem 0;
-  height: 24rem;
+  margin-block: 4rem 1.5rem;
+  // grid-template-columns: repeat(2, auto);
+  grid-template-columns: 1fr;
+  gap: 4rem;
   place-items: center;
   @include b.mq(sm) {
-    height: 18rem;
+    // height: 18rem;
   }
-  @include b.mq(md) {
+  @include b.mq(lg) {
     margin-block: 4rem 0;
-    height: 20rem;
+    // height: 20rem;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.quoteImage {
+  border-radius: 999px;
+  border: 1px solid var(--pattern);
+  // width: 350px;
+  // height: 350px;
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  @include b.mq(lg) {
+    width: 100%;
+    max-width: unset;
   }
 }
 

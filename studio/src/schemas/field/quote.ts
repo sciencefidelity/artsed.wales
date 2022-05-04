@@ -32,6 +32,14 @@ export default {
               name: 'quote',
               title: 'Quote',
               type: 'localeText'
+            },
+            {
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: {
+                hotspot: true
+              }
             }
           ],
           preview: {

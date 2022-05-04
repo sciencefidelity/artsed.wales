@@ -91,7 +91,7 @@ const posts = `
 
 const quotes = `
   "quotes": *[_type == "quote"].quote[]{
-    _key, cite, organisation, quote
+    _key, cite, image, organisation, quote
   }
 `
 
