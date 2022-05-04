@@ -18,6 +18,7 @@ import {
   Label,
   Navigation,
   Page,
+  Quote,
   Settings
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
@@ -41,6 +42,7 @@ const Home = ({ data }) => {
     labels,
     navigation,
     pages,
+    quotes,
     settings
   } = data as {
     company: Company
@@ -49,6 +51,7 @@ const Home = ({ data }) => {
     labels: Label[]
     navigation: Navigation
     pages: Page[]
+    quotes: Quote[]
     settings: Settings
   }
 
@@ -111,9 +114,19 @@ const Home = ({ data }) => {
             </div>
           }
           <Waypoint onEnter={() => setIsCounting(true)} />
-          <blockquote>
-
-          </blockquote>
+          <div className={`${s.indexEngagement}`}>
+            {quotes.map(quote =>
+              <Fragment key={quote._key} >
+                <blockquote className={`${s.quote}`}>
+                  {"“"}<Localize data={quote.quote} />{"”"}<br />
+                  <cite className={`${s.cite}`}>
+                    {quote.cite}<br />
+                    <Localize data={quote.organisation} />
+                  </cite>
+                </blockquote>
+              </Fragment>
+            )}
+          </div>
           <hr />
           <section>
             <h2 className={`${s.featuredTitle} ${u.uppercase}`}>

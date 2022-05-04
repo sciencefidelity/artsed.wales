@@ -194,6 +194,13 @@ export interface Post extends SanityDocument {
   twitter: SocialCard
 }
 
+export interface Quote {
+  _key: string
+  cite: string
+  organisation: LocaleString
+  quote: LocaleString
+}
+
 export interface SocialLink {
   _key: string
   url: string

@@ -89,6 +89,12 @@ const posts = `
   }
 `
 
+const quotes = `
+  "quotes": *[_type == "quote"].quote[]{
+    _key, cite, organisation, quote
+  }
+`
+
 const settings = `
   "settings": *[_type == "settings" && ${omitDrafts}][1]{
     url, siteName, siteDescription, social[]{ _key, name, url }, ${localeSeo}
@@ -223,7 +229,8 @@ const staff = `
 `
 
 export const indexQuery = groq`{
-  ${company}, ${engagement}, ${events}, ${labels}, ${navigation}, ${pages}, ${settings}
+  ${company}, ${engagement}, ${events}, ${labels}, ${navigation}, ${pages},
+  ${quotes}, ${settings}
 }`
 
 export const aboutQuery = groq`{

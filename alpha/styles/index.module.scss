@@ -100,6 +100,21 @@
     font-size: 1.2rem;
   }
 }
+.quote {
+  margin-block: 4rem 7rem;
+  font-size: 2rem;
+  color: var(--grey-750);
+}
+
+.cite {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--grey-500);
+  font-style: normal;
+  text-align: right;
+  line-height: 1.3;
+}
 
 .featuredTitle {
   margin-bottom: 2rem;
