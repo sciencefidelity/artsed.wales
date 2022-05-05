@@ -194,7 +194,7 @@ const EventPage = ({ data }) => {
                 <Localize data={labels[7].text} />{/* About the facilitators */}
               </h3>
             }
-            <p>
+            {/* <p>
               {event.facilitators && event.facilitators.map(facilitator =>
                 <Fragment key={facilitator._id}>
                   {reactStringReplace(
@@ -213,7 +213,7 @@ const EventPage = ({ data }) => {
                   <br />
                 </Fragment>
               )}
-            </p>
+            </p> */}
             <p>
               <strong className={`${s.strong} ${u.bold}`}>
                 <Localize data={labels[4].text} />{": "}
