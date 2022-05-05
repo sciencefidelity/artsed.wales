@@ -118,7 +118,7 @@ const EventPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      {/* <div className={`${s.hero} ${pattern(event.pattern)}`}>
+      <div className={`${s.hero} ${pattern(event.pattern)}`}>
         <div className={`${s.heroContent}`}>
           <div>
             <div className={`${s.icon}`}><Icon name={event.icon} /></div>
@@ -163,7 +163,7 @@ const EventPage = ({ data }) => {
             className={`${s[event.classThree]}`}
           />}
         </div>
-      </div> */}
+      </div>
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>
           {/* <section className={`${s.content}`}>

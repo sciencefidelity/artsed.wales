@@ -110,6 +110,7 @@
   }
   @include b.mq(lg) {
     gap: 1rem;
+    // gap: 0.7rem;
   }
 }
 
@@ -123,6 +124,8 @@
   @include b.mq(lg) {
     width: 5rem;
     height: 5rem;
+    // width: 2.75rem;
+    // height: 2.75rem;
   }
 }
 
@@ -134,15 +137,21 @@
   }
   @include b.mq(lg) {
     font-size: 2.2rem;
+    // font-size: 1.2rem;
   }
   &:first-child {
     line-height: 1.2;
     border-bottom: 2px solid var(--grey-700);
     @include b.mq(md) {
       border-bottom: 3px solid var(--grey-700);
+      // border-bottom: 2px solid var(--grey-700);
     }
   }
 }
+
+// .header {
+//   height: 4.1rem;
+// }
 
 .hamburgerContainer {
   display: block;
