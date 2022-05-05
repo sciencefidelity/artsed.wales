@@ -15,7 +15,7 @@ export const PostDate: FC<PostDateProps> = ({ date }) => {
   const { locale } = useRouter()
   const dateLocale = locale === "cy" ? cy : enGB
   return (
-    <time dateTime={format(new Date(date), "yyyy-MM-dd")}>
+    <time dateTime={date}>
       {format(new Date(date),
         "eee, d MMM",
         {locale: dateLocale}
