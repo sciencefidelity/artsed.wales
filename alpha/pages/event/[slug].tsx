@@ -118,7 +118,6 @@ const EventPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      {/* hero */}
       {/* <div className={`${s.hero} ${pattern(event.pattern)}`}>
         <div className={`${s.heroContent}`}>
           <div>
@@ -165,10 +164,9 @@ const EventPage = ({ data }) => {
           />}
         </div>
       </div> */}
-      {/* content */}
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>
-          <section className={`${s.content}`}>
+          {/* <section className={`${s.content}`}>
             {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
               {locale === "cy" && event.__i18n_refs
                 ? event.__i18n_refs.title : event.title}
@@ -185,16 +183,16 @@ const EventPage = ({ data }) => {
                 target="_blank" rel="noreferrer"
               >
                 <button className={`${s.btn} ${u.pointer}`}>
-                  <Localize data={labels[24].text} />{/* Book your place */}
+                  <Localize data={labels[24].text} />
                 </button>
               </a>
             </div>}
             {event.facilitators &&
               <h3 className={`${s.h3}`}>
-                <Localize data={labels[7].text} />{/* About the facilitators */}
+                <Localize data={labels[7].text} />
               </h3>
             }
-            {/* <p>
+            <p>
               {event.facilitators && event.facilitators.map(facilitator =>
                 <Fragment key={facilitator._id}>
                   {reactStringReplace(
@@ -213,7 +211,7 @@ const EventPage = ({ data }) => {
                   <br />
                 </Fragment>
               )}
-            </p> */}
+            </p>
             <p>
               <strong className={`${s.strong} ${u.bold}`}>
                 <Localize data={labels[4].text} />{": "}
@@ -231,7 +229,7 @@ const EventPage = ({ data }) => {
               </strong>
               {event.location}
             </p>
-            {/* {event.keystage &&
+            {event.keystage &&
               <p>
                 {labels[8] && <Localize data={labels[8].text} />}
                 {" "}{event.keystage.map((ks, idx) =>
@@ -251,8 +249,8 @@ const EventPage = ({ data }) => {
                   </Fragment>
                 )}
               </p>
-            } */}
-          </section>
+            }
+          </section> */}
           <hr className={`${s.hr}`} />
           <Sidebar
             events={events}
