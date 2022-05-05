@@ -192,7 +192,7 @@ const EventPage = ({ data }) => {
                 <Localize data={labels[7].text} />
               </h3>
             }
-            <p>
+            {/* <p>
               {event.facilitators && event.facilitators.map(facilitator =>
                 <Fragment key={facilitator._id}>
                   {reactStringReplace(
@@ -249,7 +249,7 @@ const EventPage = ({ data }) => {
                   </Fragment>
                 )}
               </p>
-            }
+            } */}
           </section>
           <hr className={`${s.hr}`} />
           <Sidebar
