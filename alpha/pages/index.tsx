@@ -1,12 +1,13 @@
 import { Fragment, useState } from "react"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
-import { CountUp } from "use-count-up"
-import { Waypoint } from "react-waypoint"
+// import { CountUp } from "use-count-up"
+// import { Waypoint } from "react-waypoint"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import { localize, urlFor } from "lib/utils"
+import { EngagementSection } from "components/engagementSection"
 import Layout from "components/layout"
 import Localize from "components/localize"
 import SingleEvent from "components/singleEvent"
@@ -35,7 +36,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home = ({ data }) => {
-  const [isCounting, setIsCounting] = useState(false)
   const [quoteNumber, setQuoteNumber] = useState(0)
   const { locale } = useRouter()
   const {
@@ -60,11 +60,6 @@ const Home = ({ data }) => {
     videos: Video[]
   }
 
-  const countUpProps = {
-    isCounting,
-    onComplete: () => setIsCounting(false)
-  }
-
   return (
     <Layout
       company={company}
@@ -73,56 +68,37 @@ const Home = ({ data }) => {
       settings={settings}
     >
       <div>
-        <div className={`${s.hero} ${p.lines}`}>
+        {/* hero */}
+        <section className={`${s.hero} ${p.lines}`}>
           <h2
             className={`${s.heroText}`}
             dangerouslySetInnerHTML={{
               __html: localize(labels[21].text, locale)
             }}
           />
-        </div>
+        </section>
+
         <div className={`${u.container}`}>
-          <div className={`${s.indexContent}`}>
-            <PortableText
-              value={locale === "cy" && pages[0].__i18n_refs
-                ? pages[0].__i18n_refs.body
-                : pages[0].body}
-              components={components}
-            />
-          </div>
-          <VideoPlayer video={videos[0]}/>
-          <hr />
-          <div className={`${s.indexEngagement}`}>
-            {engagement.intro &&
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: localize(engagement.intro, locale)
-                }}
+          {/* intro section */}
+          <section>
+            {/* intro text */}
+            <article className={`${s.indexContent}`}>
+              <PortableText
+                value={locale === "cy" && pages[0].__i18n_refs
+                  ? pages[0].__i18n_refs.body
+                  : pages[0].body}
+                components={components}
               />
-            }
-          </div>
-          <Waypoint onEnter={() => setIsCounting(true)} />
-          {engagement.engagementFigure &&
-            <div className={`${s.engagement} ${u.grid}`}>
-              {engagement.engagementFigure.map(figure =>
-                <div className={`${s.engagementFigures}`} key={figure._key}>
-                  <span className={`${s.number} ${u.mono}`}>
-                    <CountUp
-                      {...countUpProps}
-                      end={figure.count}
-                      duration={2}
-                    />
-                  </span>
-                  <h3 className={`${u.uppercase} ${s.h3}`}>
-                    <Localize data={figure.title} />
-                  </h3>
-                </div>
-              )}
-            </div>
-          }
-          <Waypoint onEnter={() => setIsCounting(true)} />
-          <div className={`${s.indexQuotes}`}>
-            <div className={`${s.quoteContainer} ${u.grid}`}>
+            </article>
+            {/* video */}
+            <VideoPlayer video={videos[0]}/>
+          </section>
+          <hr />
+          <EngagementSection engagement={engagement} />
+          {/* quote section */}
+          <section className={`${s.indexQuotes}`}>
+            {/* quote */}
+            <article className={`${s.quoteContainer} ${u.grid}`}>
               <img
                 src={urlFor(quotes[quoteNumber].image)
                   .auto("format")
@@ -140,8 +116,9 @@ const Home = ({ data }) => {
                   <Localize data={quotes[quoteNumber].organisation} />
                 </cite>
               </blockquote>
-            </div>
-            <div className={`${u.flex} ${s.quoteBtns}`}>
+            </article>
+            {/* quote buttons */}
+            <nav className={`${u.flex} ${s.quoteBtns}`}>
               {quotes.map((quote, idx) =>
                 <Fragment key={quote._key}>
                   <button
@@ -158,12 +135,13 @@ const Home = ({ data }) => {
                   </button>
                 </Fragment>
               )}
-            </div>
-          </div>
+            </nav>
+          </section>
           <hr />
+          {/* featured section */}
           <section>
             <h2 className={`${s.featuredTitle} ${u.uppercase}`}>
-              <Localize data={labels[26].text} />
+              <Localize data={labels[26].text} />{/* featured events */}
             </h2>
             <div className={`${s.featured} ${u.grid}`}>
               {events.filter(event => event.feature).map(event =>
