@@ -270,12 +270,12 @@
   margin-inline: auto;
   text-align: center;
   @include b.mq(md) {
-    text-align: left;
     margin-inline: auto;
+    text-align: left;
   }
   @include b.mq(lg) {
-    text-align: left;
     margin-inline: unset;
+    text-align: left;
   }
   li {
     display: inline;

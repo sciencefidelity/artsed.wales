@@ -56,15 +56,15 @@
 .video {
   width: 100%;
   min-width: unset;
-  margin-inline: auto;
   margin-block: 2rem;
+  margin-inline: auto;
   @include b.mq(sm) {
     margin-block: 3rem;
   }
   @include b.mq(md) {
-    max-width: 710px;
     width: 88%;
     min-width: unset;
+    max-width: 710px;
     margin-block: 6rem;
   }
   @include b.mq(lg) {
@@ -73,8 +73,8 @@
 }
 
 .caption {
-  font-size: 1rem;
   margin-top: 0.7rem;
+  font-size: 1rem;
   @include b.mq(lg) {
     font-size: 1.2rem;
   }
@@ -118,8 +118,8 @@
 }
 
 .h3 {
-  color: var(--grey-550);
   font-size: 1.2rem;
+  color: var(--grey-550);
   @include b.mq(md) {
     font-size: 1.1rem;
   }
@@ -134,22 +134,22 @@
 }
 
 .quoteContainer {
-  margin-block: 4rem 1.5rem;
   grid-template-columns: 1fr;
   gap: 4rem;
   place-items: center;
+  margin-block: 4rem 1.5rem;
   @include b.mq(lg) {
-    margin-block: 4rem 0;
     grid-template-columns: 1fr 2fr;
+    margin-block: 4rem 0;
   }
 }
 
 .quoteImage {
-  border-radius: 999px;
-  border: 1px solid var(--pattern);
   width: 80%;
   max-width: 300px;
   height: auto;
+  border: 1px solid var(--pattern);
+  border-radius: 999px;
   @include b.mq(lg) {
     width: 100%;
     max-width: unset;
@@ -168,15 +168,15 @@
   display: block;
   margin-top: 2rem;
   font-size: 1.2rem;
-  color: var(--grey-500);
   font-style: normal;
-  text-align: right;
   line-height: 1.3;
+  color: var(--grey-500);
+  text-align: right;
 }
 
 .quoteBtns {
-  justify-content: center;
   gap: 0.5rem;
+  justify-content: center;
 }
 
 .quoteBtn {
