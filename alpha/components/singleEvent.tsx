@@ -33,6 +33,7 @@ export const SingleEvent: FC<Props> = ({ event }) => {
               .url()}
             alt={event.title}
             className={`${s[event.classOne]}`}
+            loading="lazy"
           />
         </div>
       </LinkTo>
