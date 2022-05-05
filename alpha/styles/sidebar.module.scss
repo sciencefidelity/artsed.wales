@@ -19,7 +19,7 @@
 .heading {
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: var(--grey-650);
+  color: var(--grey-750);
 }
 
 .header {
@@ -38,7 +38,7 @@
   width: 40px;
   height: 40px;
   margin-right: 0.8rem;
-  background-color: var(--grey-650);
+  background-color: var(--grey-750);
   border-radius: 100%;
   transition: background-color 0.3s ease-in-out;
   svg {
@@ -47,7 +47,7 @@
     fill: var(--grey-000);
   }
   &:hover {
-    background-color: var(--grey-750);
+    background-color: var(--grey-900);
     transition: background-color 0.3s ease-in-out;
   }
 }
@@ -65,7 +65,7 @@
     text-decoration-line: none;
     transition: color 0.3s ease-in-out;
     &:hover {
-      color: var(--grey-850);
+      color: var(--grey-900);
       transition: color 0.3s ease-in-out;
     }
   }

@@ -203,7 +203,7 @@
   width: 55px;
   height: 55px;
   margin-right: 1rem;
-  background-color: var(--grey-650);
+  background-color: var(--grey-750);
   border-radius: 100%;
   transition: background-color 0.3s ease-in-out;
   @include b.mq(md) {
@@ -216,7 +216,7 @@
     fill: var(--grey-000);
   }
   &:hover {
-    background-color: var(--grey-750);
+    background-color: var(--grey-900);
     transition: background-color 0.3s ease-in-out;
   }
 }
@@ -241,7 +241,10 @@
     margin-top: -0.5rem;
   }
   a {
-    color: var(--grey-900);
+    color: var(--grey-750);
+    &:hover {
+      color: var(--grey-900);
+    }
   }
 }
 

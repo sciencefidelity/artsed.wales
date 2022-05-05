@@ -18,6 +18,7 @@ body {
 }
 
 p {
+  position: relative;
   margin-bottom: 0.9em;
   font-size: 1.3rem;
   font-weight: 500;
@@ -29,18 +30,21 @@ p {
   a {
     font-style: normal;
     color: var(--grey-750);
+    opacity: 0.73;
     text-decoration-line: none;
     background-image: url('/images/highlight-stroke.svg');
     background-repeat: repeat;
     background-position: center;
     background-size: 90px 110%;
-    transition: color 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     @include b.mq(md) {
       background-size: 100px 100%;
     }
     &:hover {
-      color: var(--grey-900);
-      transition: color 0.3s ease-in-out;
+      opacity: 1;
+      // color: var(--grey-750);
+      transition: opacity 0.3s ease-in-out;
+      background-opacity: 0;
     }
   }
 }
