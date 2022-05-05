@@ -222,8 +222,10 @@
 }
 
 .date {
-  font-size: 1.1rem;
-  color: var(--grey-600);
+  font-size: 1.2rem;
+  @include b.mq(md) {
+    font-size: 1.3rem;
+  }
 }
 
 .h2 {
@@ -250,9 +252,8 @@
 
 .summary {
   margin-top: 0.6rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.3;
-  color: var(--grey-500);
   @include b.mq(md) {
     font-size: clamp(1rem, 2.1vw, 1.5rem);
   }

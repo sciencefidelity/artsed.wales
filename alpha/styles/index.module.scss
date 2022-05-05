@@ -175,16 +175,22 @@
 }
 
 .quoteBtns {
-  gap: 0.5rem;
+  gap: 1.2rem;
   justify-content: center;
+  @include b.mq(md) {
+    gap: 0.5rem;
+  }
 }
 
 .quoteBtn {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--grey-250);
   cursor: pointer;
   &:hover {
     color: var(--grey-250);
+  }
+  @include b.mq(md) {
+    font-size: 2.5rem;
   }
 }
 
