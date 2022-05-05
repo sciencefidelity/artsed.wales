@@ -72,9 +72,10 @@ strong {
 
 button {
   font-weight: 500;
-  color: var(--grey-500);
+  color: var(--grey-550);
   background: transparent;
   background-color: transparent;
+  transition: color 0.3s ease-in-out;
   &:hover {
     color: var(--grey-750);
     transition: color 0.3s ease-in-out;

@@ -15,10 +15,11 @@
   margin-inline: auto;
   margin-bottom: 1rem;
   background-color: var(--grey-650);
-  filter: grayscale(0.25);
-  border: 1px solid var(--grey-650);
+  filter: grayscale(0.1);
+  opacity: 0.95;
+  border: 1px solid var(--pattern);
   border-radius: 100%;
-  transition: filter 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   @include b.mq(md) {
     margin-inline: 0 2rem;
     margin-bottom: 0;
@@ -27,8 +28,8 @@
     border-radius: 100%;
   }
   &:hover {
-    filter: grayscale(0);
-    transition: filter 0.3s ease-in-out;
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out;
   }
 }
 

@@ -40,7 +40,7 @@
   margin-right: 0;
   background-color: var(--grey-650);
   filter: grayscale(0.1);
-  border: 1px solid var(--grey-650);
+  border: 1px solid var(--pattern);
   border-radius: 100%;
   @include b.mq(md) {
     margin-right: 2rem;
