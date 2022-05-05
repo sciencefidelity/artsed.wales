@@ -30,7 +30,7 @@ export const EventDate: FC<EventDateProps> = ({ dateEnd, dateStart }) => {
   const { locale } = useRouter()
   const dateLocale = locale === "cy" ? cy : enGB
   return (
-    <span>
+    <time dateTime={dateStart}>
       {format(new Date(dateStart),
         "eee, d MMM yyyy, HH:mm",
         {locale: dateLocale})}
@@ -38,6 +38,6 @@ export const EventDate: FC<EventDateProps> = ({ dateEnd, dateStart }) => {
       {format(new Date(dateEnd),
         "HH:mm",
         {locale: dateLocale})}
-    </span>
+    </time>
   )
 }

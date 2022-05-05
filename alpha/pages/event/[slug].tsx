@@ -118,7 +118,7 @@ const EventPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      {/* <div className={`${s.hero} ${pattern(event.pattern)}`}>
+      <div className={`${s.hero} ${pattern(event.pattern)}`}>
         <div className={`${s.heroContent}`}>
           <div>
             <div className={`${s.icon}`}><Icon name={event.icon} /></div>
@@ -163,11 +163,11 @@ const EventPage = ({ data }) => {
             className={`${s[event.classThree]}`}
           />}
         </div>
-      </div> */}
+      </div>
       <div className={`${u.container}`}>
         <section className={`${s.event} ${u.grid}`}>
           <div className={`${s.content}`}>
-            {/* {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
+            {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
               {locale === "cy" && event.__i18n_refs
                 ? event.__i18n_refs.title : event.title}
             </h1>}
@@ -211,25 +211,25 @@ const EventPage = ({ data }) => {
                   <br />
                 </Fragment>
               )}
-            </p> */}
+            </p>
             <p>
-              <strong className={`${u.bold}`}>
-                <Localize data={labels[4].text} />&#58;{" "}
-              </strong>
+              {/* <strong className={`${u.bold}`}> */}
+              <Localize data={labels[4].text} />&#58;{" "}
+              {/* </strong> */}
               &pound;{event.price.toString()}<br />
-              <strong className={`${u.bold}`}>
-                <Localize data={labels[5].text} />&#58;{" "}
-              </strong>
+              {/* <strong className={`${u.bold}`}> */}
+              <Localize data={labels[5].text} />&#58;{" "}
+              {/* </strong> */}
               <EventDate
                 dateEnd={event.dateEnd}
                 dateStart={event.dateStart}
               /><br />
-              <strong className={`${u.bold}`}>
-                <Localize data={labels[6].text} />&#58;{" "}
-              </strong>
+              {/* <strong className={`${u.bold}`}> */}
+              <Localize data={labels[6].text} />&#58;{" "}
+              {/* </strong> */}
               {event.location}
             </p>
-            {/* {event.keystage &&
+            {event.keystage &&
               <p>
                 {labels[8] && <Localize data={labels[8].text} />}{" "}
                 {event.keystage.map((ks, idx) =>
@@ -249,13 +249,13 @@ const EventPage = ({ data }) => {
                   </Fragment>
                 )}
               </p>
-            } */}
+            }
           </div>
-          {/* <hr className={`${s.hr}`} /> */}
-          {/* <Sidebar
+          <hr className={`${s.hr}`} />
+          <Sidebar
             events={events}
             title={labels[10].text}
-          /> */}
+          />
         </section>
         <hr />
       </div>
