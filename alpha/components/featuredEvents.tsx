@@ -14,7 +14,7 @@ export const FeaturedEvents: FC<Props> = ({ events, label }) => {
   return (
     <section>
       <h2 className={`${s.featuredTitle} ${u.uppercase}`}>
-        <Localize data={label.text} />{/* featured events */}
+        <Localize data={label.text} />
       </h2>
       <div className={`${s.featured} ${u.grid}`}>
         {events.map(event =>

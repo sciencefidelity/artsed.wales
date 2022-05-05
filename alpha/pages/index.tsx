@@ -86,7 +86,7 @@ const Home = ({ data }) => {
           </section>
           <hr />
           <EngagementSection engagement={engagement} />
-          <QuoteSection labels={labels} quotes={quotes} />
+          <QuoteSection label={labels[27]} quotes={quotes} />
           <hr />
           <FeaturedEvents
             events={events.filter(event => event.feature)}

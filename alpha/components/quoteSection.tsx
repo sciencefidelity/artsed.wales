@@ -7,11 +7,11 @@ import u from "styles/utils.module.scss"
 import s from "styles/index.module.scss"
 
 interface Props {
-  labels: Label[]
+  label: Label
   quotes: Quote[]
 }
 
-export const QuoteSection: FC<Props> = ({ labels, quotes }) => {
+export const QuoteSection: FC<Props> = ({ label, quotes }) => {
   const [quoteNumber, setQuoteNumber] = useState(0)
   const { locale } = useRouter()
   return (
@@ -47,7 +47,7 @@ export const QuoteSection: FC<Props> = ({ labels, quotes }) => {
             >
               {" "}&bull;{" "}
               <span className={`${u.screenReaderText}`}>
-                <Localize data={labels[27].text} />
+                <Localize data={label.text} />
               </span>
             </button>
           </Fragment>
