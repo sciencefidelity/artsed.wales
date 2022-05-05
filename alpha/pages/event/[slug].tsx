@@ -212,7 +212,7 @@ const EventPage = ({ data }) => {
                 </Fragment>
               )}
             </p> */}
-            <p>
+            {/* <p>
               <strong className={`${u.bold}`}>
                 <Localize data={labels[4].text} />{": "}
               </strong>
@@ -228,7 +228,7 @@ const EventPage = ({ data }) => {
                 <Localize data={labels[6].text} />{": "}
               </strong>
               {event.location}
-            </p>
+            </p> */}
             {event.keystage &&
               <p>
                 {labels[8] && <Localize data={labels[8].text} />}{" "}
@@ -251,7 +251,7 @@ const EventPage = ({ data }) => {
               </p>
             }
           </div>
-          <hr className={`${s.hr}`} />
+          {/* <hr className={`${s.hr}`} /> */}
           {/* <Sidebar
             events={events}
             title={labels[10].text}
