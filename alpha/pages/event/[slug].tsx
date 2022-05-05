@@ -165,8 +165,8 @@ const EventPage = ({ data }) => {
         </div>
       </div> */}
       <div className={`${u.container}`}>
-        <div className={`${s.event} ${u.grid}`}>
-          <section className={`${s.content}`}>
+        <section className={`${s.event} ${u.grid}`}>
+          <div className={`${s.content}`}>
             {/* {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
               {locale === "cy" && event.__i18n_refs
                 ? event.__i18n_refs.title : event.title}
@@ -250,13 +250,13 @@ const EventPage = ({ data }) => {
                 )}
               </p>
             }
-          </section>
+          </div>
           <hr className={`${s.hr}`} />
           {/* <Sidebar
             events={events}
             title={labels[10].text}
           /> */}
-        </div>
+        </section>
         <hr />
       </div>
     </Layout>
