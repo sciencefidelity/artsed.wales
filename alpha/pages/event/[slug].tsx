@@ -212,24 +212,24 @@ const EventPage = ({ data }) => {
                 </Fragment>
               )}
             </p> */}
-            {/* <p>
+            <p>
               <strong className={`${u.bold}`}>
-                <Localize data={labels[4].text} />{": "}
+                <Localize data={labels[4].text} />&#58;{" "}
               </strong>
-              {"£"}{event.price.toString()}<br />
+              &pound;{event.price.toString()}<br />
               <strong className={`${u.bold}`}>
-                <Localize data={labels[5].text} />{": "}
+                <Localize data={labels[5].text} />&#58;{" "}
               </strong>
               <EventDate
                 dateEnd={event.dateEnd}
                 dateStart={event.dateStart}
               /><br />
               <strong className={`${u.bold}`}>
-                <Localize data={labels[6].text} />{": "}
+                <Localize data={labels[6].text} />&#58;{" "}
               </strong>
               {event.location}
-            </p> */}
-            {event.keystage &&
+            </p>
+            {/* {event.keystage &&
               <p>
                 {labels[8] && <Localize data={labels[8].text} />}{" "}
                 {event.keystage.map((ks, idx) =>
@@ -249,7 +249,7 @@ const EventPage = ({ data }) => {
                   </Fragment>
                 )}
               </p>
-            }
+            } */}
           </div>
           {/* <hr className={`${s.hr}`} /> */}
           {/* <Sidebar

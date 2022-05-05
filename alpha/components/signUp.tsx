@@ -37,7 +37,6 @@ export const SignUp: FC<Props> = ({ labels }) => {
           </label>
           <input
             type="submit"
-            alt={localize(labels[20].text, locale)}
             name="subscribe"
             className={`${s.signUpSend}`}
             id="mc-embedded-subscribe"

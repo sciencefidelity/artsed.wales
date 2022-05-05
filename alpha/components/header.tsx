@@ -95,7 +95,6 @@ export const Header: FC<Props> = ({ labels, navigation, settings }) => {
           <ul className={`
             ${u.sans} ${u.fontMedium} ${u.textRight} ${u.uppercase}
           `}>
-            {/* <li className={`${u.inline} ${s.navItemRight}`}>Resources</li> */}
             <li className={`${u.inline} ${s.navItemRight}`}>
               <Language labels={labels} />
             </li>
@@ -108,8 +107,8 @@ export const Header: FC<Props> = ({ labels, navigation, settings }) => {
           <span className={`${u.screenReaderText}`}>
             {locale === "cy" ? "Prif Ddewislen" : "Main Menu"}
           </span>
-          <div className={`${s.hamburger} ${isActive ? s.navActive : null}`}>
-          </div>
+          <span className={`${s.hamburger} ${isActive ? s.navActive : null}`}>
+          </span>
         </button>
       </nav>
     </header>
