@@ -35,6 +35,23 @@ export const localize = (
     : content.en
 }
 
+export const localizeRoles = (type: string): string => {
+  switch (type) {
+  case "Author":
+    return "Awdur"
+  case "Chair":
+    return "Cadeirydd"
+  case "Co-ordinator":
+    return "Cydlynydd"
+  case "Facilitator":
+    return "Hwylusydd"
+  case "Trustee":
+    return "Ymddiriedolwr"
+  default:
+    return ""
+  }
+}
+
 export const pattern = (pattern: string): string => {
   switch (pattern) {
   case "cubes":

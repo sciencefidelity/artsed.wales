@@ -13,7 +13,7 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
-import { acronym } from "lib/utils"
+import { acronym, localizeRoles } from "lib/utils"
 import Layout from "components/layout"
 import ErrorTemplate from "components/errorTemplate"
 import { EventList } from "components/eventList"
@@ -141,7 +141,7 @@ const StaffPage = ({ data }) => {
                     {staff.role && staff.role.map(role =>
                       <Fragment key={role}>
                         <li className={`${u.horizontalList}`}>
-                          {role}
+                          {locale === "cy" ? localizeRoles(role) : role}
                         </li>
                       </Fragment>
                     )}
