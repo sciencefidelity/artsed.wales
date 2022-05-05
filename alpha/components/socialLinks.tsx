@@ -59,7 +59,7 @@ export const SocialLinks: FC<Props> = ({ settings }) => {
   }
 
   return (
-    <section className={`${s.socialLinks} ${u.uppercase} ${u.flex}`}>
+    <nav className={`${s.socialLinks} ${u.uppercase} ${u.flex}`}>
       <ul className={`${s.socialLinksMenu} ${u.flex}`}>
         {settings.social.map(link =>
           <Fragment key={link._key}>
@@ -81,6 +81,6 @@ export const SocialLinks: FC<Props> = ({ settings }) => {
           </Fragment>
         )}
       </ul>
-    </section>
+    </nav>
   )
 }

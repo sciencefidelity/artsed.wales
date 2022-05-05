@@ -15,7 +15,7 @@ export const PostDate: FC<PostDateProps> = ({ date }) => {
   const { locale } = useRouter()
   const dateLocale = locale === "cy" ? cy : enGB
   return (
-    <time dateTime={date}>
+    <time dateTime={format(new Date(date), "yyyy-MM-dd")}>
       {format(new Date(date),
         "eee, d MMM",
         {locale: dateLocale}
@@ -30,9 +30,9 @@ export const EventDate: FC<EventDateProps> = ({ dateEnd, dateStart }) => {
   const { locale } = useRouter()
   const dateLocale = locale === "cy" ? cy : enGB
   return (
-    <time dateTime={dateStart}>
+    <time dateTime={format(new Date(dateStart), "yyyy-MM-dd")}>
       {format(new Date(dateStart),
-        "eee, d MMM yyyy, HH:mm",
+        "eee, d MMM, HH:mm",
         {locale: dateLocale})}
       {" "}&#8211;{" "}
       {format(new Date(dateEnd),

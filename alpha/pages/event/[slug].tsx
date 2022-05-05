@@ -217,13 +217,13 @@ const EventPage = ({ data }) => {
                 <Localize data={labels[4].text} />&#58;{" "}
               </strong>
               &pound;{event.price.toString()}<br />
-              {/* <strong className={`${u.bold}`}>
+              <strong className={`${u.bold}`}>
                 <Localize data={labels[5].text} />&#58;{" "}
               </strong>
               <EventDate
                 dateEnd={event.dateEnd}
                 dateStart={event.dateStart}
-              /><br /> */}
+              /><br />
               <strong className={`${u.bold}`}>
                 <Localize data={labels[6].text} />&#58;{" "}
               </strong>
