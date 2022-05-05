@@ -25,6 +25,8 @@ export const QuoteSection: FC<Props> = ({ label, quotes }) => {
             .quality(100)
             .url()}
           alt={localize(quotes[quoteNumber].organisation, locale)}
+          width={312}
+          height={312}
           className={`${s.quoteImage}`}
         />
         <blockquote className={`${s.quote}`}>
