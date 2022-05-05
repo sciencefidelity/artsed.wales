@@ -166,8 +166,8 @@ const EventPage = ({ data }) => {
       </div>
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>
-          {/* <section className={`${s.content}`}>
-            {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
+          <section className={`${s.content}`}>
+            {/* {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
               {locale === "cy" && event.__i18n_refs
                 ? event.__i18n_refs.title : event.title}
             </h1>}
@@ -191,7 +191,7 @@ const EventPage = ({ data }) => {
               <h3 className={`${s.h3}`}>
                 <Localize data={labels[7].text} />
               </h3>
-            }
+            } */}
             <p>
               {event.facilitators && event.facilitators.map(facilitator =>
                 <Fragment key={facilitator._id}>
@@ -250,7 +250,7 @@ const EventPage = ({ data }) => {
                 )}
               </p>
             }
-          </section> */}
+          </section>
           <hr className={`${s.hr}`} />
           <Sidebar
             events={events}
