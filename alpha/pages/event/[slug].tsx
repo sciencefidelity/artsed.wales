@@ -231,7 +231,7 @@ const EventPage = ({ data }) => {
               </strong>
               {event.location}
             </p>
-            {event.keystage &&
+            {/* {event.keystage &&
               <p>
                 {labels[8] && <Localize data={labels[8].text} />}
                 {" "}{event.keystage.map((ks, idx) =>
@@ -251,7 +251,7 @@ const EventPage = ({ data }) => {
                   </Fragment>
                 )}
               </p>
-            }
+            } */}
           </section>
           <hr className={`${s.hr}`} />
           <Sidebar
