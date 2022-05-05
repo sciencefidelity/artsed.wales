@@ -1,15 +1,13 @@
-import { Fragment } from "react"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
-import { localize, urlFor } from "lib/utils"
+import { localize } from "lib/utils"
 import { EngagementSection } from "components/engagementSection"
+import { FeaturedEvents } from "components/featuredEvents"
 import Layout from "components/layout"
-import Localize from "components/localize"
 import { QuoteSection } from "components/quoteSection"
-import SingleEvent from "components/singleEvent"
 import VideoPlayer from "components/videoPlayer"
 import { indexQuery } from "lib/queries"
 import {
@@ -66,7 +64,6 @@ const Home = ({ data }) => {
       settings={settings}
     >
       <div>
-        {/* hero */}
         <section className={`${s.hero} ${p.lines}`}>
           <h2
             className={`${s.heroText}`}
@@ -75,11 +72,8 @@ const Home = ({ data }) => {
             }}
           />
         </section>
-
         <div className={`${u.container}`}>
-          {/* intro section */}
           <section>
-            {/* intro text */}
             <article className={`${s.indexContent}`}>
               <PortableText
                 value={locale === "cy" && pages[0].__i18n_refs
@@ -88,26 +82,16 @@ const Home = ({ data }) => {
                 components={components}
               />
             </article>
-            {/* video */}
             <VideoPlayer video={videos[0]}/>
           </section>
           <hr />
           <EngagementSection engagement={engagement} />
           <QuoteSection labels={labels} quotes={quotes} />
           <hr />
-          {/* featured section */}
-          <section>
-            <h2 className={`${s.featuredTitle} ${u.uppercase}`}>
-              <Localize data={labels[26].text} />{/* featured events */}
-            </h2>
-            <div className={`${s.featured} ${u.grid}`}>
-              {events.filter(event => event.feature).map(event =>
-                <Fragment key={event._id}>
-                  <SingleEvent event={event} />
-                </Fragment>
-              )}
-            </div>
-          </section>
+          <FeaturedEvents
+            events={events.filter(event => event.feature)}
+            label={labels[26]}
+          />
           <hr />
         </div>
       </div>
