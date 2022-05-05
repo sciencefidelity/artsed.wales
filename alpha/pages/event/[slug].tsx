@@ -167,7 +167,7 @@ const EventPage = ({ data }) => {
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>
           <section className={`${s.content}`}>
-            {/* {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
+            {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
               {locale === "cy" && event.__i18n_refs
                 ? event.__i18n_refs.title : event.title}
             </h1>}
@@ -181,17 +181,17 @@ const EventPage = ({ data }) => {
                 href={locale === "cy" && event.__i18n_refs
                   ? event.__i18n_refs.britelink : event.britelink}
                 target="_blank" rel="noreferrer"
+                className={`${s.btn} ${u.noUnderline}`}
+                role="button"
               >
-                <button className={`${s.btn} ${u.pointer}`}>
-                  <Localize data={labels[24].text} />
-                </button>
+                <Localize data={labels[24].text} />
               </a>
             </div>}
             {event.facilitators &&
               <h3 className={`${s.h3}`}>
                 <Localize data={labels[7].text} />
               </h3>
-            } */}
+            }
             <p>
               {event.facilitators && event.facilitators.map(facilitator =>
                 <Fragment key={facilitator._id}>
