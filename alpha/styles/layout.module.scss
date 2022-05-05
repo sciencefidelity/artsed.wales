@@ -34,13 +34,15 @@
   z-index: -1;
   height: 100vh;
   background-color: var(--page-bg);
-  transition: transform 0.5s;
-  transform: translateX(100vw);
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition: clip-path 0.5s;
+  // transform: translateX(100vw);
 }
 
 .overlayActive {
-  transition: transform 0.5s;
-  transform: translateX(0);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition: clip-path 0.5s;
+  // transform: translateX(0);
 }
 
 .overlayNav {
@@ -49,6 +51,9 @@
 
 .overlayNavItem {
   margin-bottom: 0.5rem;
+  &:last-child {
+    margin-top: 1.7rem;
+  }
   a {
     color: var(--grey-550);
   }
@@ -162,11 +167,7 @@
   margin: 2.6em 0 3em;
   background-color: var(--grey-550);
   transition: background-color 0s;
-  transition-delay: 0.5s;
-  &:hover,
-  &:focus {
-    background-color: var(--grey-750);
-  }
+  transition-delay: 0.25s;
   &::before {
     top: -2.3em;
   }
@@ -181,26 +182,22 @@
     height: 3px;
     content: '';
     background-color: var(--grey-550);
-    transition: transform 0.5s, top 0.5s;
-    transition-delay: 0s, 0.5s;
+    transition: transform 0.25s, top 0.25s;
+    transition-delay: 0s, 0.25s;
     transition-property: transform, top;
     transform: rotate(0);
-    &:hover,
-    &:focus {
-      background-color: var(--grey-750);
-    }
   }
 }
 
 .navActive {
   background-color: var(--grey-000);
   transition: background-color 0s;
-  transition-delay: 0.5s;
+  transition-delay: 0.25s;
   &::before,
   &::after {
     top: 0;
-    transition: top 0.5s, transform 0.5s;
-    transition-delay: 0s, 0.5s;
+    transition: top 0.25s, transform 0.25s;
+    transition-delay: 0s, 0.25s;
     transition-property: top, transform;
   }
   &::before {
