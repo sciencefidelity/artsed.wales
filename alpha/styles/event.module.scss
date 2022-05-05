@@ -556,7 +556,7 @@
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--grey-600);
+    color: var(--grey-700);
   }
   ul {
     padding: 0 1.2rem 3rem;
@@ -578,7 +578,7 @@
   margin-top: -4rem;
   margin-bottom: 0.5rem;
   font-size: 4rem;
-  color: var(--grey-750);
+  color: var(--grey-850);
   @include b.mq(md) {
     margin-top: unset;
     font-size: 4.8rem;
@@ -589,7 +589,7 @@
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--grey-600);
+  color: var(--grey-700);
 }
 
 .britelink {
@@ -602,7 +602,7 @@
   margin-inline: auto;
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--grey-650);
+  color: var(--grey-750);
   text-align: center;
   text-transform: uppercase;
   background-color: var(--background);

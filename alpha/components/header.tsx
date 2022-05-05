@@ -25,7 +25,10 @@ export const Header: FC<Props> = ({ labels, navigation, settings }) => {
     setActive(false)
   }
   return (
-    <header className={`${s.header}`}>
+    <header
+      className={`${s.header}`}
+      onClick={isActive ? menuClose : null}
+    >
       <nav className={`${u.container} ${s.nav}`}>
         <div
           className={`${s.overlay} ${isActive ? s.overlayActive : null}`}

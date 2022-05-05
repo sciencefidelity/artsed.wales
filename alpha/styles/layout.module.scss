@@ -33,16 +33,14 @@
   inset: 0;
   z-index: -1;
   height: 100vh;
-  background-color: var(--page-bg);
+  background-color: hsla(360, 1%, 99%, 0.95);
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   transition: clip-path 0.5s;
-  // transform: translateX(100vw);
 }
 
 .overlayActive {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   transition: clip-path 0.5s;
-  // transform: translateX(0);
 }
 
 .overlayNav {
@@ -355,7 +353,7 @@
     margin-block: 2rem;
   }
   a {
-    color: var(--grey-650);
+    color: var(--grey-750);
     text-decoration-line: none;
     transition: color 0.3s ease-in-out;
   }
@@ -377,10 +375,14 @@
 .navItemLeft a:hover,
 .navItemLeft a:focus,
 .navItemRight a:hover,
-.navItemRight a:focus,
+.navItemRight a:focus {
+  color: var(--grey-750);
+  transition: color 0.3s ease;
+}
+
 .footer a:hover,
 .footer a:focus {
-  color: var(--grey-750);
+  color: var(--grey-900);
   transition: color 0.3s ease;
 }
 
