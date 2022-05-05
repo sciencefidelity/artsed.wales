@@ -4,8 +4,8 @@ import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
-import Layout from "components/layout"
-import SingleEvent from "components/singleEvent"
+import { Layout } from "components/layout"
+import { SingleEvent } from "components/singleEvent"
 import { eventsQuery } from "lib/queries"
 import {
   Company,

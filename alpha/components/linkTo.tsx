@@ -4,7 +4,7 @@ import { AnchorHTMLAttributes, PropsWithChildren } from "react"
 
 type PropTypes = LinkProps & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">
 
-const LinkTo = ({
+export const LinkTo = ({
   children,
   href,
   as,
@@ -22,4 +22,3 @@ const LinkTo = ({
     </Link>
   )
 }
-export default LinkTo

@@ -1,10 +1,10 @@
 import { FC, Fragment, useState } from "react"
 import { useRouter } from "next/router"
 import { acronym, buildUrl } from "lib/utils"
-import Language from "components/language"
-import Link from "components/link"
-import Localize from "components/localize"
-import ColorLogo from "components/icons/colorLogo"
+import { Language } from "components/language"
+import { LinkTo } from "components/linkTo"
+import { Localize } from "components/localize"
+import { ColorLogo } from "components/icons/colorLogo"
 import { Label, Navigation, Settings } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/layout.module.scss"
@@ -15,7 +15,7 @@ interface Props {
   settings: Settings
 }
 
-const Header: FC<Props> = ({ labels, navigation, settings }) => {
+export const Header: FC<Props> = ({ labels, navigation, settings }) => {
   const [isActive, setActive] = useState(false)
   const { locale, pathname } = useRouter()
   const menuOpen = () => {
@@ -33,9 +33,9 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
         >
           <ul className={`${s.overlayNav} ${u.uppercase}`}>
             <li className={`${s.overlayNavItem}`}>
-              <Link href="/">
+              <LinkTo href="/">
                 {locale === "cy" ? "Cartref" : "Home"}
-              </Link>
+              </LinkTo>
             </li>
             {navigation.primary.map(item =>
               <Fragment key={item._key}>
@@ -43,9 +43,9 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
                   ${s.overlayNavItem}
                   ${pathname === buildUrl(item.url._type, item.url.slug) ? s.active : null}
                 `}>
-                  <Link href={buildUrl(item.url._type, item.url.slug)}>
+                  <LinkTo href={buildUrl(item.url._type, item.url.slug)}>
                     <Localize data={item.label} />
-                  </Link>
+                  </LinkTo>
                 </li>
               </Fragment>
             )}
@@ -62,9 +62,9 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
                   ${u.inline} ${s.navItemLeft}
                   ${pathname === buildUrl(item.url._type, item.url.slug) ? s.active : null}
                 `}>
-                  <Link href={buildUrl(item.url._type, item.url.slug)}>
+                  <LinkTo href={buildUrl(item.url._type, item.url.slug)}>
                     <Localize data={item.label} />
-                  </Link>
+                  </LinkTo>
                 </li>
               </Fragment>
             )}
@@ -74,7 +74,7 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
           ${u.mono} ${u.bold} ${u.uppercase}
         `}>
           <div className={`${s.logoContainer} ${u.flex}`}>
-            <Link href="/" className={`${s.headerLogo} ${u.flex}`}>
+            <LinkTo href="/" className={`${s.headerLogo} ${u.flex}`}>
               <ColorLogo />
               <div className={`${u.inlineBlock}`}>
                 <div className={`${s.logoText}`}>
@@ -85,7 +85,7 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
                   {acronym(settings.siteName.en)}
                 </div>
               </div>
-            </Link>
+            </LinkTo>
           </div>
         </div>
         <div className={`${s.navLeft}`}>
@@ -112,4 +112,3 @@ const Header: FC<Props> = ({ labels, navigation, settings }) => {
     </header>
   )
 }
-export default Header

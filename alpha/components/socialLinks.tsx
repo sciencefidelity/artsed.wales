@@ -18,7 +18,7 @@ interface Props {
   settings: Settings
 }
 
-const SocialLinks: FC<Props> = ({ settings }) => {
+export const SocialLinks: FC<Props> = ({ settings }) => {
 
   const icon = (network: string): ReactElement<any, any> => {
     switch (network) {
@@ -84,4 +84,3 @@ const SocialLinks: FC<Props> = ({ settings }) => {
     </section>
   )
 }
-export default SocialLinks

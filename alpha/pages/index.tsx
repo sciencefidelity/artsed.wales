@@ -6,9 +6,9 @@ import sanityClient from "lib/sanityClient"
 import { localize } from "lib/utils"
 import { EngagementSection } from "components/engagementSection"
 import { FeaturedEvents } from "components/featuredEvents"
-import Layout from "components/layout"
+import { Layout } from "components/layout"
 import { QuoteSection } from "components/quoteSection"
-import VideoPlayer from "components/videoPlayer"
+import { VideoPlayer } from "components/videoPlayer"
 import { indexQuery } from "lib/queries"
 import {
   Company,

@@ -9,7 +9,7 @@ interface Props {
   settings: Settings
 }
 
-const BaseHead: FC<Props> = ({ pageHead, settings }) => {
+export const BaseHead: FC<Props> = ({ pageHead, settings }) => {
   const { locale } = useRouter()
   return (
     <Head>
@@ -126,4 +126,3 @@ const BaseHead: FC<Props> = ({ pageHead, settings }) => {
     </Head>
   )
 }
-export default BaseHead

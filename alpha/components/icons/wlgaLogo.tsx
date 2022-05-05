@@ -1,7 +1,7 @@
 import { useRouter }   from "next/router"
 import s from "styles/layout.module.scss"
 
-const WlgaLogo = () => {
+export const WlgaLogo = () => {
   const { locale } = useRouter()
   return (
     <svg
@@ -18,4 +18,3 @@ const WlgaLogo = () => {
     </svg>
   )
 }
-export default WlgaLogo

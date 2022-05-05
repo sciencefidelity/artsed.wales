@@ -2,8 +2,8 @@ import { FC } from "react"
 import { useRouter } from "next/router"
 import { acronym } from "lib/utils"
 import { Staff } from "lib/interfaces"
-import Image from "components/image"
-import Link from "components/link"
+import { SanityImage } from "components/image"
+import { LinkTo } from "components/linkTo"
 import u from "styles/utils.module.scss"
 import s from "styles/staffList.module.scss"
 
@@ -15,13 +15,13 @@ export const StaffList: FC<Props> = ({ person }) => {
   const { locale } = useRouter()
   return (
     <li className={`${s.person} ${u.flex}`}>
-      <Link
+      <LinkTo
         href={`/${person._type}/${person.slug}`}
         className={`${u.noUnderline}`}
       >
         <div className={`${s.avatar} ${u.grid}`}>
           {person.avatar &&
-            <Image
+            <SanityImage
               image={person.avatar}
               alt={person.title}
               height={200}
@@ -35,13 +35,13 @@ export const StaffList: FC<Props> = ({ person }) => {
             </div>
           }
         </div>
-      </Link>
+      </LinkTo>
       <div>
         <h3 className={`${s.heading}`}>
-          <Link
+          <LinkTo
             href={`/${person._type}/${person.slug}`}
             className={`${u.noUnderline}`}
-          >{person.title}</Link>
+          >{person.title}</LinkTo>
         </h3>
         {person.job &&
           <div className={`${s.bio}`}>

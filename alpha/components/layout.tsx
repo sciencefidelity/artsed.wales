@@ -1,10 +1,10 @@
 import { FC, ReactNode } from "react"
-import BaseHead from "components/baseHead"
-import Footer from "components/footer"
-import Header from "components/header"
-import Logos from "components/logos"
-import SignUp from "components/signUp"
-import SocialLinks from "components/socialLinks"
+import { BaseHead } from "components/baseHead"
+import { Footer } from "components/footer"
+import { Header } from "components/header"
+import { Logos } from "components/logos"
+import { SignUp } from "components/signUp"
+import { SocialLinks } from "components/socialLinks"
 import { Company, HeadProps, Label, Navigation, Settings } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/layout.module.scss"
@@ -18,7 +18,7 @@ interface Props {
   settings: Settings
 }
 
-const Layout: FC<Props> = ({
+export const Layout: FC<Props> = ({
   children,
   company,
   pageHead,
@@ -41,4 +41,3 @@ const Layout: FC<Props> = ({
     </>
   )
 }
-export default Layout

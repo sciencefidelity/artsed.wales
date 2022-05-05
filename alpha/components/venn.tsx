@@ -1,9 +1,9 @@
 import { useRouter } from "next/router"
-import Ampersand from "components/icons/ampersand"
+import { Ampersand } from "components/icons/ampersand"
 import u from "styles/utils.module.scss"
 import s from "styles/about.module.scss"
 
-const Venn = () => {
+export const Venn = () => {
   const { locale } = useRouter()
   return (
     <section className={`${s.venn}`}>
@@ -37,4 +37,3 @@ const Venn = () => {
     </section>
   )
 }
-export default Venn

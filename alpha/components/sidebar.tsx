@@ -1,8 +1,8 @@
 import { FC, Fragment } from "react"
 import { useRouter } from "next/router"
-import Date from "components/date"
-import Link from "components/link"
-import Localize from "components/localize"
+import { PostDate } from "components/date"
+import { LinkTo } from "components/linkTo"
+import { Localize } from "components/localize"
 import { Icon } from "components/icons/icon"
 import { Event, LocaleString } from "lib/interfaces"
 import u from "styles/utils.module.scss"
@@ -25,7 +25,7 @@ const Sidebar: FC<Props> = ({ events, title }) => {
           <Fragment key={event._id}>
             <li className={`${s.event}`}>
               <header className={`${u.flex} ${s.header}`}>
-                <Link href={`/${event._type}/${event.slug}`}>
+                <LinkTo href={`/${event._type}/${event.slug}`}>
                   {event.title && <span className={`${u.screenReaderText}`}>
                     {locale === "cy" && event.__i18n_refs
                       ? event.__i18n_refs.title : event.title}
@@ -33,16 +33,16 @@ const Sidebar: FC<Props> = ({ events, title }) => {
                   <div className={`${s.icon}`}>
                     <Icon name={event.icon ? event.icon : "Bolt"} />
                   </div>
-                </Link>
+                </LinkTo>
                 <div>
-                  {event.dateStart && <Date date={event.dateStart} />}
+                  {event.dateStart && <PostDate date={event.dateStart} />}
                   <br />
                   {event.title &&
                     <h3 className={`${s.eventHeading} ${u.mono} ${u.bold}`}>
-                      <Link href={`/${event._type}/${event.slug}`}>
+                      <LinkTo href={`/${event._type}/${event.slug}`}>
                         {locale === "cy" && event.__i18n_refs
                           ? event.__i18n_refs.title : event.title}
-                      </Link>
+                      </LinkTo>
                     </h3>
                   }
                 </div>

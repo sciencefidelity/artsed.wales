@@ -1,6 +1,6 @@
 import { PortableTextComponents } from "@portabletext/react"
 import { buildUrl } from "lib/utils"
-import Link from "components/link"
+import { LinkTo } from "components/linkTo"
 
 export const components: PortableTextComponents = {
   marks: {
@@ -16,7 +16,7 @@ export const components: PortableTextComponents = {
     internalLink: ({value, children}) => {
       const url = buildUrl(value.item._type, value.item.slug.en.current)
       return (
-        <Link href={url}>{children}</Link>
+        <LinkTo href={url}>{children}</LinkTo>
       )
     }
   }

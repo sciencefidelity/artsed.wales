@@ -4,7 +4,7 @@ import { CountUp } from "use-count-up"
 import { Waypoint } from "react-waypoint"
 import { localize } from "lib/utils"
 import { Engagement } from "lib/interfaces"
-import Localize from "components/localize"
+import { Localize } from "components/localize"
 import u from "styles/utils.module.scss"
 import s from "styles/index.module.scss"
 

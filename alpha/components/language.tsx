@@ -2,14 +2,14 @@ import { FC } from "react"
 import { useRouter } from "next/router"
 import { capitalize } from "lib/utils"
 import { Label } from "lib/interfaces"
-import Localize from "components/localize"
+import { Localize } from "components/localize"
 import u from "styles/utils.module.scss"
 
 interface Props {
   labels: Label[]
 }
 
-const Language: FC<Props> = ({ labels }) => {
+export const Language: FC<Props> = ({ labels }) => {
   const router = useRouter()
   const { pathname, asPath, query, locale, locales } = router
   const languages = ["cymraeg", "english"]
@@ -44,4 +44,3 @@ const Language: FC<Props> = ({ labels }) => {
     </>
   )
 }
-export default Language

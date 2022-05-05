@@ -16,12 +16,12 @@ import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import { pattern, urlFor } from "lib/utils"
-import Layout from "components/layout"
-import EventDate from "components/eventDate"
+import { Layout } from "components/layout"
+import { EventDate } from "components/date"
 import { Icon } from "components/icons/icon"
-import Link from "components/link"
-import Localize from "components/localize"
-import ErrorTemplate from "components/errorTemplate"
+import { LinkTo } from "components/linkTo"
+import { Localize } from "components/localize"
+import { ErrorTemplate } from "components/errorTemplate"
 import { Shape } from "components/icons/shape"
 import Sidebar from "components/sidebar"
 import { eventQuery, eventPathQuery } from "lib/queries"
@@ -203,9 +203,9 @@ const EventPage = ({ data }) => {
                     facilitator.title, match =>
                       <Fragment key={facilitator._id}>
                         <strong className={`${s.strong}`}>
-                          <Link
+                          <LinkTo
                             href={`/${facilitator._type}/${facilitator.slug}`}
-                          >{match}</Link>
+                          >{match}</LinkTo>
                         </strong>
                       </Fragment>
                   )}
@@ -236,11 +236,11 @@ const EventPage = ({ data }) => {
                 {" "}{event.keystage.map((ks, idx) =>
                   <Fragment key={ks._id}>
                     {ks.title &&
-                      <Link href={`/${ks._type}/${ks.slug}`}>
+                      <LinkTo href={`/${ks._type}/${ks.slug}`}>
                         {locale === "cy" && ks.__i18n_refs
                           ? ks.__i18n_refs.title
                           : ks.title}
-                      </Link>
+                      </LinkTo>
                     }
                     {idx === event.keystage.length - 1 && ""}
                     {idx === event.keystage.length - 2 &&

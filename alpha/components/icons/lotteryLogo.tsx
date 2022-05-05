@@ -1,7 +1,7 @@
 import { useRouter }   from "next/router"
 import s from "styles/layout.module.scss"
 
-const LotteryLogo = () => {
+export const LotteryLogo = () => {
   const { locale } = useRouter()
   return (
     <svg
@@ -21,5 +21,3 @@ const LotteryLogo = () => {
     </svg>
   )
 }
-
-export default LotteryLogo

@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
 import { acronym, localize } from "lib/utils"
-import Localize from "components/localize"
+import { Localize } from "components/localize"
 import { Company, Label, Settings } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/layout.module.scss"
@@ -12,7 +12,7 @@ interface Props {
   settings: Settings
 }
 
-const Footer: FC<Props> = ({ company, labels, settings }) => {
+export const Footer: FC<Props> = ({ company, labels, settings }) => {
   const { locale } = useRouter()
   const year = new Date().getFullYear()
   return (
@@ -45,4 +45,3 @@ const Footer: FC<Props> = ({ company, labels, settings }) => {
     </footer>
   )
 }
-export default Footer

@@ -5,11 +5,9 @@ import { Video } from "lib/interfaces"
 import s from "styles/index.module.scss"
 import u from "styles/utils.module.scss"
 
-interface Props {
-  video: Video
-}
+interface Props { video: Video }
 
-const VideoPlayer: FC<Props> = ({ video }) => {
+export const VideoPlayer: FC<Props> = ({ video }) => {
   const [isSSR, setIsSSR] = useState(true)
   useEffect(() => { setIsSSR(false) }, [])
   return (
@@ -43,7 +41,6 @@ const VideoPlayer: FC<Props> = ({ video }) => {
           ><polygon fill="white" points="1,0 20,10 1,20"></polygon></svg>
         </div>}
         style={{
-          border: "2px solid var(--foreground)",
           aspectRatio: "16 / 9"
         }}
       />}
@@ -53,4 +50,3 @@ const VideoPlayer: FC<Props> = ({ video }) => {
     </div>
   )
 }
-export default VideoPlayer

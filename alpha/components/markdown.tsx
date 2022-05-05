@@ -3,9 +3,9 @@ import { unified } from "unified"
 import remarkParse from "remark-parse"
 import rehypeParse from "rehype-parse"
 import rehypeReact from "rehype-react"
-import MarkdownLink from "components/markdownLink"
+import { MarkdownLink } from "components/markdownLink"
 
-const Markdown = ({ children }:{ children: any }) => {
+export const Markdown = ({ children }:{ children: any }) => {
   const [content, setContent] = useState(undefined)
   useEffect(() => {
     unified()
@@ -23,4 +23,3 @@ const Markdown = ({ children }:{ children: any }) => {
   }, [children])
   return content
 }
-export default Markdown

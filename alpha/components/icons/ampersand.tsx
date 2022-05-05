@@ -2,7 +2,7 @@ import { useRouter }   from "next/router"
 import u from "styles/utils.module.scss"
 import s from "styles/about.module.scss"
 
-const Ampersand = () => {
+export const Ampersand = () => {
   const { locale } = useRouter()
   return (
     <svg
@@ -25,4 +25,3 @@ const Ampersand = () => {
     </svg>
   )
 }
-export default Ampersand

@@ -1,4 +1,4 @@
-const MarkdownLink = ({ children, href }) => (
+export const MarkdownLink = ({ children, href }) => (
   <a
     href={href}
     target="_blank"
@@ -7,4 +7,3 @@ const MarkdownLink = ({ children, href }) => (
     {children}
   </a>
 )
-export default MarkdownLink

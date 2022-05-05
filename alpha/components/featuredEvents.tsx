@@ -1,6 +1,6 @@
 import { FC, Fragment } from "react"
-import Localize from "components/localize"
-import SingleEvent from "components/singleEvent"
+import { Localize } from "components/localize"
+import { SingleEvent } from "components/singleEvent"
 import { Event, Label } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/index.module.scss"

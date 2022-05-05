@@ -1,7 +1,7 @@
 import { FC, Fragment, useState } from "react"
 import { useRouter } from "next/router"
 import { localize, urlFor } from "lib/utils"
-import Localize from "components/localize"
+import { Localize } from "components/localize"
 import { Quote, Label } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/index.module.scss"

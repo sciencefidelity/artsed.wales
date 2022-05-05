@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
 import { localize } from "lib/utils"
-import Localize from "components/localize"
+import { Localize } from "components/localize"
 import { Label } from "lib/interfaces"
 import s from "styles/layout.module.scss"
 
@@ -9,7 +9,7 @@ interface Props {
   labels: Label[]
 }
 
-const SignUp: FC<Props> = ({ labels }) => {
+export const SignUp: FC<Props> = ({ labels }) => {
   const { locale } = useRouter()
   return (
     <section className={`${s.signUp}`}>
@@ -66,4 +66,3 @@ const SignUp: FC<Props> = ({ labels }) => {
     </section>
   )
 }
-export default SignUp

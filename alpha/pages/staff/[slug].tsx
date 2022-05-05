@@ -14,11 +14,11 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import { acronym, localizeRoles } from "lib/utils"
-import Layout from "components/layout"
-import ErrorTemplate from "components/errorTemplate"
+import { Layout } from "components/layout"
+import { ErrorTemplate } from "components/errorTemplate"
 import { EventList } from "components/eventList"
-import Image from "components/image"
-import Localize from "components/localize"
+import { SanityImage } from "components/image"
+import { Localize } from "components/localize"
 import Sidebar from "components/sidebar"
 import { staffQuery, staffPathQuery } from "lib/queries"
 import {
@@ -121,7 +121,7 @@ const StaffPage = ({ data }) => {
             <header className={`${u.flex} ${s.header}`}>
               <div className={`${s.avatar} ${u.grid}`}>
                 {staff.avatar &&
-                  <Image
+                  <SanityImage
                     image={staff.avatar}
                     alt={staff.title}
                     height={200}
