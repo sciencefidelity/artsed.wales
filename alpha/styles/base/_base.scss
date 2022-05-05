@@ -42,9 +42,7 @@ p {
     }
     &:hover {
       opacity: 1;
-      // color: var(--grey-750);
       transition: opacity 0.3s ease-in-out;
-      background-opacity: 0;
     }
   }
 }

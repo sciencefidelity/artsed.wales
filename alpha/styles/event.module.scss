@@ -530,7 +530,7 @@
     margin-inline: auto;
   }
   @include b.mq(lg) {
-    margin-block: 7rem 5rem;
+    margin-block: 7rem 1rem;
     margin-inline: 0 2rem;
   }
   blockquote {
