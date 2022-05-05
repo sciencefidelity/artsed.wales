@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useEffect, useState } from "react"
 import ReactPlayer from "react-player"
 import { urlFor } from "lib/utils"
 import { Video } from "lib/interfaces"
@@ -10,9 +10,11 @@ interface Props {
 }
 
 const VideoPlayer: FC<Props> = ({ video }) => {
+  const [isSSR, setIsSSR] = useState(true)
+  useEffect(() => { setIsSSR(false) }, [])
   return (
     <div className={`${s.video}`}>
-      <ReactPlayer
+      {isSSR ? null : <ReactPlayer
         url={video.videoLink}
         width={"100%"}
         height={"auto"}
@@ -44,7 +46,7 @@ const VideoPlayer: FC<Props> = ({ video }) => {
           border: "2px solid var(--foreground)",
           aspectRatio: "16 / 9"
         }}
-      />
+      />}
       <div className={`${s.caption} ${u.sans} ${u.uppercase}`}>
         {video.title}
       </div>
