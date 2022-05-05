@@ -213,20 +213,20 @@ const EventPage = ({ data }) => {
               )}
             </p>
             <p>
-              {/* <strong className={`${u.bold}`}> */}
-              <Localize data={labels[4].text} />&#58;{" "}
-              {/* </strong> */}
+              <strong className={`${u.bold}`}>
+                <Localize data={labels[4].text} />&#58;{" "}
+              </strong>
               &pound;{event.price.toString()}<br />
-              {/* <strong className={`${u.bold}`}> */}
-              <Localize data={labels[5].text} />&#58;{" "}
-              {/* </strong> */}
+              {/* <strong className={`${u.bold}`}>
+                <Localize data={labels[5].text} />&#58;{" "}
+              </strong>
               <EventDate
                 dateEnd={event.dateEnd}
                 dateStart={event.dateStart}
-              /><br />
-              {/* <strong className={`${u.bold}`}> */}
-              <Localize data={labels[6].text} />&#58;{" "}
-              {/* </strong> */}
+              /><br /> */}
+              <strong className={`${u.bold}`}>
+                <Localize data={labels[6].text} />&#58;{" "}
+              </strong>
               {event.location}
             </p>
             {event.keystage &&
