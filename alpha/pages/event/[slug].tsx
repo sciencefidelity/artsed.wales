@@ -118,7 +118,7 @@ const EventPage = ({ data }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div className={`${s.hero} ${pattern(event.pattern)}`}>
+      {/* <div className={`${s.hero} ${pattern(event.pattern)}`}>
         <div className={`${s.heroContent}`}>
           <div>
             <div className={`${s.icon}`}><Icon name={event.icon} /></div>
@@ -163,11 +163,11 @@ const EventPage = ({ data }) => {
             className={`${s[event.classThree]}`}
           />}
         </div>
-      </div>
+      </div> */}
       <div className={`${u.container}`}>
         <div className={`${s.event} ${u.grid}`}>
           <section className={`${s.content}`}>
-            {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
+            {/* {event.title && <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
               {locale === "cy" && event.__i18n_refs
                 ? event.__i18n_refs.title : event.title}
             </h1>}
@@ -192,7 +192,7 @@ const EventPage = ({ data }) => {
                 <Localize data={labels[7].text} />
               </h3>
             }
-            {/* <p>
+            <p>
               {event.facilitators && event.facilitators.map(facilitator =>
                 <Fragment key={facilitator._id}>
                   {reactStringReplace(
@@ -211,7 +211,7 @@ const EventPage = ({ data }) => {
                   <br />
                 </Fragment>
               )}
-            </p>
+            </p> */}
             <p>
               <strong className={`${s.strong} ${u.bold}`}>
                 <Localize data={labels[4].text} />{": "}
@@ -249,13 +249,13 @@ const EventPage = ({ data }) => {
                   </Fragment>
                 )}
               </p>
-            } */}
+            }
           </section>
           <hr className={`${s.hr}`} />
-          <Sidebar
+          {/* <Sidebar
             events={events}
             title={labels[10].text}
-          />
+          /> */}
         </div>
         <hr />
       </div>
