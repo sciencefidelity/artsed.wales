@@ -213,26 +213,26 @@ const EventPage = ({ data }) => {
               )}
             </p> */}
             <p>
-              <strong className={`${s.strong} ${u.bold}`}>
+              <strong className={`${u.bold}`}>
                 <Localize data={labels[4].text} />{": "}
               </strong>
               {"£"}{event.price.toString()}<br />
-              <strong className={`${s.strong} ${u.bold}`}>
+              <strong className={`${u.bold}`}>
                 <Localize data={labels[5].text} />{": "}
               </strong>
               <EventDate
                 dateEnd={event.dateEnd}
                 dateStart={event.dateStart}
               /><br />
-              <strong className={`${s.strong} ${u.bold}`}>
+              <strong className={`${u.bold}`}>
                 <Localize data={labels[6].text} />{": "}
               </strong>
               {event.location}
             </p>
             {event.keystage &&
               <p>
-                {labels[8] && <Localize data={labels[8].text} />}
-                {" "}{event.keystage.map((ks, idx) =>
+                {labels[8] && <Localize data={labels[8].text} />}{" "}
+                {event.keystage.map((ks, idx) =>
                   <Fragment key={ks._id}>
                     {ks.title &&
                       <LinkTo href={`/${ks._type}/${ks.slug}`}>
