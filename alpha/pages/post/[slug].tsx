@@ -7,16 +7,17 @@
  * @param data - all props fetched with `postQuery` in `lib/queries.ts`.
  * @param slug - all props fetched with `postPathQuery` in `lib/queries.ts`.
  */
+import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
-// import { urlFor } from "lib/utils"
 import { SanityImage } from "components/image"
 import { PostDate } from "components/date"
 import { Layout } from "components/layout"
+import { LinkTo } from "components/linkTo"
 import { ErrorTemplate } from "components/errorTemplate"
 import Sidebar from "components/sidebar"
 import { postQuery, postPathQuery } from "lib/queries"
@@ -59,6 +60,7 @@ const PostPage = ({ data }) => {
       <Head><meta name="robots" content="noindex" /></Head>
       <ErrorTemplate />
     </>)
+
   }
   const {
     company,
@@ -105,7 +107,7 @@ const PostPage = ({ data }) => {
       ? post.__i18n_refs.twitter?.image
       : post.twitter?.image
   }
-
+  console.log(post.settings.authors[0])
   return (
     <Layout
       company={company}
@@ -115,26 +117,23 @@ const PostPage = ({ data }) => {
       settings={settings}
     >
       <div className={`${s.hero}`}>
-        {/* {post.image && <img
-          src={urlFor(post.image)
-            .auto("format")
-            .quality(85)
-            .width(700)
-            .url()}
-          alt={post.title}
-        />} */}
         {post.image && <SanityImage
           image={post.image}
           alt={post.title}
+          lazy={false}
         />}
       </div>
       <div className={`${u.container}`}>
         <div className={`${s.post} ${u.grid}`}>
           <section className={`${s.content}`}>
-            {post.settings.tags[0] &&
-              <div className={`${s.tags} ${u.uppercase}`}>
-                {post.settings.tags[0].title}
-              </div>
+            {post.settings.tags &&
+              <ul className={`${u.uppercase} ${s.tags}`}>
+                {post.settings.tags.map(tag =>
+                  <Fragment key={tag._id}>
+                    <li className={`${u.horizontalList}`}>{tag.title}</li>
+                  </Fragment>
+                )}
+              </ul>
             }
             {post.title &&
               <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
@@ -142,12 +141,24 @@ const PostPage = ({ data }) => {
                   ? post.__i18n_refs.title : post.title}
               </h1>
             }
-            <div className={`${s.date}`}>
+            {post.settings.publishedAt && <div className={`${s.date}`}>
               Published on{" "}
-              {post.settings.publishedAt &&
-                <PostDate date={post.settings.publishedAt} />
-              }
-            </div>
+              <PostDate date={post.settings.publishedAt} />
+            </div>}
+            {post.settings.authors &&
+              <ul className={`${s.authors}`}>
+                By{" "}
+                {post.settings.authors.map(author =>
+                  <Fragment key={author._id}>
+                    <LinkTo href={author.slug}>
+                      <li className={`${u.horizontalList}`}>
+                        {author.title}
+                      </li>
+                    </LinkTo>
+                  </Fragment>
+                )}
+              </ul>
+            }
             {post.body && <PortableText
               value={locale === "cy" && post.__i18n_refs
                 ? post.__i18n_refs.body : post.body}

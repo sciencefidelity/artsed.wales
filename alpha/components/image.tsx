@@ -5,9 +5,9 @@ import { Image } from "lib/interfaces"
 interface Props {
   alt: string
   image: Image
-  height: number
-  lazy: boolean
-  width: number
+  height?: number
+  lazy?: boolean
+  width?: number
 }
 
 export const SanityImage: FC<Props> = ({ alt, height, image, width, lazy }) => {

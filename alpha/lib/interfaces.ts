@@ -84,6 +84,7 @@ export interface HeadProps {
 }
 
 export interface Image {
+  _key?: string
   _type: "image"
   asset: SanityReference<SanityImageAsset>
   crop?: SanityImageCrop

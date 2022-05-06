@@ -43,7 +43,7 @@ const localeSeo = `
 const pageSettings = `
   settings{
     excerpt, publishedAt,
-    authors[]->{ _id, _type, image, name, ${slug} },
+    authors[]->{ _id, _type, avatar, ${slug}, title },
     tags[]->{ _id, _type, ${slug}, title }
   }
 `
