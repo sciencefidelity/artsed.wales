@@ -232,6 +232,15 @@ const staff = `
   }
 `
 
+const post = `
+  "post": *[
+    _type == "post"
+    && __i18n_lang == "en"
+    && slug.current == $slug
+    && ${omitDrafts}
+  ][0]{ ${pagePostFields}, __i18n_refs[0]->{ ${pagePostFields} } }
+`
+
 const videos = `
   "videos": *[
     _type == "video"
@@ -289,6 +298,19 @@ export const keystageQuery = groq`{
 export const keystagePathQuery = groq`
   *[
     _type == "keystage"
+    && defined(slug)
+    && __i18n_lang == "en"
+    && ${omitDrafts}
+  ][].slug.current
+`
+
+export const postQuery = groq`{
+  ${company}, ${events}, ${labels}, ${navigation}, ${post}, ${settings}
+}`
+
+export const postPathQuery = groq`
+  *[
+    _type == "post"
     && defined(slug)
     && __i18n_lang == "en"
     && ${omitDrafts}
