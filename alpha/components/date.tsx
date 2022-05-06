@@ -27,8 +27,6 @@ export const EventDate: FC<EventDateProps> = ({ dateEnd, dateStart }) => {
       {dateStart && <time dateTime={dateStart}>
         {format(new Date(dateStart), "eee, d MMM, HH:mm", {locale: dateLocale})}
       </time>}
-      {dateEnd && " – "}
-      {dateEnd && format(new Date(dateEnd), "HH:mm", {locale: dateLocale})}
     </>
   )
 }
