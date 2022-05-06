@@ -70,7 +70,7 @@ export const SingleEvent: FC<Props> = ({ event }) => {
         </div>
       </header>
       {event.summary &&
-        <p className={`${s.summary}`}>
+        <p className={`${s.summary} ${u.ellipsis2}`}>
           {locale === "cy" && event.__i18n_refs
             ? event.__i18n_refs.summary : event.summary}
         </p>
