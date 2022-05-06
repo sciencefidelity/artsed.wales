@@ -25,8 +25,11 @@ export const EventDate: FC<EventDateProps> = ({ dateEnd, dateStart }) => {
   return (
     <>
       {dateStart && <time dateTime={dateStart}>
-        {format(new Date(dateStart), "eee, d MMM, HH:mm", {locale: dateLocale})}
-      </time>}
+        {format(new Date(dateStart), "eee, d MMM", {locale: dateLocale})}
+      </time>}{", "}
+      {format(new Date(dateStart), "HH:mm", {locale: dateLocale})}
+      {dateEnd && " – "}
+      {dateEnd && format(new Date(dateEnd), "HH:mm", {locale: dateLocale})}
     </>
   )
 }
