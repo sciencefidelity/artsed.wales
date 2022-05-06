@@ -86,17 +86,16 @@
 }
 
 .authors {
-  font-size: 1.4rem;
   margin-bottom: 3rem;
+  font-size: 1.4rem;
+  @include b.mq(md) {
+    margin-bottom: 6rem;
+  }
   a {
     color: var(--grey-750);
     text-decoration: none;
   }
-  @include b.mq(md) {
-    margin-bottom: 6rem;
-  }
 }
-
 
 .hr {
   display: initial;
