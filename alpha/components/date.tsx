@@ -4,7 +4,6 @@ import format from "date-fns/format"
 import { cy, enGB } from "date-fns/locale"
 
 interface PostDateProps { date: string }
-
 interface EventDateProps {
   dateEnd?: string
   dateStart: string
@@ -28,10 +27,8 @@ export const EventDate: FC<EventDateProps> = ({ dateEnd, dateStart }) => {
       {dateStart && <time dateTime={dateStart}>
         {format(new Date(dateStart), "eee, d MMM, HH:mm", {locale: dateLocale})}
       </time>}
-      {dateEnd && " - "}
-      {dateEnd && <time dateTime={dateEnd}>
-        {format(new Date(dateEnd), "HH:mm", {locale: dateLocale})}
-      </time>}
+      {dateEnd && " – "}
+      {dateEnd && format(new Date(dateEnd), "HH:mm", {locale: dateLocale})}
     </>
   )
 }
