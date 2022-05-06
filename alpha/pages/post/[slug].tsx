@@ -107,7 +107,7 @@ const PostPage = ({ data }) => {
       ? post.__i18n_refs.twitter?.image
       : post.twitter?.image
   }
-  console.log(post.settings.authors[0])
+
   return (
     <Layout
       company={company}
