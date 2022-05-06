@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { urlFor } from '../lib/utils'
 
 const ImageCaptionPreview = ({ value }) => {
@@ -7,8 +7,7 @@ const ImageCaptionPreview = ({ value }) => {
       <img
         src={urlFor(value.image)
           .auto('format')
-          .width(476)
-          .height(248)
+          .width(600)
           .quality(80)
           .url()}
         alt=""
