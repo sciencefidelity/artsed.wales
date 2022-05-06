@@ -17,7 +17,7 @@ import { components } from "components/portableTextComponents"
 import sanityClient from "lib/sanityClient"
 import { pattern, urlFor } from "lib/utils"
 import { Layout } from "components/layout"
-import { PostDate } from "components/date"
+import { EventDate } from "components/date"
 import { Icon } from "components/icons/icon"
 import { LinkTo } from "components/linkTo"
 import { Localize } from "components/localize"
@@ -220,8 +220,9 @@ const EventPage = ({ data }) => {
               <strong className={`${u.bold}`}>
                 <Localize data={labels[5].text} />&#58;{" "}
               </strong>
-              <PostDate
-                date={event.dateStart}
+              <EventDate
+                dateStart={event.dateStart}
+                dateEnd={event.dateEnd}
               /><br />
               <strong className={`${u.bold}`}>
                 <Localize data={labels[6].text} />&#58;{" "}
