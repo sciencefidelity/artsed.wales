@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react"
+import { useRouter } from "next/router"
 import ReactPlayer from "react-player"
 import { urlFor } from "lib/utils"
 import { Video } from "lib/interfaces"
@@ -9,6 +10,7 @@ interface Props { video: Video }
 
 export const VideoPlayer: FC<Props> = ({ video }) => {
   const [isSSR, setIsSSR] = useState(true)
+  const { locale } = useRouter()
   useEffect(() => { setIsSSR(false) }, [])
   return (
     <div className={`${s.video}`}>
@@ -45,7 +47,8 @@ export const VideoPlayer: FC<Props> = ({ video }) => {
         }}
       />}
       <div className={`${s.caption} ${u.sans} ${u.uppercase}`}>
-        {video.title}
+        {locale === "cy" && video.__i18n_refs
+          ? video.__i18n_refs.title : video.title}
       </div>
     </div>
   )

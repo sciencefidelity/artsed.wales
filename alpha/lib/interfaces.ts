@@ -254,6 +254,7 @@ export interface Tag extends SanityDocument {
 }
 
 export interface Video extends SanityDocument {
+  __i18n_refs: Video
   _type: "video"
   body: PortableText
   mainImage: Image
