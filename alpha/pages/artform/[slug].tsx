@@ -1,11 +1,11 @@
 /**
- * artform component (dynamic)
+ * Artform component (dynamic)
  *
  * @remarks
  * Generates all pages in the subdirectory `/artform`.
  *
- * @param data - all props fetched with `artformPageQuery` in `lib/queries.ts`.
- * @param slug - all props fetched with `artformPagePathQuery` in `lib/queries.ts`.
+ * @param data - all props fetched with `artformQuery` in `lib/queries.ts`.
+ * @param slug - all props fetched with `artformPathQuery` in `lib/queries.ts`.
  */
 import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"

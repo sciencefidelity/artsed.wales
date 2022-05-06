@@ -1,12 +1,12 @@
 
 /**
- * Keystage component (dynamic)
+ * Staff component (dynamic)
  *
  * @remarks
- * Generates all pages in the subdirectory `/keystage`.
+ * Generates all pages in the subdirectory `/staff`.
  *
- * @param data - all props fetched with `keystagePageQuery` in `lib/queries.ts`.
- * @param slug - all props fetched with `keystagePagePathQuery` in `lib/queries.ts`.
+ * @param data - all props fetched with `staffQuery` in `lib/queries.ts`.
+ * @param slug - all props fetched with `staffPathQuery` in `lib/queries.ts`.
  */
 import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"

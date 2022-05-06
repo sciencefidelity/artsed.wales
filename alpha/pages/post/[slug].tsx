@@ -1,5 +1,5 @@
 /**
- * post component (dynamic)
+ * Post component (dynamic)
  *
  * @remarks
  * Generates all pages in the subdirectory `/post`.
