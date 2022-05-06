@@ -228,27 +228,6 @@ const EventPage = ({ data }) => {
               </strong>
               {event.location}
             </p>
-            {event.keystage &&
-              <p>
-                {labels[8] && <Localize data={labels[8].text} />}{" "}
-                {event.keystage.map((ks, idx) =>
-                  <Fragment key={ks._id}>
-                    {ks.title &&
-                      <LinkTo href={`/${ks._type}/${ks.slug}`}>
-                        {locale === "cy" && ks.__i18n_refs
-                          ? ks.__i18n_refs.title
-                          : ks.title}
-                      </LinkTo>
-                    }
-                    {idx === event.keystage.length - 1 && ""}
-                    {idx === event.keystage.length - 2 &&
-                      <Localize data={labels[9].text} />
-                    }
-                    {idx >= 0 && idx < event.keystage.length - 2 && ", "}
-                  </Fragment>
-                )}
-              </p>
-            }
           </div>
           <hr className={`${s.hr}`} />
           <Sidebar
