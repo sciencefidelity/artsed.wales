@@ -7,12 +7,12 @@ export default {
   icon: CameraFlash,
   fields: [
     {
-      name: 'photograpy',
+      name: 'photography',
       title: 'Photography',
       type: 'array',
       of: [
         {
-          name: 'photograpy',
+          name: 'photography',
           title: 'Photography',
           type: 'object',
           fields: [
