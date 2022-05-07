@@ -1,4 +1,5 @@
 import StringWithLimits from '../../components/StringWithLimits'
+import { Rule } from '@sanity/types'
 
 export default {
   name: 'facebookCard',
@@ -19,7 +20,7 @@ export default {
       title: 'Facebook title',
       type: 'string',
       inputComponent: StringWithLimits,
-      validation: Rule => Rule.max(70).warning("Some text won't be visible.")
+      validation: (Rule: Rule) => Rule.max(70).warning("Some text won't be visible.")
     },
     {
       name: 'description',
