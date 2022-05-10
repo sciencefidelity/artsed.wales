@@ -38,6 +38,12 @@ export default {
       group: 'content'
     },
     {
+      name: 'videoLink',
+      title: 'Video Link',
+      type: 'url',
+      group: 'content'
+    },
+    {
       name: 'video',
       title: 'Video',
       type: 'mux.video',
