@@ -38,9 +38,9 @@ export default {
       group: 'content'
     },
     {
-      name: 'videoLink',
-      title: 'Video Link',
-      type: 'url',
+      name: 'video',
+      title: 'Video',
+      type: 'mux.video',
       group: 'content'
     },
     {

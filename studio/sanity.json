@@ -10,7 +10,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/document-internationalization",
-    "@sanity/color-input"
+    "@sanity/color-input",
+    "mux-input"
   ],
   "env": {
     "development": {
