@@ -1495,18 +1495,18 @@
   dependencies:
     diff-match-patch "^1.0.4"
 
-"@sanity/document-internationalization@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.npmjs.org/@sanity/document-internationalization/-/document-internationalization-0.1.7.tgz#26520eb44134e9c730dd3b6b020040655ec8369f"
-  integrity sha512-jmeM1KiArujl6hK8ySgRyfTEi/bxZZ8EtcFybYt4r+Z7184UXmo1G3F5V1dzMTPFPx1sVgJva0X6Phf8U2rJIw==
+"@sanity/document-internationalization@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@sanity/document-internationalization/-/document-internationalization-0.3.0.tgz#879e9128a0012cbcca899ef2148667ba2b3c772d"
+  integrity sha512-Evfs/V9mLCC1eC3Pj/mrsFDxtppL9IezfawT7UmTs9oELs/p1bKtcktawUM/4lvJ/EzZuxqY2aJF9VZ4ZCTTow==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@cprecioso/country-flag-emoji" "^1.0.0"
+    country-flag-emoji-polyfill "^0.1.1"
     just-omit "^2.0.1"
     just-safe-get "^4.0.1"
     just-split "^3.0.1"
     pinst "^2.1.6"
-    react-easy-emoji "^1.6.1"
     regenerator-runtime "^0.13.7"
 
 "@sanity/eslint-config-studio@^2.0.0":
@@ -3564,6 +3564,13 @@ cosmiconfig@^5.0.0:
     is-directory "^0.3.1"
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
+
+country-flag-emoji-polyfill@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/country-flag-emoji-polyfill/-/country-flag-emoji-polyfill-0.1.1.tgz#1fab7b364c2631f7e7949fbd98659552f401596e"
+  integrity sha512-H4iB8BAnlcLxE9mxVXm9vY28zKtqjEYRCO+vz1x4u6IsmomHQd/EQfR/Py0YmxeVYkBAOUPJBcY3KJPd+BQe6Q==
+  dependencies:
+    is-emoji-supported "^0.0.5"
 
 crc-32@^1.2.0:
   version "1.2.1"
@@ -6022,6 +6029,11 @@ is-directory@^0.3.1:
   version "0.3.1"
   resolved "https://registry.npmjs.org/is-directory/-/is-directory-0.3.1.tgz#61339b6f2475fc772fd9c9d83f5c8575dc154ae1"
   integrity sha1-YTObbyR1/Hcv2cnYP1yFddwVSuE=
+
+is-emoji-supported@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/is-emoji-supported/-/is-emoji-supported-0.0.5.tgz#f22301b22c63d6322935e829f39dfa59d03a7fe2"
+  integrity sha512-WOlXUhDDHxYqcSmFZis+xWhhqXiK2SU0iYiqmth5Ip0FHLZQAt9rKL5ahnilE8/86WH8tZ3bmNNNC+bTzamqlw==
 
 is-extendable@^0.1.0, is-extendable@^0.1.1:
   version "0.1.1"
@@ -9356,7 +9368,7 @@ react-dom@17.0.0:
 
 react-easy-emoji@^1.6.1:
   version "1.6.1"
-  resolved "https://registry.npmjs.org/react-easy-emoji/-/react-easy-emoji-1.6.1.tgz#72a3b6ef1e327d937a865c3795d400d0a178b706"
+  resolved "https://registry.yarnpkg.com/react-easy-emoji/-/react-easy-emoji-1.6.1.tgz#72a3b6ef1e327d937a865c3795d400d0a178b706"
   integrity sha512-VCGm1tAAdOCNVh6j+M1KoWZn4FIXcqdnf0rXINo0Sgo7eF2sat/JhITKFl8PmbpfIYqYLOobpFDVpst4ddJUlw==
   dependencies:
     string-replace-to-array "^2.1.0"
@@ -9574,10 +9586,10 @@ react-use-measure@^2.1.1:
   dependencies:
     debounce "^1.2.1"
 
-react@17.0.0:
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-17.0.0.tgz#ad96d5fa1a33bb9b06d0cc52672f7992d84aa662"
-  integrity sha512-rG9bqS3LMuetoSUKHN8G3fMNuQOePKDThK6+2yXFWtoeTDLVNh/QCaxT+Jr+rNf4lwNXpx+atdn3Aa0oi8/6eQ==
+react@17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -10570,7 +10582,7 @@ strict-uri-encode@^1.0.0:
 
 string-replace-to-array@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.npmjs.org/string-replace-to-array/-/string-replace-to-array-2.1.0.tgz#44571dbd33a3e23de31db948b5b84f1b7913fb39"
+  resolved "https://registry.yarnpkg.com/string-replace-to-array/-/string-replace-to-array-2.1.0.tgz#44571dbd33a3e23de31db948b5b84f1b7913fb39"
   integrity sha512-xG2w4fE5FsTXS4AFxoF3uctByqTIFBX8lFRNcPcIznTVCMXbYvbatkPVLpAo13tfuWtzbWEV6u5bjoE9bOv87w==
 
 string-width@^1.0.1:

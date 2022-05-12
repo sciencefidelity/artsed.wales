@@ -5,12 +5,13 @@
   },
   "plugins": [
     "@sanity/base",
+    "@sanity/color-input",
     "@sanity/dashboard",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/document-internationalization",
-    "@sanity/color-input",
+    "@sanity/language-filter",
     "mux-input"
   ],
   "env": {
@@ -44,6 +45,10 @@
     {
       "implements": "part:@sanity/document-internationalization/ui/flags",
       "path": "./src/document-internationalization/flags"
+    },
+    {
+      "name": "part:@sanity/language-filter/config",
+      "path": "./src/language-filter"
     }
   ]
 }

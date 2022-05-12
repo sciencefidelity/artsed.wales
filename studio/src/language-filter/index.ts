@@ -3,7 +3,7 @@ export default {
     { id: 'en', title: 'English' },
     { id: 'cy', title: 'Welsh' }
   ],
-  // defaultLanguages: ['en'],
+  defaultLanguages: ['en'],
   // Only show language filter for document type `page` (schemaType.name)
   documentTypes: [
     'comment',
