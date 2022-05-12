@@ -40,6 +40,7 @@
     "rehype-parse": "^8.0.4",
     "rehype-react": "^7.1.1",
     "remark-parse": "^10.0.1",
+    "sanity-mux-player": "^0.0.27",
     "sass": "^1.51.0",
     "twitter-api-v2": "^1.12.0",
     "unified": "^10.1.2",

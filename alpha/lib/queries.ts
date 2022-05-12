@@ -31,7 +31,8 @@ const staffFields = `
 `
 
 const videoFields = `
-  _id, _type, ${body}, mainImage, publishedAt, ${slug}, title, videoLink
+  _id, _type, ${body}, mainImage, publishedAt, ${slug}, title, videoLink,
+  "asset": video.asset->
 `
 
 const localeSeo = `
