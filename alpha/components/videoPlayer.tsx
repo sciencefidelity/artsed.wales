@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react"
+import { FC } from "react"
 import { useRouter } from "next/router"
 import SanityMuxPlayer from "sanity-mux-player"
 import { urlFor } from "lib/utils"
@@ -9,10 +9,8 @@ import u from "styles/utils.module.scss"
 interface Props { video: Video }
 
 export const VideoPlayer: FC<Props> = ({ video }) => {
-  console.log(video.asset)
-  const [isSSR, setIsSSR] = useState(true)
+  console.log(urlFor(video.mainImage))
   const { locale } = useRouter()
-  useEffect(() => { setIsSSR(false) }, [])
   return (
     <div className={`${s.video}`}>
       <SanityMuxPlayer
@@ -22,6 +20,12 @@ export const VideoPlayer: FC<Props> = ({ video }) => {
         showControls={true}
         muted={false}
         loop={false}
+        poster={urlFor(video.mainImage)
+          .auto("format")
+          .width(960)
+          .height(540)
+          .quality(85)
+          .url()}
       />
       <div className={`${s.caption} ${u.sans} ${u.uppercase}`}>
         {locale === "cy" && video.__i18n_refs
