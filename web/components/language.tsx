@@ -1,22 +1,26 @@
+import { FC } from "react"
 import { useRouter } from "next/router"
 import { capitalize } from "lib/utils"
+import { Label } from "lib/interfaces"
+import { Localize } from "components/localize"
 import u from "styles/utils.module.scss"
-import s from "components/layout.module.scss"
 
-const Language = () => {
+interface Props {
+  labels: Label[]
+}
+
+export const Language: FC<Props> = ({ labels }) => {
   const router = useRouter()
   const { pathname, asPath, query, locale, locales } = router
   const languages = ["cymraeg", "english"]
   return (
-    <div className={`${s.langLink} ${u.fgDark} ${u.pointer}`}>
+    <>
       <span className={u.screenReaderText}>
-        {locale === "cy"
-          ? "Switch language to English"
-          : "Newid yr iaith i Gymraeg"}
+        <Localize data={labels[25].text} />
       </span>
       {locale === "cy" ? (
         <button
-          className={`${s.langLink} ${u.pointer} ${u.uppercase}`}
+          className={`${u.uppercase} ${u.pointer}`}
           onClick={() => {
             router.push(
               {pathname, query},
@@ -24,22 +28,19 @@ const Language = () => {
               {scroll: false, shallow: true, locale: locales[0]}
             )
           }}
-        >
-          {capitalize(languages[1])}
-        </button>
+        >{capitalize(languages[1])}</button>
       ) : (
         <button
-          className={`${s.langLink} ${u.pointer} ${u.uppercase} ${u.fgDark}`}
+          className={`${u.uppercase} ${u.pointer}`}
           onClick={() => {
             router.push(
-              {pathname, query}, asPath, {scroll: false, shallow: true, locale: locales[1]}
+              {pathname, query},
+              asPath,
+              {scroll: false, shallow: true, locale: locales[1]}
             )
           }}
-        >
-          {" "}{capitalize(languages[0])}
-        </button>
+        >{" "}{capitalize(languages[0])}</button>
       )}
-    </div>
+    </>
   )
 }
-export default Language

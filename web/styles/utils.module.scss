@@ -1,308 +1,116 @@
-@use 'foundation/breakpoints' as b;
+@use 'base/breakpoints' as b;
 
 .container {
+  max-width: calc(1200px + 4rem);
   padding: 1rem 2rem;
-}
-
-.hide {
-  display: none;
-}
-
-.smHide {
-  @include b.mq(sm) {
-    display: none;
-  }
-}
-
-.mdHide {
+  padding: 0 1rem;
+  margin-inline: auto;
   @include b.mq(md) {
-    display: none;
+    padding: 0 2rem;
   }
-}
-
-.lgHide {
-  @include b.mq(lg) {
-    display: none;
-  }
-}
-
-.smBlock {
-  @include b.mq(sm) {
-    display: block;
-  }
-}
-
-.mdBlock {
-  @include b.mq(md) {
-    display: block;
-  }
-}
-
-.lgBlock {
-  @include b.mq(lg) {
-    display: block;
-  }
-}
-
-.flex {
-  display: flex;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.fAuto {
-  flex: auto;
-}
-
-.fNone {
-  flex: none;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.lgColumn {
-  @include b.mq(lg) {
-    flex-direction: column;
-  }
-}
-
-.grid {
-  display: grid;
-}
-
-.gapSmall {
-  gap: 3rem;
-  @include b.mq(md) {
-    gap: 5rem;
-  }
-}
-
-.gapLgNone {
-  @include b.mq(lg) {
-    gap: 0;
-  }
-}
-
-.inline {
-  display: inline;
-}
-
-.block {
-  display: block;
-}
-
-.inlineBlock {
-  display: inline-block;
-}
-
-.relative {
-  position: relative;
 }
 
 .absolute {
   position: absolute;
 }
 
-.cover {
-  object-fit: cover;
+.relative {
+  position: relative;
 }
 
-.ofHidden {
-  overflow: hidden;
+.inlineBlock {
+  display: inline-block;
 }
 
-.h100 {
-  height: 100%;
+.inline {
+  display: inline;
 }
 
-.w100 {
-  width: 100%;
+.flex {
+  display: flex;
 }
 
-.w50 {
-  width: 50%;
+.grid {
+  display: grid;
 }
 
-.bgDark {
-  background-color: var(--foreground);
+.hidden {
+  display: none;
 }
 
-.bgLight {
-  background-color: var(--background);
+.gap4 {
+  gap: 1rem;
 }
 
-.bgWhite {
-  background-color: var(--white);
-}
-
-.fgDark {
-  color: var(--foreground);
-}
-
-.fgLight {
-  color: var(--background);
-}
-
-.fgWhite {
-  color: var(--white);
-}
-
-.textDark {
-  color: var(--foreground);
-}
-
-.border {
-  border: var(--border);
-}
-
-.shadow {
-  box-shadow: var(--shadow);
-}
-
-.center {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.mlAuto {
-  margin-left: auto;
-}
-
-.mrAuto {
-  margin-right: auto;
-}
-
-.mtLarge {
-  margin-top: 10rem;
-  @include b.mq(xl) {
-    margin-top: 7rem;
-  }
-  @include b.mq(sm) {
-    margin-top: 6rem;
-  }
-}
-
-.mtSmall {
-  margin-top: 10rem;
-  @include b.mq(xl) {
-    margin-top: 7rem;
-  }
-  @include b.mq(sm) {
-    margin-top: 6rem;
-  }
-}
-
-.mtAuto {
-  margin-top: auto;
-}
-
-.mbXl {
-  margin-bottom: 15rem;
-  @include b.mq(xl) {
-    margin-bottom: 10rem;
-  }
-  @include b.mq(sm) {
-    margin-bottom: 9rem;
-  }
-}
-
-.mbLarge {
-  margin-bottom: 10rem;
-  @include b.mq(sm) {
-    margin-bottom: 6rem;
-  }
-}
-
-.mbMedium {
-  margin-bottom: 5rem;
-  @include b.mq(lg) {
-    margin-bottom: 7rem;
-  }
-  @include b.mq(md) {
-    margin-bottom: 7rem;
-  }
-  @include b.mq(sm) {
-    margin-bottom: 7rem;
-  }
-}
-
-.mbSmall {
-  margin-bottom: 6rem;
-  @include b.mq(md) {
-    margin-bottom: 4rem;
-  }
-}
-
-.pbSmall {
-  padding-bottom: 1.5rem;
-  @include b.mq(md) {
-    padding-bottom: 1rem;
-  }
-  @include b.mq(sm) {
-    padding-bottom: 0.7rem;
-  }
-}
-
-.lineSpacer {
-  height: 1rem;
+.justifyCenter {
+  justify-content: center;
 }
 
 .sans {
-  font-family: var(--sans);
+  font-family: var(--font-sans-serif);
 }
 
-.serif {
-  font-family: var(--serif);
+.mono {
+  font-family: var(--font-monospace);
 }
 
-.uppercase {
-  text-transform: uppercase;
+.fontMedium {
+  font-weight: 500;
 }
 
-.lowercase {
-  text-transform: lowercase;
+.bold {
+  font-weight: 700;
 }
 
 .textCenter {
   text-align: center;
 }
 
-.smTextLeft {
-  @include b.mq(sm) {
-    text-align: left;
-  }
-}
-
-.textLeft {
-  text-align: left;
-}
-
 .textRight {
   text-align: right;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.underline {
-  text-decoration: underline;
 }
 
 .noUnderline {
   text-decoration-line: none;
 }
 
-.lh2 {
-  line-height: 2;
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bgTransparent {
+  background-color: transparent;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.horizontalList {
+  display: inline;
+  &:not(:last-child)::after {
+    content: ', ';
+  }
+}
+
+.ellipsis2 {
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.emailAddress {
+  font-size: 1.4rem;
+  color: var(--grey-550);
+  text-decoration-thickness: 1.7px;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: var(--grey-750);
+    transition: color 0.3s ease-in-out;
+  }
 }
 
 .screenReaderText {

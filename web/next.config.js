@@ -1,3 +1,4 @@
+/** @type {import("next").NextConfig} */
 module.exports = {
   async headers() {
     return [
@@ -9,7 +10,7 @@ module.exports = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "http://sendgrid.com" },
           { key: "Access-Control-Allow-Methods", value: "POST, GET, OPTIONS" },
-          { key: "Access-Control-Allow-Headers", value: "X-Requested-With" },
+          { key: "Access-Control-Allow-Headers", value: "X-Requested-With" }
         ]
       }
     ]
@@ -17,20 +18,21 @@ module.exports = {
   i18n: {
     locales: ["en", "cy"],
     defaultLocale: "en",
-    localeDetection: false,
     domains: [
       {
         domain: "artsed.wales",
-        defaultLocale: "en"
+        defaultLocale: "en",
+        http: true
       },
       {
         domain: "celfadd.cymru",
-        defaultLocale: "cy"
-      },
+        defaultLocale: "cy",
+        http: true
+      }
     ]
   },
   images: {
-    domains: ["cdn.sanity.io"],
+    domains: ["cdn.sanity.io"]
   },
   swcMinify: true
 }

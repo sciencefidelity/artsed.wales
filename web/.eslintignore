@@ -3,7 +3,5 @@ dist
 .nova
 .next
 coverage
-tsconfig.json
-.eslintrc.json
-package.json
+*.json
 generated

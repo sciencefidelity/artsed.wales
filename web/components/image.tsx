@@ -1,8 +1,16 @@
 import { FC } from "react"
 import { urlFor } from "lib/utils"
-import { ImageProps } from "lib/interfaces"
+import { Image } from "lib/interfaces"
 
-const Image: FC<ImageProps> = ({ alt, height, image, width, lazy }) => {
+interface Props {
+  alt: string
+  image: Image
+  height?: number
+  lazy?: boolean
+  width?: number
+}
+
+export const SanityImage: FC<Props> = ({ alt, height, image, width, lazy }) => {
   const hotspot = image.hotspot
   const position = hotspot
     ? `${Math.round(hotspot.x * 100)}% ${Math.round(hotspot.y * 100)}%`
@@ -28,4 +36,3 @@ const Image: FC<ImageProps> = ({ alt, height, image, width, lazy }) => {
     />
   )
 }
-export default Image

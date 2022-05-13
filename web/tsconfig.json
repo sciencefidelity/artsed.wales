@@ -15,10 +15,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": "./",
     "typeRoots": ["node_modules/@types", "types"],
-    "types": ["node", "react"],
-    "baseUrl": ".",
+    "types": [
+      "mailchimp__mailchimp_marketing",
+      "node",
+      "react",
+      "react-dom"
+    ],
     "paths": {
+      "*" : ["types/*", "*"],
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
       "@/generated/*": ["generated/*"],
@@ -26,6 +32,6 @@
       "@/styles/*": ["styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.d.ts"],
   "exclude": ["node_modules"]
 }

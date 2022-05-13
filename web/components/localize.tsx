@@ -1,12 +1,11 @@
 import { useRouter } from "next/router"
-import type { LocaleEmail, LocaleString } from "generated/schema"
+import type { LocaleString } from "lib/interfaces"
 
-const Localize = ({ data }: {
-  data: LocaleString | LocaleEmail
+export const Localize = ({ data }: {
+  data: LocaleString
 }) => {
   const { locale } = useRouter()
   return (
     <>{locale === "cy" && data.cy ? data.cy : data.en}</>
   )
 }
-export default Localize
