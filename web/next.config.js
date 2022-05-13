@@ -22,17 +22,15 @@ module.exports = {
       {
         domain: "artsed.wales",
         defaultLocale: "en",
-        http: true
       },
       {
         domain: "celfadd.cymru",
         defaultLocale: "cy",
-        http: true
       }
     ]
   },
   images: {
     domains: ["cdn.sanity.io"]
-  },
-  swcMinify: true
+  }
+  // swcMinify: true
 }
