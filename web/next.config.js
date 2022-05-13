@@ -31,6 +31,6 @@ module.exports = {
   },
   images: {
     domains: ["cdn.sanity.io"]
-  }
-  // swcMinify: true
+  },
+  swcMinify: true
 }
