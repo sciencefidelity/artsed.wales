@@ -9,7 +9,6 @@ import u from "styles/utils.module.scss"
 interface Props { video: Video }
 
 export const VideoPlayer: FC<Props> = ({ video }) => {
-  console.log(urlFor(video.mainImage))
   const { locale } = useRouter()
   return (
     <div className={`${s.video}`}>
