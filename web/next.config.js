@@ -17,7 +17,7 @@ module.exports = {
   },
   i18n: {
     locales: ["en", "cy"],
-    defaultLocale: "en",
+    localeDetection: false,
     domains: [
       {
         domain: "artsed.wales",
