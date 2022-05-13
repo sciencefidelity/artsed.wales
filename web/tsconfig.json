@@ -27,7 +27,6 @@
       "*" : ["types/*", "*"],
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
-      "@/generated/*": ["generated/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"]
     }
