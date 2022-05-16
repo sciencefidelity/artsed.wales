@@ -12,7 +12,8 @@
     "@sanity/desk-tool",
     "@sanity/document-internationalization",
     "@sanity/language-filter",
-    "mux-input"
+    "mux-input",
+    "dashboard-widget-vercel"
   ],
   "env": {
     "development": {
