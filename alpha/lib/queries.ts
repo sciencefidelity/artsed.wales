@@ -271,12 +271,9 @@ export const eventQuery = groq`{
 }`
 
 export const eventPathQuery = groq`
-  *[
-    _type == "event"
-    && defined(slug)
-    && __i18n_lang == "en"
-    && ${omitDrafts}
-  ][].slug.current
+  *[_type == "event" && defined(slug) && __i18n_lang == "en" && ${omitDrafts}]{
+    "params": { "slug": slug.current }
+  }
 `
 
 export const artformQuery = groq`{
@@ -284,25 +281,23 @@ export const artformQuery = groq`{
 }`
 
 export const artformPathQuery = groq`
-  *[
-    _type == "artform"
-    && defined(slug)
-    && __i18n_lang == "en"
-    && ${omitDrafts}
-  ][].slug.current
+  *[_type == "artform" && defined(slug) && __i18n_lang == "en" && ${omitDrafts}]{
+    "params": { "slug": slug.current }
+  }
 `
+
+export const fourohfourQuery = groq`{
+  ${company}, ${labels}, ${navigation}, ${settings}
+}`
 
 export const keystageQuery = groq`{
   ${company}, ${events}, ${keystage}, ${labels}, ${navigation}, ${settings}
 }`
 
 export const keystagePathQuery = groq`
-  *[
-    _type == "keystage"
-    && defined(slug)
-    && __i18n_lang == "en"
-    && ${omitDrafts}
-  ][].slug.current
+  *[_type == "keystage" && defined(slug) && __i18n_lang == "en" && ${omitDrafts}]{
+    "params": { "slug": slug.current }
+  }
 `
 
 export const postQuery = groq`{
@@ -310,12 +305,9 @@ export const postQuery = groq`{
 }`
 
 export const postPathQuery = groq`
-  *[
-    _type == "post"
-    && defined(slug)
-    && __i18n_lang == "en"
-    && ${omitDrafts}
-  ][].slug.current
+  *[_type == "post" && defined(slug) && __i18n_lang == "en" && ${omitDrafts}]{
+    "params": { "slug": slug.current }
+  }
 `
 
 export const staffQuery = groq`{
@@ -323,11 +315,8 @@ export const staffQuery = groq`{
 }`
 
 export const staffPathQuery = groq`
-  *[
-    _type == "staff"
-    && defined(slug)
-    && __i18n_lang == "en"
-    && ${omitDrafts}
-  ][].slug.current
+  *[_type == "staff" && defined(slug) && __i18n_lang == "en" && ${omitDrafts}]{
+    "params": { "slug": slug.current }
+  }
 `
 

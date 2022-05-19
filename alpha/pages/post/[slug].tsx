@@ -26,22 +26,16 @@ import {
   Event,
   Label,
   Navigation,
+  Path,
   Post,
   Settings
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/post.module.scss"
 
-interface Paths {
-  params: {
-    slug: string
-  }
-}
-
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const data = await sanityClient.fetch(postPathQuery)
-  const paths = data.map((slug: string[]) => ({ params: { slug } }))
-  const pathsWithLocales = paths.flatMap((path: Paths) => {
+  const paths = await sanityClient.fetch(postPathQuery)
+  const pathsWithLocales = paths.flatMap((path: Path) => {
     return locales.map(locale => ({...path, locale}) )
   })
   return {

@@ -30,21 +30,15 @@ import {
   Event,
   Label,
   Navigation,
+  Path,
   Settings
 } from "lib/interfaces"
 import s from "styles/event.module.scss"
 import u from "styles/utils.module.scss"
 
-interface Paths {
-  params: {
-    slug: string
-  }
-}
-
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const data = await sanityClient.fetch(eventPathQuery)
-  const paths = data.map((slug: string[]) => ({ params: { slug } }))
-  const pathsWithLocales = paths.flatMap((path: Paths) => {
+  const paths = await sanityClient.fetch(eventPathQuery)
+  const pathsWithLocales = paths.flatMap((path: Path) => {
     return locales.map(locale => ({...path, locale}) )
   })
   return {

@@ -24,21 +24,15 @@ import {
   Label,
   Keystage,
   Navigation,
+  Path,
   Settings
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/keystage.module.scss"
 
-interface Paths {
-  params: {
-    slug: string
-  }
-}
-
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const data = await sanityClient.fetch(keystagePathQuery)
-  const paths = data.map((slug: string[]) => ({ params: { slug } }))
-  const pathsWithLocales = paths.flatMap((path: Paths) => {
+  const paths = await sanityClient.fetch(keystagePathQuery)
+  const pathsWithLocales = paths.flatMap((path: Path) => {
     return locales.map(locale => ({...path, locale}) )
   })
   return {

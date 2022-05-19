@@ -2,11 +2,11 @@ import { GetStaticProps } from "next"
 import sanityClient from "lib/sanityClient"
 import { Layout } from "components/layout"
 import { Localize } from "components/localize"
-import { indexQuery } from "lib/queries"
+import { fourohfourQuery } from "lib/queries"
 import { Company, Label, Navigation, Settings } from "lib/interfaces"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await sanityClient.fetch(indexQuery)
+  const data = await sanityClient.fetch(fourohfourQuery)
   return {
     props: { data }
   }

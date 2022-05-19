@@ -172,6 +172,12 @@ export interface PageSettings {
   tags: Tag[]
 }
 
+export interface Path {
+  params: {
+    slug: string
+  }
+}
+
 export type PortableText = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
