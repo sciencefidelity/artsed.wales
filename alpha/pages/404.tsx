@@ -1,5 +1,4 @@
 import { GetStaticProps } from "next"
-import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import { Layout } from "components/layout"
 import { Localize } from "components/localize"
@@ -14,7 +13,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Custom404 = ({ data }) => {
-  const { locale } = useRouter()
   const { company, labels, navigation, settings } = data as {
     company: Company
     labels: Label[]
