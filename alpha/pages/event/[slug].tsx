@@ -35,21 +35,26 @@ import {
 import s from "styles/event.module.scss"
 import u from "styles/utils.module.scss"
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await sanityClient.fetch(eventPathQuery)
+interface Paths {
+  params: {
+    slug: string
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const data = await sanityClient.fetch(eventPathQuery)
+  const paths = data.map((slug: string[]) => ({ params: { slug } }))
+  const pathsWithLocales = paths.flatMap((path: Paths) => {
+    return locales.map(locale => ({...path, locale}) )
+  })
   return {
-    paths: paths.map((slug: string[]) => ({ params: { slug } })),
-    fallback: true
+    paths: pathsWithLocales,
+    fallback: false
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug = "" } = params
   const data = await sanityClient.fetch(eventQuery, { slug })
-  if (!data) {
-    return {
-      notFound: true
-    }
-  }
   return {
     props: {
       data

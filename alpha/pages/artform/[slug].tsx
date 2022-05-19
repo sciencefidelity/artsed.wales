@@ -29,10 +29,20 @@ import {
 import u from "styles/utils.module.scss"
 import s from "styles/artform.module.scss"
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await sanityClient.fetch(artformPathQuery)
+interface Paths {
+  params: {
+    slug: string
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const data = await sanityClient.fetch(artformPathQuery)
+  const paths = data.map((slug: string[]) => ({ params: { slug } }))
+  const pathsWithLocales = paths.flatMap((path: Paths) => {
+    return locales.map(locale => ({...path, locale}) )
+  })
   return {
-    paths: paths.map((slug: string[]) => ({ params: { slug } })),
+    paths: pathsWithLocales,
     fallback: false
   }
 }
