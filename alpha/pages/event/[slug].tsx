@@ -226,7 +226,8 @@ const EventPage = ({ data }) => {
               <strong className={`${u.bold}`}>
                 <Localize data={labels[6].text} />&#58;{" "}
               </strong>
-              {event.location}
+              {locale === "cy" && event.__i18n_refs.location
+                ? event.__i18n_refs.location : event.location}
             </p>
           </div>
           <hr className={`${s.hr}`} />
