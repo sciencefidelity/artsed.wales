@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(eventPathQuery)
   return {
     paths: paths.map((slug: string[]) => ({ params: { slug } })),
-    fallback: true
+    fallback: false
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -55,10 +55,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const EventPage = ({ data }) => {
   const router = useRouter()
   const { locale } = router
-  if(router.isFallback) {
+  if (router.isFallback) {
     return <ErrorTemplate />
   }
-  if(!data) {
+  if (!data) {
     return (<>
       <Head><meta name="robots" content="noindex" /></Head>
       <ErrorTemplate />
