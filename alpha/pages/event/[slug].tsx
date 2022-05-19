@@ -39,12 +39,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await sanityClient.fetch(eventPathQuery)
   return {
     paths: paths.map((slug: string[]) => ({ params: { slug } })),
-    fallback: false
+    fallback: true
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug = "" } = params
   const data = await sanityClient.fetch(eventQuery, { slug })
+  if (!data) {
+    return {
+      notFound: true
+    }
+  }
   return {
     props: {
       data
