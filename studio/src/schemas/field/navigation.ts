@@ -43,7 +43,20 @@ export default {
                 { type: 'video' }
               ]
             }
-          ]
+          ],
+          preview: {
+            select: {
+              title: 'label.en',
+              subtitle: 'label.cy'
+            },
+            prepare({ title, subtitle }) {
+              return {
+                title: title,
+                subtitle: subtitle,
+                media: Compass
+              }
+            }
+          }
         }
       ],
       sortable: true,
@@ -76,7 +89,20 @@ export default {
                 { type: 'video' }
               ]
             }
-          ]
+          ],
+          preview: {
+            select: {
+              title: 'label.en',
+              subtitle: 'label.cy'
+            },
+            prepare({ title, subtitle }) {
+              return {
+                title: title,
+                subtitle: subtitle,
+                media: Compass
+              }
+            }
+          }
         }
       ],
       sortable: true,
