@@ -7,8 +7,6 @@
   overflow-x: auto;
   overflow-y: hidden;
   -ms-overflow-style: none;
-  scrollbar-width: none;
-  // filter: grayscale(100%);
   @include b.mq(md) {
     height: unset;
     aspect-ratio: 3 / 1;
@@ -23,23 +21,33 @@
 
 .heroContent {
   display: grid;
-  inset: auto 0 auto auto;
-  // place-items: center;
+  place-items: center;
   width: 100vw;
-  // max-width: 1504px;
-  // height: 100%;
-  aspect-ratio: 3 / 1;
+  height: 100%;
   margin-inline: auto;
   margin-bottom: 0;
 }
 
 .title {
-  margin-bottom: 1.5rem;
-  font-size: 5rem;
-  color: var(--grey-000);
+  font-size: 4.5vw;
+  color: var(--grey-750);
+  width: 50vw;
   font-weight: 700;
   text-align: center;
-  background-color: hsla(0, 0%, 0%, 0.4);
+}
+
+.icon {
+  display: none;
+  width: clamp(1rem, 2.65vw, 2.5rem);
+  margin-inline: auto;
+  margin-bottom: 2.5vw;
+  user-select: none;
+  @include b.mq(md) {
+    display: block;
+  }
+  svg {
+    fill: var(--grey-750);
+  }
 }
 
 .video {
@@ -51,14 +59,11 @@
 
 .content {
   max-width: 710px;
-  margin-block: 7rem 1rem;
   margin-inline: 0;
   @include b.mq(md) {
-    margin-block: 7rem 1rem;
     margin-inline: auto;
   }
   @include b.mq(lg) {
-    margin-block: 7rem 1rem;
     margin-inline: 0 2rem;
   }
   blockquote {
@@ -89,13 +94,16 @@
   }
 }
 
-.h1 {
-  margin-bottom: 1.5rem;
-  font-size: 2.3rem;
-  color: var(--grey-850);
-  @include b.mq(md) {
-    font-size: 3.6rem;
-  }
+.videoPlayer {
+  margin-block: 7rem 2rem;
+  width: 100%;
+  padding-right: 5rem;
+}
+
+.date {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .hr {

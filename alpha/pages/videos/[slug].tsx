@@ -14,9 +14,10 @@ import sanityClient from "lib/sanityClient"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
 import { ErrorTemplate } from "components/errorTemplate"
+import { Icon } from "components/icons/icon"
 import { Layout } from "components/layout"
 import { PostDate } from "components/date"
-import { SanityImage } from "components/image"
+// import { SanityImage } from "components/image"
 import Sidebar from "components/sidebar"
 import { VideoPlayer } from "components/videoPlayer"
 import { videoQuery, videoPathQuery } from "lib/queries"
@@ -31,6 +32,7 @@ import {
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
 import s from "styles/video.module.scss"
+import p from "styles/patterns.module.scss"
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths = await sanityClient.fetch(videoPathQuery)
@@ -117,42 +119,43 @@ const VideoPage = ({ data }) => {
       pageHead={pageHead}
       settings={settings}
     >
-      <div className={`${s.hero}`}>
+      <div className={`${s.hero} ${p.cross}`}>
         <div className={`${s.heroContent} ${u.absolute}`}>
-          <h1
-            className={`${s.title} ${u.mono}`}
-            dangerouslySetInnerHTML={{
-              __html: locale === "cy" && video.__i18n_refs
-                ? video.__i18n_refs.title : video.title }}
-          />
+          <div>
+            <div className={`${s.icon}`}><Icon name={"Icons"} /></div>
+            <h1
+              className={`${s.title} ${u.mono}`}
+              dangerouslySetInnerHTML={{
+                __html: locale === "cy" && video.__i18n_refs
+                  ? video.__i18n_refs.title : video.title }}
+            />
+          </div>
         </div>
-        {video.mainImage && <SanityImage
-          image={video.mainImage}
+        {/* {video.mainImage && <SanityImage
+          image={video.facebook.image}
           alt={video.title}
           lazy={false}
           saturation={-100}
-        />}
+        />} */}
       </div>
       <div className={`${u.container}`}>
-        <div className={`${s.video} ${u.grid} ${u.bold}`}>
-          <section className={`${s.content}`}>
-            <VideoPlayer video={video}/>
-            {video.title &&
-              <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
-                {locale === "cy" && video.__i18n_refs
-                  ? video.__i18n_refs.title : video.title}
-              </h1>
-            }
-            {video.publishedAt && <div className={`${s.date}`}>
-              Published on{" "}
-              <PostDate date={video.publishedAt} />
-            </div>}
-            {video.body && <PortableText
-              value={locale === "cy" && video.__i18n_refs
-                ? video.__i18n_refs.body : video.body}
-              components={components}
-            />}
-          </section>
+        <div className={`${s.video} ${u.grid}`}>
+          <div>
+            <div className={`${s.videoPlayer}`}>
+              <VideoPlayer video={video}/>
+            </div>
+            <section className={`${s.content}`}>
+              {video.publishedAt && <div className={`${s.date}`}>
+                Published on{" "}
+                <PostDate date={video.publishedAt} />
+              </div>}
+              {video.body && <PortableText
+                value={locale === "cy" && video.__i18n_refs
+                  ? video.__i18n_refs.body : video.body}
+                components={components}
+              />}
+            </section>
+          </div>
           <hr className={`${s.hr}`} />
           <Sidebar events={events} title={labels[10].text} />
         </div>
