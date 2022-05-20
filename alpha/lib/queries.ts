@@ -31,8 +31,8 @@ const staffFields = `
 `
 
 const videoFields = `
-  _id, _type, ${body}, mainImage, publishedAt, ${slug}, title, videoLink,
-  "asset": video.asset->
+  _id, _type, ${body}, mainImage, publishedAt, ${seo}, ${slug}, title,
+  videoLink, "asset": video.asset->
 `
 
 const localeSeo = `
@@ -251,6 +251,16 @@ const videos = `
   }
 `
 
+const video = `
+  "video": *[
+    _type == "video"
+    && __i18n_lang == "en"
+    && slug.current == $slug
+    && ${omitDrafts}
+  ][0]{ ${videoFields}, __i18n_refs[0]->{ ${videoFields} },
+  }
+`
+
 export const indexQuery = groq`{
   ${company}, ${engagement}, ${events}, ${labels}, ${navigation}, ${pages},
   ${quotes}, ${settings}, ${videos}
@@ -316,6 +326,16 @@ export const staffQuery = groq`{
 
 export const staffPathQuery = groq`
   *[_type == "staff" && defined(slug) && __i18n_lang == "en" && ${omitDrafts}]{
+    "params": { "slug": slug.current }
+  }
+`
+
+export const videoQuery = groq`{
+  ${company}, ${events}, ${labels}, ${navigation}, ${settings}, ${video}
+}`
+
+export const videoPathQuery = groq`
+  *[_type == "video" && defined(slug) && __i18n_lang == "en" && ${omitDrafts}]{
     "params": { "slug": slug.current }
   }
 `

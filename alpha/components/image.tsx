@@ -7,10 +7,18 @@ interface Props {
   image: Image
   height?: number
   lazy?: boolean
+  saturation?: number
   width?: number
 }
 
-export const SanityImage: FC<Props> = ({ alt, height, image, width, lazy }) => {
+export const SanityImage: FC<Props> = ({
+  alt,
+  height,
+  image,
+  lazy,
+  saturation,
+  width
+}) => {
   const hotspot = image.hotspot
   const position = hotspot
     ? `${Math.round(hotspot.x * 100)}% ${Math.round(hotspot.y * 100)}%`
@@ -22,6 +30,7 @@ export const SanityImage: FC<Props> = ({ alt, height, image, width, lazy }) => {
         .width(width)
         .height(height)
         .quality(85)
+        .saturation(saturation)
         .url()}
       alt={alt}
       width={width}

@@ -250,13 +250,13 @@ export interface Staff extends SanityDocument {
 export interface Tag extends SanityDocument {
   _type: "tag"
   description: string
-  facebookCard: SocialCard
+  facebook: SocialCard
   image: Image
   meta: MetaData
   posts: Post[]
   slug: string
   title: string
-  twitterCard: SocialCard
+  twitter: SocialCard
 }
 
 export interface Video extends SanityDocument {
@@ -264,10 +264,13 @@ export interface Video extends SanityDocument {
   _type: "video"
   asset: any
   body: PortableText
+  facebook: SocialCard
   mainImage: Image
+  meta: MetaData
   publishedAt: string
   slug: string
   title: string
+  twitter: SocialCard
   videoLink: string
 }
 

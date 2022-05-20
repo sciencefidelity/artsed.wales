@@ -1,4 +1,3 @@
-
 /**
  * Staff component (dynamic)
  *
