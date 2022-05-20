@@ -13,6 +13,7 @@ import {
   ClosedLockWithKey,
   Compass,
   Date,
+  EarthAfrica,
   FilmProjector,
   Gear,
   GreenBook,
@@ -227,7 +228,7 @@ const items = [
         ])
     ),
   S.divider(),
-  Structure.getMaintenanceListItem().serialize(),
+  Structure.getMaintenanceListItem().icon(EarthAfrica).serialize(),
   ...S.documentTypeListItems().filter(
     item =>
       ![

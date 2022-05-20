@@ -9,7 +9,7 @@ export default {
   icon: WritingHand,
   i18n,
   initialValue: {
-    __i18n_lang: 'en',
+    __i18n_lang: i18n.base,
     __i18n_refs: []
   },
   groups: [
