@@ -122,7 +122,7 @@ const VideoPage = ({ data }) => {
       <div className={`${s.hero} ${p.cross}`}>
         <div className={`${s.heroContent} ${u.absolute}`}>
           <div>
-            <div className={`${s.icon}`}><Icon name={"Icons"} /></div>
+            <div className={`${s.icon}`}><Icon name={"CameraMovie"} /></div>
             <h1
               className={`${s.title} ${u.mono}`}
               dangerouslySetInnerHTML={{
@@ -144,16 +144,18 @@ const VideoPage = ({ data }) => {
             <div className={`${s.videoPlayer}`}>
               <VideoPlayer video={video}/>
             </div>
-            <section className={`${s.content}`}>
+            <section>
               {video.publishedAt && <div className={`${s.date}`}>
                 Published on{" "}
                 <PostDate date={video.publishedAt} />
               </div>}
-              {video.body && <PortableText
-                value={locale === "cy" && video.__i18n_refs
-                  ? video.__i18n_refs.body : video.body}
-                components={components}
-              />}
+              <div className={`${s.content}`}>
+                {video.body && <PortableText
+                  value={locale === "cy" && video.__i18n_refs
+                    ? video.__i18n_refs.body : video.body}
+                  components={components}
+                />}
+              </div>
             </section>
           </div>
           <hr className={`${s.hr}`} />

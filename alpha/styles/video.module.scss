@@ -60,6 +60,7 @@
 .content {
   max-width: 710px;
   margin-inline: 0;
+  margin-block: 3rem 2rem;
   @include b.mq(md) {
     margin-inline: auto;
   }
@@ -103,7 +104,7 @@
 .date {
   font-size: 1.4rem;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hr {
