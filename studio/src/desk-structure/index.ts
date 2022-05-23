@@ -203,7 +203,7 @@ const items = [
     .icon(Gear)
     .child(
       S.list()
-        .title('Taxonomy')
+        .title('Settings')
         .items([
           S.listItem()
             .title('Settings')
