@@ -5,7 +5,6 @@
   },
   "plugins": [
     "@sanity/base",
-    "@sanity/color-input",
     "@sanity/dashboard",
     "@sanity/default-layout",
     "@sanity/default-login",
