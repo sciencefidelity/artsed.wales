@@ -1,1 +1,5 @@
-{}
+{
+    "idStructure": "delimiter",
+    "referenceBehavior": "weak",
+    "languages": ["cy", "en"]
+}
