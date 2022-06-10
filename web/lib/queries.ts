@@ -66,7 +66,7 @@ const eventFields = `
 
 const events = `
   "events": *[
-    _type == "event" && __i18n_lang == "en" && ${omitDrafts}
+    _type == "event" && __i18n_lang == "en" && publish == true && ${omitDrafts}
   ] | order(dateStart){ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
 `
 
