@@ -52,6 +52,12 @@ export default {
   ],
   fields: [
     {
+      name: 'publish',
+      title: 'Publish',
+      type: 'boolean',
+      group: 'basicInfo'
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
