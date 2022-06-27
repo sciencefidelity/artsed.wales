@@ -348,7 +348,7 @@ export default {
     },
     {
       name: 'feature',
-      title: 'Feature this post',
+      title: 'Feature this event',
       type: 'boolean',
       group: 'settings',
       initialValue: false
