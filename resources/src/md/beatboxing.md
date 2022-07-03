@@ -7,7 +7,7 @@ subtitle: Creating contemporary music and lyrics inspired by culture and heritag
 
 This creative lyric and music project has been tried and tested with schools by the authors Rufus Mufasa, Beat Technique and Mr Phormula. The project is designed to be pupil-centred,fun, engaging,relevant and in-line with the Welsh Government Digital Competence Framework, while exploring pupil’s individual creativity through the Expressive Arts Curriculum framework, and facilitating the curriculum’s Four Purposes. The projects have been designed specifically to enable a focus on the creative process, as well as the creative output.
 
-*Beatboxing, rap, and spoken word* will develop pupils’ skills and confidence in music, performance, digitalmusic production, and poetry while engaging them with the reading of objects and exploration of both historic and contemporary heritage for learning. The course, and this accompanying resource have been developed to support learning together in partnership with artists, cultural organisations and schools.
+_Beatboxing, rap, and spoken word_ will develop pupils’ skills and confidence in music, performance, digitalmusic production, and poetry while engaging them with the reading of objects and exploration of both historic and contemporary heritage for learning. The course, and this accompanying resource have been developed to support learning together in partnership with artists, cultural organisations and schools.
 
 The projects in this resource can be simplified, adapted or further developed to suit your needs. There are plenty of opportunities for filmmaking, recording and performing, all of which help to develop wider creative attributes including resilience, presentation skills, communication skills, and collaboration that are so important to equip learners to thrive in our ever-changing world.
 
@@ -174,16 +174,16 @@ The central objective of this project is to study, describe and document objects
 
 Use this table to plan your project.
 
-| Session | |
-| --- | --- |
-| 1 | **Initial exploration:**<br />Explore the art-form and selected contemporary artists and creators using the internet and class discussion. Share some examples and discuss these in the classroom. What suggestions do the pupils have? What kind of rap, beatboxing or spoken word do they like? |
-| 2 | **Explore a theme:**<br />Introduce or select together with pupils the wider project theme. This theme will inform your work over the term. Example themes include: the Romans, industry, local history, world conflict, sustainability, the body, contemporary art, street art. |
-| 3 | **Researching the site:**<br />A session on the history and heritage of the site or museum you will visit. Think about the stories, the landscape, smells,tastes and so on that might be expected at the site. Include some time to explore ideas around responding to objects. |
-| 4 | **Planning ahead:**<br />Pupils plan how they are going to record their visit, and collect material from which to create their raps, beatbox, or spoken word. This might include photography, film, drawing, note taking, making notebooks, sound recordings and so on. Consider whether pupils should work in teams and/or adopt specific roles. |
-| 5 | <p>**The visit – object exploration and analysis:**<br />Museums and galleries often facilitate guided tours for school groups. Book tours in advance, but for this project, make sure the pupils have time to explore the objects that especially interest them. <p>Upon arrival at the museum, split pupils into groups and encourage them to create mind maps, word banks and pictures (digitally or hand drawn) describing in detail the objects that they choose to examine which are of interest.</p><p>The aim of this exercise is to document and analyse objects in detail in order to further examine and develop a creative framework in school.</p><p>**For example:**<br /><ol><li>Describe how it looks: colour, hot or cold, hard or soft, big or small,the shape, decoration,rough or smooth, lumpy, and so on.</li><li>Describe the materials: manmade, natural, metal, plastic, moulded, sculpted, wood, textile, and so on.</li><li>How does the object smell and/or sound?</li><li>What are the object’s surroundings today and in the past?</li><li>What does the label tell us aboutthe object? Are there some facts to collect?</li><li>How does the object or wider site make us feel? What emotions do we experience?</li><ol> |
-| 6 | <p>**Beatbox/rap activities – in school or at the venue:**<br />Ask groups to present their findings and observations to the class, describing in detail the objects that they have examined. Upon completion, ask each group to further develop the object exploration, by creating a character that will be associated with the object using the following exercise.</p><p>**Exercise:** Object character building and development activity</p><p>Developing a character from an object can be a great way to bring an object’s identity to life. The task here is to create a character from the object that they are examining.</p><p>**For example, the object is a Mining Drill**</p><ul><li>Who is the person using this mining drill?</li><li>Where is this person from?</li><li>Are they a happy, miserable, funny or frustrated person?</li><li>How old is that person? Maybe it’s a child?</li><li>Did this person have a nickname and why?</li><li>Are they part of a big family? Who are theirfamily and friends?</li><li>Has this person been to school?</li><li>What are they wearing?</li></ul><p>Now create word banks of key words describing the person and the object. There is no correct way of doing this, it’s entirely up to the group to create a fictional character based around the object.</p><p>Now ask the pupils to draw the character.</p> |
-| 7 | <p>**Creative writing:**<br />The next task is to transfer keywords into a story and rap.<br />See the following Methods sections for how this task is undertaken.</p><p>Ask each group to form a short rap based on their fictional character and the word banks they have created. The raps can be simple or complicated, the only task here is to further enhance the object’s identity.</p><p>For example:<br />*My Name is Dafydd, I have a skill<br />I work in the mine with a noisy drill!*<br />(Ysgol Pentraeth).</p> |
-| 8 | <p>**Performance:**<br />Once the groups have completed their raps, they are tasked with creating a simple beatbox beat to use as a backing track (see Method 1e below for tips on how to approach this). Each group elects one or two members to perform the backing track while the rest perform the rap.</p><p>Each group then performs the final rap and beatbox to the rest of the class (film recording using a phone or tablet is optional).</p> |
+| Session |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1       | **Initial exploration:**<br />Explore the art-form and selected contemporary artists and creators using the internet and class discussion. Share some examples and discuss these in the classroom. What suggestions do the pupils have? What kind of rap, beatboxing or spoken word do they like?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 2       | **Explore a theme:**<br />Introduce or select together with pupils the wider project theme. This theme will inform your work over the term. Example themes include: the Romans, industry, local history, world conflict, sustainability, the body, contemporary art, street art.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 3       | **Researching the site:**<br />A session on the history and heritage of the site or museum you will visit. Think about the stories, the landscape, smells,tastes and so on that might be expected at the site. Include some time to explore ideas around responding to objects.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 4       | **Planning ahead:**<br />Pupils plan how they are going to record their visit, and collect material from which to create their raps, beatbox, or spoken word. This might include photography, film, drawing, note taking, making notebooks, sound recordings and so on. Consider whether pupils should work in teams and/or adopt specific roles.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 5       | <p>**The visit – object exploration and analysis:**<br />Museums and galleries often facilitate guided tours for school groups. Book tours in advance, but for this project, make sure the pupils have time to explore the objects that especially interest them. <p>Upon arrival at the museum, split pupils into groups and encourage them to create mind maps, word banks and pictures (digitally or hand drawn) describing in detail the objects that they choose to examine which are of interest.</p><p>The aim of this exercise is to document and analyse objects in detail in order to further examine and develop a creative framework in school.</p><p>**For example:**<br /><ol><li>Describe how it looks: colour, hot or cold, hard or soft, big or small,the shape, decoration,rough or smooth, lumpy, and so on.</li><li>Describe the materials: manmade, natural, metal, plastic, moulded, sculpted, wood, textile, and so on.</li><li>How does the object smell and/or sound?</li><li>What are the object’s surroundings today and in the past?</li><li>What does the label tell us aboutthe object? Are there some facts to collect?</li><li>How does the object or wider site make us feel? What emotions do we experience?</li><ol>                                                                                                                      |
+| 6       | <p>**Beatbox/rap activities – in school or at the venue:**<br />Ask groups to present their findings and observations to the class, describing in detail the objects that they have examined. Upon completion, ask each group to further develop the object exploration, by creating a character that will be associated with the object using the following exercise.</p><p>**Exercise:** Object character building and development activity</p><p>Developing a character from an object can be a great way to bring an object’s identity to life. The task here is to create a character from the object that they are examining.</p><p>**For example, the object is a Mining Drill**</p><ul><li>Who is the person using this mining drill?</li><li>Where is this person from?</li><li>Are they a happy, miserable, funny or frustrated person?</li><li>How old is that person? Maybe it’s a child?</li><li>Did this person have a nickname and why?</li><li>Are they part of a big family? Who are theirfamily and friends?</li><li>Has this person been to school?</li><li>What are they wearing?</li></ul><p>Now create word banks of key words describing the person and the object. There is no correct way of doing this, it’s entirely up to the group to create a fictional character based around the object.</p><p>Now ask the pupils to draw the character.</p> |
+| 7       | <p>**Creative writing:**<br />The next task is to transfer keywords into a story and rap.<br />See the following Methods sections for how this task is undertaken.</p><p>Ask each group to form a short rap based on their fictional character and the word banks they have created. The raps can be simple or complicated, the only task here is to further enhance the object’s identity.</p><p>For example:<br />_My Name is Dafydd, I have a skill<br />I work in the mine with a noisy drill!_<br />(Ysgol Pentraeth).</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 8       | <p>**Performance:**<br />Once the groups have completed their raps, they are tasked with creating a simple beatbox beat to use as a backing track (see Method 1e below for tips on how to approach this). Each group elects one or two members to perform the backing track while the rest perform the rap.</p><p>Each group then performs the final rap and beatbox to the rest of the class (film recording using a phone or tablet is optional).</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ## Methods 1
 
@@ -197,13 +197,13 @@ When writing raps in first person and portraying stories through lyrics it is im
 
 Make deliberate vocabulary choices to create the right mood in order to draw the audience into the story. Use this table of words to get you started.
 
-| Setting | Mood | Example vocabulary |
-| --- | --- | --- |
-| city | inspired | Bright colours blared from of the paint on the wall |
-| historic house | happy | A dragon fly zips across my path, a virtual path in my vision |
-| hilltop | determined | The rain drove, into our faces, and we drove on |
-| coal mine | hopeful | Small white cloudlets could be seen hovering when we looked up from the darkness, we felt we could touch them... |
-| jungle | sad | The baboon’s cries pierced our hearts |
+| Setting        | Mood       | Example vocabulary                                                                                               |
+| -------------- | ---------- | ---------------------------------------------------------------------------------------------------------------- |
+| city           | inspired   | Bright colours blared from of the paint on the wall                                                              |
+| historic house | happy      | A dragon fly zips across my path, a virtual path in my vision                                                    |
+| hilltop        | determined | The rain drove, into our faces, and we drove on                                                                  |
+| coal mine      | hopeful    | Small white cloudlets could be seen hovering when we looked up from the darkness, we felt we could touch them... |
+| jungle         | sad        | The baboon’s cries pierced our hearts                                                                            |
 
 **See the case studies later in this document for examples of work produced by pupils.**
 
@@ -358,14 +358,14 @@ The first session took place at the museum. The class explored the location and 
 
 Objects that stood out included: mining drills, thick rope that had been used to suspend workers on sides of the mountain, helmets and jackets worn by workers, and slate dust that was hazardous to workers, amongst many other artefacts.
 
-Once the groups had explored and analysed the objects we took the ideas back to school where we worked in groups and shared the objects with the rest ofthe class. Through exploring the objects we collaboratively worked on a big mind map highlighting descriptive words and ideas that best described the objects we were analysing. Through this process a fictional character was created: *Dafydd Drill*.
+Once the groups had explored and analysed the objects we took the ideas back to school where we worked in groups and shared the objects with the rest ofthe class. Through exploring the objects we collaboratively worked on a big mind map highlighting descriptive words and ideas that best described the objects we were analysing. Through this process a fictional character was created: _Dafydd Drill_.
 
 The pupils decided that Dafydd Drill was a rather unpleasant individual due to him having to carry his gigantic drill around the quarry every day! He also lived in dre (town), but travelled to Llanber (Llanberis) every day which made him even more grumpy. By making this short character story about Dafydd Drill the class created a rhythmical rap based on this character:
 
-*Dafydd Drill yn dod o dre,*<br />
-*Ond goro gweithio yn Llanber,*<br />
-*Taflu ei bwysau o gwmpas y lle*<br />
-*Edrych mlaen gael panad o de!*
+_Dafydd Drill yn dod o dre,_<br />
+_Ond goro gweithio yn Llanber,_<br />
+_Taflu ei bwysau o gwmpas y lle_<br />
+_Edrych mlaen gael panad o de!_
 
 Session 2 aimed to develop the objects into groups. There was a recap of the museum visit and pupils explored their pictures, each group choosing an object and creating a mind map or word bank to describe the selected object and it’s use. The groups then followed the same rap writing process as in the previous session to develop a character of their choice, and subsequently a rap.
 
@@ -415,11 +415,11 @@ Back at school each of the classes were given a short introduction to beatboxing
 
 **An example of work produced:**
 
-*Echos through the void as I finish my task*<br />
-*Cramped and claustrophobic in this dark, damp, shaft*<br />
-*Trapped like a rat as I feel the cold draft*<br />
-*Clunking sound of the water, back an’ forth in my flask*<br />
-*Year 8 pupil, Lewis School Pengam*
+_Echos through the void as I finish my task_<br />
+_Cramped and claustrophobic in this dark, damp, shaft_<br />
+_Trapped like a rat as I feel the cold draft_<br />
+_Clunking sound of the water, back an’ forth in my flask_<br />
+_Year 8 pupil, Lewis School Pengam_
 
 ## Case studies 3
 
@@ -427,7 +427,7 @@ Back at school each of the classes were given a short introduction to beatboxing
 
 Over a three day project, a year six group created spoken word poetry in response to their visit to Tredegar House in Newport. They worked with spoken word artist Rufus Mufasa,theirteacher, and the Newport Fusion Network Coordinator.
 
-#### Day 1: Developing confidence in creative play with language and a basic understanding of reading objects*
+#### Day 1: Developing confidence in creative play with language and a basic understanding of reading objects\*
 
 In advance oftheir visit to Tredegar House, Rufus Mufasa led a whole day session in Tredegar Park School to introduce her practice. This covered her background, her professional journey and her experience of being a woman artist in the hip hop scene.
 
@@ -448,15 +448,15 @@ The group were given a tour of the site by the House Manager. This included a sp
 The artist collected her own notes, and after the first room, she read these out to the pupils. Her notes recorded words, thoughts, feelings and ideas, including ways to link the historic objects the group had seen to the world today. She stressed that there was no right or wrong thing to write down.
 
 **Here is an extract from her notes:**
-*Don’t be fooled by wealth*
-*It is still loaded with complication*
-*Take Harry & Megan for example*
+_Don’t be fooled by wealth_
+_It is still loaded with complication_
+_Take Harry & Megan for example_
 
-*Hand carved Caesars*
-*Meet little Mousey*
-*Floorboards the length of the house*
-*Tall trees, taken from their homes, thousands of miles away*
-*Roots ripped up from the kisses of the sun*
+_Hand carved Caesars_
+_Meet little Mousey_
+_Floorboards the length of the house_
+_Tall trees, taken from their homes, thousands of miles away_
+_Roots ripped up from the kisses of the sun_
 
 The group talked a lot about life in the time that the house was built, referencing the Chartists, the people who lived and worked there, their sources of wealth, and the backgrounds of the portrait painters and crafts people who built or decorated the house. There were also discussions around ethics and power.
 
@@ -468,25 +468,25 @@ Back at school on the final day, the pupils focused on developing their word ban
 
 The first task was evaluating the experiences of the site visit. Many commented that they liked finding out about the people who’d lived in the house, especially the servants, whose stories were poorly represented.
 
-> *It’s like we are giving them a voice and they are being seen properly now.*<br />
+> _It’s like we are giving them a voice and they are being seen properly now._<br />
 > Pupil comment
 
 Rufus asked the class to think about why it was important to reflect on and learn from the past. They then discussed the pupils’ reflections from the visit, making links to current affairs.
 
 **Working together with Rufus, the group then transferred these comments into a piece of collaborative creative writing:**<br />
-*We’re bringing back the past*<br />
-*Unlocking doors into the unknown*<br />
-*Peeling back the house’s secrets*<br />
-*Stepping into other time zones*<br />
-*We’re bringing the past back*<br />
-*Women wearing huge lampshades*<br />
-*Crocodiles crawl around the posh rooms*<br />
-*Next to the Louis Vuitton suitcase*<br />
-*We’re bringing the past back*<br />
-*Old games come back out to play*<br />
-*Gold frames hang from the walls on chains*<br />
-*Way too heavy for nails*<br />
-*Extract from collaborative pupil poem.*
+_We’re bringing back the past_<br />
+_Unlocking doors into the unknown_<br />
+_Peeling back the house’s secrets_<br />
+_Stepping into other time zones_<br />
+_We’re bringing the past back_<br />
+_Women wearing huge lampshades_<br />
+_Crocodiles crawl around the posh rooms_<br />
+_Next to the Louis Vuitton suitcase_<br />
+_We’re bringing the past back_<br />
+_Old games come back out to play_<br />
+_Gold frames hang from the walls on chains_<br />
+_Way too heavy for nails_<br />
+_Extract from collaborative pupil poem._
 
 ## Extending the learning and facilitating curriculum learning
 
@@ -510,6 +510,7 @@ Rufus asked the class to think about why it was important to reflect on and lear
 - Design a book of the lyrics that includes illustrations and graphics.
 
 **Ideas for cross-curricular learning:**
+
 - Film and record performancesdigitally.
 - Write scripts and/or subtitles for a film or animation.
 - Share digital recordings on social media.
@@ -554,17 +555,17 @@ People’s Collection Wales, Learn (for teachers and includes resources). [www.p
 
 **Beat Technique** is a talented beatboxerrapper, DJ, producer and songwriter. He also works as a music educator and consultant. He has forged a unique performance style and stage presence, which were built on the stages and events of Glastonbury, the O2,Royal Ascot and Silverstone to name a few. He is an advocate in the beatbox battle scene, having competed in the UK championships in 2014 before participating in the first ever Welsh Beatbox Championships in 2015. He currently spends the majority of his time teaching the art of beatbox, rap, dj-ing and music production, in schools and youth organisations. He has achieved significant success with disaffected young people who find school a challenge, enabling them to improve attendance, behaviour and motivation in all areas of the curriculum.
 
-**Rufus Mufasa** is a pioneering participatory artist, literary activist,poet,rapper, singer songwriter, theatre maker, and mother. Rufus is the *Wales Future Generations Act Poet in Residence* (2019 – 2020); a *Hay Writer at Work* (2018-19); and a *Barbican Fellow* (2015-17).She practises locally, nationally and internationally, and has participated in international arts programmes in Finland, Indonesia and Sweden that explore indigenous languages and women’s rights.
+**Rufus Mufasa** is a pioneering participatory artist, literary activist,poet,rapper, singer songwriter, theatre maker, and mother. Rufus is the _Wales Future Generations Act Poet in Residence_ (2019 – 2020); a _Hay Writer at Work_ (2018-19); and a _Barbican Fellow_ (2015-17).She practises locally, nationally and internationally, and has participated in international arts programmes in Finland, Indonesia and Sweden that explore indigenous languages and women’s rights.
 
-Rufus has published two solo albums of poetry collections entitled *The Pride – Magic and Molecules* (2019) and *Flashbacks and Flowers* (2020).She has a degree in Theatre and Media Drama, and a master’s degree in Scriptwriting from University of South Wales.
+Rufus has published two solo albums of poetry collections entitled _The Pride – Magic and Molecules_ (2019) and _Flashbacks and Flowers_ (2020).She has a degree in Theatre and Media Drama, and a master’s degree in Scriptwriting from University of South Wales.
 
 **Mr Phormula** is a pioneering beatboxer and live looping artist. With a career as diverse as the Welsh landscape within which he is rooted, Mr Phormula’s inspired performances and vocal compositions have gained him internationalrecognition as a leading beatboxer, rapper and producer. Over 15 years’ experience of working in educational environments highlights Mr Phormula’s commitment to using bilingual beatboxing and rap to engage people from all walks of life. Mr Phormula possesses a solid work ethic and involves participants from a wide range of backgrounds with varying needs. Mr Phormula is guaranteed to be engaging and entertaining whilst also supporting skills such as increasing confidence and collaborative working.
 
 **Danielle Cowell** is Learning, Participation & Interpretation Manager at the National Roman Legion Museum, and the strategic lead for digital learning for Amgueddfa Cymru - National Museum Wales. She has 20 years experience in delivering museum learning programmes at National Museum Cardiff and St Fagans: National History Museum. She currently leads the learning strand for the People’s Collection Wales.
 
-Danielle set up the successful digital learning project *Spring Bulbs for Schools*, which has been running for over ten years with 7,000 pupils participatingeach year across the UK. Her current role involves leading the learning programme at the National Roman Legion Museum and developing staff accross the organisation to increase their digital skills and create new digital learning resources (many of which are publishedon Hwb). Danielle has contributed to numerous strategic partnership projects including the First World War education project with National Library Wales.
+Danielle set up the successful digital learning project _Spring Bulbs for Schools_, which has been running for over ten years with 7,000 pupils participatingeach year across the UK. Her current role involves leading the learning programme at the National Roman Legion Museum and developing staff accross the organisation to increase their digital skills and create new digital learning resources (many of which are publishedon Hwb). Danielle has contributed to numerous strategic partnership projects including the First World War education project with National Library Wales.
 
-**Ruth Lloyd** is the Co-ordinator of the National Arts and Education Network. She has over twenty years’ experience of working in learning and interpretation settings in museums, galleries and the wider arts sector, and a special interest in bringing cultural organisations, artists and communities together through authentic creative projects. Her previous work has included setting up the innovative museum residency programme at the V&A Museum in London; project managing the establishment of the Exhibition Road Cultural Group in London; working on the Arts Council of Wales Lead Creative School programme and producing a wide range of socially engaged artworks and projects as a freelance producer. Ruth has a degree in Fine Art Textiles from Goldsmiths College, University of London, and a masters degree in *Interpretation, Representation and Heritage* from University of Leicester.
+**Ruth Lloyd** is the Co-ordinator of the National Arts and Education Network. She has over twenty years’ experience of working in learning and interpretation settings in museums, galleries and the wider arts sector, and a special interest in bringing cultural organisations, artists and communities together through authentic creative projects. Her previous work has included setting up the innovative museum residency programme at the V&A Museum in London; project managing the establishment of the Exhibition Road Cultural Group in London; working on the Arts Council of Wales Lead Creative School programme and producing a wide range of socially engaged artworks and projects as a freelance producer. Ruth has a degree in Fine Art Textiles from Goldsmiths College, University of London, and a masters degree in _Interpretation, Representation and Heritage_ from University of Leicester.
 
 **The National Arts and Education Network would like to thank:**<br />
 Lewis SchoolPengam, Tredegar Park PrimarySchool, Ysgol Gymunedd Pentraeth, Barri Gwilliam, Bethan Jenkins, Steve Butts, Nichola Williams, Naz Syed, National Slate Museum, Tredegar House and National Museum Big Pit for working with the team to facilitate innovative projects within their schools, and organisations that have formed the best-practice case studies on which this resource is based. We would also like to thank museum educator Karin Molson of Monmouthshire County Council Museum Service and Newport Fusion for their support.

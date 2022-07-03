@@ -7,85 +7,85 @@ import { buildUrl, kebabCase, urlFor } from "lib/utils"
 
 const html = htm.bind(vhtml)
 export const portableTextComponents = {
-  block: {
-    normal: ({children}) => {
-      return `
+	block: {
+		normal: ({ children }) => {
+			return `
         <p class="sans smooth text-xl font-medium color-650 my-5">
           ${children}
         </p>
       `
-    },
-    h2: ({children}) => {
-      const id = kebabCase(children)
-      return `
+		},
+		h2: ({ children }) => {
+			const id = kebabCase(children)
+			return `
         <h2 id="${id}" class="sans heading color-750 relative scroll-mt-10 text-5xl font-bold mb-10 mt-20">
           <a href="#${id}" class="anchor absolute"}>#</a>${children}
         </h2>
       `
-    },
-    h3: ({children}) => {
-      const id = kebabCase(children)
-      return `
+		},
+		h3: ({ children }) => {
+			const id = kebabCase(children)
+			return `
         <h3 id="${id}" class="sans heading color-750 relative scroll-mt-10 text-4xl font-bold mt-10">
           <a href="#${id}" class="anchor absolute"}>#</a>${children}
         </h3><hr class="hr" />
       `
-    },
-    h4: ({children}) => {
-      const id = kebabCase(children)
-      return `
+		},
+		h4: ({ children }) => {
+			const id = kebabCase(children)
+			return `
         <h4 id="${id}" class="sans heading color-750 relative scroll-mt-10 text-3xl font-semibold mt-10">
           <a href="#${id}" class="anchor absolute"}>#</a>${children}
         </h4>
       `
-    },
-    blockquote: ({children}) => {
-      return `
+		},
+		blockquote: ({ children }) => {
+			return `
         <blockquote class="pl-5 color-650 text-base font-medium italic leading-6">
           ${children}
         </blockquote>
       `
-    }
-  },
-  list: {
-    bullet: ({children}) => {
-      return `
+		}
+	},
+	list: {
+		bullet: ({ children }) => {
+			return `
         <ul class="sans smooth font-medium text-xl color-650 list-dash ml-5">
           ${children}
         </ul>
       `
-    },
-    number: ({children}) => {
-      return `
+		},
+		number: ({ children }) => {
+			return `
         <ol class="sans smooth font-medium text-xl color-650 list-decimal ml-5 mt-5">
           ${children}
         </ol>
       `
-    }
-  },
-  listItem: {
-    bullet: ({children}) => {
-      return `
+		}
+	},
+	listItem: {
+		bullet: ({ children }) => {
+			return `
         <li class="hello">${children}</li>
       `
-    },
-    number: ({children}) => {
-      return `
+		},
+		number: ({ children }) => {
+			return `
         <li class="goodbye">${children}</li>
       `
-    }
-  },
-  marks: {
-    strong: ({children}) => {
-      return `
+		}
+	},
+	marks: {
+		strong: ({ children }) => {
+			return `
         <strong class="smooth font-semibold color-750">${children}</strong>
       `
-    },
-    link: ({children, value}) => {
-      const href = value.href || ""
-      if (uriLooksSafe(href)) {
-        const rel = href.startsWith("/") ? undefined : "noreferrer"
-        return `
+		},
+		link: ({ children, value }) => {
+			const href = value.href || ""
+			if (uriLooksSafe(href)) {
+				const rel = href.startsWith("/") ? undefined : "noreferrer"
+				return `
           <a
             href="${href}"
             rel="${rel}"
@@ -93,69 +93,69 @@ export const portableTextComponents = {
             target="_blank"
           >${children}</a>
         `
-      }
-      return children
-    },
-    internalLink: ({children, value}) => {
-      return `
+			}
+			return children
+		},
+		internalLink: ({ children, value }) => {
+			return `
         <a
           href=${buildUrl(value?.item._type, value?.item.slug)}
           class=""
         >${children}</a>
       `
-    },
-    target: ({children, value}) => {
-      return `
+		},
+		target: ({ children, value }) => {
+			return `
         <a
           href=${value.target}
           class="underline color-750"
         >${children}</a>
       `
-    }
-  },
-  types: {
-    imageCaption: ({value}) => {
-      return `
+		}
+	},
+	types: {
+		imageCaption: ({ value }) => {
+			return `
         <img
           src=${urlFor(value.image)
-            .auto("format")
-            .width(2400)
-            .quality(85)
-            .url()}
+						.auto("format")
+						.width(2400)
+						.quality(85)
+						.url()}
           class="mt-8 mb-2"
         />
         <p class="sans smooth text-lg font-medium italic color-550 mb-10">
           ${value.caption}
         </p>
       `
-    },
-    imageGroup: ({value}) => {
-      const children = []
-      for (let i = 0; i < value.images.length; i++) {
-        children.push(`<img
+		},
+		imageGroup: ({ value }) => {
+			const children = []
+			for (let i = 0; i < value.images.length; i++) {
+				children.push(`<img
           src=${urlFor(value.images[i])
-            .auto("format")
-            .width(300)
-            .quality(85)
-            .url()}
+						.auto("format")
+						.width(300)
+						.quality(85)
+						.url()}
         />`)
-      }
-      return `
+			}
+			return `
         <div
           class="grid gap-3 mt-8 mb-10"
           style="grid-template-columns: repeat(${value.images.length}, 1fr);"
         >${children.join("")}</div>
       `
-    },
-    markdown: ({value}) => {
-      return `
+		},
+		markdown: ({ value }) => {
+			return `
         <span>${marked.parse(value.markdown)}</span>
       `
-    },
-    youtube: ({value}) => {
-      const id = getYouTubeID(value.url)
-      const url = `https://www.youtube-nocookie.com/embed/${id}?modestbranding=1`
-      return `
+		},
+		youtube: ({ value }) => {
+			const id = getYouTubeID(value.url)
+			const url = `https://www.youtube-nocookie.com/embed/${id}?modestbranding=1`
+			return `
         <div class="embed-container mt-10">
           <iframe
             width="560"
@@ -169,6 +169,6 @@ export const portableTextComponents = {
           ></iframe>
         </div>
       `
-    }
-  }
+		}
+	}
 }

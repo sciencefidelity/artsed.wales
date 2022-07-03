@@ -8,7 +8,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+		"lint:js": "eslint '**/*.{ts,js,tsx,jsx}'",
+		"lint:format": "prettier --check '**/*.{ts,js,tsx,jsx,json,md,yml}'",
     "lint:styles": "stylelint '**/*.{astro,scss}' --ignore-path .eslintignore",
+		"fix:js": "eslint --fix '**/*.{ts,js}'",
+		"fix:format": "prettier --write '**/*.{ts,js,tsx,jsx,json,md,yml}'",
     "fix:styles": "stylelint --fix '**/*.{astro,scss}' --ignore-path .eslintignore"
   },
   "devDependencies": {
