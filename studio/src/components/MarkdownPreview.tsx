@@ -4,6 +4,6 @@ import React from 'react'
 import { Remark } from 'react-remark'
 
 const MarkdownPreview = ({ value }) => {
-  return <Remark>{value.markdown}</Remark>
+	return <Remark>{value.markdown}</Remark>
 }
 export default MarkdownPreview

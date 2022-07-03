@@ -48,52 +48,52 @@ import quote from './field/quote'
 import settings from './field/settings'
 
 export default createSchema({
-  name: 'default',
-  types: schemaTypes.concat([
-    // objects
-    address,
-    facebookCard,
-    imageCaption,
-    imageData,
-    imageGroup,
-    markdown,
-    metaData,
-    pageSettings,
-    portableText,
-    social,
-    twitterCard,
-    youtube,
+	name: 'default',
+	types: schemaTypes.concat([
+		// objects
+		address,
+		facebookCard,
+		imageCaption,
+		imageData,
+		imageGroup,
+		markdown,
+		metaData,
+		pageSettings,
+		portableText,
+		social,
+		twitterCard,
+		youtube,
 
-    // locale
-    localeAddress,
-    localeEmail,
-    localeFacebook,
-    localeMeta,
-    localeString,
-    localeText,
-    localeTwitter,
-    localeURL,
+		// locale
+		localeAddress,
+		localeEmail,
+		localeFacebook,
+		localeMeta,
+		localeString,
+		localeText,
+		localeTwitter,
+		localeURL,
 
-    // document
-    artform,
-    event,
-    keystage,
-    newsletter,
-    page,
-    post,
-    resource,
-    staff,
-    tag,
-    video,
+		// document
+		artform,
+		event,
+		keystage,
+		newsletter,
+		page,
+		post,
+		resource,
+		staff,
+		tag,
+		video,
 
-    // field
-    comment,
-    company,
-    engagement,
-    labelGroup,
-    navigation,
-    photography,
-    quote,
-    settings
-  ])
+		// field
+		comment,
+		company,
+		engagement,
+		labelGroup,
+		navigation,
+		photography,
+		quote,
+		settings
+	])
 })
