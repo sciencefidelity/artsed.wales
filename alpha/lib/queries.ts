@@ -339,4 +339,3 @@ export const videoPathQuery = groq`
     "params": { "slug": slug.current }
   }
 `
-

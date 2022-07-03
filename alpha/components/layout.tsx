@@ -10,34 +10,34 @@ import u from "styles/utils.module.scss"
 import s from "styles/layout.module.scss"
 
 interface Props {
-  children: ReactNode
-  company: Company
-  pageHead?: HeadProps
-  labels: Label[]
-  navigation: Navigation
-  settings: Settings
+	children: ReactNode
+	company: Company
+	pageHead?: HeadProps
+	labels: Label[]
+	navigation: Navigation
+	settings: Settings
 }
 
 export const Layout: FC<Props> = ({
-  children,
-  company,
-  pageHead,
-  labels,
-  navigation,
-  settings
+	children,
+	company,
+	pageHead,
+	labels,
+	navigation,
+	settings
 }) => {
-  return (
-    <>
-      <BaseHead pageHead={pageHead} settings={settings} />
-      <Header labels={labels} navigation={navigation} settings={settings} />
-      <main className={`${s.main}`}>{children}</main>
-      <section className={u.container}>
-        <SignUp labels={labels}/>
-        <SocialLinks settings={settings} />
-        <hr />
-        <Logos />
-      </section>
-      <Footer company={company} labels={labels} settings={settings} />
-    </>
-  )
+	return (
+		<>
+			<BaseHead pageHead={pageHead} settings={settings} />
+			<Header labels={labels} navigation={navigation} settings={settings} />
+			<main className={`${s.main}`}>{children}</main>
+			<section className={u.container}>
+				<SignUp labels={labels} />
+				<SocialLinks settings={settings} />
+				<hr />
+				<Logos />
+			</section>
+			<Footer company={company} labels={labels} settings={settings} />
+		</>
+	)
 }
