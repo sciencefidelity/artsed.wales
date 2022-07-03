@@ -319,4 +319,3 @@ export const staffPathQuery = groq`
     "params": { "slug": slug.current }
   }
 `
-
