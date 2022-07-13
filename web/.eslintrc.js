@@ -1,5 +1,11 @@
 module.exports = {
-  plugins: ["@typescript-eslint", "eslint-comments", "promise", "unicorn"],
+  plugins: [
+    "@typescript-eslint",
+    "eslint-comments",
+    "promise",
+    "unicorn",
+    "eslint-plugin-tsdoc",
+  ],
   extends: [
     "airbnb",
     "airbnb-typescript",
@@ -10,6 +16,8 @@ module.exports = {
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
     "plugin:@next/next/recommended",
+    "plugin:@typescript-eslint/recommended",
+
     "prettier",
   ],
   env: {
@@ -28,6 +36,8 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
+    // Allow a specific case from Sanity Document i18n
+    "no-underscore-dangle": ["error", { allow: ["__i18n_refs"] }],
     // https://basarat.gitbook.io/typescript/main-1/defaultisbad
     "import/prefer-default-export": "off",
     // Next uses default exports for routing pages
@@ -43,10 +53,17 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     // Next `_app.tsx` uses this
     "react/jsx-props-no-spreading": "off",
+    // The standard Next.js pattern for pages is arrow functions with `NextPage`
+    "react/function-component-definition": [
+      2,
+      { namedComponents: ["arrow-function", "function-declaration"] },
+    ],
     // Airbnb prefers forEach
     "unicorn/no-array-for-each": "off",
     // This was flagging filenames like `next-env.d.ts`
     "unicorn/prevent-abbreviations": "off",
+    // Setup for linting TSDoc
+    "tsdoc/syntax": "warn",
   },
   overrides: [
     {
@@ -58,4 +75,4 @@ module.exports = {
       },
     },
   ],
-};
+}

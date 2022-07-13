@@ -44,6 +44,11 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+/**
+ * Home: The Landing page of the web app
+ * @param data - Data from the Sanity API
+ * @returns The JSX Code for the Home Page
+ */
 const Home: NextPage = ({ data }: { data: Data }) => {
   const { locale } = useRouter()
   const {
