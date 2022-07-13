@@ -4,7 +4,6 @@ yarn.lock
 build
 out
 .next
-node_modules
 .nova
 *.scss
 *.css
