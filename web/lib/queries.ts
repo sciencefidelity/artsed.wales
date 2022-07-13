@@ -276,6 +276,10 @@ export const eventPathQuery = groq`
   }
 `
 
+/**
+ * artformQuery
+ * @remarks Calls data from Sanity for the {@link ArtformPage}
+ */
 export const artformQuery = groq`{
   ${artform}, ${company}, ${events}, ${labels}, ${navigation}, ${settings}
 }`
