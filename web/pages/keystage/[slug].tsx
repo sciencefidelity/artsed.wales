@@ -1,7 +1,7 @@
 import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
 import { useRouter } from "next/router"
-import sanityClient from "lib/sanityClient"
+import sanityClient from "lib/sanity-client"
 import { Layout } from "components/layout"
 import { EventList } from "components/eventList"
 import { Localize } from "components/localize"
