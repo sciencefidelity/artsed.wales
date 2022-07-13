@@ -1,10 +1,8 @@
 import { Fragment } from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
-import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import { Layout } from "components/layout"
-import { ErrorTemplate } from "components/errorTemplate"
 import { EventList } from "components/eventList"
 import { Localize } from "components/localize"
 import Sidebar from "components/sidebar"
@@ -31,10 +29,10 @@ interface Data {
 }
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const paths = await sanityClient.fetch(artformPathQuery)
-  const pathsWithLocales = paths.flatMap((path: Path) => {
-    return locales.map((locale) => ({ ...path, locale }))
-  })
+  const paths: Path[] = await sanityClient.fetch(artformPathQuery)
+  const pathsWithLocales = paths.flatMap((path: Path) =>
+    locales.map((locale) => ({ ...path, locale }))
+  )
   return {
     paths: pathsWithLocales,
     fallback: false,
@@ -51,29 +49,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 /**
- * ArtformPage (dynamic)
- *
- * @remarks
- * Generates all pages in the subdirectory `/artform`.
- *
- * @param data - all props fetched with `artformQuery`: {@link artformQuery}
+ * ArtformPage (dynamic): pages generated for each Artform
+ * @remarks Generates all pages in the subdirectory `/artforms`
+ * @param data - data from Sanity fetched with {@link artformQuery}
  */
 const ArtformPage = ({ data }: { data: Data }) => {
   const router = useRouter()
   const { locale } = router
-  if (router.isFallback) {
-    return <ErrorTemplate />
-  }
-  if (!data) {
-    return (
-      <>
-        <Head>
-          <meta name="robots" content="noindex" />
-        </Head>
-        <ErrorTemplate />
-      </>
-    )
-  }
   const { artform, company, events, labels, navigation, settings } = data
 
   const pageHead = {

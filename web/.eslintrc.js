@@ -37,7 +37,10 @@ module.exports = {
   },
   rules: {
     // Allow specific cases from Sanity
-    "no-underscore-dangle": ["error", { allow: ["__i18n_refs", "_id"] }],
+    "no-underscore-dangle": [
+      "error",
+      { allow: ["__i18n_refs", "_id", "_type"] },
+    ],
     // https://basarat.gitbook.io/typescript/main-1/defaultisbad
     "import/prefer-default-export": "off",
     // Next uses default exports for routing pages
@@ -62,6 +65,8 @@ module.exports = {
     "unicorn/no-array-for-each": "off",
     // This was flagging filenames like `next-env.d.ts`
     "unicorn/prevent-abbreviations": "off",
+    // The builtin Next image element does not play nice with the Sanity CDN
+    "@next/next/no-img-element": 0,
     // Setup for linting TSDoc
     "tsdoc/syntax": "warn",
   },

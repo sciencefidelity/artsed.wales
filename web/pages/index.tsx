@@ -74,6 +74,7 @@ const Home: NextPage = ({ data }: { data: Data }) => {
         <section className={`${s.hero} ${p.lines}`}>
           <h2
             className={`${s.heroText}`}
+            // TODO: make this less dangerous
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: localize(labels[21].text, locale),

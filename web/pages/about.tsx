@@ -160,6 +160,7 @@ const About: NextPage = ({ data }: { data: Data }) => {
                     trustee.role.includes("Trustee") && (
                       <Fragment key={trustee._id}>
                         <li
+                          // TODO: make this less dangerous
                           // eslint-disable-next-line react/no-danger
                           dangerouslySetInnerHTML={{
                             __html: joinName(trustee.title),
