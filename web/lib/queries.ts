@@ -88,11 +88,11 @@ const pages = `
   }
 `
 
-const posts = `
-  "posts": *[_type == "post" && ${omitDrafts}] | order(settings.publishedAt){
-    ${pagePostFields}, __i18n_refs[0]->{ ${pagePostFields} }
-  }
-`
+// const posts = `
+//   "posts": *[_type == "post" && ${omitDrafts}] | order(settings.publishedAt){
+//     ${pagePostFields}, __i18n_refs[0]->{ ${pagePostFields} }
+//   }
+// `
 
 const quotes = `
   "quotes": *[_type == "quote"].quote[]{
