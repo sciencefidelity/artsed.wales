@@ -18,16 +18,16 @@ export interface Artform extends SanityDocument {
 }
 
 /**
- * @param address - LocaleString;
- * @param email - LocaleString;
- * @param telephone - LocaleString;
- * @param title - LocaleString;
+ * @readonly address: LocaleAddress;
+ * @readonly email: LocaleString;
+ * @readonly telephone: LocaleString;
+ * @readonly title: LocaleString;
  */
 export interface Company extends SanityDocument {
-  address: LocaleAddress
-  email: LocaleString
-  telephone: LocaleString
-  title: LocaleString
+  readonly address: LocaleAddress
+  readonly email: LocaleString
+  readonly telephone: LocaleString
+  readonly title: LocaleString
 }
 
 /** engagementFigure: _key, count, title(en/cy); intro(en/cy); title(en/cy) */

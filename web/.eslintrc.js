@@ -36,8 +36,8 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
-    // Allow a specific case from Sanity Document i18n
-    "no-underscore-dangle": ["error", { allow: ["__i18n_refs"] }],
+    // Allow specific cases from Sanity
+    "no-underscore-dangle": ["error", { allow: ["__i18n_refs", "_id"] }],
     // https://basarat.gitbook.io/typescript/main-1/defaultisbad
     "import/prefer-default-export": "off",
     // Next uses default exports for routing pages

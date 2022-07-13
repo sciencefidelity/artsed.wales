@@ -1,21 +1,24 @@
 import { NextPage } from "next"
 
 interface ErrorProps {
-	statusCode: number
+  statusCode: number
 }
 
-const Error: NextPage<ErrorProps> = ({ statusCode }) => {
-	return (
-		<div>
-			<h1>Error: {statusCode}</h1>
-		</div>
-	)
-}
+/**
+ * Error: The Error page
+ * @param statusCode - the status code of the error
+ * @returns The JSX Code for the Error Page
+ */
+const Error: NextPage = ({ statusCode }: ErrorProps) => (
+  <div>
+    <h1>Error: {statusCode}</h1>
+  </div>
+)
 
 Error.getInitialProps = ({ res }) => {
-	const statusCode = res?.statusCode || 500
+  const statusCode = res?.statusCode || 500
 
-	return { statusCode }
+  return { statusCode }
 }
 
 export default Error
