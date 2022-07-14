@@ -134,7 +134,7 @@ export function pattern(patt: string): string {
 /**
  * Sorts the names of the staff members by their last name
  * @remarks used in the `/about` page
- * @param names - an array of staff document from the Sanity database
+ * @param names - an array of staff documents from the Sanity database
  * @returns the sorted array of staff members
  */
 export function sortNames(names: Staff[]): Staff[] {
