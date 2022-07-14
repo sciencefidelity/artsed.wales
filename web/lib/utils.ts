@@ -3,6 +3,12 @@ import sanityClient from "lib/sanity-client"
 import { Image, LocaleString, Staff } from "lib/interfaces"
 import p from "styles/patterns.module.scss"
 
+/**
+ * Converts a title or company name to an acronym
+ * @remarks Generates all pages in the subdirectory `/staff`
+ * @param str - the name of the company
+ * @returns the acronym in capital letters
+ */
 export function acronym(str: string): string {
   return str
     .split(" ")
@@ -10,6 +16,12 @@ export function acronym(str: string): string {
     .join("")
 }
 
+/**
+ * Capitalizes a string
+ * @remarks changes the first letter of each word to uppercase
+ * @param str - a string
+ * @returns the capitalized string
+ */
 export function capitalize(str: string): string {
   return str
     .split(/[\s-]/g)
@@ -17,10 +29,22 @@ export function capitalize(str: string): string {
     .join(" ")
 }
 
+/**
+ * Adds a non-breaking space to a name
+ * @remarks replaces spaces with non-breaking spaces prevents string from breaking
+ * @param name - a name as a string
+ * @returns the string with non-breaking spaces
+ */
 export function joinName(name: string) {
   return name.split(" ").join("&nbsp;")
 }
 
+/**
+ * Takes the word Key Stage 3 and returns KS3
+ * @remarks creates a shortened version of the key stage
+ * @param str - one of the key stages defined in the Sanity database
+ * @returns the shortened version of the key stage
+ */
 export function keyStage(str: string): string {
   return str
     .split(" ")
@@ -28,10 +52,23 @@ export function keyStage(str: string): string {
     .join("")
 }
 
+/**
+ * Localizes a Sanity string definded by the {@link LocaleString} interface
+ * @remarks returns the localized string
+ * @param content - the LocaleString object
+ * @param locale - the current locale
+ * @returns the localized string
+ */
 export function localize(content: LocaleString, locale: string): string {
   return locale === "cy" && content.cy ? content.cy : content.en
 }
 
+/**
+ * Returns the Welsh translation a predefined staff role
+ * @remarks localizes a staff role
+ * @param type - a staff role as a string defined in the Sanity database
+ * @returns the Welsh translation of the staff role
+ */
 export const localizeRoles = (type: string): string => {
   switch (type) {
     case "Author":
@@ -49,6 +86,12 @@ export const localizeRoles = (type: string): string => {
   }
 }
 
+/**
+ * Returns the class name used to define a background pattern
+ * @remarks uses patterns defined in `styles/patterns.module.scss`
+ * @param patt - a string defining the pattern in the Sanity database
+ * @returns the class name
+ */
 export function pattern(patt: string): string {
   switch (patt) {
     case "cubes":
@@ -88,12 +131,24 @@ export function pattern(patt: string): string {
   }
 }
 
+/**
+ * Sorts the names of the staff members by their last name
+ * @remarks used in the `/about` page
+ * @param names - an array of staff document from the Sanity database
+ * @returns the sorted array of staff members
+ */
 export function sortNames(names: Staff[]): Staff[] {
   return names.sort((a, b) =>
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop())
   )
 }
 
+/**
+ * Returns the subdirectory of the site based on the schema type
+ * @remarks works alongside the `buildURL` function
+ * @param type - the document type defined in the Sanity schema
+ * @returns the subdirectory used in the site
+ */
 export function subdir(type: string): string {
   switch (type) {
     case "artform":
@@ -115,10 +170,23 @@ export function subdir(type: string): string {
   }
 }
 
-export function buildUrl(type: string, slug: string): string {
+/**
+ * Builds a URL to a page relative to the root of the site
+ * @remarks Uses the `subdir` function to determine the subdirectory
+ * @param type - the document type defined in the Sanity schema
+ * @param slug - the slug defined in the document
+ * @returns the URL to the page formatted as `subdirectory/slug`
+ */
+export function buildURL(type: string, slug: string): string {
   return `${subdir(type)}/${slug}`
 }
 
+/**
+ * Returns the image url for the given image object
+ * @remarks uses `sanityClient` and `imageUrlBuilder` from NPM
+ * @param source - the image object
+ * @returns the image url
+ */
 export function urlFor(source: Image) {
   return imageUrlBuilder(sanityClient).image(source)
 }
