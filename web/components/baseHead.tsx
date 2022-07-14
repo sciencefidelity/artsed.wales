@@ -1,15 +1,22 @@
-import { FC } from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { localize, urlFor } from "lib/utils"
 import { HeadProps, Settings } from "lib/interfaces"
 
 interface Props {
-  pageHead: HeadProps
+  // TODO: create default props for pageHead
+  // eslint-disable-next-line react/require-default-props
+  pageHead?: HeadProps
   settings: Settings
 }
 
-export const BaseHead: FC<Props> = ({ pageHead, settings }) => {
+/**
+ * BaseHead: the site `<head>`
+ * @param pageHead - the {@link HeadProps} constructed on each page
+ * @param settings - the {@link Settings} defined in the Sanity database
+ * @returns The JSX Code for the document `<head>`
+ */
+export function BaseHead({ pageHead, settings }: Props) {
   const { locale } = useRouter()
   return (
     <Head>

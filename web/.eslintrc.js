@@ -56,7 +56,10 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     // Next `_app.tsx` uses this
     "react/jsx-props-no-spreading": "off",
-    // The standard Next.js pattern for pages is arrow functions with `NextPage`
+    // The standard Next.js pattern for pages is arrow functions with `NextPage`.
+    // For components it seems better to use `function-declaration` so that the
+    // return statement is required to help with refactoring
+    // the `arrow-body-style` rule prefers arrows without the return block
     "react/function-component-definition": [
       2,
       { namedComponents: ["arrow-function", "function-declaration"] },
@@ -67,14 +70,16 @@ module.exports = {
     "unicorn/prevent-abbreviations": "off",
     // The builtin Next image element does not play nice with the Sanity CDN
     "@next/next/no-img-element": 0,
-    // Next prefers camelCase
+    // Hard to know what to choose here, Airbnb prefers PascalCase,
+    // the default in Unicorn is kebab-case,
+    // Nextjs uses lowercase for pages and kebab-case for components in examples
     "unicorn/filename-case": [
       "error",
-      {
-        case: "camelCase",
-      },
+      { case: "camelCase", ignore: ["next-env.d.ts"] },
     ],
-    // Setup for linting TSDoc
+    // Disable JSDoc and setup linting of TSDoc
+    "require-jsdoc": "off",
+    "valid-jsdoc": "off",
     "tsdoc/syntax": "warn",
   },
   overrides: [

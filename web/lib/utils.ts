@@ -1,5 +1,5 @@
 import imageUrlBuilder from "@sanity/image-url";
-import sanityClient from "lib/sanity-client";
+import sanityClient from "lib/sanityClient";
 import { Image, LocaleString, Staff } from "lib/interfaces";
 import p from "styles/patterns.module.scss";
 
