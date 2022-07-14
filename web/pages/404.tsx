@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from "next"
-import sanityClient from "lib/sanity-client"
+import sanityClient from "lib/sanityClient"
 import { Layout } from "components/layout"
 import { Localize } from "components/localize"
 import { fourohfourQuery } from "lib/queries"

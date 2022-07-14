@@ -67,6 +67,13 @@ module.exports = {
     "unicorn/prevent-abbreviations": "off",
     // The builtin Next image element does not play nice with the Sanity CDN
     "@next/next/no-img-element": 0,
+    // Next prefers camelCase
+    "unicorn/filename-case": [
+      "error",
+      {
+        case: "camelCase",
+      },
+    ],
     // Setup for linting TSDoc
     "tsdoc/syntax": "warn",
   },
@@ -80,4 +87,4 @@ module.exports = {
       },
     },
   ],
-}
+};
