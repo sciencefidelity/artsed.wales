@@ -1,7 +1,7 @@
-import imageUrlBuilder from "@sanity/image-url"
-import sanityClient from "lib/sanity-client"
-import { Image, LocaleString, Staff } from "lib/interfaces"
-import p from "styles/patterns.module.scss"
+import imageUrlBuilder from "@sanity/image-url";
+import sanityClient from "lib/sanity-client";
+import { Image, LocaleString, Staff } from "lib/interfaces";
+import p from "styles/patterns.module.scss";
 
 /**
  * Converts a title or company name to an acronym
@@ -13,7 +13,7 @@ export function acronym(str: string): string {
   return str
     .split(" ")
     .map((e) => (/[A-Z]/.test(e) ? e[0] : ""))
-    .join("")
+    .join("");
 }
 
 /**
@@ -26,7 +26,7 @@ export function capitalize(str: string): string {
   return str
     .split(/[\s-]/g)
     .map((e) => e.replace(e[0], e[0].toUpperCase()))
-    .join(" ")
+    .join(" ");
 }
 
 /**
@@ -36,7 +36,7 @@ export function capitalize(str: string): string {
  * @returns the string with non-breaking spaces
  */
 export function joinName(name: string) {
-  return name.split(" ").join("&nbsp;")
+  return name.split(" ").join("&nbsp;");
 }
 
 /**
@@ -49,7 +49,7 @@ export function keyStage(str: string): string {
   return str
     .split(" ")
     .map((e) => e.replace(e, e[0]))
-    .join("")
+    .join("");
 }
 
 /**
@@ -60,7 +60,7 @@ export function keyStage(str: string): string {
  * @returns the localized string
  */
 export function localize(content: LocaleString, locale: string): string {
-  return locale === "cy" && content.cy ? content.cy : content.en
+  return locale === "cy" && content.cy ? content.cy : content.en;
 }
 
 /**
@@ -72,19 +72,19 @@ export function localize(content: LocaleString, locale: string): string {
 export const localizeRoles = (type: string): string => {
   switch (type) {
     case "Author":
-      return "Awdur"
+      return "Awdur";
     case "Chair":
-      return "Cadeirydd"
+      return "Cadeirydd";
     case "Co-ordinator":
-      return "Cydlynydd"
+      return "Cydlynydd";
     case "Facilitator":
-      return "Hwylusydd"
+      return "Hwylusydd";
     case "Trustee":
-      return "Ymddiriedolwr"
+      return "Ymddiriedolwr";
     default:
-      return ""
+      return "";
   }
-}
+};
 
 /**
  * Returns the class name used to define a background pattern
@@ -95,39 +95,39 @@ export const localizeRoles = (type: string): string => {
 export function pattern(patt: string): string {
   switch (patt) {
     case "cubes":
-      return p.cubes
+      return p.cubes;
     case "lines":
-      return p.lines
+      return p.lines;
     case "dots":
-      return p.dots
+      return p.dots;
     case "circles":
-      return p.circles
+      return p.circles;
     case "linesVertical":
-      return p.linesVertical
+      return p.linesVertical;
     case "squares":
-      return p.squares
+      return p.squares;
     case "linesDiagonal":
-      return p.linesDiagonal
+      return p.linesDiagonal;
     case "diagonal":
-      return p.diagonal
+      return p.diagonal;
     case "textbook":
-      return p.textbook
+      return p.textbook;
     case "target":
-      return p.target
+      return p.target;
     case "repeatingCircles":
-      return p.repeatingCircles
+      return p.repeatingCircles;
     case "radial":
-      return p.radial
+      return p.radial;
     case "zigzag":
-      return p.zigzag
+      return p.zigzag;
     case "isometric":
-      return p.isometric
+      return p.isometric;
     case "isometric3d":
-      return p.isometric3d
+      return p.isometric3d;
     case "cross":
-      return p.cross
+      return p.cross;
     default:
-      return p.lines
+      return p.lines;
   }
 }
 
@@ -140,7 +140,7 @@ export function pattern(patt: string): string {
 export function sortNames(names: Staff[]): Staff[] {
   return names.sort((a, b) =>
     a.title.split(" ").pop().localeCompare(b.title.split(" ").pop())
-  )
+  );
 }
 
 /**
@@ -152,21 +152,21 @@ export function sortNames(names: Staff[]): Staff[] {
 export function subdir(type: string): string {
   switch (type) {
     case "artform":
-      return "/artform"
+      return "/artform";
     case "event":
-      return "/event"
+      return "/event";
     case "keystage":
-      return "/keystage"
+      return "/keystage";
     case "post":
-      return "/news"
+      return "/news";
     case "staff":
-      return "/staff"
+      return "/staff";
     case "tag":
-      return "/tag"
+      return "/tag";
     case "video":
-      return "/video"
+      return "/video";
     default:
-      return ""
+      return "";
   }
 }
 
@@ -178,7 +178,7 @@ export function subdir(type: string): string {
  * @returns the URL to the page formatted as `subdirectory/slug`
  */
 export function buildURL(type: string, slug: string): string {
-  return `${subdir(type)}/${slug}`
+  return `${subdir(type)}/${slug}`;
 }
 
 /**
@@ -188,5 +188,5 @@ export function buildURL(type: string, slug: string): string {
  * @returns the image url
  */
 export function urlFor(source: Image) {
-  return imageUrlBuilder(sanityClient).image(source)
+  return imageUrlBuilder(sanityClient).image(source);
 }
