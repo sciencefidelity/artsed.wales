@@ -19,8 +19,6 @@ type Props = WithChildren<{
   company: Company
   labels: Label[]
   navigation: Navigation
-  // TODO: create default props for pageHead
-  // eslint-disable-next-line react/require-default-props
   pageHead?: HeadProps
   settings: Settings
 }>
@@ -58,4 +56,8 @@ export function Layout({
       <Footer company={company} labels={labels} settings={settings} />
     </>
   )
+}
+
+Layout.defaultProps = {
+  pageHead: {},
 }

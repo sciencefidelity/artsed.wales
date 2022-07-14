@@ -4,8 +4,6 @@ import { localize, urlFor } from "lib/utils"
 import { HeadProps, Settings } from "lib/interfaces"
 
 interface Props {
-  // TODO: create default props for pageHead
-  // eslint-disable-next-line react/require-default-props
   pageHead?: HeadProps
   settings: Settings
 }
@@ -156,4 +154,8 @@ export function BaseHead({ pageHead, settings }: Props) {
       <link rel="mask-icon" href="/mask-icon.svg" color="#FFFFFF" />
     </Head>
   )
+}
+
+BaseHead.defaultProps = {
+  pageHead: {},
 }

@@ -8,6 +8,7 @@ interface Props {
 
 /**
  * Checkboxes to filter documents in a sidebar
+ * @remarks populated from the Sanity database
  * @param data - an array of documents to be filtered
  * @param title - a string defining the title of the checkbox
  * @returns The JSX Code for the checkbox
