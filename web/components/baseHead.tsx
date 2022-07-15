@@ -18,19 +18,23 @@ export function BaseHead({ pageHead, settings }: Props) {
   const { locale } = useRouter()
   return (
     <Head>
-      <title>
-        {pageHead && pageHead.title
-          ? pageHead.title
-          : localize(settings.siteName, locale)}
-      </title>
-      <meta
-        name="Description"
-        content={
-          pageHead && pageHead.description
-            ? pageHead.description
-            : localize(settings.siteDescription, locale)
-        }
-      />
+      {locale && (
+        <title>
+          {pageHead && pageHead.title
+            ? pageHead.title
+            : localize(settings.siteName, locale)}
+        </title>
+      )}
+      {locale && (
+        <meta
+          name="Description"
+          content={
+            pageHead && pageHead.description
+              ? pageHead.description
+              : localize(settings.siteDescription, locale)
+          }
+        />
+      )}
       <meta name="keywords" content="" />
       <link
         rel="preload"
@@ -96,10 +100,12 @@ export function BaseHead({ pageHead, settings }: Props) {
           .quality(100)
           .url()}
       />
-      <meta
-        property="og:site_name"
-        content={localize(settings.siteName, locale)}
-      />
+      {locale && (
+        <meta
+          property="og:site_name"
+          content={localize(settings.siteName, locale)}
+        />
+      )}
       <meta property="og:locale" content="en_GB" />
       <meta property="og:type" content="article" />
       {/* Twitter */}

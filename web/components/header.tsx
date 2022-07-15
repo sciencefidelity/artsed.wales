@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from "react"
+import { Fragment, useState } from "react"
 import { useRouter } from "next/router"
 import { acronym, buildURL } from "lib/utils"
 import { Language } from "components/language"
@@ -15,6 +15,14 @@ interface Props {
   settings: Settings
 }
 
+/**
+ * The site header
+ * @remarks formats the logo, language switching, and navigation into a header
+ * @param labels - {@link Label} an array of LocaleStrings defining site labels
+ * @param navigation - {@link Navigation} singleton defining site navigation
+ * @param settings - {@link Settings} singleton defining site settings
+ * @returns The JSX Code for the header
+ */
 export function Header({ labels, navigation, settings }: Props) {
   const [isActive, setActive] = useState(false)
   const { locale, pathname } = useRouter()
@@ -28,11 +36,17 @@ export function Header({ labels, navigation, settings }: Props) {
     <header
       className={`${s.header}`}
       onClick={isActive ? menuClose : undefined}
+      onKeyDown={isActive ? menuClose : undefined}
+      role="button"
+      tabIndex={0}
     >
       <nav className={`${u.container} ${s.nav}`}>
         <div
           className={`${s.overlay} ${isActive ? s.overlayActive : undefined}`}
           onClick={isActive ? menuClose : undefined}
+          onKeyDown={isActive ? menuClose : undefined}
+          role="button"
+          tabIndex={0}
         >
           <ul className={`${s.overlayNav} ${u.uppercase}`}>
             <li className={`${s.overlayNavItem}`}>

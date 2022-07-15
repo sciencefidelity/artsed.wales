@@ -5,7 +5,7 @@
     "allowJs": true,
     "checkJs": false,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
@@ -26,5 +26,6 @@
       "@/styles/*": ["styles/*"]
     }
   },
-  "include": ["./**/*", "./**/.*"]
+  "include": ["./**/*", "./**/.*"],
+  "exclude": ["node_modules"]
 }

@@ -28,9 +28,11 @@ export function Footer({ company, labels, settings }: Props) {
         <span className={`${s.footerContent}`}>
           <Localize data={labels[22].text} />
           {": "}
-          <a href={`mailto:${localize(company.email, locale)}`}>
-            <Localize data={company.email} />
-          </a>
+          {locale && (
+            <a href={`mailto:${localize(company.email, locale)}`}>
+              <Localize data={company.email} />
+            </a>
+          )}
         </span>
         <br />
         <span className={`${s.footerContent}`}>
@@ -38,9 +40,11 @@ export function Footer({ company, labels, settings }: Props) {
           <span className={`${s.brandMd}`}>
             <Localize data={settings.siteName} />
           </span>
-          <span className={`${s.brandSm}`}>
-            {acronym(localize(settings.siteName, locale))}
-          </span>
+          {locale && (
+            <span className={`${s.brandSm}`}>
+              {acronym(localize(settings.siteName, locale))}
+            </span>
+          )}
         </span>
       </div>
       <div>

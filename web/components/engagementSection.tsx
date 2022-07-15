@@ -29,7 +29,7 @@ export function EngagementSection({ engagement }: Props) {
   return (
     <section>
       <article className={`${s.indexEngagement}`}>
-        {engagement.intro && (
+        {engagement.intro && locale && (
           <p
             // TODO: make this less dangerous
             // eslint-disable-next-line react/no-danger

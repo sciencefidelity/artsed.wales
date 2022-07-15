@@ -138,9 +138,14 @@ export function pattern(patt: string): string {
  * @returns the sorted array of staff members
  */
 export function sortNames(names: Staff[]): Staff[] {
-  return names.sort((a, b) =>
-    a.title.split(" ").pop().localeCompare(b.title.split(" ").pop())
-  );
+  return [...names].sort((a, b) => {
+    const nameA = a.title.split(" ").pop();
+    const nameB = b.title.split(" ").pop();
+    if (nameA && nameB) {
+      return nameA.localeCompare(nameB);
+    }
+    return 0;
+  });
 }
 
 /**
