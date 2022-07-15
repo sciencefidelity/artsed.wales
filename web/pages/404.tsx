@@ -12,6 +12,10 @@ interface Data {
   settings: Settings
 }
 
+interface Props {
+  data: Data
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const data: Data = await sanityClient.fetch(fourohfourQuery)
   return {
@@ -24,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
  * @param data - Data from the Sanity API
  * @returns The JSX Code for the Custom404 Page
  */
-const Custom404: NextPage = ({ data }: { data: Data }) => {
+const Custom404: NextPage<Props> = ({ data }: Props) => {
   const { company, labels, navigation, settings } = data
   return (
     <Layout

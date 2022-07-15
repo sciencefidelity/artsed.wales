@@ -27,6 +27,10 @@ interface Data {
   settings: Settings
 }
 
+interface Props {
+  data: Data
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const data: Data = await sanityClient.fetch(eventsQuery)
   return {
@@ -39,7 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
  * @param data - Data from the Sanity API
  * @returns The JSX Code for the Events Page
  */
-const Events: NextPage = ({ data }: { data: Data }) => {
+const Events: NextPage<Props> = ({ data }: Props) => {
   const { locale } = useRouter()
   const { company, events, labels, navigation, pages, settings } = data as {
     company: Company

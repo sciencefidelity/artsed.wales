@@ -37,6 +37,10 @@ interface Data {
   videos: Video[]
 }
 
+interface Props {
+  data: Data
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const data: Data = await sanityClient.fetch(indexQuery)
   return {
@@ -49,7 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
  * @param data - Data from the Sanity API
  * @returns The JSX Code for the Home Page
  */
-const Home: NextPage = ({ data }: { data: Data }) => {
+const Home: NextPage<Props> = ({ data }: Props) => {
   const { locale } = useRouter()
   const {
     company,
@@ -72,14 +76,16 @@ const Home: NextPage = ({ data }: { data: Data }) => {
     >
       <div>
         <section className={`${s.hero} ${p.lines}`}>
-          <h2
-            className={`${s.heroText}`}
-            // TODO: make this less dangerous
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: localize(labels[21].text, locale),
-            }}
-          />
+          {locale && (
+            <h2
+              className={`${s.heroText}`}
+              // TODO: make this less dangerous
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{
+                __html: localize(labels[21].text, locale),
+              }}
+            />
+          )}
         </section>
         <div className={`${u.container}`}>
           <section>

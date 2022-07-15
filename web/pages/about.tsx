@@ -35,6 +35,10 @@ interface Data {
   trustees: Staff[]
 }
 
+interface Props {
+  data: Data
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const data: Data = await sanityClient.fetch(aboutQuery)
   return {
@@ -47,7 +51,7 @@ export const getStaticProps: GetStaticProps = async () => {
  * @param data - Data from the Sanity API
  * @returns The JSX Code for the About Page
  */
-const About: NextPage = ({ data }: { data: Data }) => {
+const About: NextPage<Props> = ({ data }: Props) => {
   const { locale } = useRouter()
   const {
     company,
