@@ -286,14 +286,58 @@ export interface Tag extends SanityDocument {
 export interface Video extends SanityDocument {
   __i18n_refs: Video;
   _type: "video";
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  asset: any;
+  asset: VideoAsset;
   body: PortableText;
   mainImage: Image;
   publishedAt: string;
   slug: string;
   title: string;
   videoLink: string;
+}
+
+export interface VideoAsset {
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: "mux.videoAsset";
+  _updatedAt: string;
+  assetId: string;
+  data: VideoData;
+  playbackId: string;
+  status: "ready";
+  thumbTime: 0;
+  uploadId: string;
+}
+
+export interface VideoData {
+  aspect_ratio: "16:9";
+  created_at: string;
+  duration: number;
+  id: string;
+  master_access: "none";
+  max_stored_frame_rate: 25;
+  max_stored_resolution: "HD";
+  mp4_support: "none";
+  passthrough: string;
+  playback_ids: VideoPlaybackIds[];
+  status: "ready";
+  tracks: VideoTracks[];
+  upload_id: string;
+}
+
+export interface VideoPlaybackIds {
+  id: string;
+  policy: "public";
+}
+export interface VideoTracks {
+  duration: number;
+  id: string;
+  max_channel_layout: "stereo" | "mono";
+  max_channels: number;
+  max_frame_rate: number;
+  max_height: 1080;
+  max_width: 1920;
+  type: "audio" | "video";
 }
 
 export interface SanityBlock {
