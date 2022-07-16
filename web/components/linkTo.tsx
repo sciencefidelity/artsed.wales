@@ -1,4 +1,3 @@
-//
 import Link, { LinkProps } from "next/link"
 import { AnchorHTMLAttributes, PropsWithChildren } from "react"
 
