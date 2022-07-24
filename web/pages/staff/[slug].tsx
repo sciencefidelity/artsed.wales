@@ -14,6 +14,7 @@ import {
   Event,
   Label,
   Navigation,
+  Params,
   Path,
   Settings,
   Staff,
@@ -30,7 +31,9 @@ interface Data {
   staff: Staff
 }
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+export const getStaticPaths: GetStaticPaths = async ({
+  locales = ["cy", "en"],
+}) => {
   const paths: Path[] = await sanityClient.fetch(staffPathQuery)
   const pathsWithLocales = paths.flatMap((path: Path) =>
     locales.map((locale) => ({ ...path, locale }))
@@ -41,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug = "" } = params
+  const { slug = "" } = params as Params
   const data: Data = await sanityClient.fetch(staffQuery, { slug })
   return {
     props: {
@@ -116,6 +119,7 @@ const StaffPage = ({ data }: { data: Data }) => {
                   <SanityImage
                     image={staff.avatar}
                     alt={staff.title}
+                    dimensions={staff.dimensions}
                     height={200}
                     width={200}
                     lazy

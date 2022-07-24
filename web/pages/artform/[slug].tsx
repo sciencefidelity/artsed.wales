@@ -14,6 +14,7 @@ import {
   Label,
   Navigation,
   Path,
+  Params,
   Settings,
 } from "lib/interfaces"
 import u from "styles/utils.module.scss"
@@ -28,7 +29,9 @@ interface Data {
   settings: Settings
 }
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+export const getStaticPaths: GetStaticPaths = async ({
+  locales = ["cy", "en"],
+}) => {
   const paths: Path[] = await sanityClient.fetch(artformPathQuery)
   const pathsWithLocales = paths.flatMap((path: Path) =>
     locales.map((locale) => ({ ...path, locale }))
@@ -39,7 +42,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug = "" } = params
+  const { slug = "" } = params as Params
   const data: Data = await sanityClient.fetch(artformQuery, { slug })
   return {
     props: {

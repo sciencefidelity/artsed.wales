@@ -21,9 +21,10 @@ export function StaffList({ person }: Props) {
         <div className={`${s.avatar} ${u.grid}`}>
           {person.avatar && (
             <SanityImage
-              image={person.avatar}
               alt={person.title}
+              dimensions={person.dimensions}
               height={200}
+              image={person.avatar}
               width={200}
               lazy
             />

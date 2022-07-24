@@ -50,7 +50,7 @@ export const QuoteSection: FC<Props> = ({ label, quotes }) => {
               type="button"
               className={`
                 ${s.quoteBtn}
-                ${idx === quoteNumber ? s.quoteBtnActive : undefined}
+                ${idx === quoteNumber ? s.quoteBtnActive : ""}
               `}
             >
               {" "}

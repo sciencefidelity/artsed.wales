@@ -1,3 +1,5 @@
+import { ParsedUrlQuery } from "node:querystring";
+
 export interface Address {
   city: string;
   line1: string;
@@ -28,6 +30,11 @@ export interface Company extends SanityDocument {
   readonly email: LocaleString;
   readonly telephone: LocaleString;
   readonly title: LocaleString;
+}
+
+export interface Dimensions {
+  height: number;
+  width: number;
 }
 
 /** engagementFigure: _key, count, title(en/cy); intro(en/cy); title(en/cy) */
@@ -171,6 +178,7 @@ export interface Page extends SanityDocument {
   __i18n_refs: Page;
   _type: "page";
   body: PortableText;
+  dimensions: Dimensions;
   facebook: SocialCard;
   image: Image;
   meta: MetaData;
@@ -185,6 +193,10 @@ export interface PageSettings {
   excerpt: string;
   publishedAt: string;
   tags: Tag[];
+}
+
+export interface Params extends ParsedUrlQuery {
+  slug: string;
 }
 
 export interface Path {
@@ -207,6 +219,7 @@ export interface Post extends SanityDocument {
   __i18n_refs: Post;
   _type: "post";
   body: PortableText;
+  dimensions: Dimensions;
   facebook: SocialCard;
   image: Image;
   meta: MetaData;
@@ -219,6 +232,7 @@ export interface Post extends SanityDocument {
 export interface Quote {
   _key: string;
   cite: string;
+  dimensions: Dimensions;
   image: Image;
   organisation: LocaleString;
   quote: LocaleString;
@@ -260,6 +274,7 @@ export interface Staff extends SanityDocument {
   _type: "staff";
   avatar: Image;
   bio: string;
+  dimensions: Dimensions;
   email: string;
   events: Event[];
   facebook: SocialCard;
@@ -288,6 +303,7 @@ export interface Video extends SanityDocument {
   _type: "video";
   asset: VideoAsset;
   body: PortableText;
+  dimensions: Dimensions;
   mainImage: Image;
   publishedAt: string;
   slug: string;

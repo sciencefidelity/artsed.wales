@@ -15,6 +15,7 @@ import {
   Event,
   Label,
   Navigation,
+  Params,
   Path,
   Post,
   Settings,
@@ -31,7 +32,9 @@ interface Data {
   settings: Settings
 }
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+export const getStaticPaths: GetStaticPaths = async ({
+  locales = ["cy", "en"],
+}) => {
   const paths: Path[] = await sanityClient.fetch(postPathQuery)
   const pathsWithLocales = paths.flatMap((path: Path) =>
     locales.map((locale) => ({ ...path, locale }))
@@ -42,7 +45,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug = "" } = params
+  const { slug = "" } = params as Params
   const data: Data = await sanityClient.fetch(postQuery, { slug })
   return {
     props: {
@@ -109,7 +112,12 @@ const PostPage = ({ data }: { data: Data }) => {
     >
       <div className={`${s.hero}`}>
         {post.image && (
-          <SanityImage image={post.image} alt={post.title} lazy={false} />
+          <SanityImage
+            dimensions={post.dimensions}
+            image={post.image}
+            alt={post.title}
+            lazy={false}
+          />
         )}
       </div>
       <div className={`${u.container}`}>

@@ -1,5 +1,6 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+  // eslint-disable-next-line @typescript-eslint/require-await
   async headers() {
     return [
       {

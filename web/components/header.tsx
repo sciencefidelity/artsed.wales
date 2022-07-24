@@ -42,7 +42,7 @@ export function Header({ labels, navigation, settings }: Props) {
     >
       <nav className={`${u.container} ${s.nav}`}>
         <div
-          className={`${s.overlay} ${isActive ? s.overlayActive : undefined}`}
+          className={`${s.overlay} ${isActive ? s.overlayActive : ""}`}
           onClick={isActive ? menuClose : undefined}
           onKeyDown={isActive ? menuClose : undefined}
           role="button"
@@ -60,7 +60,7 @@ export function Header({ labels, navigation, settings }: Props) {
                   ${
                     pathname === buildURL(item.url._type, item.url.slug)
                       ? s.active
-                      : undefined
+                      : ""
                   }
                 `}
                 >
@@ -85,7 +85,7 @@ export function Header({ labels, navigation, settings }: Props) {
                   ${
                     pathname === buildURL(item.url._type, item.url.slug)
                       ? s.active
-                      : undefined
+                      : ""
                   }
                 `}
                 >
@@ -136,9 +136,7 @@ export function Header({ labels, navigation, settings }: Props) {
           <span className={`${u.screenReaderText}`}>
             {locale === "cy" ? "Prif Ddewislen" : "Main Menu"}
           </span>
-          <span
-            className={`${s.hamburger} ${isActive ? s.navActive : undefined}`}
-          />
+          <span className={`${s.hamburger} ${isActive ? s.navActive : ""}`} />
         </button>
       </nav>
     </header>

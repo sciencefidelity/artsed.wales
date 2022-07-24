@@ -19,6 +19,7 @@ import {
   Event,
   Label,
   Navigation,
+  Params,
   Path,
   Settings,
 } from "lib/interfaces"
@@ -34,7 +35,9 @@ interface Data {
   labels: Label[]
 }
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+export const getStaticPaths: GetStaticPaths = async ({
+  locales = ["cy", "en"],
+}) => {
   const paths: Path[] = await sanityClient.fetch(eventPathQuery)
   const pathsWithLocales = paths.flatMap((path: Path) =>
     locales.map((locale) => ({ ...path, locale }))
@@ -45,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug = "" } = params
+  const { slug = "" } = params as Params
   const data: Data = await sanityClient.fetch(eventQuery, { slug })
   return {
     props: {

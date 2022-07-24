@@ -1,9 +1,10 @@
 import { FC } from "react"
 import { urlFor } from "lib/utils"
-import { Image } from "lib/interfaces"
+import { Dimensions, Image } from "lib/interfaces"
 
 interface Props {
   alt: string
+  dimensions: Dimensions
   image: Image
   height?: number
   lazy?: boolean
@@ -20,7 +21,14 @@ interface Props {
  * @param width - the width of the image
  * @returns An image tag with Sanity formatted image URL
  */
-export const SanityImage: FC<Props> = ({ alt, height, image, width, lazy }) => {
+export const SanityImage: FC<Props> = ({
+  alt,
+  dimensions,
+  height = dimensions.height,
+  image,
+  width = dimensions.width,
+  lazy,
+}) => {
   const { hotspot } = image
   const position = hotspot
     ? `${Math.round(hotspot.x * 100)}% ${Math.round(hotspot.y * 100)}%`
