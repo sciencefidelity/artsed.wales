@@ -94,12 +94,12 @@
 }
 
 .ellipsis2 {
-  text-overflow:ellipsis;
-  overflow:hidden;
-  display: -webkit-box !important;
+  display: box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  white-space: normal;
 }
 
 .emailAddress {

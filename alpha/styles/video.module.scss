@@ -29,10 +29,10 @@
 }
 
 .title {
-  font-size: 4.5vw;
-  color: var(--grey-750);
   width: 50vw;
+  font-size: 4.5vw;
   font-weight: 700;
+  color: var(--grey-750);
   text-align: center;
 }
 
@@ -59,8 +59,8 @@
 
 .content {
   max-width: 710px;
-  margin-inline: 0;
   margin-block: 3rem 2rem;
+  margin-inline: 0;
   @include b.mq(md) {
     margin-inline: auto;
   }
@@ -96,15 +96,15 @@
 }
 
 .videoPlayer {
-  margin-block: 7rem 2rem;
   width: 100%;
   padding-right: 5rem;
+  margin-block: 7rem 2rem;
 }
 
 .date {
   font-size: 1.4rem;
-  line-height: 1.5;
   font-weight: 600;
+  line-height: 1.5;
 }
 
 .hr {
