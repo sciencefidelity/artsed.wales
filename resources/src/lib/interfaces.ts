@@ -1,111 +1,116 @@
 export interface Image {
-  _type: "image"
-  asset: SanityReference<SanityImageAsset>
-  crop?: SanityImageCrop
-  hotspot?: SanityImageHotspot
+  _type: "image";
+  asset: SanityReference<SanityImageAsset>;
+  crop?: SanityImageCrop;
+  hotspot?: SanityImageHotspot;
 }
 
 export type PortableText = Array<
   | SanityKeyed<SanityBlock>
   | SanityKeyed<{
-      _type: "image"
-      asset: SanityReference<SanityImageAsset>
-      crop?: SanityImageCrop
-      hotspot?: SanityImageHotspot
+      style: string;
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
     }>
->
+  | SanityKeyed<{
+      style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    }>
+>;
 
 export interface Resource extends SanityDocument {
-  body: PortableText
-  image: Image
-  slug: string
-  title: string
+  body: PortableText;
+  image: Image;
+  slug: string;
+  title: string;
 }
 
 export interface SanityBlock {
-  _type: "block"
-  [key: string]: any
+  _type: "block";
+  style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  [key: string]: any;
 }
 
 export interface SanityImageAsset extends SanityDocument {
-  _type: "sanity.imageAsset"
-  assetId: string
-  extension: string
-  metadata: SanityImageMetadata
-  mimeType: string
-  originalFilename: string
-  path: string
-  sha1hash: string
-  size: number
-  uploadId: string
-  url: string
+  _type: "sanity.imageAsset";
+  assetId: string;
+  extension: string;
+  metadata: SanityImageMetadata;
+  mimeType: string;
+  originalFilename: string;
+  path: string;
+  sha1hash: string;
+  size: number;
+  uploadId: string;
+  url: string;
 }
 
 export interface SanityImageCrop {
-  _type: "sanity.imageCrop"
-  bottom: number
-  left: number
-  right: number
-  top: number
+  _type: "sanity.imageCrop";
+  bottom: number;
+  left: number;
+  right: number;
+  top: number;
 }
 
 export interface SanityImageDimensions {
-  _type: "sanity.imageDimensions"
-  aspectRatio: number
-  height: number
-  width: number
+  _type: "sanity.imageDimensions";
+  aspectRatio: number;
+  height: number;
+  width: number;
 }
 
 export interface SanityImageHotspot {
-  _type: "sanity.imageHotspot"
-  height: number
-  width: number
-  x: number
-  y: number
+  _type: "sanity.imageHotspot";
+  height: number;
+  width: number;
+  x: number;
+  y: number;
 }
 
 export interface SanityImageMetadata {
-  _type: "sanity.imageMetadata"
-  dimensions: SanityImageDimensions
-  hasAlpha: boolean
-  isOpaque: boolean
-  lqip: string
-  palette: SanityImagePalette
+  _type: "sanity.imageMetadata";
+  dimensions: SanityImageDimensions;
+  hasAlpha: boolean;
+  isOpaque: boolean;
+  lqip: string;
+  palette: SanityImagePalette;
 }
 
 export interface SanityImagePalette {
-  _type: "sanity.imagePalette"
-  darkMuted: SanityImagePaletteSwatch
-  darkVibrant: SanityImagePaletteSwatch
-  dominant: SanityImagePaletteSwatch
-  lightMuted: SanityImagePaletteSwatch
-  lightVibrant: SanityImagePaletteSwatch
-  muted: SanityImagePaletteSwatch
-  vibrant: SanityImagePaletteSwatch
+  _type: "sanity.imagePalette";
+  darkMuted: SanityImagePaletteSwatch;
+  darkVibrant: SanityImagePaletteSwatch;
+  dominant: SanityImagePaletteSwatch;
+  lightMuted: SanityImagePaletteSwatch;
+  lightVibrant: SanityImagePaletteSwatch;
+  muted: SanityImagePaletteSwatch;
+  vibrant: SanityImagePaletteSwatch;
 }
 
 export interface SanityImagePaletteSwatch {
-  _type: "sanity.imagePaletteSwatch"
-  background: string
-  foreground: string
-  population: number
-  title: string
+  _type: "sanity.imagePaletteSwatch";
+  background: string;
+  foreground: string;
+  population: number;
+  title: string;
 }
 
 export declare type SanityKeyed<T> = T extends object
   ? T & {
-      _key: string
+      _key: string;
     }
-  : T
+  : T;
 
 export declare type SanityReference<_T> = {
-  _type: "reference"
-  _ref: string
-}
+  _type: "reference";
+  _ref: string;
+};
 
 export interface SanityDocument {
-  _id: string
-  _createdAt: string
-  _rev: string
-  _updatedAt: string
+  _id: string;
+  _createdAt: string;
+  _rev: string;
+  _updatedAt: string;
 }

@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   } = await sanityClient.fetch(resourceQuery).then(response => response)
   return data.resources.map(resource => {
     const pages = separatePages(resource.body)
-    const titles = resource.body.filter(block => block.style !== "normal")
+    const titles = resource.body.filter((block) => block.style !== "normal")
     const headings = getHeadings(titles)
     return headings.map((heading, idx) => {
       const slug = kebabCase(heading)
@@ -45,7 +45,7 @@ const blocks = resource.body.filter(block => block.style !== "normal")
 const pageBlocks = page.filter(block => block.style !== "normal")
 const pageHeadings = getHeadings(blocks)
 const headings = getNestedHeadings(pageBlocks)
-const pathname = Astro.canonicalURL.pathname
+const pathname = Astro.url.pathname
 ---
 <html lang="en">
   <head>
