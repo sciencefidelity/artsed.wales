@@ -1,7 +1,7 @@
 ---
 import "styles/global.scss"
 import { Maybe } from "astro-control"
-import { toHTML } from "@portabletext/to-html"
+import { toHTML, PortableTextHtmlComponents } from "@portabletext/to-html"
 import sanityClient from "lib/sanityClient"
 // import Image from "components/Image.astro"
 import { portableTextComponents } from "lib/components"
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
 const { nextPage, resource, page, prevPage } = Astro.props as {
   nextPage: string
   resource: Resource
-  page: PortableText
+  page: PortableText[]
   prevPage: string
 }
 const blocks = resource.body.filter(block => block.style !== "normal")
@@ -74,7 +74,7 @@ const pathname = Astro.url.pathname
           {resource.title}
         </a>
       </Maybe>
-      <div class=""></div>
+      <div />
     </header>
     <article class="article relative grid mx-5 mt-7 mb-24 gap-x-7 xl:gap-x-12">
       <nav class="sticky self-start top-24 overflow-auto mt-24">
@@ -104,7 +104,7 @@ const pathname = Astro.url.pathname
         <Maybe
           as="div"
           class="mb-16"
-          set:html={toHTML(page, {components: portableTextComponents})}
+          set:html={toHTML(page, {components: portableTextComponents as Partial<PortableTextHtmlComponents>})}
         ></Maybe>
         <div class="grid grid-cols-2 gap-5 smooth font-medium text-sm color-650">
           {prevPage ?

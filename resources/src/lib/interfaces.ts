@@ -5,31 +5,41 @@ export interface Image {
   hotspot?: SanityImageHotspot;
 }
 
-export type PortableText = Array<
-  | SanityKeyed<SanityBlock>
-  | SanityKeyed<{
-      style: string;
-      _type: "image";
-      asset: SanityReference<SanityImageAsset>;
-      crop?: SanityImageCrop;
-      hotspot?: SanityImageHotspot;
-    }>
-  | SanityKeyed<{
-      style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-    }>
->;
+export interface PortableText {
+  _key: string;
+  _type: "captionImage";
+  asset: SanityReference<SanityImageAsset>;
+  caption: string;
+  crop?: SanityImageCrop;
+  hotspot?: SanityImageHotspot;
+  children: SanityBlockChildren[];
+  markDefs?: SanityMarkDef[];
+  style: "normal" | "h1" | "h2" | "h3" | "h4";
+  level?: number;
+  listItem?: "bullet";
+}
 
 export interface Resource extends SanityDocument {
-  body: PortableText;
+  body: PortableText[];
   image: Image;
   slug: string;
   title: string;
 }
 
-export interface SanityBlock {
-  _type: "block";
-  style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  [key: string]: any;
+interface SanityBlockChildren {
+  _key: string;
+  _type: "span";
+  marks?: SanityMark[];
+  text: string;
+}
+
+type SanityMark = "em" | string;
+
+interface SanityMarkDef {
+  _key: string;
+  _type: "link";
+  blank: boolean;
+  href: string;
 }
 
 export interface SanityImageAsset extends SanityDocument {

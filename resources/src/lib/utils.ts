@@ -1,12 +1,12 @@
 import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "./sanityClient";
-import { PortableText, SanityBlock } from "lib/interfaces";
+import { PortableText } from "lib/interfaces";
 
 export const buildUrl = (type: string, slug: string): string => {
   return `${subdir(type)}/${slug}`;
 };
 
-export const getHeadings = (blocks: SanityBlock[]): string[] => {
+export const getHeadings = (blocks: PortableText[]): string[] => {
   const headings: string[] = [];
   blocks.forEach((block) => {
     const { children } = block;
@@ -19,7 +19,7 @@ export const getHeadings = (blocks: SanityBlock[]): string[] => {
   return headings;
 };
 
-export const getNestedHeadings = (titles: SanityBlock[]) => {
+export const getNestedHeadings = (titles: PortableText[]) => {
   const nestedHeadings = [];
   titles.forEach((title) => {
     const { children } = title;
@@ -44,7 +44,7 @@ export const getNestedHeadings = (titles: SanityBlock[]) => {
   return nestedHeadings;
 };
 
-export const separatePages = (blocks: any) => {
+export const separatePages = (blocks: PortableText[]) => {
   let pages = [];
   let body = [];
   for (let i = 0; i < blocks.length; i++) {
