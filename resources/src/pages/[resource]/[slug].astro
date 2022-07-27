@@ -12,7 +12,7 @@ import {
   separatePages
 } from "lib/utils"
 import { resourceQuery } from "lib/queries"
-import { Resource, PortableText } from "lib/interfaces"
+import { Resource, PortableText, NestedHeadings } from "lib/interfaces"
 
 export async function getStaticPaths() {
   const data: {
@@ -44,7 +44,8 @@ const { nextPage, resource, page, prevPage } = Astro.props as {
 const blocks = resource.body.filter(block => block.style !== "normal")
 const pageBlocks = page.filter(block => block.style !== "normal")
 const pageHeadings = getHeadings(blocks)
-const headings = getNestedHeadings(pageBlocks)
+const headings: NestedHeadings[] = getNestedHeadings(pageBlocks)
+console.log(headings[0].items)
 const pathname = Astro.url.pathname
 ---
 <html lang="en">

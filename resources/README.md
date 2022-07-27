@@ -1,3 +1,3 @@
-# Email marketing template
+# NAEN Learning Resources
 
-Template used for building marketing emails with Astro.
+Proof of Concept for learning resourses with Astro and Sanity.io.

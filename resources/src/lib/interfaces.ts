@@ -5,6 +5,12 @@ export interface Image {
   hotspot?: SanityImageHotspot;
 }
 
+export interface NestedHeadings {
+  id: string;
+  title: string;
+  items: NestedHeadings[];
+}
+
 export interface PortableText {
   _key: string;
   _type: "captionImage";
