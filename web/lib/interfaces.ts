@@ -305,6 +305,7 @@ export interface Video extends SanityDocument {
   asset: VideoAsset;
   body: PortableText;
   dimensions: Dimensions;
+  facebook: SocialCard;
   mainImage: Image;
   meta: MetaData;
   publishedAt: string;

@@ -33,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async ({
   locales = ["cy", "en"],
 }) => {
   const paths: Path[] = await sanityClient.fetch(artformPathQuery)
-  const pathsWithLocales = paths.flatMap((path: Path) =>
+  const pathsWithLocales = paths.flatMap((path) =>
     locales.map((locale) => ({ ...path, locale }))
   )
   return {

@@ -1,19 +1,8 @@
-/**
- * Video component (dynamic)
- *
- * @remarks
- * Generates all pages in the subdirectory `/videos`.
- *
- * @param data - all props fetched with `videoQuery` in `lib/queries.ts`.
- * @param slug - all props fetched with `vidoePathQuery` in `lib/queries.ts`.
- */
 import { GetStaticProps, GetStaticPaths } from "next"
-import Head from "next/head"
 import { useRouter } from "next/router"
 import sanityClient from "lib/sanityClient"
 import { PortableText } from "@portabletext/react"
 import { components } from "components/portableTextComponents"
-import { ErrorTemplate } from "components/errorTemplate"
 import { Icon } from "components/icons/icon"
 import { Layout } from "components/layout"
 import { PostDate } from "components/date"
@@ -26,6 +15,7 @@ import {
   Event,
   Label,
   Navigation,
+  Params,
   Path,
   Settings,
   Video,
@@ -34,82 +24,84 @@ import u from "styles/utils.module.scss"
 import s from "styles/video.module.scss"
 import p from "styles/patterns.module.scss"
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const paths = await sanityClient.fetch(videoPathQuery)
-  const pathsWithLocales = paths.flatMap((path: Path) => {
-    return locales.map(locale => ({...path, locale}) )
-  })
+interface Data {
+  company: Company
+  events: Event[]
+  labels: Label[]
+  navigation: Navigation
+  settings: Settings
+  video: Video
+}
+
+export const getStaticPaths: GetStaticPaths = async ({
+  locales = ["cy", "en"],
+}) => {
+  const paths: Path[] = await sanityClient.fetch(videoPathQuery)
+  const pathsWithLocales = paths.flatMap((path: Path) =>
+    locales.map((locale) => ({ ...path, locale }))
+  )
   return {
     paths: pathsWithLocales,
-    fallback: false
+    fallback: false,
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug = "" } = params
-  const data = await sanityClient.fetch(videoQuery, { slug })
+  const { slug = "" } = params as Params
+  const data: Data = await sanityClient.fetch(videoQuery, { slug })
   return {
     props: {
-      data
-    }
+      data,
+    },
   }
 }
 
-const VideoPage = ({ data }) => {
+/**
+ * VideoPage (dynamic): pages generated for each video
+ * @remarks Generates all pages in the subdirectory `/videos`
+ * @param data - data from Sanity fetched with {@link videoQuery}
+ */
+const VideoPage = ({ data }: { data: Data }) => {
   const router = useRouter()
-  const { locale } = router
-  if(router.isFallback) {
-    return <ErrorTemplate />
-  }
-  if(!data) {
-    return (<>
-      <Head><meta name="robots" content="noindex" /></Head>
-      <ErrorTemplate />
-    </>)
-  }
-  const {
-    company,
-    events,
-    labels,
-    navigation,
-    settings,
-    video
-  } = data as {
-    company: Company
-    events: Event[]
-    labels: Label[]
-    navigation: Navigation
-    settings: Settings
-    video: Video
-  }
+  const { locale = "en" } = router
+  const { company, events, labels, navigation, settings, video } = data
 
   const pageHead = {
-    title: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.meta?.title
-      : video.meta?.title,
-    description: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.meta?.description
-      : video.meta?.description,
-    ogTitle: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.facebook?.title
-      : video.facebook?.title,
-    ogDescription: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.facebook?.description
-      : video.facebook?.description,
-    ogURL: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.meta?.canonicalURL
-      : video.meta?.canonicalURL,
-    ogImage: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.facebook?.image
-      : video.facebook?.image,
-    twitterTitle: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.twitter?.title
-      : video.twitter?.title,
-    twitterDescription: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.twitter?.description
-      : video.twitter?.description,
-    twitterImage: locale === "cy" && video.__i18n_refs
-      ? video.__i18n_refs.twitter?.image
-      : video.twitter?.image
+    title:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.meta?.title
+        : video.meta?.title,
+    description:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.meta?.description
+        : video.meta?.description,
+    ogTitle:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.facebook?.title
+        : video.facebook?.title,
+    ogDescription:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.facebook?.description
+        : video.facebook?.description,
+    ogURL:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.meta?.canonicalURL
+        : video.meta?.canonicalURL,
+    ogImage:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.facebook?.image
+        : video.facebook?.image,
+    twitterTitle:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.twitter?.title
+        : video.twitter?.title,
+    twitterDescription:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.twitter?.description
+        : video.twitter?.description,
+    twitterImage:
+      locale === "cy" && video.__i18n_refs
+        ? video.__i18n_refs.twitter?.image
+        : video.twitter?.image,
   }
   return (
     <Layout
@@ -122,12 +114,19 @@ const VideoPage = ({ data }) => {
       <div className={`${s.hero} ${p.cross}`}>
         <div className={`${s.heroContent} ${u.absolute}`}>
           <div>
-            <div className={`${s.icon}`}><Icon name={"Icons"} /></div>
+            <div className={`${s.icon}`}>
+              <Icon name="Icons" />
+            </div>
             <h1
               className={`${s.title} ${u.mono}`}
+              // TODO: make this less dangerous
+              // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{
-                __html: locale === "cy" && video.__i18n_refs
-                  ? video.__i18n_refs.title : video.title }}
+                __html:
+                  locale === "cy" && video.__i18n_refs
+                    ? video.__i18n_refs.title
+                    : video.title,
+              }}
             />
           </div>
         </div>
@@ -142,18 +141,24 @@ const VideoPage = ({ data }) => {
         <div className={`${s.video} ${u.grid}`}>
           <div>
             <div className={`${s.videoPlayer}`}>
-              <VideoPlayer video={video}/>
+              <VideoPlayer video={video} />
             </div>
             <section className={`${s.content}`}>
-              {video.publishedAt && <div className={`${s.date}`}>
-                Published on{" "}
-                <PostDate date={video.publishedAt} />
-              </div>}
-              {video.body && <PortableText
-                value={locale === "cy" && video.__i18n_refs
-                  ? video.__i18n_refs.body : video.body}
-                components={components}
-              />}
+              {video.publishedAt && (
+                <div className={`${s.date}`}>
+                  Published on <PostDate date={video.publishedAt} />
+                </div>
+              )}
+              {video.body && (
+                <PortableText
+                  value={
+                    locale === "cy" && video.__i18n_refs
+                      ? video.__i18n_refs.body
+                      : video.body
+                  }
+                  components={components}
+                />
+              )}
             </section>
           </div>
           <hr className={`${s.hr}`} />
