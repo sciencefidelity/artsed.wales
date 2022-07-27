@@ -1,8 +1,13 @@
-import sanityClient from "@sanity/client"
+import sanityClient from "@sanity/client";
 
+/**
+ * Defines the projectId and dataset to connect to the Sanity database
+ * @remarks uses project id and dataset defined in `.env`
+ * {@link https://www.sanity.io/manage}
+ */
 export default sanityClient({
-  projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID ?? "",
-  dataset: import.meta.env.PUBLIC_SANITY_DATASET ?? "production",
-  apiVersion: import.meta.env.PUBLIC_SANITY_API_VERSION ?? "",
-  useCdn: true
-})
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "",
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  apiVersion: "2022-03-17",
+  useCdn: true,
+});

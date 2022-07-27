@@ -5,6 +5,12 @@ export interface Image {
   hotspot?: SanityImageHotspot;
 }
 
+export interface NestedHeadings {
+  id: string;
+  title: string;
+  items?: NestedHeadings[];
+}
+
 export interface PortableText {
   _key: string;
   _type: "captionImage";
@@ -113,6 +119,7 @@ export declare type SanityKeyed<T> = T extends object
     }
   : T;
 
+// eslint-disable-next-line @typescript-eslint/naming-convention, @typescript-eslint/no-unused-vars
 export declare type SanityReference<_T> = {
   _type: "reference";
   _ref: string;

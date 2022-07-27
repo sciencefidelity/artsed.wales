@@ -1,6 +1,6 @@
 import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "lib/sanityClient";
-import { Image, PortableText } from "lib/interfaces";
+import { Image, NestedHeadings, PortableText } from "lib/interfaces";
 
 export const getHeadings = (blocks: PortableText[]): string[] => {
   const headings: string[] = [];
@@ -18,6 +18,7 @@ export const getHeadings = (blocks: PortableText[]): string[] => {
 export const separatePages = (blocks: PortableText[]) => {
   const pages = [];
   let body = [];
+  // eslint-disable-next-line unicorn/no-for-loop, no-plusplus
   for (let i = 0; i < blocks.length; i++) {
     if (blocks[i].style === "h2") {
       if (i !== 0) {
@@ -42,7 +43,7 @@ export function kebabCase(str: string): string {
 }
 
 export const getNestedHeadings = (titles: PortableText[]) => {
-  const nestedHeadings = [];
+  const nestedHeadings: NestedHeadings[] = [];
   titles.forEach((title) => {
     const { children, style } = title;
     // const { text } = children[0]
@@ -54,10 +55,10 @@ export const getNestedHeadings = (titles: PortableText[]) => {
         items: [],
       });
     } else if (
-      title.style === "h3" ||
-      (title.style === "h4" && nestedHeadings.length > 0)
+      style === "h3" ||
+      (style === "h4" && nestedHeadings.length > 0)
     ) {
-      nestedHeadings[nestedHeadings.length - 1].items.push({
+      nestedHeadings[nestedHeadings.length - 1].items?.push({
         id: kebabCase(children[0].text),
         title: children[0].text,
       });
