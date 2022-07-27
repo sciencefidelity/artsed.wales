@@ -1,7 +1,0 @@
-node_modules
-dist
-.nova
-.next
-coverage
-*.json
-generated
