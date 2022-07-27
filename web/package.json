@@ -1,4 +1,14 @@
 {
+  "name": "national-arts-and-education-network",
+  "description": "National Arts and Education Network",
+  "homepage": "http://artsed.wales/",
+  "version": "1.0.0",
+  "author": "Matt Cook <matt@sciencefidelity.co.uk>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sciencefidelity/artsed.wales"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
