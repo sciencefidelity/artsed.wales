@@ -134,7 +134,6 @@ const VideoPage = ({ data }: { data: Data }) => {
           image={video.facebook.image}
           alt={video.title}
           lazy={false}
-          saturation={-100}
         />} */}
       </div>
       <div className={`${u.container}`}>
