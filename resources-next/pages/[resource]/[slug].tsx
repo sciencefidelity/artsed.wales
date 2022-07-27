@@ -16,7 +16,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 interface Data {
-  resources: Resource[]
+  paths: Resource[]
 }
 
 interface Resource {
@@ -26,13 +26,13 @@ interface Resource {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data: Data = await sanityClient.fetch(resourcePathQuery)
-  const paths = data.resources.map((resource) => {
-    const titles = resource.body.filter((block) => block.style !== "normal")
+  const paths = data.paths.map((path) => {
+    const titles = path.body.filter((block) => block.style !== "normal")
     const headings = getHeadings(titles)
     return headings.map((heading) => {
       const slug = kebabCase(heading)
       return {
-        params: { resource: resource.resource, slug },
+        params: { resource: path.resource, slug },
       }
     })
   })
@@ -53,7 +53,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 const ResourceTemplate: NextPage = (res) => {
-  const greeting = "Hello"
   const { data } = res
   console.log(data[0])
   return <pre>{JSON.stringify(data[0].body, undefined, 2)}</pre>

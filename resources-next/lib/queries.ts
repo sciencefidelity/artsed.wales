@@ -7,7 +7,7 @@ export const resourceQuery = groq`{
 }`;
 
 export const resourcePathQuery = groq`{
-  "resources": *[_type == "resource"][]{
+  "paths": *[_type == "resource" && defined(slug) && __i18n_lang == "en"][]{
     "resource": slug.current, body
   }
 }`;
