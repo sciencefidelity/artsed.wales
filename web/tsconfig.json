@@ -17,7 +17,13 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "typeRoots": ["node_modules/@types", "types"],
-    "types": ["mailchimp__mailchimp_marketing", "node", "react", "react-dom"],
+    "types": [
+      "jest",
+      "mailchimp__mailchimp_marketing",
+      "node",
+      "react",
+      "react-dom"
+    ],
     "paths": {
       "*": ["types/*", "*"],
       "@/components/*": ["components/*"],

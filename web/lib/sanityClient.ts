@@ -6,7 +6,7 @@ import sanityClient from "@sanity/client";
  * {@link https://www.sanity.io/manage}
  */
 export default sanityClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "2l9k48uy",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   apiVersion: "2022-03-17",
   useCdn: true,
