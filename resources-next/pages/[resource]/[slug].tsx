@@ -43,18 +43,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params as Params
-  const data: Data = await sanityClient.fetch(resourceQuery, { slug })
+  const { resource } = params as Params
+  const res: Data = await sanityClient.fetch(resourceQuery, { resource })
   return {
     props: {
-      data,
+      data: res.resources,
     },
   }
 }
 
-const ResourceTemplate: NextPage = () => {
+const ResourceTemplate: NextPage = (res) => {
   const greeting = "Hello"
-  return <div>{greeting}</div>
+  const { data } = res
+  console.log(data[0])
+  return <pre>{JSON.stringify(data[0].body, undefined, 2)}</pre>
 }
 
 export default ResourceTemplate
