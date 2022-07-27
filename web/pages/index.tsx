@@ -99,7 +99,14 @@ const Home: NextPage<Props> = ({ data }: Props) => {
                 components={components}
               />
             </article>
-            <VideoPlayer video={videos[0]} />
+            <div className={`${s.video}`}>
+              <VideoPlayer video={videos[0]} />
+              <div className={`${s.caption} ${u.sans} ${u.uppercase}`}>
+                {locale === "cy" && videos[0].__i18n_refs
+                  ? videos[0].__i18n_refs.title
+                  : videos[0].title}
+              </div>
+            </div>
           </section>
           <hr />
           <EngagementSection engagement={engagement} />

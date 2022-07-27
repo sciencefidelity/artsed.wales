@@ -1,4 +1,5 @@
 import { ParsedUrlQuery } from "node:querystring";
+import { icons } from "components/icons/icon";
 
 export interface Address {
   city: string;
@@ -64,7 +65,7 @@ export interface Event extends SanityDocument {
   facebook: SocialCard;
   facilitators: Staff[];
   feature: boolean;
-  icon: string;
+  icon: keyof typeof icons;
   imageOne: Image;
   imageTwo: Image;
   imageThree: Image;
@@ -305,9 +306,11 @@ export interface Video extends SanityDocument {
   body: PortableText;
   dimensions: Dimensions;
   mainImage: Image;
+  meta: MetaData;
   publishedAt: string;
   slug: string;
   title: string;
+  twitter: SocialCard;
   videoLink: string;
 }
 
