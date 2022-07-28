@@ -1,53 +1,54 @@
 ---
-import "styles/global.scss"
-import { Maybe } from "astro-control"
-import { toHTML, PortableTextHtmlComponents } from "@portabletext/to-html"
-import sanityClient from "lib/sanityClient"
+import "styles/global.scss";
+import { Maybe } from "astro-control";
+import { toHTML, PortableTextHtmlComponents } from "@portabletext/to-html";
+import sanityClient from "lib/sanityClient";
 // import Image from "components/Image.astro"
-import { portableTextComponents } from "lib/components"
+import { portableTextComponents } from "lib/components";
 import {
   getHeadings,
   getNestedHeadings,
   kebabCase,
-  separatePages
-} from "lib/utils"
-import { resourceQuery } from "lib/queries"
-import { Resource, PortableText, NestedHeadings } from "lib/interfaces"
+  separatePages,
+} from "lib/utils";
+import { resourceQuery } from "lib/queries";
+import { Resource, PortableText, NestedHeadings } from "lib/interfaces";
 
 export async function getStaticPaths() {
   const data: {
-    resources: Resource[]
-  } = await sanityClient.fetch(resourceQuery).then(response => response)
-  return data.resources.map(resource => {
-    const pages = separatePages(resource.body)
-    const titles = resource.body.filter((block) => block.style !== "normal")
-    const headings = getHeadings(titles)
+    resources: Resource[];
+  } = await sanityClient.fetch(resourceQuery).then((response) => response);
+  return data.resources.map((resource) => {
+    const pages = separatePages(resource.body);
+    const titles = resource.body.filter((block) => block.style !== "normal");
+    const headings = getHeadings(titles);
     return headings.map((heading, idx) => {
-      const slug = kebabCase(heading)
-      const page = pages[idx] as PortableText
-      const prevPage = headings[idx - 1] as string
-      const nextPage = headings[idx + 1] as string
+      const slug = kebabCase(heading);
+      const page = pages[idx] as PortableText;
+      const prevPage = headings[idx - 1] as string;
+      const nextPage = headings[idx + 1] as string;
       return {
         params: { resource: resource.slug, slug: slug },
-        props: { nextPage, resource, page, prevPage }
-      }
-    })
-  })
+        props: { nextPage, resource, page, prevPage },
+      };
+    });
+  });
 }
 
 const { nextPage, resource, page, prevPage } = Astro.props as {
-  nextPage: string
-  resource: Resource
-  page: PortableText[]
-  prevPage: string
-}
-const blocks = resource.body.filter((block) => block.style !== "normal")
-const pageBlocks = page.filter((block) => block.style !== "normal")
-const pageHeadings = getHeadings(blocks)
-const headings: NestedHeadings[] = getNestedHeadings(pageBlocks)
-console.log(headings[0].items)
-const pathname = Astro.url.pathname
+  nextPage: string;
+  resource: Resource;
+  page: PortableText[];
+  prevPage: string;
+};
+const blocks = resource.body.filter((block) => block.style !== "normal");
+const pageBlocks = page.filter((block) => block.style !== "normal");
+const pageHeadings = getHeadings(blocks);
+const headings: NestedHeadings[] = getNestedHeadings(pageBlocks);
+console.log(headings[0].items);
+const pathname = Astro.url.pathname;
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -55,14 +56,14 @@ const pathname = Astro.url.pathname
     <title>{resource.title}</title>
   </head>
   <body>
-    <header class="header grid w-screen z-10 fixed top-0 gap-x-7 xl:gap-x-12 bg-950 px-5 py-2">
-      <h1
-        class="mono font-bold text-base md:text-xl xl:text-2xl uppercase"
-      >
+    <header
+      class="header grid w-screen z-10 fixed top-0 gap-x-7 xl:gap-x-12 bg-950 px-5 py-2"
+    >
+      <h1 class="mono font-bold text-base md:text-xl xl:text-2xl uppercase">
         <a href="https://artsed.wales" class="color-300 hover:text-white">
           NAEN
         </a>
-        <span class="color-300"> | </span>
+        <span class="color-300"> |</span>
         <a href="https://celfadd.cymru" class="color-300 hover:text-white">
           RCCA
         </a>
@@ -75,43 +76,50 @@ const pathname = Astro.url.pathname
           {resource.title}
         </a>
       </Maybe>
-      <div />
+      <div></div>
     </header>
     <article class="article relative grid mx-5 mt-7 mb-24 gap-x-7 xl:gap-x-12">
       <nav class="sticky self-start top-24 overflow-auto mt-24">
         <h2 class="uppercase font-bold color-550 text-lg">Content</h2>
         <hr class="hr" />
         <ul class="sans smooth font-medium text-xl color-550 list-dash ml-3">
-          {pageHeadings.map(heading => (
-            <li class={`
+          {pageHeadings.map((heading) => (
+            <li
+              class={`
                 mt-3 pl-2
-                ${pathname === `/${resource.slug}/` + kebabCase(heading) + '/'
-                  ? 'color-850 font-semibold'
-                  : ''
+                ${
+                  pathname === `/${resource.slug}/` + kebabCase(heading) + "/"
+                    ? "color-850 font-semibold"
+                    : ""
                 }
-              `}>
+              `}
+            >
               <Maybe
                 as="a"
-                href={`/${resource.slug}/${kebabCase(heading)}#${kebabCase(heading)}`}
+                href={`/${resource.slug}/${kebabCase(heading)}#${kebabCase(
+                  heading
+                )}`}
                 class={`
                   hover:text-gray-800 focus:text-gray-800
                 `}
-              >{heading}</Maybe>
+              >
+                {heading}
+              </Maybe>
             </li>
           ))}
         </ul>
       </nav>
       <section class="main">
-        <Maybe
-          as="div"
-          class="mb-16"
-          set:html={toHTML(page, {components: portableTextComponents as Partial<PortableTextHtmlComponents>})}
-        ></Maybe>
-        <div class="grid grid-cols-2 gap-5 smooth font-medium text-sm color-650">
-          {prevPage ?
-            <a href={`
+        <Maybe as="div" class="mb-16" />
+        <div
+          class="grid grid-cols-2 gap-5 smooth font-medium text-sm color-650"
+        >
+          {prevPage ? (
+            <a
+              href={`
               /${resource.slug}/${kebabCase(prevPage)}#${kebabCase(prevPage)}
-            `}>
+            `}
+            >
               <div class="flex justify-between py-2 px-4 border-2 rounded-md hover:border-gray-300">
                 <div class="self-center text-lg font-bold color-400">←</div>
                 <div class="text-right">
@@ -120,13 +128,15 @@ const pathname = Astro.url.pathname
                 </div>
               </div>
             </a>
-            :
+          ) : (
             <div>&nbsp;</div>
-          }
-          {nextPage ?
-            <a href={`
+          )}
+          {nextPage ? (
+            <a
+              href={`
               /${resource.slug}/${kebabCase(nextPage)}#${kebabCase(nextPage)}
-            `}>
+            `}
+            >
               <div class="flex justify-between py-2 px-4 border-2 rounded-md hover:border-gray-300">
                 <div>
                   <p class="color-500">Next page</p>
@@ -135,29 +145,29 @@ const pathname = Astro.url.pathname
                 <div class="self-center text-lg font-bold color-400">→</div>
               </div>
             </a>
-            :
+          ) : (
             <div>&nbsp;</div>
-          }
+          )}
         </div>
       </section>
-      <nav class="sticky hidden lg:inline-block self-start top-24 overflow-auto mt-24">
+      <nav
+        class="sticky hidden lg:inline-block self-start top-24 overflow-auto mt-24"
+      >
         <h2 class="uppercase font-bold color-550 text-lg">On this page</h2>
         <hr class="hr" />
         <ul class="sans smooth font-semibold text-xl color-700 list-dash ml-3">
-          {headings.map(heading => (
+          {headings.map((heading) => (
             <li class="mt-3 pl-2">
-              <a
-                href={`#${heading.id}`}
-                class="hover:text-gray-800"
-              >{heading.title}</a>
+              <a href={`#${heading.id}`} class="hover:text-gray-800">
+                {heading.title}
+              </a>
               {heading.items.length > 0 && (
                 <ul class="font-medium color-550 list-dash ml-6">
-                  {heading.items.map(child => (
+                  {heading.items.map((child) => (
                     <li class="mt-3 pl-2">
-                      <a
-                        href={`#${child.id}`}
-                        class="hover:text-gray-800"
-                      >{child.title}</a>
+                      <a href={`#${child.id}`} class="hover:text-gray-800">
+                        {child.title}
+                      </a>
                     </li>
                   ))}
                 </ul>
