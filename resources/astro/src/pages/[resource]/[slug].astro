@@ -45,8 +45,9 @@ const blocks = resource.body.filter((block) => block.style !== "normal");
 const pageBlocks = page.filter((block) => block.style !== "normal");
 const pageHeadings = getHeadings(blocks);
 const headings: NestedHeadings[] = getNestedHeadings(pageBlocks);
-console.log(headings[0].items);
 const pathname = Astro.url.pathname;
+const components =
+  portableTextComponents as Partial<PortableTextHtmlComponents>;
 ---
 
 <html lang="en">
@@ -110,7 +111,7 @@ const pathname = Astro.url.pathname;
         </ul>
       </nav>
       <section class="main">
-        <Maybe as="div" class="mb-16" />
+        <Maybe as="div" class="mb-16" set:html={toHTML(page, { components })} />
         <div
           class="grid grid-cols-2 gap-5 smooth font-medium text-sm color-650"
         >

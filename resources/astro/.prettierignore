@@ -9,3 +9,4 @@ node_modules
 *.scss
 *.css
 *.css.map
+*.astro

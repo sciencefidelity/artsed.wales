@@ -1,7 +1,7 @@
 ---
 import "styles/global.scss";
 import { Maybe } from "astro-control";
-import { toHTML } from "@portabletext/to-html";
+import { toHTML, PortableTextHtmlComponents } from "@portabletext/to-html";
 import sanityClient from "lib/sanityClient";
 import Image from "components/Image.astro";
 import { portableTextComponents } from "lib/components";
@@ -17,6 +17,8 @@ const titles = data.resources[0].body.filter(
   (block) => block.style !== "normal"
 );
 const headings = getNestedHeadings(titles);
+const components =
+  portableTextComponents as Partial<PortableTextHtmlComponents>;
 ---
 
 <html lang="en">
@@ -68,12 +70,7 @@ const headings = getNestedHeadings(titles);
         <!-- <h1 class="text-7xl mono smooth font-bold color-850 my-12">
           {resource.title}
         </h1> -->
-        <Maybe
-          as="div"
-          set:html={toHTML(resource.body, {
-            components: portableTextComponents,
-          })}
-        />
+        <Maybe as="div" set:html={toHTML(resource.body, { components })} />
       </section>
     </article>
     <style>
