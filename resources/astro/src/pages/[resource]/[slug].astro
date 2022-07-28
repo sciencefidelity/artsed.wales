@@ -41,8 +41,8 @@ const { nextPage, resource, page, prevPage } = Astro.props as {
   page: PortableText[]
   prevPage: string
 }
-const blocks = resource.body.filter(block => block.style !== "normal")
-const pageBlocks = page.filter(block => block.style !== "normal")
+const blocks = resource.body.filter((block) => block.style !== "normal")
+const pageBlocks = page.filter((block) => block.style !== "normal")
 const pageHeadings = getHeadings(blocks)
 const headings: NestedHeadings[] = getNestedHeadings(pageBlocks)
 console.log(headings[0].items)
