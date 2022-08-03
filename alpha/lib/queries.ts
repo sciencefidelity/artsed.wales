@@ -67,8 +67,14 @@ const eventFields = `
 
 const events = `
   "events": *[
-    _type == "event" && __i18n_lang == "en" && publish == true && ${omitDrafts}
+    _type == "event" && __i18n_lang == "en" && dateTime(now()) <= dateTime(dateStart) && ${omitDrafts}
   ] | order(dateStart){ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
+`;
+
+const eventsPast = `
+  "eventsPast": *[
+    _type == "event" && __i18n_lang == "en" && dateTime(now()) > dateTime(dateEnd) && ${omitDrafts}
+  ] | order(dateStart desc){ ${eventFields}, __i18n_refs[0]->{ ${eventFields} } }
 `;
 
 const event = `
@@ -274,8 +280,8 @@ export const aboutQuery = groq`{
 }`;
 
 export const eventsQuery = groq`{
-  ${artforms}, ${company}, ${events}, ${facilitators}, ${keystages},
-  ${labels}, ${navigation}, ${pages}, ${settings}
+  ${artforms}, ${company}, ${events}, ${eventsPast}, ${facilitators},
+  ${keystages}, ${labels}, ${navigation}, ${pages}, ${settings}
 }`;
 
 export const eventQuery = groq`{
