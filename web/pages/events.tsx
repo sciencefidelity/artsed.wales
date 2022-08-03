@@ -21,6 +21,7 @@ import s from "styles/events.module.scss"
 interface Data {
   company: Company
   events: Event[]
+  eventsPast: Event[]
   labels: Label[]
   navigation: Navigation
   pages: Page[]
@@ -45,14 +46,16 @@ export const getStaticProps: GetStaticProps = async () => {
  */
 const Events: NextPage<Props> = ({ data }: Props) => {
   const { locale } = useRouter()
-  const { company, events, labels, navigation, pages, settings } = data as {
-    company: Company
-    events: Event[]
-    labels: Label[]
-    navigation: Navigation
-    pages: Page[]
-    settings: Settings
-  }
+  const { company, events, eventsPast, labels, navigation, pages, settings } =
+    data as {
+      company: Company
+      events: Event[]
+      eventsPast: Event[]
+      labels: Label[]
+      navigation: Navigation
+      pages: Page[]
+      settings: Settings
+    }
 
   const pageHead = {
     title:
@@ -114,6 +117,14 @@ const Events: NextPage<Props> = ({ data }: Props) => {
         </div>
         <div className={`${s.events}`}>
           {events.map((event) => (
+            <Fragment key={event._id}>
+              <SingleEvent event={event} />
+            </Fragment>
+          ))}
+        </div>
+        <h2>Past Events</h2>
+        <div className={`${s.events}`}>
+          {eventsPast.map((event) => (
             <Fragment key={event._id}>
               <SingleEvent event={event} />
             </Fragment>
