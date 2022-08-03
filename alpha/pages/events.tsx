@@ -122,7 +122,7 @@ const Events: NextPage<Props> = ({ data }: Props) => {
             </Fragment>
           ))}
         </div>
-        <h2>Past Events</h2>
+        <h2 className={s.heading}>Past Events</h2>
         <div className={`${s.events}`}>
           {eventsPast.map((event) => (
             <Fragment key={event._id}>

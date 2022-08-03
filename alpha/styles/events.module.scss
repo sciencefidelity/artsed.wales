@@ -24,6 +24,10 @@
   }
 }
 
+.heading {
+  margin-bottom: -4.5rem;
+}
+
 .event {
   margin-bottom: 1rem;
   @include b.mq(md) {
@@ -229,8 +233,7 @@
 
 .h2 {
   margin-top: -0.3rem;
-  // margin-bottom: 0.2rem;
-  margin-bottom: -4.5rem;
+  margin-bottom: 0.2rem;
   font-size: 1.8rem;
   @include b.mq(md) {
     margin-top: -0.2rem;
