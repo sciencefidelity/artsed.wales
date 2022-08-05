@@ -10,11 +10,6 @@ import sanityClient from "lib/sanityClient"
 import { resourcePathQuery, resourceQuery } from "lib/queries"
 import { PortableText } from "lib/interfaces"
 
-interface Params extends ParsedUrlQuery {
-  resource: string
-  slug: string
-}
-
 interface Data {
   paths: Resource[]
 }
@@ -43,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { resource } = params as Params
+  const { resource } = params as ParsedUrlQuery
   const data: Data = await sanityClient.fetch(resourceQuery, { resource })
   return {
     props: {
