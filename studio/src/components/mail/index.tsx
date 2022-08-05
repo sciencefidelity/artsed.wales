@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 import s from './styles/Mail.module.css'
 
 interface Props {
-	document: any
+  document: any
 }
 
 const client = sanityClient.withConfig({ apiVersion: `2021-05-19` })
@@ -86,48 +86,48 @@ const queryEn = `{
 }`
 
 export default function Mail({ document }) {
-	return (
-		<QueryClientProvider client={queryClient}>
-			<Preview document={document} />
-		</QueryClientProvider>
-	)
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Preview document={document} />
+    </QueryClientProvider>
+  )
 }
 
 const Preview: FC<Props> = ({ document }) => {
-	const locale = document.displayed.__i18n_lang
-	const { isLoading, error, data } = useQuery('useDocuments', () =>
-		client.fetch(locale === 'cy' ? queryCy : queryEn)
-	)
+  const locale = document.displayed.__i18n_lang
+  const { isLoading, error, data } = useQuery('useDocuments', () =>
+    client.fetch(locale === 'cy' ? queryCy : queryEn)
+  )
 
-	if (isLoading) return 'Loading...'
+  if (isLoading) return 'Loading...'
 
-	if (error) return 'An error has occurred: ' + error.message
+  if (error) return 'An error has occurred: ' + error.message
 
-	return (
-		<div className={s.outer}>
-			<table
-				className={s.container}
-				// border="0"
-				cellPadding="0"
-				cellSpacing="0"
-			>
-				<tr>
-					<td valign="top">
-						<Preheader data={data} document={document} />
-						<Header data={data} document={document} />
-						<Headline document={document} />
-						<Body document={document} />
-						<Events data={data} document={document} />
-						<Footer data={data} document={document} />
-					</td>
-				</tr>
-			</table>
-		</div>
-	)
+  return (
+    <div className={s.outer}>
+      <table
+        className={s.container}
+        // border="0"
+        cellPadding="0"
+        cellSpacing="0"
+      >
+        <tr>
+          <td valign="top">
+            <Preheader data={data} document={document} />
+            <Header data={data} document={document} />
+            <Headline document={document} />
+            <Body document={document} />
+            <Events data={data} document={document} />
+            <Footer data={data} document={document} />
+          </td>
+        </tr>
+      </table>
+    </div>
+  )
 }
 
 {
-	/* const loadData = async () => {
+  /* const loadData = async () => {
     const res = await client.fetch(groq`*[_type == "newsletter"]`)
     if (!res.ok) throw new Error(res.statusText)
     const data = res.json()
