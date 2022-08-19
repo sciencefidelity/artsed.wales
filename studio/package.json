@@ -5,7 +5,6 @@
   "description": "National Arts and Education Wales",
   "main": "package.json",
   "author": "Matt Cook <sciencefidelity@hotmail.com>",
-  "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
     "dev": "sanity start",

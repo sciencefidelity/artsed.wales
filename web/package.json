@@ -4,7 +4,6 @@
   "homepage": "http://artsed.wales/",
   "version": "1.0.0",
   "author": "Matt Cook <matt@sciencefidelity.co.uk>",
-  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://github.com/sciencefidelity/artsed.wales"
