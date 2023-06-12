@@ -108,7 +108,7 @@ export default {
       name: 'mainImage',
       title: 'Main event image',
       type: 'image',
-      description: 'Ideal image size for Eventbrite – 2160 x 1080 / 2:1 ratio',
+      // description: 'Ideal image size for Eventbrite – 2160 x 1080 / 2:1 ratio',
       options: {
         hotspot: true
       },
@@ -132,54 +132,6 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'portableText',
-      initialValue: [
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              text: 'Summary'
-            }
-          ],
-          markDefs: [],
-          style: 'h2'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              text: 'This one day training session...'
-            }
-          ],
-          markDefs: [],
-          style: 'normal'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              text: 'By the end of the course participants will...'
-            }
-          ],
-          markDefs: [],
-          style: 'h4'
-        },
-        {
-          _type: 'block',
-          children: [
-            {
-              _type: 'span',
-              text: '...'
-            }
-          ],
-          level: 1,
-          listItem: 'bullet',
-          markDefs: [],
-          style: 'normal'
-        }
-      ],
       group: 'content'
     },
     {
@@ -280,69 +232,6 @@ export default {
     {
       name: 'icon',
       title: 'Icon',
-      type: 'string',
-      group: 'design'
-    },
-    {
-      name: 'imageOne',
-      title: 'Hero one',
-      type: 'image',
-      description: 'Cutout image for animation',
-      group: 'design'
-    },
-    {
-      name: 'classOne',
-      title: 'Image class one',
-      type: 'string',
-      group: 'design'
-    },
-    {
-      name: 'imageTwo',
-      title: 'Hero two',
-      type: 'image',
-      description: 'Cutout image for animation',
-      group: 'design'
-    },
-    {
-      name: 'classTwo',
-      title: 'Image class two',
-      type: 'string',
-      group: 'design'
-    },
-    {
-      name: 'imageThree',
-      title: 'Hero three',
-      type: 'image',
-      description: 'Cutout image for animation',
-      group: 'design'
-    },
-    {
-      name: 'classThree',
-      title: 'Image class three',
-      type: 'string',
-      group: 'design'
-    },
-    {
-      name: 'pattern',
-      title: 'Pattern class',
-      type: 'string',
-      group: 'design'
-    },
-    {
-      name: 'shapeOne',
-      title: 'Shape one',
-      type: 'string',
-      group: 'design'
-    },
-    {
-      name: 'shapeTwo',
-      title: 'Shape two',
-      type: 'string',
-      group: 'design'
-    },
-    {
-      name: 'shapeThree',
-      title: 'Shape three',
       type: 'string',
       group: 'design'
     },
