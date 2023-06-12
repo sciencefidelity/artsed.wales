@@ -27,10 +27,10 @@
 
 .heroContent {
   position: relative;
-  display: grid;
+  // display: grid;
   place-items: unset;
   width: 100vw;
-  max-width: 1504px;
+  // max-width: 1504px;
   height: 100%;
   margin-inline: auto;
   margin-bottom: 0;
@@ -43,6 +43,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 @keyframes dance {

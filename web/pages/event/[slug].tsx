@@ -136,77 +136,65 @@ const EventPage = ({ data }: { data: Data }) => {
               className={`${s.image}`}
               src={urlFor(event.mainImage)
                 .width(1600)
-                // .height(450)
                 .auto("format")
                 .quality(75)
                 .url()}
-              //   srcSet={`${urlFor(event.mainImage)
-              //     .width(400)
-              //     .height(350)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 400w,
-              //   ${urlFor(event.mainImage)
-              //     .width(800)
-              //     .height(700)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 800w,
-              //   ${urlFor(event.mainImage)
-              //     .width(1200)
-              //     .height(667)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 1200w,
-              //   ${urlFor(event.mainImage)
-              //     .width(1620)
-              //     .height(900)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 1620w,
-              //   ${urlFor(event.mainImage)
-              //     .width(1620)
-              //     .height(900)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 1620w,
-              //   ${urlFor(event.mainImage)
-              //     .width(2000)
-              //     .height(900)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 2000w,
-              //   ${urlFor(event.mainImage)
-              //     .width(2500)
-              //     .height(900)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 2500w,
-              //   ${urlFor(event.mainImage)
-              //     .width(3000)
-              //     .height(900)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 3000w,
-              //   ${urlFor(event.mainImage)
-              //     .width(3500)
-              //     .height(900)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 3500w,
-              //   ${urlFor(event.mainImage)
-              //     .width(4000)
-              //     .height(900)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 4000w,
-              //   ${urlFor(event.mainImage)
-              //     .width(5000)
-              //     .height(900)
-              //     .auto("format")
-              //     .quality(60)
-              //     .url()} 5000w
-              // `}
+              srcSet={`${urlFor(event.mainImage)
+                .width(400)
+                .auto("format")
+                .quality(60)
+                .url()} 400w,
+                ${urlFor(event.mainImage)
+                  .width(800)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 800w,
+                ${urlFor(event.mainImage)
+                  .width(1200)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 1200w,
+                ${urlFor(event.mainImage)
+                  .width(1620)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 1620w,
+                ${urlFor(event.mainImage)
+                  .width(1620)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 1620w,
+                ${urlFor(event.mainImage)
+                  .width(2000)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 2000w,
+                ${urlFor(event.mainImage)
+                  .width(2500)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 2500w,
+                ${urlFor(event.mainImage)
+                  .width(3000)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 3000w,
+                ${urlFor(event.mainImage)
+                  .width(3500)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 3500w,
+                ${urlFor(event.mainImage)
+                  .width(4000)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 4000w,
+                ${urlFor(event.mainImage)
+                  .width(5000)
+                  .auto("format")
+                  .quality(60)
+                  .url()} 5000w
+              `}
               alt={event.title}
             />
           )}
@@ -218,8 +206,8 @@ const EventPage = ({ data }: { data: Data }) => {
             {event.title && (
               <h1 className={`${s.h1} ${u.mono} ${u.bold}`}>
                 {locale === "cy" && event.__i18n_refs
-                  ? event.__i18n_refs.title
-                  : event.title}
+                  ? event.__i18n_refs.longTitle
+                  : event.longTitle}
               </h1>
             )}
             {event.body && (
