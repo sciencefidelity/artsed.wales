@@ -21,16 +21,59 @@ export function SingleEvent({ event }: Props) {
         className={`${u.noUnderline}`}
         tabIndex={-1}
       >
-        <div className={`${s.image}`}>
-          {/* <img
-            src={urlFor(event.mainImage)
-              .auto("format")
-              .fit("crop")
-              .quality(85)
-              .url()}
-            alt={event.title}
-            loading="eager"
-          /> */}
+        <div className={`${s.imageContainer}`}>
+          {event.mainImage && (
+            <img
+              className={`${s.image} ${u.relative}`}
+              src={urlFor(event.mainImage)
+                .width(468)
+                .height(468)
+                .auto("format")
+                .quality(75)
+                .url()}
+              srcSet={`${urlFor(event.mainImage)
+                .width(300)
+                .height(300)
+                .auto("format")
+                .quality(70)
+                .url()} 300w,
+              ${urlFor(event.mainImage)
+                .width(400)
+                .height(400)
+                .auto("format")
+                .quality(70)
+                .url()} 400w,
+              ${urlFor(event.mainImage)
+                .width(500)
+                .height(500)
+                .auto("format")
+                .quality(70)
+                .url()} 500w,
+              ${urlFor(event.mainImage)
+                .width(600)
+                .height(600)
+                .auto("format")
+                .quality(70)
+                .url()} 600w,
+              ${urlFor(event.mainImage)
+                .width(700)
+                .height(700)
+                .auto("format")
+                .quality(70)
+                .url()} 700w,
+              ${urlFor(event.mainImage)
+                .width(800)
+                .height(800)
+                .auto("format")
+                .quality(70)
+                .url()} 800w,
+            `}
+              height={468}
+              width={468}
+              alt={event.title}
+              loading="eager"
+            />
+          )}
         </div>
       </LinkTo>
       <header className={`${u.flex}`}>

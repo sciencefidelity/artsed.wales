@@ -1,4 +1,4 @@
-@use '/styles/base/breakpoints' as b;
+@use "/styles/base/breakpoints" as b;
 
 .hero {
   position: relative;
@@ -37,6 +37,12 @@
   @include b.mq(md) {
     place-items: center;
   }
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 @keyframes dance {
@@ -126,8 +132,7 @@
   top: -7%;
   left: 20%;
   width: 105.6%;
-  filter:
-    drop-shadow(-2px -2px 0 rgba(0, 0, 0, 90%))
+  filter: drop-shadow(-2px -2px 0 rgba(0, 0, 0, 90%))
     drop-shadow(-2px 2px 0 rgba(0, 0, 0, 90%))
     drop-shadow(15px -4px 0 rgba(0, 0, 0, 90%))
     drop-shadow(15px -4px 0 rgba(255, 255, 255, 100%));
@@ -138,8 +143,7 @@
     right: -10%;
     left: unset;
     width: 40%;
-    filter:
-      drop-shadow(-2px -2px 0 rgba(0, 0, 0, 90%))
+    filter: drop-shadow(-2px -2px 0 rgba(0, 0, 0, 90%))
       drop-shadow(-2px 2px 0 rgba(0, 0, 0, 90%))
       drop-shadow(30px -10px 0 rgba(0, 0, 0, 90%))
       drop-shadow(30px -10px 0 rgba(255, 255, 255, 100%));
@@ -206,9 +210,7 @@
   right: 1%;
   display: none;
   width: 36%;
-  filter:
-    drop-shadow(20px -20px 0 rgba(0, 0, 0, 90%))
-    brightness(1.2)
+  filter: drop-shadow(20px -20px 0 rgba(0, 0, 0, 90%)) brightness(1.2)
     contrast(80%);
   transform: translate(0) rotate(0deg);
   animation: 100s ease-in-out infinite alternate statue;
@@ -562,11 +564,11 @@
     padding: 0 1.2rem 3rem;
     font-size: 1.3rem;
     list-style-position: outside;
-    list-style-type: '—';
+    list-style-type: "—";
     @include b.mq(md) {
       padding: 0 2.7rem 3rem;
       font-size: 1.5rem;
-      list-style-type: '⸺';
+      list-style-type: "⸺";
     }
     li {
       padding: 0 0 1.5rem 0.5rem;

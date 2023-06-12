@@ -113,9 +113,9 @@ const EventPage = ({ data }: { data: Data }) => {
       navigation={navigation}
       settings={settings}
     >
-      <div className={`${s.hero} ${pattern(event.pattern)}`}>
+      <div className={`${s.hero}`}>
         <div className={`${s.heroContent}`}>
-          <div>
+          {/* <div>
             <div className={`${s.icon}`}>
               <Icon name={event.icon} />
             </div>
@@ -130,41 +130,84 @@ const EventPage = ({ data }: { data: Data }) => {
                     : event.longTitle,
               }}
             />
-          </div>
-          {event.shapeOne && (
-            <div className={`${s[event.shapeOne]}`}>
-              <Shape name={event.shapeOne} />
-            </div>
-          )}
-          {event.shapeTwo && (
-            <div className={`${s[event.shapeTwo]}`}>
-              <Shape name={event.shapeTwo} />
-            </div>
-          )}
-          {event.shapeThree && (
-            <div className={`${s[event.shapeThree]}`}>
-              <Shape name={event.shapeThree} />
-            </div>
-          )}
-          {event.imageOne && (
+          </div> */}
+          {event.mainImage && (
             <img
-              src={urlFor(event.imageOne).auto("format").quality(85).url()}
+              className={`${s.image}`}
+              src={urlFor(event.mainImage)
+                .width(1600)
+                // .height(450)
+                .auto("format")
+                .quality(75)
+                .url()}
+              //   srcSet={`${urlFor(event.mainImage)
+              //     .width(400)
+              //     .height(350)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 400w,
+              //   ${urlFor(event.mainImage)
+              //     .width(800)
+              //     .height(700)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 800w,
+              //   ${urlFor(event.mainImage)
+              //     .width(1200)
+              //     .height(667)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 1200w,
+              //   ${urlFor(event.mainImage)
+              //     .width(1620)
+              //     .height(900)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 1620w,
+              //   ${urlFor(event.mainImage)
+              //     .width(1620)
+              //     .height(900)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 1620w,
+              //   ${urlFor(event.mainImage)
+              //     .width(2000)
+              //     .height(900)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 2000w,
+              //   ${urlFor(event.mainImage)
+              //     .width(2500)
+              //     .height(900)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 2500w,
+              //   ${urlFor(event.mainImage)
+              //     .width(3000)
+              //     .height(900)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 3000w,
+              //   ${urlFor(event.mainImage)
+              //     .width(3500)
+              //     .height(900)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 3500w,
+              //   ${urlFor(event.mainImage)
+              //     .width(4000)
+              //     .height(900)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 4000w,
+              //   ${urlFor(event.mainImage)
+              //     .width(5000)
+              //     .height(900)
+              //     .auto("format")
+              //     .quality(60)
+              //     .url()} 5000w
+              // `}
               alt={event.title}
-              className={`${s[event.classOne]}`}
-            />
-          )}
-          {event.imageTwo && (
-            <img
-              src={urlFor(event.imageTwo).auto("format").quality(85).url()}
-              alt={event.title}
-              className={`${s[event.classTwo]}`}
-            />
-          )}
-          {event.imageThree && (
-            <img
-              src={urlFor(event.imageThree).auto("format").quality(85).url()}
-              alt={event.title}
-              className={`${s[event.classThree]}`}
             />
           )}
         </div>
