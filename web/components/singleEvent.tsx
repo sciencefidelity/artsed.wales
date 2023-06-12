@@ -21,18 +21,16 @@ export function SingleEvent({ event }: Props) {
         className={`${u.noUnderline}`}
         tabIndex={-1}
       >
-        <div className={`${s.image} ${pattern(event.pattern)}`}>
-          {event.shapeOne && (
-            <div className={`${s[event.shapeOne]}`}>
-              <Shape name={event.shapeOne} />
-            </div>
-          )}
-          <img
-            src={urlFor(event.imageOne).auto("format").quality(85).url()}
+        <div className={`${s.image}`}>
+          {/* <img
+            src={urlFor(event.mainImage)
+              .auto("format")
+              .fit("crop")
+              .quality(85)
+              .url()}
             alt={event.title}
-            className={`${s[event.classOne]}`}
             loading="eager"
-          />
+          /> */}
         </div>
       </LinkTo>
       <header className={`${u.flex}`}>
